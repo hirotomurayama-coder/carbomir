@@ -1,26 +1,215 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   Carbomir Theme
+   - Base colors: 井戸ネイビー (#0c2545) + シアン青 (#0ea5e9 / #38bdf8)
+   - Tech-SaaS density (Linear / Vercel Dashboard inspired)
+   - Sidebar は常にダーク (light/dark mode 共通)
+   ============================================================ */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* shadcn semantic tokens — Light */
+  --background: #f6f8fb;
+  --foreground: #0a1628;
+  --card: #ffffff;
+  --card-foreground: #0a1628;
+  --popover: #ffffff;
+  --popover-foreground: #0a1628;
+  --primary: #0c2545;
+  --primary-foreground: #f6f8fb;
+  --secondary: #eef2f7;
+  --secondary-foreground: #0c2545;
+  --muted: #eef2f7;
+  --muted-foreground: #64748b;
+  --accent: #0ea5e9;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #38bdf8;
+  --chart-1: #0ea5e9;
+  --chart-2: #0c2545;
+  --chart-3: #38bdf8;
+  --chart-4: #94a3b8;
+  --chart-5: #f59e0b;
+  --radius: 0.5rem;
+
+  /* Sidebar (constant dark across light/dark) */
+  --sidebar: #0a1628;
+  --sidebar-foreground: #cbd5e1;
+  --sidebar-primary: #38bdf8;
+  --sidebar-primary-foreground: #050a14;
+  --sidebar-accent: #14315a;
+  --sidebar-accent-foreground: #f6f8fb;
+  --sidebar-border: #1e3a5f;
+  --sidebar-ring: #38bdf8;
+
+  /* Carbomir custom semantic layer (kept for existing pages) */
+  --foreground-soft: #475569;
+  --brand-primary: #0c2545;
+  --brand-primary-hover: #14315a;
+  --brand-accent: #0ea5e9;
+  --brand-accent-strong: #38bdf8;
+  --brand-muted: #64748b;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --surface-sunken: #eef2f7;
+  --border-subtle: #e2e8f0;
+  --border-strong: #94a3b8;
+  --grid-line: rgba(15, 23, 42, 0.04);
+  --signal-positive: #0ea5e9;
+  --signal-warn: #f59e0b;
+}
+
+.dark {
+  --background: #050a14;
+  --foreground: #e2e8f0;
+  --card: #0a1628;
+  --card-foreground: #e2e8f0;
+  --popover: #0a1628;
+  --popover-foreground: #e2e8f0;
+  --primary: #38bdf8;
+  --primary-foreground: #050a14;
+  --secondary: #1e293b;
+  --secondary-foreground: #e2e8f0;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #0ea5e9;
+  --accent-foreground: #050a14;
+  --destructive: #f87171;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #38bdf8;
+  --chart-1: #38bdf8;
+  --chart-2: #0ea5e9;
+  --chart-3: #7dd3fc;
+  --chart-4: #94a3b8;
+  --chart-5: #fbbf24;
+
+  /* Sidebar in dark mode (slightly more elevated than background) */
+  --sidebar: #0a1628;
+  --sidebar-foreground: #cbd5e1;
+  --sidebar-primary: #38bdf8;
+  --sidebar-primary-foreground: #050a14;
+  --sidebar-accent: #14315a;
+  --sidebar-accent-foreground: #f6f8fb;
+  --sidebar-border: #1e3a5f;
+  --sidebar-ring: #38bdf8;
+
+  /* Custom layer (dark) */
+  --foreground-soft: #94a3b8;
+  --brand-primary: #38bdf8;
+  --brand-primary-hover: #7dd3fc;
+  --brand-accent: #0ea5e9;
+  --brand-accent-strong: #38bdf8;
+  --brand-muted: #64748b;
+  --surface: #0a1628;
+  --surface-elevated: #0f1f3a;
+  --surface-sunken: #050a14;
+  --border-subtle: #1e293b;
+  --border-strong: #334155;
+  --grid-line: rgba(148, 163, 184, 0.06);
 }
 
 @theme inline {
+  /* shadcn tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Custom Carbomir tokens (for existing pages) */
+  --color-foreground-soft: var(--foreground-soft);
+  --color-brand: var(--brand-primary);
+  --color-brand-hover: var(--brand-primary-hover);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-strong: var(--brand-accent-strong);
+  --color-brand-muted: var(--brand-muted);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+
+  /* Radii (shadcn convention) */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Fonts */
+  --font-sans: var(--font-noto-sans-jp), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-feature-settings: "palt";
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* テック系 subtle なグリッド背景 */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* スモールキャップス風ラベル (内部記号ではなく一般語のみ表示する用途) */
+.label-mono {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* 数値タイル (tabular-nums) */
+.metric-number {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum";
+}
+
+/* テーマ切替時のフラッシュ防止 */
+html.dark {
+  color-scheme: dark;
 }

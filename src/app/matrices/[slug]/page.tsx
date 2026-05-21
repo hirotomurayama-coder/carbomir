@@ -1,0 +1,98 @@
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { Columns3 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import {
+  findMatrixBySlug,
+  listPublishedMatrices,
+} from "@/lib/data/comparisons";
+import { MatrixDataGrid } from "@/components/matrices/matrix-data-grid";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateStaticParams() {
+  return listPublishedMatrices().map((m) => ({ slug: m.slug }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const matrix = findMatrixBySlug(slug);
+  if (!matrix) return {};
+  return {
+    title: matrix.title,
+    description: matrix.description,
+  };
+}
+
+export default async function MatrixDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const matrix = findMatrixBySlug(slug);
+  if (!matrix || matrix.status !== "published") notFound();
+
+  return (
+    <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
+      <nav className="mb-6">
+        <Link
+          href="/matrices"
+          className="inline-flex items-center gap-1.5 label-mono text-muted-foreground hover:text-foreground transition-colors"
+        >
+          <span className="font-mono">←</span> All Matrices
+        </Link>
+      </nav>
+
+      <header className="mb-6 pb-6 border-b border-border">
+        <div className="flex items-center gap-2 mb-3 flex-wrap">
+          <Badge variant="outline" className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent">
+            <Columns3 className="h-2.5 w-2.5 mr-1" />
+            Comparison Matrix
+          </Badge>
+          <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
+            {matrix.entities.length}×{matrix.dimensions.length}
+          </Badge>
+          <Badge variant="outline" className="font-mono text-[10px] tracking-wider text-emerald-600 dark:text-emerald-400 border-emerald-600/40 dark:border-emerald-400/40">
+            Published
+          </Badge>
+        </div>
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
+          {matrix.title}
+        </h1>
+        <p className="text-sm text-muted-foreground max-w-3xl leading-relaxed">
+          {matrix.description}
+        </p>
+      </header>
+
+      <MatrixDataGrid matrix={matrix} />
+
+      {/* CTA */}
+      <Card className="mt-8 bg-gradient-to-br from-card to-muted/40">
+        <CardContent className="p-6">
+          <div className="flex items-start justify-between gap-4 flex-wrap">
+            <div className="max-w-2xl">
+              <Badge variant="outline" className="font-mono text-[10px] tracking-wider uppercase mb-2 border-accent/40 text-accent">
+                Advisory
+              </Badge>
+              <CardTitle className="text-lg font-bold mb-2">
+                個別案件のご相談
+              </CardTitle>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                上記の比較を踏まえた個別の調達判断・創出判断は、株式会社クレイドルトゥー
+                CDR 調達アドバイザリーまたは Recroma 本格コンサルにて対応する。
+              </p>
+            </div>
+            <a
+              href="https://carboncredits.jp/contact"
+              className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors shrink-0"
+            >
+              相談する
+              <span className="font-mono text-xs opacity-70">→</span>
+            </a>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

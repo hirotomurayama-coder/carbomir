@@ -1,0 +1,137 @@
+import type { ComparisonMatrix } from "@/lib/types";
+
+export const seedComparisonMatrices: ComparisonMatrix[] = [
+  {
+    slug: "jcredit-jcm-verra",
+    title: "J-クレジット / JCM / Verra (VCS) 制度対比",
+    description:
+      "日本国内ボランタリー市場で実務上頻出する3制度の主要比較。事業会社の調達判断および創出判断の初期スクリーニングに使用する想定。",
+    last_reviewed_at: "2026-05-21",
+    status: "published",
+    dimensions: [
+      {
+        key: "scheme_type",
+        label_ja: "制度の性質",
+        description: "公的か民間か、対象地域がどこか",
+      },
+      {
+        key: "governance",
+        label_ja: "主管轄",
+        description: "認証・運営の責任主体",
+      },
+      {
+        key: "target_geography",
+        label_ja: "対象地域",
+      },
+      {
+        key: "use_for_gx_ets",
+        label_ja: "GX-ETS への活用可否",
+        description: "2026年5月時点での制度上の位置づけ",
+      },
+      {
+        key: "price_range",
+        label_ja: "市場価格帯 (参考)",
+        description: "公開取引・相対取引の混合。実勢は変動",
+      },
+      {
+        key: "carbomir_quality_view",
+        label_ja: "Carbomir 編集部の品質観",
+        description: "業界内通念に基づく定性評価",
+      },
+    ],
+    entities: [
+      { slug: "jcredit", name_ja: "J-クレジット", name_en: "J-Credit Scheme" },
+      { slug: "jcm", name_ja: "JCM", name_en: "Joint Crediting Mechanism" },
+      { slug: "verra-vcs", name_ja: "Verra (VCS)", name_en: "Verified Carbon Standard" },
+    ],
+    cells: {
+      jcredit: {
+        scheme_type: {
+          value: "国内公的制度 (国認証)",
+          source_url: "https://japancredit.go.jp/",
+          source_label: "J-クレジット制度公式",
+        },
+        governance: {
+          value: "経済産業省・環境省・農林水産省 (J-クレジット制度認証委員会)",
+          source_url: "https://japancredit.go.jp/about/",
+          source_label: "J-クレジット制度概要",
+        },
+        target_geography: {
+          value: "日本国内",
+        },
+        use_for_gx_ets: {
+          value: "活用可。GX-ETS の遵守クレジットとして利用可能 (制度設計上の位置付け)",
+          note: "適格性の細目は GX-ETS 運用規程の最新版を参照",
+        },
+        price_range: {
+          value: "再エネ由来 1,500-3,500円/t-CO2 程度、省エネ由来 1,000-2,000円/t-CO2 程度 (2026年初頭の入札参考価格)",
+          source_url: "https://japancredit.go.jp/market/",
+          source_label: "J-クレジット入札結果",
+        },
+        carbomir_quality_view: {
+          value: "国内追加性・モニタリング基準が明確。森林由来は審査が厳格化される傾向。GX-ETS 接続で需要拡大局面",
+          note: "Carbomir 編集部による定性評価 (2026-05)",
+        },
+      },
+      jcm: {
+        scheme_type: {
+          value: "二国間クレジット制度 (政府間)",
+          source_url: "https://www.jcm.go.jp/",
+          source_label: "JCM 公式",
+        },
+        governance: {
+          value: "経済産業省・環境省・外務省 (相手国政府との合同委員会)",
+        },
+        target_geography: {
+          value: "JCM パートナー国 (29か国、2026年時点)",
+          source_url: "https://www.jcm.go.jp/",
+          source_label: "JCM 公式",
+        },
+        use_for_gx_ets: {
+          value: "活用可。日本政府公約 (NDC) との二重計上回避のため通知運用あり",
+          note: "GX-ETS での扱いは最新運用規程要確認",
+        },
+        price_range: {
+          value: "相対取引中心、公開市場価格は限定的。事業組成コスト依存",
+        },
+        carbomir_quality_view: {
+          value: "プロジェクト数が限られ、需給で価格変動大。再エネ・廃熱回収案件が中心。途上国側の制度成熟度に注意",
+        },
+      },
+      "verra-vcs": {
+        scheme_type: {
+          value: "国際民間スタンダード",
+          source_url: "https://verra.org/programs/verified-carbon-standard/",
+          source_label: "Verra VCS Program",
+        },
+        governance: {
+          value: "Verra (米国非営利)",
+        },
+        target_geography: {
+          value: "グローバル (160か国以上で発行実績)",
+        },
+        use_for_gx_ets: {
+          value: "原則として GX-ETS 遵守クレジットとしては利用不可。任意取り組みやスコープ3相殺等で活用",
+          note: "国際クレジットの GX-ETS 受入は政策動向で変動余地",
+        },
+        price_range: {
+          value: "メソドロジー・vintage 大幅依存。REDD+ で 3-15 USD/t、再エネで 1-5 USD/t、Engineered Removal で 100-600 USD/t (2026年初頭参考)",
+          source_url: "https://www.ecosystemmarketplace.com/",
+          source_label: "Ecosystem Marketplace",
+        },
+        carbomir_quality_view: {
+          value: "メソドロジー間の品質差が極めて大きい。REDD+ ベースラインは ICVCM CCP 等で個別審査必須。Engineered Removal は別ラベル運用が一般化",
+          note: "個別案件の判断は株式会社クレイドルトゥー CDR 調達アドバイザリーへ",
+        },
+      },
+    },
+  },
+];
+
+export function findMatrixBySlug(slug: string): ComparisonMatrix | undefined {
+  return seedComparisonMatrices.find((m) => m.slug === slug);
+}
+
+export function listPublishedMatrices(): ComparisonMatrix[] {
+  return seedComparisonMatrices.filter((m) => m.status === "published");
+}
