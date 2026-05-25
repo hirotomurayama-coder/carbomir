@@ -49,7 +49,7 @@ const COMPARE_ITEMS: NavItem[] = [
 ];
 
 const DEFINE_ITEMS: NavItem[] = [
-  { href: "/entities", label: "概念体系", Icon: Network },
+  { href: "/entities", label: "用語集", Icon: Network },
   { href: "/players", label: "プレイヤー", Icon: Building2 },
   { href: "/policies", label: "政策・規制", Icon: Scale },
 ];

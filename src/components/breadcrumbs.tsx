@@ -8,7 +8,7 @@ const SEGMENT_LABELS: Record<string, string> = {
   // 比べる
   matrices: "比較行列",
   // 調べる
-  entities: "概念体系",
+  entities: "用語集",
   players: "プレイヤー",
   policies: "政策・規制",
   calendar: "規制カレンダー",

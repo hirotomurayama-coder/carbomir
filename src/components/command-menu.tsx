@@ -127,9 +127,9 @@ export function CommandMenuProvider({
           <CommandSeparator />
 
           <CommandGroup heading="調べる">
-            <CommandItem onSelect={() => go("/entities")} keywords={["concepts", "knowledge", "概念"]}>
+            <CommandItem onSelect={() => go("/entities")} keywords={["concepts", "knowledge", "glossary", "用語集", "概念"]}>
               <Network className="h-4 w-4" />
-              <span>概念体系</span>
+              <span>用語集</span>
               <ArrowRight className="ml-auto h-3.5 w-3.5 text-muted-foreground" />
             </CommandItem>
             <CommandItem onSelect={() => go("/players")} keywords={["players", "companies", "organization", "プレイヤー"]}>
@@ -244,7 +244,7 @@ export function CommandMenuProvider({
           {entities.filter((e) => e.type !== "player").length > 0 && (
             <>
               <CommandSeparator />
-              <CommandGroup heading="概念体系">
+              <CommandGroup heading="用語集">
                 {entities
                   .filter((e) => e.type !== "player")
                   .map((e) => (

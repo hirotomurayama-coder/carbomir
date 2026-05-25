@@ -3,7 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { ArrowUpRight, X, Tag } from "lucide-react";
+import { ArrowUpRight, X, Tag, BookOpenText } from "lucide-react";
+import { carbonCreditsUrl } from "@/lib/data/glossary-links";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import type { Entity, EntityType } from "@/lib/types";
@@ -255,6 +256,14 @@ function ListView({
               >
                 Reviewed
               </SortableHeader>
+              <th
+                className="w-9 px-2 py-2 text-center"
+                title="carboncredits.jp 用語集との対応"
+              >
+                <span className="label-mono text-[9px] text-muted-foreground/70">
+                  CC.jp
+                </span>
+              </th>
               <th className="w-10 px-3 py-2"></th>
             </tr>
           </thead>
@@ -305,6 +314,23 @@ function ListView({
                   <span className="metric-number text-[11px] text-muted-foreground">
                     {e.last_reviewed_at}
                   </span>
+                </td>
+                <td className={`px-2 ${rowPad} align-top text-center`}>
+                  {(() => {
+                    const cc = carbonCreditsUrl(e.slug);
+                    return cc ? (
+                      <a
+                        href={cc}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="carboncredits.jp の用語集記事を開く"
+                        className="inline-flex h-6 w-6 items-center justify-center rounded-md text-sky-600 dark:text-sky-300 hover:bg-sky-500/15 transition-colors"
+                        aria-label="carboncredits.jp で読む"
+                      >
+                        <BookOpenText className="h-3.5 w-3.5" />
+                      </a>
+                    ) : null;
+                  })()}
                 </td>
                 <td className={`px-3 ${rowPad} align-top text-right`}>
                   <Link

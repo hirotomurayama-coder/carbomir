@@ -1,6 +1,7 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, BookOpenText } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { POLICY_STATUS_LABEL, type Entity, type PolicyStatus } from "@/lib/types";
+import { carbonCreditsUrl } from "@/lib/data/glossary-links";
 
 const STATUS_BADGE_CLASS: Record<PolicyStatus, string> = {
   active:
@@ -68,6 +69,23 @@ export function MetadataPanel({ entity }: { entity: Entity }) {
         >
           <ExternalLink className="h-3 w-3 shrink-0" />
           {entity.website_url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+        </a>
+      ),
+    });
+  }
+  const ccUrl = carbonCreditsUrl(entity.slug);
+  if (ccUrl) {
+    rows.push({
+      label: "外部用語集",
+      value: (
+        <a
+          href={ccUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1 text-sky-600 dark:text-sky-300 hover:underline normal-case break-all"
+        >
+          <BookOpenText className="h-3 w-3 shrink-0" />
+          carboncredits.jp で読む
         </a>
       ),
     });
