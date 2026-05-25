@@ -1,0 +1,35 @@
+{
+  "slug": "climate-asset-management",
+  "type": "player",
+  "name_ja": "Climate Asset Management",
+  "name_en": "Climate Asset Management",
+  "abbreviation": "CAM",
+  "summary": "HSBC AM + Pollination Group が運営する世界最大級の自然資本投資ファンド。住友林業との合弁等で森林資産にグローバルマネー流入を促進。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "投資ファンド",
+    "NBS",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2022,
+  "operator": "HSBC Asset Management + Pollination Group 合弁",
+  "geographic_scope": "全世界",
+  "website_url": "https://www.climateassetmanagement.com/",
+  "policy_status": "active",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "Climate Asset Management (CAM) は **2022 年に HSBC Asset Management と Pollination Group が合弁で設立** した、**世界最大級の \"Natural Capital\" 専門投資ファンド**。\n\n**運用方針**:\n\n- **Natural Capital 戦略**: 森林・農地・湿地等の自然資本資産に投資\n- **NBS クレジット創出 + 不動産価値向上** の二重リターン狙い\n- **機関投資家マネー** を NBS / 自然由来除去型クレジットに引き入れる構造\n\n**主要投資先 / パートナー**:\n\n- **住友林業** (2022 年合弁、海外植林 31 万 ha 規模)\n- **Conservation International** 等の NGO 連携\n- 米国 / 豪州 / NZ / 東南アジアの森林資産"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "CAM の登場は **「機関投資家が自然資本を新興資産クラスとして取得する時代」** の象徴。日本企業にとっての含意:\n\n- **供給側 (川上)** に立てる企業 (林業・農業・水産) にとっての潜在パートナー\n- **NBS クレジット価格** に金融市場の需給圧力が直接影響する構造になる\n- 住友林業との合弁は **日本企業として最先端の Natural Capital 戦略実装例**\n- HSBC 経由で **TCFD / IFRS S2 / SSBJ の Nature-related 開示 (TNFD)** の議論にも結節"
+    }
+  ]
+}

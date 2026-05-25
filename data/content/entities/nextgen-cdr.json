@@ -1,0 +1,44 @@
+{
+  "slug": "nextgen-cdr",
+  "type": "player",
+  "name_ja": "NextGen CDR Facility",
+  "name_en": "NextGen CDR Facility",
+  "abbreviation": "NextGen",
+  "summary": "South Pole + 三菱商事の合弁が運営する CDR 共同需要創出基金。100 万トン規模の長期 offtake コミット。日本企業の \"参入しやすい AMC\"。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "Engineered Removal",
+    "共同基金",
+    "国際",
+    "日本"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2022,
+  "operator": "South Pole + 三菱商事 合弁",
+  "geographic_scope": "全世界",
+  "website_url": "https://www.next-gen-cdr.com/",
+  "policy_status": "active",
+  "related": [
+    {
+      "to_slug": "mitsubishi-corporation",
+      "relation": "depends_on",
+      "note": "三菱商事が共同運営"
+    }
+  ],
+  "related_matrix_slugs": [
+    "cdr-buyer-coalition-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "NextGen CDR Facility は **2022 年に South Pole (スイスの環境コンサル) と 三菱商事 が合弁で立ち上げた** CDR 共同需要創出基金。**100 万トン規模の長期 offtake コミット** (2030 年達成目標) を掲げ、Frontier に次ぐ規模の AMC モデルとして機能。\n\n**主要メンバー / 出資企業** (公表分):\n\n- **三菱商事** (アジア窓口)\n- **LGT** (Liechtenstein の私募バンク)\n- **UBS** (スイス大手金融)\n- **Boston Consulting Group**\n- その他テック系 + 金融系企業\n\n**契約形態**: **長期 offtake** (10-15 年) 中心、Prepurchase 併用。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "NextGen は **日本企業にとって最も参入しやすい大規模 CDR 共同基金**。Frontier との対比:\n\n| 項目 | Frontier | NextGen |\n|---|---|---|\n| 言語 / 通貨 | 英語 / USD | 英語 (商社経由で日本語対応可) |\n| 主要出資 | Stripe / Google / Meta 等テック大手 | 三菱商事 / UBS / LGT / BCG |\n| 規模 | 9.25 億 USD (9 年) | 100 万トン commit |\n| 対象技術 | DAC / Mineralization / BiCRS / Ocean | DAC / Biochar / BECCS / Mineralization |\n\n**日本企業の参入経路**: 三菱商事に直接相談、もしくは商社系の関連投資ファンドを介してアクセス可能。「商社経由でジャパン枠を確保する」のが現実的な参入戦略。"
+    }
+  ]
+}

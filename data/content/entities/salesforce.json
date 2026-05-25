@@ -1,0 +1,37 @@
+{
+  "slug": "salesforce",
+  "type": "player",
+  "name_ja": "Salesforce",
+  "name_en": "Salesforce, Inc.",
+  "abbreviation": "CRM",
+  "summary": "SaaS 大手 (CRM / クラウド)。2030 年 Net-Zero 目標下で Frontier 共同設立メンバー、Engineered Removal シフトを進める代表的需要家。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "Engineered Removal",
+    "米国",
+    "SaaS"
+  ],
+  "jurisdiction": "米国",
+  "established_year": 1999,
+  "operator": "Salesforce, Inc. (NYSE: CRM)",
+  "geographic_scope": "全世界",
+  "website_url": "https://www.salesforce.com/sustainability/",
+  "policy_status": "active",
+  "related": [],
+  "related_matrix_slugs": [
+    "cdr-buyer-coalition-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "企業概要",
+      "body": "Salesforce は **CRM / クラウドサービス大手** (NYSE 上場、時価総額数千億 USD 級)。Marc Benioff 創業の SaaS 業界象徴的企業。\n\n気候戦略の主軸:\n\n- **2021 年: Net-Zero + 100% 再エネ運用達成発表** (Scope 1-3 含む計上)\n- **2022 年: Frontier 共同設立メンバー** (Stripe / Google / Shopify / Meta / McKinsey と並列)\n- **2024 年以降: \"Avoidance から Removal へ\" 移行を加速**\n- **トレーサビリティ全面公開**: 全クレジット明細を年次サステナビリティ報告書で開示"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Salesforce はテック大手の中でも **\"開示精度の上限値\"** を示すベンチマーク企業。日本企業が IFRS S2 / SSBJ 対応で目指す情報粒度の参考例。\n\n日本企業との対比:\n\n- 自社調達 + Frontier (共同基金) 並列調達のハイブリッド\n- NBS は ART TREES Jurisdictional 等の Quality Tier のみ採用\n- Engineered Removal は 2030 年に向けて段階的比重増 (DAC / Mineralization / BiCRS)"
+    }
+  ]
+}

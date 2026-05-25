@@ -1,0 +1,37 @@
+{
+  "slug": "symbiosis-coalition",
+  "type": "player",
+  "name_ja": "Symbiosis Coalition",
+  "name_en": "Symbiosis Coalition",
+  "abbreviation": "Symbiosis",
+  "summary": "Google 主導で 2024 年設立された NBS Removal 専門の共同需要創出基金。2030 年までに 2,000 万トンの NBS removal 調達コミット。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "NBS",
+    "共同基金",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2024,
+  "operator": "Google + 共同設立メンバー",
+  "geographic_scope": "全世界",
+  "website_url": "https://www.symbiosis-coalition.org/",
+  "policy_status": "active",
+  "related": [],
+  "related_matrix_slugs": [
+    "cdr-buyer-coalition-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "Symbiosis Coalition は **2024 年に Google が主導して設立** された **NBS Removal (自然由来除去型) 専門** の共同需要創出基金。Frontier (Engineered Removal 中心) と対をなす形で、**NBS の信頼性再構築** を狙う。\n\n**共同設立メンバー**:\n\n- **Google** (主導)\n- **Meta**\n- **Microsoft**\n- **Salesforce**\n\n**コミット規模**: **2030 年までに 2,000 万トン NBS removal 調達**\n\n**対象メソドロジー**:\n\n- **ARR** (Afforestation / Reforestation / Revegetation)\n- **IFM** (Improved Forest Management)\n- **Mangrove restoration** (Blue Carbon)\n- 一部 **Quality REDD+** (ART TREES Jurisdictional のみ)"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Symbiosis は **2023 年の Verra REDD+ 信頼性危機への業界対応** という側面が強い。テック大手 4 社が「**Project-level REDD+ ではなく Jurisdictional + Restoration**」に資金集中させることで、NBS 全体への信頼回復を狙う。\n\n日本企業視点:\n\n- 現状はテック大手 4 社限定、**日本企業の参加事例はなし**\n- ただし、**住友林業など供給側プレイヤー** にとっては潜在顧客\n- **Quality NBS の価格premium** を市場形成する効果あり、結果として **NBS クレジット全般の品質階層化** を加速"
+    }
+  ]
+}
