@@ -34,11 +34,11 @@ export default async function PoliciesPage() {
           各国/地域の主要なカーボン関連制度のステータスと次マイルストーンを集約。事業会社の中期計画・調達設計の前提条件をすぐ把握できるよう、jurisdiction で大分類する。
         </p>
         <Link
-          href="/policies/calendar"
+          href="/timeline"
           className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 rounded-md bg-accent/10 text-accent hover:bg-accent/20 transition-colors text-xs font-medium"
         >
           <CalendarClock className="h-3.5 w-3.5" />
-          規制カレンダー (時系列) を開く →
+          時系列・規制カレンダー (統合) を開く →
         </Link>
       </header>
 

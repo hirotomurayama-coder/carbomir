@@ -399,10 +399,10 @@ function TrackSection({
             </ul>
             <div className="px-5 py-2.5 border-t border-border bg-muted/20">
               <Link
-                href="/policies/calendar"
+                href="/timeline"
                 className="inline-flex items-center gap-1 label-mono text-accent hover:underline"
               >
-                規制カレンダー (時系列) を開く
+                時系列・規制カレンダー (統合) を開く
                 <ArrowUpRight className="h-3 w-3" />
               </Link>
             </div>
