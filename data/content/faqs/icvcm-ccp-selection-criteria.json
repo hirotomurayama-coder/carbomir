@@ -1,7 +1,7 @@
 {
   "slug": "icvcm-ccp-selection-criteria",
   "question": "クレジット選定の基準として ICVCM CCP 適格性を使うべきですか?",
-  "short_answer": "**主要な品質シグナルの一つとして使う**べきだが、CCP 適格性だけで判断するのは不十分。メソドロジー・vintage・所在地・出典の総合評価が必須。",
+  "short_answer": "主要な品質シグナルの一つとして使うべきだが、CCP 適格性だけで判断するのは不十分。メソドロジー・vintage・所在地・出典の総合評価が必須。",
   "category": "quality",
   "last_reviewed_at": "2026-05-25",
   "next_review_at": "2026-09-22",

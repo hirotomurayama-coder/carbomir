@@ -41,6 +41,38 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
     });
   }, [matrix.dimensions, filter, hiddenDims]);
 
+  // Horizontal scroll state: detect when the table overflows the container so we
+  // can render fade gradients + a scroll hint chip. Without this the rightmost
+  // entity columns can silently fall off the viewport.
+  const scrollContainerRef = React.useRef<HTMLDivElement | null>(null);
+  const [scrollState, setScrollState] = React.useState({
+    canScrollLeft: false,
+    canScrollRight: false,
+    overflows: false,
+  });
+
+  React.useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    const update = () => {
+      const overflows = el.scrollWidth > el.clientWidth + 1;
+      setScrollState({
+        canScrollLeft: el.scrollLeft > 1,
+        canScrollRight:
+          overflows && el.scrollLeft + el.clientWidth < el.scrollWidth - 1,
+        overflows,
+      });
+    };
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener("scroll", update);
+      ro.disconnect();
+    };
+  }, [visibleDimensions.length, matrix.entities.length]);
+
   const toggleDim = (key: string) => {
     setHiddenDims((prev) => {
       const next = new Set(prev);
@@ -124,8 +156,12 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
       </div>
 
       {/* Data table */}
-      <div className="relative overflow-x-auto rounded-lg border border-border bg-card">
-        <table className="w-full border-collapse text-sm">
+      <div className="relative">
+        <div
+          ref={scrollContainerRef}
+          className="relative overflow-x-auto rounded-lg border border-border bg-card scrollbar-thin"
+        >
+          <table className="w-full border-collapse text-sm">
           <thead>
             <tr>
               <th className="sticky left-0 z-10 bg-muted/60 border-b border-r border-border px-4 py-3 text-left min-w-[200px]">
@@ -211,6 +247,30 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
             )}
           </tbody>
         </table>
+        </div>
+
+        {/* Fade gradient + scroll hint when content overflows.
+            pointer-events-none so they never block scroll/click on the table. */}
+        {scrollState.canScrollLeft && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-0 bottom-0 left-0 w-8 rounded-l-lg bg-gradient-to-r from-background/95 to-transparent"
+          />
+        )}
+        {scrollState.canScrollRight && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-0 bottom-0 right-0 w-10 rounded-r-lg bg-gradient-to-l from-background/95 to-transparent"
+          />
+        )}
+        {scrollState.overflows && scrollState.canScrollRight && (
+          <div
+            aria-hidden
+            className="pointer-events-none absolute top-2 right-2 inline-flex items-center gap-1 rounded-full border border-accent/40 bg-background/90 px-2 py-0.5 label-mono text-[10px] text-accent shadow-sm"
+          >
+            横スクロール →
+          </div>
+        )}
       </div>
 
       {/* Status bar */}

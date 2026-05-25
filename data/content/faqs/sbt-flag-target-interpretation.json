@@ -1,7 +1,7 @@
 {
   "slug": "sbt-flag-target-interpretation",
   "question": "SBT FLAG ターゲットの数字 (FLAG -3.03% など) はどう読み解けばいいですか?",
-  "short_answer": "**FLAG = Forest, Land and Agriculture** 由来の排出量に特化したセクター別目標。FLAG -3.03%/年 は森林・農業・土地利用セクターの排出量を年率 3.03% で削減する 2050 年 1.5°C 整合の標準軌道。",
+  "short_answer": "FLAG = Forest, Land and Agriculture 由来の排出量に特化したセクター別目標。FLAG -3.03%/年 は森林・農業・土地利用セクターの排出量を年率 3.03% で削減する 2050 年 1.5°C 整合の標準軌道。",
   "detailed_md": "## FLAG とは\n\n**Forest, Land and Agriculture (FLAG)** は SBT (Science Based Targets) initiative が設定した、**土地利用関連セクターに特化した目標枠組み**。一般の Scope1/2/3 目標とは別建てで設定する必要がある対象企業:\n\n- 食品・飲料・農業・林業・紙パ・繊維・林産加工 等\n- SBT 認証企業のうち、FLAG 関連事業が **20% 以上** を占める企業\n\n## 数字の意味\n\n### FLAG -3.03%/年 の根拠\n\n- IPCC 1.5°C シナリオで FLAG セクターが世界全体で達成すべき削減ペース\n- 2050 年に向けて **線形削減** を前提とした標準軌道\n- 業界・地域に応じて若干の調整あり\n\n### Scope1/2/3 目標との関係\n\n- 通常の Scope 目標とは **別建て**\n- 重複しないように、FLAG 由来排出は SBT FLAG ターゲットでカウント\n- 化石燃料由来排出は通常の Scope1/2/3 でカウント\n\n## クレジット相殺の制限\n\nSBT FLAG では **Beyond Value Chain Mitigation (BVCM)** のみクレジット利用可能で、ターゲット達成手段としては自社削減 + 自社サプライチェーン削減が原則:\n\n- **適格クレジット**: Removal クレジット (Engineered + 自然由来 Removal)\n- **非適格**: Avoidance / Reduction クレジット (REDD+ 含む) は BVCM 用途のみ\n- **割合制限**: BVCM 用途でも詳細条件あり (運用注視: SBT FLAG 最新ガイダンス)\n\n## 実務上の準備\n\n- **対象企業判定**: 自社事業の FLAG 比率を計算\n- **FLAG 排出量算定**: 一般の GHG プロトコルとは別の方法論\n- **削減ロードマップ**: 2050 年から逆算した中間目標 (2030 / 2035 / 2040)\n- **クレジット採用方針**: Removal 中心の長期 offtake 計画\n\n取締役会向けには、**FLAG ターゲットが通常の Scope 目標と並列で存在する** ことを最初に明示し、その上で達成見通しを示すのが標準。",
   "category": "reporting",
   "related_entity_slugs": [

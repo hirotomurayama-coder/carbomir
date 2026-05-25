@@ -1,7 +1,7 @@
 {
   "slug": "sbt-credit-treatment",
   "question": "SBT (Science Based Targets) で買ったクレジットはどう扱われますか?",
-  "short_answer": "SBT 中間目標 (Scope1+2+3 削減) では **クレジットを目標達成カウントに含めない**。一方、Net-Zero (2050) では残余排出の **Carbon Removal クレジット** が必須で、森林系・Engineered Removal とも対象。",
+  "short_answer": "SBT 中間目標 (Scope1+2+3 削減) では クレジットを目標達成カウントに含めない。一方、Net-Zero (2050) では残余排出の Carbon Removal クレジット が必須で、森林系・Engineered Removal とも対象。",
   "category": "reporting",
   "last_reviewed_at": "2026-05-25",
   "next_review_at": "2026-09-22",

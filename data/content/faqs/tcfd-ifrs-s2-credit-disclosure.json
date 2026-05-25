@@ -1,7 +1,7 @@
 {
   "slug": "tcfd-ifrs-s2-credit-disclosure",
   "question": "TCFD / IFRS S2 開示でクレジット情報をどう書けばいいですか?",
-  "short_answer": "**「総排出量 + 削減量 + 残余排出量 + クレジット相殺量」を明示する 4 段構造** + **クレジットの品質根拠** (メソドロジー名・vintage・CCP 適格性等) を脚注で示すのが現代的な開示の標準。",
+  "short_answer": "「総排出量 + 削減量 + 残余排出量 + クレジット相殺量」を明示する 4 段構造 + クレジットの品質根拠 (メソドロジー名・vintage・CCP 適格性等) を脚注で示すのが現代的な開示の標準。",
   "detailed_md": "## 開示で求められる情報\n\n### 必須項目 (IFRS S2 / SBT FLAG 推奨)\n\n1. **総 GHG 排出量** (Scope 1/2/3 別): 全社の絶対量\n2. **削減量** (Scope 1/2/3 別の自社削減実績): クレジット相殺前の数値\n3. **残余排出量**: 1 - 2 = クレジット相殺対象量\n4. **クレジット相殺量 + 内訳**: メソドロジー別の数量\n\n### 推奨追加項目\n\n- **クレジット品質根拠**: メソドロジー名・vintage・所在地・CCP 適格性\n- **調達経路**: 商社経由 / 直接調達 / 取引市場\n- **Beyond Value Chain Mitigation (BVCM) 区分**: SBT FLAG ではこの区別が重要\n\n## 開示のコツ\n\n- **「Net Zero 達成」の主張で総排出量と相殺量を混同しない**: グリーンウォッシュ批判の温床\n- **クレジットの限界を明示**: 「クレジットは自社削減の代替ではなく補完」というスタンスを明確に\n- **VCMI Claim Code への準拠**: Bronze / Silver / Gold / Platinum レベルがある、現状は Bronze が標準的\n\n## 取締役会・株主向け説明のテンプレ\n\n```\n[2026 年度 GHG 排出量]\n- 総排出量 (Scope1+2+3): 100 万 t-CO2e\n- 自社削減: -30 万 t-CO2e (前年比 -10%)\n- 残余排出: 70 万 t-CO2e\n- クレジット相殺: -20 万 t-CO2e\n  内訳:\n  - JCM: 8 万 t-CO2e (Article 6.2 整合済)\n  - Verra VM0048: 7 万 t-CO2e (CCP 適格)\n  - DAC (Climeworks): 5 万 t-CO2e (Removal)\n- 実質排出: 50 万 t-CO2e\n```\n\nこの構造で開示することで、ESG 評価機関・投資家からの信頼性が向上する。",
   "category": "reporting",
   "related_entity_slugs": [

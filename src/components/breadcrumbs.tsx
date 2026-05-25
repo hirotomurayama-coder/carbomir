@@ -5,8 +5,35 @@ import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 const SEGMENT_LABELS: Record<string, string> = {
+  // 比べる
   matrices: "比較行列",
+  // 調べる
   entities: "概念体系",
+  players: "プレイヤー",
+  policies: "政策・規制",
+  calendar: "規制カレンダー",
+  // 追う
+  timeline: "時系列",
+  // 学ぶ
+  "case-studies": "ケーススタディ",
+  faq: "FAQ",
+  // 世界マップ
+  atlas: "世界マップ",
+  instruments: "価格制度",
+  mechanisms: "クレジット機構",
+  cooperative: "二国間協定",
+  "offsets-db": "OffsetsDB",
+  projects: "プロジェクト",
+  // ツール
+  graph: "関係グラフ",
+  editorial: "編集ステータス",
+  // Admin / 内部
+  admin: "Admin",
+  drafts: "AI ドラフト",
+  edit: "編集",
+  faqs: "FAQ",
+  // その他
+  about: "About",
 };
 
 export function Breadcrumbs() {

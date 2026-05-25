@@ -1,7 +1,7 @@
 {
   "slug": "long-term-offtake-vs-spot",
   "question": "クレジット調達で長期 offtake 契約とスポット購入はどう使い分けるべきですか?",
-  "short_answer": "**Engineered Removal は長期 offtake が中心**、自然由来 (REDD+ 等) はスポット + 短期で柔軟運用が業界標準。需要が大きい場合は両者を組み合わせるポートフォリオ設計が有効。",
+  "short_answer": "Engineered Removal は長期 offtake が中心、自然由来 (REDD+ 等) はスポット + 短期で柔軟運用が業界標準。需要が大きい場合は両者を組み合わせるポートフォリオ設計が有効。",
   "detailed_md": "## それぞれの位置付け\n\n### 長期 offtake (5-15 年契約)\n\n- **典型用途**: DAC / BECCS / Biochar 等の Engineered Removal\n- **メリット**: \n  - 安定供給 + 価格固定で予算管理しやすい\n  - 事業者の商業化資金調達を支える (project financing が可能になる)\n  - 「Microsoft / Stripe Frontier と同じ事業者」という品質シグナル\n- **デメリット**: \n  - 早期コミットで価格低下リスクを抱える (2030 年に DAC は 200-400 USD/t-CO2 へ低下予想)\n  - 事業者倒産リスク (CDR スタートアップは多数破綻例あり)\n\n### スポット購入 (短期取引)\n\n- **典型用途**: REDD+ / 再エネ / 省エネ / J-クレジット\n- **メリット**:\n  - 価格・品質を都度判断、市場動向に応じて柔軟調達\n  - 在庫流動性が高い (Verra VCS 等の大規模市場)\n- **デメリット**:\n  - 需要逼迫時に調達できない可能性 (GX-ETS 第2フェーズで J-クレジットが該当の見込み)\n  - 価格変動リスク\n\n## 推奨設計\n\n大手企業の標準的設計は以下のポートフォリオ:\n\n- **長期 offtake (30-50%)**: Engineered Removal 中心、5-10 年スパン\n- **中期契約 (20-30%)**: ART TREES 等 Jurisdictional REDD+\n- **スポット (20-40%)**: 自然由来 + J-クレジット + 緊急調達\n\nこの比率は事業特性 + 目標年次 + リスク許容度で変動。**取締役会向け説明では、各カテゴリの位置付けと比率の根拠を明示** することが重要。",
   "category": "procurement",
   "related_entity_slugs": [

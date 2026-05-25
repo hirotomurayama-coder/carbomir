@@ -1,7 +1,7 @@
 {
   "slug": "scope3-offset-eligible-credits",
   "question": "Scope3 排出量の相殺に使えるクレジットの種類は?",
-  "short_answer": "**SBT FLAG / Net-Zero ターゲットでは Beyond Value Chain Mitigation (BVCM)** の枠組みで Verra / Gold Standard / Plan Vivo / J-クレジット / JCM 等を活用可能だが、Scope3 排出 \"そのもの\" の相殺は GHG プロトコル上推奨されない。",
+  "short_answer": "SBT FLAG / Net-Zero ターゲットでは Beyond Value Chain Mitigation (BVCM) の枠組みで Verra / Gold Standard / Plan Vivo / J-クレジット / JCM 等を活用可能だが、Scope3 排出 \"そのもの\" の相殺は GHG プロトコル上推奨されない。",
   "category": "reporting",
   "last_reviewed_at": "2026-05-25",
   "next_review_at": "2026-09-22",

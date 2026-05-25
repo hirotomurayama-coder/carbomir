@@ -1,7 +1,7 @@
 {
   "slug": "credit-quality-checklist",
   "question": "クレジット品質を確認するチェックリストは?",
-  "short_answer": "**5 つの軸** で評価: (1) メソドロジー名・vintage、(2) プロジェクト所在地、(3) CCP 適格性、(4) 第三者検証機関、(5) Article 6 整合性 (該当する場合)。「Verra だから安心」式の判断は実務上成立しない。",
+  "short_answer": "5 つの軸 で評価: (1) メソドロジー名・vintage、(2) プロジェクト所在地、(3) CCP 適格性、(4) 第三者検証機関、(5) Article 6 整合性 (該当する場合)。「Verra だから安心」式の判断は実務上成立しない。",
   "detailed_md": "## 5 軸チェックリスト\n\n### 1. メソドロジー名 + vintage\n- **何を確認**: VM0007 (旧 REDD+) なのか VM0048 (統合新版) なのか等。発行年 (vintage) も明確化\n- **なぜ重要**: 同じ「Verra クレジット」でもメソドロジー別に品質評価が大きく異なる。古い vintage は ICVCM CCP 不適格になる可能性\n\n### 2. プロジェクト所在地 + 種類\n- **何を確認**: 国・地域・プロジェクト固有名 (例: Cordillera Azul 国立公園 REDD+)\n- **なぜ重要**: 同じメソドロジーでも、所在地によって永続性リスク (山火事・違法伐採) が大きく異なる\n\n### 3. ICVCM CCP 適格性\n- **何を確認**: CCP-eligible ラベルがあるか、判定保留中か、不適格判定か\n- **なぜ重要**: 2023 年以降、業界の事実上の品質基準\n\n### 4. 第三者検証機関 (Verification Body)\n- **何を確認**: TÜV SÜD / SCS Global Services / Bureau Veritas 等の検証機関名\n- **なぜ重要**: 検証機関の評判が、クレジット品質の間接シグナル\n\n### 5. Article 6 整合性 (Corresponding Adjustment)\n- **何を確認**: ホスト国 Authorization + NDC 控除手続が完了しているか\n- **なぜ重要**: 国際 NDC 計上 / 二重計上回避の制度的根拠\n\n## 取締役会向け説明のヒント\n\nクレジット採用を取締役会に説明する際は、**「上記 5 軸の評価結果」を表形式で添付** することで、説明可能性が大幅に向上する。「Verra だから」「Gold Standard だから」式の単純化された議論はもはや業界標準ではない。",
   "category": "quality",
   "related_entity_slugs": [
