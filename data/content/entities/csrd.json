@@ -1,0 +1,41 @@
+{
+  "slug": "csrd",
+  "type": "regulation",
+  "name_ja": "EU 企業持続可能性報告指令",
+  "name_en": "Corporate Sustainability Reporting Directive",
+  "abbreviation": "CSRD",
+  "summary": "EU の包括的サステナビリティ開示指令。2024 年度から段階適用。EU 域内企業 + EU 売上のある非 EU 企業を対象。Double Materiality と移行計画開示が特徴。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "規制対応",
+    "EU",
+    "気候関連開示"
+  ],
+  "jurisdiction": "EU",
+  "established_year": 2022,
+  "operator": "European Commission / EFRAG (ESRS 策定)",
+  "geographic_scope": "EU + EU 売上のある非 EU 企業",
+  "website_url": "https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en",
+  "policy_status": "active",
+  "next_milestone": "2024 年度 (大企業) → 2025 年度 (上場 SME) → 2028 年度 (非 EU 企業) で段階適用",
+  "related": [],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "CSRD (企業持続可能性報告指令) は EU の **包括的サステナビリティ開示指令**。2022 年に NFRD (Non-Financial Reporting Directive) を置き換える形で成立。\n\n**特徴**:\n\n- **対象範囲**: EU 大企業 + EU 上場 SME + EU 売上 1.5 億 EUR 超 (2 年連続) の非 EU 企業 (グループ単位)\n- **Double Materiality**: \"企業 → 環境\" と \"環境 → 企業\" の双方向影響を開示\n- **ESRS (European Sustainability Reporting Standards)** を準拠基準として参照\n- **第三者保証**: 段階的に限定保証 → 合理的保証 (audit 水準) へ\n\n適用スケジュール:\n\n- 2024 年度 (報告は 2025 年): 既存 NFRD 対象大企業\n- 2025 年度: 全 EU 大企業 (約 50,000 社)\n- 2026 年度: 上場 SME\n- 2028 年度: 非 EU 企業 (グループ売上 1.5 億 EUR 超)"
+    },
+    {
+      "heading": "ESRS E1 (気候変動) の主要要求",
+      "body": "CSRD で参照される ESRS E1 (気候変動基準) は、IFRS S2 より厳格な要求を多数含む:\n\n- **移行計画の必須開示**: 1.5°C 整合性、業種特性、ロックイン排出考慮\n- **Scope 3 全カテゴリ定量必須** (重要性判定後)\n- **カーボンクレジット詳細開示**: 種別・量・出所・vintage・**補完性原則** (Mitigation Hierarchy) との整合性説明\n- **タクソノミー整合性** との接続 (EU Taxonomy)\n- **\"Climate-related Targets\" の科学的整合性**: SBT 認定有無の開示\n\n特に **補完性原則** (削減・除去できない残余排出のみクレジット併用) を明示的に要求している点が IFRS S2 より厳格。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "CSRD は **「EU 売上 1.5 億 EUR 超」基準で日本企業にも実質適用**。トヨタ・ホンダ・ソニー・キヤノン等の EU 売上規模が大きい企業は **2028 年度から CSRD 開示義務** が発生する。\n\n日本企業にとっての最大の挑戦:\n\n1. **Double Materiality**: 環境→企業の影響だけでなく、企業→環境の影響を Material 判定する必要\n2. **第三者保証**: 監査法人による検証は手続きコスト大\n3. **移行計画の科学的整合性**: SBT 認定なしの企業は実質的に対応困難\n4. **クレジット使用の \"補完性原則\" 説明**: 削減努力後の残余分のみという思想に整合させる必要\n\nIFRS S2 / SSBJ より厳しい開示水準のため、**EU 売上のある日本企業は実質的に CSRD 基準で準備するのが合理的**。"
+    }
+  ]
+}

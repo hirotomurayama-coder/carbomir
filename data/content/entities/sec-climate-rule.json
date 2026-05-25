@@ -1,0 +1,41 @@
+{
+  "slug": "sec-climate-rule",
+  "type": "regulation",
+  "name_ja": "SEC 気候関連開示規則",
+  "name_en": "SEC Climate-Related Disclosure Rules",
+  "abbreviation": "SEC Climate Rule",
+  "summary": "米国 SEC が 2024 年 3 月に最終化した気候関連開示規則。訴訟で施行停止中。日本企業も ADR 上場時は影響対象。トランプ政権下で骨抜き化リスク。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "規制対応",
+    "米国",
+    "気候関連開示"
+  ],
+  "jurisdiction": "米国",
+  "established_year": 2024,
+  "operator": "U.S. Securities and Exchange Commission (SEC)",
+  "geographic_scope": "米国上場企業 (ADR 含む)",
+  "website_url": "https://www.sec.gov/news/press-release/2024-31",
+  "policy_status": "stayed",
+  "next_milestone": "(運用注視) 訴訟判決 (Eighth Circuit) 2025-2026 年、政権交代後の方針再検討",
+  "related": [],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要と訴訟状況",
+      "body": "SEC は 2024 年 3 月、**気候関連開示の最終ルール** を公表。約 4 年の議論を経て成立したが、**州司法長官グループ + 業界団体の訴訟により施行停止 (stay)** 中。\n\n主要内容:\n\n- **Scope 1+2 排出量の開示**: 一定規模以上の登録企業に重要性ベースで\n- **Scope 3 開示**: 削除 (草案では一部義務化だったが、最終案で削除)\n- **物理リスク・移行リスク**の開示\n- **気候関連目標 + クレジット使用** の開示\n- **第三者保証**: 段階的導入\n\n(運用注視) 訴訟は第 8 巡回区控訴裁判所で審理中。判決次第で:\n\n- 全面有効化 (SEC 完全勝訴)\n- 部分的修正 (一部条項削除)\n- 全面無効化 (連邦行政手続法違反等で)"
+    },
+    {
+      "heading": "草案からの後退",
+      "body": "2022 年草案では **Scope 3 開示義務** + **\"financial statements footnote\"** での詳細開示が要求されていたが、最終ルールでは大幅後退:\n\n- Scope 3 削除\n- Footnote 開示の限定化\n- 適用閾値の引き上げ\n\nこれは産業界・州政府の反発を反映した妥協で、結果として **IFRS S2 / CSRD より緩い水準** に着地。それでも訴訟になっている点が、米国の気候規制の特殊性。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "現状 (2026-05) では **SEC ルールは実装不確実**。日本企業の ADR 上場企業 (ソニー・トヨタ・ホンダ等) は対応準備を進めつつ、**最終形が CSRD/IFRS S2 より緩いことを前提に二重対応コストを最小化** する戦略が合理的。\n\n注目点:\n\n- トランプ政権下では **規制後退傾向**\n- ただし州レベル (カリフォルニア州 SB 253 / 261) では **より厳しい開示義務** が並行運用中\n- 結果として米国は **連邦緩 + 州厳 + 国際 (IFRS S2) 強** の三重構造に\n\n日本企業は **どの基準が \"最大公約数\" になるか** を見極める必要があるが、現実的には **IFRS S2 / SSBJ 基準** に統一すれば SEC ルールも CSRD も大方カバーできる方向に収斂する見込み。"
+    }
+  ]
+}

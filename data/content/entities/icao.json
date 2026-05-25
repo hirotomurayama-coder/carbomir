@@ -1,0 +1,39 @@
+{
+  "slug": "icao",
+  "type": "player",
+  "name_ja": "国際民間航空機関",
+  "name_en": "International Civil Aviation Organization",
+  "abbreviation": "ICAO",
+  "summary": "国連の専門機関の 1 つ。国際民間航空の運用基準を策定。気候変動対応として CORSIA を運営。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "国際機関",
+    "航空",
+    "規制者"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 1944,
+  "operator": "国連 (本部モントリオール)",
+  "geographic_scope": "全世界 (193 加盟国)",
+  "website_url": "https://www.icao.int/",
+  "related": [
+    {
+      "to_slug": "corsia",
+      "relation": "parent_of",
+      "note": "CORSIA を運営"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "ICAO (International Civil Aviation Organization) は **1944 年シカゴ条約に基づき設立** された国連の専門機関。本部モントリオール。**193 加盟国** で構成。\n\n主な役割:\n\n- 国際民間航空の **運用基準 (SARPs)** 策定\n- 航空安全・セキュリティの国際協調\n- 環境保護: **CORSIA 運営 + 長期目標 (LTAG)** 策定\n\n2022 年 ICAO 総会で **2050 年 Net-Zero CO2 目標 (LTAG)** を採択。技術 (SAF / 水素 / 電動) + 運航効率 + クレジットの組合せで達成を目指す。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "ICAO は **業種別の Net-Zero ガバナンス機関** の代表例。IMO (国際海事機関) の海運脱炭素規制と並んで、業種別アプローチの先行例。\n\n日本のステークホルダー:\n\n- **国土交通省航空局**: ICAO 関連国内法制の運用\n- **JAL/ANA + 全日空整備等**: 業界対応\n- **三菱重工 / SAF 関連企業**: 供給側\n\n他業種への波及可能性:\n\n- **鉄鋼**: World Steel Association が業界目標策定中\n- **海運**: IMO で 2050 年 Net-Zero 目標化\n- **セメント**: GCCA (Global Cement and Concrete Association) で 2050 ロードマップ"
+    }
+  ]
+}

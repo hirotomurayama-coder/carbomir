@@ -1,0 +1,37 @@
+{
+  "slug": "sbti",
+  "type": "player",
+  "name_ja": "科学に基づく目標イニシアチブ",
+  "name_en": "Science Based Targets initiative",
+  "abbreviation": "SBTi",
+  "summary": "CDP / UN Global Compact / WRI / WWF が共同設立した、企業の気候目標認定の事実上の国際標準。Net-Zero Standard を運営。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "国際機関",
+    "認証",
+    "Net-Zero"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2015,
+  "operator": "CDP / UN Global Compact / WRI / WWF 共同",
+  "geographic_scope": "全世界",
+  "website_url": "https://sciencebasedtargets.org/",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "SBTi (Science Based Targets initiative) は **CDP, UN Global Compact, World Resources Institute (WRI), WWF** が 2015 年に共同設立した、企業の気候目標を **科学的整合性 (1.5°C 経路整合)** で認定するイニシアチブ。\n\n認定種別:\n\n- **Near-term Target**: 5-15 年スパン (2030 年が標準)\n- **Net-Zero Target**: 2050 年または早期 Net-Zero (SBT Net-Zero Standard 準拠)\n- **FLAG Target**: 土地利用 (Forest, Land, Agriculture) セクター向け特別目標\n\n2024 年時点で **5,000 社以上が認定済**、日本企業も 400 社以上。"
+    },
+    {
+      "heading": "Net-Zero Standard の要求",
+      "body": "SBTi Net-Zero Standard (2021 年公表、2024 年改訂議論中) は **\"90% 削減 + 10% Removal 補完\"** が基本構造:\n\n- **Long-term Target**: 2050 年までに **90% 以上の絶対量削減** (基準年比)\n- **Residual Emissions**: 残余 10% は **Permanent Removal (永続的除去)** で中和\n- **Avoidance クレジットは中和に使用不可** (NBS Avoidance は対象外)\n- **Permanence Threshold**: 数十年-数百年スパンの除去のみ承認\n\n2024 年議論中の改訂で **Scope 3 のクレジット相殺許容 (BVCM)** が議題になったが、強い反対で **\"認定目標達成にはクレジット不可\"** 原則は維持される方向。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "SBTi は **企業の気候目標の事実上の国際標準**。日本企業の取締役会説明・株主対話・CDP 評価・MSCI/Sustainalytics 等の ESG 評価で **SBTi 認定有無は決定的影響**。\n\n論点:\n\n1. **クレジット使用制限**: SBT 認定目標達成の文脈ではクレジット相殺不可。クレジットは \"BVCM (Beyond Value Chain Mitigation)\" として認定目標外で活用 \n2. **FLAG Target**: 土地利用業種 (食品/林業) は別カテゴリ、Forest Reference Levels との整合性が要求\n3. **Permanence 階層化議論**: 2024-2025 年に NBS Removal の Permanence 評価方法を再検討中 (運用注視: 結論次第で森林系クレジットの SBTi 内位置付けが変動)\n4. **削減経路の業種特性反映**: 航空 / 鉄鋼 / セメント等の \"hard-to-abate\" セクター固有の経路 (SDA, Sectoral Decarbonization Approach) が拡充中"
+    }
+  ]
+}

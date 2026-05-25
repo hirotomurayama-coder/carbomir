@@ -1,0 +1,41 @@
+{
+  "slug": "tcfd",
+  "type": "regulation",
+  "name_ja": "気候関連財務情報開示タスクフォース",
+  "name_en": "Task Force on Climate-Related Financial Disclosures",
+  "abbreviation": "TCFD",
+  "summary": "FSB (金融安定理事会) が 2015 年に設立した気候関連開示の国際的フレームワーク。ガバナンス・戦略・リスク管理・指標目標の 4 軸構成。2023 年に IFRS S2 へ機能移管完了。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "規制対応",
+    "国際",
+    "気候関連開示"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2015,
+  "operator": "Financial Stability Board (FSB) / 2023 年 IFRS Foundation へ移管",
+  "geographic_scope": "国際 (任意ベース、各国規制の \"基準\" として参照)",
+  "website_url": "https://www.fsb-tcfd.org/",
+  "policy_status": "transitioning",
+  "next_milestone": "2024-2025: IFRS S2 / SSBJ への完全移行 (フレームは継続参照される)",
+  "related": [],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "TCFD (気候関連財務情報開示タスクフォース) は 2015 年に FSB (金融安定理事会) が設立した、気候関連の財務的影響開示の国際的フレームワーク。**ガバナンス・戦略・リスク管理・指標と目標** の 4 つの推奨開示項目で構成。\n\n2017 年に最終勧告を公表し、2023 年に役割を ISSB (IFRS S2) に移管して活動を終了。フレーム自体は **IFRS S2 / SSBJ / CSRD / SEC ルール等の事実上の基盤** として今も参照される。"
+    },
+    {
+      "heading": "日本での運用",
+      "body": "日本では 2022 年 4 月のコーポレートガバナンス・コード改訂で **プライム市場上場企業に TCFD 準拠の開示を実質義務化**。約 1,400 社が対応済。\n\nただし「TCFD 提言は推奨」レベルで、具体的開示内容に強制力がなかったため、企業間の開示品質に大きな差。これが **IFRS S2 / SSBJ への移行で精緻化される** 流れ。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "TCFD は **「移行期の事実上の基準」** として位置付けるのが正確。日本企業の現状開示は TCFD 準拠だが、2027-2030 年に SSBJ 適用で **再標準化が必要**。クレジット使用については TCFD では明示要求なしだったが、IFRS S2 で **使用クレジットの種別・量・出所** の開示が必須化されるため、現時点から記録・体系化を始めるべき。"
+    }
+  ]
+}

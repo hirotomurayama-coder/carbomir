@@ -1,0 +1,59 @@
+{
+  "slug": "salesforce-net-zero-portfolio",
+  "title": "Salesforce の Net-Zero クラウド戦略と Removal シフト",
+  "company": "Salesforce",
+  "year": 2024,
+  "region": "グローバル (米国本社)",
+  "category": "procurement",
+  "credit_type": "Nature-Based Solutions (NBS) + Engineered Removal",
+  "scale_note": "Frontier 参画 + 自社調達で年間数十万トン規模",
+  "summary": "Salesforce は 2030 年 Net-Zero 目標下で NBS から Engineered Removal への重心移動を進める。Frontier (Stripe 主導 CDR 共同基金) への大口出資と、独自の長期 offtake を両輪で展開する代表的需要家。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "Engineered Removal",
+    "米国"
+  ],
+  "related_entity_slugs": [
+    "salesforce",
+    "frontier",
+    "dac",
+    "biochar",
+    "verra-vcs",
+    "puro-earth"
+  ],
+  "related_faq_slugs": [
+    "removal-vs-reduction-accounting",
+    "credit-quality-checklist"
+  ],
+  "source_urls": [
+    {
+      "label": "Salesforce Sustainability",
+      "url": "https://www.salesforce.com/sustainability/"
+    },
+    {
+      "label": "Salesforce Climate Action Plan",
+      "url": "https://www.salesforce.com/sustainability/climate-action-plan/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "取り組みの概要",
+      "body": "Salesforce は 2021 年に **Net-Zero 達成 + 100% 再エネ運用** を発表 (Scope 1-3 含む)。2024 年以降は **「Avoidance (回避型) から Removal (除去型) への移行」** を明確に打ち出し、ポートフォリオの段階的入れ替えを進める。\n\n中核戦略:\n\n- **Frontier 経由の Engineered Removal 調達** (Stripe 主導の共同基金、9 年間 9.25 億 USD)\n- **NBS は Quality 重視で継続** (Verra VCS + ART TREES)\n- **トレーサビリティ全面公開**: 全クレジット明細を年次サステナビリティ報告書で開示"
+    },
+    {
+      "heading": "Frontier 参画の戦略的意味",
+      "body": "Salesforce は **Frontier の創設メンバー** (Stripe, Alphabet, Shopify, Meta, McKinsey と並ぶ)。Frontier は単独企業では支えきれない初期段階 CDR 事業者にまとめて長期需要を提供する **「先進市場コミットメント (AMC)」モデル** の実装。\n\nSalesforce にとっての戦略的便益:\n\n- 自社で個別 due diligence する負荷を Frontier に集約\n- 1 社では取れないリスクを共同負担\n- **CDR 市場の \"価格発見\"** に貢献するブランド効果\n\nFrontier 経由で支援される技術: DAC, Mineralization, Biomass Carbon Removal and Storage (BiCRS), Ocean-Based Removal 等の早期段階技術が中心。"
+    },
+    {
+      "heading": "NBS ポートフォリオの再選別",
+      "body": "Salesforce は 2023 年 ICVCM CCP 公表後、NBS ポートフォリオを再点検。\n\n- 既存 REDD+ クレジットは **Quality Tier ごとに評価**\n- ART TREES (Jurisdictional REDD+) 比率を引き上げ\n- Verra VCS 単体プロジェクトは段階的に縮小傾向\n- ARR (植林・再植林) と IFM (森林管理改善) の追加比率増\n\nこの動きは Apple Restore Fund や Microsoft の自然由来戦略と整合的で、**「NBS 全面撤退ではなく Quality REDD+ への絞り込み」** が大手テック共通の方針となっている。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Salesforce の事例から日本企業が学べる点は **「自社調達 + 共同基金参加のハイブリッド」モデル**。Frontier 参画は日本企業にとっても理論上可能だが、英語契約・USD 建て・長期コミットの 3 重ハードルがある。代替として、**国内版 \"CDR 共同需要創出\" を商社や業界団体主導で組成する** 動きが今後出てくる可能性がある (要確認: 具体案件は未確認)。\n\nまた Salesforce の明細全公開は **TCFD / IFRS S2 開示の \"上限値\"** を示すベンチマークで、日本企業もここまでの透明性を求められる時代に向かっていると見るべき。"
+    }
+  ]
+}

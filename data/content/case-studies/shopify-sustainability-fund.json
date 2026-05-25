@@ -1,0 +1,56 @@
+{
+  "slug": "shopify-sustainability-fund",
+  "title": "Shopify Sustainability Fund — CDR 早期需要の \"火付け役\"",
+  "company": "Shopify",
+  "year": 2024,
+  "region": "カナダ (グローバル)",
+  "category": "procurement",
+  "credit_type": "Engineered Removal (DAC / Mineralization / Biochar / ERW)",
+  "scale_note": "Sustainability Fund 累計 5,500 万 USD 超の早期 CDR 投資",
+  "summary": "Shopify は 2020 年に Sustainability Fund を設立し、CDR 事業者への先払い型契約で市場形成を主導。Stripe と並ぶ \"CDR 早期需要の作り手\" として、Frontier 共同設立にも参画。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "Engineered Removal",
+    "カナダ"
+  ],
+  "related_entity_slugs": [
+    "shopify",
+    "frontier",
+    "dac",
+    "biochar",
+    "erw",
+    "puro-earth",
+    "isometric"
+  ],
+  "related_faq_slugs": [
+    "removal-vs-reduction-accounting",
+    "credit-quality-checklist"
+  ],
+  "source_urls": [
+    {
+      "label": "Shopify Sustainability Fund",
+      "url": "https://www.shopify.com/climate/sustainability-fund"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "取り組みの概要",
+      "body": "Shopify は 2019 年に **年間 500 万 USD 以上** をクリーンテクノロジーと CDR に投じる Sustainability Fund を設立 (上限なし、削減量重視)。**Climeworks の最初期顧客の 1 社** として知られ、DAC・ERW・Mineralization・Biochar 等の幅広い early-stage 技術に小口で広く投資する戦略を取る。\n\n2022 年には Stripe と共に **Frontier 共同設立**。CDR 市場の AMC モデルを実証する役割を担った。"
+    },
+    {
+      "heading": "投資ポートフォリオの広さ",
+      "body": "Shopify の特徴は **「賭けを広く分散する VC 型ポートフォリオ」**。\n\n初期投資先 (公表分):\n\n- **Climeworks** (DAC, スイス)\n- **Carbon Engineering** (DAC, カナダ)\n- **Charm Industrial** (バイオオイル地中注入, 米国)\n- **Heirloom** (Mineralization-DAC, 米国)\n- **Running Tide** (Ocean CDR, 米国)\n- **Pachama / Sylvera** (MRV データプロバイダ)\n- **Lithos Carbon, Eion** (ERW)\n- **Mineral Carbonation International** (Mineralization)\n\n総じて **1 件あたり数十万-数百万 USD** の小口契約で、技術多様性を確保。"
+    },
+    {
+      "heading": "市場形成への寄与",
+      "body": "Shopify の Sustainability Fund は **CDR 事業者の \"first paying customer\"** として機能した点が重要。\n\n- 創業初期の CDR スタートアップは銀行・公的融資を受けにくく、**長期契約 (offtake)** の存在が事業継続を支える\n- Shopify は 100-1,000 トン規模の小口契約を **意図的に高単価で締結**、事業者の P&L 改善に寄与\n- これが Frontier (大手共同基金) を経て **AMC モデル** に進化\n\nこのアプローチは Stripe Climate と双子の関係にあり、両社の活動がなければ DAC や ERW の商業化は 5-10 年遅れていたとの業界評価がある (運用注視: 評価は業界関係者の主観を含む)。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Shopify の事例は **「CDR は寄付ではなく市場形成投資」** という思想の代表例。日本企業が同種の戦略を採る際の論点:\n\n- **会計処理**: クレジット先払い契約は \"前払金\" か \"先物資産\" かで会計判断が分かれる (IFRS / J-GAAP 双方で確立した処理基準がまだ未整備)\n- **株主説明**: 即時の排出削減効果が薄い CDR への投資を、株主・経営層にどう説明するか\n- **ポートフォリオ設計**: \"小口 × 多技術\" 型 (Shopify) vs \"大口 × 長期\" 型 (Microsoft) の選択\n\n日本では商社が CDR 仲介機能を発揮しつつあるが、需要家側が **直接 first paying customer** になる事例はまだ少ない。"
+    }
+  ]
+}

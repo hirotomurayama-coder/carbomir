@@ -1,0 +1,20 @@
+{
+  "slug": "article-6-integrity-check",
+  "question": "Article 6 整合性 (Corresponding Adjustment) を判定するポイントは?",
+  "short_answer": "**4 つのチェック**: (1) ホスト国政府の Authorization、(2) NDC からの控除手続完了、(3) Letter of Authorization の所持、(4) ITMO レジストリへの登録。これら全てが揃って初めて国際的に「Article 6 整合」と認められる。",
+  "detailed_md": "## Article 6 整合性とは\n\nパリ協定 Article 6 (国際クレジット取引枠組) の下で、**ホスト国 (削減プロジェクト実施国) の NDC からその削減量を控除する手続 = Corresponding Adjustment** を経たクレジットが「Article 6 整合」と認められる。これがないと、**ホスト国も購入国も両方が同じ削減量を NDC 計上する二重計上** が発生する。\n\n## 4 つのチェックポイント\n\n### 1. ホスト国政府の Authorization (権限委譲)\n\n- ホスト国政府が「このプロジェクトの削減量を国際クレジットとして転売することを承認する」と明示的に表明\n- 多くの民間クレジット (Verra / Gold Standard の一部) は Authorization なしで発行されている\n- **Authorization の有無 = Article 6 整合性の起点**\n\n### 2. NDC からの控除手続完了\n\n- ホスト国の国家 GHG インベントリで、当該削減量が **NDC 達成に計上されないように控除** されている\n- 国によって控除手続のスピード・コスト・透明性が大きく異なる (運用注視: 主要協定の進捗)\n- 一部の国では数年間処理待ちのケースも\n\n### 3. Letter of Authorization (LoA) の所持\n\n- クレジット買い手が、ホスト国政府発行の LoA を保持\n- これが Article 6 整合性の **法的証拠**\n- 取引契約に「LoA 取得を条件とする」と明記するのが業界標準\n\n### 4. ITMO レジストリへの登録\n\n- **ITMO (Internationally Transferred Mitigation Outcomes)** として、両国政府が管理するレジストリに登録\n- 重複計上の制度的防止メカニズム\n- 2024 年以降に運用が本格化\n\n## クレジット種別ごとの Article 6 整合性\n\n### 政府承認系 (基本的に整合)\n\n- **JCM**: Article 6.2 ベースで設計、整合性確保済み\n- **PACM (Article 6.4)**: Article 6.4 ベースで国連管理、整合性確保済み\n- **スイス + ガーナ等の二国間制度**: Article 6.2 ベース、整合性確保済み\n\n### 民間系 (整合性なしが基本)\n\n- **Verra VCS / Gold Standard 等**: Authorization なしで発行されることが多い\n- 一部のプロジェクトのみ Authorization を取得 (例: 一部の Removal プロジェクト)\n- **VCM クレジットは原則 Article 6 整合ではない** と理解すべき\n\n## 実務的な含意\n\n### 「Article 6 整合性が必要」なケース\n\n- **国家 NDC への計上目的**: 国 / 自治体 / 行政機関での目標達成\n- **政府承認下の遵守制度**: 一部の ETS / 排出量取引制度\n- **政府承認 + ESG 開示の両立**: 最高位の正統性\n\n### 「Article 6 整合性が必須ではない」ケース\n\n- **企業の任意取り組み**: SBT / CDP / TCFD 開示\n- **Scope3 オフセット**: BVCM 用途\n- **CSR / IR 訴求**: 社会貢献の文脈\n\n## 編集部の論点\n\n日本企業の場合、**JCM クレジットは Article 6.2 整合性が制度的に確保** されているため、「政府承認 + 国際整合」の最も 「硬い」 クレジットとして、取締役会説明可能性が高い。一方、**Verra / Gold Standard 等の民間クレジットは Article 6 整合性なし** が基本なので、これらを採用する場合は「**任意取り組み用途** として位置付ける」明確な区分が必要。\n\n2025 年以降に PACM クレジット流通が始まると、「**Article 6 整合 (政府承認) vs 任意 (民間)**」のラベル分けがクレジット市場の主要分岐点になる見込み。",
+  "category": "quality",
+  "related_entity_slugs": [
+    "paris-article-6-2",
+    "paris-article-6-4",
+    "jcm",
+    "verra-vcs"
+  ],
+  "tags": [
+    "ボランタリー市場",
+    "品質ガバナンス"
+  ],
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published"
+}

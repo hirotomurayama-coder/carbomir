@@ -1,0 +1,52 @@
+{
+  "slug": "ssbj",
+  "type": "regulation",
+  "name_ja": "サステナビリティ基準委員会",
+  "name_en": "Sustainability Standards Board of Japan",
+  "abbreviation": "SSBJ",
+  "summary": "日本のサステナビリティ開示基準策定機関。IFRS S1+S2 整合の国内版を策定。2027 年 3 月期から任意適用、2028-2030 年で段階義務化見込。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "規制対応",
+    "日本",
+    "気候関連開示"
+  ],
+  "jurisdiction": "日本",
+  "established_year": 2022,
+  "operator": "サステナビリティ基準委員会 (FASF 傘下)",
+  "geographic_scope": "日本",
+  "website_url": "https://www.ssb-j.jp/",
+  "policy_status": "active",
+  "next_milestone": "2027 年 3 月期: 任意適用開始 / 2028-2030 年: プライム上場企業へ段階義務化",
+  "related": [
+    {
+      "to_slug": "ifrs-s2",
+      "relation": "depends_on",
+      "note": "IFRS S1+S2 整合の国内版"
+    },
+    {
+      "to_slug": "tcfd",
+      "relation": "supersedes",
+      "note": "TCFD の事実上の後継"
+    }
+  ],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "SSBJ (サステナビリティ基準委員会) は 2022 年に **FASF (財務会計基準機構)** 傘下に設立された、日本のサステナビリティ開示基準策定機関。\n\n役割:\n\n- **IFRS S1+S2 の日本版策定**: SSBJ 基準 (案)\n- **日本固有要求の付加**: 国内法令との整合性、日本企業特性反映\n- **プライム上場企業を主対象**: 規模・業種で段階適用想定\n\n2024 年に公開草案、2025 年に最終化、2027 年 3 月期から任意適用の予定。"
+    },
+    {
+      "heading": "適用スケジュール (見通し)",
+      "body": "SSBJ 基準の適用スケジュールは金融庁 + 東証 + 経産省で議論中だが、現時点 (2026-05) での見通し:\n\n- **2027 年 3 月期**: 任意適用開始\n- **2028 年 3 月期**: プライム市場の時価総額 3 兆円以上に義務化 (案)\n- **2029 年 3 月期**: プライム市場 1 兆円以上に拡大\n- **2030 年 3 月期以降**: プライム市場全社、スタンダード市場一部に拡大\n\n(運用注視) スケジュールは Final RM 公表後に確定予定。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "SSBJ は **日本企業の規制キャッチアップ最重要事項**。現在の TCFD 準拠開示から **IFRS S2 整合の SSBJ 開示** への移行は、形式的な書式変更ではなく **データ収集・算定方法・保証体制の根本的見直し** を伴う。\n\n優先準備事項:\n\n1. **Scope 3 算定の体系化**: 業種別 SASB 指標との対応付け\n2. **クレジット使用の電子記録**: 種別・量・出所・vintage の標準化\n3. **シナリオ分析の精緻化**: 1.5°C / 2°C ストレステスト\n4. **第三者保証準備**: 監査法人との早期協議\n\nさらに **CSRD (EU 売上のある企業) との二重対応** を考慮する必要がある場合は、CSRD ベース (より厳しい方) で準備するのが合理的。"
+    }
+  ]
+}

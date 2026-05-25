@@ -1,0 +1,192 @@
+{
+  "slug": "nbs-quality-comparison",
+  "title": "Nature-Based Solutions (NBS) クレジット品質比較",
+  "description": "REDD+ / ARR / IFM / Blue Carbon / Cookstoves を、永続性・追加性・コミュニティ便益・MRV 成熟度・最近の論争で対比。NBS ポートフォリオ設計の前提整理。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "category": "methodology",
+  "tags": [
+    "NBS",
+    "ボランタリー市場",
+    "森林吸収",
+    "国際"
+  ],
+  "dimensions": [
+    {
+      "key": "permanence",
+      "label_ja": "永続性 (推定)"
+    },
+    {
+      "key": "additionality",
+      "label_ja": "追加性の立証難度",
+      "description": "ベースライン設定とリーケージ評価の難しさ"
+    },
+    {
+      "key": "co_benefits",
+      "label_ja": "コミュニティ便益"
+    },
+    {
+      "key": "mrv_maturity",
+      "label_ja": "MRV 成熟度"
+    },
+    {
+      "key": "price_range",
+      "label_ja": "価格レンジ (USD/t-CO2)"
+    },
+    {
+      "key": "recent_controversy",
+      "label_ja": "最近の論争"
+    },
+    {
+      "key": "carbomir_quality_view",
+      "label_ja": "Carbomir 編集部の品質観"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "redd-plus",
+      "name_ja": "REDD+ (森林減少回避)",
+      "name_en": "Reducing Emissions from Deforestation and Forest Degradation"
+    },
+    {
+      "slug": "arr",
+      "name_ja": "ARR (植林・再植林)",
+      "name_en": "Afforestation, Reforestation, Revegetation"
+    },
+    {
+      "slug": "ifm",
+      "name_ja": "IFM (森林管理改善)",
+      "name_en": "Improved Forest Management"
+    },
+    {
+      "slug": "blue-carbon",
+      "name_ja": "Blue Carbon (海洋・沿岸)",
+      "name_en": "Blue Carbon (Mangrove / Seagrass / Salt Marsh)"
+    },
+    {
+      "slug": "cookstoves",
+      "name_ja": "Cookstoves (改良型かまど)",
+      "name_en": "Efficient Cookstoves"
+    }
+  ],
+  "cells": {
+    "redd-plus": {
+      "permanence": {
+        "value": "50-100 年 (Buffer Pool 経由のリスク管理)"
+      },
+      "additionality": {
+        "value": "高難度 (ベースライン森林減少率の設定が論争の的)"
+      },
+      "co_benefits": {
+        "value": "高 (先住民・地域コミュニティ・生物多様性)"
+      },
+      "mrv_maturity": {
+        "value": "中〜高 (リモートセンシング進化、Jurisdictional 方式で改善)"
+      },
+      "price_range": {
+        "value": "3-15 USD/t (Quality Tier で大幅差、ART TREES は高値)"
+      },
+      "recent_controversy": {
+        "value": "2023 年 The Guardian + ICVCM CCP で Verra VCS REDD+ 大規模ダウングレード"
+      },
+      "carbomir_quality_view": {
+        "value": "ART TREES Jurisdictional / ICVCM CCP 承認案件のみ実用、Project-level REDD+ は買い手リスク大",
+        "note": "2023 年以降の業界再編を反映"
+      }
+    },
+    "arr": {
+      "permanence": {
+        "value": "30-100 年 (樹種・伐採周期次第)"
+      },
+      "additionality": {
+        "value": "中 (荒廃地 / 退耕地が前提条件、商業林との線引きが論点)"
+      },
+      "co_benefits": {
+        "value": "中〜高 (生物多様性、水資源、雇用)"
+      },
+      "mrv_maturity": {
+        "value": "中〜高 (樹冠カバー・バイオマス推定は確立)"
+      },
+      "price_range": {
+        "value": "10-40 USD/t (Verra VCS / Gold Standard)"
+      },
+      "recent_controversy": {
+        "value": "Monoculture (単一樹種) 批判、商業材生産との両立論争"
+      },
+      "carbomir_quality_view": {
+        "value": "REDD+ より追加性立証しやすく、企業のサプライチェーン整合性も取りやすい。今後の主流候補"
+      }
+    },
+    "ifm": {
+      "permanence": {
+        "value": "30-100 年 (経営計画次第)"
+      },
+      "additionality": {
+        "value": "高難度 (\"管理しなかった場合のベースライン\" 設定が困難)"
+      },
+      "co_benefits": {
+        "value": "中 (森林機能維持、生物多様性)"
+      },
+      "mrv_maturity": {
+        "value": "中 (バイオマス変化追跡、地上調査依存)"
+      },
+      "price_range": {
+        "value": "8-25 USD/t (ACR / Verra VCS)"
+      },
+      "recent_controversy": {
+        "value": "米国 IFM プロジェクトの \"hot air\" 批判 (ProPublica 2021)"
+      },
+      "carbomir_quality_view": {
+        "value": "ベースライン恣意性で批判を受けやすい。先進国の私有林案件は \"既に管理されていた\" との指摘あり"
+      }
+    },
+    "blue-carbon": {
+      "permanence": {
+        "value": "数百年 (堆積物中の有機炭素)"
+      },
+      "additionality": {
+        "value": "中 (マングローブ・湿地保全の必要性は明確)"
+      },
+      "co_benefits": {
+        "value": "極めて高 (沿岸防災、漁業、生物多様性)"
+      },
+      "mrv_maturity": {
+        "value": "中〜低 (堆積炭素フラックスの定量化が発展途上)"
+      },
+      "price_range": {
+        "value": "15-50 USD/t (希少性プレミアム)"
+      },
+      "recent_controversy": {
+        "value": "(運用注視) コミュニティ権利を巡る訴訟事例が増加"
+      },
+      "carbomir_quality_view": {
+        "value": "希少 + 高便益で価格premium、F&B / 水産業のストーリー整合性が高い"
+      }
+    },
+    "cookstoves": {
+      "permanence": {
+        "value": "(回避型のため不適用)"
+      },
+      "additionality": {
+        "value": "高難度 (\"既存かまど稼働率\" の推定に大きな幅)"
+      },
+      "co_benefits": {
+        "value": "高 (室内大気汚染削減、女性労働軽減、燃料費削減)"
+      },
+      "mrv_maturity": {
+        "value": "低 (使用率モニタリングが大きな課題)"
+      },
+      "price_range": {
+        "value": "2-8 USD/t (最低価格帯)"
+      },
+      "recent_controversy": {
+        "value": "2024 年 UC Berkeley 研究で \"発行量の 90% 過大評価\" 指摘"
+      },
+      "carbomir_quality_view": {
+        "value": "コスト最安だが品質リスク最大。買い手企業のレピュテーションリスクが現状最も高い",
+        "note": "2024 年以降の業界評価を反映"
+      }
+    }
+  }
+}

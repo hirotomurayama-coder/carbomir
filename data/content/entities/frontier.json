@@ -1,0 +1,40 @@
+{
+  "slug": "frontier",
+  "type": "player",
+  "name_ja": "Frontier Climate",
+  "name_en": "Frontier Climate",
+  "abbreviation": "Frontier",
+  "summary": "Stripe が 2022 年に共同設立した CDR (Carbon Dioxide Removal) 共同需要創出基金。9 年間 9.25 億 USD を Engineered Removal 早期事業者に投入。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "Engineered Removal",
+    "米国",
+    "共同基金"
+  ],
+  "jurisdiction": "米国",
+  "established_year": 2022,
+  "operator": "Stripe (運営) + メンバー企業 (出資)",
+  "geographic_scope": "全世界 (グローバル CDR 事業者対象)",
+  "website_url": "https://frontierclimate.com/",
+  "related": [],
+  "related_matrix_slugs": [
+    "cdr-buyer-coalition-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "Frontier Climate は **Stripe が 2022 年に共同設立** した、**\"Advance Market Commitment (AMC, 先進市場コミットメント)\"** モデルの CDR 共同需要創出基金。\n\n設立メンバー: **Stripe, Alphabet (Google), Shopify, Meta, McKinsey** + 後続加入の **Salesforce, JPMorgan, H&M Group, Workday** 等。\n\n仕組み:\n\n- メンバー企業が **9 年間で計 9.25 億 USD** をプールに拠出\n- Frontier (Stripe 子会社の Public Benefit LLC) が CDR 事業者と **prepurchase + offtake 契約**\n- メンバー企業は拠出比率に応じてクレジットを受領\n- 公的支援が不足する早期段階 CDR 事業者を **集合的に支援**"
+    },
+    {
+      "heading": "対象技術と契約形態",
+      "body": "Frontier の対象技術 (2024 年時点):\n\n- **DAC** (Direct Air Capture)\n- **Mineralization** (Heirloom, Carbfix 等)\n- **BiCRS** (Biomass Carbon Removal and Storage)\n- **Ocean CDR** (Vesta, Planetary, Captura 等)\n- **Enhanced Rock Weathering**\n\n契約形態:\n\n- **Prepurchase** (前払い): 小規模・早期段階、$1-10M レベル\n- **Offtake** (将来引取): 大規模・中期、$10-100M レベル\n\n累計で **30 件以上の契約**、対象トン数は **数十万-数百万 t-CO2 規模**。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Frontier は **CDR 市場形成の最重要プレイヤー**。Microsoft の単独調達と並ぶ \"二大需要源\" として、CDR スタートアップの資金調達 / 商業化を支える存在。\n\n日本企業にとっての意味:\n\n1. **参入難度**: 英語 / USD / 長期コミット 3 重ハードル。現状日本企業の参加は限定的\n2. **代替路線**: **NextGen CDR Facility** (三菱商事 + South Pole) が日本企業の参入しやすい類似の集約モデル\n3. **学習価値**: Frontier の公開契約データは CDR 市場価格・技術ロードマップを把握する最良の情報源\n4. **将来構想**: 日本版 \"CDR AMC\" を商社や業界団体主導で組成する可能性 (要確認: 具体動きはまだ限定的)"
+    }
+  ]
+}

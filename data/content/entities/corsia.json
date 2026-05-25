@@ -1,0 +1,46 @@
+{
+  "slug": "corsia",
+  "type": "regulation",
+  "name_ja": "国際航空オフセット制度",
+  "name_en": "Carbon Offsetting and Reduction Scheme for International Aviation",
+  "abbreviation": "CORSIA",
+  "summary": "ICAO (国際民間航空機関) が運営する国際線航空会社向けオフセット制度。2024-2026 が任意段階、2027 年から全面義務化予定。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "規制対応",
+    "航空",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2016,
+  "operator": "ICAO (国際民間航空機関)",
+  "geographic_scope": "国際線 (参加国間)",
+  "website_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx",
+  "credit_unit": "CORSIA-Eligible Emissions Units (CORSIA EEU)",
+  "policy_status": "active",
+  "next_milestone": "2027 年: 全 ICAO 加盟国 (例外国除く) で義務化フェーズ突入",
+  "related": [
+    {
+      "to_slug": "icao",
+      "relation": "depends_on",
+      "note": "ICAO が運営"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "CORSIA (Carbon Offsetting and Reduction Scheme for International Aviation) は **ICAO** が 2016 年に採択した、**国際線航空会社向けの世界初の業種別オフセット制度**。\n\nスキーム:\n\n- **基準排出量**: 各路線の 2019 年排出量を基準 (元は 2019-2020 平均だったが COVID 影響で 2019 単独に変更)\n- **オフセット義務**: 基準を超過した排出量分のクレジット購入義務\n- **段階適用**:\n  - **Pilot Phase** (2021-2023): 任意参加\n  - **First Phase** (2024-2026): 任意参加 (日本は参加)\n  - **Second Phase** (2027-2035): 全加盟国に義務 (一部除く)\n\n適格クレジットは **ICAO TAB (Technical Advisory Body)** が個別判定: Verra VCS 一部、Gold Standard 一部、ART TREES、CAR、ACR 等が承認済。"
+    },
+    {
+      "heading": "Article 6 との関係",
+      "body": "CORSIA の最大論点の 1 つが **Article 6 整合性 (Corresponding Adjustment)**。\n\n- ホスト国がパリ協定 Article 6.2 / 6.4 の \"二重計上回避\" 措置を取らないと、当該クレジットは CORSIA 適格にならない可能性\n- 2024 年以降の CORSIA First Phase からは **Corresponding Adjustment 必須** に\n- 結果として **適格クレジットの供給不足懸念** が業界で議論中 (運用注視: 需給状況は流動的)"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "CORSIA は **\"準・規制\"** として扱うべき。法的拘束力は ICAO 加盟国の国内法経由だが、**事実上の国際的義務**。日本では国土交通省 + 経産省で対応中。\n\n日本企業 (JAL/ANA) の対応:\n\n- 2024 年から第 1 フェーズ自主参加中\n- 2027 年義務化を見据えた長期 offtake 契約の準備\n- SAF (持続可能航空燃料) + クレジットの併用ポートフォリオ設計\n\n注目すべき構造的論点:\n\n1. **適格クレジット供給不足リスク**: 価格上昇圧力\n2. **品質階層**: CORSIA 適格でも ICVCM CCP 適格とは限らない (二重基準の整理が今後の論点)\n3. **国内便への波及**: J-ETS との接続で国内便もカバー範囲拡大の議論"
+    }
+  ]
+}

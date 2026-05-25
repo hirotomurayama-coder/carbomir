@@ -1,0 +1,193 @@
+{
+  "slug": "climate-disclosure-comparison",
+  "title": "気候関連開示制度の国際比較 (TCFD / IFRS S2 / CSRD / SEC / SSBJ)",
+  "description": "Persona A の規制キャッチアップシナリオ最重要マトリクス。日本企業の TCFD → IFRS S2 / SSBJ 移行戦略のため、5 制度の対象範囲・カーボンクレジット扱い・適用時期を一覧整理。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "category": "regulation",
+  "tags": [
+    "規制対応",
+    "TCFD",
+    "IFRS S2",
+    "CSRD",
+    "日本",
+    "EU",
+    "米国",
+    "国際"
+  ],
+  "dimensions": [
+    {
+      "key": "issuer",
+      "label_ja": "策定主体"
+    },
+    {
+      "key": "jurisdiction",
+      "label_ja": "対象法域"
+    },
+    {
+      "key": "applicability",
+      "label_ja": "適用対象企業"
+    },
+    {
+      "key": "scope_3_required",
+      "label_ja": "Scope 3 開示要求"
+    },
+    {
+      "key": "credit_treatment",
+      "label_ja": "カーボンクレジット扱い"
+    },
+    {
+      "key": "timeline",
+      "label_ja": "日本企業への適用時期"
+    },
+    {
+      "key": "carbomir_view",
+      "label_ja": "Carbomir 編集部の見解"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "tcfd",
+      "name_ja": "TCFD (気候関連財務情報開示タスクフォース)",
+      "name_en": "Task Force on Climate-Related Financial Disclosures"
+    },
+    {
+      "slug": "ifrs-s2",
+      "name_ja": "IFRS S2 (気候関連開示)",
+      "name_en": "IFRS S2 Climate-related Disclosures"
+    },
+    {
+      "slug": "csrd",
+      "name_ja": "CSRD / ESRS (EU 持続可能性報告指令)",
+      "name_en": "Corporate Sustainability Reporting Directive"
+    },
+    {
+      "slug": "sec-climate-rule",
+      "name_ja": "SEC 気候関連開示規則 (米国)",
+      "name_en": "SEC Climate-Related Disclosure Rules"
+    },
+    {
+      "slug": "ssbj",
+      "name_ja": "SSBJ (サステナビリティ基準委員会)",
+      "name_en": "Sustainability Standards Board of Japan"
+    }
+  ],
+  "cells": {
+    "tcfd": {
+      "issuer": {
+        "value": "FSB (金融安定理事会) — 2023 年に IFRS S2 へ機能移管完了"
+      },
+      "jurisdiction": {
+        "value": "国際 (任意ベース、各国規制の \"基準\" として参照)"
+      },
+      "applicability": {
+        "value": "原則任意。日本ではプライム上場企業に \"準拠ベース\" で実質義務化済"
+      },
+      "scope_3_required": {
+        "value": "ガバナンス / 戦略レベルで言及、定量開示は \"原則\" レベル"
+      },
+      "credit_treatment": {
+        "value": "明示的記載なし、戦略項目で言及可能"
+      },
+      "timeline": {
+        "value": "プライム企業は 2022 年度から実質運用、2025 年以降 IFRS S2 / SSBJ に置換"
+      },
+      "carbomir_view": {
+        "value": "歴史的役割を完了し、IFRS S2 / SSBJ に統合。フレーム自体は今も思考の基礎"
+      }
+    },
+    "ifrs-s2": {
+      "issuer": {
+        "value": "ISSB (国際サステナビリティ基準審議会)"
+      },
+      "jurisdiction": {
+        "value": "国際 (各国採用が前提、日本は SSBJ が国内版を策定)"
+      },
+      "applicability": {
+        "value": "ISSB 採用国の上場企業 (英国 / カナダ / 豪州 / シンガポール / ブラジル等が採用済 or 予定)"
+      },
+      "scope_3_required": {
+        "value": "定量開示必須 (重要性判定後)、業種別 SASB 連携"
+      },
+      "credit_treatment": {
+        "value": "オフセットの開示要求 (使用クレジット種別 / 量 / 経年情報)"
+      },
+      "timeline": {
+        "value": "日本企業の任意適用は 2024 年から、SSBJ 国内版経由で 2027 年以降義務化見込"
+      },
+      "carbomir_view": {
+        "value": "規制キャッチアップの本丸。日本企業はクレジット使用の Quality Disclosure に向けた準備が必須"
+      }
+    },
+    "csrd": {
+      "issuer": {
+        "value": "EU 委員会 (ESRS は EFRAG が策定)"
+      },
+      "jurisdiction": {
+        "value": "EU + EU 域内売上のある非 EU 企業"
+      },
+      "applicability": {
+        "value": "EU 大企業 + 上場中小企業、日本企業は EU 子会社 + EU 売上 1.5 億 EUR 超でグループ単位適用"
+      },
+      "scope_3_required": {
+        "value": "定量必須 + 移行計画必須 + Double Materiality"
+      },
+      "credit_treatment": {
+        "value": "ESRS E1 でクレジット詳細開示要求 (種別 / 量 / 質的評価 / 補完性原則)"
+      },
+      "timeline": {
+        "value": "2024 年度 (大企業) / 2025 年度 (上場 SME) / 2028 年度 (非 EU 企業) で段階適用"
+      },
+      "carbomir_view": {
+        "value": "最も厳格。Double Materiality と移行計画は日本企業にとって最大の挑戦。EU 売上がある日本企業は実質的に最先端の開示水準を要求される"
+      }
+    },
+    "sec-climate-rule": {
+      "issuer": {
+        "value": "米国 SEC (証券取引委員会)"
+      },
+      "jurisdiction": {
+        "value": "米国上場企業 (日本企業の ADR 含む)"
+      },
+      "applicability": {
+        "value": "全 SEC 登録企業 (規模により段階適用)"
+      },
+      "scope_3_required": {
+        "value": "重要性ベース (Material な場合のみ、CSRD より緩い)"
+      },
+      "credit_treatment": {
+        "value": "オフセット使用時の開示要求 (種別 / 出所 / 認証)"
+      },
+      "timeline": {
+        "value": "(運用注視) 訴訟で施行停止中、2025-2026 年判決次第"
+      },
+      "carbomir_view": {
+        "value": "現状 (2026-05) は法廷係争で実装不確実。トランプ政権下で骨抜き化リスクも"
+      }
+    },
+    "ssbj": {
+      "issuer": {
+        "value": "サステナビリティ基準委員会 (FASF 傘下)"
+      },
+      "jurisdiction": {
+        "value": "日本"
+      },
+      "applicability": {
+        "value": "プライム市場上場企業 (検討中、国際財務報告基準 = IFRS S1+S2 ベース)"
+      },
+      "scope_3_required": {
+        "value": "IFRS S2 整合 = 定量必須 (重要性判定後)"
+      },
+      "credit_treatment": {
+        "value": "IFRS S2 整合、追加の国内固有要求は限定的"
+      },
+      "timeline": {
+        "value": "2027 年 3 月期 (任意) → 2028-2030 年で段階義務化見込"
+      },
+      "carbomir_view": {
+        "value": "日本企業にとっての \"本命\" 規制。IFRS S2 整合のため、現在のクレジット運用記録の電子化・体系化が今すぐ必要"
+      }
+    }
+  }
+}

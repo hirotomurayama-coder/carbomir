@@ -1,0 +1,161 @@
+{
+  "slug": "cdr-buyer-coalition-comparison",
+  "title": "CDR 需要集約モデル比較 (Frontier / NextGen / Symbiosis / 個別調達)",
+  "description": "Engineered Removal の需要集約モデルを、出資構造・対象技術・契約形態・日本企業参入難度で対比。共同調達 vs 個別調達の戦略選択の前提整理。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "category": "market",
+  "tags": [
+    "Engineered Removal",
+    "需要家",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "dimensions": [
+    {
+      "key": "structure",
+      "label_ja": "出資・運営構造"
+    },
+    {
+      "key": "scale",
+      "label_ja": "規模 (公表ベース)"
+    },
+    {
+      "key": "target_tech",
+      "label_ja": "対象技術"
+    },
+    {
+      "key": "contract_form",
+      "label_ja": "契約形態"
+    },
+    {
+      "key": "members",
+      "label_ja": "主要メンバー"
+    },
+    {
+      "key": "japan_entry",
+      "label_ja": "日本企業参入難度"
+    },
+    {
+      "key": "carbomir_view",
+      "label_ja": "Carbomir 編集部の見解"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "frontier",
+      "name_ja": "Frontier",
+      "name_en": "Frontier Climate"
+    },
+    {
+      "slug": "nextgen-cdr",
+      "name_ja": "NextGen CDR Facility",
+      "name_en": "NextGen CDR Facility"
+    },
+    {
+      "slug": "symbiosis-coalition",
+      "name_ja": "Symbiosis Coalition",
+      "name_en": "Symbiosis Coalition"
+    },
+    {
+      "slug": "direct-procurement",
+      "name_ja": "個別企業調達",
+      "name_en": "Direct Bilateral Procurement"
+    }
+  ],
+  "cells": {
+    "frontier": {
+      "structure": {
+        "value": "Stripe 子会社 (Public Benefit LLC) が運営、メンバー企業が出資"
+      },
+      "scale": {
+        "value": "9 年間 9.25 億 USD (2022 開始)"
+      },
+      "target_tech": {
+        "value": "DAC / Mineralization / BiCRS / Ocean CDR の早期段階"
+      },
+      "contract_form": {
+        "value": "Prepurchase (前払い) + Offtake (将来引取)"
+      },
+      "members": {
+        "value": "Stripe, Alphabet, Shopify, Meta, McKinsey, Salesforce + 後続加入"
+      },
+      "japan_entry": {
+        "value": "理論上可能だが英語 / USD / 長期コミット 3 重ハードル"
+      },
+      "carbomir_view": {
+        "value": "CDR 市場形成の最重要プレイヤー、価格発見機能・初期事業者支援機能を独占的に提供"
+      }
+    },
+    "nextgen-cdr": {
+      "structure": {
+        "value": "South Pole + Mitsubishi Corporation の合弁が運営"
+      },
+      "scale": {
+        "value": "100 万トン規模の長期 offtake コミット (2030 年達成目標)"
+      },
+      "target_tech": {
+        "value": "DAC / Biochar / BECCS / Mineralization"
+      },
+      "contract_form": {
+        "value": "Long-term Offtake (10-15 年)"
+      },
+      "members": {
+        "value": "Mitsubishi Corporation, LGT, UBS, Boston Consulting Group 他"
+      },
+      "japan_entry": {
+        "value": "三菱商事経由で日本企業の参画ルートが既存"
+      },
+      "carbomir_view": {
+        "value": "日本企業にとって最も参入しやすい大規模需要集約。商社経由の \"ジャパン枠\" 形成の可能性"
+      }
+    },
+    "symbiosis-coalition": {
+      "structure": {
+        "value": "Google + 共同設立メンバーで運営、Nature-Based に特化"
+      },
+      "scale": {
+        "value": "2030 年までに 2,000 万トン NBS removal 調達コミット"
+      },
+      "target_tech": {
+        "value": "ARR / IFM / Mangrove restoration 等 (NBS removal 中心)"
+      },
+      "contract_form": {
+        "value": "Offtake + Investment hybrid"
+      },
+      "members": {
+        "value": "Google, Meta, Microsoft, Salesforce"
+      },
+      "japan_entry": {
+        "value": "現状はテック大手限定、日本企業参入事例なし"
+      },
+      "carbomir_view": {
+        "value": "NBS removal の信頼性を再構築する試み、ART TREES 等の品質メソドロジー後押し"
+      }
+    },
+    "direct-procurement": {
+      "structure": {
+        "value": "需要家企業が事業者と二者間で直接契約"
+      },
+      "scale": {
+        "value": "案件次第 (1 万-100 万トン)"
+      },
+      "target_tech": {
+        "value": "全技術 (買い手の戦略次第)"
+      },
+      "contract_form": {
+        "value": "Spot 購入 / Offtake / Equity 投資 など多様"
+      },
+      "members": {
+        "value": "Microsoft (大口直接調達の代表例), Apple Restore Fund 等"
+      },
+      "japan_entry": {
+        "value": "商社経由なら参入容易、自社直接は事業者との関係構築が前提"
+      },
+      "carbomir_view": {
+        "value": "戦略的自由度は最高だが、due diligence / 法務 / モニタリングコストを内部化する必要"
+      }
+    }
+  }
+}
