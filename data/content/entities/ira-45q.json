@@ -44,6 +44,10 @@
     {
       "heading": "編集部の論点",
       "body": "DAC 経済性の支柱として機能している。Climeworks、Carbon Engineering、Heirloom 等の米国プロジェクト経済性は 45Q なしには成立しない水準。2032 年の建設開始期限に向けたプロジェクト集中が見込まれる。"
+    },
+    {
+      "heading": "日本企業への含意",
+      "body": "IRA 45Q は米国市場限定の税額控除だが、グローバルカーボンクレジット市場全体に **構造的な影響** を及ぼす:\n\n- **北米 Engineered Removal の急成長**: Climeworks STRATOS (テキサス) / Occidental 1PointFive (テキサス) / Heirloom (カリフォルニア) 等の DAC プロジェクトが 45Q を経済的支柱に商業化。**世界の DAC 供給の重心が米国に移動**\n- **クレジット価格の下落圧力**: 45Q による補助金で生産コストが下がり、Microsoft / Apple / Stripe Frontier 等の長期 offtake 価格が緩やかに低下する可能性\n- **日本企業の調達戦略**: 北米産 Engineered Removal クレジットを採用するか、JCM / J-クレジット中心の国内ポートフォリオを維持するかは、**ガバナンス上の説明可能性** とコストのトレードオフ\n- **日本国内政策へのプレッシャー**: 米国が手厚い CCS / DAC 支援を導入したことで、日本でも GX 推進法における Engineered Removal 支援議論が活性化 (運用注視: 法案進捗)"
     }
   ]
 }

@@ -40,6 +40,18 @@
           "url": "https://www.microsoft.com/sustainability"
         }
       ]
+    },
+    {
+      "heading": "業界での位置付け",
+      "body": "**CDR (Carbon Dioxide Removal) 市場の最大需要家** として、Engineered Removal クレジットの長期 offtake で業界の **価格発見と商業化** を牽引。Microsoft の MRV 要件は事実上の業界品質基準となっており、他企業が Engineered Removal クレジットを採用する際の参照点。Stripe Frontier・Apple・Google 等のテック大手による CDR 需要が高まる中、Microsoft の単独契約規模 (数十万 t-CO2 級) は業界最大級で、**事業者の商業化資金調達 (project financing) を可能にする構造的な役割** を果たしている。"
+    },
+    {
+      "heading": "ポートフォリオ設計",
+      "body": "「**短期 = 自然由来 (森林等)、長期 = Engineered Removal**」の二段構えポートフォリオが特徴。残余排出の 5-20% を Engineered Removal で構成する目安は、日本企業の中期計画策定でも参照される標準パターンになりつつある。\n\n主要契約相手 (運用注視: 最新ラインナップ):\n- **DAC**: Climeworks (Mammoth)、Heirloom、Carbon Engineering / 1PointFive\n- **Biochar**: Pacific Biochar 等\n- **ERW**: Lithos Carbon、Mati Carbon\n- **バイオオイル**: Charm Industrial"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Microsoft は「**CDR 市場の需要側を確立した最重要プレイヤー**」として、現在の Engineered Removal 商業化の起点。日本企業の CSR 担当者にとっての含意:\n\n- **クレジット選定の参照点**: Microsoft が採用している事業者は「品質お墨付き」のシグナル\n- **コスト見通し**: Microsoft の長期 offtake 価格 (DAC で 400-600 USD/t-CO2 程度) は CDR 市場の事実上のベンチマーク\n- **依存リスク**: 業界全体が Microsoft 等の少数大手需要に依存しすぎる構造的問題。日本企業の参入は供給側多様化に寄与する側面"
     }
   ]
 }

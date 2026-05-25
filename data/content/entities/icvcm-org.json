@@ -35,6 +35,14 @@
           "url": "https://icvcm.org/"
         }
       ]
+    },
+    {
+      "heading": "ガバナンス + 設立背景",
+      "body": "ICVCM は **TSVCM (Taskforce on Scaling Voluntary Carbon Markets)** を起源とする。TSVCM は Mark Carney (国連気候特使、元イングランド銀行総裁) が主導した業界横断イニシアチブで、2021 年に **VCM スケーリング + 品質統治** の両輪を実現するために、需要側 (VCMI) と供給側 (ICVCM) を分離・設立した。\n\nICVCM Governance Board は以下から構成:\n- **環境 NGO**: WWF・Environmental Defense Fund 等\n- **金融機関**: 大手投資銀行・ESG 投資家\n- **クレジット買い手 (大企業)**: テック・金融・製造業\n- **クレジット発行レジストリ (Verra・Gold Standard 等)**\n- 学術界・先住民代表 等のバランスを取った構成"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "ICVCM 組織は **VCM 業界の自主規制 + 国際ガバナンスの混合体** として、極めて重要なポジション:\n\n- **政府機関ではない強み**: 国連や政府機関ではないため、**スピード感をもって品質基準を策定** できる。CCP は 2021 設立から 2 年で公表。政府制度では考えられない速度\n- **大手企業の支持**: Microsoft・Amazon・Google 等のクレジット買い手大手が ICVCM を後押し。**業界の事実上のスタンダード化** が急速に進む\n- **VCMI との対**: ICVCM (供給側品質) + VCMI (需要側 Claim Code) で **クレジット流通の両側面をカバー**\n- **政府制度との整合**: Article 6.4 PACM・JCM 等の政府制度との制度間整合性は今後の継続論点。**CCP 適格 + Article 6 整合** の二重認定が将来の最高位品質シグナルになる可能性"
     }
   ]
 }
