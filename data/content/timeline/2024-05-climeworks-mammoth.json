@@ -2,18 +2,18 @@
   "slug": "2024-05-climeworks-mammoth",
   "event_date": "2024-05-08",
   "title": "Climeworks Mammoth プラント稼働開始",
-  "summary": "アイスランドで Climeworks が年間 36,000 t 級の DAC + 鉱物化貯留プラント Mammoth を稼働。当時時点で世界最大規模の商業 DAC 施設で、長期 offtake 契約による Engineered Removal クレジット供給拡大の節目に位置付けられる (要確認: 公表値の最新性)。",
+  "summary": "アイスランドで Climeworks が年間 36,000 t 級の DAC + 鉱物化貯留プラント Mammoth を稼働。当時時点で世界最大規模の商業 DAC 施設で、長期 offtake 契約による Engineered Removal クレジット供給拡大の節目に位置付けられる (運用注視: 公表値の最新性)。",
   "affected_entity_slugs": [
-    "dac"
+  "dac"
   ],
   "category": "technology",
   "importance": 4,
   "status": "published",
   "source_urls": [
-    {
-      "label": "Climeworks Mammoth (公式)",
-      "url": "https://climeworks.com/plant/mammoth"
-    }
+  {
+  "label": "Climeworks Mammoth (公式)",
+  "url": "https://climeworks.com/plant/mammoth"
+  }
   ],
   "content_md": "## 動向の概要\n\n2024 年 5 月 8 日、スイスの **Climeworks** がアイスランドで **Mammoth プラント** を稼働開始。年間 36,000 t-CO2 級の **DAC (Direct Air Capture) + 鉱物化貯留** プラントとして、当時時点で **世界最大規模の商業 DAC 施設**。Climeworks 既存の Orca プラント (年間 4,000 t-CO2) の **約 9 倍の処理能力** で、DAC 産業の **商業スケール化への決定的な進展** を象徴するマイルストーン。\n\n## 主要な要素\n\n- **稼働開始**: 2024 年 5 月 8 日 (アイスランド・Hellisheidi 地熱発電所隣接地)\n- **処理能力**: 年間 36,000 t-CO2 (フル稼働時)\n- **技術**: アミン系吸着剤による DAC + Carbfix 社の **鉱物化貯留** (玄武岩への CO2 注入で 2 年以内に永久鉱物化)\n- **エネルギー源**: Hellisheidi 地熱発電 (再エネ 100%)\n- **オフテイカー**: Microsoft / JPMorgan Chase / Boston Consulting Group / Audi / Stripe Frontier 等 (運用注視: 最新リスト)\n- **価格水準**: 当時参考価格で **約 500-600 USD/t-CO2** 程度の長期 offtake (Climeworks 公開価格、運用注視: 直近実勢)\n- **第三者検証**: Puro.earth + Isometric 等の Removal 特化レジストリで認証\n\n## 日本企業への含意\n\nClimeworks Mammoth は日本企業にとっての複数の参照点:\n\n- **DAC 商業化の実証**: 「研究開発段階」から「商業稼働」への移行が **公開ベンチマーク** で確認できる事例。Engineered Removal クレジット採用の社内議論で参照材料になる\n- **長期 offtake の参考価格**: Microsoft 等の長期 offtake 価格 (500-600 USD/t-CO2) は、**日本企業が DAC クレジット採用する際の予算感** の基準\n- **アイスランド地熱モデル**: 再エネが豊富かつ玄武岩貯留地のあるアイスランドは DAC に最適立地。**日本国内での DAC 立地検討** の参考にもなる (北海道・東北での地熱 + 鉱物化が議論される)\n- **Climeworks との関係**: Climeworks は日本企業からの調達需要も歓迎しており、**三井物産・住友商事等が長期 offtake を交渉する可能性** (運用注視: 直近の議論)\n\n## 編集部の論点\n\nMammoth プラント稼働は「**DAC が研究開発段階から商業フェーズに本格移行した節目**」として、Engineered Removal 市場の歴史的マイルストーン。\n\nCSR / サスティナビリティ担当者にとっての含意:\n\n- **「DAC は商業化できる」言説の確立**: 取締役会・経営層への説明で「DAC は本当に動いているのか」という疑問が出たとき、**Mammoth の稼働開始は最も具体的な反証データ**\n- **価格動向の予測**: Climeworks の長期コスト目標は **2030 年に 200-400 USD/t-CO2、2050 年に 100 USD/t-CO2 以下** という公開ロードマップ。日本企業の中期計画策定でこれらのコスト想定を参照できる\n- **同種技術の競合状況**: 1PointFive (Occidental)・Heirloom・Carbon Engineering 等の競合各社も同時期に大型プラントを建設中。**DAC 市場の供給増加で価格低下圧力が継続** する見込み\n- **MRV の品質**: Climeworks は MRV を Puro.earth + Isometric で取得しており、**業界の品質シグナル基準** を確立。日本企業の MRV 要求基準の参考\n\n未確定論点:\n- **稼働率の実態**: 公称 36,000 t-CO2/年 だが、稼働率は公開されていない。**実際の年間発行量** は公称値より低い可能性 (運用注視: 稼働状況)\n- **コスト低下の速度**: Climeworks 公開ロードマップ (2030 年 200-400 USD/t-CO2) が実現するかは、技術改善 + スケール経済 + 再エネ価格 の組み合わせで決まる\n- **競合の追随**: 1PointFive STRATOS (テキサス、年間 500,000 t-CO2 級) が本格稼働すれば、**Mammoth は世界最大ではなくなる**\n\n## 関連動向\n\n- [Climeworks](/entities/climeworks) — 事業者 entity\n- [DAC](/entities/dac) — 技術カテゴリ\n- [Carbon Engineering](/entities/carbon-engineering) — 主要競合\n- [Microsoft Carbon Negative (2020-01)](/timeline/2020-01-microsoft-carbon-negative) — 主要オフテイカー\n- [Microsoft CDR ポートフォリオ ケーススタディ](/case-studies/microsoft-cdr-portfolio-2030) — 長期 offtake の典型例\n- [Engineered Removal 比較行列](/matrices/engineered-removal-comparison)\n"
 }

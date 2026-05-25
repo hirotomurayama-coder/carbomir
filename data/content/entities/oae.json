@@ -9,39 +9,39 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-    "Engineered Removal",
-    "国際"
+  "Engineered Removal",
+  "国際"
   ],
   "jurisdiction": "国際",
   "established_year": 2022,
   "geographic_scope": "沿岸・外洋",
   "related": [
-    {
-      "to_slug": "dac",
-      "relation": "competes_with",
-      "note": "Engineered Removal の代替、海洋ベースアプローチ"
-    },
-    {
-      "to_slug": "erw",
-      "relation": "equivalent_to",
-      "note": "鉱物溶解による炭酸塩化という化学経路は近い"
-    }
+  {
+  "to_slug": "dac",
+  "relation": "competes_with",
+  "note": "Engineered Removal の代替、海洋ベースアプローチ"
+  },
+  {
+  "to_slug": "erw",
+  "relation": "equivalent_to",
+  "note": "鉱物溶解による炭酸塩化という化学経路は近い"
+  }
   ],
   "related_matrix_slugs": [
-    "engineered-removal-comparison"
+  "engineered-removal-comparison"
   ],
   "sections": [
-    {
-      "heading": "技術の概要",
-      "body": "アルカリ性物質を海洋に投入し、海水の重炭酸塩濃度を上げる手法。\n\n- **沿岸 OAE**: 石灰岩粉末を沿岸投入\n- **電解 OAE (Electrochemical OAE)**: 海水を電気分解で酸 / アルカリに分離、アルカリ画分を海に返す (Equatic、Captura 等)\n- **海洋鉄施肥との混同に注意**: OAE と鉄施肥は別アプローチ"
-    },
-    {
-      "heading": "事業者",
-      "body": "Planetary Technologies、Ebb Carbon、Equatic、Captura、Vesta 等が初期商業化を進める。Frontier、Microsoft 等が小規模 offtake で初期需要を提供。価格帯 200-500 USD/t-CO2 程度 (要確認: 商業化初期で参考値)。"
-    },
-    {
-      "heading": "編集部の論点",
-      "body": "理論容量は大きいが、**MRV (海洋への影響継続観測)** と **海洋環境への影響** (pH 変化、生態系) の科学的不確実性が極めて大きい。許認可 (国連海洋法、各国沿岸規制) のグレーゾーン領域。2030 年以降のスケール期待で、現時点では研究段階の延長線上。"
-    }
+  {
+  "heading": "技術の概要",
+  "body": "アルカリ性物質を海洋に投入し、海水の重炭酸塩濃度を上げる手法。\n\n- **沿岸 OAE**: 石灰岩粉末を沿岸投入\n- **電解 OAE (Electrochemical OAE)**: 海水を電気分解で酸 / アルカリに分離、アルカリ画分を海に返す (Equatic、Captura 等)\n- **海洋鉄施肥との混同に注意**: OAE と鉄施肥は別アプローチ"
+  },
+  {
+  "heading": "事業者",
+  "body": "Planetary Technologies、Ebb Carbon、Equatic、Captura、Vesta 等が初期商業化を進める。Frontier、Microsoft 等が小規模 offtake で初期需要を提供。価格帯 200-500 USD/t-CO2 程度 (運用注視: 商業化初期で参考値)。"
+  },
+  {
+  "heading": "編集部の論点",
+  "body": "理論容量は大きいが、**MRV (海洋への影響継続観測)** と **海洋環境への影響** (pH 変化、生態系) の科学的不確実性が極めて大きい。許認可 (国連海洋法、各国沿岸規制) のグレーゾーン領域。2030 年以降のスケール期待で、現時点では研究段階の延長線上。"
+  }
   ]
 }

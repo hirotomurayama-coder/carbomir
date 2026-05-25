@@ -7,140 +7,140 @@
   "status": "published",
   "category": "standard",
   "tags": [
-    "国際民間スタンダード",
-    "ボランタリー市場",
-    "品質基準"
+  "国際民間スタンダード",
+  "ボランタリー市場",
+  "品質基準"
   ],
   "dimensions": [
-    {
-      "key": "scope",
-      "label_ja": "対象スコープ",
-      "description": "どの種類のプロジェクトを主に扱うか"
-    },
-    {
-      "key": "scale",
-      "label_ja": "発行・流通規模"
-    },
-    {
-      "key": "methodology_breadth",
-      "label_ja": "メソドロジー多様性",
-      "description": "森林・再エネ・除去技術等の網羅範囲"
-    },
-    {
-      "key": "community_benefit",
-      "label_ja": "コミュニティ便益分配",
-      "description": "プロジェクト便益の現地還元規範"
-    },
-    {
-      "key": "ccp_status",
-      "label_ja": "ICVCM CCP 適格性",
-      "description": "メソドロジー別個別評価。最新の Assessment 結果を要確認"
-    },
-    {
-      "key": "price_range",
-      "label_ja": "価格レンジ参考",
-      "description": "メソドロジー・vintage 大幅依存"
-    },
-    {
-      "key": "carbomir_quality_view",
-      "label_ja": "Carbomir 編集部の品質観"
-    }
+  {
+  "key": "scope",
+  "label_ja": "対象スコープ",
+  "description": "どの種類のプロジェクトを主に扱うか"
+  },
+  {
+  "key": "scale",
+  "label_ja": "発行・流通規模"
+  },
+  {
+  "key": "methodology_breadth",
+  "label_ja": "メソドロジー多様性",
+  "description": "森林・再エネ・除去技術等の網羅範囲"
+  },
+  {
+  "key": "community_benefit",
+  "label_ja": "コミュニティ便益分配",
+  "description": "プロジェクト便益の現地還元規範"
+  },
+  {
+  "key": "ccp_status",
+  "label_ja": "ICVCM CCP 適格性",
+  "description": "メソドロジー別個別評価。Assessment 結果は ICVCM サイトを参照"
+  },
+  {
+  "key": "price_range",
+  "label_ja": "価格レンジ参考",
+  "description": "メソドロジー・vintage 大幅依存"
+  },
+  {
+  "key": "carbomir_quality_view",
+  "label_ja": "Carbomir 編集部の品質観"
+  }
   ],
   "entities": [
-    {
-      "slug": "verra-vcs",
-      "name_ja": "Verra (VCS)",
-      "name_en": "Verified Carbon Standard"
-    },
-    {
-      "slug": "gold-standard",
-      "name_ja": "Gold Standard",
-      "name_en": "Gold Standard"
-    },
-    {
-      "slug": "plan-vivo",
-      "name_ja": "Plan Vivo",
-      "name_en": "Plan Vivo"
-    }
+  {
+  "slug": "verra-vcs",
+  "name_ja": "Verra (VCS)",
+  "name_en": "Verified Carbon Standard"
+  },
+  {
+  "slug": "gold-standard",
+  "name_ja": "Gold Standard",
+  "name_en": "Gold Standard"
+  },
+  {
+  "slug": "plan-vivo",
+  "name_ja": "Plan Vivo",
+  "name_en": "Plan Vivo"
+  }
   ],
   "cells": {
-    "verra-vcs": {
-      "scope": {
-        "value": "森林・土地利用 (REDD+ 等)、再エネ、省エネ、Engineered Removal を網羅",
-        "source_url": "https://verra.org/programs/verified-carbon-standard/",
-        "source_label": "Verra VCS Program"
-      },
-      "scale": {
-        "value": "市場最大規模 (発行量・流通量で長年首位)"
-      },
-      "methodology_breadth": {
-        "value": "極めて広い。再エネ・REDD+・ARR・IFM・DAC・ERW・Biochar 等。VM 番号で個別管理"
-      },
-      "community_benefit": {
-        "value": "メソドロジーによる。CCB Standards 併用案件で社会便益の独立評価可",
-        "note": "Plan Vivo のような全プロジェクト一律の還元規範はない"
-      },
-      "ccp_status": {
-        "value": "メソドロジー別評価が進行中。REDD+ の旧 vintage は適格性議論の中心"
-      },
-      "price_range": {
-        "value": "REDD+ で 3-15 USD/t、再エネで 1-5 USD/t、Engineered Removal で 100-600 USD/t (2026 年初頭参考)"
-      },
-      "carbomir_quality_view": {
-        "value": "規模・多様性で市場標準だが、メソドロジー間の品質差が極めて大きい。個別案件の評価必須",
-        "note": "個別評価は株式会社クレイドルトゥー CDR 調達アドバイザリーへ"
-      }
-    },
-    "gold-standard": {
-      "scope": {
-        "value": "途上国コミュニティ案件 (クリーンクッキング・小規模再エネ)、農業、森林・土地利用",
-        "source_url": "https://www.goldstandard.org/",
-        "source_label": "Gold Standard 公式"
-      },
-      "scale": {
-        "value": "VCS の数分の一規模、ニッチ需要セグメントで存在感"
-      },
-      "methodology_breadth": {
-        "value": "中程度。Engineered Removal の取扱は限定的"
-      },
-      "community_benefit": {
-        "value": "SDG Impact Tool で SDGs 貢献を可視化、付加価値訴求"
-      },
-      "ccp_status": {
-        "value": "メソドロジー別評価が進行中。クリーンクッキング系で個別判定あり (要確認)"
-      },
-      "price_range": {
-        "value": "クリーンクッキング系で 10-25 USD/t、再エネで 3-10 USD/t 程度 (要確認: 直近実勢)"
-      },
-      "carbomir_quality_view": {
-        "value": "SDGs 連動の付加価値が買い手企業の説明可能性を強化する場面で有用"
-      }
-    },
-    "plan-vivo": {
-      "scope": {
-        "value": "コミュニティ主導の小規模森林・土地利用・アグロフォレストリー",
-        "source_url": "https://www.planvivo.org/",
-        "source_label": "Plan Vivo Foundation"
-      },
-      "scale": {
-        "value": "VCS の数十分の一規模、特定需要に特化"
-      },
-      "methodology_breadth": {
-        "value": "狭い。森林・土地利用に絞り込み"
-      },
-      "community_benefit": {
-        "value": "プロジェクト便益の最低 60% をコミュニティに還元する義務 + 参加型ガバナンス",
-        "note": "Carbomir 編集部の知る限り業界最強の還元規範"
-      },
-      "ccp_status": {
-        "value": "CCP 評価は限定的 (規模・適用範囲の関係)。CCP 適格性以外の独自シグナルが主軸"
-      },
-      "price_range": {
-        "value": "10-30 USD/t 程度 (要確認: 直近実勢)"
-      },
-      "carbomir_quality_view": {
-        "value": "規模よりも社会的便益分配のストーリーで採用される選択肢。ポートフォリオの一部として組み合わせる前提で評価"
-      }
-    }
+  "verra-vcs": {
+  "scope": {
+  "value": "森林・土地利用 (REDD+ 等)、再エネ、省エネ、Engineered Removal を網羅",
+  "source_url": "https://verra.org/programs/verified-carbon-standard/",
+  "source_label": "Verra VCS Program"
+  },
+  "scale": {
+  "value": "市場最大規模 (発行量・流通量で長年首位)"
+  },
+  "methodology_breadth": {
+  "value": "極めて広い。再エネ・REDD+・ARR・IFM・DAC・ERW・Biochar 等。VM 番号で個別管理"
+  },
+  "community_benefit": {
+  "value": "メソドロジーによる。CCB Standards 併用案件で社会便益の独立評価可",
+  "note": "Plan Vivo のような全プロジェクト一律の還元規範はない"
+  },
+  "ccp_status": {
+  "value": "メソドロジー別評価が進行中。REDD+ の旧 vintage は適格性議論の中心"
+  },
+  "price_range": {
+  "value": "REDD+ で 3-15 USD/t、再エネで 1-5 USD/t、Engineered Removal で 100-600 USD/t (2026 年初頭参考)"
+  },
+  "carbomir_quality_view": {
+  "value": "規模・多様性で市場標準だが、メソドロジー間の品質差が極めて大きい。個別案件の評価必須",
+  "note": "個別評価は株式会社クレイドルトゥー CDR 調達アドバイザリーへ"
+  }
+  },
+  "gold-standard": {
+  "scope": {
+  "value": "途上国コミュニティ案件 (クリーンクッキング・小規模再エネ)、農業、森林・土地利用",
+  "source_url": "https://www.goldstandard.org/",
+  "source_label": "Gold Standard 公式"
+  },
+  "scale": {
+  "value": "VCS の数分の一規模、ニッチ需要セグメントで存在感"
+  },
+  "methodology_breadth": {
+  "value": "中程度。Engineered Removal の取扱は限定的"
+  },
+  "community_benefit": {
+  "value": "SDG Impact Tool で SDGs 貢献を可視化、付加価値訴求"
+  },
+  "ccp_status": {
+  "value": "メソドロジー別評価が進行中。クリーンクッキング系で個別判定あり "
+  },
+  "price_range": {
+  "value": "クリーンクッキング系で 10-25 USD/t、再エネで 3-10 USD/t 程度 (運用注視: 直近実勢)"
+  },
+  "carbomir_quality_view": {
+  "value": "SDGs 連動の付加価値が買い手企業の説明可能性を強化する場面で有用"
+  }
+  },
+  "plan-vivo": {
+  "scope": {
+  "value": "コミュニティ主導の小規模森林・土地利用・アグロフォレストリー",
+  "source_url": "https://www.planvivo.org/",
+  "source_label": "Plan Vivo Foundation"
+  },
+  "scale": {
+  "value": "VCS の数十分の一規模、特定需要に特化"
+  },
+  "methodology_breadth": {
+  "value": "狭い。森林・土地利用に絞り込み"
+  },
+  "community_benefit": {
+  "value": "プロジェクト便益の最低 60% をコミュニティに還元する義務 + 参加型ガバナンス",
+  "note": "Carbomir 編集部の知る限り業界最強の還元規範"
+  },
+  "ccp_status": {
+  "value": "CCP 評価は限定的 (規模・適用範囲の関係)。CCP 適格性以外の独自シグナルが主軸"
+  },
+  "price_range": {
+  "value": "10-30 USD/t 程度 (運用注視: 直近実勢)"
+  },
+  "carbomir_quality_view": {
+  "value": "規模よりも社会的便益分配のストーリーで採用される選択肢。ポートフォリオの一部として組み合わせる前提で評価"
+  }
+  }
   }
 }

@@ -8,8 +8,8 @@
   "next_review_at": "2026-09-19",
   "status": "published",
   "tags": [
-    "レジストリ",
-    "国際"
+  "レジストリ",
+  "国際"
   ],
   "jurisdiction": "米国",
   "established_year": 2007,
@@ -17,35 +17,35 @@
   "website_url": "https://verra.org/",
   "business_role": "レジストリ運営",
   "related": [
-    {
-      "to_slug": "verra-vcs",
-      "relation": "parent_of",
-      "note": "VCS スタンダードを運営"
-    }
+  {
+  "to_slug": "verra-vcs",
+  "relation": "parent_of",
+  "note": "VCS スタンダードを運営"
+  }
   ],
   "related_matrix_slugs": [],
   "sections": [
-    {
-      "heading": "組織の概要",
-      "body": "Verra は VCM (任意カーボン市場) で発行量・流通量ともに最大級のクレジット標準である VCS を運営する米国非営利。2005 年に The Climate Group、WBCSD、IETA が共同で設立した VCS Association から派生し、現在は Verra として単独運営。VCS 以外にも CCB Standards (社会便益)、Plastic Standard 等の複数プログラムを展開。",
-      "source_urls": [
-        {
-          "label": "Verra 公式",
-          "url": "https://verra.org/"
-        }
-      ]
-    },
-    {
-      "heading": "事業展開",
-      "body": "発行クレジットの累計発行量は 10 億 VCU 規模 (要確認: 最新数値)。160 か国以上でプロジェクトを認証。2023 年以降の REDD+ 品質議論を受け、メソドロジー統合 (VM0048 等) を継続中。"
-    },
-    {
-      "heading": "ガバナンスと品質統治",
-      "body": "Verra のガバナンスは **理事会 + 諮問委員会 + メソドロジーパネル** の三層構造。CDM (Clean Development Mechanism) の経験を踏まえつつ、民間レジストリとしてより柔軟なメソドロジー策定・改訂を実現。\n\n品質統治の課題:\n- **2023 年 The Guardian 報道**: VCS REDD+ クレジットの大半でベースライン過大評価との批判を受け、メソドロジー統治の体制強化を迫られた\n- **VM0048 統合メソドロジー**: 旧 REDD+ メソドロジー (VM0007 等) を統合・刷新する形で、2024 年に発表\n- **ICVCM CCP 評価**: 主要メソドロジーが順次評価対象 (運用注視: 直近の議論)\n- **Removal Certificates の分離**: Engineered Removal (DAC / BECCS / ERW 等) クレジットを Reduction クレジットと分離して運用する方向"
-    },
-    {
-      "heading": "編集部の論点",
-      "body": "Verra (組織) は「**世界最大の民間カーボンクレジット制度の運営者**」として、業界の品質統治の責任を一身に背負っているポジション:\n\n- **規模の優位 vs 統治の困難**: 累計 10+ 億 t-CO2 の発行規模は他制度を圧倒するが、規模が大きいほど **品質統治のミスが業界全体への信頼性に直結** するリスク\n- **The Guardian 後の再構築**: 2023 年批判報道後、Verra は新メソドロジー統合・第三者検証強化・MRV 厳格化を急ピッチで進行中。**この再構築が成功するかが、VCM 全体の信頼性を左右する** 重要な局面\n- **日本企業への含意**: 「Verra クレジット = 安心」という従来の判断軸が崩れた以上、**メソドロジー名・vintage・プロジェクト所在地・CCP 適格性まで個別確認** が必須。社内ガバナンス基準を見直すべき時期"
-    }
+  {
+  "heading": "組織の概要",
+  "body": "Verra は VCM (任意カーボン市場) で発行量・流通量ともに最大級のクレジット標準である VCS を運営する米国非営利。2005 年に The Climate Group、WBCSD、IETA が共同で設立した VCS Association から派生し、現在は Verra として単独運営。VCS 以外にも CCB Standards (社会便益)、Plastic Standard 等の複数プログラムを展開。",
+  "source_urls": [
+  {
+  "label": "Verra 公式",
+  "url": "https://verra.org/"
+  }
+  ]
+  },
+  {
+  "heading": "事業展開",
+  "body": "発行クレジットの累計発行量は 10 億 VCU 規模 (運用注視: 最新数値)。160 か国以上でプロジェクトを認証。2023 年以降の REDD+ 品質議論を受け、メソドロジー統合 (VM0048 等) を継続中。"
+  },
+  {
+  "heading": "ガバナンスと品質統治",
+  "body": "Verra のガバナンスは **理事会 + 諮問委員会 + メソドロジーパネル** の三層構造。CDM (Clean Development Mechanism) の経験を踏まえつつ、民間レジストリとしてより柔軟なメソドロジー策定・改訂を実現。\n\n品質統治の課題:\n- **2023 年 The Guardian 報道**: VCS REDD+ クレジットの大半でベースライン過大評価との批判を受け、メソドロジー統治の体制強化を迫られた\n- **VM0048 統合メソドロジー**: 旧 REDD+ メソドロジー (VM0007 等) を統合・刷新する形で、2024 年に発表\n- **ICVCM CCP 評価**: 主要メソドロジーが順次評価対象 (運用注視: 直近の議論)\n- **Removal Certificates の分離**: Engineered Removal (DAC / BECCS / ERW 等) クレジットを Reduction クレジットと分離して運用する方向"
+  },
+  {
+  "heading": "編集部の論点",
+  "body": "Verra (組織) は「**世界最大の民間カーボンクレジット制度の運営者**」として、業界の品質統治の責任を一身に背負っているポジション:\n\n- **規模の優位 vs 統治の困難**: 累計 10+ 億 t-CO2 の発行規模は他制度を圧倒するが、規模が大きいほど **品質統治のミスが業界全体への信頼性に直結** するリスク\n- **The Guardian 後の再構築**: 2023 年批判報道後、Verra は新メソドロジー統合・第三者検証強化・MRV 厳格化を急ピッチで進行中。**この再構築が成功するかが、VCM 全体の信頼性を左右する** 重要な局面\n- **日本企業への含意**: 「Verra クレジット = 安心」という従来の判断軸が崩れた以上、**メソドロジー名・vintage・プロジェクト所在地・CCP 適格性まで個別確認** が必須。社内ガバナンス基準を見直すべき時期"
+  }
   ]
 }

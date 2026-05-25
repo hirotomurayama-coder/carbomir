@@ -12,49 +12,49 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-    "需要家",
-    "航空",
-    "日本",
-    "規制対応"
+  "需要家",
+  "航空",
+  "日本",
+  "規制対応"
   ],
   "related_entity_slugs": [
-    "corsia",
-    "verra-vcs",
-    "gold-standard",
-    "j-credit",
-    "redd-plus",
-    "icao"
+  "corsia",
+  "verra-vcs",
+  "gold-standard",
+  "j-credit",
+  "redd-plus",
+  "icao"
   ],
   "related_faq_slugs": [
-    "cbam-exporter-preparation",
-    "credit-quality-checklist"
+  "cbam-exporter-preparation",
+  "credit-quality-checklist"
   ],
   "source_urls": [
-    {
-      "label": "JAL Sustainability Report",
-      "url": "https://www.jal.com/en/sustainability/"
-    },
-    {
-      "label": "ANA Sustainability Report",
-      "url": "https://www.ana.co.jp/group/en/csr/environment/"
-    }
+  {
+  "label": "JAL Sustainability Report",
+  "url": "https://www.jal.com/en/sustainability/"
+  },
+  {
+  "label": "ANA Sustainability Report",
+  "url": "https://www.ana.co.jp/group/en/csr/environment/"
+  }
   ],
   "sections": [
-    {
-      "heading": "取り組みの概要",
-      "body": "JAL・ANA は **CORSIA (Carbon Offsetting and Reduction Scheme for International Aviation)** の義務的オフセット枠と、自社の自主削減目標を併走させる構造。\n\n- **CORSIA**: ICAO が運営する国際航空オフセット制度。2024-2026 が第一段階 (任意国でも日本は参加)、2027 年から全面義務化\n- **自主目標**: 両社とも 2050 年 Net-Zero (CO2)、2030 年に SAF (Sustainable Aviation Fuel) 10% 目標\n- **クレジット使用**: SAF 供給が間に合わない範囲を補完"
-    },
-    {
-      "heading": "クレジット選定基準",
-      "body": "CORSIA 適格性 (CORSIA-Eligible Emissions Units) の基準は ICAO TAB (Technical Advisory Body) が個別に判定し、対象標準は厳格に絞られている (Verra VCS の一部、Gold Standard の一部、ART TREES、Architecture for REDD+ Transactions、Climate Action Reserve 等)。\n\n国内航空便分は **CORSIA 対象外** だが、両社は自主オフセットで J-クレジットや国内 VCS プロジェクトを使用するケースもある (要確認: 構成比は年次変動)。\n\n選定の論点:\n\n- **\"CORSIA 適格\"** だけを満たせばよいか、品質階層 (ICVCM CCP, ART TREES Jurisdictional 等) まで踏み込むか\n- 価格との bal: CORSIA 適格でも 3-15 USD/t と幅がある"
-    },
-    {
-      "heading": "SAF とクレジットの併走構造",
-      "body": "航空業界の脱炭素は **「SAF 50-70% + 機材効率 10-20% + クレジット残余」** が業界標準の経路。SAF の供給制約が解けるまで (2030 年代後半まで)、クレジットが \"つなぎ\" として大きな役割を果たす。\n\n両社の SAF 調達:\n\n- **JAL**: Neste, SAFFiRE Renewables 等から調達。国内 SAF (Petrobras 日本子会社 / コスモ石油 / ENEOS) と複線化\n- **ANA**: Neste, LanzaJet, Raven SR 等。GE Aerospace / Boeing との共同テスト\n\nSAF 1 リットルあたり従来ジェット燃料の **2-5 倍コスト** が現状 (2026 年時点)。商社系航空燃料部門のクレジット仲介機能も拡大中。"
-    },
-    {
-      "heading": "編集部の論点",
-      "body": "JAL/ANA の事例は **「絶対量制約のある脱炭素 = クレジット併用は当面不可避」** の典型例。航空は技術代替 (SAF・水素・電動) の成熟タイミングが不確実で、クレジットなしで Net-Zero を語ることはできない。\n\nここから日本企業全般への含意:\n\n- **業種特性で \"クレジット適切量\" は異なる**: 航空 (高)、ITサービス (低)、製造業 (中) の階層がある\n- **CORSIA は \"準・規制\"** に近い扱い (国際路線では事実上義務)。日本国内便への J-ETS 適用議論との接続も今後の論点\n- 同業他社 (Delta、JAL、シンガポール航空 等) との **比較開示圧力** が IFRS S2 / TCFD 文脈で強まる"
-    }
+  {
+  "heading": "取り組みの概要",
+  "body": "JAL・ANA は **CORSIA (Carbon Offsetting and Reduction Scheme for International Aviation)** の義務的オフセット枠と、自社の自主削減目標を併走させる構造。\n\n- **CORSIA**: ICAO が運営する国際航空オフセット制度。2024-2026 が第一段階 (任意国でも日本は参加)、2027 年から全面義務化\n- **自主目標**: 両社とも 2050 年 Net-Zero (CO2)、2030 年に SAF (Sustainable Aviation Fuel) 10% 目標\n- **クレジット使用**: SAF 供給が間に合わない範囲を補完"
+  },
+  {
+  "heading": "クレジット選定基準",
+  "body": "CORSIA 適格性 (CORSIA-Eligible Emissions Units) の基準は ICAO TAB (Technical Advisory Body) が個別に判定し、対象標準は厳格に絞られている (Verra VCS の一部、Gold Standard の一部、ART TREES、Architecture for REDD+ Transactions、Climate Action Reserve 等)。\n\n国内航空便分は **CORSIA 対象外** だが、両社は自主オフセットで J-クレジットや国内 VCS プロジェクトを使用するケースもある (運用注視: 構成比は年次変動)。\n\n選定の論点:\n\n- **\"CORSIA 適格\"** だけを満たせばよいか、品質階層 (ICVCM CCP, ART TREES Jurisdictional 等) まで踏み込むか\n- 価格との bal: CORSIA 適格でも 3-15 USD/t と幅がある"
+  },
+  {
+  "heading": "SAF とクレジットの併走構造",
+  "body": "航空業界の脱炭素は **「SAF 50-70% + 機材効率 10-20% + クレジット残余」** が業界標準の経路。SAF の供給制約が解けるまで (2030 年代後半まで)、クレジットが \"つなぎ\" として大きな役割を果たす。\n\n両社の SAF 調達:\n\n- **JAL**: Neste, SAFFiRE Renewables 等から調達。国内 SAF (Petrobras 日本子会社 / コスモ石油 / ENEOS) と複線化\n- **ANA**: Neste, LanzaJet, Raven SR 等。GE Aerospace / Boeing との共同テスト\n\nSAF 1 リットルあたり従来ジェット燃料の **2-5 倍コスト** が現状 (2026 年時点)。商社系航空燃料部門のクレジット仲介機能も拡大中。"
+  },
+  {
+  "heading": "編集部の論点",
+  "body": "JAL/ANA の事例は **「絶対量制約のある脱炭素 = クレジット併用は当面不可避」** の典型例。航空は技術代替 (SAF・水素・電動) の成熟タイミングが不確実で、クレジットなしで Net-Zero を語ることはできない。\n\nここから日本企業全般への含意:\n\n- **業種特性で \"クレジット適切量\" は異なる**: 航空 (高)、ITサービス (低)、製造業 (中) の階層がある\n- **CORSIA は \"準・規制\"** に近い扱い (国際路線では事実上義務)。日本国内便への J-ETS 適用議論との接続も今後の論点\n- 同業他社 (Delta、JAL、シンガポール航空 等) との **比較開示圧力** が IFRS S2 / TCFD 文脈で強まる"
+  }
   ]
 }

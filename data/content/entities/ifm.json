@@ -9,38 +9,38 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-    "森林吸収",
-    "ボランタリー市場",
-    "国際"
+  "森林吸収",
+  "ボランタリー市場",
+  "国際"
   ],
   "jurisdiction": "国際 (主要レジストリ運用)",
   "established_year": 2006,
   "geographic_scope": "グローバル (温帯・熱帯両域)",
   "related": [
-    {
-      "to_slug": "verra-vcs",
-      "relation": "depends_on",
-      "note": "VCS で主要メソドロジー (VM0010, VM0012, VM0034 等) として運用"
-    },
-    {
-      "to_slug": "redd-plus",
-      "relation": "competes_with",
-      "note": "同じ森林由来クレジット創出戦略の代替・補完"
-    }
+  {
+  "to_slug": "verra-vcs",
+  "relation": "depends_on",
+  "note": "VCS で主要メソドロジー (VM0010, VM0012, VM0034 等) として運用"
+  },
+  {
+  "to_slug": "redd-plus",
+  "relation": "competes_with",
+  "note": "同じ森林由来クレジット創出戦略の代替・補完"
+  }
   ],
   "related_matrix_slugs": [],
   "sections": [
-    {
-      "heading": "アプローチの種類",
-      "body": "代表的なサブ手法:\n\n- **Extended Rotation (ER)** — 伐採周期を延長して炭素蓄積を増やす\n- **Logged-to-Protected (LtP)** — 商業伐採林を保護林へ転換\n- **Low Impact Logging (LIL)** — 高効率・低撹乱の伐採実施\n- **Conifer to Hardwood (CtH)** — 樹種転換による長期炭素蓄積\n\nプロジェクト所在地・所有形態・規制環境により採用手法が分かれる。"
-    },
-    {
-      "heading": "市場での位置",
-      "body": "Verra VCS の IFM メソドロジーは森林由来クレジットで REDD+ に次ぐ規模。買い手は森林由来でも「劣化抑制ではなく管理改善」を選好する傾向 (劣化リスクの曖昧さを回避)。価格は REDD+ 同等以上の場合が多い (要確認: 直近実勢)。"
-    },
-    {
-      "heading": "編集部の論点",
-      "body": "「ベースラインが何だったか」(IFM 無しでどれくらい伐採される予定だったか) の検証が品質の核。森林所有者の経済合理性に依存するため、規制環境変化に弱い。CCP 適格性は個別メソドロジーで判定段階。"
-    }
+  {
+  "heading": "アプローチの種類",
+  "body": "代表的なサブ手法:\n\n- **Extended Rotation (ER)** — 伐採周期を延長して炭素蓄積を増やす\n- **Logged-to-Protected (LtP)** — 商業伐採林を保護林へ転換\n- **Low Impact Logging (LIL)** — 高効率・低撹乱の伐採実施\n- **Conifer to Hardwood (CtH)** — 樹種転換による長期炭素蓄積\n\nプロジェクト所在地・所有形態・規制環境により採用手法が分かれる。"
+  },
+  {
+  "heading": "市場での位置",
+  "body": "Verra VCS の IFM メソドロジーは森林由来クレジットで REDD+ に次ぐ規模。買い手は森林由来でも「劣化抑制ではなく管理改善」を選好する傾向 (劣化リスクの曖昧さを回避)。価格は REDD+ 同等以上の場合が多い (運用注視: 直近実勢)。"
+  },
+  {
+  "heading": "編集部の論点",
+  "body": "「ベースラインが何だったか」(IFM 無しでどれくらい伐採される予定だったか) の検証が品質の核。森林所有者の経済合理性に依存するため、規制環境変化に弱い。CCP 適格性は個別メソドロジーで判定段階。"
+  }
   ]
 }

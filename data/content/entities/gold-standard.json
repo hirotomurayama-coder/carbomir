@@ -9,9 +9,9 @@
   "next_review_at": "2026-07-20",
   "status": "published",
   "tags": [
-    "国際",
-    "ボランタリー市場",
-    "SDGs 連動"
+  "国際",
+  "ボランタリー市場",
+  "SDGs 連動"
   ],
   "jurisdiction": "スイス (民間)",
   "established_year": 2003,
@@ -22,53 +22,53 @@
   "policy_status": "active",
   "next_milestone": "2026: ICVCM CCP 評価結果の各メソドロジー別反映 + Article 6.2 取引対応強化",
   "related": [
-    {
-      "to_slug": "verra-vcs",
-      "relation": "competes_with",
-      "note": "VCM の二大民間スタンダード"
-    },
-    {
-      "to_slug": "icvcm-ccp",
-      "relation": "depends_on",
-      "note": "Gold Standard メソドロジーも CCP で個別評価"
-    },
-    {
-      "to_slug": "cookstoves",
-      "relation": "parent_of",
-      "note": "クリーンクッキング系の主力レジストリ"
-    },
-    {
-      "to_slug": "arr",
-      "relation": "parent_of",
-      "note": "ARR メソドロジー運用"
-    }
+  {
+  "to_slug": "verra-vcs",
+  "relation": "competes_with",
+  "note": "VCM の二大民間スタンダード"
+  },
+  {
+  "to_slug": "icvcm-ccp",
+  "relation": "depends_on",
+  "note": "Gold Standard メソドロジーも CCP で個別評価"
+  },
+  {
+  "to_slug": "cookstoves",
+  "relation": "parent_of",
+  "note": "クリーンクッキング系の主力レジストリ"
+  },
+  {
+  "to_slug": "arr",
+  "relation": "parent_of",
+  "note": "ARR メソドロジー運用"
+  }
   ],
   "related_matrix_slugs": [
-    "vcm-standards",
-    "credit-eligibility"
+  "vcm-standards",
+  "credit-eligibility"
   ],
   "sections": [
-    {
-      "heading": "制度の概要",
-      "body": "Gold Standard は WWF を含む 80 以上の NGO の支持を得て、2003 年に設立された任意カーボンクレジット基準。発行クレジットは VER (Verified Emissions Reduction) と呼ばれる。Verra VCS と比較してプロジェクト規模は小さいが、SDGs (Sustainable Development Goals) への貢献を可視化する SDG Impact Tool がブランド差別化要素として機能している。",
-      "source_urls": [
-        {
-          "label": "Gold Standard 公式",
-          "url": "https://www.goldstandard.org/"
-        }
-      ]
-    },
-    {
-      "heading": "主要メソドロジー",
-      "body": "以下のメソドロジー領域を扱う:\n\n- **再生可能エネルギー** — 特にクリーンクッキングストーブ・コミュニティ太陽光・水浄化等の途上国コミュニティ案件\n- **エネルギー効率** — 産業・家庭部門\n- **森林・土地利用** — 植林・森林管理\n- **農業** — 堆肥化等\n\nVCS と異なり **Engineered Removal** (DAC・ERW 等) の取扱は限定的。"
-    },
-    {
-      "heading": "市場での位置",
-      "body": "クリーンクッキング系メソドロジー由来 VER は VCM 内で固有の需要ベース (CSR、コミュニティ・コベネフィット重視の企業) を持つ。価格レンジは VCS 同等の幅で、メソドロジー・vintage・所在地依存 (要確認: 直近価格レンジ)。「Gold Standard だから安心」は VCS と同様、メソドロジー個別評価なしには成立しない。"
-    },
-    {
-      "heading": "編集部の論点",
-      "body": "Verra VCS と Gold Standard は実務上「相補的」に使われる場面が多い。大量・低価格な森林案件は VCS、小規模・高ブランド価値の途上国コミュニティ案件は Gold Standard、という棲み分けが一般化。ICVCM CCP 適格性の評価結果が市場シグナルとして機能し始めており、両者の差異化要因は「メソドロジー多様性 vs SDGs 統合度」に収斂しつつある。"
-    }
+  {
+  "heading": "制度の概要",
+  "body": "Gold Standard は WWF を含む 80 以上の NGO の支持を得て、2003 年に設立された任意カーボンクレジット基準。発行クレジットは VER (Verified Emissions Reduction) と呼ばれる。Verra VCS と比較してプロジェクト規模は小さいが、SDGs (Sustainable Development Goals) への貢献を可視化する SDG Impact Tool がブランド差別化要素として機能している。",
+  "source_urls": [
+  {
+  "label": "Gold Standard 公式",
+  "url": "https://www.goldstandard.org/"
+  }
+  ]
+  },
+  {
+  "heading": "主要メソドロジー",
+  "body": "以下のメソドロジー領域を扱う:\n\n- **再生可能エネルギー** — 特にクリーンクッキングストーブ・コミュニティ太陽光・水浄化等の途上国コミュニティ案件\n- **エネルギー効率** — 産業・家庭部門\n- **森林・土地利用** — 植林・森林管理\n- **農業** — 堆肥化等\n\nVCS と異なり **Engineered Removal** (DAC・ERW 等) の取扱は限定的。"
+  },
+  {
+  "heading": "市場での位置",
+  "body": "クリーンクッキング系メソドロジー由来 VER は VCM 内で固有の需要ベース (CSR、コミュニティ・コベネフィット重視の企業) を持つ。価格レンジは VCS 同等の幅で、メソドロジー・vintage・所在地依存 (運用注視: 直近価格レンジ)。「Gold Standard だから安心」は VCS と同様、メソドロジー個別評価なしには成立しない。"
+  },
+  {
+  "heading": "編集部の論点",
+  "body": "Verra VCS と Gold Standard は実務上「相補的」に使われる場面が多い。大量・低価格な森林案件は VCS、小規模・高ブランド価値の途上国コミュニティ案件は Gold Standard、という棲み分けが一般化。ICVCM CCP 適格性の評価結果が市場シグナルとして機能し始めており、両者の差異化要因は「メソドロジー多様性 vs SDGs 統合度」に収斂しつつある。"
+  }
   ]
 }

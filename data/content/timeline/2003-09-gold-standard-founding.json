@@ -2,19 +2,19 @@
   "slug": "2003-09-gold-standard-founding",
   "event_date": "2003-09-01",
   "title": "Gold Standard 設立",
-  "summary": "WWF を中心とする NGO 連合により、CDM 等の任意カーボンクレジットに「SDGs 連動」の品質基準を提供することを目的に設立 (要確認: 正確な月日)。後に独立スタンダードへ拡張し、Verra VCS と並ぶ VCM の二大民間基準に成長。",
+  "summary": "WWF を中心とする NGO 連合により、CDM 等の任意カーボンクレジットに「SDGs 連動」の品質基準を提供することを目的に設立 (運用注視: 正確な月日)。後に独立スタンダードへ拡張し、Verra VCS と並ぶ VCM の二大民間基準に成長。",
   "affected_entity_slugs": [
-    "gold-standard",
-    "gold-standard-foundation"
+  "gold-standard",
+  "gold-standard-foundation"
   ],
   "category": "regulatory",
   "importance": 4,
   "status": "published",
   "source_urls": [
-    {
-      "label": "Gold Standard 公式",
-      "url": "https://www.goldstandard.org/"
-    }
+  {
+  "label": "Gold Standard 公式",
+  "url": "https://www.goldstandard.org/"
+  }
   ],
   "content_md": "## 制度の概要\n\n2003 年 9 月、**Gold Standard Foundation** がスイス・ジュネーブで設立された。WWF (世界自然保護基金) を含む環境 NGO 18 団体が主導し、**CDM クレジットの品質強化** を当初目的とする民間クレジットスタンダード。「CDM プロジェクトの中でも、再エネ・省エネかつ持続可能な開発に貢献するもののみを認証する」という **品質の高いクレジットの差別化シグナル** として誕生し、現在は CDM の枠を超えて独自メソドロジーで認証を行う主要民間クレジット制度の一つ。\n\n## 主要な要素\n\n- **発足主旨**: 「Carbon credits with the highest level of environmental integrity and contribution to sustainable development」\n- **主要メソドロジー**: 再エネ (太陽光・風力・地熱・水力)・省エネ (クッキングストーブ・LED 等)・廃棄物処理・REDD+\n- **SDG (Sustainable Development Goals) 連動**: 各プロジェクトに対し 17 SDG への貢献を定量評価する仕組み (Gold Standard for the Global Goals)\n- **第三者検証**: CDM の DOE (Designated Operational Entity) を一部活用しつつ、独自審査も実施\n- **クレジット単位**: 1 VER (Verified Emission Reduction) = 1 t-CO2eq\n- **品質トラック**: ICVCM の CCP (Core Carbon Principles) でも高い適合率\n- **価格水準**: Verra VCS より平均的に高め (品質プレミアム、運用注視: 直近実勢)\n\n## 日本企業への含意\n\nGold Standard は **「Verra より少し高めだが品質シグナルが強い」** ポジションで、日本企業のクレジット運用に独自の役割:\n\n- **任意取り組み (SBT / CDP / Scope3 オフセット)**: SDG への貢献を併記できるため、**ESG 投資家・株主向けのストーリーに使いやすい**\n- **クッキングストーブ・水浄化等の社会貢献型**: 開発途上国で実施される社会貢献型プロジェクトのクレジットが多く、CSR 統合報告書での **ブランディング素材** として有効\n- **GX-ETS 遵守**: 国際民間クレジットのため、GX-ETS の遵守クレジットとしては **限定的取扱**。当面は任意取り組み中心\n- **長期 offtake**: Microsoft / Stripe Frontier 等の大手 CDR 購入者も Gold Standard クレジットを採用\n\n## 編集部の論点\n\nGold Standard は「**民間カーボンクレジット制度の品質シグナル戦略の先駆け**」として、現在の品質ヒエラルキー (CCP 適格 vs 非適格、CDR vs Avoidance) の議論の母体となった存在。\n\nCSR / サスティナビリティ担当者にとっての含意:\n\n- **Verra との使い分け**: 「規模・流動性 = Verra、品質・SDG ストーリー = Gold Standard」という **明確な使い分け** が業界標準。一社のクレジット調達で **複数スタンダードをミックス** する設計が普通\n- **価格プレミアムの正当化**: 10-30% 程度の価格プレミアムを内部で正当化するため、**「ESG 評価機関への説明素材」「IR 資料への活用」** で価値を回収する設計が必要\n- **CCP 評価との関係**: ICVCM CCP 評価で Gold Standard メソドロジーは比較的高い適合率。**「Gold Standard かつ CCP 適格」** が現時点での最高位品質シグナルの一つ\n\n未確定論点:\n- **Article 6.4 PACM との位置関係**: PACM の本格運用が始まると、Gold Standard 等の民間スタンダードは **政府承認クレジットとの競争・連携** の選択を迫られる\n- **メソドロジーの将来**: クッキングストーブ等の旧来メソドロジーは、業界の品質基準厳格化で **適格性が低下する** 可能性\n- **REDD+ 統合の影響**: Verra VCS が VM0048 で REDD+ メソドロジーを統合した動きに、Gold Standard も追随するかは要監視 (運用注視: 直近の議論)\n\n## 関連動向\n\n- [Gold Standard](/entities/gold-standard) 制度本体\n- [Gold Standard Foundation](/entities/gold-standard-foundation) — 運営団体\n- [Verra VCS](/entities/verra-vcs) — 主要競合\n- [ICVCM CCP](/entities/icvcm-ccp) — 品質評価\n- [VCM スタンダード比較行列](/matrices/vcm-standards)\n"
 }

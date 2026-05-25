@@ -7,14 +7,14 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-    "ボランタリー市場"
+  "ボランタリー市場"
   ],
   "related_entity_slugs": [
-    "verra-vcs",
-    "gold-standard",
-    "dac",
-    "redd-plus",
-    "arr"
+  "verra-vcs",
+  "gold-standard",
+  "dac",
+  "redd-plus",
+  "arr"
   ],
-  "detailed_md": "## SBT 認証の 2 段階\n\nSBT initiative は **(1) 中間削減目標 (2030 等)** と **(2) Net-Zero (2050)** の 2 段階を提供する。\n\n### 中間目標 (Scope1+2+3 削減目標)\n\n- **クレジットは目標達成に含めない**\n- 全て自社の実排出削減で達成する必要 (主に省エネ・再エネ・燃料転換等)\n- 過去の Mitigation Hierarchy では Removal がカウントされる場合もあったが、現行 (2024 改訂以降) は基本的に除外\n\n### Net-Zero (2050)\n\n- **残余排出の最大 10% を Carbon Removal クレジットで相殺可** (FLAG セクターでは多少柔軟性あり)\n- 対象は **Removal クレジットのみ** (Avoidance / Reduction クレジットは不適格、要確認)\n- 適格な Removal:\n  - 森林系: REDD+ / ARR / IFM (品質基準を満たせば)\n  - Engineered Removal: DAC / Biochar / BECCS / ERW (永続性 ≥ 100 年想定)\n\n## 実務上の推奨\n\n1. **中間目標達成**: 純粋に自社の実削減で組み立て、クレジットを織り込まない\n2. **Net-Zero 設計**: 残余排出の 10% 相当を Carbon Removal で確保する設計。Engineered Removal は時間が必要なので長期 offtake を早めに開始\n3. **開示**: SBT 目標と BVCM 取り組みを明確に区別して開示\n\n## 注意\n\nSBT FLAG (Forest, Land and Agriculture) セクター固有のターゲットでは Land-based Removal の扱いが詳細に規定されている。FLAG 該当業界 (食品・林業・農業等) は別途確認が必要 (運用注視: 最新ガイダンス)。"
+  "detailed_md": "## SBT 認証の 2 段階\n\nSBT initiative は **(1) 中間削減目標 (2030 等)** と **(2) Net-Zero (2050)** の 2 段階を提供する。\n\n### 中間目標 (Scope1+2+3 削減目標)\n\n- **クレジットは目標達成に含めない**\n- 全て自社の実排出削減で達成する必要 (主に省エネ・再エネ・燃料転換等)\n- 過去の Mitigation Hierarchy では Removal がカウントされる場合もあったが、現行 (2024 改訂以降) は基本的に除外\n\n### Net-Zero (2050)\n\n- **残余排出の最大 10% を Carbon Removal クレジットで相殺可** (FLAG セクターでは多少柔軟性あり)\n- 対象は **Removal クレジットのみ** (Avoidance / Reduction クレジットは不適格)\n- 適格な Removal:\n - 森林系: REDD+ / ARR / IFM (品質基準を満たせば)\n - Engineered Removal: DAC / Biochar / BECCS / ERW (永続性 ≥ 100 年想定)\n\n## 実務上の推奨\n\n1. **中間目標達成**: 純粋に自社の実削減で組み立て、クレジットを織り込まない\n2. **Net-Zero 設計**: 残余排出の 10% 相当を Carbon Removal で確保する設計。Engineered Removal は時間が必要なので長期 offtake を早めに開始\n3. **開示**: SBT 目標と BVCM 取り組みを明確に区別して開示\n\n## 注意\n\nSBT FLAG (Forest, Land and Agriculture) セクター固有のターゲットでは Land-based Removal の扱いが詳細に規定されている。FLAG 該当業界 (食品・林業・農業等) は別途確認が必要 (運用注視: 最新ガイダンス)。"
 }

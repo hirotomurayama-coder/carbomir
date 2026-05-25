@@ -7,19 +7,19 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-    "EU",
-    "国境調整",
-    "遵守市場"
+  "EU",
+  "国境調整",
+  "遵守市場"
   ],
   "related_entity_slugs": [
-    "cbam",
-    "eu-ets"
+  "cbam",
+  "eu-ets"
   ],
   "source_urls": [
-    {
-      "label": "European Commission - CBAM",
-      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
-    }
+  {
+  "label": "European Commission - CBAM",
+  "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+  }
   ],
-  "detailed_md": "## CBAM の仕組み\n\nCBAM (Carbon Border Adjustment Mechanism) は EU 域内製造業の競争力を保護する目的で、**輸入品の隠れた炭素コストを EU ETS と同等の水準で課す** 制度。輸入者は CBAM 証書を購入し、輸入時に提出する。\n\n## 対象品目 (2026 年 1 月本格運用時)\n\n- 鉄鋼 (HS 72, 73)\n- アルミニウム (HS 76)\n- セメント (HS 25)\n- 肥料 (HS 28, 31)\n- 水素 (HS 28)\n- 電力 (HS 27)\n\n将来的に化学品・ポリマー等への対象拡大が議論されている (運用注視: 直近の議論)。\n\n## 日本企業の影響と対応\n\n### サプライヤー側 (鉄鋼・アルミ等の製造業)\n\n1. **製品ごとの内包排出量を算定** (EU の方法論で計算)\n2. **EU 輸入者にデータを提供** (Embedded Emissions Statement)\n3. **計算精度を上げて CBAM コスト削減**: 排出量を低く正確に証明できれば CBAM コストが下がる\n4. **オフセットの使い分け**: EU 域内で支払い済みの炭素価格 (GX-ETS 等) は CBAM コストから控除可能 (運用注視: 細部運用)\n\n### 輸入者側 (EU 子会社・パートナー経由で輸入する場合)\n\n1. **サプライヤーから排出量データを取得**\n2. **CBAM 証書を年次で購入**\n3. **報告義務を履行**\n\n## 注意\n\n移行期間 (2023 年10月 - 2025 年12月) は報告義務のみで証書購入は不要。2026 年1月から本格運用で証書購入が始まる。最新の運用詳細は EU 当局の発表を継続フォローすること (要確認)。"
+  "detailed_md": "## CBAM の仕組み\n\nCBAM (Carbon Border Adjustment Mechanism) は EU 域内製造業の競争力を保護する目的で、**輸入品の隠れた炭素コストを EU ETS と同等の水準で課す** 制度。輸入者は CBAM 証書を購入し、輸入時に提出する。\n\n## 対象品目 (2026 年 1 月本格運用時)\n\n- 鉄鋼 (HS 72, 73)\n- アルミニウム (HS 76)\n- セメント (HS 25)\n- 肥料 (HS 28, 31)\n- 水素 (HS 28)\n- 電力 (HS 27)\n\n将来的に化学品・ポリマー等への対象拡大が議論されている (運用注視: 直近の議論)。\n\n## 日本企業の影響と対応\n\n### サプライヤー側 (鉄鋼・アルミ等の製造業)\n\n1. **製品ごとの内包排出量を算定** (EU の方法論で計算)\n2. **EU 輸入者にデータを提供** (Embedded Emissions Statement)\n3. **計算精度を上げて CBAM コスト削減**: 排出量を低く正確に証明できれば CBAM コストが下がる\n4. **オフセットの使い分け**: EU 域内で支払い済みの炭素価格 (GX-ETS 等) は CBAM コストから控除可能 (運用注視: 細部運用)\n\n### 輸入者側 (EU 子会社・パートナー経由で輸入する場合)\n\n1. **サプライヤーから排出量データを取得**\n2. **CBAM 証書を年次で購入**\n3. **報告義務を履行**\n\n## 注意\n\n移行期間 (2023 年10月 - 2025 年12月) は報告義務のみで証書購入は不要。2026 年1月から本格運用で証書購入が始まる。最新の運用詳細は EU 当局の発表を継続フォローすること。"
 }

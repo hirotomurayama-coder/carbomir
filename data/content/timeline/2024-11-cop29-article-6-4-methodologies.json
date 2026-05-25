@@ -2,19 +2,19 @@
   "slug": "2024-11-cop29-article-6-4-methodologies",
   "event_date": "2024-11-23",
   "title": "COP29 (バクー) で Article 6.4 メソドロジー基準を採択",
-  "summary": "COP29 でパリ協定第 6.4 条 (PACM = Paris Agreement Crediting Mechanism) の運用詳細が大きく前進。Article 6.4 Supervisory Body が策定したメソドロジー基準と除去活動基準を締約国が承認し、初の PACM クレジット発行に向けた制度的準備が整った (要確認: 詳細日付・採択内容)。",
+  "summary": "COP29 でパリ協定第 6.4 条 (PACM = Paris Agreement Crediting Mechanism) の運用詳細が大きく前進。Article 6.4 Supervisory Body が策定したメソドロジー基準と除去活動基準を締約国が承認し、初の PACM クレジット発行に向けた制度的準備が整った (運用注視: 詳細日付・採択内容)。",
   "affected_entity_slugs": [
-    "paris-article-6-4",
-    "paris-article-6-2"
+  "paris-article-6-4",
+  "paris-article-6-2"
   ],
   "category": "regulatory",
   "importance": 4,
   "status": "published",
   "source_urls": [
-    {
-      "label": "UNFCCC - Article 6.4 Mechanism",
-      "url": "https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism"
-    }
+  {
+  "label": "UNFCCC - Article 6.4 Mechanism",
+  "url": "https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism"
+  }
   ],
-  "content_md": "## 制度の概要\n\n2024 年 11 月のアゼルバイジャン・バクーで開催された **COP29** で、パリ協定 **第 6.4 条 (PACM: Paris Agreement Crediting Mechanism)** の制度設計が大きく前進した。Article 6.4 Supervisory Body が策定した **メソドロジー基準** と **除去活動基準** が締約国会議で承認され、Verra / Gold Standard 等の民間クレジット制度に並ぶ **政府間枠組のクレジット制度** として運用開始の準備が整った。\n\n## 主要な要素\n\n- **PACM クレジット**: 国連管理下で発行される、パリ協定整合の国際クレジット\n- **メソドロジー基準**: 既存民間スキームの方法論を取り込みつつ、より厳格な追加性・モニタリング要件を設定\n- **除去活動基準**: Engineered Removal (DAC / BECCS / Biochar 等) に対する別途の認証基準\n- **二重計上回避**: NDC への計上が二重にならないよう、ホスト国 + 購入国の Authorization フロー厳格化\n- **初発行**: 2025 年以降に初の PACM クレジット発行が見込まれる (運用注視: 最新進捗)\n\n## 日本企業への含意\n\nPACM クレジットが商業流通を始めると、日本企業のカーボンクレジット調達に新たな選択肢が加わる:\n\n- **JCM クレジットとの位置関係**: 日本が主導してきた JCM (二国間制度) は Article 6.2 ベース。PACM (6.4 ベース) は別系統だが、両者の使い分けが論点\n- **VCM クレジットとの差別化**: PACM は **政府承認 + 国連管理** で信頼性が高い反面、Verra VCS 等の民間クレジットより手続コストが高い見込み\n- **GX-ETS との接続**: 国内遵守目的で PACM が使えるかは未確定。当面は VCM / JCM が中心 (運用注視: 第2フェーズ移行時の細目)\n- **SBT FLAG / Scope3 オフセット**: 任意取り組みでの PACM 活用は、SBT (Science Based Targets) ガイダンスの更新次第\n\n## 編集部の論点\n\nCOP29 は「**Article 6 メカニズムの本格運用への最終的な前進点**」として位置付けられる。Article 6 は 2015 年のパリ協定で原則合意されたが、運用ルール (Rulebook) は 2021 年の COP26 でやっと枠組みが固まり、メソドロジー基準は 2024 年の COP29 でようやく具体化した、という **9 年がかりの長期制度設計の結節点** である。\n\n日本企業の CSR / サスティナビリティ担当者向けの実務含意:\n\n- **PACM クレジットを採用するか様子見か**: 制度の運用実績が出るまで (おそらく 2026-2027) は **PACM 単独に依存せず、JCM + VCM のポートフォリオで運用** が無難\n- **メソドロジー転換の影響**: 既存購入済みの Verra VCS クレジットが PACM 認定の方法論に **適合しない場合**、品質ランクが相対的に低下する可能性。長期 offtake 契約には適格性条項を入れるべき\n- **競争環境の変化**: 政府間クレジット (PACM / JCM) が拡大すると、民間クレジット (Verra / Gold Standard) は **より厳格な品質シグナル** (ICVCM CCP 等) で差別化する圧力が強まる\n\n未確定論点:\n- PACM クレジット価格水準 (民間より高めの予想だが要確認)\n- 既存の CDM (Clean Development Mechanism) クレジットからの PACM 移行ルール (運用注視: 細部運用)\n- 各国 NDC への 6.4 クレジット計上ルールの一貫性\n\n## 関連動向\n\n- [Paris Article 6.4](/entities/paris-article-6-4) 制度本体\n- [Paris Article 6.2](/entities/paris-article-6-2) — 二国間取引アプローチ\n- [JCM](/entities/jcm) — 日本主導の 6.2 制度\n- [Verra VCS](/entities/verra-vcs) / [Gold Standard](/entities/gold-standard) — 民間クレジットへの影響\n"
+  "content_md": "## 制度の概要\n\n2024 年 11 月のアゼルバイジャン・バクーで開催された **COP29** で、パリ協定 **第 6.4 条 (PACM: Paris Agreement Crediting Mechanism)** の制度設計が大きく前進した。Article 6.4 Supervisory Body が策定した **メソドロジー基準** と **除去活動基準** が締約国会議で承認され、Verra / Gold Standard 等の民間クレジット制度に並ぶ **政府間枠組のクレジット制度** として運用開始の準備が整った。\n\n## 主要な要素\n\n- **PACM クレジット**: 国連管理下で発行される、パリ協定整合の国際クレジット\n- **メソドロジー基準**: 既存民間スキームの方法論を取り込みつつ、より厳格な追加性・モニタリング要件を設定\n- **除去活動基準**: Engineered Removal (DAC / BECCS / Biochar 等) に対する別途の認証基準\n- **二重計上回避**: NDC への計上が二重にならないよう、ホスト国 + 購入国の Authorization フロー厳格化\n- **初発行**: 2025 年以降に初の PACM クレジット発行が見込まれる (運用注視: 最新進捗)\n\n## 日本企業への含意\n\nPACM クレジットが商業流通を始めると、日本企業のカーボンクレジット調達に新たな選択肢が加わる:\n\n- **JCM クレジットとの位置関係**: 日本が主導してきた JCM (二国間制度) は Article 6.2 ベース。PACM (6.4 ベース) は別系統だが、両者の使い分けが論点\n- **VCM クレジットとの差別化**: PACM は **政府承認 + 国連管理** で信頼性が高い反面、Verra VCS 等の民間クレジットより手続コストが高い見込み\n- **GX-ETS との接続**: 国内遵守目的で PACM が使えるかは未確定。当面は VCM / JCM が中心 (運用注視: 第2フェーズ移行時の細目)\n- **SBT FLAG / Scope3 オフセット**: 任意取り組みでの PACM 活用は、SBT (Science Based Targets) ガイダンスの更新次第\n\n## 編集部の論点\n\nCOP29 は「**Article 6 メカニズムの本格運用への最終的な前進点**」として位置付けられる。Article 6 は 2015 年のパリ協定で原則合意されたが、運用ルール (Rulebook) は 2021 年の COP26 でやっと枠組みが固まり、メソドロジー基準は 2024 年の COP29 でようやく具体化した、という **9 年がかりの長期制度設計の結節点** である。\n\n日本企業の CSR / サスティナビリティ担当者向けの実務含意:\n\n- **PACM クレジットを採用するか様子見か**: 制度の運用実績が出るまで (おそらく 2026-2027) は **PACM 単独に依存せず、JCM + VCM のポートフォリオで運用** が無難\n- **メソドロジー転換の影響**: 既存購入済みの Verra VCS クレジットが PACM 認定の方法論に **適合しない場合**、品質ランクが相対的に低下する可能性。長期 offtake 契約には適格性条項を入れるべき\n- **競争環境の変化**: 政府間クレジット (PACM / JCM) が拡大すると、民間クレジット (Verra / Gold Standard) は **より厳格な品質シグナル** (ICVCM CCP 等) で差別化する圧力が強まる\n\n未確定論点:\n- PACM クレジット価格水準 (民間より高めの予想だが)\n- 既存の CDM (Clean Development Mechanism) クレジットからの PACM 移行ルール (運用注視: 細部運用)\n- 各国 NDC への 6.4 クレジット計上ルールの一貫性\n\n## 関連動向\n\n- [Paris Article 6.4](/entities/paris-article-6-4) 制度本体\n- [Paris Article 6.2](/entities/paris-article-6-2) — 二国間取引アプローチ\n- [JCM](/entities/jcm) — 日本主導の 6.2 制度\n- [Verra VCS](/entities/verra-vcs) / [Gold Standard](/entities/gold-standard) — 民間クレジットへの影響\n"
 }

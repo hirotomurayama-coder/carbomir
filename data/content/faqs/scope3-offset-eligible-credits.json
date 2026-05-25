@@ -7,17 +7,17 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-    "ボランタリー市場"
+  "ボランタリー市場"
   ],
   "related_entity_slugs": [
-    "verra-vcs",
-    "gold-standard",
-    "plan-vivo",
-    "jcredit",
-    "jcm"
+  "verra-vcs",
+  "gold-standard",
+  "plan-vivo",
+  "jcredit",
+  "jcm"
   ],
   "related_matrix_slugs": [
-    "credit-eligibility"
+  "credit-eligibility"
   ],
-  "detailed_md": "## 重要な原則\n\n**Scope3 排出をクレジットで「相殺」する手法は、GHG プロトコル・SBT initiative・CDP の標準では推奨されない**。理由は、Scope3 排出はそもそも他社 (サプライヤー / 顧客) の活動由来であり、自社の「実排出」とは扱いが異なるため。\n\n## ただし BVCM では使える\n\n**Beyond Value Chain Mitigation (BVCM)** は SBT initiative が提唱する考え方で、自社の Scope1-3 削減目標とは別枠で、**バリューチェーン外の排出削減・除去** に貢献する取り組みを評価する。BVCM では:\n\n- ボランタリー市場のクレジット (Verra / Gold Standard / Plan Vivo 等) が活用可\n- 森林系・Engineered Removal いずれも対象\n- 「相殺」ではなく「貢献」として開示\n\n## 実務上の推奨\n\n1. **Scope3 削減目標達成**: サプライヤーエンゲージメント・調達切替・効率化で対応 (クレジットでない)\n2. **BVCM コミットメント**: 自社 Scope3 と同等規模 (10-20%) の BVCM 投資を別枠で実施\n3. **開示**: CDP・SBT 報告で BVCM 取り組みを Scope1-3 と区別して開示\n\n## 注意\n\nGHG プロトコルの Scope3 ガイダンスは継続的に改訂されている (2024-2026 にかけて Land Sector 関連で大きな更新あり)。最新版確認は必須 (要確認: 直近版)。"
+  "detailed_md": "## 重要な原則\n\n**Scope3 排出をクレジットで「相殺」する手法は、GHG プロトコル・SBT initiative・CDP の標準では推奨されない**。理由は、Scope3 排出はそもそも他社 (サプライヤー / 顧客) の活動由来であり、自社の「実排出」とは扱いが異なるため。\n\n## ただし BVCM では使える\n\n**Beyond Value Chain Mitigation (BVCM)** は SBT initiative が提唱する考え方で、自社の Scope1-3 削減目標とは別枠で、**バリューチェーン外の排出削減・除去** に貢献する取り組みを評価する。BVCM では:\n\n- ボランタリー市場のクレジット (Verra / Gold Standard / Plan Vivo 等) が活用可\n- 森林系・Engineered Removal いずれも対象\n- 「相殺」ではなく「貢献」として開示\n\n## 実務上の推奨\n\n1. **Scope3 削減目標達成**: サプライヤーエンゲージメント・調達切替・効率化で対応 (クレジットでない)\n2. **BVCM コミットメント**: 自社 Scope3 と同等規模 (10-20%) の BVCM 投資を別枠で実施\n3. **開示**: CDP・SBT 報告で BVCM 取り組みを Scope1-3 と区別して開示\n\n## 注意\n\nGHG プロトコルの Scope3 ガイダンスは継続的に改訂されている (2024-2026 にかけて Land Sector 関連で大きな更新あり)。最新版確認は必須 (運用注視: 直近版)。"
 }

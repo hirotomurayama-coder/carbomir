@@ -12,36 +12,36 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-    "需要家",
-    "Engineered Removal",
-    "国際"
+  "需要家",
+  "Engineered Removal",
+  "国際"
   ],
   "related_entity_slugs": [
-    "dac",
-    "erw",
-    "biochar",
-    "beccs",
-    "oae",
-    "isometric"
+  "dac",
+  "erw",
+  "biochar",
+  "beccs",
+  "oae",
+  "isometric"
   ],
   "source_urls": [
-    {
-      "label": "Frontier 公式",
-      "url": "https://frontierclimate.com/"
-    }
+  {
+  "label": "Frontier 公式",
+  "url": "https://frontierclimate.com/"
+  }
   ],
   "sections": [
-    {
-      "heading": "Frontier の仕組み",
-      "body": "**Frontier** (2022 年 Stripe 主導で発足) は、複数のテック大手 (Stripe / Alphabet / Meta / McKinsey / Shopify + 後に H&M / Workday 等) が **10 億 USD 規模の事前購入コミットメント** を共有する CDR 需要創出枠組み。\n\n仕組みの肝:\n\n- **AMC (Advance Market Commitment)**: 商業化が立ち上がる前から、達成基準を満たせば購入する旨を事前確約\n- **多様な技術への分散投資**: DAC、Biochar、ERW、BECCS、OAE 等の各種 Engineered Removal を網羅\n- **品質審査の集約化**: 各事業者の MRV 等を Frontier が共同審査し、参加企業の調達コストを下げる"
-    },
-    {
-      "heading": "代表的な契約事業者",
-      "body": "Frontier がこれまで支援した CDR 事業者 (一部、要確認: 最新リスト):\n\n- **Charm Industrial** (バイオオイル + 地中注入)\n- **Heirloom** (DAC)\n- **Lithos Carbon** (ERW)\n- **Mati Carbon** (ERW)\n- **CarbonCure** (鉱物化)\n- **Equatic** (OAE / 電解海水)\n- **44.01** (鉱物化)\n\n価格レンジは事業者の技術・段階で大きく異なるが、概ね 100-1,000 USD/t (商業化初期で高め)。"
-    },
-    {
-      "heading": "編集部の論点",
-      "body": "Frontier モデルは **「CDR 商業化を加速するための需要側集約装置」** として、市場形成段階で極めて重要な役割を果たしている。\n\n日本企業の参考点:\n\n- **個別契約だけでなく、コーリションへの参加** という選択肢があり得る (現状日本企業の参加は限定的、要確認)\n- **多様な技術への分散投資** で技術リスクを抑える設計が学べる\n- **AMC モデル** は、事業者にとって資金調達コストが低く、買い手にとって品質保証が得られる win-win 構造\n\n一方、AMC は **「成果が出てから支払う」** ものではなく、事前確約のため、買い手側にも一定の財務リスクがある。"
-    }
+  {
+  "heading": "Frontier の仕組み",
+  "body": "**Frontier** (2022 年 Stripe 主導で発足) は、複数のテック大手 (Stripe / Alphabet / Meta / McKinsey / Shopify + 後に H&M / Workday 等) が **10 億 USD 規模の事前購入コミットメント** を共有する CDR 需要創出枠組み。\n\n仕組みの肝:\n\n- **AMC (Advance Market Commitment)**: 商業化が立ち上がる前から、達成基準を満たせば購入する旨を事前確約\n- **多様な技術への分散投資**: DAC、Biochar、ERW、BECCS、OAE 等の各種 Engineered Removal を網羅\n- **品質審査の集約化**: 各事業者の MRV 等を Frontier が共同審査し、参加企業の調達コストを下げる"
+  },
+  {
+  "heading": "代表的な契約事業者",
+  "body": "Frontier がこれまで支援した CDR 事業者 (一部):\n\n- **Charm Industrial** (バイオオイル + 地中注入)\n- **Heirloom** (DAC)\n- **Lithos Carbon** (ERW)\n- **Mati Carbon** (ERW)\n- **CarbonCure** (鉱物化)\n- **Equatic** (OAE / 電解海水)\n- **44.01** (鉱物化)\n\n価格レンジは事業者の技術・段階で大きく異なるが、概ね 100-1,000 USD/t (商業化初期で高め)。"
+  },
+  {
+  "heading": "編集部の論点",
+  "body": "Frontier モデルは **「CDR 商業化を加速するための需要側集約装置」** として、市場形成段階で極めて重要な役割を果たしている。\n\n日本企業の参考点:\n\n- **個別契約だけでなく、コーリションへの参加** という選択肢があり得る (現状日本企業の参加は限定的)\n- **多様な技術への分散投資** で技術リスクを抑える設計が学べる\n- **AMC モデル** は、事業者にとって資金調達コストが低く、買い手にとって品質保証が得られる win-win 構造\n\n一方、AMC は **「成果が出てから支払う」** ものではなく、事前確約のため、買い手側にも一定の財務リスクがある。"
+  }
   ]
 }

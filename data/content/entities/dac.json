@@ -9,8 +9,8 @@
   "next_review_at": "2026-09-18",
   "status": "published",
   "tags": [
-    "Engineered Removal",
-    "DAC"
+  "Engineered Removal",
+  "DAC"
   ],
   "jurisdiction": "(技術領域。中央管轄なし)",
   "established_year": 1999,
@@ -18,46 +18,46 @@
   "geographic_scope": "グローバル",
   "credit_unit": "(Engineered Removal credits、各レジストリ経由)",
   "related": [
-    {
-      "to_slug": "verra-vcs",
-      "relation": "depends_on",
-      "note": "VCS で Engineered Removal メソドロジーを運用"
-    },
-    {
-      "to_slug": "erw",
-      "relation": "competes_with",
-      "note": "Engineered Removal の別アプローチ (鉱物溶解系)"
-    },
-    {
-      "to_slug": "beccs",
-      "relation": "competes_with",
-      "note": "Engineered Removal の別アプローチ (バイオマス + CCS)"
-    },
-    {
-      "to_slug": "biochar",
-      "relation": "competes_with",
-      "note": "Engineered Removal の代替手段 (永続性は劣る)"
-    }
+  {
+  "to_slug": "verra-vcs",
+  "relation": "depends_on",
+  "note": "VCS で Engineered Removal メソドロジーを運用"
+  },
+  {
+  "to_slug": "erw",
+  "relation": "competes_with",
+  "note": "Engineered Removal の別アプローチ (鉱物溶解系)"
+  },
+  {
+  "to_slug": "beccs",
+  "relation": "competes_with",
+  "note": "Engineered Removal の別アプローチ (バイオマス + CCS)"
+  },
+  {
+  "to_slug": "biochar",
+  "relation": "competes_with",
+  "note": "Engineered Removal の代替手段 (永続性は劣る)"
+  }
   ],
   "related_matrix_slugs": [
-    "engineered-removal-comparison"
+  "engineered-removal-comparison"
   ],
   "sections": [
-    {
-      "heading": "技術の概要",
-      "body": "DAC は大気中の希薄な CO2 (約 420 ppm) を化学吸着剤 (固体アミン、液体ハイドロキシド等) で捕集し、加熱・減圧等で再生するプロセス。捕集 1 t-CO2 当たり必要なエネルギー (MWh) と捕集効率が技術競争の主要パラメータとなる。\n\n商業化規模では以下が代表的 (順不同):\n\n- **Climeworks** (スイス)\n- **Carbon Engineering** (カナダ)\n- **Heirloom** (米)\n- **Mission Zero Technologies** (英)\n\nこれら以外にも各国でスタートアップが台頭している。"
-    },
-    {
-      "heading": "クレジット化",
-      "body": "捕集した CO2 を地中貯留 (CCS) または鉱物化 (Mineralization) と組み合わせて発行する CDR (Carbon Dioxide Removal) クレジットが市場形成中。Verra VCS は Engineered Removal 系メソドロジーを整備しており、CAR (Climate Action Reserve) も同様の動き。Permanence (永続性) が森林系を圧倒する一方、価格が 100-600 USD/t-CO2 と高く、調達は前払い契約・長期 offtake が中心。"
-    },
-    {
-      "heading": "市場動向",
-      "body": "Microsoft、JPMorgan、Stripe 等のテック大手が前払い契約 (offtake agreement) で需要を創出。Climeworks の Mammoth プラント (2024 年稼働、アイスランド) が現時点の最大規模 (年 36,000 t 級)。米 Inflation Reduction Act の 45Q 税額控除 (DAC + 地中貯留で 180 USD/t、要確認: 制度詳細・最新値) が北米プロジェクト経済性の支柱になっている。"
-    },
-    {
-      "heading": "編集部の論点",
-      "body": "DAC は森林由来クレジットの品質リスク (ベースライン・永続性) から距離を置きたい買い手の最重要選択肢。一方、エネルギー集約度・スケール課題・コスト低減ペースは技術別に大きく異なるため、DAC と一括りにせずプロセス別 (固体 / 液体)、ベンダー別の精査が必要。長期 offtake では vintage 設計と価格上昇シナリオの整合が重要論点。"
-    }
+  {
+  "heading": "技術の概要",
+  "body": "DAC は大気中の希薄な CO2 (約 420 ppm) を化学吸着剤 (固体アミン、液体ハイドロキシド等) で捕集し、加熱・減圧等で再生するプロセス。捕集 1 t-CO2 当たり必要なエネルギー (MWh) と捕集効率が技術競争の主要パラメータとなる。\n\n商業化規模では以下が代表的 (順不同):\n\n- **Climeworks** (スイス)\n- **Carbon Engineering** (カナダ)\n- **Heirloom** (米)\n- **Mission Zero Technologies** (英)\n\nこれら以外にも各国でスタートアップが台頭している。"
+  },
+  {
+  "heading": "クレジット化",
+  "body": "捕集した CO2 を地中貯留 (CCS) または鉱物化 (Mineralization) と組み合わせて発行する CDR (Carbon Dioxide Removal) クレジットが市場形成中。Verra VCS は Engineered Removal 系メソドロジーを整備しており、CAR (Climate Action Reserve) も同様の動き。Permanence (永続性) が森林系を圧倒する一方、価格が 100-600 USD/t-CO2 と高く、調達は前払い契約・長期 offtake が中心。"
+  },
+  {
+  "heading": "市場動向",
+  "body": "Microsoft、JPMorgan、Stripe 等のテック大手が前払い契約 (offtake agreement) で需要を創出。Climeworks の Mammoth プラント (2024 年稼働、アイスランド) が現時点の最大規模 (年 36,000 t 級)。米 Inflation Reduction Act の 45Q 税額控除 (DAC + 地中貯留で 180 USD/t) が北米プロジェクト経済性の支柱になっている。"
+  },
+  {
+  "heading": "編集部の論点",
+  "body": "DAC は森林由来クレジットの品質リスク (ベースライン・永続性) から距離を置きたい買い手の最重要選択肢。一方、エネルギー集約度・スケール課題・コスト低減ペースは技術別に大きく異なるため、DAC と一括りにせずプロセス別 (固体 / 液体)、ベンダー別の精査が必要。長期 offtake では vintage 設計と価格上昇シナリオの整合が重要論点。"
+  }
   ]
 }
