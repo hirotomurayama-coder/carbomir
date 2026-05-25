@@ -20,8 +20,17 @@ import type {
 
 const DRAFTS_DIR = path.join(process.cwd(), "data", "ai-drafts");
 
+// 書込時のみ呼ぶ. Vercel serverless はランタイム fs が read-only なので
+// read パス (listDrafts / findDraftById) では呼んではならない (EROFS → 500).
 async function ensureDir(): Promise<void> {
-  await fs.mkdir(DRAFTS_DIR, { recursive: true });
+  try {
+    await fs.mkdir(DRAFTS_DIR, { recursive: true });
+  } catch (err: unknown) {
+    // 既存ディレクトリ + 書込不可 fs (Vercel 本番) の両方を握りつぶす.
+    const code = (err as NodeJS.ErrnoException).code;
+    if (code === "EEXIST" || code === "EROFS" || code === "EACCES") return;
+    throw err;
+  }
 }
 
 function safeId(id: string): string {
@@ -65,7 +74,8 @@ export async function listDrafts(filter?: {
   status?: AiDraftStatus;
   type?: AiDraftType;
 }): Promise<AiDraft[]> {
-  await ensureDir();
+  // 読込専用パス. ensureDir() は呼ばない (Vercel 本番で EROFS 500 になるため).
+  // ディレクトリ未存在の場合は ENOENT を空配列で返す.
   let entries: string[];
   try {
     entries = await fs.readdir(DRAFTS_DIR);
