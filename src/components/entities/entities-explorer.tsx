@@ -3,18 +3,26 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { LayoutGrid, List, ArrowUpRight, X, Tag } from "lucide-react";
+import { ArrowUpRight, X, Tag } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Card } from "@/components/ui/card";
 import type { Entity, EntityType } from "@/lib/types";
 import { ENTITY_TYPE_LABEL } from "@/lib/types";
+import { useTableControls } from "@/components/explorer/use-table-controls";
+import {
+  SortableHeader,
+  StaticHeader,
+} from "@/components/explorer/sortable-header";
+import {
+  ExplorerToolbar,
+  type Density,
+  type ViewMode,
+} from "@/components/explorer/explorer-toolbar";
 
 type Props = {
   entities: Entity[];
 };
 
-type ViewMode = "list" | "grid";
 type TypeFilter = "all" | EntityType;
 
 export function EntitiesExplorer({ entities }: Props) {
@@ -24,9 +32,10 @@ export function EntitiesExplorer({ entities }: Props) {
   const activeTag = searchParams.get("tag");
 
   const [view, setView] = React.useState<ViewMode>("list");
+  const [density, setDensity] = React.useState<Density>("compact");
   const [filter, setFilter] = React.useState<TypeFilter>("all");
 
-  // 実際にエンティティが存在するタイプのみタブ表示 (tag フィルタ適用後で算出)
+  // tag (URL) + type (タブ) で pre-filter
   const tagFiltered = React.useMemo(() => {
     if (!activeTag) return entities;
     return entities.filter((e) => e.tags.includes(activeTag));
@@ -38,17 +47,36 @@ export function EntitiesExplorer({ entities }: Props) {
     return Array.from(set);
   }, [tagFiltered]);
 
-  const filtered = React.useMemo(() => {
+  const typeFiltered = React.useMemo(() => {
     if (filter === "all") return tagFiltered;
     return tagFiltered.filter((e) => e.type === filter);
   }, [tagFiltered, filter]);
 
-  // active tag が none になったら type フィルタも all に戻す (UX 上の親切)
   React.useEffect(() => {
     if (filter !== "all" && !availableTypes.includes(filter as EntityType)) {
       setFilter("all");
     }
   }, [availableTypes, filter]);
+
+  // 共通 controls (検索 + ソート) を適用
+  const controls = useTableControls<Entity>({
+    items: typeFiltered,
+    searchText: (e) =>
+      [
+        e.name_ja,
+        e.name_en ?? "",
+        e.abbreviation ?? "",
+        e.summary ?? "",
+        ENTITY_TYPE_LABEL[e.type],
+        ...(e.tags ?? []),
+      ].join(" "),
+    sortableColumns: [
+      { key: "name", sortValue: (e) => e.name_en ?? e.name_ja },
+      { key: "type", sortValue: (e) => ENTITY_TYPE_LABEL[e.type] },
+      { key: "reviewed", sortValue: (e) => e.last_reviewed_at },
+    ],
+    defaultSort: { key: "name", dir: "asc" },
+  });
 
   const clearTag = React.useCallback(() => {
     const next = new URLSearchParams(searchParams.toString());
@@ -57,8 +85,37 @@ export function EntitiesExplorer({ entities }: Props) {
     router.push(qs ? `${pathname}?${qs}` : pathname);
   }, [pathname, router, searchParams]);
 
+  // Tab filter (left-slot in toolbar)
+  const tabFilter = (
+    <Tabs
+      value={filter}
+      onValueChange={(v) => setFilter(v as TypeFilter)}
+      className="min-w-0"
+    >
+      <TabsList className="h-8">
+        <TabsTrigger value="all" className="text-xs px-2.5">
+          すべて
+          <span className="ml-1.5 metric-number text-[10px] text-muted-foreground">
+            {tagFiltered.length}
+          </span>
+        </TabsTrigger>
+        {availableTypes.map((t) => {
+          const count = tagFiltered.filter((e) => e.type === t).length;
+          return (
+            <TabsTrigger key={t} value={t} className="text-xs px-2.5">
+              {ENTITY_TYPE_LABEL[t]}
+              <span className="ml-1.5 metric-number text-[10px] text-muted-foreground">
+                {count}
+              </span>
+            </TabsTrigger>
+          );
+        })}
+      </TabsList>
+    </Tabs>
+  );
+
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {/* Active tag chip */}
       {activeTag && (
         <div className="flex items-center gap-2 flex-wrap">
@@ -73,82 +130,44 @@ export function EntitiesExplorer({ entities }: Props) {
             {activeTag}
             <X className="h-3 w-3 opacity-70" />
           </button>
-          <span className="label-mono text-muted-foreground">
-            {tagFiltered.length.toString().padStart(2, "0")} match
-            {tagFiltered.length === 1 ? "" : "es"}
-          </span>
         </div>
       )}
 
-      <div className="flex items-center justify-between gap-3 flex-wrap">
-        <Tabs
-          value={filter}
-          onValueChange={(v) => setFilter(v as TypeFilter)}
-          className="min-w-0"
-        >
-          <TabsList className="h-8">
-            <TabsTrigger value="all" className="text-xs px-3">
-              すべて
-              <span className="ml-1.5 metric-number text-[10px] text-muted-foreground">
-                {tagFiltered.length}
-              </span>
-            </TabsTrigger>
-            {availableTypes.map((t) => {
-              const count = tagFiltered.filter((e) => e.type === t).length;
-              return (
-                <TabsTrigger key={t} value={t} className="text-xs px-3">
-                  {ENTITY_TYPE_LABEL[t]}
-                  <span className="ml-1.5 metric-number text-[10px] text-muted-foreground">
-                    {count}
-                  </span>
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
-        </Tabs>
+      <ExplorerToolbar
+        query={controls.query}
+        onQueryChange={controls.setQuery}
+        view={view}
+        onViewChange={setView}
+        density={density}
+        onDensityChange={setDensity}
+        matchCount={controls.visible.length}
+        totalCount={entities.length}
+        itemLabel="entities"
+        placeholder="名称・別名・タグで絞り込み..."
+        leftSlot={tabFilter}
+      />
 
-        <ToggleGroup
-          type="single"
-          value={view}
-          onValueChange={(v) => v && setView(v as ViewMode)}
-          className="h-8"
-        >
-          <ToggleGroupItem value="list" aria-label="リスト" className="h-8 px-2.5">
-            <List className="h-3.5 w-3.5" />
-          </ToggleGroupItem>
-          <ToggleGroupItem value="grid" aria-label="グリッド" className="h-8 px-2.5">
-            <LayoutGrid className="h-3.5 w-3.5" />
-          </ToggleGroupItem>
-        </ToggleGroup>
-      </div>
-
-      {filtered.length === 0 ? (
+      {controls.visible.length === 0 ? (
         <Card className="p-12">
           <p className="text-center label-mono text-muted-foreground">
             {activeTag
               ? `No entities tagged "${activeTag}" in this view`
-              : "No entities in this filter"}
+              : controls.query
+                ? `"${controls.query}" にヒットするエンティティはありません`
+                : "No entities in this filter"}
           </p>
         </Card>
       ) : view === "list" ? (
-        <ListView entities={filtered} activeTag={activeTag} />
+        <ListView
+          entities={controls.visible}
+          activeTag={activeTag}
+          density={density}
+          sort={controls.sort}
+          onToggleSort={controls.toggleSort}
+        />
       ) : (
-        <GridView entities={filtered} activeTag={activeTag} />
+        <GridView entities={controls.visible} activeTag={activeTag} />
       )}
-
-      <div className="flex items-center justify-between label-mono text-muted-foreground px-1">
-        <span>
-          <span className="metric-number text-foreground">
-            {filtered.length.toString().padStart(2, "0")}
-          </span>
-          <span className="mx-1 opacity-50">/</span>
-          <span className="metric-number">
-            {entities.length.toString().padStart(2, "0")}
-          </span>
-          <span className="ml-1">entities</span>
-        </span>
-        <span>{view === "list" ? "List view" : "Grid view"}</span>
-      </div>
     </div>
   );
 }
@@ -167,7 +186,7 @@ function TagChip({
   variant?: "muted" | "background";
 }) {
   const base =
-    "inline-flex items-center rounded border px-1.5 py-0.5 text-[10.5px] transition-colors";
+    "inline-flex items-center rounded border px-1.5 py-0 text-[10px] leading-[16px] transition-colors";
   const palette = active
     ? "border-accent/50 bg-accent/15 text-accent"
     : variant === "background"
@@ -185,35 +204,58 @@ function TagChip({
 }
 
 /* ============================================================
- * List view
+ * List view (DB-style compact table)
  * ============================================================ */
 
 function ListView({
   entities,
   activeTag,
+  density,
+  sort,
+  onToggleSort,
 }: {
   entities: Entity[];
   activeTag: string | null;
+  density: Density;
+  sort: { key: string; dir: "asc" | "desc" } | null;
+  onToggleSort: (key: string) => void;
 }) {
+  const rowPad = density === "compact" ? "py-2" : "py-3";
+  const tagLimit = density === "compact" ? 2 : 4;
+
   return (
     <Card className="overflow-hidden p-0">
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/40">
-              <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[280px]">
+              <SortableHeader
+                sortKey="name"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="260px"
+              >
                 Name
-              </th>
-              <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">
+              </SortableHeader>
+              <SortableHeader
+                sortKey="type"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="100px"
+              >
                 Type
-              </th>
-              <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[200px]">
-                Tags
-              </th>
-              <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">
+              </SortableHeader>
+              <StaticHeader minWidth="200px">Tags</StaticHeader>
+              <SortableHeader
+                sortKey="reviewed"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="100px"
+                className="hidden md:table-cell"
+              >
                 Reviewed
-              </th>
-              <th className="w-12 px-4 py-2.5"></th>
+              </SortableHeader>
+              <th className="w-10 px-3 py-2"></th>
             </tr>
           </thead>
           <tbody>
@@ -222,13 +264,13 @@ function ListView({
                 key={e.slug}
                 className="border-b border-border last:border-0 group hover:bg-muted/30 transition-colors"
               >
-                <td className="px-4 py-3 align-top">
+                <td className={`px-3 ${rowPad} align-top`}>
                   <Link href={`/entities/${e.slug}`} className="block">
-                    <p className="font-medium text-foreground group-hover:text-accent">
+                    <p className="font-medium text-foreground group-hover:text-accent leading-tight">
                       {e.name_ja}
                     </p>
                     {e.name_en && (
-                      <p className="font-mono text-[11px] text-muted-foreground mt-0.5">
+                      <p className="font-mono text-[10.5px] text-muted-foreground mt-0.5 truncate max-w-[420px]">
                         {e.name_en}
                         {e.abbreviation && (
                           <span className="ml-2 opacity-70">({e.abbreviation})</span>
@@ -237,14 +279,14 @@ function ListView({
                     )}
                   </Link>
                 </td>
-                <td className="px-4 py-3 align-top">
-                  <span className="inline-flex items-center rounded border border-border bg-muted/50 px-1.5 py-0.5 text-[10.5px] text-foreground/80">
+                <td className={`px-3 ${rowPad} align-top`}>
+                  <span className="inline-flex items-center rounded border border-border bg-muted/50 px-1.5 py-0 text-[10px] leading-[16px] text-foreground/80">
                     {ENTITY_TYPE_LABEL[e.type]}
                   </span>
                 </td>
-                <td className="px-4 py-3 align-top">
+                <td className={`px-3 ${rowPad} align-top`}>
                   <div className="flex flex-wrap gap-1">
-                    {e.tags.slice(0, 3).map((t) => (
+                    {e.tags.slice(0, tagLimit).map((t) => (
                       <TagChip
                         key={t}
                         tag={t}
@@ -252,17 +294,22 @@ function ListView({
                         active={t === activeTag}
                       />
                     ))}
+                    {e.tags.length > tagLimit && (
+                      <span className="label-mono text-muted-foreground text-[10px] leading-[16px]">
+                        +{e.tags.length - tagLimit}
+                      </span>
+                    )}
                   </div>
                 </td>
-                <td className="px-4 py-3 align-top">
-                  <span className="metric-number text-xs text-muted-foreground">
+                <td className={`px-3 ${rowPad} align-top hidden md:table-cell`}>
+                  <span className="metric-number text-[11px] text-muted-foreground">
                     {e.last_reviewed_at}
                   </span>
                 </td>
-                <td className="px-4 py-3 align-top text-right">
+                <td className={`px-3 ${rowPad} align-top text-right`}>
                   <Link
                     href={`/entities/${e.slug}`}
-                    className="inline-flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-accent transition-colors"
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-accent transition-colors"
                     aria-label="開く"
                   >
                     <ArrowUpRight className="h-3.5 w-3.5" />
@@ -278,7 +325,7 @@ function ListView({
 }
 
 /* ============================================================
- * Grid view
+ * Grid view (galleries)
  * ============================================================ */
 
 function GridView({
@@ -289,34 +336,34 @@ function GridView({
   activeTag: string | null;
 }) {
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {entities.map((e) => (
         <Card
           key={e.slug}
-          className="h-full p-5 hover:border-accent/60 hover:shadow-[0_4px_24px_-8px_rgba(14,165,233,0.18)] transition-all group"
+          className="h-full p-3.5 hover:border-accent/60 hover:shadow-[0_4px_24px_-8px_rgba(14,165,233,0.18)] transition-all group"
         >
           <Link href={`/entities/${e.slug}`} className="block">
-            <div className="flex items-start justify-between gap-2 mb-3">
-              <span className="inline-flex items-center rounded border border-border bg-muted/50 px-1.5 py-0.5 text-[10.5px] text-foreground/80">
+            <div className="flex items-start justify-between gap-2 mb-2">
+              <span className="inline-flex items-center rounded border border-border bg-muted/50 px-1.5 py-0 text-[10px] leading-[16px] text-foreground/80">
                 {ENTITY_TYPE_LABEL[e.type]}
               </span>
               <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground/50 group-hover:text-accent transition-colors" />
             </div>
-            <h3 className="text-base font-semibold text-foreground mb-0.5 group-hover:text-accent">
+            <h3 className="text-[14px] font-semibold text-foreground mb-0.5 leading-tight group-hover:text-accent">
               {e.name_ja}
             </h3>
             {e.name_en && (
-              <p className="font-mono text-[11px] text-muted-foreground mb-3">
+              <p className="font-mono text-[10.5px] text-muted-foreground mb-2 truncate">
                 {e.name_en}
               </p>
             )}
-            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-3">
+            <p className="text-[12.5px] text-muted-foreground leading-relaxed line-clamp-2 mb-2">
               {e.summary}
             </p>
           </Link>
           {e.tags.length > 0 && (
-            <div className="flex flex-wrap gap-1 mb-3">
-              {e.tags.slice(0, 4).map((t) => (
+            <div className="flex flex-wrap gap-1">
+              {e.tags.slice(0, 3).map((t) => (
                 <TagChip
                   key={t}
                   tag={t}
@@ -326,9 +373,6 @@ function GridView({
               ))}
             </div>
           )}
-          <p className="label-mono text-muted-foreground metric-number">
-            Reviewed {e.last_reviewed_at}
-          </p>
         </Card>
       ))}
     </div>

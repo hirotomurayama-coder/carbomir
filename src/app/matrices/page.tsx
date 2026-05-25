@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
 import { Columns3 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { listPublishedMatrices } from "@/lib/data/queries";
 import { MatricesExplorer } from "@/components/matrices/matrices-explorer";
-import { MATRIX_CATEGORY_LABEL } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "比較行列",
   description:
-    "Carbomir の比較行列一覧。VCM領域の主要対比を専門家編集で提供する。",
+    "制度・メソドロジー・プレイヤー・指標を、実務判断に直結する軸で対比する一覧。",
 };
 
 export default async function MatricesIndexPage() {
@@ -27,16 +18,6 @@ export default async function MatricesIndexPage() {
   const totalEntities = new Set(
     matrices.flatMap((m) => m.entities.map((e) => e.slug))
   ).size;
-  let totalCells = 0;
-  for (const m of matrices) {
-    for (const e of m.entities) {
-      const row = m.cells[e.slug];
-      if (!row) continue;
-      for (const d of m.dimensions) {
-        if (row[d.key]) totalCells++;
-      }
-    }
-  }
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
@@ -55,8 +36,7 @@ export default async function MatricesIndexPage() {
             比較行列
           </h1>
           <p className="text-sm text-muted-foreground mt-1.5 max-w-2xl">
-            制度・メソドロジー・プレイヤー・指標を、実務判断に直結する軸で対比する。Carbomir
-            の主力商品。各セルは事実・出典・編集部の品質観を保持する。
+            制度・メソドロジー・プレイヤー・指標を、実務判断に直結する軸で対比する。各セルは事実・出典・編集部の品質観の 3 階層で構造化されている。
           </p>
         </div>
 
@@ -68,33 +48,6 @@ export default async function MatricesIndexPage() {
       </header>
 
       <MatricesExplorer matrices={matrices} />
-
-      {/* Help card */}
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle className="text-sm font-semibold flex items-center gap-2">
-            <Columns3 className="h-4 w-4 text-accent" />
-            比較行列の構成
-          </CardTitle>
-        </CardHeader>
-        <Separator />
-        <CardContent className="pt-4 space-y-3">
-          <CardDescription className="text-sm leading-relaxed">
-            すべての行列は{" "}
-            <strong className="text-foreground">エンティティ × 軸</strong>{" "}
-            の交差をセルで埋めた構造で、各セルは
-            <span className="font-mono text-foreground"> value / source / note </span>
-            の 3 要素を持つ。事実列・出典列・編集部の品質観列を並列に扱える。
-          </CardDescription>
-          <CardDescription className="text-sm leading-relaxed">
-            カテゴリは現在{" "}
-            {(Object.keys(MATRIX_CATEGORY_LABEL) as Array<keyof typeof MATRIX_CATEGORY_LABEL>)
-              .map((k) => MATRIX_CATEGORY_LABEL[k])
-              .join(" / ")}
-            。今後の拡張で追加していく。
-          </CardDescription>
-        </CardContent>
-      </Card>
     </div>
   );
 }

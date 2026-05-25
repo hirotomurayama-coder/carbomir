@@ -2,39 +2,30 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Search,
-  SlidersHorizontal,
-  Layers,
-} from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   MATRIX_CATEGORY_LABEL,
   type ComparisonMatrix,
   type MatrixCategory,
 } from "@/lib/types";
-import { MatrixThumbnail } from "./matrix-thumbnail";
-import { countReviewMarks } from "@/components/review-marks";
+import { useTableControls } from "@/components/explorer/use-table-controls";
+import {
+  SortableHeader,
+  StaticHeader,
+} from "@/components/explorer/sortable-header";
+import {
+  ExplorerToolbar,
+  type Density,
+  type ViewMode,
+} from "@/components/explorer/explorer-toolbar";
 
 type Props = {
   matrices: ComparisonMatrix[];
 };
 
-type SortMode = "recent" | "size" | "dims";
+type CategoryFilter = "all" | MatrixCategory;
 
 function countCells(m: ComparisonMatrix): number {
   let n = 0;
@@ -48,227 +39,335 @@ function countCells(m: ComparisonMatrix): number {
   return n;
 }
 
-function countMatrixReviewMarks(m: ComparisonMatrix): number {
-  let n = countReviewMarks(m.description);
-  for (const entity of m.entities) {
-    const row = m.cells[entity.slug];
-    if (!row) continue;
-    for (const dim of m.dimensions) {
-      const c = row[dim.key];
-      if (!c) continue;
-      n += countReviewMarks(c.value);
-      if (c.note) n += countReviewMarks(c.note);
-    }
-  }
-  return n;
-}
-
 export function MatricesExplorer({ matrices }: Props) {
-  const [filter, setFilter] = React.useState("");
-  const [sort, setSort] = React.useState<SortMode>("recent");
+  const [view, setView] = React.useState<ViewMode>("list");
+  const [density, setDensity] = React.useState<Density>("compact");
+  const [category, setCategory] = React.useState<CategoryFilter>("all");
 
-  const haystack = (m: ComparisonMatrix) => {
-    const parts: string[] = [m.title, m.description];
-    for (const e of m.entities) parts.push(e.name_ja, e.name_en ?? "");
-    for (const d of m.dimensions) parts.push(d.label_ja);
-    if (m.tags) parts.push(...m.tags);
-    if (m.category) parts.push(MATRIX_CATEGORY_LABEL[m.category]);
-    return parts.join(" ").toLowerCase();
-  };
+  const availableCategories = React.useMemo(() => {
+    const set = new Set<MatrixCategory>();
+    for (const m of matrices) if (m.category) set.add(m.category);
+    return Array.from(set);
+  }, [matrices]);
 
-  const filtered = React.useMemo(() => {
-    const q = filter.trim().toLowerCase();
-    let list = matrices;
-    if (q) list = list.filter((m) => haystack(m).includes(q));
-    return [...list].sort((a, b) => {
-      if (sort === "recent")
-        return b.last_reviewed_at.localeCompare(a.last_reviewed_at);
-      if (sort === "size") return b.entities.length - a.entities.length;
-      return b.dimensions.length - a.dimensions.length;
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [matrices, filter, sort]);
+  const categoryFiltered = React.useMemo(() => {
+    if (category === "all") return matrices;
+    return matrices.filter((m) => m.category === category);
+  }, [matrices, category]);
 
-  // カテゴリ別グルーピング (category なしは「その他」)
-  const grouped = React.useMemo(() => {
-    const map = new Map<MatrixCategory | "other", ComparisonMatrix[]>();
-    for (const m of filtered) {
-      const key: MatrixCategory | "other" = m.category ?? "other";
-      const existing = map.get(key) ?? [];
-      existing.push(m);
-      map.set(key, existing);
-    }
-    return map;
-  }, [filtered]);
+  const controls = useTableControls<ComparisonMatrix>({
+    items: categoryFiltered,
+    searchText: (m) => {
+      const parts: string[] = [m.title, m.description];
+      for (const e of m.entities) parts.push(e.name_ja, e.name_en ?? "");
+      for (const d of m.dimensions) parts.push(d.label_ja);
+      if (m.tags) parts.push(...m.tags);
+      if (m.category) parts.push(MATRIX_CATEGORY_LABEL[m.category]);
+      return parts.join(" ");
+    },
+    sortableColumns: [
+      { key: "title", sortValue: (m) => m.title },
+      { key: "category", sortValue: (m) => (m.category ? MATRIX_CATEGORY_LABEL[m.category] : "zzz") },
+      { key: "entities", sortValue: (m) => m.entities.length },
+      { key: "dimensions", sortValue: (m) => m.dimensions.length },
+      { key: "reviewed", sortValue: (m) => m.last_reviewed_at },
+    ],
+    defaultSort: { key: "reviewed", dir: "desc" },
+  });
 
-  // 並び順 (カテゴリ表示順)
-  const categoryOrder: (MatrixCategory | "other")[] = [
-    "scheme",
-    "standard",
-    "methodology",
-    "market",
-    "eligibility",
-    "other",
-  ];
+  const tabFilter = (
+    <Tabs
+      value={category}
+      onValueChange={(v) => setCategory(v as CategoryFilter)}
+      className="min-w-0"
+    >
+      <TabsList className="h-8">
+        <TabsTrigger value="all" className="text-xs px-2.5">
+          すべて
+          <span className="ml-1.5 metric-number text-[10px] text-muted-foreground">
+            {matrices.length}
+          </span>
+        </TabsTrigger>
+        {availableCategories.map((c) => {
+          const count = matrices.filter((m) => m.category === c).length;
+          return (
+            <TabsTrigger key={c} value={c} className="text-xs px-2.5">
+              {MATRIX_CATEGORY_LABEL[c]}
+              <span className="ml-1.5 metric-number text-[10px] text-muted-foreground">
+                {count}
+              </span>
+            </TabsTrigger>
+          );
+        })}
+      </TabsList>
+    </Tabs>
+  );
 
   return (
-    <div className="space-y-5">
-      {/* Toolbar */}
-      <div className="flex items-center justify-between gap-3 flex-wrap">
-        <div className="relative min-w-[260px] flex-1 max-w-md">
-          <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
-          <Input
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            placeholder="行列タイトル・エンティティ・軸キーワード・タグで絞り込み..."
-            className="h-9 pl-8 text-sm"
-          />
-        </div>
+    <div className="space-y-3">
+      <ExplorerToolbar
+        query={controls.query}
+        onQueryChange={controls.setQuery}
+        view={view}
+        onViewChange={setView}
+        density={density}
+        onDensityChange={setDensity}
+        matchCount={controls.visible.length}
+        totalCount={matrices.length}
+        itemLabel="matrices"
+        placeholder="行列タイトル・エンティティ名・軸・タグで絞り込み..."
+        leftSlot={tabFilter}
+      />
 
-        <div className="flex items-center gap-2">
-          <span className="label-mono text-muted-foreground hidden sm:inline">
-            {filtered.length.toString().padStart(2, "0")}/
-            {matrices.length.toString().padStart(2, "0")} matrices
-          </span>
-
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="sm" className="h-9 text-xs">
-                <SlidersHorizontal className="h-3.5 w-3.5" />
-                並べ替え
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-[200px]">
-              <DropdownMenuLabel className="font-mono text-[10.5px] uppercase tracking-wider text-muted-foreground">
-                Sort by
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuRadioGroup
-                value={sort}
-                onValueChange={(v) => setSort(v as SortMode)}
-              >
-                <DropdownMenuRadioItem value="recent">最終更新</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="size">エンティティ数</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="dims">軸数</DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </div>
-
-      {/* Empty state */}
-      {filtered.length === 0 && (
+      {controls.visible.length === 0 ? (
         <Card className="p-12">
           <p className="text-center label-mono text-muted-foreground">
             該当する比較行列はありません
           </p>
         </Card>
+      ) : view === "list" ? (
+        <ListView
+          matrices={controls.visible}
+          density={density}
+          sort={controls.sort}
+          onToggleSort={controls.toggleSort}
+        />
+      ) : (
+        <GridView matrices={controls.visible} />
       )}
-
-      {/* Grouped sections */}
-      {categoryOrder.map((cat) => {
-        const items = grouped.get(cat);
-        if (!items || items.length === 0) return null;
-        const label =
-          cat === "other" ? "その他" : MATRIX_CATEGORY_LABEL[cat];
-        return (
-          <section key={cat} className="space-y-3">
-            <div className="flex items-center gap-2 px-1">
-              <Layers className="h-3.5 w-3.5 text-accent" />
-              <h2 className="label-mono text-foreground">{label}</h2>
-              <span className="metric-number text-[10px] text-muted-foreground">
-                {items.length.toString().padStart(2, "0")}
-              </span>
-            </div>
-            <div className="grid gap-4 lg:grid-cols-2">
-              {items.map((m) => (
-                <MatrixCard key={m.slug} matrix={m} />
-              ))}
-            </div>
-          </section>
-        );
-      })}
     </div>
   );
 }
 
-function MatrixCard({ matrix }: { matrix: ComparisonMatrix }) {
-  const cellCount = countCells(matrix);
-  const reviewCount = countMatrixReviewMarks(matrix);
+/* ============================================================
+ * List view (DB-style compact table)
+ * ============================================================ */
+
+function ListView({
+  matrices,
+  density,
+  sort,
+  onToggleSort,
+}: {
+  matrices: ComparisonMatrix[];
+  density: Density;
+  sort: { key: string; dir: "asc" | "desc" } | null;
+  onToggleSort: (key: string) => void;
+}) {
+  const rowPad = density === "compact" ? "py-2" : "py-3";
+
   return (
-    <Card className="overflow-hidden p-0 group hover:border-accent/60 hover:shadow-[0_4px_24px_-8px_rgba(14,165,233,0.18)] transition-all">
-      <div className="p-5 pb-3">
-        <div className="flex items-start justify-between gap-2 mb-2 flex-wrap">
-          {matrix.category && (
-            <Badge
-              variant="outline"
-              className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent"
-            >
-              {MATRIX_CATEGORY_LABEL[matrix.category]}
-            </Badge>
-          )}
-          <span className="metric-number text-[10px] text-muted-foreground">
-            {matrix.last_reviewed_at}
-          </span>
-        </div>
-        <Link href={`/matrices/${matrix.slug}`} className="block group">
-          <h3 className="text-base font-semibold text-foreground group-hover:text-accent mb-1 leading-snug">
-            {matrix.title}
-          </h3>
-          <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3">
-            {matrix.description}
-          </p>
-        </Link>
+    <Card className="overflow-hidden p-0">
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-border bg-muted/40">
+              <SortableHeader
+                sortKey="title"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="320px"
+              >
+                行列タイトル
+              </SortableHeader>
+              <SortableHeader
+                sortKey="category"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="110px"
+              >
+                カテゴリ
+              </SortableHeader>
+              <SortableHeader
+                sortKey="entities"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="70px"
+                className="text-right"
+              >
+                Entities
+              </SortableHeader>
+              <SortableHeader
+                sortKey="dimensions"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="60px"
+                className="text-right"
+              >
+                Dims
+              </SortableHeader>
+              <StaticHeader
+                minWidth="60px"
+                className="text-right hidden md:table-cell"
+              >
+                Cells
+              </StaticHeader>
+              <StaticHeader minWidth="160px" className="hidden lg:table-cell">
+                エンティティ抜粋
+              </StaticHeader>
+              <SortableHeader
+                sortKey="reviewed"
+                current={sort}
+                onToggle={onToggleSort}
+                minWidth="100px"
+                className="hidden md:table-cell"
+              >
+                Reviewed
+              </SortableHeader>
+              <th className="w-10 px-3 py-2"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {matrices.map((m) => (
+              <tr
+                key={m.slug}
+                className="border-b border-border last:border-0 group hover:bg-muted/30 transition-colors"
+              >
+                <td className={`px-3 ${rowPad} align-top`}>
+                  <Link href={`/matrices/${m.slug}`} className="block">
+                    <p className="font-medium text-foreground group-hover:text-accent leading-tight">
+                      {m.title}
+                    </p>
+                    <p className="text-[11.5px] text-muted-foreground leading-snug mt-0.5 line-clamp-1">
+                      {m.description}
+                    </p>
+                  </Link>
+                </td>
+                <td className={`px-3 ${rowPad} align-top`}>
+                  {m.category ? (
+                    <span className="inline-flex items-center rounded border border-accent/30 bg-accent/5 px-1.5 py-0 text-[10px] leading-[16px] text-accent">
+                      {MATRIX_CATEGORY_LABEL[m.category]}
+                    </span>
+                  ) : (
+                    <span className="text-muted-foreground">—</span>
+                  )}
+                </td>
+                <td
+                  className={`px-3 ${rowPad} align-top text-right metric-number text-[12px] text-foreground/85`}
+                >
+                  {m.entities.length}
+                </td>
+                <td
+                  className={`px-3 ${rowPad} align-top text-right metric-number text-[12px] text-foreground/85`}
+                >
+                  {m.dimensions.length}
+                </td>
+                <td
+                  className={`px-3 ${rowPad} align-top text-right metric-number text-[12px] text-muted-foreground hidden md:table-cell`}
+                >
+                  {countCells(m)}
+                </td>
+                <td
+                  className={`px-3 ${rowPad} align-top hidden lg:table-cell`}
+                >
+                  <div className="flex flex-wrap gap-1">
+                    {m.entities.slice(0, 3).map((e) => (
+                      <span
+                        key={e.slug}
+                        className="inline-flex items-center rounded border border-border bg-background px-1.5 py-0 text-[10px] leading-[16px] text-muted-foreground"
+                      >
+                        {e.name_ja}
+                      </span>
+                    ))}
+                    {m.entities.length > 3 && (
+                      <span className="label-mono text-[10px] leading-[16px] text-muted-foreground">
+                        +{m.entities.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </td>
+                <td
+                  className={`px-3 ${rowPad} align-top hidden md:table-cell metric-number text-[11px] text-muted-foreground`}
+                >
+                  {m.last_reviewed_at}
+                </td>
+                <td className={`px-3 ${rowPad} align-top text-right`}>
+                  <Link
+                    href={`/matrices/${m.slug}`}
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-accent transition-colors"
+                    aria-label="開く"
+                  >
+                    <ArrowUpRight className="h-3.5 w-3.5" />
+                  </Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-
-      <div className="px-5">
-        <MatrixThumbnail matrix={matrix} />
-      </div>
-
-      <div className="px-5 py-3 mt-3 border-t border-border flex items-center justify-between gap-2 flex-wrap label-mono text-muted-foreground">
-        <div className="flex items-center gap-3">
-          <span>
-            <span className="metric-number text-foreground">
-              {matrix.entities.length}
-            </span>
-            <span className="opacity-50 mx-1">×</span>
-            <span className="metric-number text-foreground">
-              {matrix.dimensions.length}
-            </span>
-            <span className="ml-1">=</span>
-            <span className="metric-number text-foreground ml-1">{cellCount}</span>
-            <span className="ml-1">cells</span>
-          </span>
-          {reviewCount > 0 && (
-            <span className="inline-flex items-center gap-1 text-amber-700 dark:text-amber-300">
-              <span className="metric-number">{reviewCount}</span>
-              要確認
-            </span>
-          )}
-        </div>
-        <Link
-          href={`/matrices/${matrix.slug}`}
-          className="inline-flex items-center gap-1 text-accent hover:underline"
-          aria-label={`${matrix.title} を開く`}
-        >
-          Open
-          <ArrowUpRight className="h-3 w-3" />
-        </Link>
-      </div>
-
-      {/* Tags */}
-      {matrix.tags && matrix.tags.length > 0 && (
-        <div className="px-5 pb-4 flex flex-wrap gap-1">
-          {matrix.tags.map((t) => (
-            <span
-              key={t}
-              className="inline-flex items-center rounded border border-border bg-background px-1.5 py-0.5 text-[10.5px] text-muted-foreground"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
-      )}
     </Card>
+  );
+}
+
+/* ============================================================
+ * Grid view (compact thumbnail cards, NO mini-table preview)
+ * ============================================================ */
+
+function GridView({ matrices }: { matrices: ComparisonMatrix[] }) {
+  return (
+    <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {matrices.map((m) => (
+        <Card
+          key={m.slug}
+          className="h-full p-3.5 hover:border-accent/60 hover:shadow-[0_4px_24px_-8px_rgba(14,165,233,0.18)] transition-all group"
+        >
+          <Link href={`/matrices/${m.slug}`} className="block">
+            <div className="flex items-start justify-between gap-2 mb-2">
+              {m.category ? (
+                <span className="inline-flex items-center rounded border border-accent/30 bg-accent/5 px-1.5 py-0 text-[10px] leading-[16px] text-accent">
+                  {MATRIX_CATEGORY_LABEL[m.category]}
+                </span>
+              ) : (
+                <span />
+              )}
+              <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground/50 group-hover:text-accent transition-colors" />
+            </div>
+            <h3 className="text-[14px] font-semibold text-foreground mb-1 leading-tight group-hover:text-accent">
+              {m.title}
+            </h3>
+            <p className="text-[12px] text-muted-foreground leading-relaxed line-clamp-2 mb-2">
+              {m.description}
+            </p>
+          </Link>
+
+          {/* Compact stats line (entities × dims = cells) */}
+          <div className="flex items-center gap-2 label-mono text-[10.5px] text-muted-foreground mb-1.5 border-t border-border/60 pt-1.5">
+            <span>
+              <span className="metric-number text-foreground/85">
+                {m.entities.length}
+              </span>
+              <span className="opacity-50 mx-0.5">×</span>
+              <span className="metric-number text-foreground/85">
+                {m.dimensions.length}
+              </span>
+              <span className="opacity-50 mx-1">=</span>
+              <span className="metric-number text-foreground/85">
+                {countCells(m)}
+              </span>
+              <span className="ml-1 opacity-70">cells</span>
+            </span>
+            <span className="ml-auto metric-number">{m.last_reviewed_at}</span>
+          </div>
+
+          {m.tags && m.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1">
+              {m.tags.slice(0, 3).map((t) => (
+                <span
+                  key={t}
+                  className="inline-flex items-center rounded border border-border bg-background px-1.5 py-0 text-[10px] leading-[16px] text-muted-foreground"
+                >
+                  {t}
+                </span>
+              ))}
+              {m.tags.length > 3 && (
+                <span className="label-mono text-[10px] leading-[16px] text-muted-foreground">
+                  +{m.tags.length - 3}
+                </span>
+              )}
+            </div>
+          )}
+        </Card>
+      ))}
+    </div>
   );
 }
