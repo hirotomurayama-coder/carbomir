@@ -1,0 +1,29 @@
+{
+  "slug": "mrv",
+  "type": "methodology",
+  "name_ja": "MRV (測定・報告・検証)",
+  "name_en": "Measurement, Reporting, Verification",
+  "abbreviation": "MRV",
+  "summary": "クレジット創出プロジェクトの排出量変化を、第三者検証可能な形で測定 (Measurement)・報告 (Reporting)・検証 (Verification) するプロセス。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "品質",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "プロセスの 3 階層",
+      "body": "**MRV** は カーボンクレジット創出における品質保証プロセス。\n\n- **Measurement (測定)**: プロジェクトサイトの排出量・吸収量を定量化。技術手段は対象 (森林・土壌・燃焼ガス等) で大きく異なる\n- **Reporting (報告)**: 標準フォーマットでレジストリ (Verra / Gold Standard 等) に登録\n- **Verification (検証)**: 独立第三者 (Validation/Verification Body, VVB) が文書 + 現地監査で確認\n\nクレジット発行は VVB の検証完了が前提。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "MRV の **コスト + 不確実性** がクレジット価格構造の根本要因。\n\n- 小規模プロジェクトは MRV コスト負担が重く、規模の経済が効く大型化が進む\n- **DMRV (Digital MRV)** が 2024 年以降普及し始め、リモートセンシング + IoT + ブロックチェーンで MRV コスト削減・透明性向上を狙う\n- ただし「測定誤差」「ベースライン推定」「リーケージ推定」等の構造的不確実性は残る\n\n日本企業がクレジットを購入する際、**「MRV 方法論のバージョン」** までチェックすべき (古い methodology は再評価でダウングレードされる可能性)。"
+    }
+  ]
+}

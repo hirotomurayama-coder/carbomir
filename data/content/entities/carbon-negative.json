@@ -1,0 +1,36 @@
+{
+  "slug": "carbon-negative",
+  "type": "methodology",
+  "name_ja": "カーボンネガティブ",
+  "name_en": "Carbon Negative",
+  "abbreviation": "Carbon Negative",
+  "summary": "事業活動の排出量を超える吸収・除去を達成し、正味の排出をマイナスにする状態 / 目標。Microsoft の代表的目標として知られる。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "目標",
+    "国際",
+    "Engineered Removal"
+  ],
+  "jurisdiction": "国際",
+  "related": [
+    {
+      "to_slug": "microsoft",
+      "relation": "depends_on",
+      "note": "Microsoft の 2030 Carbon Negative 目標が代表例"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "目標の構造",
+      "body": "**Carbon Negative (カーボンネガティブ)** は **Net-Zero の上位概念**。年間排出量を超える年間除去量を達成し、累積で大気中 CO2 を減らす方向の活動を意味する。\n\n**代表的目標**:\n\n- **Microsoft (2020 年発表)**: 2030 年までに Carbon Negative、2050 年までに 1975 年創業以来の累積排出量を回収\n- **Stripe (実質的)**: Climate Innovation Fund 経由で個社排出を超える Engineered Removal 調達\n- **IKEA (2030 目標)**: Climate Positive (= Carbon Negative の同義)\n\n大半の Carbon Negative 企業は **Engineered Removal** (DAC / BECCS / Biochar) を重点調達する。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Carbon Negative は **現状テック大手 + 少数の先進企業のみ**実現可能で、業界全体への普及はまだ遠い。\n\n論点:\n\n- **コスト負担**: 100-600 USD/t の Engineered Removal を年間数十万 t 級調達する財務体力が必要\n- **規模制約**: 2030 年時点の世界 Engineered Removal 供給量は年間 100-500 万 t 級と予測、Microsoft 1 社で年間 100-200 万 t 級調達計画なので需給逼迫の可能性\n- **\"Negative claim\" の検証**: 実質的に Carbon Negative かを第三者検証する標準がまだ未整備\n\n日本企業の現実的目標は **「Net-Zero 達成 + 一部 Carbon Negative 製品ライン」** の段階的アプローチが妥当。"
+    }
+  ]
+}

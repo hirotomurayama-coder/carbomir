@@ -1,0 +1,32 @@
+{
+  "slug": "nature-based-carbon-credits",
+  "type": "methodology",
+  "name_ja": "Nature-Based Solutions (NBS) クレジット",
+  "name_en": "Nature-Based Carbon Credits",
+  "abbreviation": "NBS",
+  "summary": "森林・湿地・農地等の自然生態系を活用したクレジット。REDD+ / ARR / IFM / Blue Carbon / Soil Carbon 等。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "クレジット種別",
+    "NBS",
+    "森林吸収",
+    "ボランタリー市場"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [
+    "nbs-quality-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "メソドロジー範囲",
+      "body": "**NBS (Nature-Based Solutions) クレジット** は、自然生態系の保全・回復・改善を通じて温室効果ガスを削減 / 除去するクレジット。\n\n**主要メソドロジー**:\n\n- **REDD+** (Reducing Emissions from Deforestation and Forest Degradation): 森林減少回避 (Avoidance)\n- **ARR** (Afforestation, Reforestation, Revegetation): 植林・再植林 (Removal)\n- **IFM** (Improved Forest Management): 森林管理改善\n- **Blue Carbon**: マングローブ・海草藻場保全/復元\n- **Soil Carbon**: 農地土壌の炭素蓄積\n- **Cookstoves** (改良型かまど): 燃料代替 (Avoidance)\n\nコスト最安 (3-50 USD/t) かつ規模出しやすい一方、永続性 + 追加性の課題大。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "NBS は **2023-2024 年の信頼性危機** を経て再編中:\n\n- The Guardian の Verra REDD+ 大量無効化記事 (2023)\n- ICVCM CCP の REDD+ ダウングレード\n- Google 主導 Symbiosis Coalition (2024) の NBS Removal 集中投資\n- Microsoft / Apple / Salesforce の Quality REDD+ 継続使用\n\n日本企業視点:\n\n1. **ART TREES Jurisdictional REDD+** が事実上の \"Quality NBS\" 標準\n2. **国内 J-クレジット森林系 (ARR / IFM)** が国内オフセットの主軸\n3. **Blue Carbon (J-ブルークレジット)** が水産・港湾セクター向け新興分野\n4. **Soil Carbon** は国内農業 (中干し延長など) で創出され始め\n\n価格 + ストーリー整合性 + 第三者評価 (Sylvera / BeZero 等) を組合せて選定すべき。"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "compliance-carbon-market",
+  "type": "market",
+  "name_ja": "コンプライアンス市場",
+  "name_en": "Compliance Carbon Market",
+  "abbreviation": "CCM",
+  "summary": "政府が規制で参加を義務化したクレジット市場。EU ETS / GX-ETS / K-ETS / California Cap-and-Trade 等。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "クレジット種別",
+    "規制対応",
+    "ETS / 排出量取引",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [
+    "ets-international-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "市場の構造",
+      "body": "**コンプライアンス市場 (Compliance Carbon Market, CCM)** は、政府が規制で対象企業に参加を義務化したクレジット / 排出枠取引市場。\n\n**主要市場**:\n\n- **EU ETS**: 世界最大規模、2005 年開始、価格 60-100 EUR/t (2024)\n- **California Cap-and-Trade**: 米国西海岸、価格 20-40 USD/t\n- **K-ETS** (韓国): 2015 年開始、価格 7-25 USD/t\n- **China National ETS**: 2021 年開始、発電セクター対象 (今後拡張)\n- **GX-ETS** (日本): 2024 年第 1 フェーズ開始、2026 年第 2 フェーズで有償割当\n- **CORSIA**: 国際航空業界向け\n\n各市場でクレジット種別 (allowance vs offset credit) と価格が大きく異なる。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "コンプライアンス市場とボランタリー市場は **「2 つの異なるレイヤー」**:\n\n- コンプライアンス市場: 排出量取引制度の **allowance (排出枠)** が主、一部 offset credit 流入可\n- ボランタリー市場: **offset credit のみ**、企業自主購入\n\n両者の交差点:\n\n- **EU ETS**: 過去 (Phase 1-2) に CDM/JI クレジット流入可だったが、Phase 4 では制限\n- **CORSIA**: ICAO TAB 承認の VCM クレジットを義務オフセットに使用可\n- **GX-ETS**: J-クレジット / JCM クレジットの遵守利用が可能\n\n日本企業 (GX-ETS 対象) は **「コンプライアンス遵守 + ボランタリー Net-Zero claim」の 2 軸運用** が標準。"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "slug": "scope3",
+  "type": "methodology",
+  "name_ja": "Scope 3 排出",
+  "name_en": "Scope 3 Emissions",
+  "abbreviation": "Scope 3",
+  "summary": "バリューチェーン全体の間接排出。15 カテゴリで構造化。多くの企業で総排出の 70-90% を占める。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "GHG Protocol",
+    "気候関連開示",
+    "サプライチェーン"
+  ],
+  "jurisdiction": "国際",
+  "related": [
+    {
+      "to_slug": "ghg-protocol",
+      "relation": "depends_on",
+      "note": "GHG Protocol で定義"
+    }
+  ],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "15 カテゴリ構造",
+      "body": "**Scope 3 排出**は、企業のバリューチェーン全体での **間接排出**。GHG Protocol Scope 3 Standard (2011) で 15 カテゴリに分類:\n\n**上流 (Upstream)**:\n\n1. 購入した製品・サービス\n2. 資本財\n3. 燃料・エネルギー関連活動 (Scope 1/2 外)\n4. 上流輸送・物流\n5. 事業から発生する廃棄物\n6. 出張\n7. 雇用者の通勤\n8. 上流リース資産\n\n**下流 (Downstream)**:\n\n9. 下流輸送・物流\n10. 販売した製品の加工\n11. **販売した製品の使用** (多くの企業で最大カテゴリ)\n12. 販売した製品の廃棄\n13. 下流リース資産\n14. フランチャイズ\n15. 投資 (金融セクター中心)"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Scope 3 は **多くの企業で総排出の 70-90% を占める** 一方、算定 + 削減が最も難しい:\n\n- **算定**: サプライヤーから一次データを取得する負担が大きい (推計値依存になりがち)\n- **削減**: 自社直接コントロール不可、サプライヤーエンゲージメントが必須\n- **クレジット併用**: Scope 3 残余分の中和は議論が分かれる (SBTi では認定目標達成に使えない)\n\n**重要セクター別の最大カテゴリ**:\n\n- 自動車 / 重機: Cat 11 (販売製品の使用)\n- F&B / 小売: Cat 1 (購入製品)、Cat 4 (上流輸送)\n- 金融: Cat 15 (投資ポートフォリオ — Financed Emissions)\n\nIFRS S2 / CSRD で **Scope 3 定量開示が必須** に。日本企業は今後 3-5 年で算定体制の強化が急務。"
+    }
+  ]
+}

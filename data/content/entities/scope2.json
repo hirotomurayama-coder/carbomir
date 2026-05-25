@@ -1,0 +1,38 @@
+{
+  "slug": "scope2",
+  "type": "methodology",
+  "name_ja": "Scope 2 排出",
+  "name_en": "Scope 2 Emissions",
+  "abbreviation": "Scope 2",
+  "summary": "購入電力・熱・蒸気の使用に伴う間接排出。Location-based と Market-based の 2 方法で算定。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "GHG Protocol",
+    "再エネ",
+    "気候関連開示"
+  ],
+  "jurisdiction": "国際",
+  "related": [
+    {
+      "to_slug": "ghg-protocol",
+      "relation": "depends_on",
+      "note": "GHG Protocol で定義"
+    }
+  ],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "算定方法",
+      "body": "**Scope 2 排出**は、企業が **購入する電力・熱・蒸気の発電/生成に伴う間接排出**。\n\n**2 種類の算定方法**:\n\n- **Location-based**: 電力会社の平均排出係数 (グリッド平均) を使用。地域・国レベルの発電構成を反映\n- **Market-based**: 個別の電力契約 (再エネ証書 / PPA 等) を反映。再エネ電力購入を「実質排出ゼロ」として計上可能\n\nGHG Protocol Scope 2 Guidance (2015) で **両方の開示を推奨**。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Scope 2 は **再エネ転換で大幅削減可能** な領域:\n\n- **コーポレート PPA** (再エネ電力長期契約) で Market-based Scope 2 をゼロ化\n- **再エネ証書 (J-クレジット の再エネ部分、Green Energy Certificate, REC)** で部分的に相殺\n- **RE100 認定**: 再エネ 100% を達成した企業向けイニシアチブ\n\n日本企業の RE100 加盟は 80 社超 (2024 年)。**Scope 2 ゼロ化は最も明確な経路** で、クレジットによる相殺は限定的役割。"
+    }
+  ]
+}

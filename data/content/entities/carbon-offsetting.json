@@ -1,0 +1,29 @@
+{
+  "slug": "carbon-offsetting",
+  "type": "methodology",
+  "name_ja": "カーボンオフセット",
+  "name_en": "Carbon Offsetting",
+  "abbreviation": "Carbon Offsetting",
+  "summary": "自社排出量を、他所で削減・除去されたクレジットで相殺する行為。クレジット市場の最も基本的な利用形態。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "オフセットの基本構造",
+      "body": "**カーボンオフセット (Carbon Offsetting)** は、自社が排出する温室効果ガスを、他所で実施された排出削減・除去プロジェクトのクレジット (1 クレジット = 1 t-CO2 相当) を購入・retire (無効化) することで相殺する行為。\n\n**典型的なオフセット階層 (Mitigation Hierarchy)**:\n\n1. **Avoid (回避)**: 排出を発生させない事業設計\n2. **Reduce (削減)**: 省エネ・再エネで排出を減らす\n3. **Substitute (代替)**: 高排出燃料/材料を低炭素代替に置き換え\n4. **Offset (相殺)**: 残余分をクレジット購入で中和\n\n**「Offset is the last resort (相殺は最後の手段)」** が業界共通理念。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "カーボンオフセットの **批判の主軸** は:\n\n1. **追加性問題**: 「クレジット買わなくても起きていた削減」を相殺に使う構造的リスク\n2. **永続性問題**: 森林系クレジットは数十-数百年で逆転リスク\n3. **\"License to pollute\" 批判**: オフセットを買えば排出を続けてよいと誤解される\n4. **二重計上**: ホスト国 + 購入企業の両方が削減を主張する double-counting 問題\n\n2023-2024 年の ICVCM CCP / VCMI / SBTi Net-Zero Standard 連動で、**「適切な使い方」の標準化** が急速に進む。日本企業は **「Mitigation Hierarchy 整合 + Quality Tier 高い NBS / Engineered Removal の併用」** が標準パターン。"
+    }
+  ]
+}

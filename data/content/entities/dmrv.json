@@ -1,0 +1,29 @@
+{
+  "slug": "dmrv",
+  "type": "technology",
+  "name_ja": "DMRV (デジタル MRV)",
+  "name_en": "Digital Measurement, Reporting, Verification",
+  "abbreviation": "DMRV",
+  "summary": "リモートセンシング + IoT + ブロックチェーン等で MRV プロセスをデジタル化する技術。コスト削減 + 透明性向上を狙う。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "技術",
+    "MRV",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "技術構成要素",
+      "body": "**DMRV (Digital MRV)** は従来人手中心だった MRV プロセスをデジタル化する技術群。\n\n**主要要素**:\n\n- **リモートセンシング**: 衛星 (Planet / Landsat / Sentinel) で森林カバー・バイオマス変化を観測\n- **IoT センサー**: 土壌 / 大気 / 水質を継続計測\n- **AI/ML 解析**: 衛星画像から樹冠カバー・劣化指標を自動抽出\n- **ブロックチェーン**: クレジット発行・移転・retire を追跡可能な台帳に\n- **eDNA / イメージング**: 生物多様性指標を低コストで取得\n\n主要プレイヤー: Pachama, Sylvera, NCX, Cecil, Renoster 等の MRV テック企業。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "DMRV は **「MRV の民主化」** と謳われるが、現実は過渡期。\n\n論点:\n\n- **検証精度**: 衛星 + AI でバイオマス推定の誤差は ±20-30% 程度残存。フィールド真値との校正が不可避\n- **データ独占**: Pachama 等の MRV ベンダーがアルゴリズム + データを保有、クレジット創出者と利益相反の懸念\n- **業界標準**: Verra / Gold Standard が DMRV を方法論に正式採用するペースが、技術進化より遅い\n\n日本企業 (商社 + 国内 MRV プロバイダ) も DMRV 領域に参入余地あり。**国内森林系 (J-クレジット ARR / IFM)** での DMRV 実装が次の発展領域。"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "net-zero",
+  "type": "methodology",
+  "name_ja": "Net-Zero (ネットゼロ)",
+  "name_en": "Net-Zero",
+  "abbreviation": "Net-Zero",
+  "summary": "残余排出量を吸収・除去で相殺し、正味の排出量をゼロにする状態 / 目標。SBTi Net-Zero Standard が事実上の国際標準。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "目標",
+    "国際",
+    "Net-Zero"
+  ],
+  "jurisdiction": "国際",
+  "related": [
+    {
+      "to_slug": "sbti",
+      "relation": "depends_on",
+      "note": "SBTi が認定基準を策定"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "定義 (SBTi Net-Zero Standard 基準)",
+      "body": "**Net-Zero (ネットゼロ)** は、SBTi (Science Based Targets initiative) Net-Zero Standard (2021 年公表) で以下のように定義される:\n\n- **長期目標 (2050 年または早期)**: 基準年比 **90% 以上の絶対量削減** (Scope 1+2+3 包括的)\n- **残余 10%**: **Permanent Removal (永続的除去)** で中和\n- **Avoidance クレジットは中和に使用不可** (NBS Avoidance は対象外)\n- **Permanence Threshold**: 数十年-数百年スパンの除去のみ承認\n\nこれが現在の **企業 Net-Zero の事実上の国際標準**。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "「Net-Zero」を名乗る企業は世界で 5,000 社以上 (2024 年時点) だが、**SBTi 認定 Net-Zero** はその一部。\n\n論点:\n\n- **\"Greenwashing リスク\"**: SBTi 認定なしの自称 Net-Zero は、削減経路の科学的整合性が不明確\n- **クレジット相殺の限界**: SBTi Net-Zero では認定目標達成にクレジット相殺は不可。「BVCM (Beyond Value Chain Mitigation)」として目標外で位置付ける\n- **2030 年中間目標**: 多くの企業は 2030 年目標 (Scope 1+2 の 42-50% 削減) の進捗で評価される\n\n日本企業の Net-Zero 戦略は **「2050 年 SBTi 認定 + 2030 年中間目標達成 + 残余分のクレジット併用」** が標準パターン。"
+    }
+  ]
+}

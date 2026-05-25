@@ -1,0 +1,29 @@
+{
+  "slug": "carbon-neutral",
+  "type": "methodology",
+  "name_ja": "カーボンニュートラル",
+  "name_en": "Carbon Neutral",
+  "abbreviation": "Carbon Neutral",
+  "summary": "排出量と吸収・除去・相殺量が拮抗し、正味の排出がゼロの状態。Net-Zero より緩い概念で、クレジット相殺許容範囲が広い。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "目標",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "Net-Zero との違い",
+      "body": "**Carbon Neutral (カーボンニュートラル)** と **Net-Zero** は混同されがちだが、定義が異なる:\n\n| 項目 | Carbon Neutral | Net-Zero (SBTi 基準) |\n|---|---|---|\n| 削減比率 | 規定なし | 90% 以上の絶対削減 |\n| クレジット使用 | 制限なし | 残余 10% のみ Removal |\n| Scope 範囲 | プロジェクト/製品単位も可 | 企業全体 (Scope 1+2+3) |\n| 認証 | PAS 2060 等 | SBTi |\n| 期間 | 任意 (年次更新も可) | 通常 2050 年 |\n\nCarbon Neutral は **「特定の製品・イベント・組織を、その期間における排出量分のクレジットで相殺」** のような短期・狭い範囲でも使われる。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "日本企業の「カーボンニュートラル LNG」「カーボンニュートラル電力」等の商品が代表例。これらは:\n\n- **製品単位** の Carbon Neutral 主張\n- **クレジット相殺中心** で実排出削減は限定的\n- 第三者認証 (PAS 2060 等) の有無で品質が分かれる\n\n業界全体で **「Carbon Neutral」表記の greenwashing 懸念**が高まり、2024 年以降 EU 等で表記規制が議論されている。日本企業は **\"Carbon Neutral\" 表現の慎重な使用 + Net-Zero への移行** が方向性。"
+    }
+  ]
+}

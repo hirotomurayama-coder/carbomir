@@ -1,0 +1,37 @@
+{
+  "slug": "scope1",
+  "type": "methodology",
+  "name_ja": "Scope 1 排出",
+  "name_en": "Scope 1 Emissions",
+  "abbreviation": "Scope 1",
+  "summary": "企業が直接所有・管理する設備からの直接排出。自社施設の燃焼、社有車、漏洩等。GHG Protocol で定義。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "GHG Protocol",
+    "気候関連開示"
+  ],
+  "jurisdiction": "国際",
+  "related": [
+    {
+      "to_slug": "ghg-protocol",
+      "relation": "depends_on",
+      "note": "GHG Protocol で定義"
+    }
+  ],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "対象範囲",
+      "body": "**Scope 1 排出**は、企業が **直接所有 / 管理する設備からの直接排出**。GHG Protocol Corporate Standard で定義。\n\n**主な発生源**:\n\n- **燃焼**: ボイラー、自家発電、社有車のガソリン/軽油\n- **製造プロセス**: 化学反応 (例: セメント焼成の CO2、製鉄の還元反応)\n- **冷媒漏洩**: HFC / SF6 等\n- **農業**: 畜産 (腸内発酵 CH4)、肥料施用 (N2O)\n\n直接的に企業が削減コントロール可能な範囲。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Scope 1 削減は **省エネ + 設備代替** が主軸:\n\n- 重工業 (鉄鋼 / セメント / 化学) は **プロセス排出** が大きく、技術代替 (水素還元製鉄、CCS 付セメント等) が必要\n- サービス業 / IT 業は Scope 1 が小さく、Scope 2/3 が支配的\n- **クレジット併用**: Scope 1 残余分の中和は最も用途として明確\n\n日本企業は **省エネ法・温対法** で Scope 1 報告が既に義務化されており、データ蓄積はある。**SBTi 認定** には Scope 1+2 で 42-50% 削減が必要 (2030 年目標)。"
+    }
+  ]
+}

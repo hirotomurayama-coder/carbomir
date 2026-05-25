@@ -1,0 +1,30 @@
+{
+  "slug": "ccs",
+  "type": "technology",
+  "name_ja": "CCS (二酸化炭素回収・貯留)",
+  "name_en": "Carbon Capture and Storage",
+  "abbreviation": "CCS",
+  "summary": "工場 / 発電所等の排出源で CO2 を回収し、地中等に長期貯留する技術。DAC / BECCS / セメント等の鍵技術。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "技術",
+    "Engineered Removal",
+    "CCS",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "技術構成",
+      "body": "**CCS (Carbon Capture and Storage)** は、CO2 を発生源 (発電所、工場等) で **回収し、輸送して、地中等に長期貯留** する技術。\n\n**プロセス 3 段階**:\n\n1. **Capture (回収)**: 排ガスから CO2 を分離 (吸収液、吸着、膜分離、酸素燃焼等)\n2. **Transport (輸送)**: パイプライン or 船舶で貯留サイトへ\n3. **Storage (貯留)**: 地中の塩水帯水層、枯渇油ガス田、玄武岩等に圧入。**>1,000 年規模** の貯留が期待される\n\n**クレジット関連の使い方**:\n\n- **DAC + CCS** = Engineered Removal クレジット\n- **BECCS** (BioEnergy + CCS) = 同じく Removal\n- **Industrial CCS** = 削減型 (Scope 1 排出を回収) — 一般にクレジット化しない"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "CCS は **「化石燃料延命策」批判と「不可避な脱炭素技術」評価が併存**:\n\n論点:\n\n- **コスト**: 50-150 USD/t (発生源依存)、商業化は政策補助 (45Q 等) 依存\n- **インフラ**: 大規模パイプライン + 貯留サイトが必要、地理的制約大\n- **漏洩リスク**: 地中貯留の長期モニタリング体制\n- **公衆受容性**: 地中圧入への地域反対が一部で発生\n\n日本企業 (CCS):\n\n- **JOGMEC / METI 主導**: 苫小牧、新潟、九州沖等で実証中\n- **石油・化学 + ガス会社**: ENEOS、INPEX、三菱重工、川崎重工\n- **2030 年商業化目標**: 年間 600-1200 万 t-CO2 の貯留能力構築\n\n**Cross-border CCS** (海外貯留サイトへの輸出) のスキームも検討中 (オーストラリア、東南アジア等)。"
+    }
+  ]
+}

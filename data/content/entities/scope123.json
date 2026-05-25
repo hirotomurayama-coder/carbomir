@@ -1,0 +1,29 @@
+{
+  "slug": "scope123",
+  "type": "methodology",
+  "name_ja": "Scope 1+2+3 (総排出)",
+  "name_en": "Scope 1+2+3 Combined",
+  "abbreviation": "Scope 1+2+3",
+  "summary": "Scope 1 + 2 + 3 の合計。企業の温室効果ガス排出の包括的把握単位。Net-Zero / SBTi 目標の基準。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "GHG Protocol",
+    "気候関連開示"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "総排出の構造",
+      "body": "**Scope 1+2+3** は、企業の温室効果ガス排出を **包括的に把握** する集計概念。\n\nSBTi Net-Zero Standard、IFRS S2、CSRD/ESRS、TCFD など主要開示制度は全て Scope 1+2+3 ベースでの算定を要求 (詳細はカテゴリで異なる)。\n\n**典型的な構成比 (業種別、概算)**:\n\n| 業種 | Scope 1 | Scope 2 | Scope 3 |\n|---|---|---|---|\n| 自動車 | 5-10% | 5-10% | **80-90%** (Cat 11) |\n| F&B | 10-20% | 5-15% | **70-80%** (Cat 1) |\n| 金融 | <1% | <1% | **99%** (Cat 15) |\n| IT サービス | <5% | 20-40% | 60-80% |\n| 重工業 | 60-80% | 10-20% | 10-30% |"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Scope 1+2+3 ベースで Net-Zero を語ることは **業種により難易度が極端に違う**:\n\n- 自動車: Cat 11 (販売後の燃料燃焼) が大半。EV シフトで漸減可能\n- 食品: 農業バリューチェーン全体に依存、難易度高\n- 金融: Financed Emissions (融資・投資先排出) は急速に新潮流\n\n日本企業の現実的アプローチ:\n\n1. **Scope 1+2 削減を 2030 年で達成 (SBTi Near-term)**\n2. **Scope 3 算定体制を 2027 年度までに確立 (SSBJ 任意適用)**\n3. **Scope 3 削減目標を 2030 年で 30% 設定 (業界平均)**\n4. **残余分を BVCM クレジットで補完 (2050 年 Net-Zero に向けて)**"
+    }
+  ]
+}

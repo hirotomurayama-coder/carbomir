@@ -1,0 +1,35 @@
+{
+  "slug": "ghg-protocol",
+  "type": "methodology",
+  "name_ja": "GHG Protocol",
+  "name_en": "Greenhouse Gas Protocol",
+  "abbreviation": "GHG Protocol",
+  "summary": "WRI と WBCSD が共同策定した、企業の温室効果ガス排出量算定・報告の国際標準。Scope 1/2/3 概念の発祥。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "標準",
+    "国際",
+    "気候関連開示"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 1998,
+  "operator": "WRI (世界資源研究所) + WBCSD",
+  "website_url": "https://ghgprotocol.org/",
+  "related": [],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "概要",
+      "body": "**GHG Protocol** は **WRI (世界資源研究所) と WBCSD (世界経済人会議)** が 1998 年に共同で立ち上げた、企業の温室効果ガス算定 + 報告の国際標準。**Scope 1 / Scope 2 / Scope 3 の概念を生み出した**ことで知られる。\n\n**主要文書**:\n\n- **Corporate Standard** (2004): 企業 GHG 算定の基本\n- **Scope 2 Guidance** (2015): 購入電力の算定 (Location-based / Market-based)\n- **Scope 3 Standard** (2011): バリューチェーン排出の 15 カテゴリ\n- **Project Protocol**: 個別プロジェクト排出評価\n- **Land Sector and Removals Guidance** (2024 改訂中): 土地利用 + 除去の算定"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "GHG Protocol は **「企業排出開示の事実上の世界標準」**。TCFD / IFRS S2 / CSRD / SEC ルール / SSBJ 全てが GHG Protocol を前提に設計されている。\n\n論点:\n\n- **Scope 2 のダブル算定**: Location-based と Market-based 両方を開示することが標準化されたが、企業によって解釈差が残る\n- **Scope 3 の境界**: 15 カテゴリのどこまで算定するかで企業間比較が難しい (特に Cat 11 Use of sold products)\n- **Land Sector Guidance**: 森林企業 / 食品業界の算定に大きな影響、2024 年の最終化に注目\n\n日本企業は **環境省・経産省ガイドライン (GHG Protocol 整合)** で算定する案件が大半。"
+    }
+  ]
+}

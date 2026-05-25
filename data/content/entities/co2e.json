@@ -1,0 +1,30 @@
+{
+  "slug": "co2e",
+  "type": "methodology",
+  "name_ja": "CO2 等価 (CO2e)",
+  "name_en": "Carbon Dioxide Equivalent",
+  "abbreviation": "CO2e",
+  "summary": "各種温室効果ガスを、GWP (地球温暖化係数) で CO2 の温暖化能力に換算した単位。クレジット 1 単位 = 1 t-CO2e。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "標準",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "credit_unit": "t-CO2e",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "定義",
+      "body": "**CO2 等価 (CO2e)** は、複数の温室効果ガスを CO2 の温暖化能力に換算して合計するための単位。\n\n計算式: `t-CO2e = t-GHG × GWP`\n\n例:\n\n- メタン 1 t × GWP 28 = **28 t-CO2e**\n- 亜酸化窒素 1 t × GWP 265 = **265 t-CO2e**\n\n**カーボンクレジット 1 単位 = 1 t-CO2e** が世界標準。CO2 削減 / 除去・他 GHG 削減 / 除去のいずれであっても、CO2e 換算で取引される。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "CO2e は便利だが **「全てのガスを CO2 と同等に扱う」前提に限界**:\n\n- **時間スケール混在**: 短寿命の CH4 (12 年) と長寿命の CO2 (千年単位) を同じ単位で扱うことの妥当性議論\n- **GWP* (GWP-star) 提案**: メタン等の短寿命ガスを別軸で評価する代替指標\n- **CDR 文脈**: 除去型クレジットの「永続性 + CO2e」の組合せで品質階層化が必要\n\n日本企業のクレジット運用で、**CO2e 換算後の数字だけ追うのではなく、原ガスとプロジェクトタイプの構成も把握** することが重要 (TCFD / IFRS S2 開示で詳細要求される方向)。"
+    }
+  ]
+}

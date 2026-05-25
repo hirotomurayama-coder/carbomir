@@ -1,0 +1,29 @@
+{
+  "slug": "ghg",
+  "type": "methodology",
+  "name_ja": "温室効果ガス (GHG)",
+  "name_en": "Greenhouse Gas",
+  "abbreviation": "GHG",
+  "summary": "京都議定書で対象とされる 7 種のガス (CO2 / CH4 / N2O / HFCs / PFCs / SF6 / NF3)。CO2 等価 (CO2e) で集計するのが標準。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "標準",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "対象ガス (京都議定書 7 種)",
+      "body": "**温室効果ガス (GHG, Greenhouse Gas)** は、大気中で太陽光を吸収して地球を温める効果を持つガス類。京都議定書 + パリ協定で算定対象として定められた 7 種:\n\n| ガス | 主な発生源 | GWP (100 年) |\n|---|---|---|\n| **CO2** (二酸化炭素) | 化石燃料燃焼、土地利用変化 | 1 |\n| **CH4** (メタン) | 畜産、廃棄物、天然ガス漏洩 | 28-30 |\n| **N2O** (亜酸化窒素) | 農業 (窒素肥料)、燃焼 | 265-273 |\n| **HFCs** (代替フロン) | 冷媒、断熱発泡 | 数百-数千 |\n| **PFCs** | 半導体製造、アルミ製錬 | 数千 |\n| **SF6** | 電気絶縁体 (送電設備) | 23,500 |\n| **NF3** | 半導体洗浄 | 17,200 |\n\nGWP (Global Warming Potential) で重み付けし、**CO2 等価 (CO2e)** に変換して集計するのが標準。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "GHG 算定の **実務的論点**:\n\n- **GWP 値の更新**: IPCC AR5 vs AR6 で GWP 値が変動。同じ排出量でも算定基準で結果が変わる\n- **メタン重視の動き**: 短期 GWP 高い CH4 への業界注目 (Global Methane Pledge, 2021)\n- **HFCs 規制**: Kigali Amendment (2016) で段階的削減義務化、冷媒業界に大きな影響\n- **SF6 削減**: 電力業界で代替絶縁ガスへの転換が進行\n\n日本企業の GHG 算定 (省エネ法・温対法) は **CO2 + 5 ガス (HFC/PFC/SF6 までで NF3 は別枠)** の基準が長らく標準だったが、グローバル基準と整合進行中。"
+    }
+  ]
+}

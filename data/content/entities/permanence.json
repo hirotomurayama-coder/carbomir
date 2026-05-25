@@ -1,0 +1,33 @@
+{
+  "slug": "permanence",
+  "type": "methodology",
+  "name_ja": "永続性",
+  "name_en": "Permanence",
+  "abbreviation": "Permanence",
+  "summary": "炭素の貯留が長期間 (数十年〜数千年) 安定して維持されること。森林系 vs Engineered Removal の品質比較の中核軸。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "概念",
+    "品質",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [
+    "nbs-quality-comparison",
+    "engineered-removal-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "永続性の階層",
+      "body": "**永続性 (Permanence)** はクレジットの貯留炭素が将来取り消されないことを保証する原則。長さで階層化:\n\n- **>10,000 年**: ERW (Enhanced Rock Weathering) / OAE (Ocean Alkalinity Enhancement) — 鉱物化\n- **>1,000 年**: DAC + 地中貯留 / BECCS + 地中貯留\n- **>100 年**: Biochar (条件依存)\n- **30-100 年**: ARR / IFM / REDD+ (森林系)\n- **(回避型は適用外)**: クッキングストーブ等の avoidance クレジット"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "永続性は **Engineered Removal を選ぶ最大の論拠**。SBTi Net-Zero Standard では「残余 10% を中和するクレジットは Permanent Removal でなければならない」とされ、森林系の使用に制約がある。\n\nしかし実務的論点:\n\n- **コスト差**: 森林系 3-50 USD/t vs Engineered Removal 100-600 USD/t\n- **規模制約**: Engineered Removal は 2030 年で年間 100 万 t 級、需要の全量カバーには遠い\n- **Buffer Pool**: 森林系は非永続性を Buffer Pool (積み立て) で部分的に補償する設計\n\n結果、現実的には **森林系 + Engineered Removal のハイブリッドポートフォリオ** が標準パターン。"
+    }
+  ]
+}

@@ -53,6 +53,33 @@ export const CARBONCREDITS_SLUG_MAP: Record<string, string> = {
   jcredit: "j-credits",
   "paris-article-6-2": "article-6-of-the-paris-agreement",
   "paris-article-6-4": "article-6-of-the-paris-agreement",
+
+  // Tier 1: 基礎概念 (2026-05 追加)
+  additionality: "additionality",
+  permanence: "permanence",
+  mrv: "mrv",
+  dmrv: "dmrv",
+  "net-zero": "net-zero",
+  "carbon-neutral": "carbon-neutral",
+  "carbon-negative": "carbon-negative",
+  "carbon-offsetting": "carbon-offsetting",
+  "ghg-protocol": "ghg-protocol",
+  ghg: "ghg",
+  co2e: "co2e",
+  scope1: "scope1",
+  scope2: "scope2",
+  scope3: "scope3",
+  scope123: "scope123",
+
+  // Tier 2: クレジット種別 + CCS/CCUS (2026-05 追加)
+  "voluntary-carbon-credits": "voluntary-carbon-credits",
+  "compliance-carbon-market": "compliance-carbon-market",
+  "avoidance-credits": "avoidance-credits",
+  "reduction-credits": "reduction-credits",
+  "cdr-credits": "cdr-credits",
+  "nature-based-carbon-credits": "nature-based-carbon-credits",
+  ccs: "ccs",
+  ccus: "ccus",
 };
 
 /** Carbomir slug から carboncredits.jp の用語記事 URL を返す. 対応なしは undefined. */
@@ -73,45 +100,12 @@ export function listLinkedSlugs(): string[] {
 /**
  * carboncredits.jp に存在するが Carbomir には未収録の slug 一覧.
  * 補完計画の入力として使う. 手動メンテ.
+ * Tier 1+2 (23 件) は 2026-05 に追加済み.
  */
 export const CARBONCREDITS_UNMAPPED_SLUGS: string[] = [
-  // 重要概念 (補完優先度: 高)
-  "additionality",
-  "permanence",
-  "mrv",
-  "dmrv",
-  "net-zero",
-  "carbon-neutral",
-  "carbon-negative",
-  "carbon-offsetting",
+  // Tier 3: 残概念 (補完優先度: 中)
   "carbon-sequestration",
-  "ghg-protocol",
-  "ghg",
-  "co2e",
-  "scope1",
-  "scope2",
-  "scope3",
-  "scope123",
-
-  // クレジット種別 (補完優先度: 高)
-  "voluntary-carbon-credits",
-  "voluntary-carbon-credits-market",
-  "compliance-carbon-market",
-  "avoidance-credits",
-  "reduction-credits",
-  "cdr-credits",
-  "nature-based-carbon-credits",
   "baseline-and-credits",
-
-  // メソドロジー / 技術 (補完優先度: 中)
-  "bicrs",
-  "mcdr",
-  "ccs",
-  "ccus",
-  "carbon-capture-and-utilization",
-  "direct-ocean-capture",
-
-  // 関連概念 (補完優先度: 中)
   "carbon-leakage",
   "carbon-sink",
   "co-benefits",
@@ -122,6 +116,12 @@ export const CARBONCREDITS_UNMAPPED_SLUGS: string[] = [
   "emission-allowance",
   "ets",
   "kyoto-protocol",
+
+  // Tier 4: メソドロジー / 技術 (補完優先度: 中)
+  "bicrs",
+  "mcdr",
+  "carbon-capture-and-utilization",
+  "direct-ocean-capture",
 
   // 京都議定書クレジット単位 (補完優先度: 低)
   "aau",

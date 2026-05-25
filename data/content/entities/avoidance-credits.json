@@ -1,0 +1,31 @@
+{
+  "slug": "avoidance-credits",
+  "type": "methodology",
+  "name_ja": "回避型クレジット",
+  "name_en": "Avoidance Credits",
+  "abbreviation": "Avoidance",
+  "summary": "排出を「防ぐ」プロジェクトから生まれるクレジット。REDD+ や Cookstoves 等が代表。SBTi Net-Zero では中和不可。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "クレジット種別",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [
+    "nbs-quality-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "Avoidance vs Removal",
+      "body": "**回避型クレジット (Avoidance Credits)** は、何らかの行為を **行わないことで本来発生したはずの排出を防ぐ** タイプのクレジット。除去型 (Removal) と対をなす。\n\n**代表例**:\n\n- **REDD+** (森林減少回避): 「伐採されたはずの森林を保全」\n- **Cookstoves** (改良型かまど): 「劣悪燃焼で排出されたはずの CO2 を削減」\n- **再エネプロジェクト**: 「化石燃料発電に置き換わったはずの排出を回避」\n- **CH4 回収** (廃棄物・農業): 「大気放出されたはずのメタンを回収」"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Avoidance クレジットは **2023 年以降の批判の中心**:\n\n- **ベースライン恣意性**: 「もし何もしなかった場合の排出」推定が論争を呼ぶ\n- **追加性問題**: 「クレジット買わなくても起きていた」可能性が排除困難\n- **永続性問題**: 森林系 Avoidance は将来の伐採で逆転リスク\n\n**SBTi Net-Zero Standard**: Avoidance を **認定目標達成の中和には使えない** (Permanent Removal のみ可)\n\n日本企業の戦略:\n\n- **BVCM (Beyond Value Chain Mitigation)** として、SBTi 目標外でクレジットを活用\n- **Quality Tier 高い Avoidance** (ART TREES Jurisdictional 等) に絞り込み\n- **Removal クレジット (DAC / Biochar 等) との併用比重** を時系列で増やす"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "reduction-credits",
+  "type": "methodology",
+  "name_ja": "削減型クレジット",
+  "name_en": "Reduction Credits",
+  "abbreviation": "Reduction",
+  "summary": "排出を「実際に減らす」プロジェクトから生まれるクレジット。Avoidance との差異は主に意図性 + ベースライン設定にある。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "クレジット種別",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "Avoidance との違い",
+      "body": "**削減型クレジット (Reduction Credits)** は、現に行われている排出を **実際に減らす** プロジェクトから発行されるクレジット。\n\nAvoidance との境界は曖昧だが、典型的に:\n\n- **Reduction**: 既存設備 / 活動の改善 (例: 産業排出のフロン代替、廃棄物 CH4 回収、効率改善)\n- **Avoidance**: 新規行為の阻止 (例: 森林減少回避、化石燃料発電回避)\n\n実務的には **両者を統合して \"Emission Reduction\"** と総称することが多い。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Reduction の方が Avoidance より **追加性立証しやすい** ことが多い:\n\n- 設備投資 + 運用コストが明確で、財務的追加性が示しやすい\n- ベースライン (改善前の排出) の測定が容易\n\nしかし SBTi Net-Zero では **Reduction も Removal でないので中和には使えない**:\n\n- 認定目標達成の経路: 自社直接削減 (Scope 1+2) + サプライヤー削減 (Scope 3)\n- 残余 10% の中和: **Permanent Removal のみ** (Reduction クレジット不可)\n\n日本企業の Scope 3 削減で **「サプライヤー Reduction 支援」** はクレジット買うより本質的な経路。"
+    }
+  ]
+}

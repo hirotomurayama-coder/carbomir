@@ -1,0 +1,33 @@
+{
+  "slug": "cdr-credits",
+  "type": "methodology",
+  "name_ja": "CDR クレジット",
+  "name_en": "Carbon Dioxide Removal Credits",
+  "abbreviation": "CDR Credits",
+  "summary": "大気中の CO2 を物理的に除去するプロジェクトから生まれるクレジット。Engineered Removal と NBS Removal を含む。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "クレジット種別",
+    "Engineered Removal",
+    "NBS",
+    "ボランタリー市場"
+  ],
+  "jurisdiction": "国際",
+  "related": [],
+  "related_matrix_slugs": [
+    "engineered-removal-comparison",
+    "nbs-quality-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "CDR (Carbon Dioxide Removal) の範囲",
+      "body": "**CDR クレジット (Carbon Dioxide Removal Credits)** は、大気中の CO2 を **物理的に取り除く** プロジェクトから発行されるクレジット。\n\n**2 大分類**:\n\n**Engineered Removal (技術除去)**:\n- DAC (Direct Air Capture)\n- BECCS (Bioenergy with CCS)\n- ERW (Enhanced Rock Weathering)\n- OAE (Ocean Alkalinity Enhancement)\n- Biochar\n- BiCRS (Biomass Carbon Removal and Storage)\n\n**NBS Removal (自然由来除去)**:\n- ARR (植林・再植林)\n- IFM (森林管理改善)\n- Blue Carbon (マングローブ・海草藻場)\n- Soil Carbon (農地土壌炭素)"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "CDR クレジットは **「Net-Zero 達成の鍵」** と業界全体で位置付けられる:\n\n- **SBTi Net-Zero Standard**: 残余 10% は **Permanent Removal 必須**\n- **Frontier / NextGen / Symbiosis 等の共同基金**: CDR を集合的に長期 offtake\n- **価格レンジ**: Engineered Removal 100-600 USD/t、NBS Removal 15-50 USD/t\n\n日本企業の調達戦略:\n\n1. **NBS Removal で短期コミット + Engineered Removal で長期 offtake** のハイブリッド\n2. **Quality Tier (ICVCM CCP、ART TREES、Puro / Isometric 認証等)** を優先\n3. **国内 (J-クレジット森林系) + 海外 (VCS / Puro 等)** の併用\n\nCDR 市場は **2030 年に向けて年率 30-50% 成長** が予測され、早期コミットが価格優位"
+    }
+  ]
+}
