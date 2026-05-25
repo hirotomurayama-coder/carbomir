@@ -1,0 +1,18 @@
+{
+  "slug": "2023-07-icvcm-ccp-launch",
+  "event_date": "2023-07-27",
+  "title": "ICVCM Core Carbon Principles (CCP) 公表",
+  "summary": "Integrity Council for the Voluntary Carbon Market が任意市場全体の品質基準として Core Carbon Principles を発表。以降、Verra 含む各レジストリのメソドロジーが CCP 適格性で個別評価されるフェーズに入る。",
+  "affected_entity_slugs": [
+    "verra-vcs"
+  ],
+  "category": "market",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "ICVCM CCP",
+      "url": "https://icvcm.org/the-core-carbon-principles/"
+    }
+  ]
+}

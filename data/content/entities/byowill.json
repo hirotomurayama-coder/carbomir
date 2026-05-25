@@ -1,0 +1,33 @@
+{
+  "slug": "byowill",
+  "type": "player",
+  "name_ja": "バイウィル",
+  "name_en": "byowill",
+  "summary": "日本のクレジット創出・販売プラットフォーム事業者。J-クレジット創出支援とマーケットプレイスを運営。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "プラットフォーム",
+    "日本"
+  ],
+  "jurisdiction": "日本",
+  "established_year": 2021,
+  "geographic_scope": "日本国内",
+  "website_url": "https://byowill.com/",
+  "business_role": "国内取扱業者 (プラットフォーム)",
+  "related": [
+    {
+      "to_slug": "jcredit",
+      "relation": "depends_on",
+      "note": "J-クレジットの主要取扱プラットフォーム"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "事業の概要",
+      "body": "国内クレジット (主に J-クレジット) の創出支援とマーケットプレイスを運営。中小規模の発行者と需要家を繋ぐ役割を担う。設立年・組織体制は要確認 (公表情報の精緻化が必要)。"
+    }
+  ]
+}

@@ -1,0 +1,408 @@
+[
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2022,
+    "seller": "Chile",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2021,
+    "seller": "Dominica",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2021,
+    "seller": "Georgia",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2020,
+    "seller": "Ghana",
+    "status": "Bilteral authorization Completed",
+    "notes": "112565 ITMOs to be transferred by 2030 through the promotion of climate smart agriculture practices for sustainable rice cultivation in Ghana"
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2023,
+    "seller": "Kenya",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2022,
+    "seller": "Malawi",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2022,
+    "seller": "Morocco",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2020,
+    "seller": "Peru",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2021,
+    "seller": "Senegal",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2024,
+    "seller": "Tunisia",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2021,
+    "seller": "Thailand",
+    "status": "Bilteral Authorization Completed",
+    "notes": "31,138 ITMOs transferred so far; Maximum of 500000 ITMOs to be transferred by 2030 from e-mobility project in Bangkok Metropolitan Area"
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2022,
+    "seller": "Ukraine",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2022,
+    "seller": "Uruguay",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Switzerland",
+    "year_of_agreement": 2021,
+    "seller": "Vanuatu",
+    "status": "Bilteral Authorization Completed",
+    "notes": "97217 ITMOs to be transferred by 2030 through the electrification of Vanuatu’s Inhabited Islands through Solar Power ITMO Programme"
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2025,
+    "seller": "Bhutan",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Cambodia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2025,
+    "seller": "Chile",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Costa Rica",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Colombia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Dominican Republic",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Fiji",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2024,
+    "seller": "Ghana",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Kenya",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2024,
+    "seller": "Lao PDR",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2025,
+    "seller": "Malaysia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Mongolia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2022,
+    "seller": "Morocco",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2024,
+    "seller": "Phillipines",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Papua New Guinea",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2025,
+    "seller": "Paraguay",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2025,
+    "seller": "Peru",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2025,
+    "seller": "Rwanda",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Senegal",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2023,
+    "seller": "Sri Lanka",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2024,
+    "seller": "Zambia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Singapore",
+    "year_of_agreement": 2022,
+    "seller": "Vietnam",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2024,
+    "seller": "Cambodia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2023,
+    "seller": "Gabon",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2024,
+    "seller": "Indonesia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2024,
+    "seller": "Kazakhstan",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2023,
+    "seller": "Lao PDR",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2024,
+    "seller": "Malaysia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2023,
+    "seller": "Mongolia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2023,
+    "seller": "Uzbekistan",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Korea, Rep.",
+    "year_of_agreement": 2023,
+    "seller": "Vietnam",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Kuwait",
+    "year_of_agreement": 2023,
+    "seller": "Rwanda",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Sweden",
+    "year_of_agreement": 2022,
+    "seller": "Dominican Republic",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Sweden",
+    "year_of_agreement": 2024,
+    "seller": "Ghana",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Sweden",
+    "year_of_agreement": 2024,
+    "seller": "Nepal",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Sweden",
+    "year_of_agreement": 2024,
+    "seller": "Zambia",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Sweden",
+    "year_of_agreement": 2024,
+    "seller": "Rwanda",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Norway",
+    "year_of_agreement": 2023,
+    "seller": "Indonesia",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Norway",
+    "year_of_agreement": 2023,
+    "seller": "Morocco",
+    "status": "MoU Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Norway",
+    "year_of_agreement": 2024,
+    "seller": "Senegal",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Norway",
+    "year_of_agreement": 2024,
+    "seller": "Zambia",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Norway",
+    "year_of_agreement": 2024,
+    "seller": "Jordan",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "Norway",
+    "year_of_agreement": 2024,
+    "seller": "Benin",
+    "status": "Implementing Agreement Signed",
+    "notes": null
+  },
+  {
+    "buyer": "United Arab Emirates",
+    "year_of_agreement": 2023,
+    "seller": "Paraguay",
+    "status": "MoU Signed",
+    "notes": null
+  }
+]

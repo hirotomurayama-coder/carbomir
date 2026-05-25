@@ -1,0 +1,515 @@
+{
+  "source": {
+    "name": "CarbonPlan OffsetsDB",
+    "url": "https://carbonplan.org/research/offsets-db",
+    "terms_url": "https://offsets-db-data.readthedocs.io/en/latest/TERMS-OF-DATA-ACCESS.html",
+    "generated_at": "2026-05-21T06:59:50.348272+00:00",
+    "synced_at_utc": "2026-05-24T15:03:23.285038Z"
+  },
+  "totals": {
+    "projects": 11640,
+    "credits_transactions": 531424,
+    "registries": 7,
+    "countries": 152,
+    "total_issued": 2811795832.54,
+    "total_retired": 1569965558.855
+  },
+  "by_registry": [
+    {
+      "registry": "verra",
+      "projects": 4976,
+      "issued": 1500911278.0,
+      "retired": 930667653.0
+    },
+    {
+      "registry": "gold-standard",
+      "projects": 4096,
+      "issued": 490081204.0,
+      "retired": 246130079.0
+    },
+    {
+      "registry": "climate-action-reserve",
+      "projects": 1267,
+      "issued": 251790385.0,
+      "retired": 163727138.0
+    },
+    {
+      "registry": "american-carbon-registry",
+      "projects": 978,
+      "issued": 369373736.0,
+      "retired": 169816436.0
+    },
+    {
+      "registry": "cercarbono",
+      "projects": 234,
+      "issued": 140575793.0,
+      "retired": 59110629.0
+    },
+    {
+      "registry": "isometric",
+      "projects": 61,
+      "issued": 100033.54000000002,
+      "retired": 32625.855000000003
+    },
+    {
+      "registry": "art-trees",
+      "projects": 28,
+      "issued": 58963403.0,
+      "retired": 480998.0
+    }
+  ],
+  "by_category": [
+    {
+      "category": "renewable-energy",
+      "projects": 2341,
+      "issued": 739249588.0,
+      "retired": 441830471.0
+    },
+    {
+      "category": "forest",
+      "projects": 2266,
+      "issued": 1068478524.0,
+      "retired": 615724294.0
+    },
+    {
+      "category": "energy-efficiency",
+      "projects": 1981,
+      "issued": 194079170.0,
+      "retired": 105980548.0
+    },
+    {
+      "category": "ghg-management",
+      "projects": 1961,
+      "issued": 460342404.0,
+      "retired": 240027382.0
+    },
+    {
+      "category": "unknown",
+      "projects": 1814,
+      "issued": 254552772.6,
+      "retired": 114375347.0
+    },
+    {
+      "category": "agriculture",
+      "projects": 687,
+      "issued": 28551899.0,
+      "retired": 8948196.0
+    },
+    {
+      "category": "fuel-switching",
+      "projects": 459,
+      "issued": 65565528.0,
+      "retired": 42585832.0
+    },
+    {
+      "category": "biomass-cdr",
+      "projects": 57,
+      "issued": 199161.86000000002,
+      "retired": 46203.13
+    },
+    {
+      "category": "land-use",
+      "projects": 55,
+      "issued": 765654.0,
+      "retired": 446993.0
+    },
+    {
+      "category": "alkalinity-cdr",
+      "projects": 17,
+      "issued": 11131.080000000002,
+      "retired": 292.725
+    },
+    {
+      "category": "air-capture",
+      "projects": 2,
+      "issued": 0.0,
+      "retired": 0.0
+    }
+  ],
+  "by_country_top30": [
+    {
+      "label": "United States",
+      "projects": 1907,
+      "issued": 611241288.1899999
+    },
+    {
+      "label": "India",
+      "projects": 1901,
+      "issued": 409648802.7000001
+    },
+    {
+      "label": "China",
+      "projects": 1562,
+      "issued": 257708083.0
+    },
+    {
+      "label": "Türkiye",
+      "projects": 574,
+      "issued": 151850318.0
+    },
+    {
+      "label": "Mexico",
+      "projects": 564,
+      "issued": 43915903.0
+    },
+    {
+      "label": "Brazil",
+      "projects": 413,
+      "issued": 180672184.27999997
+    },
+    {
+      "label": "Kenya",
+      "projects": 346,
+      "issued": 85350045.0
+    },
+    {
+      "label": "Uganda",
+      "projects": 296,
+      "issued": 34495993.0
+    },
+    {
+      "label": "Colombia",
+      "projects": 269,
+      "issued": 145567422.0
+    },
+    {
+      "label": "Rwanda",
+      "projects": 225,
+      "issued": 21374741.0
+    },
+    {
+      "label": "Bangladesh",
+      "projects": 178,
+      "issued": 43087455.0
+    },
+    {
+      "label": "South Africa",
+      "projects": 172,
+      "issued": 21734608.0
+    },
+    {
+      "label": "Malawi",
+      "projects": 157,
+      "issued": 20037267.0
+    },
+    {
+      "label": "Nepal",
+      "projects": 149,
+      "issued": 6699425.0
+    },
+    {
+      "label": "Vietnam",
+      "projects": 147,
+      "issued": 35084030.0
+    },
+    {
+      "label": "Madagascar",
+      "projects": 138,
+      "issued": 13626881.0
+    },
+    {
+      "label": "Nigeria",
+      "projects": 129,
+      "issued": 13540409.0
+    },
+    {
+      "label": "Thailand",
+      "projects": 108,
+      "issued": 20547477.0
+    },
+    {
+      "label": "Burkina Faso",
+      "projects": 102,
+      "issued": 1453207.0
+    },
+    {
+      "label": "Indonesia",
+      "projects": 100,
+      "issued": 97970068.0
+    },
+    {
+      "label": "Mozambique",
+      "projects": 96,
+      "issued": 4105987.0
+    },
+    {
+      "label": "Tanzania",
+      "projects": 94,
+      "issued": 8697593.0
+    },
+    {
+      "label": "Ethiopia",
+      "projects": 89,
+      "issued": 13017232.0
+    },
+    {
+      "label": "Zambia",
+      "projects": 88,
+      "issued": 25144687.0
+    },
+    {
+      "label": "Canada",
+      "projects": 78,
+      "issued": 13758642.76
+    },
+    {
+      "label": "Peru",
+      "projects": 76,
+      "issued": 98383258.0
+    },
+    {
+      "label": "Ghana",
+      "projects": 70,
+      "issued": 15943460.0
+    },
+    {
+      "label": "DR Congo",
+      "projects": 60,
+      "issued": 46877343.0
+    },
+    {
+      "label": "Argentina",
+      "projects": 57,
+      "issued": 5484639.0
+    },
+    {
+      "label": "Germany",
+      "projects": 57,
+      "issued": 10514136.0
+    }
+  ],
+  "by_status": [
+    {
+      "status": "unknown",
+      "count": 4638
+    },
+    {
+      "status": "listed",
+      "count": 2877
+    },
+    {
+      "status": "registered",
+      "count": 2239
+    },
+    {
+      "status": "completed",
+      "count": 1742
+    },
+    {
+      "status": "active",
+      "count": 137
+    },
+    {
+      "status": "canceled",
+      "count": 5
+    },
+    {
+      "status": "inactive",
+      "count": 2
+    }
+  ],
+  "by_year": [
+    {
+      "year": 2002,
+      "issued": 125000.0,
+      "retired": 0.0
+    },
+    {
+      "year": 2004,
+      "issued": 500.0,
+      "retired": 407.0
+    },
+    {
+      "year": 2005,
+      "issued": 2880358.0,
+      "retired": 369.0
+    },
+    {
+      "year": 2006,
+      "issued": 11027146.0,
+      "retired": 7705.0
+    },
+    {
+      "year": 2007,
+      "issued": 5847510.0,
+      "retired": 423432.0
+    },
+    {
+      "year": 2008,
+      "issued": 8795975.0,
+      "retired": 1972572.0
+    },
+    {
+      "year": 2009,
+      "issued": 18356841.0,
+      "retired": 2620746.0
+    },
+    {
+      "year": 2010,
+      "issued": 30207470.0,
+      "retired": 6366748.0
+    },
+    {
+      "year": 2011,
+      "issued": 38222223.0,
+      "retired": 11465369.0
+    },
+    {
+      "year": 2012,
+      "issued": 59883380.0,
+      "retired": 18524319.0
+    },
+    {
+      "year": 2013,
+      "issued": 75876718.0,
+      "retired": 31508964.0
+    },
+    {
+      "year": 2014,
+      "issued": 66455898.0,
+      "retired": 32115518.0
+    },
+    {
+      "year": 2015,
+      "issued": 72338360.0,
+      "retired": 40914970.0
+    },
+    {
+      "year": 2016,
+      "issued": 60888175.0,
+      "retired": 44503179.0
+    },
+    {
+      "year": 2017,
+      "issued": 129589331.0,
+      "retired": 43131755.0
+    },
+    {
+      "year": 2018,
+      "issued": 129915830.0,
+      "retired": 115199758.0
+    },
+    {
+      "year": 2019,
+      "issued": 187919077.0,
+      "retired": 70772129.0
+    },
+    {
+      "year": 2020,
+      "issued": 242630036.0,
+      "retired": 99179510.0
+    },
+    {
+      "year": 2021,
+      "issued": 302573474.0,
+      "retired": 235304264.0
+    },
+    {
+      "year": 2022,
+      "issued": 342159925.0,
+      "retired": 192241936.0
+    },
+    {
+      "year": 2023,
+      "issued": 341800700.27000034,
+      "retired": 170239016.0
+    },
+    {
+      "year": 2024,
+      "issued": 304169899.0,
+      "retired": 174340651.04000002
+    },
+    {
+      "year": 2025,
+      "issued": 293870051.92999995,
+      "retired": 168888999.74500003
+    },
+    {
+      "year": 2026,
+      "issued": 86261954.34,
+      "retired": 71480517.07
+    }
+  ],
+  "project_types_top20": [
+    {
+      "label": "Cookstove",
+      "count": 1605
+    },
+    {
+      "label": "Improved Forest Management",
+      "count": 1095
+    },
+    {
+      "label": "Wind",
+      "count": 1021
+    },
+    {
+      "label": "Unknown",
+      "count": 992
+    },
+    {
+      "label": "Afforestation + Reforestation",
+      "count": 689
+    },
+    {
+      "label": "Hydropower",
+      "count": 532
+    },
+    {
+      "label": "Clean Water",
+      "count": 483
+    },
+    {
+      "label": "Manure Biodigester",
+      "count": 466
+    },
+    {
+      "label": "Landfill",
+      "count": 441
+    },
+    {
+      "label": "REDD+",
+      "count": 429
+    },
+    {
+      "label": "Centralized Solar",
+      "count": 349
+    },
+    {
+      "label": "Rice Emission",
+      "count": 313
+    },
+    {
+      "label": "Ozone Depleting Substances",
+      "count": 305
+    },
+    {
+      "label": "Biomass",
+      "count": 279
+    },
+    {
+      "label": "Sustainable Agriculture",
+      "count": 265
+    },
+    {
+      "label": "Borehole",
+      "count": 259
+    },
+    {
+      "label": "Methane Biodigester",
+      "count": 251
+    },
+    {
+      "label": "Mine Methane",
+      "count": 208
+    },
+    {
+      "label": "Energy Efficiency",
+      "count": 189
+    },
+    {
+      "label": "Wastewater Methane",
+      "count": 113
+    }
+  ]
+}

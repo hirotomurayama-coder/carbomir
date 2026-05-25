@@ -1,0 +1,63 @@
+{
+  "slug": "plan-vivo",
+  "type": "regulation",
+  "name_ja": "Plan Vivo",
+  "name_en": "Plan Vivo",
+  "summary": "1990 年代発祥の VCM 認証基準。コミュニティ主導の小規模森林・土地利用プロジェクトに特化し、参加コミュニティへの便益還元と参加型ガバナンスを重視する。",
+  "last_reviewed_at": "2026-05-21",
+  "next_review_at": "2026-07-20",
+  "status": "published",
+  "tags": [
+    "国際",
+    "ボランタリー市場",
+    "コミュニティベース"
+  ],
+  "jurisdiction": "英国 (民間)",
+  "established_year": 1994,
+  "operator": "Plan Vivo Foundation (本部エディンバラ)",
+  "geographic_scope": "途上国コミュニティ案件中心",
+  "website_url": "https://www.planvivo.org/",
+  "credit_unit": "PVC (Plan Vivo Certificate)",
+  "policy_status": "active",
+  "next_milestone": "2026: コミュニティベース案件の継続認証 + Plan Vivo Standard v5 への移行",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "competes_with",
+      "note": "規模感は小さいがコミュニティ案件で差別化"
+    },
+    {
+      "to_slug": "gold-standard",
+      "relation": "competes_with",
+      "note": "SDGs 連動の競合スタンダード"
+    }
+  ],
+  "related_matrix_slugs": [
+    "vcm-standards",
+    "credit-eligibility"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "Plan Vivo は 1990 年代にエジンバラ大学で開発された方式を起源とし、現在は英国の Plan Vivo Foundation が運営。クレジット単位は PVC (Plan Vivo Certificate) で、コミュニティ主導の小規模アグロフォレストリー・森林管理プロジェクトに特化している。",
+      "source_urls": [
+        {
+          "label": "Plan Vivo Foundation",
+          "url": "https://www.planvivo.org/"
+        }
+      ]
+    },
+    {
+      "heading": "差別化要素",
+      "body": "プロジェクト便益の最低 60% を参加コミュニティに還元することを義務付け、参加型ガバナンス (Producer Group Governance) を制度に組み込む。これは Verra VCS や Gold Standard と比較して顕著に強い社会的便益分配規範。"
+    },
+    {
+      "heading": "市場での位置",
+      "body": "発行量・流通量は VCS の数十分の一規模で、機関買い手による大口取引よりも、特定企業の CSR・サステナビリティブランド案件としての需要が中心。価格レンジは 10-30 USD/t 程度の幅 (要確認: 直近実勢)。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Plan Vivo は規模よりも「コミュニティへの便益分配」のストーリーで採用される傾向が強い。買い手企業のサステナビリティ報告で「社会的便益のあるクレジット」を差別化要素として位置付けたい場合の選択肢。VCS や Gold Standard の代替ではなく、ポートフォリオの一部として組み合わせる前提で評価するのが実務的。"
+    }
+  ]
+}

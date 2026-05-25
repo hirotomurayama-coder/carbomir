@@ -13,16 +13,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { findEntityBySlug } from "@/lib/data/entities";
 import type { ComparisonCell, ComparisonMatrix } from "@/lib/types";
+import { ReviewMarkedText } from "@/components/review-marks";
 
 type Props = {
   matrix: ComparisonMatrix;
+  publishedEntitySlugs: string[];
 };
 
-export function MatrixDataGrid({ matrix }: Props) {
+export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
   const [filter, setFilter] = React.useState("");
   const [hiddenDims, setHiddenDims] = React.useState<Set<string>>(new Set());
+  const publishedSet = React.useMemo(
+    () => new Set(publishedEntitySlugs),
+    [publishedEntitySlugs]
+  );
 
   const visibleDimensions = React.useMemo(() => {
     const q = filter.trim().toLowerCase();
@@ -127,8 +132,7 @@ export function MatrixDataGrid({ matrix }: Props) {
                 <span className="label-mono text-muted-foreground">Dimension</span>
               </th>
               {matrix.entities.map((e) => {
-                const entityExists =
-                  findEntityBySlug(e.slug)?.status === "published";
+                const entityExists = publishedSet.has(e.slug);
                 return (
                   <th
                     key={e.slug}
@@ -239,10 +243,12 @@ export function MatrixDataGrid({ matrix }: Props) {
 function CellContent({ cell }: { cell: ComparisonCell }) {
   return (
     <div className="space-y-2.5">
-      <p className="leading-relaxed text-[13.5px]">{cell.value}</p>
+      <p className="leading-relaxed text-[13.5px]">
+        <ReviewMarkedText>{cell.value}</ReviewMarkedText>
+      </p>
       {cell.note && (
         <p className="text-xs text-muted-foreground leading-relaxed border-l-2 border-border pl-2.5">
-          {cell.note}
+          <ReviewMarkedText>{cell.note}</ReviewMarkedText>
         </p>
       )}
       {cell.source_url && (

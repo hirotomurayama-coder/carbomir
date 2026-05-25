@@ -1,0 +1,18 @@
+{
+  "slug": "2005-11-vcs-founding",
+  "event_date": "2005-11-01",
+  "title": "VCS (Verified Carbon Standard) 発足",
+  "summary": "The Climate Group、WBCSD、IETA が共同で任意市場向け品質基準を設立。後の Verra による単独運営へと移行する。",
+  "affected_entity_slugs": [
+    "verra-vcs"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Verra Program History",
+      "url": "https://verra.org/programs/verified-carbon-standard/"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "2020-01-microsoft-carbon-negative",
+  "event_date": "2020-01-16",
+  "title": "Microsoft が 2030 年 Carbon Negative 目標を宣言",
+  "summary": "Microsoft が 2030 年までに事業活動の総排出量を超える Carbon Removal を達成する \"Carbon Negative\" 目標を発表。10 億 USD の Climate Innovation Fund 設立と長期 CDR offtake 契約により、Engineered Removal 市場の本格的な需要側プレイヤーとして登場した。",
+  "affected_entity_slugs": [
+    "microsoft",
+    "dac",
+    "verra-vcs",
+    "isometric"
+  ],
+  "category": "market",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Microsoft Sustainability",
+      "url": "https://www.microsoft.com/sustainability"
+    }
+  ]
+}

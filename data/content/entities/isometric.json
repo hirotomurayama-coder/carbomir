@@ -1,0 +1,70 @@
+{
+  "slug": "isometric",
+  "type": "regulation",
+  "name_ja": "Isometric",
+  "name_en": "Isometric",
+  "summary": "2022 年に英国で設立された **Engineered Removal 専門の新興レジストリ**。Verra VCS や Gold Standard が REDD+ 等の品質議論に巻き込まれる中、CDR (Carbon Dioxide Removal) に絞り込んだ品質基準で参入。Microsoft 等の支持を得て急成長中。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-07-24",
+  "status": "published",
+  "tags": [
+    "Engineered Removal",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "jurisdiction": "英国 (民間)",
+  "established_year": 2022,
+  "operator": "Isometric (英国)",
+  "geographic_scope": "グローバル (CDR 案件中心)",
+  "website_url": "https://isometric.com/",
+  "credit_unit": "Isometric Credit",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "competes_with",
+      "note": "Engineered Removal セグメントでの競合"
+    },
+    {
+      "to_slug": "dac",
+      "relation": "depends_on",
+      "note": "DAC クレジット発行プラットフォーム"
+    },
+    {
+      "to_slug": "biochar",
+      "relation": "depends_on",
+      "note": "Biochar クレジット発行プラットフォーム"
+    },
+    {
+      "to_slug": "erw",
+      "relation": "depends_on",
+      "note": "ERW クレジット発行プラットフォーム"
+    },
+    {
+      "to_slug": "microsoft",
+      "relation": "depends_on",
+      "note": "Microsoft 等のテック大手が主要バックアップ"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "2022 年設立。**「Engineered Removal に絞った品質基準」** を掲げ、Verra VCS / Gold Standard が REDD+ 品質議論で揺れる中で参入。DAC、Biochar、ERW、Mineralization 等の Engineered Removal 系メソドロジーを優先整備。",
+      "source_urls": [
+        {
+          "label": "Isometric 公式",
+          "url": "https://isometric.com/"
+        }
+      ]
+    },
+    {
+      "heading": "市場での位置",
+      "body": "発行量はまだ少ない (60+ プロジェクト、~0.1M tCO2 issued) が、Microsoft をはじめとするテック大手の長期 offtake 契約で大規模需要を確保。CDR 市場の急成長 (2030 年に数千万-数億トン規模) を見越して急拡大が予想される。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "従来 VCM の総合スタンダードに対する **「CDR 専門・新興」** ポジションは差別化として有効。一方、(a) 発行実績の蓄積がこれから、(b) MRV 厳格性が買い手から評価される必要、の 2 点が今後の試金石。日本企業の Engineered Removal 調達でも認識すべきレジストリ。"
+    }
+  ],
+  "next_milestone": "2026: Removal Standards の業界ベンチマーク化を目指す活動継続"
+}

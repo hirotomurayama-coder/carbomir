@@ -1,0 +1,38 @@
+{
+  "slug": "k-ets",
+  "type": "regulation",
+  "name_ja": "韓国 K-ETS",
+  "name_en": "Korea Emissions Trading Scheme",
+  "abbreviation": "K-ETS",
+  "summary": "韓国の全国排出量取引制度。2015 年開始、アジア初の全国 cap-and-trade。Phase 3 (2021-2025) 運用中。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "韓国",
+    "ETS / 排出量取引",
+    "Cap and Trade"
+  ],
+  "jurisdiction": "韓国",
+  "established_year": 2015,
+  "operator": "Ministry of Environment of Korea",
+  "geographic_scope": "韓国",
+  "website_url": "https://www.gir.go.kr/",
+  "credit_unit": "KAU (Korean Allowance Unit)",
+  "policy_status": "active",
+  "next_milestone": "2026-: Phase 4 開始、無償割当縮小と有償割当拡大 (要確認)",
+  "related": [],
+  "related_matrix_slugs": [
+    "ets-international-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "韓国温室効果ガス排出量取引制度法 (2012) を法的根拠とし、2015 年 1 月開始。アジアで最初の全国 cap-and-trade。発電・産業・建物・廃棄物・輸送等を対象に、全国排出量の約 70-75% をカバー。Phase 1 (2015-2017)、Phase 2 (2018-2020)、Phase 3 (2021-2025) と段階的に進んできた。"
+    },
+    {
+      "heading": "オフセット",
+      "body": "韓国国内排出削減プロジェクト (KOC: Korean Offset Credit) および海外プロジェクト (限定的範囲) のオフセット使用可。最大使用比率は Phase ごとに調整される。"
+    }
+  ]
+}

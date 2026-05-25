@@ -1,0 +1,30 @@
+{
+  "slug": "verra-credits-for-gx-ets-compliance",
+  "question": "GX-ETS の遵守目的で Verra VCS クレジットは使えますか?",
+  "short_answer": "原則として現時点 (2026 年5月) では非適格。GX-ETS の遵守には J-クレジットと JCM クレジットが主軸で、Verra 等の国際民間クレジットの直接利用は制度設計上、限定的。",
+  "category": "procurement",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "GX-ETS 関連",
+    "ボランタリー市場",
+    "遵守市場"
+  ],
+  "related_entity_slugs": [
+    "gx-ets",
+    "jcredit",
+    "jcm",
+    "verra-vcs"
+  ],
+  "related_matrix_slugs": [
+    "credit-eligibility"
+  ],
+  "source_urls": [
+    {
+      "label": "経済産業省 GX 政策",
+      "url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ggs/index.html"
+    }
+  ],
+  "detailed_md": "## 制度上の位置付け\n\nGX-ETS の遵守クレジットは、制度設計上 **J-クレジット (国内追加性) と JCM クレジット (二国間制度)** が主軸として位置付けられている。これは「国内排出削減と日本の公約 (NDC) 達成を制度的に下支えする」ためで、Verra VCS や Gold Standard 等の国際民間クレジットを遵守目的に直接使うことは **現時点では認められない方向** で運用規程が整備されている (2026 年5月時点、運用注視: 第2フェーズ移行時の細目)。\n\n## ただし任意取り組みでは活用可能\n\n一方で、**Scope3 相殺・SBT FLAG ターゲット・任意のカーボンニュートラル宣言** 等の任意取り組みでは Verra クレジットは引き続き活用できる。CDP 開示でも標準的に使われる。\n\n## 実務上の判断\n\n- **GX-ETS 遵守用**: J-クレジット / JCM をまず確保する\n- **CSR・任意取り組み用**: Verra / Gold Standard / Plan Vivo 等を活用 (品質基準を個別審査)\n- **第2フェーズ以降の動向**: 国際クレジットの取扱方針は政策議論で変化余地あり。最新の運用規程を定期確認することを推奨"
+}

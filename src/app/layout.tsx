@@ -5,6 +5,13 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AppShell } from "@/components/app-shell";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CommandMenuProvider } from "@/components/command-menu";
+import {
+  listPublishedCaseStudies,
+  listPublishedEntities,
+  listPublishedFaqs,
+  listPublishedMatrices,
+  listPublishedTimelineEvents,
+} from "@/lib/data/queries";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +38,19 @@ export const metadata: Metadata = {
     "Carbomir by Carbon Credits.jp。VCM領域の構造化ナレッジベース。比較行列・時系列・概念体系を専門家編集 × AI 充填で継続更新する、株式会社クレイドルトゥー運営のシステム。",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [matrices, entities, timelineEvents, caseStudies, faqs] = await Promise.all([
+    listPublishedMatrices(),
+    listPublishedEntities(),
+    listPublishedTimelineEvents(),
+    listPublishedCaseStudies(),
+    listPublishedFaqs(),
+  ]);
+
   return (
     <html
       lang="ja"
@@ -50,7 +65,13 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <TooltipProvider delayDuration={200}>
-            <CommandMenuProvider>
+            <CommandMenuProvider
+              matrices={matrices}
+              entities={entities}
+              timelineEvents={timelineEvents}
+              caseStudies={caseStudies}
+              faqs={faqs}
+            >
               <AppShell>{children}</AppShell>
             </CommandMenuProvider>
           </TooltipProvider>

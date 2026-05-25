@@ -1,0 +1,19 @@
+{
+  "slug": "2026-04-gx-ets-paid-phase",
+  "event_date": "2026-04-01",
+  "title": "GX-ETS 排出量取引制度の有償化開始",
+  "summary": "GX-ETS の本格運用に向け、特定企業群に対する排出枠の有償割当が開始される段階。国内クレジット制度の需要拡大要因として価格圧力が継続している。",
+  "affected_entity_slugs": [
+    "jcredit",
+    "jcm"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "経済産業省 GX-ETS 関連",
+      "url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ggs/index.html"
+    }
+  ]
+}

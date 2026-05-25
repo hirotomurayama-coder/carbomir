@@ -12,6 +12,76 @@
 
 ---
 
+## プロダクト方針 (アライメント結果 — 2026-05-25)
+
+> **重要**: 以下は実装判断の最上位レイヤー。設計・コンテンツ判断で迷ったらここを見る。
+
+### 主ペルソナ: Persona A — CSR / サスティナビリティ担当
+- 所属: CSR 部 / サステナビリティ推進部 / IR 部
+- 業務: TCFD / SBT / CDP 報告、Net-Zero ロードマップ策定、株主・顧客向け開示
+- 知識レベル: 中〜上級 (用語は分かる、判断材料が欲しい)
+- ペイン: 情報散在、信頼できる出典少、業界水準が見えない
+- 副ペルソナ: Persona C (経営企画) は近接、Persona B (調達) は実務寄りすぎて主対象外
+
+### キラーシナリオ: 規制変更キャッチアップ
+- 状況: GX-ETS / CBAM / SBT 改訂等の規制動向把握
+- 用途: タイムラインで動きを追う、政策ステータスで次マイルストーン把握、関連エンティティへ deep dive
+- 滞在: 中時間 (30 分-1 時間)、頻度: 月 1-2 回 (規制動きで急増)
+- 副シナリオ: 取締役会資料作成、TCFD/CDP 定期報告
+
+### 編集論点の位置付け: 主力差別化要素
+- 規制変更の生情報はコモディティ。Carbomir の価値は **「これが何を意味するか」の編集解釈**
+- 構造化 (matrix / 属性 / 関係) は **編集論点を載せる土台** という関係
+- 「編集部の論点」セクションは各詳細ページの **中核** として扱う
+
+### アセットタクソノミー (動詞型 + 名詞 1)
+| ラベル | 含むアセット | 機能ロール |
+|---|---|---|
+| **比べる** | 比較行列 | Compare — トレードオフ提示 |
+| **調べる** | 概念体系 / プレイヤー / 政策・規制 | Define — 構造化定義 |
+| **追う** | 時系列 | Track — 動向追跡 (**ホーム主役**) |
+| **学ぶ** | ケーススタディ / FAQ | Apply — 実務応用 |
+| **世界マップ** | 価格制度 / クレジット機構 / 二国間協定 / OffsetsDB | Survey — 外部由来網羅マスタ (旧 Atlas) |
+| ツール | 関係グラフ / 編集ステータス | メタビュー |
+| Admin | AI ドラフト | 編集ツール (内部) |
+
+設計原則:
+- 4 動詞 (比べる / 調べる / 追う / 学ぶ) = Carbomir 編集部の編集資産
+- 名詞型「世界マップ」 = 外部由来の網羅マスタ
+- このラベル差で「自社編集物 vs 外部参照データ」の性質差を直接表現
+
+### 品質シグナル方針
+- **「要確認」マーク**: 公開時に解消するのが原則。`/editorial` だけに残る (内部 TODO)
+- **構造的不確実性**: 「(運用注視: ...)」ラベルで残す (透明性価値)
+- **鮮度シグナル**: 絶対日付 + 相対表示 + 警告レベル + `next_review_at`
+- **政策ステータス**: `policy_status` + `next_milestone` をカレンダー化
+- **status バッジ**: 公開ページからは消し、内部のみ管理
+
+### コンテンツ拡充の優先順位
+1. 時系列イベントの編集論点 (主役。差別化の中核)
+2. 政策・規制 entity の `next_milestone` / `policy_status` (カレンダー化のため必須)
+3. 規制テーマの FAQ
+4. 規制対応事例のケーススタディ
+5. 比較行列 (規制間比較を中心に)
+6. 概念体系 / プレイヤー / 世界マップ (文脈情報として)
+7. エンジニアリング系メソドロジー / 技術 (必要だが急がない)
+
+### 課金設計方針 (Phase 4)
+- **Free** (¥0): 公開コンテンツの 70% (時系列旧イベント、エンティティ基本、比較行列見出し+一部セル)
+- **Standard** (¥3,000-5,000/月): 全コンテンツ、**編集論点フル**、規制カレンダー、Cmd+K 高度検索
+- **Pro** (¥15,000-30,000/月): CSV エクスポート、アラート / 通知、API
+- 編集論点を Standard 限定にする paywall 設計が必要 (Phase 4 で実装)
+
+### スタイル規範
+詳細は [STYLE_GUIDE.md](./STYLE_GUIDE.md) を参照。AI ドラフト生成と人手執筆の両方が遵守する。
+- 確信度 3 段階 (強・中・弱)
+- 出典: ハイブリッド (本文インライン + 末尾集約)
+- 編集者透明性: About ページ + 法人クレジット、個人名は当面非公開
+- 用語規範: Verra (VCS), GX-ETS, J-クレジット, 2026 年, USD/t
+- 編集論点セクション名: **「編集部の論点」** に統一
+
+---
+
 ## 技術スタック
 
 | 項目 | バージョン/詳細 |
@@ -24,10 +94,12 @@
 | Supabase | PostgreSQL + Auth + RLS (未接続時はシードデータで fallback) |
 | lucide-react | 最新版 |
 | cmdk | Cmd+K Command Palette |
+| @anthropic-ai/sdk | AI ドラフト生成 CLI で使用 |
+| tsx | scripts/*.ts 実行 |
 
 ---
 
-## ディレクトリ構成
+## ディレクトリ構成 (現状)
 
 ```
 src/
@@ -35,31 +107,49 @@ src/
     layout.tsx          # ThemeProvider > TooltipProvider > CommandMenuProvider > AppShell
     page.tsx            # ダッシュボードホーム
     globals.css         # ブランドカラー + shadcn 変数
-    entities/
-      page.tsx          # 概念体系インデックス (Server Component)
-      [slug]/page.tsx   # エンティティ詳細 (Server Component)
-    matrices/
-      page.tsx          # 比較行列インデックス (Server Component)
-      [slug]/page.tsx   # 比較行列詳細 (Server Component)
+    entities/           # 概念体系 (調べる)
+    matrices/           # 比較行列 (比べる)
+    timeline/           # 時系列 (追う)
+    case-studies/       # ケーススタディ (学ぶ)
+    faq/                # FAQ (学ぶ)
+    players/            # プレイヤー (調べる)
+    policies/           # 政策・規制 (調べる)
+    atlas/              # 旧 Atlas (UI 表示は「世界マップ」)
+      instruments/      # 価格制度
+      mechanisms/       # クレジット機構
+      cooperative/      # 二国間協定
+      offsets-db/       # OffsetsDB プロジェクト
+    graph/              # 関係グラフ (ツール)
+    editorial/          # 編集ステータス (ツール)
+    admin/
+      drafts/           # AI ドラフトレビュー (内部)
   components/
     app-shell.tsx       # Sidebar + TopBar + Footer ラッパー
     app-sidebar.tsx     # 常時ダーク左サイドバー
-    app-topbar.tsx      # sticky ヘッダー + パンくず + ⌘K
-    command-menu.tsx    # Cmd+K グローバル検索 (Client Component)
-    entities/
-      entities-explorer.tsx   # タブ + List/Grid ビュー (Client)
-      entity-toc.tsx          # スクロールスパイ TOC (Client)
-    matrices/
-      matrix-data-grid.tsx    # DataGrid + 軸フィルタ (Client)
+    app-topbar.tsx      # sticky ヘッダー
+    command-menu.tsx    # Cmd+K グローバル検索
+    review-marks.tsx    # 要確認マーク表示 (将来削除予定)
+    markdown-content.tsx
+    atlas/              # Atlas 関連コンポーネント
+    case-studies/, faq/, entities/, matrices/, timeline/, players/
   lib/
-    types.ts            # Entity, ComparisonMatrix 等の型定義
+    types.ts            # 全型定義
+    database.types.ts   # Supabase DB スキーマ
+    supabase.ts         # Supabase クライアント
     data/
-      entities.ts       # シードデータ (3エンティティ)
-      comparisons.ts    # シードデータ (1比較行列)
-    supabase.ts         # Supabase クライアント (env 未設定時 null)
+      entities.ts, comparisons.ts, timeline.ts
+      case-studies.ts, faqs.ts
+      ai-drafts.ts      # AI ドラフトストア (filesystem-backed)
+      atlas/            # 世界マップデータ
+      mappers.ts, queries.ts
+scripts/
+  ai-draft.ts           # AI ドラフト生成 CLI
+  sync-offsets-db.py
+data/
+  ai-drafts/            # AI ドラフト JSON (filesystem-backed)
 supabase/
-  migrations/
-    0001_initial_schema.sql
+  migrations/0001-0007  # 7 migrations 累積
+  seed/                 # SQL seed (TS seed と同期)
 ```
 
 ---
@@ -67,13 +157,18 @@ supabase/
 ## デザイン原則
 
 - **カラーパレット**: 深ネイビー (#0c2545) + シアン青 (#0ea5e9) + ダークBG (#050a14)
-  - 「井戸」「深さ」「専門性」のイメージ
-- **トーン**: SaaS ダッシュボード型。メディア感を排除し、システム感を優先
+- **トーン**: SaaS ダッシュボード型。メディア感排除、システム感優先
 - **タイポ**: モノスペース (label-mono, metric-number) を多用してデータ感を演出
 - **サイドバー**: 常時ダーク (`bg-sidebar: #0a1628`)
+- **データ密度**: 二段階 (一覧=高密度 / 詳細ページの編集論点=余白多め)
+- **バッジ 3 階層**:
+  - 第 1 階層 (常設): カテゴリ / 鮮度シグナル
+  - 第 2 階層 (条件付き): status 警告 / 規制ステータス
+  - 第 3 階層 (内部のみ): 要確認件数 (公開ページからは消去)
 
 ### 表示禁止事項
 - `L2-E`、`L5` 等の社内記号はコード内では使用可だが、**UI/アウトプットに表示してはならない**
+- 「要確認 (...)」マークは **公開コンテンツに残してはならない** (内部 TODO 用、`/editorial` だけに集計表示)
 
 ---
 
@@ -104,29 +199,50 @@ ANTHROPIC_API_KEY=
 
 ## Phase 完了状況
 
-### Phase 1A ✅ 完了
-- [x] プロジェクト初期化 (Next.js 16 + shadcn/ui + Tailwind v4)
-- [x] App Shell (Sidebar + TopBar + Footer)
-- [x] ブランドカラー適用
-- [x] 比較行列インデックス + 詳細ページ
-- [x] 概念体系インデックス + 詳細ページ (3カラムレイアウト + TOC)
-- [x] ダッシュボードホーム (メトリクスカード + Recent Updates)
+### Phase 1A / 1B / 2 / 2.5 ✅ 完了
+- プロジェクト初期化 + App Shell + ブランドカラー
+- 比較行列・概念体系・時系列の UI + Cmd+K
+- Supabase 接続 (seed fallback) + Vitest + mappers tests
 
-### Phase 1B ✅ 完了
-- [x] Cmd+K Command Palette (グローバル検索)
-- [x] MatrixDataGrid (軸フィルタ + 軸可視性 DropdownMenu + sticky 列)
-- [x] EntitiesExplorer (タブ絞り込み + List/Grid ビュー切替)
-- [x] EntityToc (IntersectionObserver スクロールスパイ)
+### Phase 3 ✅ コンテンツ + 編集ツール (このセッションまで)
+- [x] エンティティ拡充 (40+ 件): methodology / regulation / player / market / technology
+- [x] 比較行列 5 件: VCM スタンダード / Engineered Removal / ETS / Credit Eligibility / J-クレジット
+- [x] 時系列イベント 30+ 件
+- [x] /atlas — World Bank + CarbonPlan データセット取り込み
+- [x] /graph 関係グラフビュー
+- [x] /editorial 編集ステータスダッシュボード
+- [x] /case-studies (5 件) と /faq (8 件)
+- [x] tag controlled vocabulary
+- [x] **AI ドラフトパイプライン**: `npm run ai:draft` CLI + `/admin/drafts` レビュー UI
 
-### Phase 2 (未着手)
-- [ ] Supabase 接続実装
-- [ ] 認証フロー (Supabase Auth + Google OAuth)
+### Phase Α (アライメント永続化 ← 現在)
+- [x] CLAUDE.md にアライメント結果反映
+- [ ] STYLE_GUIDE.md 作成
+- [ ] ai-draft.ts プロンプトに STYLE_GUIDE 反映
+
+### Phase Β (タクソノミー実装 — 未着手)
+- [ ] サイドバー: 動詞型ラベル化 (比べる / 調べる / 追う / 学ぶ / 世界マップ)
+- [ ] Cmd+K: 動詞ベース構成
+- [ ] ホームページ: 「追う」を主役にした再構築
+
+### Phase Γ (品質シグナル強化 — 未着手)
+- [ ] FreshnessIndicator コンポーネント (絶対 + 相対 + 警告レベル)
+- [ ] `next_review_at` データモデル追加
+- [ ] 「要確認」マークの整理 (本文から削除、`/editorial` に集約)
+- [ ] バッジ 3 階層整理
+
+### Phase Δ (仕上げ — 未着手)
+- [ ] 既存 seed コンテンツのトーン統一
+- [ ] /about ページ (法人クレジット、編集体制)
+- [ ] ライトモード完成度向上
+- [ ] モバイル ハンバーガーメニュー
+- [ ] レイアウトトークン統一
+
+### Phase 4 (配管系・後回し)
+- [ ] 認証フロー (Supabase Auth + Google OAuth + middleware)
 - [ ] 課金フロー (Stripe Free/Standard/Pro)
-- [ ] ペイウォール (RLS)
-- [ ] AI 生成パイプライン (手動トリガー)
-- [ ] 編集レビュー UI (`/admin/review`)
-- [ ] 旧 `intelligence.carboncredits.jp` からの 301 リダイレクト
-- [ ] WordPress リバースプロキシ設定
+- [ ] ペイウォール (編集論点を Standard 限定に)
+- [ ] Vercel デプロイ + carboncredits.jp/carbomir リバースプロキシ
 
 ---
 
@@ -134,10 +250,13 @@ ANTHROPIC_API_KEY=
 
 ```bash
 cd ~/carbomir
-npm run build   # SSG 10ページ生成を確認
+npm run build   # SSG 全ページ生成を確認
 npm run dev     # Turbopack 開発サーバー (localhost:3000/carbomir)
+npm test        # Vitest (mappers.ts 等の unit テスト)
+npm run ai:draft -- --type=entity --topic="..."  # AI ドラフト生成
 ```
 
 ## 既知の注意点
 - `turbopack: { root: path.resolve(__dirname) }` は next.config.ts に必須 (ワークスペースルート誤認防止)
 - shadcn add 時は `--overwrite -y` フラグを付ける
+- `/admin/*` は現状認証なし。Phase 4 で middleware で塞ぐ

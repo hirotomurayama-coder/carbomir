@@ -1,7 +1,8 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Network } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { listPublishedEntities } from "@/lib/data/entities";
+import { listPublishedEntities } from "@/lib/data/queries";
 import { EntitiesExplorer } from "@/components/entities/entities-explorer";
 
 export const metadata: Metadata = {
@@ -10,8 +11,8 @@ export const metadata: Metadata = {
     "Carbomir の概念体系。制度・メソドロジー・プレイヤー・市場・技術を専門家編集で構造化する。",
 };
 
-export default function EntitiesIndexPage() {
-  const entities = listPublishedEntities();
+export default async function EntitiesIndexPage() {
+  const entities = await listPublishedEntities();
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
@@ -32,7 +33,9 @@ export default function EntitiesIndexPage() {
         </div>
       </header>
 
-      <EntitiesExplorer entities={entities} />
+      <Suspense fallback={null}>
+        <EntitiesExplorer entities={entities} />
+      </Suspense>
     </div>
   );
 }

@@ -1,0 +1,19 @@
+{
+  "slug": "2024-11-cop29-article-6-4-methodologies",
+  "event_date": "2024-11-23",
+  "title": "COP29 (バクー) で Article 6.4 メソドロジー基準を採択",
+  "summary": "COP29 でパリ協定第 6.4 条 (PACM = Paris Agreement Crediting Mechanism) の運用詳細が大きく前進。Article 6.4 Supervisory Body が策定したメソドロジー基準と除去活動基準を締約国が承認し、初の PACM クレジット発行に向けた制度的準備が整った (要確認: 詳細日付・採択内容)。",
+  "affected_entity_slugs": [
+    "paris-article-6-4",
+    "paris-article-6-2"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "UNFCCC - Article 6.4 Mechanism",
+      "url": "https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "2003-09-gold-standard-founding",
+  "event_date": "2003-09-01",
+  "title": "Gold Standard 設立",
+  "summary": "WWF を中心とする NGO 連合により、CDM 等の任意カーボンクレジットに「SDGs 連動」の品質基準を提供することを目的に設立 (要確認: 正確な月日)。後に独立スタンダードへ拡張し、Verra VCS と並ぶ VCM の二大民間基準に成長。",
+  "affected_entity_slugs": [
+    "gold-standard",
+    "gold-standard-foundation"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Gold Standard 公式",
+      "url": "https://www.goldstandard.org/"
+    }
+  ]
+}

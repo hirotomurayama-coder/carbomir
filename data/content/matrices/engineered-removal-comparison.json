@@ -1,0 +1,191 @@
+{
+  "slug": "engineered-removal-comparison",
+  "title": "Engineered Removal 技術比較 (DAC / ERW / BECCS / Biochar / OAE)",
+  "description": "Engineered Removal の主要 5 技術を、永続性・コスト・MRV 成熟度・商業化段階で対比。CDR 調達ポートフォリオ設計の前提整理。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "category": "methodology",
+  "tags": [
+    "Engineered Removal",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "dimensions": [
+    {
+      "key": "permanence",
+      "label_ja": "永続性 (推定)"
+    },
+    {
+      "key": "price_range",
+      "label_ja": "価格レンジ (USD/t-CO2)"
+    },
+    {
+      "key": "mrv_maturity",
+      "label_ja": "MRV 成熟度",
+      "description": "Measurement / Reporting / Verification の確立度"
+    },
+    {
+      "key": "commercial_stage",
+      "label_ja": "商業化段階"
+    },
+    {
+      "key": "geographic_constraint",
+      "label_ja": "地理的制約"
+    },
+    {
+      "key": "key_players",
+      "label_ja": "主要事業者"
+    },
+    {
+      "key": "carbomir_quality_view",
+      "label_ja": "Carbomir 編集部の品質観"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "dac",
+      "name_ja": "DAC",
+      "name_en": "Direct Air Capture"
+    },
+    {
+      "slug": "erw",
+      "name_ja": "ERW",
+      "name_en": "Enhanced Rock Weathering"
+    },
+    {
+      "slug": "beccs",
+      "name_ja": "BECCS",
+      "name_en": "Bio-energy with CCS"
+    },
+    {
+      "slug": "biochar",
+      "name_ja": "Biochar",
+      "name_en": "Biochar"
+    },
+    {
+      "slug": "oae",
+      "name_ja": "OAE",
+      "name_en": "Ocean Alkalinity Enhancement"
+    }
+  ],
+  "cells": {
+    "dac": {
+      "permanence": {
+        "value": ">1,000 年 (CCS 地中貯留次第)"
+      },
+      "price_range": {
+        "value": "100-600 USD/t (Climeworks 400-600、北米 45Q 適用で実質低減)"
+      },
+      "mrv_maturity": {
+        "value": "高 (CCS 分野で確立、Verra VCS でメソドロジー整備済)"
+      },
+      "commercial_stage": {
+        "value": "初期商業化 (Mammoth 36k t/年、STRATOS 計画中)"
+      },
+      "geographic_constraint": {
+        "value": "CCS インフラ近接 (アイスランド・米国 Texas 等)"
+      },
+      "key_players": {
+        "value": "Climeworks / Carbon Engineering / Heirloom / Mission Zero Technologies"
+      },
+      "carbomir_quality_view": {
+        "value": "永続性最高水準、商業化最進、価格上昇シナリオの織込み必要",
+        "note": "Carbomir 編集部による定性評価 (2026-05)"
+      }
+    },
+    "erw": {
+      "permanence": {
+        "value": ">10,000 年 (化学反応の不可逆性)"
+      },
+      "price_range": {
+        "value": "100-400 USD/t (DAC より低め、要確認: 実勢)"
+      },
+      "mrv_maturity": {
+        "value": "中〜低 (鉱物溶解の追跡・海洋到達 CO2 推定に大きな不確実性)"
+      },
+      "commercial_stage": {
+        "value": "初期商業化 (Lithos / Eion / UNDO Carbon 等)"
+      },
+      "geographic_constraint": {
+        "value": "大規模火成岩産地 + 農地"
+      },
+      "key_players": {
+        "value": "Lithos Carbon / Eion / UNDO Carbon / Mati Carbon"
+      },
+      "carbomir_quality_view": {
+        "value": "永続性は最強級だが MRV 不確実性で買い手企業の説明可能性に課題",
+        "note": "個別評価は株式会社クレイドルトゥー CDR 調達アドバイザリーへ"
+      }
+    },
+    "beccs": {
+      "permanence": {
+        "value": ">1,000 年 (CCS 次第)"
+      },
+      "price_range": {
+        "value": "政策補助依存で実効価格 50-200 USD/t (要確認)"
+      },
+      "mrv_maturity": {
+        "value": "中 (LCA 標準化が前提課題)"
+      },
+      "commercial_stage": {
+        "value": "実装 (Drax UK 等)、商業性は政策補助依存"
+      },
+      "geographic_constraint": {
+        "value": "バイオマス産地 + CCS インフラ近接 (英国 / 北欧)"
+      },
+      "key_players": {
+        "value": "Drax (英国) / Ørsted (デンマーク)"
+      },
+      "carbomir_quality_view": {
+        "value": "原料サステナビリティ議論継続。クレジット枠組より政策補助主流"
+      }
+    },
+    "biochar": {
+      "permanence": {
+        "value": ">100 年 (条件依存、土壌微生物分解率次第)"
+      },
+      "price_range": {
+        "value": "50-200 USD/t (DAC の 1/3-1/2)"
+      },
+      "mrv_maturity": {
+        "value": "中 (固体炭素分画、施用追跡が課題)"
+      },
+      "commercial_stage": {
+        "value": "拡大期 (Puro.earth / Verra VCS 等で発行)"
+      },
+      "geographic_constraint": {
+        "value": "農林業残渣産地"
+      },
+      "key_players": {
+        "value": "Carbofex / Pacific Biochar / Carbonfuture"
+      },
+      "carbomir_quality_view": {
+        "value": "永続性は DAC/ERW より劣るが、コスト面で買いやすい。ER セグメント拡大の中核"
+      }
+    },
+    "oae": {
+      "permanence": {
+        "value": ">10,000 年 (海洋鉱化)"
+      },
+      "price_range": {
+        "value": "200-500 USD/t (商業化最初期の参考値、要確認)"
+      },
+      "mrv_maturity": {
+        "value": "低 (海洋環境影響と MRV の科学的不確実性が大)"
+      },
+      "commercial_stage": {
+        "value": "研究段階の延長 (Planetary / Ebb / Equatic 等)"
+      },
+      "geographic_constraint": {
+        "value": "沿岸・外洋 (許認可グレーゾーン)"
+      },
+      "key_players": {
+        "value": "Planetary Technologies / Ebb Carbon / Equatic / Captura / Vesta"
+      },
+      "carbomir_quality_view": {
+        "value": "理論容量は大だが MRV と環境影響の科学的不確実性が現時点で大、2030 年以降の本格化期待"
+      }
+    }
+  }
+}

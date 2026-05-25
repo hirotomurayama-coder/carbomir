@@ -6,21 +6,27 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
   findMatrixBySlug,
+  listPublishedEntitySlugs,
   listPublishedMatrices,
-} from "@/lib/data/comparisons";
+} from "@/lib/data/queries";
+import { findAtlasLinksForEntity } from "@/lib/data/atlas";
 import { MatrixDataGrid } from "@/components/matrices/matrix-data-grid";
+import { AtlasDeepDivePanel } from "@/components/atlas/atlas-deep-dive-panel";
+import { FreshnessIndicator } from "@/components/freshness-indicator";
+import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  return listPublishedMatrices().map((m) => ({ slug: m.slug }));
+  const matrices = await listPublishedMatrices();
+  return matrices.map((m) => ({ slug: m.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const matrix = findMatrixBySlug(slug);
+  const matrix = await findMatrixBySlug(slug);
   if (!matrix) return {};
   return {
     title: matrix.title,
@@ -30,7 +36,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function MatrixDetailPage({ params }: Props) {
   const { slug } = await params;
-  const matrix = findMatrixBySlug(slug);
+  const [matrix, publishedEntitySlugs] = await Promise.all([
+    findMatrixBySlug(slug),
+    listPublishedEntitySlugs(),
+  ]);
   if (!matrix || matrix.status !== "published") notFound();
 
   return (
@@ -53,9 +62,11 @@ export default async function MatrixDetailPage({ params }: Props) {
           <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
             {matrix.entities.length}×{matrix.dimensions.length}
           </Badge>
-          <Badge variant="outline" className="font-mono text-[10px] tracking-wider text-emerald-600 dark:text-emerald-400 border-emerald-600/40 dark:border-emerald-400/40">
-            Published
-          </Badge>
+          <FreshnessIndicator
+            lastReviewedAt={matrix.last_reviewed_at}
+            nextReviewAt={matrix.next_review_at}
+          />
+          <EditLink type="matrices" slug={matrix.slug} className="ml-auto" />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
           {matrix.title}
@@ -65,7 +76,21 @@ export default async function MatrixDetailPage({ params }: Props) {
         </p>
       </header>
 
-      <MatrixDataGrid matrix={matrix} />
+      <MatrixDataGrid
+        matrix={matrix}
+        publishedEntitySlugs={publishedEntitySlugs}
+      />
+
+      {/* Atlas で深掘り — matrix の各 entity を Atlas に辿る */}
+      <div className="mt-8">
+        <AtlasDeepDivePanel
+          entities={matrix.entities.map((e) => ({
+            slug: e.slug,
+            name_ja: e.name_ja,
+            links: findAtlasLinksForEntity(e.slug),
+          }))}
+        />
+      </div>
 
       {/* CTA */}
       <Card className="mt-8 bg-gradient-to-br from-card to-muted/40">

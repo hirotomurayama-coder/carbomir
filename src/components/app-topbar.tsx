@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarBody } from "@/components/app-sidebar";
 import { useCommandMenu } from "@/components/command-menu";
 
 export function AppTopBar() {
@@ -23,9 +23,9 @@ export function AppTopBar() {
         </SheetTrigger>
         <SheetContent side="left" className="p-0 w-[240px] bg-sidebar text-sidebar-foreground border-sidebar-border">
           <SheetTitle className="sr-only">ナビゲーション</SheetTitle>
-          {/* モバイル用に AppSidebar の中身を表示 (簡易) */}
+          {/* モバイル用に SidebarBody (中身のみ) を表示 */}
           <div className="h-full overflow-y-auto">
-            <AppSidebar />
+            <SidebarBody />
           </div>
         </SheetContent>
       </Sheet>

@@ -1,0 +1,46 @@
+{
+  "slug": "apple-carbon-neutral-2030",
+  "title": "Apple Carbon Neutral 戦略 (2030 年)",
+  "company": "Apple",
+  "year": 2024,
+  "region": "グローバル (米国本社)",
+  "category": "compliance",
+  "credit_type": "Restore Fund (REDD+ / 森林由来) + Engineered Removal",
+  "scale_note": "サプライチェーン全体の Carbon Neutral を目指す",
+  "summary": "Apple は 2030 年までに製品とサプライチェーン全体で Carbon Neutral を達成する目標を掲げ、Restore Fund (森林系投資ファンド) と Engineered Removal の組み合わせでクレジット調達を進める。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "米国",
+    "森林吸収"
+  ],
+  "related_entity_slugs": [
+    "verra-vcs",
+    "redd-plus",
+    "arr",
+    "ifm",
+    "art-trees"
+  ],
+  "source_urls": [
+    {
+      "label": "Apple Environment",
+      "url": "https://www.apple.com/environment/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "取り組みの概要",
+      "body": "Apple は 2020 年に **2030 年 Carbon Neutral** 目標を発表。製品ライフサイクル + サプライチェーン排出を含む包括的目標で、再エネ転換とサプライヤー協調を主軸としつつ、残余排出を森林系オフセットで補完する戦略。"
+    },
+    {
+      "heading": "Restore Fund",
+      "body": "Apple は Conservation International、Goldman Sachs と協働で **Restore Fund** を 2021 年に設立 (規模 2 億 USD で開始、後に拡張)。\n\n投資対象:\n\n- **持続可能な商業林**: 木材生産と炭素蓄積を両立\n- **生物多様性保護プロジェクト**: 森林保護 + コミュニティ便益\n- **REDD+ / ARR / IFM のメソドロジー**: Verra VCS / ART TREES が主要レジストリ"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Apple の事例は **「森林系クレジットを 100% 排除する」** ではなく、品質基準を厳格化して継続活用する戦略の代表例。Engineered Removal にも一定の関心 (具体的契約は限定的、要確認) を示しつつ、森林系の \"Quality REDD+\" を支持する立場。\n\n日本の事業会社が参考にできる点:\n\n- 自社が **投資 (Fund) 経由** で森林案件にアクセスする選択肢\n- 短期コストより **長期の品質保証** を優先する設計\n- **Conservation International 等の NGO** との協働でクレジットを\"上位\"差別化"
+    }
+  ]
+}

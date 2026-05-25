@@ -1,0 +1,18 @@
+{
+  "slug": "2021-07-china-national-ets-launch",
+  "event_date": "2021-07-16",
+  "title": "中国全国 ETS 運用開始",
+  "summary": "8 地域パイロット ETS (2013-2020) を経て、中国全国 ETS が発電セクターを対象に運用開始。約 2,000 社・40 億トン規模で世界最大の ETS として稼働。原単位ベース (rate-based) の割当方式が特徴で、絶対量上限を持つ EU ETS とは制度設計が異なる。",
+  "affected_entity_slugs": [
+    "china-national-ets"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Ministry of Ecology and Environment (中国 MEE)",
+      "url": "https://english.mee.gov.cn/"
+    }
+  ]
+}

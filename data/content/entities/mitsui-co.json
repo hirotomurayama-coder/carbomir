@@ -1,0 +1,33 @@
+{
+  "slug": "mitsui-co",
+  "type": "player",
+  "name_ja": "三井物産",
+  "name_en": "Mitsui & Co.",
+  "summary": "日本の総合商社。脱炭素ソリューションの一環としてカーボンクレジット事業を展開。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "商社",
+    "日本"
+  ],
+  "jurisdiction": "日本",
+  "established_year": 1947,
+  "geographic_scope": "グローバル",
+  "website_url": "https://www.mitsui.com/",
+  "business_role": "国内取扱業者 (商社)",
+  "related": [
+    {
+      "to_slug": "jcredit",
+      "relation": "depends_on",
+      "note": "国内クレジットの取扱業者"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "事業の概要",
+      "body": "総合商社として、エネルギー・素材分野での脱炭素事業を展開。Carbon Neutral & Energy 部門でカーボンクレジット取扱・プロジェクト組成・需給仲介を行う (要確認: 最新の組織体制)。"
+    }
+  ]
+}

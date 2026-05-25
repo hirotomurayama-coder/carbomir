@@ -1,0 +1,44 @@
+{
+  "slug": "california-cap-trade",
+  "type": "regulation",
+  "name_ja": "California Cap-and-Trade",
+  "name_en": "California Cap-and-Trade Program",
+  "summary": "米国カリフォルニア州の排出量取引制度。AB 32 (2006) 制定、2013 年開始。州レベル ETS として米国最大規模、ケベック州と連携。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "米国",
+    "ETS / 排出量取引",
+    "州レベル",
+    "Cap and Trade"
+  ],
+  "jurisdiction": "米国カリフォルニア州",
+  "established_year": 2013,
+  "operator": "California Air Resources Board (CARB)",
+  "geographic_scope": "California + Quebec (Western Climate Initiative)",
+  "website_url": "https://ww2.arb.ca.gov/our-work/programs/cap-and-trade-program",
+  "credit_unit": "California Carbon Allowance (CCA)",
+  "policy_status": "active",
+  "next_milestone": "2030: 1990 年比 -40% 目標達成に向けたキャップ強化 (要確認)",
+  "related": [],
+  "related_matrix_slugs": [
+    "ets-international-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "AB 32 (Global Warming Solutions Act, 2006) を法的根拠とし、CARB が運営。発電・大規模産業・燃料供給を対象。WCI (Western Climate Initiative) を通じてケベック州と市場統合済み。米国連邦レベル ETS が存在しない中、州レベルでは最大の cap-and-trade。",
+      "source_urls": [
+        {
+          "label": "CARB Cap-and-Trade",
+          "url": "https://ww2.arb.ca.gov/our-work/programs/cap-and-trade-program"
+        }
+      ]
+    },
+    {
+      "heading": "オフセット制度",
+      "body": "排出枠の最大 4% (Phase 4) までを Compliance Offset として使用可能。CAR (Climate Action Reserve) や ACR (American Carbon Registry) 発行のクレジットが認証されたメソドロジー由来であれば適格。"
+    }
+  ]
+}

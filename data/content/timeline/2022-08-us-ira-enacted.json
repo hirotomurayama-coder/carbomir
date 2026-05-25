@@ -1,0 +1,21 @@
+{
+  "slug": "2022-08-us-ira-enacted",
+  "event_date": "2022-08-16",
+  "title": "米国 Inflation Reduction Act (IRA) 成立 (45Q 拡張)",
+  "summary": "Biden 政権下で気候投資・CCS / DAC 支援を中核とする IRA が成立。**45Q 税額控除** を拡張し、DAC + 地中貯留で 180 USD/t-CO2 (要確認: 制度詳細) の手厚い支援を提供。北米 Engineered Removal 商業化経済性の支柱となり、Climeworks STRATOS や 1PointFive プロジェクト等を加速させた。",
+  "affected_entity_slugs": [
+    "ira-45q",
+    "dac",
+    "beccs",
+    "carbon-engineering"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "US IRS - Section 45Q",
+      "url": "https://www.irs.gov/businesses/section-45q-credit-for-carbon-oxide-sequestration"
+    }
+  ]
+}

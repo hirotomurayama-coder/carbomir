@@ -1,0 +1,40 @@
+{
+  "slug": "icvcm-org",
+  "type": "player",
+  "name_ja": "ICVCM (組織)",
+  "name_en": "Integrity Council for the Voluntary Carbon Market",
+  "abbreviation": "ICVCM",
+  "summary": "任意市場の品質ガバナンス枠組み Core Carbon Principles (CCP) を策定・運営する国際非営利。2021 年設立。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "国際",
+    "品質基準 (CCP)"
+  ],
+  "jurisdiction": "国際 (英国本部)",
+  "established_year": 2021,
+  "geographic_scope": "グローバル (VCM 全体)",
+  "website_url": "https://icvcm.org/",
+  "business_role": "国際ガバナンス",
+  "related": [
+    {
+      "to_slug": "icvcm-ccp",
+      "relation": "parent_of",
+      "note": "CCP 枠組みを策定・運営"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "Voluntary Carbon Markets Integrity Initiative (VCMI、需要側) と対をなす供給側ガバナンス機関として 2021 年設立。CCP は 2023 年 7 月に公表され、Verra・Gold Standard 等のメソドロジーを順次評価している。",
+      "source_urls": [
+        {
+          "label": "ICVCM 公式",
+          "url": "https://icvcm.org/"
+        }
+      ]
+    }
+  ]
+}

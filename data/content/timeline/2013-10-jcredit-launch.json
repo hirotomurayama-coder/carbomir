@@ -1,0 +1,18 @@
+{
+  "slug": "2013-10-jcredit-launch",
+  "event_date": "2013-10-01",
+  "title": "J-クレジット制度発足",
+  "summary": "経済産業省所管の「国内クレジット制度」と環境省所管の「J-VER制度」を統合。経済産業省・環境省・農林水産省の3省共管体制で再出発。対象セクター・メソドロジーが拡大した。",
+  "affected_entity_slugs": [
+    "jcredit"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "J-クレジット制度公式",
+      "url": "https://japancredit.go.jp/"
+    }
+  ]
+}

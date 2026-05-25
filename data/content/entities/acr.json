@@ -1,0 +1,72 @@
+{
+  "slug": "acr",
+  "type": "regulation",
+  "name_ja": "ACR (American Carbon Registry)",
+  "name_en": "American Carbon Registry",
+  "abbreviation": "ACR",
+  "summary": "1996 年に米国で設立された世界最古の任意カーボンクレジット基準。Winrock International の事業部門として運営。California Cap-and-Trade の ARB 認証オフセットプロトコル提供者の一つで、コンプライアンス需要にも対応する希少な民間レジストリ。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-07-24",
+  "status": "published",
+  "tags": [
+    "米国",
+    "ボランタリー市場",
+    "Cap and Trade",
+    "国際"
+  ],
+  "jurisdiction": "米国 (民間)",
+  "established_year": 1996,
+  "operator": "Winrock International (米国非営利)",
+  "geographic_scope": "グローバル (米国中心)",
+  "website_url": "https://americancarbonregistry.org/",
+  "credit_unit": "ERT (Emission Reduction Ton)",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "competes_with",
+      "note": "VCM の主要民間スタンダード間の競合"
+    },
+    {
+      "to_slug": "gold-standard",
+      "relation": "competes_with",
+      "note": "VCM の主要民間スタンダード間の競合"
+    },
+    {
+      "to_slug": "car",
+      "relation": "competes_with",
+      "note": "米国 Cap-and-Trade 適格レジストリでの競合"
+    },
+    {
+      "to_slug": "california-cap-trade",
+      "relation": "depends_on",
+      "note": "ARB 認証オフセットプロトコル提供"
+    },
+    {
+      "to_slug": "icvcm-ccp",
+      "relation": "depends_on",
+      "note": "ACR メソドロジーも CCP で個別評価"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "1996 年、Environmental Resources Trust (ERT) として設立 (米国最古の任意カーボン基準)。2007 年に Winrock International 傘下に編入。**ERT (Emission Reduction Ton)** クレジットを発行。森林・産業ガス・農業の各セクターで広い実績。",
+      "source_urls": [
+        {
+          "label": "ACR 公式",
+          "url": "https://americancarbonregistry.org/"
+        }
+      ]
+    },
+    {
+      "heading": "コンプライアンスとの接続",
+      "body": "**California Cap-and-Trade の ARB 認証** オフセットプロトコル提供者として指定された数少ない民間レジストリ。米国コンプライアンス需要にアクセスできる強みを持つ。Washington State CCA でも採用される見込み (要確認)。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Verra・Gold Standard と並ぶ「VCM の主要 3 スタンダード」の一角だが、規模は VCS の 1/5 程度。米国コンプライアンス接続が差別化要素で、米国向けの ESG/CSR 訴求案件で需要が安定している。"
+    }
+  ],
+  "next_milestone": "2026: ACR 標準 v4.0 移行に向けたメソドロジー再評価"
+}

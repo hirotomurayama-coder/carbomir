@@ -1,0 +1,33 @@
+{
+  "slug": "mitsubishi-corporation",
+  "type": "player",
+  "name_ja": "三菱商事",
+  "name_en": "Mitsubishi Corporation",
+  "summary": "日本の総合商社。カーボンクレジットの取扱・組成・販売を含むカーボンビジネス事業を展開。J-クレジット・JCM・国際クレジットを横断的に扱う。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "商社",
+    "日本"
+  ],
+  "jurisdiction": "日本",
+  "established_year": 1950,
+  "geographic_scope": "グローバル",
+  "website_url": "https://www.mitsubishicorp.com/",
+  "business_role": "国内取扱業者 (商社)",
+  "related": [
+    {
+      "to_slug": "jcredit",
+      "relation": "depends_on",
+      "note": "国内クレジットの主要取扱業者"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "事業の概要",
+      "body": "総合商社として、エネルギー・素材・脱炭素技術を含む幅広い領域を扱う。カーボンクレジット事業は再生可能エネルギー部門・脱炭素ソリューション部門等を中心に展開。事業会社向けのクレジット調達支援および海外プロジェクト組成を行う (要確認: 直近の体制)。"
+    }
+  ]
+}

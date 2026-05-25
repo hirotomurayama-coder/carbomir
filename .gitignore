@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# AI ドラフトは個人作業履歴なので除外 (data/content/ は管理対象)
+/data/ai-drafts/*.json
+!/data/ai-drafts/.gitkeep
+
+# Claude Code / preview ローカル設定 (マシン固有パス入り)
+/.claude/
+
+# Cron / scheduled tasks log
+/tasks.json

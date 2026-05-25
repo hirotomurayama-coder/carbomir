@@ -1,0 +1,18 @@
+{
+  "slug": "2024-05-climeworks-mammoth",
+  "event_date": "2024-05-08",
+  "title": "Climeworks Mammoth プラント稼働開始",
+  "summary": "アイスランドで Climeworks が年間 36,000 t 級の DAC + 鉱物化貯留プラント Mammoth を稼働。当時時点で世界最大規模の商業 DAC 施設で、長期 offtake 契約による Engineered Removal クレジット供給拡大の節目に位置付けられる (要確認: 公表値の最新性)。",
+  "affected_entity_slugs": [
+    "dac"
+  ],
+  "category": "technology",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Climeworks Mammoth (公式)",
+      "url": "https://climeworks.com/plant/mammoth"
+    }
+  ]
+}

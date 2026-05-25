@@ -1,0 +1,34 @@
+{
+  "slug": "carbon-engineering",
+  "type": "player",
+  "name_ja": "Carbon Engineering",
+  "name_en": "Carbon Engineering Ltd.",
+  "summary": "カナダ本拠の DAC 事業者。液体ハイドロキシド方式が特徴。2023 年に Occidental Petroleum 傘下入り (要確認)。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "DAC",
+    "Engineered Removal"
+  ],
+  "jurisdiction": "カナダ",
+  "established_year": 2009,
+  "geographic_scope": "北米中心",
+  "website_url": "https://carbonengineering.com/",
+  "business_role": "DAC 事業者",
+  "parent_company": "Occidental Petroleum (2023 年買収)",
+  "related": [
+    {
+      "to_slug": "dac",
+      "relation": "depends_on",
+      "note": "DAC 技術の代表事業者 (液体方式)"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "事業の概要",
+      "body": "ハーバード大学物理学者の David Keith により 2009 年に設立。液体ハイドロキシド (KOH) を用いた DAC プロセスを開発。2023 年に Occidental Petroleum 傘下の 1PointFive と組み、テキサスで世界最大級の DAC プラント STRATOS の建設を進めている (要確認: 稼働状況)。"
+    }
+  ]
+}

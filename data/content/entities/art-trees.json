@@ -1,0 +1,57 @@
+{
+  "slug": "art-trees",
+  "type": "regulation",
+  "name_ja": "ART TREES",
+  "name_en": "ART TREES (The REDD+ Environmental Excellency Standard)",
+  "abbreviation": "ART TREES",
+  "summary": "2021 年に運用開始した REDD+ 専門レジストリ。**Jurisdictional-scale REDD+** (国・州レベル) に特化し、プロジェクトレベル REDD+ の品質議論を制度的に回避する設計。LEAF Coalition (米英独 + 民間連合) が需要側支援。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-07-24",
+  "status": "published",
+  "tags": [
+    "森林吸収",
+    "途上国",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "jurisdiction": "米国 (民間)",
+  "established_year": 2021,
+  "operator": "Architecture for REDD+ Transactions (米国非営利)",
+  "geographic_scope": "REDD+ 対象国 (国・州単位)",
+  "website_url": "https://www.artredd.org/",
+  "credit_unit": "TREES Credit",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "competes_with",
+      "note": "REDD+ メソドロジーの代替設計 (jurisdictional vs project)"
+    },
+    {
+      "to_slug": "redd-plus",
+      "relation": "depends_on",
+      "note": "Jurisdictional REDD+ クレジット発行"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "**ART (Architecture for REDD+ Transactions)** が運営する、REDD+ 専門の任意カーボンクレジット基準。2021 年に最初のクレジット発行。設計思想は **「個別プロジェクトの追加性議論を回避するため、国・州レベルで REDD+ を測定する」** こと。",
+      "source_urls": [
+        {
+          "label": "ART 公式",
+          "url": "https://www.artredd.org/"
+        }
+      ]
+    },
+    {
+      "heading": "LEAF Coalition の需要側支援",
+      "body": "**LEAF Coalition** (Lowering Emissions by Accelerating Forest finance) — 米英独 + Amazon / Microsoft / Salesforce 等の民間企業による需要側支援連合 — が ART TREES クレジットを大規模に購入する仕組み。途上国 (Ghana, Guyana 等) からの発行が拡大中。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Jurisdictional 設計は **追加性議論を制度的に解決** する強みがあるが、(a) 各国政府の MRV 能力に依存、(b) 同一森林で他制度との二重計上リスク、の論点。Verra VCS の REDD+ 品質議論を背景に伸びてきており、今後の主要 REDD+ 標準として注目。"
+    }
+  ],
+  "next_milestone": "2026: TREES v2.0 メソドロジー適用拡大 + 各国 LEAF 連携"
+}

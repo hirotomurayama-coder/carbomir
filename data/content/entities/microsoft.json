@@ -1,0 +1,45 @@
+{
+  "slug": "microsoft",
+  "type": "player",
+  "name_ja": "Microsoft",
+  "name_en": "Microsoft Corporation",
+  "summary": "大手テック企業。長期 CDR offtake 契約 (DAC・Biochar・Engineered Removal 等) で Engineered Removal 市場の最大需要家。2030 年 Carbon Negative 目標を掲げる。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "米国",
+    "Engineered Removal"
+  ],
+  "jurisdiction": "米国",
+  "established_year": 1975,
+  "geographic_scope": "グローバル",
+  "website_url": "https://www.microsoft.com/sustainability",
+  "business_role": "大手需要家 (CDR offtake)",
+  "related": [
+    {
+      "to_slug": "dac",
+      "relation": "depends_on",
+      "note": "DAC クレジットの長期 offtake"
+    },
+    {
+      "to_slug": "climeworks",
+      "relation": "depends_on",
+      "note": "Climeworks との offtake 契約あり"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "カーボン戦略",
+      "body": "2020 年に 2030 年までの Carbon Negative 目標を宣言。Microsoft Climate Innovation Fund (10 億ドル規模) を通じて Engineered Removal の長期 offtake 契約を多数締結。Carbon Engineering、Climeworks、Heirloom 等の DAC 事業者および Biochar・ERW 事業者と契約 (要確認: 最新ラインナップ)。",
+      "source_urls": [
+        {
+          "label": "Microsoft Sustainability",
+          "url": "https://www.microsoft.com/sustainability"
+        }
+      ]
+    }
+  ]
+}

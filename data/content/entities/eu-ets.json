@@ -1,0 +1,49 @@
+{
+  "slug": "eu-ets",
+  "type": "regulation",
+  "name_ja": "EU 排出量取引制度",
+  "name_en": "EU Emissions Trading System",
+  "abbreviation": "EU ETS",
+  "summary": "EU の排出量取引制度。2005 年開始、世界最大規模・最古参の cap-and-trade 制度。Phase 4 (2021-2030) 運用中で、対象セクター拡大と無償割当削減が進む。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "EU",
+    "ETS / 排出量取引",
+    "Cap and Trade",
+    "遵守市場"
+  ],
+  "jurisdiction": "EU",
+  "established_year": 2005,
+  "operator": "European Commission",
+  "geographic_scope": "EU 加盟国 + アイスランド・リヒテンシュタイン・ノルウェー",
+  "website_url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en",
+  "credit_unit": "EUA (EU Allowance)",
+  "policy_status": "active",
+  "next_milestone": "2026: 航空セクター無償割当の段階的廃止、海運の本格統合 (要確認)",
+  "related": [],
+  "related_matrix_slugs": [
+    "ets-international-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "EU 排出量取引制度 (EU ETS) は 2005 年に開始された世界最大規模の cap-and-trade 制度。発電・産業・域内航空を対象とし、対象企業に毎年の排出枠 (EUA) を割当・取引させる。Phase 1 (2005-2007) パイロット、Phase 2 (2008-2012)、Phase 3 (2013-2020) を経て、現在 Phase 4 (2021-2030) 運用中。2030 年に 2005 年比 -62% 削減を目標。",
+      "source_urls": [
+        {
+          "label": "European Commission EU ETS",
+          "url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en"
+        }
+      ]
+    },
+    {
+      "heading": "Phase 4 の論点",
+      "body": "Market Stability Reserve (MSR) による余剰枠吸収、無償割当の段階的削減、CBAM との接続、海運セクターの統合 (2024-)、ビルディング・道路輸送セクターの新規 ETS2 (2027 年予定) など、制度拡張が継続中。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "EU ETS の価格動向は国際的なクレジット価格水準のベンチマークとして機能する。日本企業にも、EU 域内事業・サプライチェーン経由で影響。CBAM (国境調整) との一体運用で「EU 市場へのアクセス = EU ETS 価格を反映したコスト」という構造が固まりつつある。"
+    }
+  ]
+}

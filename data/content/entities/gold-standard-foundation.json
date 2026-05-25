@@ -1,0 +1,40 @@
+{
+  "slug": "gold-standard-foundation",
+  "type": "player",
+  "name_ja": "Gold Standard Foundation",
+  "name_en": "Gold Standard Foundation",
+  "summary": "Gold Standard スタンダードを運営するスイスの財団。WWF を含む 80 以上の NGO の支持を得て 2003 年に設立。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "レジストリ",
+    "国際",
+    "SDGs 連動"
+  ],
+  "jurisdiction": "スイス",
+  "established_year": 2003,
+  "geographic_scope": "グローバル",
+  "website_url": "https://www.goldstandard.org/",
+  "business_role": "レジストリ運営",
+  "related": [
+    {
+      "to_slug": "gold-standard",
+      "relation": "parent_of",
+      "note": "Gold Standard スタンダードを運営"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "WWF を中心とする 80 以上の NGO の支持の下、2003 年に設立。本部はジュネーブ。VCS と並ぶ VCM の二大民間スタンダード。SDGs 連動の付加価値訴求が組織アイデンティティ。",
+      "source_urls": [
+        {
+          "label": "Gold Standard 公式",
+          "url": "https://www.goldstandard.org/"
+        }
+      ]
+    }
+  ]
+}

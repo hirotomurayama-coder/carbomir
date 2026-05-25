@@ -1,0 +1,44 @@
+{
+  "slug": "climeworks",
+  "type": "player",
+  "name_ja": "Climeworks",
+  "name_en": "Climeworks AG",
+  "summary": "スイス本拠の DAC (Direct Air Capture) 事業者。世界最大規模の商業 DAC プラント Mammoth (アイスランド、2024 年稼働) を運営。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "DAC",
+    "Engineered Removal"
+  ],
+  "jurisdiction": "スイス",
+  "established_year": 2009,
+  "geographic_scope": "グローバル (主にアイスランド・米国)",
+  "website_url": "https://climeworks.com/",
+  "business_role": "DAC 事業者",
+  "parent_company": "独立 (非公開、スイス本拠)",
+  "related": [
+    {
+      "to_slug": "dac",
+      "relation": "depends_on",
+      "note": "DAC 技術の代表事業者"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "事業の概要",
+      "body": "ETH Zurich 出身者により 2009 年設立。固体アミン系吸着剤を用いた DAC プラントを運営。地中貯留パートナー Carbfix と組んでアイスランドで Orca (2021)、Mammoth (2024 年稼働、年 36,000 t 級) を運用。",
+      "source_urls": [
+        {
+          "label": "Climeworks 公式",
+          "url": "https://climeworks.com/"
+        }
+      ]
+    },
+    {
+      "heading": "オフテイク契約",
+      "body": "Microsoft、JPMorgan、Stripe、Swiss Re、Boston Consulting Group 等の大手企業と長期 offtake 契約 (要確認: 最新ラインナップ)。クレジットは Verra VCS や Puro.earth 等のレジストリを通じて発行。"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "icvcm-ccp-selection-criteria",
+  "question": "クレジット選定の基準として ICVCM CCP 適格性を使うべきですか?",
+  "short_answer": "**主要な品質シグナルの一つとして使う**べきだが、CCP 適格性だけで判断するのは不十分。メソドロジー・vintage・所在地・出典の総合評価が必須。",
+  "category": "quality",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "品質基準 (CCP)",
+    "ボランタリー市場"
+  ],
+  "related_entity_slugs": [
+    "icvcm-ccp",
+    "verra-vcs",
+    "gold-standard",
+    "redd-plus"
+  ],
+  "detailed_md": "## ICVCM CCP の位置付け\n\n**Integrity Council for the Voluntary Carbon Market (ICVCM)** が 2023 年 7 月に公表した **Core Carbon Principles (CCP)** は、任意市場の品質ガバナンスを集約する 10 原則 + メソドロジー別 Assessment Framework から成る。\n\n## CCP の意義\n\n- **Verra・Gold Standard・ACR・CAR 等のメソドロジー を統一的に評価**: 同じ「Verra VCS」内でもメソドロジー毎に CCP 適格 / 非適格に分かれる\n- **REDD+ メソドロジー** が特に注目される (旧 vintage の REDD+ は適格性審査が継続中)\n- **業界標準シグナル** として徐々に定着しつつある\n\n## 実務上の使い方\n\n### CCP 適格性を「必須条件」にする場面\n\n- **大規模企業の調達ポリシー**: CDP A リスト常連等の高品質志向企業\n- **金融機関・保険のサステナビリティ・リンク・ローン**\n- **長期 offtake 契約**: レピュテーション・リスクの最小化\n\n### CCP 適格性だけでは不十分な理由\n\n1. **CCP は メソドロジー × Issuance period 単位で評価される**: 同じ事業者・国でも年次で結果が変動\n2. **個別プロジェクトの追加性は別途検証必要**: CCP 適格メソドロジーでも、個別プロジェクトの実装の質はバラつく\n3. **vintage の選好**: 最新メソドロジーで発行された vintage 2023+ が概ね安全側、2020 以前は再評価リスクあり\n4. **CCP 評価外のメソドロジー**: 商業化初期の Engineered Removal 等は CCP 評価対象外で別の評価軸が必要\n\n## 推奨される選定プロセス\n\n1. **CCP 適格性**: スクリーニング基準として活用\n2. **メソドロジー名・version**: 詳細な内容確認\n3. **Vintage**: 2022 年以降が推奨\n4. **プロジェクト所在地・所有形態**: コミュニティリスクの評価\n5. **第三者検証**: VVB (Validation and Verification Body) のレピュテーション\n\n## 注意\n\nICVCM の Assessment は継続的に更新されている。最新の Assessment 結果は ICVCM 公式サイトで確認可能 (URL: https://icvcm.org/)。"
+}

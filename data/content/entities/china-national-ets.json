@@ -1,0 +1,37 @@
+{
+  "slug": "china-national-ets",
+  "type": "regulation",
+  "name_ja": "中国全国 ETS",
+  "name_en": "China National Emissions Trading Scheme",
+  "summary": "中国全国排出量取引制度。2021 年運用開始、世界最大規模の ETS (排出量カバー率 = 全国の約 40%)。当初は発電セクターのみ、段階的拡大が進む。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "中国",
+    "ETS / 排出量取引",
+    "Cap and Trade"
+  ],
+  "jurisdiction": "中国",
+  "established_year": 2021,
+  "operator": "Ministry of Ecology and Environment of China",
+  "geographic_scope": "中国",
+  "website_url": "https://english.mee.gov.cn/",
+  "credit_unit": "CEA (China Emission Allowance) + CCER (China Certified Emission Reduction)",
+  "policy_status": "active",
+  "next_milestone": "2026-: 鉄鋼・化学・セメント等の対象セクター拡大 (運用注視: 法案進捗)",
+  "related": [],
+  "related_matrix_slugs": [
+    "ets-international-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "8 地域パイロット ETS (2013-2020) を経て、2021 年 7 月に全国 ETS が運用開始。当初対象は発電セクターのみだが、約 2,000 社・40 億トン規模で世界最大の ETS。原単位ベース (rate-based) の割当方式が特徴で、絶対量上限 (cap) を持つ EU ETS とは制度設計が異なる。"
+    },
+    {
+      "heading": "対象拡大の動き",
+      "body": "鉄鋼・化学・セメント・アルミ・紙等の対象セクター拡大が計画されている。CCER (中国独自オフセットクレジット制度) は 2017 年に新規発行停止していたが 2024 年に再開、対象メソドロジーも拡大。"
+    }
+  ]
+}

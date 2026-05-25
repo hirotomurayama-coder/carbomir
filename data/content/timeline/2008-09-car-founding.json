@@ -1,0 +1,19 @@
+{
+  "slug": "2008-09-car-founding",
+  "event_date": "2008-09-01",
+  "title": "Climate Action Reserve (CAR) 設立",
+  "summary": "California Climate Action Registry (2001 年州立) を起源として独立非営利として再編 (要確認: 正確な月日)。CRT (Climate Reserve Ton) を発行し、California Cap-and-Trade 接続を前提とした制度設計で米国コンプライアンス需要に応える主要レジストリへ。",
+  "affected_entity_slugs": [
+    "car",
+    "california-cap-trade"
+  ],
+  "category": "regulatory",
+  "importance": 3,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Climate Action Reserve 公式",
+      "url": "https://climateactionreserve.org/"
+    }
+  ]
+}

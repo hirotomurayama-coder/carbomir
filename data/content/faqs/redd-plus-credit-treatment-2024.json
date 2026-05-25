@@ -1,0 +1,21 @@
+{
+  "slug": "redd-plus-credit-treatment-2024",
+  "question": "REDD+ クレジットの 2024 年以降の扱いはどうなっていますか?",
+  "short_answer": "**旧 vintage (2015-2020) は再評価で価値が下がる傾向、新メソドロジー (Verra VM0048 等) は信頼回復段階**。買い手は Vintage 2023+ + ART TREES (Jurisdictional) も組み合わせる方向。",
+  "category": "quality",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "REDD+",
+    "森林吸収",
+    "ボランタリー市場"
+  ],
+  "related_entity_slugs": [
+    "redd-plus",
+    "verra-vcs",
+    "art-trees",
+    "icvcm-ccp"
+  ],
+  "detailed_md": "## 背景: 2023 年の品質議論\n\n2023 年 1 月、The Guardian・Die Zeit・SourceMaterial の合同調査で **「Verra REDD+ クレジットの大半がベースライン過大設定」** との報道。これに加えて 2023 年の West et al. (Science 誌) 等の学術検証が REDD+ 全体の品質を問う。市場全体で REDD+ クレジットの価格・需要が大きく減少した。\n\n## 2024 年以降の動き\n\n### メソドロジー刷新\n\n- **Verra VM0048** (2023 公表): REDD+ 統合メソドロジー、Allocated Crediting Baseline (ACB) 方式でベースライン推定の科学性を高める\n- **CCP 適格性評価**: 旧 REDD+ メソドロジーは順次評価され、多くは「適格性確認中」または「未適格」判定\n\n### Jurisdictional REDD+ の台頭\n\n- **ART TREES (2021-)**: プロジェクトレベルではなく国・州レベルで REDD+ を測定する設計で、追加性議論を制度的に回避\n- **LEAF Coalition** の需要側支援で Ghana / Guyana / Costa Rica 等から発行開始\n\n## 買い手の選定アプローチ\n\n### 推奨される構成 (例)\n\n1. **新 vintage (2023+) の Verra VM0048 等**: 中核ポジション\n2. **ART TREES (Jurisdictional)**: 制度的に追加性を解決した代替\n3. **IFM / ARR への shift**: REDD+ 100% から、IFM / ARR への分散\n4. **旧 vintage (2020 以前) は避ける**: もし保有しているなら別途見直し\n\n### 注意\n\n- **Apple・Microsoft 等** は REDD+ を完全には捨てず、品質基準を厳格化して継続活用する立場\n- **EU は REDD+ 取扱に慎重** (CRCF Carbon Removal Certification Framework では永続性要件で対象外の方向)\n- **日本企業の Net-Zero 設計**: 中期 (2030) で森林系のリスク評価を見直すタイミング (運用注視: SBT FLAG 最新ガイダンス)"
+}

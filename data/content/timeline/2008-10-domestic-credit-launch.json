@@ -1,0 +1,18 @@
+{
+  "slug": "2008-10-domestic-credit-launch",
+  "event_date": "2008-10-01",
+  "title": "国内クレジット制度開始",
+  "summary": "経済産業省所管の中小企業排出削減支援制度として開始。同時期に環境省所管の J-VER 制度も稼働し、後年 J-クレジット制度として統合される。",
+  "affected_entity_slugs": [
+    "jcredit"
+  ],
+  "category": "regulatory",
+  "importance": 3,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "J-クレジット制度概要",
+      "url": "https://japancredit.go.jp/about/"
+    }
+  ]
+}

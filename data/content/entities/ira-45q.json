@@ -1,0 +1,49 @@
+{
+  "slug": "ira-45q",
+  "type": "regulation",
+  "name_ja": "米国 IRA 45Q 税額控除",
+  "name_en": "U.S. IRA Section 45Q Tax Credit",
+  "abbreviation": "45Q",
+  "summary": "米国 Inflation Reduction Act (2022) で大幅拡充された CCS / CCUS / DAC 向けの税額控除制度。DAC + 地中貯留で最大 180 USD/t-CO2、CCS で最大 85 USD/t-CO2。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "米国",
+    "CCS",
+    "DAC",
+    "Engineered Removal"
+  ],
+  "jurisdiction": "米国",
+  "established_year": 2008,
+  "operator": "U.S. Internal Revenue Service (IRS) + U.S. Department of Energy (DOE)",
+  "geographic_scope": "米国",
+  "website_url": "https://www.irs.gov/businesses/section-45q-credit-for-carbon-oxide-sequestration",
+  "credit_unit": "税額控除 (tax credit)",
+  "policy_status": "active",
+  "next_milestone": "2032 までの建設開始がクレジット要件 (12 年間の控除期間、要確認)",
+  "related": [
+    {
+      "to_slug": "dac",
+      "relation": "depends_on",
+      "note": "DAC + 地中貯留で最大 180 USD/t-CO2"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "Section 45Q は米国内国歳入法に基づく税額控除で、CCS (Carbon Capture and Storage)、CCUS (CCS + Utilization)、DAC (Direct Air Capture) プロジェクトに対し、捕集・貯留した CO2 量に応じて税額控除を提供する。2022 年 IRA で控除率が大幅拡大され、DAC + 地中貯留で 180 USD/t-CO2、CCS で 85 USD/t-CO2 が上限 (運用注視: 詳細条件)。",
+      "source_urls": [
+        {
+          "label": "IRS Section 45Q",
+          "url": "https://www.irs.gov/businesses/section-45q-credit-for-carbon-oxide-sequestration"
+        }
+      ]
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "DAC 経済性の支柱として機能している。Climeworks、Carbon Engineering、Heirloom 等の米国プロジェクト経済性は 45Q なしには成立しない水準。2032 年の建設開始期限に向けたプロジェクト集中が見込まれる。"
+    }
+  ]
+}

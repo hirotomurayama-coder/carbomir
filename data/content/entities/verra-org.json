@@ -1,0 +1,43 @@
+{
+  "slug": "verra-org",
+  "type": "player",
+  "name_ja": "Verra (組織)",
+  "name_en": "Verra",
+  "summary": "VCS (Verified Carbon Standard) を運営する米国非営利。VCM の世界最大級レジストリ。REDD+ メソドロジーの統合・刷新 (VM0048 等) を進めている。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "レジストリ",
+    "国際"
+  ],
+  "jurisdiction": "米国",
+  "established_year": 2007,
+  "geographic_scope": "グローバル",
+  "website_url": "https://verra.org/",
+  "business_role": "レジストリ運営",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "parent_of",
+      "note": "VCS スタンダードを運営"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "Verra は VCM (任意カーボン市場) で発行量・流通量ともに最大級のクレジット標準である VCS を運営する米国非営利。2005 年に The Climate Group、WBCSD、IETA が共同で設立した VCS Association から派生し、現在は Verra として単独運営。VCS 以外にも CCB Standards (社会便益)、Plastic Standard 等の複数プログラムを展開。",
+      "source_urls": [
+        {
+          "label": "Verra 公式",
+          "url": "https://verra.org/"
+        }
+      ]
+    },
+    {
+      "heading": "事業展開",
+      "body": "発行クレジットの累計発行量は 10 億 VCU 規模 (要確認: 最新数値)。160 か国以上でプロジェクトを認証。2023 年以降の REDD+ 品質議論を受け、メソドロジー統合 (VM0048 等) を継続中。"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "slug": "microsoft-cdr-portfolio-2030",
+  "title": "Microsoft の Engineered Removal ポートフォリオ (2030 Carbon Negative 目標)",
+  "company": "Microsoft",
+  "year": 2024,
+  "region": "グローバル (米国本社)",
+  "category": "procurement",
+  "credit_type": "Engineered Removal (DAC / Biochar / ERW 等)",
+  "scale_note": "数百万トン規模の長期 offtake (10-15 年契約)",
+  "summary": "2030 年 Carbon Negative 目標を掲げ、Climate Innovation Fund (10 億 USD) で世界最大級の Engineered Removal 需要を創出。DAC・Biochar・ERW・BECCS の主要事業者と長期 offtake 契約を多数締結。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "需要家",
+    "Engineered Removal",
+    "米国"
+  ],
+  "related_entity_slugs": [
+    "microsoft",
+    "dac",
+    "biochar",
+    "erw",
+    "beccs",
+    "climeworks",
+    "carbon-engineering",
+    "isometric"
+  ],
+  "source_urls": [
+    {
+      "label": "Microsoft Sustainability Report",
+      "url": "https://www.microsoft.com/sustainability"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "取り組みの概要",
+      "body": "Microsoft は 2020 年 1 月、2030 年までに **事業活動の年間排出量を超える Carbon Removal** を達成する \"Carbon Negative\" 目標を発表。さらに 2050 年までに 1975 年の創業以来の累積排出量を回収するという、テック大手の中でも特に野心的な目標を掲げる。\n\n戦略の中核は **「短期 = 自然由来 (森林等)、長期 = Engineered Removal」** のポートフォリオ設計。2024 年以降、Engineered Removal の比重を年々増している。"
+    },
+    {
+      "heading": "調達先の多角化",
+      "body": "**Engineered Removal の主要契約 (要確認: 最新値)**:\n\n- **Climeworks (DAC)**: 数十万トン規模の長期 offtake\n- **Heirloom (DAC)**: 長期 offtake\n- **Carbon Engineering / 1PointFive (DAC)**: 主要契約者の一人\n- **Charm Industrial (バイオオイル + 地中注入)**: 数十万トン契約\n- **Pacific Biochar (Biochar)**: 中規模契約\n- **Lithos Carbon / Mati Carbon (ERW)**: 商業化初期の支援的調達\n\nレジストリは Verra VCS、Puro.earth、Isometric を組み合わせる。"
+    },
+    {
+      "heading": "規模・価格",
+      "body": "公表値ベースで Engineered Removal だけで年間 **数十万-100 万トン級** の調達量 (要確認: 直近実勢)。CDR 市場で買い手として最大級。\n\n価格は契約ごとに大きく異なるが、Climeworks DAC で 400-600 USD/t、Biochar で 100-200 USD/t、ERW で 200-400 USD/t 程度のレンジが業界推測 (Microsoft は具体的価格を全件公開はしていない)。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "Microsoft の調達は **CDR 市場の \"価格発見\" を担っている** 側面が強い。同社の長期 offtake が事業者の商業化資金調達 (project financing) を可能にする構造。日本企業がベンチマークとする際は、(a) Microsoft の高い前払い能力、(b) 10-15 年契約の長期視点、(c) 厳格な MRV 要求、の 3 点が同社固有の前提条件であることに注意。"
+    }
+  ]
+}

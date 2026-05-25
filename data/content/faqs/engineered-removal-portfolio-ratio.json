@@ -1,0 +1,24 @@
+{
+  "slug": "engineered-removal-portfolio-ratio",
+  "question": "クレジット調達ポートフォリオで Engineered Removal の比率は何 % が目安ですか?",
+  "short_answer": "業界の業界平均値はないが、SBT FLAG ターゲット等を意識する場合、「2030 年までに残余排出の 10% を Engineered Removal でカバー」が一つの設計指標。価格差を踏まえると現時点では 1-5% 程度が現実的開始点。",
+  "category": "procurement",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "Engineered Removal",
+    "ボランタリー市場"
+  ],
+  "related_entity_slugs": [
+    "dac",
+    "biochar",
+    "erw",
+    "verra-vcs",
+    "microsoft"
+  ],
+  "related_matrix_slugs": [
+    "engineered-removal-comparison"
+  ],
+  "detailed_md": "## 業界の参考値\n\n- **SBT (Science Based Targets) initiative**: Net-Zero ターゲット (2050) の達成において、**残余排出の Carbon Removal によるオフセット** を必須としている。中間目標 (2030 年) でも一定割合の Removal を要求する方向。\n- **Microsoft / Apple / Meta 等の Carbon Negative 目標**: 残余排出の **5-20%** を Engineered Removal、残りを森林由来 + 効率化で構成する例が多い。\n- **OECMs (Oxford Principles for Net Zero Aligned Carbon Offsetting)**: **「Engineered Removal の比率を 2030 までに 50%、2050 までに 100%」** を提案する研究機関ガイダンスもある (実装はテック大手に限られる)。\n\n## 価格差の現実\n\nEngineered Removal は森林系の **5-10 倍以上の価格** (DAC で 400-600 USD/t、ERW で 200-400、Biochar で 50-200)。10% を超える比率では調達コストが急増する。\n\n## 実務上の出発点 (一案)\n\n- **段階 1 (今から 2027 まで)**: 全体の **1-3% を Engineered Removal** で確保 (Biochar / 小規模 DAC で経済性とブランド確保)\n- **段階 2 (2027-2030)**: ターゲット重要度に応じて 5-10% へ拡大\n- **段階 3 (2030 以降)**: SBT / OECMs 等のガイダンスに整合させて段階的増加\n\n## 注意\n\n業界・規模によって「正解」が大きく異なる。**自社の SBT FLAG・SBTi 認証目標・主要顧客の要求** を起点に逆算するのが推奨される。詳細設計は専門アドバイザーへ相談。"
+}

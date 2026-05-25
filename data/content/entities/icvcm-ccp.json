@@ -1,0 +1,61 @@
+{
+  "slug": "icvcm-ccp",
+  "type": "regulation",
+  "name_ja": "ICVCM Core Carbon Principles",
+  "name_en": "ICVCM Core Carbon Principles",
+  "abbreviation": "CCP",
+  "summary": "Integrity Council for the Voluntary Carbon Market (ICVCM) が定める任意市場の品質ガバナンス枠組み。10 原則 + メソドロジー別の Assessment Framework により、各レジストリ発行クレジットを CCP 適格 / 非適格に分類する。",
+  "last_reviewed_at": "2026-05-21",
+  "next_review_at": "2026-07-20",
+  "status": "published",
+  "tags": [
+    "国際",
+    "ボランタリー市場",
+    "品質基準 (CCP)"
+  ],
+  "jurisdiction": "国際 (民間ガバナンス)",
+  "established_year": 2021,
+  "operator": "Integrity Council for the Voluntary Carbon Market (ICVCM)",
+  "geographic_scope": "グローバル (任意市場全体)",
+  "website_url": "https://icvcm.org/",
+  "credit_unit": "(CCP ラベル付与、独自クレジット発行なし)",
+  "policy_status": "active",
+  "next_milestone": "2026: メソドロジー別 Assessment Framework の対象拡大 (運用注視: 直近の議論)",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "supersedes",
+      "note": "VCS 発行クレジットの個別評価基準として機能"
+    },
+    {
+      "to_slug": "redd-plus",
+      "relation": "supersedes",
+      "note": "メソドロジー単位で CCP 適格性を判定"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "枠組みの概要",
+      "body": "ICVCM は 2021 年設立の国際非営利。Voluntary Carbon Markets Integrity Initiative (**VCMI**、需要側) と対をなす **供給側ガバナンス機関** として位置付けられる。\n\nCCP (Core Carbon Principles) は 2023 年 7 月公表の **10 原則** で、主要要件は以下 (運用注視: 公式リストとの一致):\n\n- **Governance** — 制度ガバナンス\n- **Tracking** — クレジット発行・移転・無効化の追跡\n- **Transparency** — 公開情報の十分性\n- **Independent Validation & Verification** — 独立第三者検証\n- **Robust Quantification** — 排出削減量・除去量の堅牢な算定\n- **Permanence** — クレジット効果の永続性\n- **Additionality** — 追加性\n- **Sustainable Development Benefits & Safeguards** — 持続可能な開発便益と保護措置\n- **Contribution to Net Zero** — ネットゼロへの貢献\n- **No Double Counting** — 二重計上の回避",
+      "source_urls": [
+        {
+          "label": "ICVCM 公式",
+          "url": "https://icvcm.org/"
+        }
+      ]
+    },
+    {
+      "heading": "Assessment Framework",
+      "body": "メソドロジー単位で CCP 適格性を判定する手続き。Verra・Gold Standard・ACR・CAR 等の主要レジストリのメソドロジーが順次評価される。CCP 適格と認定されたメソドロジー由来クレジットには CCP Eligible ラベルが付与され、品質シグナルとして機能する。"
+    },
+    {
+      "heading": "市場への影響",
+      "body": "CCP ラベルが付与された / 付与されないメソドロジー由来クレジット間で、価格・流動性に明確な差が生じる構造になっている。とりわけ REDD+ メソドロジーは複数が「CCP 適格性確認中 / 未適格」判定であり、買い手の品質審査基準として実質的に標準化されつつある。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "CCP は VCM の品質シグナル分散を抑える機能を果たしつつあるが、業界全体の参照点として「CCP のみ見れば十分」とまでは言えない。発行レジストリのメソドロジー version、vintage、プロジェクト所在地、独立第三者検証、ICVCM の Assessment 結果書を総合的に確認するのが実務的。"
+    }
+  ]
+}

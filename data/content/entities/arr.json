@@ -1,0 +1,51 @@
+{
+  "slug": "arr",
+  "type": "methodology",
+  "name_ja": "ARR (新規植林・再植林・植生回復)",
+  "name_en": "Afforestation, Reforestation and Revegetation",
+  "abbreviation": "ARR",
+  "summary": "森林がなかった土地への新規植林、過去に森林だった土地への再植林、植生回復によるクレジット創出メソドロジー群。最も古典的な森林由来クレジット類型で、買い手の理解度も高い。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "森林吸収",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "jurisdiction": "国際 (主要レジストリ運用)",
+  "established_year": 2000,
+  "geographic_scope": "グローバル",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "depends_on",
+      "note": "VCS で複数メソドロジー (AR-ACM0003, VM0047 等) として運用"
+    },
+    {
+      "to_slug": "gold-standard",
+      "relation": "depends_on",
+      "note": "Gold Standard でも主要メソドロジー"
+    },
+    {
+      "to_slug": "plan-vivo",
+      "relation": "depends_on",
+      "note": "Plan Vivo のコミュニティ・アグロフォレストリーの中核"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "3 つの類型",
+      "body": "- **Afforestation (新規植林)** — 過去 50 年以上森林でなかった土地に新たに植林\n- **Reforestation (再植林)** — 1989 年 12 月 31 日時点で森林でなかったが過去には森林だった土地への植林\n- **Revegetation (植生回復)** — 森林に至らない植生 (草地・低木地) の回復による炭素蓄積\n\n各類型の境界は CDM 由来のルールで歴史的に厳格に区別されてきた。"
+    },
+    {
+      "heading": "永続性の課題",
+      "body": "森林は火災・病虫害・違法伐採等で長期保有が脅かされる。各レジストリは **Buffer Pool** (発行クレジットの 10-20% を準備金として留保) で永続性リスクを補償する仕組みを持つ。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "比較的「分かりやすい」クレジットだが、(a) 単一樹種大規模植林の生物多様性影響、(b) 土地利用変化による先住民・地元住民影響、(c) Buffer Pool の実効性、の 3 点が品質シグナルとして個別評価対象。"
+    }
+  ]
+}

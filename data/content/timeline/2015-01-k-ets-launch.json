@@ -1,0 +1,18 @@
+{
+  "slug": "2015-01-k-ets-launch",
+  "event_date": "2015-01-01",
+  "title": "K-ETS (韓国 ETS) 運用開始",
+  "summary": "韓国がアジア初の経済全体型 cap-and-trade 制度として K-ETS を運用開始。発電・産業・航空・海運をカバーし、排出量の約 73% を対象とする広範囲設計。アジア地域における ETS 設計の先行事例となった。",
+  "affected_entity_slugs": [
+    "k-ets"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Korean Ministry of Environment (K-ETS)",
+      "url": "https://eng.me.go.kr/eng/web/index.do?menuId=460"
+    }
+  ]
+}

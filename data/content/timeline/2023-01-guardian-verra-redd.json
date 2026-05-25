@@ -1,0 +1,18 @@
+{
+  "slug": "2023-01-guardian-verra-redd",
+  "event_date": "2023-01-18",
+  "title": "The Guardian による Verra REDD+ 批判記事",
+  "summary": "The Guardian、Die Zeit、SourceMaterial の合同調査で Verra 認証 REDD+ クレジットの大半がベースライン設定に問題ありと報じられる。VCM 全体の品質シグナル議論が一気に加速。",
+  "affected_entity_slugs": [
+    "verra-vcs"
+  ],
+  "category": "market",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "The Guardian (調査報道)",
+      "url": "https://www.theguardian.com/environment/2023/jan/18/revealed-forest-carbon-offsets-biggest-provider-worthless-verra-aoe"
+    }
+  ]
+}

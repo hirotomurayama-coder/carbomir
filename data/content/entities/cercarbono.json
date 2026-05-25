@@ -1,0 +1,55 @@
+{
+  "slug": "cercarbono",
+  "type": "regulation",
+  "name_ja": "Cercarbono",
+  "name_en": "Cercarbono",
+  "summary": "2016 年にコロンビアで設立された南米拠点の任意カーボンクレジット基準。**コロンビア炭素税のオフセット適格レジストリ** として急成長。森林・農業案件で実績、ラテンアメリカ域内で強い存在感。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-07-24",
+  "status": "published",
+  "tags": [
+    "国際",
+    "ボランタリー市場",
+    "森林吸収"
+  ],
+  "jurisdiction": "コロンビア (民間)",
+  "established_year": 2016,
+  "operator": "Cercarbono (コロンビア)",
+  "geographic_scope": "ラテンアメリカ中心 + グローバル展開",
+  "website_url": "https://www.cercarbono.com/",
+  "credit_unit": "VCC (Voluntary Carbon Credit)",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "competes_with",
+      "note": "VCM 民間スタンダード間競合 (地域特化)"
+    },
+    {
+      "to_slug": "redd-plus",
+      "relation": "depends_on",
+      "note": "REDD+ メソドロジー運用"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "**コロンビアの炭素税** (2017 年導入) のオフセット適格レジストリとして指定されたことで急成長。コロンビア国内・周辺南米諸国のクレジット創出ニーズに密接対応。**VCC (Voluntary Carbon Credit)** を発行。",
+      "source_urls": [
+        {
+          "label": "Cercarbono 公式",
+          "url": "https://www.cercarbono.com/"
+        }
+      ]
+    },
+    {
+      "heading": "ラテンアメリカ展開",
+      "body": "コロンビア・ブラジル・ペルー・チリ・メキシコ等のプロジェクトを集約。森林系 (REDD+ / ARR) が中心だが、再エネ・廃棄物・農業も対応。OffsetsDB 集計では発行量で世界 5 位 (140M tCO2 級) と既に規模ある。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "(a) コロンビア炭素税との密接性、(b) 地域専門性、(c) Verra/Gold Standard より相対的に発行スピードが速い、の 3 点が訴求軸。日本企業の本格活用例はまだ限定的だが、ラテンアメリカ拠点企業や森林由来クレジットの多角化先として注目。CCP 適格性は個別メソドロジーで判定中。"
+    }
+  ],
+  "next_milestone": "2026-: Article 6 関連プロジェクト認証拡大"
+}

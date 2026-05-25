@@ -1,0 +1,167 @@
+{
+  "slug": "credit-eligibility",
+  "title": "クレジット適格性マトリックス (制度 × 報告・遵守枠組)",
+  "description": "主要カーボンクレジット制度が、各種報告・遵守枠組 (GX-ETS、SBT、CDP 等) でどう扱われるかを 1 枚で。事業会社の調達・報告判断の早見表。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "category": "eligibility",
+  "tags": [
+    "遵守市場",
+    "ボランタリー市場",
+    "国際"
+  ],
+  "dimensions": [
+    {
+      "key": "gx_ets_compliance",
+      "label_ja": "GX-ETS 遵守利用",
+      "description": "GX-ETS 第1/2 フェーズでの遵守クレジットとしての適格性"
+    },
+    {
+      "key": "domestic_reporting",
+      "label_ja": "国内報告 (温対法等)"
+    },
+    {
+      "key": "sbt_voluntary",
+      "label_ja": "SBT FLAG / Beyond Value Chain"
+    },
+    {
+      "key": "cdp_disclosure",
+      "label_ja": "CDP 開示"
+    },
+    {
+      "key": "iso_corsia",
+      "label_ja": "CORSIA (航空)"
+    },
+    {
+      "key": "carbomir_quality_view",
+      "label_ja": "Carbomir 編集部の運用観"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "jcredit",
+      "name_ja": "J-クレジット",
+      "name_en": "J-Credit Scheme"
+    },
+    {
+      "slug": "jcm",
+      "name_ja": "JCM"
+    },
+    {
+      "slug": "verra-vcs",
+      "name_ja": "Verra VCS"
+    },
+    {
+      "slug": "gold-standard",
+      "name_ja": "Gold Standard"
+    },
+    {
+      "slug": "plan-vivo",
+      "name_ja": "Plan Vivo"
+    }
+  ],
+  "cells": {
+    "jcredit": {
+      "gx_ets_compliance": {
+        "value": "適格 (制度設計上の主要遵守クレジット)"
+      },
+      "domestic_reporting": {
+        "value": "適格 (温対法・省エネ法でカウント可)"
+      },
+      "sbt_voluntary": {
+        "value": "Beyond Value Chain Mitigation で適格 (運用注視: vintage 等条件)"
+      },
+      "cdp_disclosure": {
+        "value": "開示可、CDP 上の取扱は通常通り"
+      },
+      "iso_corsia": {
+        "value": "現時点で非適格"
+      },
+      "carbomir_quality_view": {
+        "value": "日本企業の遵守・報告には第一選択、国内追加性が明確"
+      }
+    },
+    "jcm": {
+      "gx_ets_compliance": {
+        "value": "適格 (要確認: 二重計上回避の通知運用あり)"
+      },
+      "domestic_reporting": {
+        "value": "適格 (政府保有分の活用次第)"
+      },
+      "sbt_voluntary": {
+        "value": "Beyond Value Chain Mitigation で適格"
+      },
+      "cdp_disclosure": {
+        "value": "開示可"
+      },
+      "iso_corsia": {
+        "value": "現時点で非適格 (要確認: パリ協定 6.2 進展次第で変化余地)"
+      },
+      "carbomir_quality_view": {
+        "value": "途上国貢献の可視化に最適、調達タイミング・件数で柔軟性高くない"
+      }
+    },
+    "verra-vcs": {
+      "gx_ets_compliance": {
+        "value": "原則非適格 (国際民間クレジット、要確認: 政策動向次第)"
+      },
+      "domestic_reporting": {
+        "value": "任意取り組み・スコープ3相殺等で利用"
+      },
+      "sbt_voluntary": {
+        "value": "Beyond Value Chain で適格、メソドロジー個別評価が必要"
+      },
+      "cdp_disclosure": {
+        "value": "開示可 (メソドロジー・vintage 明示推奨)"
+      },
+      "iso_corsia": {
+        "value": "適格 (CORSIA Eligible Emissions Units、限定メソドロジー)"
+      },
+      "carbomir_quality_view": {
+        "value": "グローバル受容性高、メソドロジー個別品質審査必須 (CCP / 出典)",
+        "note": "個別案件は株式会社クレイドルトゥー CDR 調達アドバイザリーへ"
+      }
+    },
+    "gold-standard": {
+      "gx_ets_compliance": {
+        "value": "原則非適格"
+      },
+      "domestic_reporting": {
+        "value": "任意取り組みで利用"
+      },
+      "sbt_voluntary": {
+        "value": "Beyond Value Chain で適格、SDGs 連動の付加価値"
+      },
+      "cdp_disclosure": {
+        "value": "開示可、SDGs 訴求型 CSR で活用"
+      },
+      "iso_corsia": {
+        "value": "適格 (限定メソドロジー)"
+      },
+      "carbomir_quality_view": {
+        "value": "SDGs 訴求を狙う企業の選択肢、品質シグナルは VCS と同質"
+      }
+    },
+    "plan-vivo": {
+      "gx_ets_compliance": {
+        "value": "原則非適格"
+      },
+      "domestic_reporting": {
+        "value": "任意取り組みで利用"
+      },
+      "sbt_voluntary": {
+        "value": "Beyond Value Chain で適格、コミュニティ便益が訴求軸"
+      },
+      "cdp_disclosure": {
+        "value": "開示可、コミュニティベース CSR で活用"
+      },
+      "iso_corsia": {
+        "value": "現時点で非適格 (要確認)"
+      },
+      "carbomir_quality_view": {
+        "value": "ポートフォリオの一部として、社会的便益訴求が狙い"
+      }
+    }
+  }
+}

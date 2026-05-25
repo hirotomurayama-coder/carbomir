@@ -1,0 +1,67 @@
+{
+  "slug": "car",
+  "type": "regulation",
+  "name_ja": "CAR (Climate Action Reserve)",
+  "name_en": "Climate Action Reserve",
+  "abbreviation": "CAR",
+  "summary": "2008 年に California で設立された任意カーボンクレジット基準。CRT (Climate Reserve Ton) を発行。California Cap-and-Trade の主要 ARB 認証オフセットプロトコル提供者で、森林・農業・冷媒系で強い実績を持つ。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-07-24",
+  "status": "published",
+  "tags": [
+    "米国",
+    "ボランタリー市場",
+    "Cap and Trade",
+    "国際"
+  ],
+  "jurisdiction": "米国 California (民間)",
+  "established_year": 2008,
+  "operator": "Climate Action Reserve (米国非営利)",
+  "geographic_scope": "北米中心 + 一部国際",
+  "website_url": "https://climateactionreserve.org/",
+  "credit_unit": "CRT (Climate Reserve Ton)",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "competes_with",
+      "note": "VCM の主要民間スタンダード間の競合"
+    },
+    {
+      "to_slug": "acr",
+      "relation": "competes_with",
+      "note": "米国 Cap-and-Trade 適格レジストリでの競合"
+    },
+    {
+      "to_slug": "california-cap-trade",
+      "relation": "depends_on",
+      "note": "ARB 認証オフセットプロトコル提供"
+    },
+    {
+      "to_slug": "icvcm-ccp",
+      "relation": "depends_on",
+      "note": "CAR メソドロジーも CCP で個別評価"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "California Climate Action Registry (2001 年州立委員会の自主排出登録制度) を起源として、2008 年に独立非営利として再編。**CRT (Climate Reserve Ton)** を発行し、設立から California Cap-and-Trade との接続を前提とした制度設計。",
+      "source_urls": [
+        {
+          "label": "Climate Action Reserve 公式",
+          "url": "https://climateactionreserve.org/"
+        }
+      ]
+    },
+    {
+      "heading": "主要メソドロジー",
+      "body": "- **森林**: US/Mexico Forest Project Protocol\n- **冷媒**: Ozone Depleting Substances Protocol\n- **農業**: Rice Cultivation, Livestock Project Protocols\n- **油田・ガス**: Coal Mine Methane, Plugging Abandoned Wells\n\n冷媒系 (Refrigerant) と森林の組み合わせが業界内で独自の存在感。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "コンプライアンス志向の品質設計が強み。VCS と比較して mosthodology version 管理が厳格で、買い手企業の説明可能性が高い。一方、グローバル展開は限定的でラテンアメリカ・アジア案件は少ない。"
+    }
+  ],
+  "next_milestone": "2026: Climate Action Reserve プロトコル v2 改訂サイクル"
+}

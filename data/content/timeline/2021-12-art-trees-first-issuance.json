@@ -1,0 +1,19 @@
+{
+  "slug": "2021-12-art-trees-first-issuance",
+  "event_date": "2021-12-01",
+  "title": "ART TREES 初発行 (Jurisdictional REDD+ の本格化)",
+  "summary": "ART (Architecture for REDD+ Transactions) が運営する **Jurisdictional REDD+** 専門レジストリ ART TREES が初のクレジット発行 (要確認: 正確な月日)。プロジェクトレベル REDD+ の品質議論を制度的に回避する設計が、Guardian/Verra 報道以降の REDD+ 信頼回復の鍵として注目される。LEAF Coalition (米英独 + テック大手) が需要側支援。",
+  "affected_entity_slugs": [
+    "art-trees",
+    "redd-plus"
+  ],
+  "category": "regulatory",
+  "importance": 3,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "ART 公式",
+      "url": "https://www.artredd.org/"
+    }
+  ]
+}

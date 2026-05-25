@@ -1,0 +1,18 @@
+{
+  "slug": "2005-01-eu-ets-launch",
+  "event_date": "2005-01-01",
+  "title": "EU ETS 運用開始 (世界初の主要 ETS)",
+  "summary": "EU 排出量取引制度 Phase 1 (2005-2007) として運用開始。発電・産業セクターを対象に、世界初の本格的な cap-and-trade スキームを実装。価格シグナルを通じた排出削減誘導の有効性の議論を実証データで提供する原点となった。",
+  "affected_entity_slugs": [
+    "eu-ets"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "European Commission - EU ETS",
+      "url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en"
+    }
+  ]
+}

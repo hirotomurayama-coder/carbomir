@@ -1,0 +1,18 @@
+{
+  "slug": "2013-04-jcm-launch",
+  "event_date": "2013-04-01",
+  "title": "JCM 本格運用開始",
+  "summary": "二国間クレジット制度の本格運用開始。当初の枠組署名国はモンゴル、バングラデシュ、エチオピア、ケニア、モルディブ等。以降パートナー国を順次拡大。",
+  "affected_entity_slugs": [
+    "jcm"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "JCM 公式",
+      "url": "https://www.jcm.go.jp/"
+    }
+  ]
+}

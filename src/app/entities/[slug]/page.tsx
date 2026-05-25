@@ -7,23 +7,37 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
   findEntityBySlug,
   findEntityRef,
+  findMatrixBySlug,
+  getOffsetsDbAggregates,
+  listInboundRelations,
   listPublishedEntities,
-} from "@/lib/data/entities";
-import { findMatrixBySlug } from "@/lib/data/comparisons";
-import { ENTITY_TYPE_LABEL, RELATION_LABEL } from "@/lib/types";
+} from "@/lib/data/queries";
+import { findOffsetsRegistryForEntity } from "@/lib/data/atlas";
+import { OffsetsDbInlineCard } from "@/components/atlas/offsets-db-inline-card";
+import {
+  ENTITY_TYPE_LABEL,
+  RELATION_LABEL,
+  RELATION_LABEL_REVERSE,
+} from "@/lib/types";
 import { EntityToc } from "@/components/entities/entity-toc";
+import { MetadataPanel } from "@/components/entities/metadata-panel";
+import { MarkdownContent } from "@/components/markdown-content";
+import { ReviewMarkedText } from "@/components/review-marks";
+import { FreshnessIndicator } from "@/components/freshness-indicator";
+import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  return listPublishedEntities().map((e) => ({ slug: e.slug }));
+  const entities = await listPublishedEntities();
+  return entities.map((e) => ({ slug: e.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const entity = findEntityBySlug(slug);
+  const entity = await findEntityBySlug(slug);
   if (!entity) return {};
   return {
     title: entity.name_ja,
@@ -33,22 +47,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function EntityDetailPage({ params }: Props) {
   const { slug } = await params;
-  const entity = findEntityBySlug(slug);
+  const entity = await findEntityBySlug(slug);
   if (!entity || entity.status !== "published") notFound();
 
-  const relatedEntities = entity.related
-    .map((r) => {
-      const ref = findEntityRef(r.to_slug);
-      if (!ref) return null;
-      return { ...r, name_ja: ref.name_ja, name_en: ref.name_en };
-    })
-    .filter((x): x is NonNullable<typeof x> => x !== null);
+  const relatedEntities = (
+    await Promise.all(
+      entity.related.map(async (r) => {
+        const ref = await findEntityRef(r.to_slug);
+        if (!ref) return null;
+        return { ...r, name_ja: ref.name_ja, name_en: ref.name_en };
+      })
+    )
+  ).filter((x): x is NonNullable<typeof x> => x !== null);
 
-  const relatedMatrices = entity.related_matrix_slugs
-    .map((s) => findMatrixBySlug(s))
-    .filter(
-      (m): m is NonNullable<typeof m> => m !== undefined && m.status === "published"
-    );
+  const relatedMatrices = (
+    await Promise.all(entity.related_matrix_slugs.map((s) => findMatrixBySlug(s)))
+  ).filter(
+    (m): m is NonNullable<typeof m> =>
+      m !== undefined && m.status === "published"
+  );
+
+  // Referenced By (inbound) — entity.related の forward 側で既出のものは dedup する
+  const forwardSlugs = new Set(entity.related.map((r) => r.to_slug));
+  const inboundAll = await listInboundRelations(slug);
+  const inboundRelations = inboundAll.filter((r) => !forwardSlugs.has(r.from_slug));
+
+  // OffsetsDB 該当 registry の集計を取得
+  const offsetsRegistry = findOffsetsRegistryForEntity(slug);
+  const offsetsStat = offsetsRegistry
+    ? (await getOffsetsDbAggregates()).by_registry.find(
+        (r) => r.registry === offsetsRegistry
+      )
+    : undefined;
 
   const tocItems = entity.sections.map((s, i) => ({
     id: `section-${i}`,
@@ -80,12 +110,11 @@ export default async function EntityDetailPage({ params }: Props) {
               {entity.abbreviation}
             </Badge>
           )}
-          <Badge
-            variant="outline"
-            className="font-mono text-[10px] tracking-wider text-emerald-600 dark:text-emerald-400 border-emerald-600/40 dark:border-emerald-400/40"
-          >
-            Published
-          </Badge>
+          <FreshnessIndicator
+            lastReviewedAt={entity.last_reviewed_at}
+            nextReviewAt={entity.next_review_at}
+          />
+          <EditLink type="entities" slug={entity.slug} className="ml-auto" />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-2">
           {entity.name_ja}
@@ -96,21 +125,21 @@ export default async function EntityDetailPage({ params }: Props) {
           </p>
         )}
         <p className="text-base text-foreground/80 max-w-3xl leading-relaxed">
-          {entity.summary}
+          <ReviewMarkedText>{entity.summary}</ReviewMarkedText>
         </p>
         <div className="mt-5 flex items-center gap-4 label-mono text-muted-foreground metric-number flex-wrap">
-          <span>Reviewed {entity.last_reviewed_at}</span>
           {entity.tags.length > 0 && (
             <>
-              <span className="opacity-50">·</span>
               <div className="flex gap-1.5 flex-wrap">
                 {entity.tags.map((t) => (
-                  <span
+                  <Link
                     key={t}
-                    className="inline-flex items-center rounded border border-border bg-muted/40 px-1.5 py-0.5 text-[10.5px] tracking-normal text-foreground/80 normal-case"
+                    href={`/entities?tag=${encodeURIComponent(t)}`}
+                    className="inline-flex items-center rounded border border-border bg-muted/40 px-1.5 py-0.5 text-[10.5px] tracking-normal text-foreground/80 normal-case hover:border-accent/50 hover:bg-accent/10 hover:text-accent transition-colors"
+                    aria-label={`tag ${t} で絞り込む`}
                   >
                     {t}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </>
@@ -138,13 +167,7 @@ export default async function EntityDetailPage({ params }: Props) {
                   {s.heading}
                 </h2>
               </div>
-              <div className="text-[15px] leading-[1.85] text-foreground/90 max-w-prose">
-                {s.body.split("\n\n").map((para, pi) => (
-                  <p key={pi} className="mb-4 last:mb-0">
-                    {para}
-                  </p>
-                ))}
-              </div>
+              <MarkdownContent>{s.body}</MarkdownContent>
               {s.source_urls && s.source_urls.length > 0 && (
                 <ul className="mt-4 space-y-1.5">
                   {s.source_urls.map((src, si) => (
@@ -168,6 +191,13 @@ export default async function EntityDetailPage({ params }: Props) {
 
         {/* Right: Related */}
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+          <MetadataPanel entity={entity} />
+          {offsetsRegistry && offsetsStat && (
+            <OffsetsDbInlineCard
+              registry={offsetsRegistry}
+              stat={offsetsStat}
+            />
+          )}
           {relatedEntities.length > 0 && (
             <Card>
               <CardContent className="p-5">
@@ -183,6 +213,35 @@ export default async function EntityDetailPage({ params }: Props) {
                         </span>
                         <p className="text-sm font-medium text-foreground group-hover:text-accent">
                           {r.name_ja}
+                        </p>
+                        {r.note && (
+                          <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                            {r.note}
+                          </p>
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+          {inboundRelations.length > 0 && (
+            <Card>
+              <CardContent className="p-5">
+                <p className="label-mono text-muted-foreground mb-4">
+                  Referenced By
+                </p>
+                <ul className="space-y-3">
+                  {inboundRelations.map((r) => (
+                    <li key={`${r.from_slug}-${r.relation}`}>
+                      <Link href={`/entities/${r.from_slug}`} className="group block">
+                        <span className="label-mono text-accent block mb-0.5">
+                          {RELATION_LABEL_REVERSE[r.relation].toUpperCase()}
+                        </span>
+                        <p className="text-sm font-medium text-foreground group-hover:text-accent">
+                          {r.from_name_ja}
                         </p>
                         {r.note && (
                           <p className="text-xs text-muted-foreground mt-1 leading-relaxed">

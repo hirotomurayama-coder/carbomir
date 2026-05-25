@@ -1,0 +1,48 @@
+{
+  "slug": "paris-article-6-2",
+  "type": "regulation",
+  "name_ja": "パリ協定 6.2 条 (協調的アプローチ)",
+  "name_en": "Paris Agreement Article 6.2 (Cooperative Approaches)",
+  "abbreviation": "Article 6.2",
+  "summary": "パリ協定第 6 条 2 項。締約国間で国際的に移転される緩和成果 (ITMOs) を NDC 達成に活用する協調的アプローチ。JCM が代表例。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "国際",
+    "パリ協定 6 条",
+    "二国間"
+  ],
+  "jurisdiction": "国際 (UNFCCC 締約国間)",
+  "established_year": 2015,
+  "operator": "UNFCCC + 締約国",
+  "geographic_scope": "グローバル (締約国間)",
+  "website_url": "https://unfccc.int/process-and-meetings/the-paris-agreement/cooperative-implementation",
+  "credit_unit": "ITMO (Internationally Transferred Mitigation Outcomes)",
+  "policy_status": "active",
+  "next_milestone": "2026-: 各国の二国間協定締結が継続 (運用注視: 主要協定の進捗)",
+  "related": [
+    {
+      "to_slug": "jcm",
+      "relation": "parent_of",
+      "note": "JCM は Article 6.2 の代表的実装"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "枠組みの概要",
+      "body": "パリ協定第 6 条 2 項は、締約国が自発的に協調する形で実施する排出削減プロジェクトの成果 (ITMOs) を、参加国の NDC 達成に活用できる枠組み。日本の JCM、スイス・ペルー、シンガポール・ガーナ等の二国間協定が代表例。COP26 (2021) でルールブック合意。",
+      "source_urls": [
+        {
+          "label": "UNFCCC Article 6 Cooperative Implementation",
+          "url": "https://unfccc.int/process-and-meetings/the-paris-agreement/cooperative-implementation"
+        }
+      ]
+    },
+    {
+      "heading": "Corresponding Adjustment",
+      "body": "ITMO を発行 (移転) した側の国は、自国の NDC からその分を差し引く必要がある (Corresponding Adjustment)。これにより二重計上を回避する設計。これは VCM (任意市場) クレジットとの大きな違い。"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "slug": "plan-vivo-foundation",
+  "type": "player",
+  "name_ja": "Plan Vivo Foundation",
+  "name_en": "Plan Vivo Foundation",
+  "summary": "Plan Vivo を運営する英国財団。コミュニティ主導の小規模森林・土地利用プロジェクトに特化したレジストリ。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-09-19",
+  "status": "published",
+  "tags": [
+    "レジストリ",
+    "国際",
+    "コミュニティベース"
+  ],
+  "jurisdiction": "英国",
+  "established_year": 1994,
+  "geographic_scope": "グローバル (途上国コミュニティ中心)",
+  "website_url": "https://www.planvivo.org/",
+  "business_role": "レジストリ運営",
+  "related": [
+    {
+      "to_slug": "plan-vivo",
+      "relation": "parent_of",
+      "note": "Plan Vivo スタンダードを運営"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "1990 年代にエジンバラ大学で開発された手法を起源とし、現在は Plan Vivo Foundation として本部エディンバラで運営。プロジェクト便益の最低 60% を参加コミュニティに還元する独自規範を持つ。"
+    }
+  ]
+}

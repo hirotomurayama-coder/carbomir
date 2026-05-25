@@ -1,0 +1,41 @@
+{
+  "slug": "paris-article-6-4",
+  "type": "regulation",
+  "name_ja": "パリ協定 6.4 条 (PACM)",
+  "name_en": "Paris Agreement Article 6.4 (Paris Agreement Crediting Mechanism)",
+  "abbreviation": "Article 6.4 / PACM",
+  "summary": "パリ協定第 6 条 4 項。京都議定書 CDM の後継となる国際市場メカニズム。UNFCCC 監督下の Supervisory Body が運営し、PACM クレジットを発行。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "国際",
+    "パリ協定 6 条"
+  ],
+  "jurisdiction": "国際 (UNFCCC)",
+  "established_year": 2015,
+  "operator": "UNFCCC Article 6.4 Supervisory Body",
+  "geographic_scope": "グローバル",
+  "website_url": "https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism",
+  "credit_unit": "PACM クレジット",
+  "policy_status": "pilot",
+  "next_milestone": "2025-: 初の PACM クレジット発行開始予定 (運用注視: 最新進捗)",
+  "related": [],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "枠組みの概要",
+      "body": "京都議定書下の CDM (Clean Development Mechanism) の後継として位置付けられる国際市場メカニズム。COP24 (2018) で構想合意、COP26 (2021) でルール合意、その後 Supervisory Body によるメソドロジー基準・除去活動基準等の段階的採択を経て、初の発行に向けた準備段階。",
+      "source_urls": [
+        {
+          "label": "UNFCCC Article 6.4 Mechanism",
+          "url": "https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism"
+        }
+      ]
+    },
+    {
+      "heading": "CDM 移行",
+      "body": "京都議定書 CDM の登録プロジェクトのうち、所定の条件を満たすものは Article 6.4 への移行が認められる。これにより既存プロジェクトの継続活用と新規発行の両立を図る。"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "beccs",
+  "type": "technology",
+  "name_ja": "BECCS (バイオエネルギー + CCS)",
+  "name_en": "Bio-energy with Carbon Capture and Storage",
+  "abbreviation": "BECCS",
+  "summary": "バイオマスを燃料源としてエネルギー生成し、発生する CO2 を回収・地中貯留する技術。植物の光合成 + CCS により大気から CO2 を引き抜く Engineered Removal 系。IPCC のシナリオで主要負排出技術として位置付けられる。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "Engineered Removal",
+    "CCS",
+    "国際"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2009,
+  "geographic_scope": "グローバル (バイオマス産地 + CCS インフラ近接)",
+  "related": [
+    {
+      "to_slug": "dac",
+      "relation": "competes_with",
+      "note": "Engineered Removal の代替アプローチ"
+    },
+    {
+      "to_slug": "ira-45q",
+      "relation": "depends_on",
+      "note": "米国 45Q 税額控除の対象 (CCS 付加で適格)"
+    }
+  ],
+  "related_matrix_slugs": [
+    "engineered-removal-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "技術の概要",
+      "body": "原料: 残渣バイオマス (農林業廃材) または専用バイオマス。燃焼・気化等の熱変換で電力・熱・水素を生成。発生 CO2 をアミン吸収等で回収し、地中貯留 (saline aquifer / depleted oil-gas field) または鉱物化で固定。Drax (英国)、Ørsted (デンマーク) 等が大規模商業化を進める。"
+    },
+    {
+      "heading": "課題と論点",
+      "body": "理論上ネガティブ排出だが、(a) バイオマス調達のサステナビリティ (土地利用変化・食料競合)、(b) 燃焼効率、(c) CCS 回収率、の三重の不確実性。原料を sustainable に確保できる規模は地理的に限定的 (Drax の英国産バイオマス輸入は批判対象)。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "クレジット発行ではなく **政策補助** で経済性が成立する事業が多い (UK CfD 等)。VCS 等のクレジット枠組みでも整備中だが、ライフサイクル評価 (LCA) の標準化が前提。「Engineered Removal の主流」より「特定地域での補助型ニッチ」と捉える方が実態に近い。"
+    }
+  ]
+}

@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { LayoutGrid, List, ArrowUpRight } from "lucide-react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { LayoutGrid, List, ArrowUpRight, X, Tag } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Card } from "@/components/ui/card";
@@ -17,23 +18,68 @@ type ViewMode = "list" | "grid";
 type TypeFilter = "all" | EntityType;
 
 export function EntitiesExplorer({ entities }: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const activeTag = searchParams.get("tag");
+
   const [view, setView] = React.useState<ViewMode>("list");
   const [filter, setFilter] = React.useState<TypeFilter>("all");
 
-  // 実際にエンティティが存在するタイプのみタブ表示
+  // 実際にエンティティが存在するタイプのみタブ表示 (tag フィルタ適用後で算出)
+  const tagFiltered = React.useMemo(() => {
+    if (!activeTag) return entities;
+    return entities.filter((e) => e.tags.includes(activeTag));
+  }, [entities, activeTag]);
+
   const availableTypes = React.useMemo(() => {
     const set = new Set<EntityType>();
-    for (const e of entities) set.add(e.type);
+    for (const e of tagFiltered) set.add(e.type);
     return Array.from(set);
-  }, [entities]);
+  }, [tagFiltered]);
 
   const filtered = React.useMemo(() => {
-    if (filter === "all") return entities;
-    return entities.filter((e) => e.type === filter);
-  }, [entities, filter]);
+    if (filter === "all") return tagFiltered;
+    return tagFiltered.filter((e) => e.type === filter);
+  }, [tagFiltered, filter]);
+
+  // active tag が none になったら type フィルタも all に戻す (UX 上の親切)
+  React.useEffect(() => {
+    if (filter !== "all" && !availableTypes.includes(filter as EntityType)) {
+      setFilter("all");
+    }
+  }, [availableTypes, filter]);
+
+  const clearTag = React.useCallback(() => {
+    const next = new URLSearchParams(searchParams.toString());
+    next.delete("tag");
+    const qs = next.toString();
+    router.push(qs ? `${pathname}?${qs}` : pathname);
+  }, [pathname, router, searchParams]);
 
   return (
     <div className="space-y-4">
+      {/* Active tag chip */}
+      {activeTag && (
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="label-mono text-muted-foreground">Filtered by tag</span>
+          <button
+            type="button"
+            onClick={clearTag}
+            className="inline-flex items-center gap-1.5 rounded-md border border-accent/40 bg-accent/10 px-2 py-1 text-xs text-accent hover:bg-accent/20 transition-colors"
+            aria-label={`tag フィルタ ${activeTag} を解除`}
+          >
+            <Tag className="h-3 w-3" />
+            {activeTag}
+            <X className="h-3 w-3 opacity-70" />
+          </button>
+          <span className="label-mono text-muted-foreground">
+            {tagFiltered.length.toString().padStart(2, "0")} match
+            {tagFiltered.length === 1 ? "" : "es"}
+          </span>
+        </div>
+      )}
+
       <div className="flex items-center justify-between gap-3 flex-wrap">
         <Tabs
           value={filter}
@@ -44,11 +90,11 @@ export function EntitiesExplorer({ entities }: Props) {
             <TabsTrigger value="all" className="text-xs px-3">
               すべて
               <span className="ml-1.5 metric-number text-[10px] text-muted-foreground">
-                {entities.length}
+                {tagFiltered.length}
               </span>
             </TabsTrigger>
             {availableTypes.map((t) => {
-              const count = entities.filter((e) => e.type === t).length;
+              const count = tagFiltered.filter((e) => e.type === t).length;
               return (
                 <TabsTrigger key={t} value={t} className="text-xs px-3">
                   {ENTITY_TYPE_LABEL[t]}
@@ -79,13 +125,15 @@ export function EntitiesExplorer({ entities }: Props) {
       {filtered.length === 0 ? (
         <Card className="p-12">
           <p className="text-center label-mono text-muted-foreground">
-            No entities in this filter
+            {activeTag
+              ? `No entities tagged "${activeTag}" in this view`
+              : "No entities in this filter"}
           </p>
         </Card>
       ) : view === "list" ? (
-        <ListView entities={filtered} />
+        <ListView entities={filtered} activeTag={activeTag} />
       ) : (
-        <GridView entities={filtered} />
+        <GridView entities={filtered} activeTag={activeTag} />
       )}
 
       <div className="flex items-center justify-between label-mono text-muted-foreground px-1">
@@ -105,7 +153,48 @@ export function EntitiesExplorer({ entities }: Props) {
   );
 }
 
-function ListView({ entities }: { entities: Entity[] }) {
+/* ============================================================
+ * Tag chip (active-aware Link)
+ * ============================================================ */
+
+function TagChip({
+  tag,
+  active,
+  variant = "muted",
+}: {
+  tag: string;
+  active?: boolean;
+  variant?: "muted" | "background";
+}) {
+  const base =
+    "inline-flex items-center rounded border px-1.5 py-0.5 text-[10.5px] transition-colors";
+  const palette = active
+    ? "border-accent/50 bg-accent/15 text-accent"
+    : variant === "background"
+      ? "border-border bg-background text-muted-foreground hover:border-accent/40 hover:text-accent"
+      : "border-border bg-muted/40 text-foreground/80 hover:border-accent/40 hover:text-accent";
+  return (
+    <Link
+      href={`/entities?tag=${encodeURIComponent(tag)}`}
+      className={`${base} ${palette}`}
+      aria-label={`tag ${tag} で絞り込む`}
+    >
+      {tag}
+    </Link>
+  );
+}
+
+/* ============================================================
+ * List view
+ * ============================================================ */
+
+function ListView({
+  entities,
+  activeTag,
+}: {
+  entities: Entity[];
+  activeTag: string | null;
+}) {
   return (
     <Card className="overflow-hidden p-0">
       <div className="overflow-x-auto">
@@ -156,12 +245,12 @@ function ListView({ entities }: { entities: Entity[] }) {
                 <td className="px-4 py-3 align-top">
                   <div className="flex flex-wrap gap-1">
                     {e.tags.slice(0, 3).map((t) => (
-                      <span
+                      <TagChip
                         key={t}
-                        className="inline-flex items-center rounded border border-border bg-background px-1.5 py-0.5 text-[10.5px] text-muted-foreground"
-                      >
-                        {t}
-                      </span>
+                        tag={t}
+                        variant="background"
+                        active={t === activeTag}
+                      />
                     ))}
                   </div>
                 </td>
@@ -188,12 +277,25 @@ function ListView({ entities }: { entities: Entity[] }) {
   );
 }
 
-function GridView({ entities }: { entities: Entity[] }) {
+/* ============================================================
+ * Grid view
+ * ============================================================ */
+
+function GridView({
+  entities,
+  activeTag,
+}: {
+  entities: Entity[];
+  activeTag: string | null;
+}) {
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {entities.map((e) => (
-        <Link key={e.slug} href={`/entities/${e.slug}`}>
-          <Card className="h-full p-5 hover:border-accent/60 hover:shadow-[0_4px_24px_-8px_rgba(14,165,233,0.18)] transition-all group">
+        <Card
+          key={e.slug}
+          className="h-full p-5 hover:border-accent/60 hover:shadow-[0_4px_24px_-8px_rgba(14,165,233,0.18)] transition-all group"
+        >
+          <Link href={`/entities/${e.slug}`} className="block">
             <div className="flex items-start justify-between gap-2 mb-3">
               <span className="inline-flex items-center rounded border border-border bg-muted/50 px-1.5 py-0.5 text-[10.5px] text-foreground/80">
                 {ENTITY_TYPE_LABEL[e.type]}
@@ -211,11 +313,23 @@ function GridView({ entities }: { entities: Entity[] }) {
             <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-3">
               {e.summary}
             </p>
-            <p className="label-mono text-muted-foreground metric-number">
-              Reviewed {e.last_reviewed_at}
-            </p>
-          </Card>
-        </Link>
+          </Link>
+          {e.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1 mb-3">
+              {e.tags.slice(0, 4).map((t) => (
+                <TagChip
+                  key={t}
+                  tag={t}
+                  variant="background"
+                  active={t === activeTag}
+                />
+              ))}
+            </div>
+          )}
+          <p className="label-mono text-muted-foreground metric-number">
+            Reviewed {e.last_reviewed_at}
+          </p>
+        </Card>
       ))}
     </div>
   );

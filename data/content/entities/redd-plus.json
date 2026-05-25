@@ -1,0 +1,72 @@
+{
+  "slug": "redd-plus",
+  "type": "methodology",
+  "name_ja": "REDD+",
+  "name_en": "Reducing Emissions from Deforestation and Forest Degradation+",
+  "abbreviation": "REDD+",
+  "summary": "途上国の森林減少・劣化抑制を通じた排出削減・森林吸収によるクレジット創出メソドロジー群。Verra VCS や Gold Standard 等の主要レジストリで採用されているが、ベースライン設定の妥当性をめぐる品質議論が継続している。",
+  "last_reviewed_at": "2026-05-21",
+  "next_review_at": "2026-09-18",
+  "status": "published",
+  "tags": [
+    "森林吸収",
+    "途上国",
+    "ボランタリー市場",
+    "REDD+"
+  ],
+  "jurisdiction": "国際 (UNFCCC 枠組み + 各レジストリ)",
+  "established_year": 2007,
+  "operator": "UNFCCC (政策枠組み) + 各レジストリ (Verra / Gold Standard 等)",
+  "geographic_scope": "途上国 (プロジェクト所在地)",
+  "website_url": "https://redd.unfccc.int/",
+  "credit_unit": "(運用レジストリのクレジット単位による)",
+  "policy_status": "active",
+  "next_milestone": "Verra 統合メソドロジー (VM0048) への移行と CCP 評価結果反映",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "depends_on",
+      "note": "VCS で主要メソドロジー群として運用"
+    },
+    {
+      "to_slug": "icvcm-ccp",
+      "relation": "depends_on",
+      "note": "CCP 適格性が個別に評価される"
+    },
+    {
+      "to_slug": "ifm",
+      "relation": "competes_with",
+      "note": "同じ森林由来クレジットの代替アプローチ (劣化抑制 vs 管理改善)"
+    },
+    {
+      "to_slug": "arr",
+      "relation": "competes_with",
+      "note": "同じ森林由来クレジットの代替アプローチ (劣化抑制 vs 植林)"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "概念の概要",
+      "body": "REDD+ は \"Reducing Emissions from Deforestation and forest Degradation + conservation, sustainable management of forests, and enhancement of forest carbon stocks\" の略。UNFCCC 交渉の文脈で発達した、途上国の森林由来排出を抑制する政策枠組みおよび、それをカーボンクレジット創出に応用するメソドロジー群を指す。"
+    },
+    {
+      "heading": "メソドロジー類型",
+      "body": "以下の 4 類型が代表:\n\n- **Avoided Unplanned Deforestation** (AUD) — 計画外森林減少の回避\n- **Avoided Planned Deforestation** (APD) — 計画的伐採の回避\n- **Improved Forest Management** (IFM) — 持続的森林管理への改善\n- **Afforestation, Reforestation and Revegetation** (ARR) — 新規植林・再植林・植生回復\n\nVerra VCS は **VM0007** (Jurisdictional and Nested REDD+ Framework) を含む複数の REDD+ メソドロジーを運用する。2023 年以降は統合メソドロジー (**VM0048** 等) への移行が進んでいる。"
+    },
+    {
+      "heading": "ベースライン議論",
+      "body": "クレジット発行量は \"ベースライン (REDD+ 介入がなかった場合の予想排出量)\" と実績の差として計算される。2023 年の West et al. (Science 誌) 等の学術検証で、Verra 認証 REDD+ クレジットの多くがベースラインを過大設定しているとの指摘がなされ、業界全体の品質基準見直しが進行中。",
+      "source_urls": [
+        {
+          "label": "West et al. 2023 (Science)",
+          "url": "https://www.science.org/doi/10.1126/science.ade3535"
+        }
+      ]
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "REDD+ は森林保護のスケール手段として依然重要だが、品質シグナル (ICVCM CCP 適格性、メソドロジー version、permanence buffer 設計) の確認なしに購買判断するのは推奨できない。特に古い vintage (2015-2020) のクレジットは現在の品質基準で再評価される傾向にあり、購入後のレピュテーション・リスクを内包する。"
+    }
+  ]
+}

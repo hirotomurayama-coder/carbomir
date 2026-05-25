@@ -1,0 +1,47 @@
+{
+  "slug": "biochar",
+  "type": "methodology",
+  "name_ja": "Biochar (バイオ炭)",
+  "name_en": "Biochar",
+  "summary": "バイオマスを酸素制限環境で熱分解し、安定した固体炭素 (バイオ炭) として土壌等に施用する技術・メソドロジー。永続性 (>100 年想定) が高く Engineered Removal の一翼を担う。",
+  "last_reviewed_at": "2026-05-25",
+  "next_review_at": "2026-09-22",
+  "status": "published",
+  "tags": [
+    "Engineered Removal",
+    "森林吸収",
+    "ボランタリー市場"
+  ],
+  "jurisdiction": "国際",
+  "established_year": 2010,
+  "geographic_scope": "グローバル",
+  "related": [
+    {
+      "to_slug": "verra-vcs",
+      "relation": "depends_on",
+      "note": "VCS で Engineered Removal カテゴリのメソドロジー (VM0044 等)"
+    },
+    {
+      "to_slug": "dac",
+      "relation": "competes_with",
+      "note": "Engineered Removal の代替手段、価格帯は DAC より低い"
+    }
+  ],
+  "related_matrix_slugs": [
+    "engineered-removal-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "技術の概要",
+      "body": "農林業残渣・廃材等のバイオマスを **熱分解 (pyrolysis)** で炭化させ、得られた biochar を土壌改良材として施用する。気候 + 土壌肥沃度改善のコベネフィットあり。原料ソース・熱分解条件 (温度・時間) により永続性 (BC+/BC- 比率) が変動。"
+    },
+    {
+      "heading": "市場での位置",
+      "body": "Engineered Removal セグメントで DAC・ERW に次ぐ規模で発行が拡大中。価格帯は 50-200 USD/t-CO2 程度 (DAC の 1/3-1/2、要確認)。Microsoft、Stripe Climate 等のテック需要家が前払い契約で需要創出。Puro.earth、Carbonfuture 等の専門レジストリ + Verra VCS が主要発行プラットフォーム。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "永続性主張は biochar の安定炭素画分 (fixed carbon fraction) と土壌微生物分解率の不確実性に依存。施用後のモニタリング困難。原料サプライ (廃材確保) が事業スケール制約。EU CRCF (Carbon Removal Certification Framework) が認可した最初の Removal 類型の一つ (要確認: 制度詳細)。"
+    }
+  ]
+}

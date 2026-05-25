@@ -1,0 +1,18 @@
+{
+  "slug": "2015-12-paris-agreement-adoption",
+  "event_date": "2015-12-12",
+  "title": "パリ協定 (Paris Agreement) 採択",
+  "summary": "COP21 (パリ) で 196 締約国により採択。第 6 条で国際的に移転される緩和成果 (ITMOs) およびメカニズム ベースのクレジット (6.4) の枠組みを定め、JCM など二国間制度の国際的位置付けの法的基礎を提供する。",
+  "affected_entity_slugs": [
+    "jcm"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "UNFCCC Paris Agreement",
+      "url": "https://unfccc.int/process-and-meetings/the-paris-agreement"
+    }
+  ]
+}

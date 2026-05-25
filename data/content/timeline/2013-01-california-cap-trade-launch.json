@@ -1,0 +1,20 @@
+{
+  "slug": "2013-01-california-cap-trade-launch",
+  "event_date": "2013-01-01",
+  "title": "California Cap-and-Trade 運用開始",
+  "summary": "米国 California 州の AB32 (Global Warming Solutions Act of 2006) を法的根拠に、北米初の経済全体型 cap-and-trade 制度として運用開始。発電・産業 + 後に輸送燃料も対象化し、米国 ETS の先駆けとなった。CAR/ACR のオフセットプロトコルが連動。",
+  "affected_entity_slugs": [
+    "california-cap-trade",
+    "car",
+    "acr"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "California Air Resources Board",
+      "url": "https://ww2.arb.ca.gov/our-work/programs/cap-and-trade-program"
+    }
+  ]
+}

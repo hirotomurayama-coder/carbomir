@@ -1,0 +1,52 @@
+{
+  "slug": "cbam",
+  "type": "regulation",
+  "name_ja": "EU CBAM",
+  "name_en": "Carbon Border Adjustment Mechanism",
+  "abbreviation": "CBAM",
+  "summary": "EU の国境炭素調整メカニズム。域外から EU に輸入される一定対象品目に対し、域内産品との炭素価格差を調整する。2023-2025 移行期間、2026 本格運用開始予定。",
+  "last_reviewed_at": "2026-05-22",
+  "next_review_at": "2026-07-21",
+  "status": "published",
+  "tags": [
+    "EU",
+    "国境調整",
+    "遵守市場"
+  ],
+  "jurisdiction": "EU",
+  "established_year": 2023,
+  "operator": "European Commission (DG TAXUD)",
+  "geographic_scope": "EU 輸入品 (鉄鋼・アルミ・セメント・肥料・電力・水素等)",
+  "website_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en",
+  "credit_unit": "CBAM 証書 (CBAM Certificate)",
+  "policy_status": "transition",
+  "next_milestone": "2026-01: 本格運用開始、輸入者の CBAM 証書購入義務化 (要確認)",
+  "related": [
+    {
+      "to_slug": "eu-ets",
+      "relation": "depends_on",
+      "note": "EU ETS 価格を基準に CBAM 証書価格を決定"
+    }
+  ],
+  "related_matrix_slugs": [],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "CBAM は EU の Carbon Leakage 対策として導入された。対象品目 (鉄鋼・アルミニウム・セメント・肥料・水素・電力) を EU 域外から輸入する事業者は、域内産品と同等の炭素価格を CBAM 証書として支払う必要がある。移行期間 (2023-10 〜 2025-12) は報告義務のみ、本格運用 (2026-) で証書購入が義務化される。",
+      "source_urls": [
+        {
+          "label": "European Commission CBAM",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+        }
+      ]
+    },
+    {
+      "heading": "対象拡大の議論",
+      "body": "現状の対象 6 品目に加え、化学品・有機化学品・ポリマー等への拡大が検討されている (運用注視: 最新法案ステータス)。最終消費財への適用は依然議論段階。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "日本企業の EU 輸出案件 (鉄鋼・自動車部品・素材) で実務影響大。サプライチェーン全体の炭素計算 (Scope 3 含む) の精緻化が必要に。CBAM 対応コストは事実上の輸出関税として価格転嫁圧力を生む。"
+    }
+  ]
+}

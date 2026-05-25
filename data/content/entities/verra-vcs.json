@@ -1,0 +1,119 @@
+{
+  "slug": "verra-vcs",
+  "type": "regulation",
+  "name_ja": "Verra VCS",
+  "name_en": "Verified Carbon Standard",
+  "abbreviation": "VCS",
+  "summary": "米国非営利 Verra が運営する世界最大級の任意 (民間) カーボンクレジット基準。グローバル受容性とメソドロジー多様性で市場の標準的位置を占める。",
+  "last_reviewed_at": "2026-05-21",
+  "next_review_at": "2026-07-20",
+  "status": "published",
+  "tags": [
+    "国際",
+    "ボランタリー市場",
+    "REDD+"
+  ],
+  "jurisdiction": "米国 (民間非営利)",
+  "established_year": 2005,
+  "operator": "Verra (米国非営利、設立時は VCS Association)",
+  "geographic_scope": "グローバル (160か国以上で発行実績)",
+  "website_url": "https://verra.org/programs/verified-carbon-standard/",
+  "credit_unit": "VCU (Verified Carbon Unit)",
+  "policy_status": "active",
+  "next_milestone": "2026: REDD+ 統合メソドロジー (VM0048 等) への移行完了 + Removal 別運用本格化",
+  "related": [
+    {
+      "to_slug": "jcredit",
+      "relation": "competes_with",
+      "note": "国内追加性 vs グローバル受容性"
+    },
+    {
+      "to_slug": "jcm",
+      "relation": "competes_with",
+      "note": "民間スタンダード vs 政府間制度"
+    },
+    {
+      "to_slug": "gold-standard",
+      "relation": "competes_with",
+      "note": "VCM の二大民間スタンダード"
+    },
+    {
+      "to_slug": "plan-vivo",
+      "relation": "competes_with",
+      "note": "規模感は小さいがコミュニティ案件で差別化"
+    },
+    {
+      "to_slug": "redd-plus",
+      "relation": "parent_of",
+      "note": "VCS で主要メソドロジー群として運用"
+    },
+    {
+      "to_slug": "icvcm-ccp",
+      "relation": "depends_on",
+      "note": "VCS 発行クレジットの品質を CCP で個別評価"
+    },
+    {
+      "to_slug": "dac",
+      "relation": "parent_of",
+      "note": "Engineered Removal メソドロジーで運用"
+    },
+    {
+      "to_slug": "ifm",
+      "relation": "parent_of",
+      "note": "森林管理改善メソドロジーで運用"
+    },
+    {
+      "to_slug": "arr",
+      "relation": "parent_of",
+      "note": "新規植林・再植林メソドロジーで運用"
+    },
+    {
+      "to_slug": "biochar",
+      "relation": "parent_of",
+      "note": "Biochar 系 Engineered Removal メソドロジー"
+    }
+  ],
+  "related_matrix_slugs": [
+    "jcredit-jcm-verra",
+    "vcm-standards",
+    "credit-eligibility"
+  ],
+  "sections": [
+    {
+      "heading": "制度の概要",
+      "body": "Verra VCS (Verified Carbon Standard) は、米国の非営利組織 Verra が運営する任意カーボンクレジット基準である。世界最大級の発行・流通量を持ち、グローバル市場における事実上の標準として機能する。クレジット単位は VCU (Verified Carbon Unit) と呼ばれ、1 VCU = 1 t-CO2 相当の削減・除去に対応する。",
+      "source_urls": [
+        {
+          "label": "Verra VCS Program",
+          "url": "https://verra.org/programs/verified-carbon-standard/"
+        }
+      ]
+    },
+    {
+      "heading": "沿革",
+      "body": "2005 年、The Climate Group、WBCSD (世界経済人会議)、IETA (国際排出量取引協会) が共同で設立。当初は VCS Association として運営され、その後 Verra が単独運営に移行。設立以来、メソドロジー数・対象セクター・パートナー国を継続拡大し、現在は世界160か国以上で発行実績を持つ。"
+    },
+    {
+      "heading": "主要メソドロジー",
+      "body": "**森林・土地利用分野** では以下が中核:\n\n- **REDD+** — 森林減少・劣化防止\n- **IFM** — 改良森林管理 (Improved Forest Management)\n- **ARR** — 新規植林・再植林 (Afforestation, Reforestation and Revegetation)\n\n**エネルギー分野** では再生可能エネルギー、省エネルギー、廃棄物処理が広く採用される。\n\n近年は **Engineered Removal 系** のメソドロジー整備が加速:\n\n- **DAC** — 直接空気回収\n- **Biochar** — バイオ炭\n- **ERW** — 強化風化 (Enhanced Rock Weathering)\n- **海洋ベース除去** ほか\n\n永続性の高い除去クレジットの主要発行プログラムとして位置付けられている。"
+    },
+    {
+      "heading": "市場での位置",
+      "body": "発行量・取引量で長年市場最大規模を維持。価格はメソドロジー・vintage (発行年)・原産地により極めて大きく変動する。2026 年初頭の参考レンジでは、REDD+ で 3〜15 USD/t、再エネで 1〜5 USD/t、Engineered Removal で 100〜600 USD/t 程度。流動性は Engineered Removal を除けば概ね確保されているが、品質シグナルへの市場感応度が高く、需給以上に「どのラベル付きか」で価格が大きく分かれる。",
+      "source_urls": [
+        {
+          "label": "Ecosystem Marketplace",
+          "url": "https://www.ecosystemmarketplace.com/"
+        }
+      ]
+    },
+    {
+      "heading": "品質をめぐる論点",
+      "body": "REDD+ ベースライン設定の妥当性については、2023 年の West et al. をはじめとする学術論文・調査報道 (The Guardian 等) で批判が継続。これを受けて Verra は REDD+ メソドロジーの統合・刷新を進めている。グローバル品質基準としては ICVCM (Integrity Council for the Voluntary Carbon Market) の Core Carbon Principles (CCP) ラベルが業界標準シグナルとして機能し始めており、VCS 発行クレジットも CCP 適格性で個別評価される段階に入った。Engineered Removal は別ラベル運用が一般化し、Removal Certificates の分離発行も進む。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "メソドロジー間の品質差が極めて大きく、「Verra だから安心」は実務上成立しない。提案資料・取引判断では、メソドロジー名・vintage・プロジェクト所在地・CCP 適格性まで個別に確認する必要がある。特に REDD+ は、批判への対応プロセス進行中のため、購入後に評価が下方修正されるレピュテーション・リスクを内包する。日本企業の任意取り組み・スコープ3相殺で使う場合、社内ガバナンス上の説明可能性を担保するクレジット選定基準の事前整備が望ましい。"
+    }
+  ]
+}
