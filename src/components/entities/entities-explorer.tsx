@@ -146,6 +146,7 @@ export function EntitiesExplorer({ entities }: Props) {
         itemLabel="entities"
         placeholder="名称・別名・タグで絞り込み..."
         leftSlot={tabFilter}
+        sticky
       />
 
       {controls.visible.length === 0 ? (

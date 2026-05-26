@@ -139,6 +139,7 @@ export function PlayersExplorer({ players }: Props) {
         itemLabel="players"
         placeholder="プレイヤー名・本拠地・親会社で絞り込み..."
         leftSlot={tabFilter}
+        sticky
       />
 
       {controls.visible.length === 0 ? (

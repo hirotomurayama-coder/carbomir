@@ -41,10 +41,14 @@ const LANES: TimelineCategory[] = [
   "methodology",
 ];
 
-const LANE_HEIGHT = 96; // 増やしてラベル stagger 余地を確保
+const LANE_HEIGHT = 120; // ラベル stagger 余地確保 (4 段必要)
 const AXIS_HEIGHT = 40;
 const LANE_LABEL_WIDTH = 100;
 const STAGGER_TIERS = 4; // 1 レーン内の縦オフセット段数
+const CANVAS_MIN_WIDTH = 1280; // 描画領域の最小幅. 密集回避.
+const LABEL_MAX_CHARS = 22; // ラベル最大文字数
+const LABEL_CHAR_PX = 7; // 1 文字あたり概算 px
+const LABEL_PADDING_PX = 28; // bar + ドット + 余白
 
 /** 重要度 → バー高さ */
 function importanceBarHeight(level: number): number {
@@ -210,7 +214,10 @@ export function TimelineBars({
           </div>
 
           {/* Canvas area */}
-          <div className="relative flex-1 min-w-[720px]">
+          <div
+            className="relative flex-1"
+            style={{ minWidth: CANVAS_MIN_WIDTH }}
+          >
             {/* Lane backgrounds */}
             {LANES.map((cat, i) => (
               <div
@@ -293,87 +300,148 @@ export function TimelineBars({
             </div>
 
             {/* Events as bars/notches.
-                Lane 内で event_date 昇順に並べ、tier (0..STAGGER_TIERS-1) を割当て
-                ラベル重なりを軽減する. */}
+                Lane 内で重要度降順 + 日付昇順に並べ、各 tier の右端位置を
+                追跡して衝突しない最初の tier に貪欲に配置する.
+                どの tier にも入らない場合はラベル非表示 (バーのみ表示)
+                + ラベル CSS を hidden にして hover でのみ見せる. */}
             {(() => {
-              // Lane ごとに ソート + tier 割当
-              const tierByEventSlug = new Map<string, number>();
+              type Placement = { tier: number; hideLabel: boolean };
+              const placement = new Map<string, Placement>();
+
+              // 衝突検出用: 各 tier の最後に置いた "label の右端 X (%)" を保持
               for (let laneIdx = 0; laneIdx < LANES.length; laneIdx++) {
                 const cat = LANES[laneIdx];
+                // 重要度高 → 低の順で配置 (高重要度を優先して可視 tier に置く)
                 const laneEvents = inRangeEvents
                   .filter((e) => e.category === cat)
-                  .sort((a, b) => a.event_date.localeCompare(b.event_date));
-                laneEvents.forEach((e, i) => {
-                  tierByEventSlug.set(e.slug, i % STAGGER_TIERS);
-                });
+                  .sort((a, b) => {
+                    if (b.importance !== a.importance) {
+                      return b.importance - a.importance;
+                    }
+                    return a.event_date.localeCompare(b.event_date);
+                  });
+
+                const tierRightEdge = new Array(STAGGER_TIERS).fill(-Infinity);
+
+                for (const e of laneEvents) {
+                  const t = dateToTime(e.event_date);
+                  const pct = ((t - min.getTime()) / totalSpanMs) * 100;
+                  const labelLen = Math.min(e.title.length, LABEL_MAX_CHARS);
+                  const labelWidthPx =
+                    labelLen * LABEL_CHAR_PX + LABEL_PADDING_PX;
+                  const labelWidthPct =
+                    (labelWidthPx / CANVAS_MIN_WIDTH) * 100;
+
+                  // 端で逆向きにラベルが出るかを考慮: pct > 75 なら左向き
+                  const placeLeft = pct > 75;
+                  const labelStart = placeLeft ? pct - labelWidthPct : pct;
+                  const labelEnd = placeLeft ? pct : pct + labelWidthPct;
+
+                  // 衝突しない最初の tier を探す
+                  let assigned = -1;
+                  for (let tier = 0; tier < STAGGER_TIERS; tier++) {
+                    if (labelStart >= tierRightEdge[tier] + 0.5) {
+                      assigned = tier;
+                      tierRightEdge[tier] = labelEnd;
+                      break;
+                    }
+                  }
+                  if (assigned >= 0) {
+                    placement.set(e.slug, {
+                      tier: assigned,
+                      hideLabel: false,
+                    });
+                  } else {
+                    // どこにも入らない: バーだけ最も空いている tier に置き、ラベル非表示
+                    let mostDistantTier = 0;
+                    let mostDistance = -Infinity;
+                    for (let tier = 0; tier < STAGGER_TIERS; tier++) {
+                      const d = labelStart - tierRightEdge[tier];
+                      if (d > mostDistance) {
+                        mostDistance = d;
+                        mostDistantTier = tier;
+                      }
+                    }
+                    placement.set(e.slug, {
+                      tier: mostDistantTier,
+                      hideLabel: true,
+                    });
+                  }
+                }
               }
+
               return inRangeEvents.map((e) => {
-              const laneIdx = LANES.indexOf(e.category);
-              if (laneIdx === -1) return null;
-              const t = dateToTime(e.event_date);
-              const pct = ((t - min.getTime()) / totalSpanMs) * 100;
-              const status = classifyStatus(e.event_date, today);
-              const barHeight = importanceBarHeight(e.importance);
-              const fontClass = importanceFontSize(e.importance);
+                const laneIdx = LANES.indexOf(e.category);
+                if (laneIdx === -1) return null;
+                const t = dateToTime(e.event_date);
+                const pct = ((t - min.getTime()) / totalSpanMs) * 100;
+                const status = classifyStatus(e.event_date, today);
+                const barHeight = importanceBarHeight(e.importance);
+                const fontClass = importanceFontSize(e.importance);
 
-              // tier に基づく縦オフセット (lane 中央 ± 1〜3 段)
-              const tier = tierByEventSlug.get(e.slug) ?? 0;
-              const laneCenter = laneIdx * LANE_HEIGHT + LANE_HEIGHT / 2;
-              const tierSpacing = (LANE_HEIGHT - 16) / STAGGER_TIERS;
-              const tierOffset =
-                (tier - (STAGGER_TIERS - 1) / 2) * tierSpacing;
-              const centerY = laneCenter + tierOffset;
+                const p = placement.get(e.slug) ?? { tier: 0, hideLabel: false };
+                const laneCenter = laneIdx * LANE_HEIGHT + LANE_HEIGHT / 2;
+                const tierSpacing = (LANE_HEIGHT - 24) / STAGGER_TIERS;
+                const tierOffset =
+                  (p.tier - (STAGGER_TIERS - 1) / 2) * tierSpacing;
+                const centerY = laneCenter + tierOffset;
 
-              // ラベルを左 or 右に出す (端付近の判定)
-              const placeLeft = pct > 75;
+                const placeLeft = pct > 75;
 
-              return (
-                <div
-                  key={e.slug}
-                  className="group absolute z-[5]"
-                  style={{
-                    left: `calc(${pct}% - 1.5px)`,
-                    top: centerY - barHeight / 2,
-                  }}
-                >
-                  <Link
-                    href={`/timeline/${e.slug}`}
-                    aria-label={`${e.event_date} · ${e.title}`}
-                    className="block relative"
-                  >
-                    {/* Bar (vertical) */}
-                    <div
-                      className={`w-[3px] rounded-sm ${STATUS_BAR_BG[status]} transition-all group-hover:w-[4px] group-hover:shadow-[0_0_8px_currentColor]`}
-                      style={{ height: barHeight }}
-                    />
-                    {/* Label (horizontal, beside bar) */}
-                    <span
-                      className={`absolute top-1/2 -translate-y-1/2 ${
-                        placeLeft ? "right-2.5" : "left-2.5"
-                      } whitespace-nowrap ${fontClass} text-foreground/85 group-hover:text-accent transition-colors`}
-                    >
-                      <span className={`mr-1 ${STATUS_LABEL_COLOR[status]}`}>
-                        ●
-                      </span>
-                      {e.title.length > 28 ? e.title.slice(0, 26) + "…" : e.title}
-                    </span>
-                  </Link>
-
-                  {/* Hover card */}
+                return (
                   <div
-                    className={`pointer-events-none absolute opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-100 z-20 ${
-                      placeLeft ? "right-3" : "left-3"
-                    }`}
+                    key={e.slug}
+                    className="group absolute z-[5]"
                     style={{
-                      top: barHeight + 8,
-                      width: 300,
+                      left: `calc(${pct}% - 1.5px)`,
+                      top: centerY - barHeight / 2,
                     }}
                   >
-                    <EventHoverCard event={e} status={status} />
+                    <Link
+                      href={`/timeline/${e.slug}`}
+                      aria-label={`${e.event_date} · ${e.title}`}
+                      className="block relative"
+                    >
+                      {/* Bar (vertical) */}
+                      <div
+                        className={`w-[3px] rounded-sm ${STATUS_BAR_BG[status]} transition-all group-hover:w-[4px] group-hover:shadow-[0_0_8px_currentColor]`}
+                        style={{ height: barHeight }}
+                      />
+                      {/* Label: 衝突回避できた場合のみ常時表示.
+                          そうでなければ hover でだけ見えるようにする. */}
+                      <span
+                        className={`absolute top-1/2 -translate-y-1/2 ${
+                          placeLeft ? "right-2.5" : "left-2.5"
+                        } whitespace-nowrap ${fontClass} text-foreground/85 group-hover:text-accent transition-opacity ${
+                          p.hideLabel
+                            ? "opacity-0 group-hover:opacity-100 group-hover:z-20"
+                            : "opacity-100"
+                        }`}
+                      >
+                        <span className={`mr-1 ${STATUS_LABEL_COLOR[status]}`}>
+                          ●
+                        </span>
+                        {e.title.length > LABEL_MAX_CHARS
+                          ? e.title.slice(0, LABEL_MAX_CHARS - 1) + "…"
+                          : e.title}
+                      </span>
+                    </Link>
+
+                    {/* Hover card */}
+                    <div
+                      className={`pointer-events-none absolute opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-100 z-20 ${
+                        placeLeft ? "right-3" : "left-3"
+                      }`}
+                      style={{
+                        top: barHeight + 8,
+                        width: 300,
+                      }}
+                    >
+                      <EventHoverCard event={e} status={status} />
+                    </div>
                   </div>
-                </div>
-              );
-            });
+                );
+              });
             })()}
           </div>
         </div>

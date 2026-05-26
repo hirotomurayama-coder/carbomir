@@ -117,6 +117,7 @@ export function MatricesExplorer({ matrices }: Props) {
         itemLabel="matrices"
         placeholder="行列タイトル・エンティティ名・軸・タグで絞り込み..."
         leftSlot={tabFilter}
+        sticky
       />
 
       {controls.visible.length === 0 ? (

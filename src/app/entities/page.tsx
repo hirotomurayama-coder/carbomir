@@ -9,11 +9,14 @@ import { listLinkedSlugs } from "@/lib/data/glossary-links";
 export const metadata: Metadata = {
   title: "用語集 (Glossary)",
   description:
-    "カーボンクレジット領域の用語集。制度・メソドロジー・プレイヤー・スタンダード・概念を構造化定義 + 編集論点付きで提供。carboncredits.jp の用語集と相互参照。",
+    "カーボンクレジット領域の用語集。制度・メソドロジー・スタンダード・概念を構造化定義 + 編集論点付きで提供。carboncredits.jp の用語集と相互参照。",
 };
 
 export default async function EntitiesIndexPage() {
-  const entities = await listPublishedEntities();
+  // プレイヤー (企業・機関) は /players で表現するため、用語集からは除外.
+  // 用語集は「概念 / メソドロジー / 制度・規制 / 技術」のみに絞る.
+  const allEntities = await listPublishedEntities();
+  const entities = allEntities.filter((e) => e.type !== "player");
   const linkedSlugSet = new Set(listLinkedSlugs());
   const linkedCount = entities.filter((e) => linkedSlugSet.has(e.slug)).length;
 
@@ -43,8 +46,9 @@ export default async function EntitiesIndexPage() {
           </h1>
           <p className="text-sm text-muted-foreground mt-1.5 max-w-2xl leading-relaxed">
             カーボンクレジット領域の用語を構造化定義 + 編集論点付きで提供。
-            制度・メソドロジー・プレイヤー・スタンダードを横断的に整理し、
+            制度・規制・メソドロジー・技術・概念を横断的に整理し、
             関連エンティティ・関連比較行列・出典を保持する。
+            (企業・機関の一覧は <a href="/players" className="text-accent hover:underline">プレイヤー</a> ページに分離)
             <a
               href="https://carboncredits.jp/glossary/"
               target="_blank"

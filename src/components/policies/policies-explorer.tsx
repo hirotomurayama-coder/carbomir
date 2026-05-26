@@ -200,6 +200,7 @@ export function PoliciesExplorer({ policies }: Props) {
         itemLabel="policies"
         placeholder="制度名・運営主体・次マイルストーンで絞り込み..."
         leftSlot={regionTabs}
+        sticky
       />
 
       {statusChips}
