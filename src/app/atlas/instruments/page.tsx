@@ -37,16 +37,16 @@ export default async function InstrumentsPage() {
             className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent"
           >
             <Globe2 className="h-2.5 w-2.5 mr-1" />
-            Atlas / Carbon Pricing
+            世界マップ / カーボンプライシング
           </Badge>
           <Badge
             variant="outline"
             className="font-mono text-[10px] tracking-wider text-emerald-600 dark:text-emerald-400 border-emerald-600/40 dark:border-emerald-400/40"
           >
-            {implementedCount} implemented
+            {implementedCount} 件 実施中
           </Badge>
           <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
-            {etsCount} ETS · {taxCount} 炭素税
+            ETS {etsCount} · 炭素税 {taxCount}
           </Badge>
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-2">
@@ -54,8 +54,8 @@ export default async function InstrumentsPage() {
         </h1>
         <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
           World Bank Carbon Pricing Dashboard が追跡する全 {instruments.length}{" "}
-          の Compliance 炭素価格制度。Implemented / Scheduled / Under consideration
-          の各段階を含む。Carbomir の `/policies` (編集主要 15 件)
+          件のコンプライアンス炭素価格制度。実施中・実施予定・検討中の各段階を含む。
+          Carbomir の <a href="/policies" className="text-accent hover:underline">/policies</a> (編集主要 15 件)
           が深掘り、こちらが網羅性のリファレンス。
         </p>
         <p className="label-mono text-muted-foreground mt-2">
@@ -85,8 +85,8 @@ export default async function InstrumentsPage() {
             data={buildInstrumentMapData(instruments)}
             sizeScale={3}
             legend={[
-              { key: "Carbon tax", label: "Carbon tax 主体", color: "#10b981" },
-              { key: "ETS", label: "ETS 主体", color: "#0ea5e9" },
+              { key: "Carbon tax", label: "炭素税 主体", color: "#10b981" },
+              { key: "ETS", label: "排出量取引 (ETS) 主体", color: "#0ea5e9" },
               { key: "Both", label: "両方併用", color: "#a855f7" },
               { key: "Other", label: "未分類", color: "#94a3b8" },
             ]}

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { countryNameJa } from "@/lib/data/country-geo";
 
 /**
  * 二国間協定 (Article 6.2) ネットワーク図.
@@ -173,7 +174,7 @@ export function CooperativeNetwork({ agreements }: Props) {
                   className="fill-white font-mono select-none"
                   style={{ fontSize: 11, fontWeight: 600 }}
                 >
-                  {b.name}
+                  {countryNameJa(b.name)}
                 </text>
                 <text
                   x={buyerColX + 8}
@@ -227,7 +228,7 @@ export function CooperativeNetwork({ agreements }: Props) {
                     opacity: isActive ? 1 : 0.65,
                   }}
                 >
-                  {s.name}
+                  {countryNameJa(s.name)}
                 </text>
                 <text
                   x={sellerColX + 120}
@@ -252,7 +253,7 @@ export function CooperativeNetwork({ agreements }: Props) {
             className="fill-muted-foreground font-mono select-none"
             style={{ fontSize: 10, letterSpacing: 1.5 }}
           >
-            BUYER
+            BUYER (買い手)
           </text>
           <text
             x={sellerColX + 60}
@@ -262,7 +263,7 @@ export function CooperativeNetwork({ agreements }: Props) {
             className="fill-muted-foreground font-mono select-none"
             style={{ fontSize: 10, letterSpacing: 1.5 }}
           >
-            SELLER
+            SELLER (売り手)
           </text>
         </svg>
       </div>

@@ -6,6 +6,7 @@ import { listCooperativeAgreements } from "@/lib/data/queries";
 import { CooperativeTable } from "@/components/atlas/cooperative-table";
 import { CooperativeNetwork } from "@/components/atlas/cooperative-network";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
+import { countryNameJa } from "@/lib/data/country-geo";
 
 export const metadata: Metadata = {
   title: "Cooperative Approaches (Article 6.2)",
@@ -32,22 +33,22 @@ export default async function CooperativePage() {
             className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent"
           >
             <Handshake className="h-2.5 w-2.5 mr-1" />
-            Atlas / Cooperative Approaches
+            世界マップ / 二国間協定
           </Badge>
           <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
-            Article 6.2 of the Paris Agreement
+            パリ協定 6.2 条
           </Badge>
           {topBuyer && (
             <Badge variant="outline" className="font-mono text-[10px] tracking-wider">
-              Top buyer: {topBuyer[0]} ({topBuyer[1]})
+              最大 Buyer: {countryNameJa(topBuyer[0])} ({topBuyer[1]})
             </Badge>
           )}
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-2">
-          二国間協定 (Article 6.2)
+          二国間協定 (パリ協定 6.2 条)
         </h1>
         <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
-          World Bank が追跡する全 {agreements.length} の Article 6.2 二国間協定。Buyer 国と Seller 国の関係、合意年、状況 (Framework / Implementing / Bilateral authorization) を整理。日本の JCM は Cooperative Approaches とは別カテゴリで運用されるが、6.2 の一部として活用検討中の枠組み。
+          World Bank が追跡する全 {agreements.length} 件のパリ協定 6.2 条 (Cooperative Approaches) 二国間協定。Buyer 国 (買い手) と Seller 国 (売り手) の関係、合意年、状況 (枠組み合意 / 実施協定 / 個別認可) を整理。日本の JCM は Cooperative Approaches とは別カテゴリで運用されるが、6.2 条の一部として活用検討中の枠組み。
         </p>
         <p className="label-mono text-muted-foreground mt-2">
           Source:{" "}
@@ -79,8 +80,8 @@ export default async function CooperativePage() {
       <Card className="mt-6">
         <CardContent className="p-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
           <p>
-            <strong className="text-foreground">Status の意味</strong>:
-            Framework Agreement → 枠組み合意 (基本合意) / Implementing Agreement → 実施協定締結 / Bilateral authorization → 個別案件の二国間認可完了。
+            <strong className="text-foreground">ステータスの意味</strong>:
+            MoU 締結 → 基本合意の覚書 / 実施協定締結 → 実施運用ルールに合意 / 個別認可完了 → 個別案件の二国間認可済み。
           </p>
           <p>
             <strong className="text-foreground">関連</strong>: 日本の JCM は別枠組みだが Cooperative Approaches の一形態。詳細は{" "}

@@ -17,6 +17,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import type { CreditingMechanism } from "@/lib/types";
+import {
+  translateStatus,
+  translateAdmin,
+  translateScope,
+} from "@/lib/data/atlas-i18n";
+import { countryNameJa } from "@/lib/data/country-geo";
 
 type Props = {
   mechanisms: CreditingMechanism[];
@@ -95,22 +101,25 @@ export function MechanismsTable({ mechanisms }: Props) {
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           <FilterDropdown
-            label="Admin"
+            label="運営"
             options={allAdmins}
+            translate={translateAdmin}
             active={adminFilter}
             onToggle={(v) => toggle(setAdminFilter, v)}
             onClear={() => setAdminFilter(new Set())}
           />
           <FilterDropdown
-            label="Status"
+            label="ステータス"
             options={allStatuses}
+            translate={translateStatus}
             active={statusFilter}
             onToggle={(v) => toggle(setStatusFilter, v)}
             onClear={() => setStatusFilter(new Set())}
           />
           <FilterDropdown
-            label="Scope"
+            label="範囲"
             options={allScopes}
+            translate={translateScope}
             active={scopeFilter}
             onToggle={(v) => toggle(setScopeFilter, v)}
             onClear={() => setScopeFilter(new Set())}
@@ -132,13 +141,13 @@ export function MechanismsTable({ mechanisms }: Props) {
           <table className="w-full text-sm">
             <thead className="bg-muted/40">
               <tr>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[280px]">Mechanism</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Admin</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Status</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Scope</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Year</th>
-                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">Issued (Mt)</th>
-                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">Projects</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[280px]">メカニズム名</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">運営</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">ステータス</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">範囲</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">開始年</th>
+                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">累計発行 (Mt)</th>
+                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">案件数</th>
               </tr>
             </thead>
             <tbody>
@@ -169,13 +178,13 @@ export function MechanismsTable({ mechanisms }: Props) {
                       </div>
                       {m.administering_jurisdiction && (
                         <p className="text-[11px] text-muted-foreground mt-0.5 line-clamp-1">
-                          {m.administering_jurisdiction}
+                          {countryNameJa(m.administering_jurisdiction)}
                         </p>
                       )}
                     </td>
                     <td className="px-4 py-2.5 align-top">
                       <span className="inline-flex items-center rounded border border-border bg-muted/50 px-1.5 py-0.5 text-[10.5px] text-foreground/80">
-                        {m.administration ?? "—"}
+                        {translateAdmin(m.administration)}
                       </span>
                     </td>
                     <td className="px-4 py-2.5 align-top">
@@ -187,11 +196,11 @@ export function MechanismsTable({ mechanisms }: Props) {
                             : "text-muted-foreground border-border"
                         }`}
                       >
-                        {m.status ?? "—"}
+                        {translateStatus(m.status)}
                       </Badge>
                     </td>
                     <td className="px-4 py-2.5 align-top text-foreground/85 text-[12.5px]">
-                      {m.scope ?? "—"}
+                      {translateScope(m.scope)}
                     </td>
                     <td className="px-4 py-2.5 align-top metric-number text-[12.5px] text-foreground">
                       {m.year_of_implementation ?? "—"}
@@ -219,13 +228,16 @@ function FilterDropdown({
   active,
   onToggle,
   onClear,
+  translate,
 }: {
   label: string;
   options: string[];
   active: Set<string>;
   onToggle: (v: string) => void;
   onClear: () => void;
+  translate?: (s: string) => string;
 }) {
+  const display = (s: string) => (translate ? translate(s) : s);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -239,8 +251,8 @@ function FilterDropdown({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="max-w-[280px] max-h-[360px] overflow-y-auto">
-        <DropdownMenuLabel className="font-mono text-[10.5px] uppercase tracking-wider text-muted-foreground">
-          Filter by {label}
+        <DropdownMenuLabel className="font-mono text-[10.5px] tracking-wider text-muted-foreground">
+          {label} で絞り込み
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         {options.map((opt) => (
@@ -253,7 +265,7 @@ function FilterDropdown({
             }}
             className="cursor-pointer text-xs"
           >
-            {opt}
+            {display(opt)}
           </DropdownMenuCheckboxItem>
         ))}
         <DropdownMenuSeparator />

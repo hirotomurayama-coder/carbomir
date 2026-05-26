@@ -17,6 +17,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { CarbonPricingInstrument } from "@/lib/types";
+import {
+  translateStatus,
+  translateInstrumentType,
+  translateInstrumentSector,
+} from "@/lib/data/atlas-i18n";
+import { countryNameJa } from "@/lib/data/country-geo";
 
 type Props = {
   instruments: CarbonPricingInstrument[];
@@ -93,15 +99,17 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
         </div>
         <div className="flex items-center gap-2">
           <FilterDropdown
-            label="Type"
+            label="種別"
             options={allTypes}
+            translate={translateInstrumentType}
             active={typeFilter}
             onToggle={(v) => toggleSet(setTypeFilter, v)}
             onClear={() => setTypeFilter(new Set())}
           />
           <FilterDropdown
-            label="Status"
+            label="ステータス"
             options={allStatuses}
+            translate={translateStatus}
             active={statusFilter}
             onToggle={(v) => toggleSet(setStatusFilter, v)}
             onClear={() => setStatusFilter(new Set())}
@@ -124,12 +132,12 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
           <table className="w-full text-sm">
             <thead className="bg-muted/40">
               <tr>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[280px]">Instrument</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Type</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Status</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Jurisdiction</th>
-                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">Price 2026 (USD/t)</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[200px]">Sectors</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[280px]">制度名</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">種別</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">ステータス</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">管轄</th>
+                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">価格 2026 (USD/t)</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[200px]">対象セクター</th>
               </tr>
             </thead>
             <tbody>
@@ -160,7 +168,7 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
                     </td>
                     <td className="px-4 py-2.5 align-top">
                       <span className="inline-flex items-center rounded border border-border bg-muted/50 px-1.5 py-0.5 text-[10.5px] text-foreground/80">
-                        {ins.type}
+                        {translateInstrumentType(ins.type)}
                       </span>
                     </td>
                     <td className="px-4 py-2.5 align-top">
@@ -168,11 +176,11 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
                         variant="outline"
                         className={`font-mono text-[10px] tracking-wider ${STATUS_BADGE_COLOR[ins.status] ?? "text-muted-foreground border-border"}`}
                       >
-                        {ins.status}
+                        {translateStatus(ins.status)}
                       </Badge>
                     </td>
                     <td className="px-4 py-2.5 align-top text-foreground/85 text-[13px]">
-                      {ins.jurisdiction ?? "—"}
+                      {ins.jurisdiction ? countryNameJa(ins.jurisdiction) : "—"}
                     </td>
                     <td className="px-4 py-2.5 align-top text-right metric-number text-[13px] text-foreground">
                       {ins.price_2026_usd != null
@@ -182,15 +190,18 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
                     <td className="px-4 py-2.5 align-top">
                       {ins.sectors_covered.length > 0 ? (
                         <div className="flex flex-wrap gap-1">
-                          {ins.sectors_covered.slice(0, 3).map((s) => (
-                            <span
-                              key={s}
-                              className="inline-flex items-center rounded border border-border bg-background px-1.5 py-0.5 text-[10.5px] text-muted-foreground"
-                              title={s}
-                            >
-                              {s.length > 14 ? s.slice(0, 14) + "…" : s}
-                            </span>
-                          ))}
+                          {ins.sectors_covered.slice(0, 3).map((s) => {
+                            const ja = translateInstrumentSector(s);
+                            return (
+                              <span
+                                key={s}
+                                className="inline-flex items-center rounded border border-border bg-background px-1.5 py-0.5 text-[10.5px] text-muted-foreground"
+                                title={s}
+                              >
+                                {ja}
+                              </span>
+                            );
+                          })}
                           {ins.sectors_covered.length > 3 && (
                             <span className="label-mono text-muted-foreground">
                               +{ins.sectors_covered.length - 3}
@@ -218,13 +229,16 @@ function FilterDropdown({
   active,
   onToggle,
   onClear,
+  translate,
 }: {
   label: string;
   options: string[];
   active: Set<string>;
   onToggle: (v: string) => void;
   onClear: () => void;
+  translate?: (s: string) => string;
 }) {
+  const display = (s: string) => (translate ? translate(s) : s);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -238,8 +252,8 @@ function FilterDropdown({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="max-w-[280px] max-h-[360px] overflow-y-auto">
-        <DropdownMenuLabel className="font-mono text-[10.5px] uppercase tracking-wider text-muted-foreground">
-          Filter by {label}
+        <DropdownMenuLabel className="font-mono text-[10.5px] tracking-wider text-muted-foreground">
+          {label} で絞り込み
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         {options.map((opt) => (
@@ -252,7 +266,7 @@ function FilterDropdown({
             }}
             className="cursor-pointer text-xs"
           >
-            {opt}
+            {display(opt)}
           </DropdownMenuCheckboxItem>
         ))}
         <DropdownMenuSeparator />

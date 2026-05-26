@@ -136,6 +136,18 @@ export const COUNTRY_GEO: Record<string, CountryGeo> = {
   NZL: { iso3: "NZL", lat: -40.9, lng: 174.9, name_ja: "ニュージーランド", region: "Oceania" },
   FJI: { iso3: "FJI", lat: -16.6, lng: 179.4, name_ja: "フィジー", region: "Oceania" },
   PNG: { iso3: "PNG", lat: -6.3, lng: 143.96, name_ja: "パプアニューギニア", region: "Oceania" },
+  VUT: { iso3: "VUT", lat: -15.4, lng: 166.96, name_ja: "バヌアツ", region: "Oceania" },
+
+  // === Additional sellers / atlas coverage ===
+  BTN: { iso3: "BTN", lat: 27.5, lng: 90.4, name_ja: "ブータン", region: "Asia" },
+  UZB: { iso3: "UZB", lat: 41.4, lng: 64.6, name_ja: "ウズベキスタン", region: "Asia" },
+  GEO: { iso3: "GEO", lat: 42.3, lng: 43.4, name_ja: "ジョージア", region: "Asia" },
+  PRY: { iso3: "PRY", lat: -23.4, lng: -58.4, name_ja: "パラグアイ", region: "South America" },
+  DOM: { iso3: "DOM", lat: 18.7, lng: -70.2, name_ja: "ドミニカ共和国", region: "South America" },
+  DMA: { iso3: "DMA", lat: 15.4, lng: -61.4, name_ja: "ドミニカ国", region: "South America" },
+  BEN: { iso3: "BEN", lat: 9.3, lng: 2.3, name_ja: "ベナン", region: "Africa" },
+  GAB: { iso3: "GAB", lat: -0.8, lng: 11.6, name_ja: "ガボン", region: "Africa" },
+  TUN: { iso3: "TUN", lat: 33.9, lng: 9.6, name_ja: "チュニジア", region: "Africa" },
 };
 
 /**
@@ -285,6 +297,20 @@ export const JURISDICTION_TO_ISO3: Record<string, string> = {
   Hubei: "CHN",
   Chongqing: "CHN",
   Fujian: "CHN",
+
+  // === WB / OffsetsDB の表記揺れ & typo 吸収 ===
+  "Lao PDR": "LAO",
+  Phillipines: "PHL", // cooperative.json の typo
+  Bhutan: "BTN",
+  Vanuatu: "VUT",
+  Uzbekistan: "UZB",
+  Georgia: "GEO",
+  Paraguay: "PRY",
+  "Dominican Republic": "DOM",
+  Dominica: "DMA",
+  Benin: "BEN",
+  Gabon: "GAB",
+  Tunisia: "TUN",
 };
 
 /** jurisdiction 文字列を ISO3 に変換. 見つからなければ null. */
@@ -297,4 +323,15 @@ export function jurisdictionToIso3(jur: string | null | undefined): string | nul
   // ISO3 そのもの (大文字 3 文字) ならそれを返す
   if (/^[A-Z]{3}$/.test(trimmed) && COUNTRY_GEO[trimmed]) return trimmed;
   return null;
+}
+
+/**
+ * 国名 (jurisdiction / WB country / OffsetsDB country) を日本語に変換.
+ * 解決できないものは元のラベルをそのまま返す.
+ */
+export function countryNameJa(label: string | null | undefined): string {
+  if (!label) return "—";
+  const iso3 = jurisdictionToIso3(label);
+  if (iso3 && COUNTRY_GEO[iso3]) return COUNTRY_GEO[iso3].name_ja;
+  return label;
 }

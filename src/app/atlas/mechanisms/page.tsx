@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { listMechanisms } from "@/lib/data/queries";
 import { MechanismsTable } from "@/components/atlas/mechanisms-table";
 import { WorldMapLeaflet } from "@/components/atlas/world-map-leaflet";
-import { COUNTRY_GEO } from "@/lib/data/country-geo";
+import { COUNTRY_GEO, jurisdictionToIso3 } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -35,25 +35,25 @@ export default async function MechanismsPage() {
             className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent"
           >
             <Stamp className="h-2.5 w-2.5 mr-1" />
-            Atlas / Crediting Mechanisms
+            世界マップ / クレジットメカニズム
           </Badge>
           <Badge
             variant="outline"
             className="font-mono text-[10px] tracking-wider text-emerald-600 dark:text-emerald-400 border-emerald-600/40 dark:border-emerald-400/40"
           >
-            {implementedCount} implemented
+            {implementedCount} 件 実施中
           </Badge>
           <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
-            ~{(totalIssued / 1000).toFixed(0)} Mt issued ·{" "}
-            {totalProjects.toLocaleString()} projects
+            ~{(totalIssued / 1000).toFixed(0)} Mt 発行 ·{" "}
+            {totalProjects.toLocaleString()} 案件
           </Badge>
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-2">
-          世界の Crediting Mechanisms
+          世界のクレジットメカニズム
         </h1>
         <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
           World Bank Carbon Pricing Dashboard が追跡する全 {mechanisms.length}{" "}
-          の Crediting Mechanism (Governmental / Independent / International)。Carbomir が編集解説する Verra VCS / Gold Standard / Plan Vivo / JCM / J-Credit 等は「Carbomir」リンクバッジで識別できる。
+          件のクレジットメカニズム (政府運営 / 民間 / 国際機関)。Carbomir が編集解説する Verra VCS / Gold Standard / Plan Vivo / JCM / J-Credit 等は「Carbomir」リンクバッジで識別できる。
         </p>
         <p className="label-mono text-muted-foreground mt-2">
           Source:{" "}
@@ -111,8 +111,12 @@ export default async function MechanismsPage() {
 
 /**
  * Mechanisms を ISO3 別に集約.
- * countries_iso3 配列を持つので素直に展開.
  * primaryType = administration (Governmental / Independent / International).
+ *
+ * データ事情: WB の mechanism JSON は `countries_iso3` が全件 null。
+ * National / Subnational / Regional scope は administering_jurisdiction を
+ * jurisdictionToIso3 で ISO3 に解決して使う (Subnational は親国に集約).
+ * Global scope (Verra / Gold Standard / CDM 等) は単一国に紐付けられないため除外.
  */
 function buildMechanismsMapData(
   mechanisms: Awaited<ReturnType<typeof listMechanisms>>
@@ -127,7 +131,11 @@ function buildMechanismsMapData(
   const byCountry = new Map<string, Agg>();
   for (const m of mechanisms) {
     if (m.status !== "Implemented") continue;
-    const isos = m.countries_iso3 ?? [];
+    let isos: string[] = (m.countries_iso3 ?? []) as string[];
+    if (isos.length === 0) {
+      const iso3 = jurisdictionToIso3(m.administering_jurisdiction);
+      if (iso3) isos = [iso3];
+    }
     if (isos.length === 0) continue;
     for (const iso3 of isos) {
       if (!COUNTRY_GEO[iso3]) continue;

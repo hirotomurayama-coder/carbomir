@@ -7,7 +7,11 @@ import { getOffsetsDbAggregates } from "@/lib/data/queries";
 import { getOffsetsRegistryLinkedEntity } from "@/lib/data/atlas";
 import { WorldMapLeaflet } from "@/components/atlas/world-map-leaflet";
 import { DonutChart } from "@/components/atlas/atlas-charts";
-import { jurisdictionToIso3 } from "@/lib/data/country-geo";
+import { jurisdictionToIso3, countryNameJa } from "@/lib/data/country-geo";
+import {
+  translateOffsetsCategory,
+  translateOffsetsProjectType,
+} from "@/lib/data/atlas-i18n";
 import {
   OFFSETS_DB_SOURCE_LABEL,
   OFFSETS_DB_SOURCE_URL,
@@ -76,10 +80,10 @@ export default async function OffsetsDbPage() {
             Atlas / OffsetsDB
           </Badge>
           <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
-            {a.totals.registries} registries · {a.totals.countries} countries
+            {a.totals.registries} レジストリ · {a.totals.countries} か国
           </Badge>
           <Badge variant="outline" className="font-mono text-[10px] tracking-wider">
-            Snapshot {a.source.generated_at.slice(0, 10)}
+            スナップショット {a.source.generated_at.slice(0, 10)}
           </Badge>
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-2">
@@ -121,22 +125,22 @@ export default async function OffsetsDbPage() {
 
       {/* Totals */}
       <section className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <TotalCard label="プロジェクト数" value={fmtNum(a.totals.projects)} unit="projects" />
+        <TotalCard label="プロジェクト数" value={fmtNum(a.totals.projects)} unit="件" />
         <TotalCard
           label="累計発行"
           value={fmtMt(a.totals.total_issued)}
-          unit="tCO2e issued"
+          unit="tCO2e 発行"
           accent
         />
         <TotalCard
           label="累計償却"
           value={fmtMt(a.totals.total_retired)}
-          unit="tCO2e retired"
+          unit="tCO2e 償却"
         />
         <TotalCard
           label="取引履歴"
           value={fmtNum(a.totals.credits_transactions)}
-          unit="transactions"
+          unit="件"
         />
       </section>
 
@@ -164,8 +168,8 @@ export default async function OffsetsDbPage() {
               .filter((x): x is NonNullable<typeof x> => x !== null)}
             sizeScale={1.0}
             legend={[
-              { key: "Top", label: "Top (>1,000 件)", color: "#a855f7" },
-              { key: "Mid", label: "Mid (200-1,000)", color: "#0ea5e9" },
+              { key: "Top", label: "上位 (1,000 件超)", color: "#a855f7" },
+              { key: "Mid", label: "中位 (200-1,000 件)", color: "#0ea5e9" },
               { key: "Other", label: "その他", color: "#94a3b8" },
             ]}
           />
@@ -198,7 +202,7 @@ export default async function OffsetsDbPage() {
           </p>
           <DonutChart
             segments={a.project_types_top20.slice(0, 5).map((t, i) => ({
-              label: t.label,
+              label: translateOffsetsProjectType(t.label),
               value: t.count,
               color: PROJECT_TYPE_COLORS[i] ?? "#94a3b8",
             }))}
@@ -220,10 +224,10 @@ export default async function OffsetsDbPage() {
           <table className="w-full text-sm">
             <thead className="bg-muted/40">
               <tr>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Registry</th>
-                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">Projects</th>
-                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">Issued (tCO2e)</th>
-                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">Retired (tCO2e)</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">レジストリ</th>
+                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">案件数</th>
+                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">発行 (tCO2e)</th>
+                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">償却 (tCO2e)</th>
                 <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">分布</th>
               </tr>
             </thead>
@@ -290,7 +294,7 @@ export default async function OffsetsDbPage() {
                 return (
                   <tr key={r.category} className="border-t border-border first:border-t-0">
                     <td className="px-4 py-2 align-middle text-foreground text-[13px]">
-                      {r.category}
+                      {translateOffsetsCategory(r.category)}
                     </td>
                     <td className="px-4 py-2 text-right metric-number text-foreground w-[80px]">
                       {fmtNum(r.projects)}
@@ -313,7 +317,7 @@ export default async function OffsetsDbPage() {
         <Card className="overflow-hidden p-0">
           <div className="px-4 py-2.5 border-b border-border bg-muted/40 flex items-center justify-between">
             <h2 className="label-mono text-foreground">プロジェクト所在国 (Top 15)</h2>
-            <span className="label-mono text-muted-foreground">{a.totals.countries} countries total</span>
+            <span className="label-mono text-muted-foreground">全 {a.totals.countries} か国</span>
           </div>
           <table className="w-full text-sm">
             <tbody>
@@ -322,7 +326,7 @@ export default async function OffsetsDbPage() {
                 return (
                   <tr key={r.label} className="border-t border-border first:border-t-0">
                     <td className="px-4 py-2 align-middle text-foreground text-[13px]">
-                      {r.label}
+                      {countryNameJa(r.label)}
                     </td>
                     <td className="px-4 py-2 text-right metric-number text-foreground w-[80px]">
                       {fmtNum(r.projects)}
@@ -364,8 +368,11 @@ export default async function OffsetsDbPage() {
               <div
                 key={t.label}
                 className="flex items-center justify-between px-3 py-2 rounded border border-border bg-card"
+                title={t.label}
               >
-                <span className="text-sm text-foreground truncate">{t.label}</span>
+                <span className="text-sm text-foreground truncate">
+                  {translateOffsetsProjectType(t.label)}
+                </span>
                 <span className="metric-number text-xs text-muted-foreground shrink-0">
                   {fmtNum(t.count)}
                 </span>
@@ -477,20 +484,28 @@ function YearlyFlowChart({
 }: {
   years: { year: number; issued: number; retired: number }[];
 }) {
+  if (years.length === 0) {
+    return (
+      <div className="p-4 text-sm text-muted-foreground">
+        年別データがありません
+      </div>
+    );
+  }
   const max = Math.max(...years.flatMap((y) => [y.issued, y.retired]));
+  const fmtM = (n: number) => `${(n / 1e6).toFixed(1)}M`;
   return (
     <div className="p-4">
-      <div className="flex items-end gap-1 h-[180px]">
+      <div className="flex items-stretch gap-1 h-[200px]">
         {years.map((y) => {
-          const issuedH = (y.issued / max) * 100;
-          const retiredH = (y.retired / max) * 100;
+          const issuedH = max > 0 ? (y.issued / max) * 100 : 0;
+          const retiredH = max > 0 ? (y.retired / max) * 100 : 0;
           return (
             <div
               key={y.year}
-              className="flex flex-col items-center gap-0.5 flex-1 min-w-0 group"
-              title={`${y.year}: issued ${(y.issued / 1e6).toFixed(1)}M, retired ${(y.retired / 1e6).toFixed(1)}M`}
+              className="flex flex-col flex-1 min-w-0 group"
+              title={`${y.year}: issued ${fmtM(y.issued)} / retired ${fmtM(y.retired)}`}
             >
-              <div className="flex items-end gap-px h-full w-full justify-center">
+              <div className="flex-1 flex items-end justify-center gap-px w-full min-h-0">
                 <div
                   className="w-2.5 bg-accent/70 rounded-t-sm transition-all group-hover:bg-accent"
                   style={{ height: `${issuedH}%` }}
@@ -500,7 +515,7 @@ function YearlyFlowChart({
                   style={{ height: `${retiredH}%` }}
                 />
               </div>
-              <span className="metric-number text-[9px] text-muted-foreground mt-1">
+              <span className="metric-number text-[9px] text-muted-foreground mt-1 text-center">
                 {y.year}
               </span>
             </div>
@@ -510,11 +525,14 @@ function YearlyFlowChart({
       <div className="flex items-center gap-4 mt-3 label-mono text-muted-foreground">
         <span className="inline-flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 bg-accent/70 rounded-sm" />
-          Issued
+          発行 (Issued)
         </span>
         <span className="inline-flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 bg-muted-foreground/40 rounded-sm" />
-          Retired
+          償却 (Retired)
+        </span>
+        <span className="ml-auto metric-number text-[10.5px]">
+          最大値 {fmtM(max)} tCO2e
         </span>
       </div>
     </div>

@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import type { CooperativeAgreement } from "@/lib/types";
+import { translateStatus } from "@/lib/data/atlas-i18n";
+import { countryNameJa } from "@/lib/data/country-geo";
 
 type Props = {
   agreements: CooperativeAgreement[];
@@ -84,7 +86,7 @@ export function CooperativeTable({ agreements }: Props) {
           <Input
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Buyer / Seller / Notes で絞り込み..."
+            placeholder="Buyer / Seller / 備考 で絞り込み..."
             className="h-9 pl-8 text-sm"
           />
         </div>
@@ -92,13 +94,15 @@ export function CooperativeTable({ agreements }: Props) {
           <FilterDropdown
             label="Buyer"
             options={allBuyers}
+            translate={countryNameJa}
             active={buyerFilter}
             onToggle={(v) => toggle(setBuyerFilter, v)}
             onClear={() => setBuyerFilter(new Set())}
           />
           <FilterDropdown
-            label="Status"
+            label="ステータス"
             options={allStatuses}
+            translate={translateStatus}
             active={statusFilter}
             onToggle={(v) => toggle(setStatusFilter, v)}
             onClear={() => setStatusFilter(new Set())}
@@ -120,11 +124,11 @@ export function CooperativeTable({ agreements }: Props) {
           <table className="w-full text-sm">
             <thead className="bg-muted/40">
               <tr>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px]">Buyer</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px]">Seller</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Year</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[180px]">Status</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">Notes</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px]">Buyer (買い手)</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px]">Seller (売り手)</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">締結年</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[180px]">ステータス</th>
+                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">備考</th>
               </tr>
             </thead>
             <tbody>
@@ -141,10 +145,10 @@ export function CooperativeTable({ agreements }: Props) {
                     className="border-t border-border hover:bg-muted/30 transition-colors"
                   >
                     <td className="px-4 py-2.5 align-top text-foreground font-medium text-[13px]">
-                      {a.buyer}
+                      {countryNameJa(a.buyer)}
                     </td>
                     <td className="px-4 py-2.5 align-top text-foreground/85 text-[13px]">
-                      {a.seller}
+                      {countryNameJa(a.seller)}
                     </td>
                     <td className="px-4 py-2.5 align-top metric-number text-[13px] text-foreground">
                       {a.year_of_agreement}
@@ -157,7 +161,7 @@ export function CooperativeTable({ agreements }: Props) {
                           "text-muted-foreground border-border"
                         }`}
                       >
-                        {a.status}
+                        {translateStatus(a.status)}
                       </Badge>
                     </td>
                     <td className="px-4 py-2.5 align-top text-foreground/75 text-[12.5px] leading-relaxed">
@@ -180,13 +184,16 @@ function FilterDropdown({
   active,
   onToggle,
   onClear,
+  translate,
 }: {
   label: string;
   options: string[];
   active: Set<string>;
   onToggle: (v: string) => void;
   onClear: () => void;
+  translate?: (s: string) => string;
 }) {
+  const display = (s: string) => (translate ? translate(s) : s);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -200,8 +207,8 @@ function FilterDropdown({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="max-w-[280px] max-h-[360px] overflow-y-auto">
-        <DropdownMenuLabel className="font-mono text-[10.5px] uppercase tracking-wider text-muted-foreground">
-          Filter by {label}
+        <DropdownMenuLabel className="font-mono text-[10.5px] tracking-wider text-muted-foreground">
+          {label} で絞り込み
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         {options.map((opt) => (
@@ -214,7 +221,7 @@ function FilterDropdown({
             }}
             className="cursor-pointer text-xs"
           >
-            {opt}
+            {display(opt)}
           </DropdownMenuCheckboxItem>
         ))}
         <DropdownMenuSeparator />

@@ -29,6 +29,12 @@ import {
   HorizontalBarChart,
   StackedStatusBar,
 } from "@/components/atlas/atlas-charts";
+import { countryNameJa } from "@/lib/data/country-geo";
+import {
+  translateInstrumentType,
+  translateStatus,
+  translateRegion,
+} from "@/lib/data/atlas-i18n";
 
 export const metadata: Metadata = {
   title: "Atlas (世界マップ)",
@@ -136,31 +142,31 @@ export default async function AtlasIndexPage() {
       {/* === キーメトリクス === */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
         <MetricBlock
-          label="Carbon Pricing 制度"
+          label="カーボンプライシング制度"
           value={instruments.length}
-          unit="instruments"
-          sub={`${countBy(instruments, (i) => i.status).get("Implemented") ?? 0} 実装済`}
+          unit="制度"
+          sub={`${countBy(instruments, (i) => i.status).get("Implemented") ?? 0} 件 実施中`}
           icon={<TrendingUp className="h-4 w-4" />}
         />
         <MetricBlock
-          label="Crediting Mechanisms"
+          label="クレジットメカニズム"
           value={mechanisms.length}
-          unit="mechanisms"
-          sub={`${countBy(mechanisms, (m) => m.status).get("Implemented") ?? 0} 実装済`}
+          unit="メカニズム"
+          sub={`${countBy(mechanisms, (m) => m.status).get("Implemented") ?? 0} 件 実施中`}
           icon={<Stamp className="h-4 w-4" />}
         />
         <MetricBlock
           label="二国間協定"
           value={cooperative.length}
-          unit="agreements"
-          sub="Article 6.2 (Paris)"
+          unit="協定"
+          sub="パリ協定 6.2 条"
           icon={<Handshake className="h-4 w-4" />}
         />
         <MetricBlock
-          label="関連国数 (uniq)"
+          label="関連国数 (重複なし)"
           value={allCountries.size}
-          unit="countries"
-          sub={`${offsetsAgg.totals.projects.toLocaleString()} projects in OffsetsDB`}
+          unit="か国"
+          sub={`OffsetsDB プロジェクト ${offsetsAgg.totals.projects.toLocaleString()} 件`}
           icon={<MapIcon className="h-4 w-4" />}
         />
       </div>
@@ -173,28 +179,28 @@ export default async function AtlasIndexPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <Card className="p-5">
             <p className="label-mono text-muted-foreground mb-3">
-              タイプ別 (Carbon tax vs ETS)
+              種別 (炭素税 vs 排出量取引)
             </p>
             <DonutChart
-              segments={mapToSegments(typeCounts, TYPE_COLORS)}
+              segments={mapToSegments(typeCounts, TYPE_COLORS, translateInstrumentType)}
               total={instruments.length}
               centerLabel={instruments.length.toString()}
-              centerSubLabel="instruments"
+              centerSubLabel="制度"
             />
           </Card>
           <Card className="p-5">
             <p className="label-mono text-muted-foreground mb-3">
-              ステータス別 (Implemented / Under consideration / Under development / Abolished)
+              ステータス別 (実施中 / 検討中 / 準備中 / 廃止)
             </p>
             <StackedStatusBar
-              segments={mapToSegments(statusCounts, STATUS_COLORS)}
+              segments={mapToSegments(statusCounts, STATUS_COLORS, translateStatus)}
               total={instruments.length}
             />
             <p className="text-[11px] text-muted-foreground mt-3 leading-relaxed">
               世界で <strong className="text-foreground">
                 {(((statusCounts.get("Implemented") ?? 0) / instruments.length) * 100).toFixed(0)}%
               </strong>{" "}
-              の炭素価格制度が既に稼働中。「Under consideration / development」が併せて{" "}
+              の炭素価格制度が既に稼働中。検討中・準備中を併せて{" "}
               <strong className="text-foreground">
                 {(statusCounts.get("Under consideration") ?? 0) +
                   (statusCounts.get("Under development") ?? 0)}
@@ -213,11 +219,11 @@ export default async function AtlasIndexPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <Card className="p-5">
             <p className="label-mono text-muted-foreground mb-3">
-              Top 10 Jurisdictions (instrument 件数)
+              管轄別 Top 10 (制度件数)
             </p>
             <HorizontalBarChart
               items={topJurisdictions.map(([label, value]) => ({
-                label,
+                label: countryNameJa(label),
                 value,
               }))}
               barColor="#0ea5e9"
@@ -225,11 +231,11 @@ export default async function AtlasIndexPage() {
           </Card>
           <Card className="p-5">
             <p className="label-mono text-muted-foreground mb-3">
-              Crediting Mechanisms — 地域別件数
+              クレジットメカニズム — 地域別件数
             </p>
             <HorizontalBarChart
               items={regionList.map(([label, value]) => ({
-                label,
+                label: translateRegion(label),
                 value,
               }))}
               barColor="#10b981"
@@ -241,19 +247,19 @@ export default async function AtlasIndexPage() {
       {/* === Charts row 3: Cooperative buyers === */}
       <section className="mb-8">
         <h2 className="label-mono text-foreground mb-3">
-          Article 6.2 二国間協定 — 主要 Buyer
+          パリ協定 6.2 条 二国間協定 — 主要 Buyer (買い手)
         </h2>
         <Card className="p-5">
           <div className="flex flex-col gap-3">
             <p className="text-[11.5px] text-muted-foreground leading-relaxed">
               二国間協定は <strong className="text-foreground">Buyer 5 か国</strong>
-              {" "}に集中。Singapore (22) と Switzerland (14) が累計の半数以上。
-              Korea / Norway / Sweden が後続。日本は JCM (二国間クレジット制度) を
-              UNFCCC 体系外で運営してきた経緯があり、Article 6.2 に直接登場する協定数は限定的。
+              {" "}に集中。シンガポール (22) とスイス (14) が累計の半数以上。
+              韓国・ノルウェー・スウェーデンが後続。日本は JCM (二国間クレジット制度) を
+              UNFCCC 体系外で運営してきた経緯があり、6.2 条に直接登場する協定数は限定的。
             </p>
             <HorizontalBarChart
               items={topBuyers.map(([label, value]) => ({
-                label,
+                label: countryNameJa(label),
                 value,
                 sublabel: `${((value / cooperative.length) * 100).toFixed(0)}%`,
               }))}
@@ -272,33 +278,33 @@ export default async function AtlasIndexPage() {
           <DatasetCard
             href="/atlas/instruments"
             icon={<TrendingUp className="h-4 w-4" />}
-            label="Carbon Pricing 制度"
+            label="カーボンプライシング制度"
             count={instruments.length}
-            unit="instruments"
+            unit="制度"
             tagline="139 件の世界全 ETS + 炭素税。価格 / セクター / オフセット適格"
           />
           <DatasetCard
             href="/atlas/mechanisms"
             icon={<Stamp className="h-4 w-4" />}
-            label="Crediting Mechanisms"
+            label="クレジットメカニズム"
             count={mechanisms.length}
-            unit="mechanisms"
+            unit="メカニズム"
             tagline="Verra・Gold Standard・地域レジストリ。発行 / 償却 / 国"
           />
           <DatasetCard
             href="/atlas/cooperative"
             icon={<Handshake className="h-4 w-4" />}
-            label="Cooperative Approaches"
+            label="二国間協定 (6.2 条)"
             count={cooperative.length}
-            unit="agreements"
-            tagline="Article 6.2 二国間協定。Buyer / Seller / 締結年"
+            unit="協定"
+            tagline="パリ協定 6.2 条 二国間協定。Buyer / Seller / 締結年"
           />
           <DatasetCard
             href="/atlas/offsets-db"
             icon={<Database className="h-4 w-4" />}
             label="OffsetsDB (CarbonPlan)"
             count={offsetsAgg.totals.projects}
-            unit="projects"
+            unit="件"
             tagline="7 レジストリ集約。発行 / 償却 / 詳細プロジェクト一覧"
           />
         </div>
@@ -322,12 +328,13 @@ function countBy<T, K>(items: T[], key: (x: T) => K): Map<K, number> {
 
 function mapToSegments(
   counts: Map<string, number>,
-  colorMap: Record<string, string>
+  colorMap: Record<string, string>,
+  translate?: (s: string) => string
 ): Array<{ label: string; value: number; color: string }> {
   return [...counts.entries()]
     .sort((a, b) => b[1] - a[1])
     .map(([label, value]) => ({
-      label,
+      label: translate ? translate(label) : label,
       value,
       color: colorMap[label] ?? "#94a3b8",
     }));
