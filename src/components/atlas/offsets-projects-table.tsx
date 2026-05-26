@@ -221,9 +221,12 @@ export function OffsetsProjectsTable({ projects, registryLinkage }: Props) {
                   return (
                     <tr key={p.project_id} className="border-t border-border hover:bg-muted/30 transition-colors">
                       <td className="px-4 py-2 align-top">
-                        <p className="font-medium text-foreground text-[13px] line-clamp-2">
+                        <Link
+                          href={`/atlas/offsets-db/projects/${p.project_id}`}
+                          className="font-medium text-foreground text-[13px] line-clamp-2 hover:text-accent transition-colors"
+                        >
                           {p.name}
-                        </p>
+                        </Link>
                         <p className="font-mono text-[10.5px] text-muted-foreground mt-0.5">
                           {p.project_id}
                           {p.proponent && (

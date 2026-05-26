@@ -8,6 +8,9 @@ S3 から最新 zip をダウンロードして、Carbomir 向けに以下を生
 
 credits.csv (65MB) はバンドルしない。aggregates 計算のみ使う。
 
+加えて NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY が
+設定されている場合は offsets_db_projects テーブルへ upsert する。
+
 実行:
   python3 scripts/sync-offsets-db.py
 """
@@ -16,6 +19,7 @@ import io
 import json
 import os
 import sys
+import urllib.error
 import urllib.request
 import zipfile
 from collections import defaultdict
@@ -167,7 +171,70 @@ def main():
     proj_size = (OUT_DIR / "projects.json").stat().st_size
     print(f"  aggregates.json: {agg_size / 1024:.1f} KB", file=sys.stderr)
     print(f"  projects.json: {proj_size / 1024 / 1024:.1f} MB", file=sys.stderr)
+
+    # === Supabase upsert (env が揃っている場合のみ) ===
+    sb_url = (
+        os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
+        or os.environ.get("SUPABASE_URL")
+    )
+    sb_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+    if sb_url and sb_key:
+        rows = [
+            {**t, "source_generated_at": meta.get("generated_at")}
+            for t in trimmed
+        ]
+        upsert_to_supabase(rows, sb_url.rstrip("/"), sb_key)
+    else:
+        print(
+            "  Supabase env (NEXT_PUBLIC_SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY) "
+            "未設定 — Supabase upsert をスキップ",
+            file=sys.stderr,
+        )
+
     print(f"Done. Output: {OUT_DIR}", file=sys.stderr)
+
+
+def upsert_to_supabase(rows: list[dict], supabase_url: str, service_key: str) -> None:
+    """Supabase PostgREST 経由で offsets_db_projects に bulk upsert する.
+
+    on_conflict=project_id + Prefer: resolution=merge-duplicates で
+    Postgres ON CONFLICT DO UPDATE 相当を一発で行う.
+    """
+    endpoint = f"{supabase_url}/rest/v1/offsets_db_projects?on_conflict=project_id"
+    headers = {
+        "apikey": service_key,
+        "Authorization": f"Bearer {service_key}",
+        "Content-Type": "application/json",
+        "Prefer": "resolution=merge-duplicates,return=minimal",
+    }
+    batch_size = 1000
+    total = len(rows)
+    print(
+        f"  → Supabase upsert: {total} rows, batch={batch_size}",
+        file=sys.stderr,
+    )
+
+    for i in range(0, total, batch_size):
+        batch = rows[i : i + batch_size]
+        body = json.dumps(batch).encode("utf-8")
+        req = urllib.request.Request(
+            endpoint, data=body, headers=headers, method="POST"
+        )
+        try:
+            with urllib.request.urlopen(req) as resp:
+                resp.read()  # drain
+        except urllib.error.HTTPError as e:
+            err_body = e.read().decode("utf-8", errors="replace")
+            print(
+                f"  ! upsert failed at batch starting {i}: "
+                f"HTTP {e.code} — {err_body[:500]}",
+                file=sys.stderr,
+            )
+            raise
+        done = min(i + batch_size, total)
+        print(f"    upserted {done} / {total}", file=sys.stderr)
+
+    print(f"  Supabase upsert 完了 ({total} rows)", file=sys.stderr)
 
 
 if __name__ == "__main__":

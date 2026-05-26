@@ -182,3 +182,9 @@ export function getOffsetsDbAggregates(): OffsetsDbAggregates {
 export function listOffsetsDbProjects(): OffsetsDbProject[] {
   return offsetsDbProjectsJson as unknown as OffsetsDbProject[];
 }
+
+export function findOffsetsDbProject(
+  projectId: string
+): OffsetsDbProject | undefined {
+  return listOffsetsDbProjects().find((p) => p.project_id === projectId);
+}

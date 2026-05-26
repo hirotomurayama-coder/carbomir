@@ -39,6 +39,7 @@ import {
   listCooperativeAgreements as seedListCooperativeAgreements,
   getOffsetsDbAggregates as seedGetOffsetsDbAggregates,
   listOffsetsDbProjects as seedListOffsetsDbProjects,
+  findOffsetsDbProject as seedFindOffsetsDbProject,
 } from "@/lib/data/atlas";
 import {
   findCaseStudyBySlug as seedFindCaseStudyBySlug,
@@ -298,7 +299,86 @@ export async function getOffsetsDbAggregates() {
 }
 
 export async function listOffsetsDbProjects() {
-  return seedListOffsetsDbProjects();
+  const sb = getSupabaseClient();
+  if (!sb) return seedListOffsetsDbProjects();
+
+  // 11,640 件 ≦ デフォルトの PostgREST limit (1000) を超えるので
+  // batch (range) で取得する。Supabase の `.range()` は inclusive。
+  const BATCH = 1000;
+  const out: OffsetsDbProjectRow[] = [];
+  let from = 0;
+  while (true) {
+    const { data, error } = await sb
+      .from("offsets_db_projects")
+      .select(
+        "project_id, name, registry, country, category, project_type, status, is_compliance, issued, retired, proponent, project_url, first_issuance_at"
+      )
+      .order("issued", { ascending: false })
+      .range(from, from + BATCH - 1);
+    if (error) {
+      console.error("[queries.listOffsetsDbProjects]", error);
+      return seedListOffsetsDbProjects();
+    }
+    const rows = (data as OffsetsDbProjectRow[]) ?? [];
+    out.push(...rows);
+    if (rows.length < BATCH) break;
+    from += BATCH;
+  }
+  return out.map(rowToOffsetsDbProject);
+}
+
+export async function findOffsetsDbProject(projectId: string) {
+  const sb = getSupabaseClient();
+  if (!sb) return seedFindOffsetsDbProject(projectId);
+
+  const { data, error } = await sb
+    .from("offsets_db_projects")
+    .select(
+      "project_id, name, registry, country, category, project_type, status, is_compliance, issued, retired, proponent, project_url, first_issuance_at"
+    )
+    .eq("project_id", projectId)
+    .maybeSingle();
+
+  if (error) {
+    console.error("[queries.findOffsetsDbProject]", error);
+    return seedFindOffsetsDbProject(projectId);
+  }
+  if (!data) return undefined;
+  return rowToOffsetsDbProject(data as OffsetsDbProjectRow);
+}
+
+type OffsetsDbProjectRow = {
+  project_id: string;
+  name: string;
+  registry: string;
+  country: string | null;
+  category: string | null;
+  project_type: string | null;
+  status: string | null;
+  is_compliance: boolean;
+  issued: number | string; // numeric は string で返ることがある
+  retired: number | string;
+  proponent: string | null;
+  project_url: string | null;
+  first_issuance_at: string | null;
+};
+
+function rowToOffsetsDbProject(row: OffsetsDbProjectRow) {
+  return {
+    project_id: row.project_id,
+    name: row.name,
+    registry: row.registry,
+    country: row.country ?? undefined,
+    category: row.category ?? undefined,
+    project_type: row.project_type ?? undefined,
+    status: row.status ?? undefined,
+    is_compliance: row.is_compliance,
+    issued: typeof row.issued === "string" ? Number(row.issued) : row.issued,
+    retired: typeof row.retired === "string" ? Number(row.retired) : row.retired,
+    proponent: row.proponent ?? undefined,
+    project_url: row.project_url ?? undefined,
+    first_issuance_at: row.first_issuance_at ?? undefined,
+  };
 }
 
 /* ============================================================
