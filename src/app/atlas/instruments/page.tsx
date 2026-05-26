@@ -5,6 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { listInstruments } from "@/lib/data/queries";
 import { getInstrumentLinkedEntity } from "@/lib/data/atlas";
 import { InstrumentsTable } from "@/components/atlas/instruments-table";
+import { WorldBubbleMap } from "@/components/atlas/world-bubble-map";
+import { jurisdictionToIso3 } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -70,6 +72,28 @@ export default async function InstrumentsPage() {
         </p>
       </header>
 
+      {/* === 世界マップ === */}
+      <section className="mb-8">
+        <div className="mb-3 flex items-baseline justify-between gap-3 flex-wrap">
+          <h2 className="label-mono text-foreground">地理分布マップ</h2>
+          <span className="label-mono text-muted-foreground text-[10.5px]">
+            国別の炭素価格制度数を可視化
+          </span>
+        </div>
+        <Card className="p-4">
+          <WorldBubbleMap
+            data={buildInstrumentMapData(instruments)}
+            sizeScale={3}
+            legend={[
+              { key: "Carbon tax", label: "Carbon tax 主体", color: "#10b981" },
+              { key: "ETS", label: "ETS 主体", color: "#0ea5e9" },
+              { key: "Both", label: "両方併用", color: "#a855f7" },
+              { key: "Other", label: "未分類", color: "#94a3b8" },
+            ]}
+          />
+        </Card>
+      </section>
+
       <InstrumentsTable instruments={instruments} linkageMap={linkageMap} />
 
       <Card className="mt-6">
@@ -86,4 +110,48 @@ export default async function InstrumentsPage() {
       </Card>
     </div>
   );
+}
+
+/**
+ * Instruments を ISO3 ごとに集約 + Carbon tax / ETS / Both を判定.
+ * Implemented + Under development + Under consideration 全て含むが、
+ * 主に Implemented 件数を主体に primaryType を決める.
+ */
+function buildInstrumentMapData(
+  instruments: Awaited<ReturnType<typeof listInstruments>>
+) {
+  type Agg = {
+    iso3: string;
+    count: number;
+    taxCount: number;
+    etsCount: number;
+  };
+  const byCountry = new Map<string, Agg>();
+  for (const i of instruments) {
+    const iso3 = jurisdictionToIso3(i.jurisdiction);
+    if (!iso3) continue;
+    if (i.status !== "Implemented") continue; // 視覚的なノイズ回避: 実装済のみ
+    const agg = byCountry.get(iso3) ?? {
+      iso3,
+      count: 0,
+      taxCount: 0,
+      etsCount: 0,
+    };
+    agg.count++;
+    if (i.type === "Carbon tax") agg.taxCount++;
+    if (i.type === "ETS") agg.etsCount++;
+    byCountry.set(iso3, agg);
+  }
+  return [...byCountry.values()].map((a) => {
+    let primaryType = "Other";
+    if (a.taxCount > 0 && a.etsCount > 0) primaryType = "Both";
+    else if (a.taxCount > 0) primaryType = "Carbon tax";
+    else if (a.etsCount > 0) primaryType = "ETS";
+    return {
+      iso3: a.iso3,
+      count: a.count,
+      primaryType,
+      label: "実装制度",
+    };
+  });
 }

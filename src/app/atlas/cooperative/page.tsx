@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { listCooperativeAgreements } from "@/lib/data/queries";
 import { CooperativeTable } from "@/components/atlas/cooperative-table";
+import { CooperativeNetwork } from "@/components/atlas/cooperative-network";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -61,6 +62,17 @@ export default async function CooperativePage() {
           </a>
         </p>
       </header>
+
+      {/* === ネットワーク図 === */}
+      <section className="mb-8">
+        <div className="mb-3 flex items-baseline justify-between gap-3 flex-wrap">
+          <h2 className="label-mono text-foreground">Buyer ↔ Seller 関係図</h2>
+          <span className="label-mono text-muted-foreground text-[10.5px]">
+            線の濃さ = 締結ステータス、色 = Buyer
+          </span>
+        </div>
+        <CooperativeNetwork agreements={agreements} />
+      </section>
 
       <CooperativeTable agreements={agreements} />
 

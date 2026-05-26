@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getOffsetsDbAggregates } from "@/lib/data/queries";
 import { getOffsetsRegistryLinkedEntity } from "@/lib/data/atlas";
+import { WorldBubbleMap } from "@/components/atlas/world-bubble-map";
+import { DonutChart } from "@/components/atlas/atlas-charts";
+import { jurisdictionToIso3 } from "@/lib/data/country-geo";
 import {
   OFFSETS_DB_SOURCE_LABEL,
   OFFSETS_DB_SOURCE_URL,
@@ -34,6 +37,24 @@ const REGISTRY_LABEL: Record<string, string> = {
   isometric: "Isometric",
   "art-trees": "ART TREES",
 };
+
+const REGISTRY_COLORS = [
+  "#0ea5e9", // sky
+  "#10b981", // emerald
+  "#a855f7", // violet
+  "#f59e0b", // amber
+  "#ef4444", // red
+  "#14b8a6", // teal
+  "#ec4899", // pink
+];
+
+const PROJECT_TYPE_COLORS = [
+  "#0ea5e9",
+  "#10b981",
+  "#a855f7",
+  "#f59e0b",
+  "#ef4444",
+];
 
 export default async function OffsetsDbPage() {
   const a = await getOffsetsDbAggregates();
@@ -117,6 +138,79 @@ export default async function OffsetsDbPage() {
           value={fmtNum(a.totals.credits_transactions)}
           unit="transactions"
         />
+      </section>
+
+      {/* === World bubble map: project distribution === */}
+      <section className="mb-8">
+        <div className="mb-3 flex items-baseline justify-between gap-3 flex-wrap">
+          <h2 className="label-mono text-foreground">プロジェクト所在 — 世界マップ</h2>
+          <span className="label-mono text-muted-foreground text-[10.5px]">
+            円サイズ = プロジェクト件数 (Top 30 国)
+          </span>
+        </div>
+        <Card className="p-4">
+          <WorldBubbleMap
+            data={a.by_country_top30
+              .map((r) => {
+                const iso3 = jurisdictionToIso3(r.label);
+                if (!iso3) return null;
+                return {
+                  iso3,
+                  count: r.projects,
+                  primaryType: r.projects > 1000 ? "Top" : r.projects > 200 ? "Mid" : "Other",
+                  label: `件 (${(r.issued / 1e6).toFixed(1)}M tCO2e 発行)`,
+                };
+              })
+              .filter((x): x is NonNullable<typeof x> => x !== null)}
+            sizeScale={1.0}
+            legend={[
+              { key: "Top", label: "Top (>1,000 件)", color: "#a855f7" },
+              { key: "Mid", label: "Mid (200-1,000)", color: "#0ea5e9" },
+              { key: "Other", label: "その他", color: "#94a3b8" },
+            ]}
+          />
+        </Card>
+      </section>
+
+      {/* === Project type donut + Status donut === */}
+      <section className="mb-8 grid gap-4 lg:grid-cols-2">
+        <Card className="p-5">
+          <p className="label-mono text-muted-foreground mb-3">
+            レジストリ別プロジェクト数
+          </p>
+          <DonutChart
+            segments={a.by_registry
+              .sort((x, y) => y.projects - x.projects)
+              .slice(0, 7)
+              .map((r, i) => ({
+                label: REGISTRY_LABEL[r.registry] ?? r.registry,
+                value: r.projects,
+                color: REGISTRY_COLORS[i] ?? "#94a3b8",
+              }))}
+            total={a.totals.projects}
+            centerLabel={fmtNum(a.totals.projects)}
+            centerSubLabel="projects"
+          />
+        </Card>
+        <Card className="p-5">
+          <p className="label-mono text-muted-foreground mb-3">
+            プロジェクトタイプ Top 5
+          </p>
+          <DonutChart
+            segments={a.project_types_top20.slice(0, 5).map((t, i) => ({
+              label: t.label,
+              value: t.count,
+              color: PROJECT_TYPE_COLORS[i] ?? "#94a3b8",
+            }))}
+            total={a.project_types_top20
+              .slice(0, 5)
+              .reduce((s, t) => s + t.count, 0)}
+            centerLabel={fmtNum(
+              a.project_types_top20.slice(0, 5).reduce((s, t) => s + t.count, 0)
+            )}
+            centerSubLabel="top 5 合計"
+          />
+        </Card>
       </section>
 
       {/* By registry */}

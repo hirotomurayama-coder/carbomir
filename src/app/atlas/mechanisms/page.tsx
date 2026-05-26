@@ -4,6 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { listMechanisms } from "@/lib/data/queries";
 import { MechanismsTable } from "@/components/atlas/mechanisms-table";
+import { WorldBubbleMap } from "@/components/atlas/world-bubble-map";
+import { COUNTRY_GEO } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -67,6 +69,28 @@ export default async function MechanismsPage() {
         </p>
       </header>
 
+      {/* === 世界マップ === */}
+      <section className="mb-8">
+        <div className="mb-3 flex items-baseline justify-between gap-3 flex-wrap">
+          <h2 className="label-mono text-foreground">地理分布マップ</h2>
+          <span className="label-mono text-muted-foreground text-[10.5px]">
+            国別に発行案件数を色 / バブルサイズで可視化
+          </span>
+        </div>
+        <Card className="p-4">
+          <WorldBubbleMap
+            data={buildMechanismsMapData(mechanisms)}
+            sizeScale={2.2}
+            legend={[
+              { key: "Governmental", label: "政府運営", color: "#0ea5e9" },
+              { key: "Independent", label: "民間 / 独立", color: "#10b981" },
+              { key: "International", label: "国際機関", color: "#a855f7" },
+              { key: "Other", label: "その他 / 混合", color: "#94a3b8" },
+            ]}
+          />
+        </Card>
+      </section>
+
       <MechanismsTable mechanisms={mechanisms} />
 
       <Card className="mt-6">
@@ -83,4 +107,58 @@ export default async function MechanismsPage() {
       </Card>
     </div>
   );
+}
+
+/**
+ * Mechanisms を ISO3 別に集約.
+ * countries_iso3 配列を持つので素直に展開.
+ * primaryType = administration (Governmental / Independent / International).
+ */
+function buildMechanismsMapData(
+  mechanisms: Awaited<ReturnType<typeof listMechanisms>>
+) {
+  type Agg = {
+    iso3: string;
+    count: number;
+    govCount: number;
+    indCount: number;
+    intlCount: number;
+  };
+  const byCountry = new Map<string, Agg>();
+  for (const m of mechanisms) {
+    if (m.status !== "Implemented") continue;
+    const isos = m.countries_iso3 ?? [];
+    if (isos.length === 0) continue;
+    for (const iso3 of isos) {
+      if (!COUNTRY_GEO[iso3]) continue;
+      const agg = byCountry.get(iso3) ?? {
+        iso3,
+        count: 0,
+        govCount: 0,
+        indCount: 0,
+        intlCount: 0,
+      };
+      agg.count++;
+      const adm = m.administration ?? "";
+      if (adm === "Governmental") agg.govCount++;
+      else if (adm === "Independent") agg.indCount++;
+      else if (adm === "International") agg.intlCount++;
+      byCountry.set(iso3, agg);
+    }
+  }
+  return [...byCountry.values()].map((a) => {
+    let primaryType = "Other";
+    const max = Math.max(a.govCount, a.indCount, a.intlCount);
+    if (max > 0) {
+      if (a.govCount === max) primaryType = "Governmental";
+      else if (a.indCount === max) primaryType = "Independent";
+      else if (a.intlCount === max) primaryType = "International";
+    }
+    return {
+      iso3: a.iso3,
+      count: a.count,
+      primaryType,
+      label: "案件",
+    };
+  });
 }
