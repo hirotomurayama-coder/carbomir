@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -279,4 +280,53 @@ html.dark {
   * {
     box-shadow: none !important;
   }
+}
+
+/* ============================================================
+   Leaflet overrides — Carbomir のダーク UI 統合用
+   ============================================================ */
+
+/* attribution の文字が小さく目立ちすぎるのを抑える */
+.leaflet-container .leaflet-control-attribution {
+  font-size: 9.5px;
+  background: rgba(255, 255, 255, 0.75);
+}
+.dark .leaflet-container .leaflet-control-attribution {
+  background: rgba(10, 22, 40, 0.7);
+  color: var(--muted-foreground);
+}
+.dark .leaflet-container .leaflet-control-attribution a {
+  color: var(--accent);
+}
+
+/* zoom コントロールをダークに */
+.dark .leaflet-bar a {
+  background: rgba(20, 32, 50, 0.95);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+.dark .leaflet-bar a:hover {
+  background: rgba(30, 45, 70, 1);
+}
+
+/* popup を Carbomir 風に */
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  font-family: inherit;
+}
+.dark .leaflet-popup-content-wrapper,
+.dark .leaflet-popup-tip {
+  background: rgba(15, 28, 48, 0.98);
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+.leaflet-popup-content {
+  margin: 10px 14px;
+}
+
+/* tooltip も同様 */
+.dark .leaflet-tooltip {
+  background: rgba(15, 28, 48, 0.95);
+  color: var(--foreground);
+  border-color: var(--border);
 }

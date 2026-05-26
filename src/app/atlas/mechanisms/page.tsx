@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { listMechanisms } from "@/lib/data/queries";
 import { MechanismsTable } from "@/components/atlas/mechanisms-table";
-import { WorldBubbleMap } from "@/components/atlas/world-bubble-map";
+import { WorldMapLeaflet } from "@/components/atlas/world-map-leaflet";
 import { COUNTRY_GEO } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 
@@ -78,7 +78,7 @@ export default async function MechanismsPage() {
           </span>
         </div>
         <Card className="p-4">
-          <WorldBubbleMap
+          <WorldMapLeaflet
             data={buildMechanismsMapData(mechanisms)}
             sizeScale={2.2}
             legend={[

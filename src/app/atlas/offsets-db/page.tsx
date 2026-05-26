@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { getOffsetsDbAggregates } from "@/lib/data/queries";
 import { getOffsetsRegistryLinkedEntity } from "@/lib/data/atlas";
-import { WorldBubbleMap } from "@/components/atlas/world-bubble-map";
+import { WorldMapLeaflet } from "@/components/atlas/world-map-leaflet";
 import { DonutChart } from "@/components/atlas/atlas-charts";
 import { jurisdictionToIso3 } from "@/lib/data/country-geo";
 import {
@@ -149,7 +149,7 @@ export default async function OffsetsDbPage() {
           </span>
         </div>
         <Card className="p-4">
-          <WorldBubbleMap
+          <WorldMapLeaflet
             data={a.by_country_top30
               .map((r) => {
                 const iso3 = jurisdictionToIso3(r.label);

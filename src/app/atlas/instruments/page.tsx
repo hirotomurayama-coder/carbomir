@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { listInstruments } from "@/lib/data/queries";
 import { getInstrumentLinkedEntity } from "@/lib/data/atlas";
 import { InstrumentsTable } from "@/components/atlas/instruments-table";
-import { WorldBubbleMap } from "@/components/atlas/world-bubble-map";
+import { WorldMapLeaflet } from "@/components/atlas/world-map-leaflet";
 import { jurisdictionToIso3 } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 
@@ -81,7 +81,7 @@ export default async function InstrumentsPage() {
           </span>
         </div>
         <Card className="p-4">
-          <WorldBubbleMap
+          <WorldMapLeaflet
             data={buildInstrumentMapData(instruments)}
             sizeScale={3}
             legend={[
