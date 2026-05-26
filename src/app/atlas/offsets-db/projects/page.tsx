@@ -1,12 +1,19 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Database, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { listOffsetsDbProjects } from "@/lib/data/queries";
+import {
+  listOffsetsDbProjectsFiltered,
+  getOffsetsDbFilterOptions,
+  getOffsetsDbAggregates,
+  type OffsetsDbProjectsQuery,
+  type OffsetsDbSortKey,
+} from "@/lib/data/queries";
 import { getOffsetsRegistryLinkedEntity } from "@/lib/data/atlas";
+import { OffsetsProjectsFilters } from "@/components/atlas/offsets-projects-filters";
 import { OffsetsProjectsTable } from "@/components/atlas/offsets-projects-table";
+import { OffsetsProjectsPagination } from "@/components/atlas/offsets-projects-pagination";
 import {
   OFFSETS_DB_SOURCE_LABEL,
   OFFSETS_DB_SOURCE_URL,
@@ -19,16 +26,60 @@ export const metadata: Metadata = {
     "CarbonPlan OffsetsDB が集約する 11,640 件のオフセットプロジェクト個別。Registry / Category / Country / Status でフィルタ可能。",
 };
 
-export default async function OffsetsProjectsPage() {
-  const projects = await listOffsetsDbProjects();
+const PAGE_SIZE = 50;
+const VALID_SORTS: OffsetsDbSortKey[] = ["issued", "retired", "name"];
 
-  // Registry → Carbomir entity slug の linkage map
+type Props = {
+  searchParams: Promise<{
+    q?: string;
+    registry?: string | string[];
+    category?: string | string[];
+    status?: string | string[];
+    onlyIssued?: string;
+    sort?: string;
+    page?: string;
+  }>;
+};
+
+function toArr(v: string | string[] | undefined): string[] | undefined {
+  if (v == null) return undefined;
+  const arr = Array.isArray(v) ? v : [v];
+  const trimmed = arr.map((s) => s.trim()).filter((s) => s.length > 0);
+  return trimmed.length > 0 ? trimmed : undefined;
+}
+
+export default async function OffsetsProjectsPage({ searchParams }: Props) {
+  const sp = await searchParams;
+  const sortKey = (
+    sp.sort && (VALID_SORTS as string[]).includes(sp.sort)
+      ? (sp.sort as OffsetsDbSortKey)
+      : "issued"
+  );
+  const page = Math.max(0, parseInt(sp.page ?? "0", 10) || 0);
+
+  const query: OffsetsDbProjectsQuery = {
+    query: sp.q?.trim() || undefined,
+    registries: toArr(sp.registry),
+    categories: toArr(sp.category),
+    statuses: toArr(sp.status),
+    onlyIssued: sp.onlyIssued === "1",
+    sortKey,
+    page,
+    pageSize: PAGE_SIZE,
+  };
+
+  const [{ rows, totalCount }, filterOptions, aggregates] = await Promise.all([
+    listOffsetsDbProjectsFiltered(query),
+    getOffsetsDbFilterOptions(),
+    getOffsetsDbAggregates(),
+  ]);
+  const totalProjects = aggregates.totals.projects;
+
+  // Registry → Carbomir entity の linkage map (option 全部分)
   const registryLinkage: Record<string, string> = {};
-  for (const p of projects) {
-    if (!registryLinkage[p.registry]) {
-      const slug = getOffsetsRegistryLinkedEntity(p.registry);
-      if (slug) registryLinkage[p.registry] = slug;
-    }
+  for (const reg of filterOptions.registries) {
+    const slug = getOffsetsRegistryLinkedEntity(reg);
+    if (slug) registryLinkage[reg] = slug;
   }
 
   return (
@@ -43,7 +94,7 @@ export default async function OffsetsProjectsPage() {
             Atlas / OffsetsDB / Projects
           </Badge>
           <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
-            {projects.length.toLocaleString()} projects
+            {totalProjects.toLocaleString()} projects
           </Badge>
           <Link
             href="/atlas/offsets-db"
@@ -57,8 +108,8 @@ export default async function OffsetsProjectsPage() {
         </h1>
         <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
           CarbonPlan OffsetsDB に収録されている全{" "}
-          {projects.length.toLocaleString()}{" "}
-          件のプロジェクト個別。各行のリンク (↗) は元のレジストリ公式ページへ。
+          {totalProjects.toLocaleString()} 件のプロジェクト個別。各行をクリックで詳細ページへ、
+          外部リンク (↗) は元のレジストリ公式ページへ。
         </p>
         <p className="label-mono text-muted-foreground mt-2">
           Source:{" "}
@@ -83,9 +134,22 @@ export default async function OffsetsProjectsPage() {
         </p>
       </header>
 
-      <Suspense fallback={null}>
-        <OffsetsProjectsTable projects={projects} registryLinkage={registryLinkage} />
-      </Suspense>
+      <div className="space-y-3">
+        <OffsetsProjectsFilters
+          initial={query}
+          filterOptions={filterOptions}
+          totalCount={totalCount}
+          totalProjects={totalProjects}
+          page={page}
+          pageSize={PAGE_SIZE}
+        />
+        <OffsetsProjectsTable rows={rows} registryLinkage={registryLinkage} />
+        <OffsetsProjectsPagination
+          page={page}
+          pageSize={PAGE_SIZE}
+          totalCount={totalCount}
+        />
+      </div>
 
       <Card className="mt-6">
         <CardContent className="p-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
