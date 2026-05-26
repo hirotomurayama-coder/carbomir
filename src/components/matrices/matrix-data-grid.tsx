@@ -2,7 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Search, SlidersHorizontal, Check } from "lucide-react";
+import {
+  Search,
+  SlidersHorizontal,
+  Check,
+  ExternalLink,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -84,6 +89,39 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
 
   const clearHidden = () => setHiddenDims(new Set());
 
+  /**
+   * 行列の網羅性 (cell fill rate) を集計.
+   * - 全体: filled / total / percentage
+   * - dimension 別: 各行が何 entity 分埋まっているか
+   * UI に「Z% filled」+ 各 dimension の行内バーで表示.
+   */
+  const fillStats = React.useMemo(() => {
+    const totalCells = matrix.entities.length * matrix.dimensions.length;
+    let filledCells = 0;
+    const perDimension = new Map<string, number>();
+    const perEntity = new Map<string, number>();
+    for (const d of matrix.dimensions) {
+      let count = 0;
+      for (const e of matrix.entities) {
+        const cell = matrix.cells[e.slug]?.[d.key];
+        if (cell && cell.value && cell.value.trim().length > 0) {
+          count++;
+          filledCells++;
+          perEntity.set(e.slug, (perEntity.get(e.slug) ?? 0) + 1);
+        }
+      }
+      perDimension.set(d.key, count);
+    }
+    return {
+      totalCells,
+      filledCells,
+      percent:
+        totalCells === 0 ? 0 : Math.round((filledCells / totalCells) * 100),
+      perDimension,
+      perEntity,
+    };
+  }, [matrix.cells, matrix.dimensions, matrix.entities]);
+
   return (
     <div className="space-y-3">
       {/* Toolbar */}
@@ -98,7 +136,50 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
           />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          {/* Coverage metric: filled / total cells + percentage */}
+          <div
+            className="hidden sm:flex items-center gap-2 label-mono text-muted-foreground"
+            title="このマトリックスのセル充填率"
+          >
+            <span>
+              <span className="metric-number text-foreground">
+                {fillStats.filledCells}
+              </span>
+              <span className="mx-1 opacity-50">/</span>
+              <span className="metric-number">{fillStats.totalCells}</span>
+              <span className="ml-1">cells</span>
+            </span>
+            {/* Inline progress bar */}
+            <div className="w-16 h-1 rounded-full bg-muted/40 overflow-hidden">
+              <div
+                className={`h-full transition-all ${
+                  fillStats.percent >= 80
+                    ? "bg-emerald-500"
+                    : fillStats.percent >= 50
+                      ? "bg-accent"
+                      : "bg-amber-500"
+                }`}
+                style={{ width: `${fillStats.percent}%` }}
+              />
+            </div>
+            <span
+              className={`metric-number ${
+                fillStats.percent >= 80
+                  ? "text-emerald-600 dark:text-emerald-300"
+                  : fillStats.percent >= 50
+                    ? "text-accent"
+                    : "text-amber-600 dark:text-amber-300"
+              }`}
+            >
+              {fillStats.percent}%
+            </span>
+          </div>
+
+          <span className="label-mono text-muted-foreground hidden sm:inline opacity-50">
+            ·
+          </span>
+
           <span className="label-mono text-muted-foreground hidden sm:inline">
             {visibleDimensions.length.toString().padStart(2, "0")}/
             {matrix.dimensions.length.toString().padStart(2, "0")} dims
@@ -169,23 +250,50 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
               </th>
               {matrix.entities.map((e) => {
                 const entityExists = publishedSet.has(e.slug);
+                const entityFilled = fillStats.perEntity.get(e.slug) ?? 0;
+                const totalDims = matrix.dimensions.length;
+                const entityPct =
+                  totalDims === 0 ? 0 : (entityFilled / totalDims) * 100;
                 return (
                   <th
                     key={e.slug}
-                    className="border-b border-r border-border bg-muted/60 px-4 py-3 text-left min-w-[260px] last:border-r-0"
+                    className="border-b border-r border-border bg-muted/60 px-4 py-3 text-left min-w-[260px] last:border-r-0 align-top"
                   >
-                    <span className="label-mono text-accent block mb-1">
-                      Entity
-                    </span>
+                    {/* Top row: entity label badge + coverage chip */}
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="label-mono text-accent">Entity</span>
+                      <span
+                        className="metric-number text-[10px] text-muted-foreground"
+                        title={`${entityFilled}/${totalDims} dimensions filled for this entity`}
+                      >
+                        {entityFilled}/{totalDims}
+                      </span>
+                    </div>
+
+                    {/* Per-entity coverage bar */}
+                    <div
+                      className="h-0.5 rounded-full bg-muted/40 mb-2 overflow-hidden"
+                      aria-hidden
+                    >
+                      <div
+                        className={`h-full transition-all ${
+                          entityPct >= 80
+                            ? "bg-emerald-500/70"
+                            : entityPct >= 50
+                              ? "bg-accent/60"
+                              : "bg-amber-500/60"
+                        }`}
+                        style={{ width: `${entityPct}%` }}
+                      />
+                    </div>
+
                     {entityExists ? (
                       <Link
                         href={`/entities/${e.slug}`}
                         className="group inline-flex items-baseline gap-1.5 text-foreground font-semibold hover:text-accent"
                       >
                         {e.name_ja}
-                        <span className="font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                          ↗
-                        </span>
+                        <ExternalLink className="h-3 w-3 text-accent opacity-0 group-hover:opacity-100 transition-opacity" />
                       </Link>
                     ) : (
                       <span className="text-foreground font-semibold">
@@ -213,15 +321,37 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
                 </td>
               </tr>
             ) : (
-              visibleDimensions.map((d, dIdx) => (
+              visibleDimensions.map((d, dIdx) => {
+                const filled = fillStats.perDimension.get(d.key) ?? 0;
+                const total = matrix.entities.length;
+                const dimPct = total === 0 ? 0 : (filled / total) * 100;
+                return (
                 <tr key={d.key} className="group">
                   <th
                     scope="row"
                     className="sticky left-0 z-10 bg-card border-b border-r border-border px-4 py-4 text-left align-top group-hover:bg-muted/40 transition-colors"
                   >
-                    <span className="label-mono text-muted-foreground block mb-1.5 metric-number">
-                      {(dIdx + 1).toString().padStart(2, "0")}
-                    </span>
+                    <div className="flex items-center justify-between gap-2 mb-1.5">
+                      <span className="label-mono text-muted-foreground metric-number">
+                        {(dIdx + 1).toString().padStart(2, "0")}
+                      </span>
+                      <span
+                        className="metric-number text-[10px] text-muted-foreground"
+                        title={`${filled}/${total} entities have data`}
+                      >
+                        {filled}/{total}
+                      </span>
+                    </div>
+                    {/* Fill bar (horizontal mini bar showing how much of this dimension is covered) */}
+                    <div
+                      className="h-0.5 rounded-full bg-muted/40 mb-2 overflow-hidden"
+                      aria-hidden
+                    >
+                      <div
+                        className="h-full bg-accent/50 transition-all"
+                        style={{ width: `${dimPct}%` }}
+                      />
+                    </div>
                     <div className="font-semibold text-foreground text-sm">
                       {d.label_ja}
                     </div>
@@ -243,7 +373,8 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
                     );
                   })}
                 </tr>
-              ))
+                );
+              })
             )}
           </tbody>
         </table>
@@ -302,30 +433,44 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
 
 function CellContent({ cell }: { cell: ComparisonCell }) {
   return (
-    <div className="space-y-2.5">
-      <p className="leading-relaxed text-[13.5px]">
+    <div className="space-y-1.5">
+      {/* Primary value */}
+      <p className="leading-relaxed text-[13.5px] text-foreground">
         <ReviewMarkedText>{cell.value}</ReviewMarkedText>
       </p>
+
+      {/* Note: 編集部の補足. 主値より弱く、左サイドの border で区別 */}
       {cell.note && (
-        <p className="text-xs text-muted-foreground leading-relaxed border-l-2 border-border pl-2.5">
+        <p className="text-[11.5px] text-muted-foreground/85 leading-relaxed border-l-2 border-accent/30 pl-2 italic">
           <ReviewMarkedText>{cell.note}</ReviewMarkedText>
         </p>
       )}
+
+      {/* Source: 出典. インラインリンクで控えめに */}
       {cell.source_url && (
         <a
           href={cell.source_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 label-mono text-accent hover:underline"
+          className="inline-flex items-center gap-1 label-mono text-[10px] text-accent/80 hover:text-accent hover:underline transition-colors"
         >
-          <span className="font-mono">↗</span>
-          {cell.source_label ?? "Source"}
+          <ExternalLink className="h-2.5 w-2.5" />
+          {cell.source_label ?? "出典"}
         </a>
       )}
     </div>
   );
 }
 
+/** 値なしセル. N/A よりは "未収載" と明示的に表現し、視覚的に弱める */
 function UnknownCell() {
-  return <span className="label-mono text-muted-foreground">N/A</span>;
+  return (
+    <span
+      className="inline-flex items-center gap-1 label-mono text-[10px] text-muted-foreground/50 italic"
+      title="この組合せはまだ Carbomir 編集部で扱っていません"
+    >
+      <span className="inline-block w-1.5 h-1.5 rounded-full border border-muted-foreground/30" />
+      未収載
+    </span>
+  );
 }
