@@ -7,181 +7,191 @@
   "status": "published",
   "category": "scheme",
   "tags": [
-  "ETS / 排出量取引",
-  "Cap and Trade",
-  "遵守市場"
+    "ETS / 排出量取引",
+    "Cap and Trade",
+    "遵守市場"
   ],
   "dimensions": [
-  {
-  "key": "start_year",
-  "label_ja": "運用開始年"
-  },
-  {
-  "key": "phase",
-  "label_ja": "現フェーズ"
-  },
-  {
-  "key": "scope",
-  "label_ja": "対象セクター"
-  },
-  {
-  "key": "emissions_coverage",
-  "label_ja": "排出量カバレッジ"
-  },
-  {
-  "key": "price_range",
-  "label_ja": "価格レンジ (2024-2026)"
-  },
-  {
-  "key": "offset_eligibility",
-  "label_ja": "オフセット適格性"
-  },
-  {
-  "key": "carbomir_quality_view",
-  "label_ja": "Carbomir 編集部の品質観"
-  }
+    {
+      "key": "start_year",
+      "label_ja": "運用開始年"
+    },
+    {
+      "key": "phase",
+      "label_ja": "現フェーズ"
+    },
+    {
+      "key": "scope",
+      "label_ja": "対象セクター"
+    },
+    {
+      "key": "emissions_coverage",
+      "label_ja": "排出量カバレッジ"
+    },
+    {
+      "key": "price_range",
+      "label_ja": "価格レンジ (2024-2026)"
+    },
+    {
+      "key": "offset_eligibility",
+      "label_ja": "オフセット適格性"
+    },
+    {
+      "key": "carbomir_quality_view",
+      "label_ja": "Carbomir 編集部の品質観"
+    }
   ],
   "entities": [
-  {
-  "slug": "eu-ets",
-  "name_ja": "EU ETS"
-  },
-  {
-  "slug": "gx-ets",
-  "name_ja": "GX-ETS"
-  },
-  {
-  "slug": "k-ets",
-  "name_ja": "K-ETS",
-  "name_en": "Korea ETS"
-  },
-  {
-  "slug": "china-national-ets",
-  "name_ja": "China ETS",
-  "name_en": "China National ETS"
-  },
-  {
-  "slug": "california-cap-trade",
-  "name_ja": "California C&T",
-  "name_en": "California Cap-and-Trade"
-  }
+    {
+      "slug": "eu-ets",
+      "name_ja": "EU ETS"
+    },
+    {
+      "slug": "gx-ets",
+      "name_ja": "GX-ETS"
+    },
+    {
+      "slug": "k-ets",
+      "name_ja": "K-ETS",
+      "name_en": "Korea ETS"
+    },
+    {
+      "slug": "china-national-ets",
+      "name_ja": "China ETS",
+      "name_en": "China National ETS"
+    },
+    {
+      "slug": "california-cap-trade",
+      "name_ja": "California C&T",
+      "name_en": "California Cap-and-Trade"
+    }
   ],
   "cells": {
-  "eu-ets": {
-  "start_year": {
-  "value": "2005"
-  },
-  "phase": {
-  "value": "Phase 4 (2021-2030)"
-  },
-  "scope": {
-  "value": "発電 + 産業 + 航空 (EU 内) + 海運 (2024-)"
-  },
-  "emissions_coverage": {
-  "value": "EU 排出量の ~40% (運用注視: 海運統合後)"
-  },
-  "price_range": {
-  "value": "60-90 EUR/t (約 65-100 USD/t)"
-  },
-  "offset_eligibility": {
-  "value": "原則 EU 内、Article 6 ITMOs 一部受入"
-  },
-  "carbomir_quality_view": {
-  "value": "世界最大の cap-and-trade、価格シグナル機能高。CBAM と連動して輸入競合への影響大"
-  }
-  },
-  "gx-ets": {
-  "start_year": {
-  "value": "2024 (第1フェーズ試行)"
-  },
-  "phase": {
-  "value": "第1フェーズ (自主参加・試行) / 第2フェーズ 2026-04 予定 "
-  },
-  "scope": {
-  "value": "GX リーグ参加企業 (試行段階)"
-  },
-  "emissions_coverage": {
-  "value": "試行段階 (運用注視: 第2フェーズで明確化)"
-  },
-  "price_range": {
-  "value": "現状は試行価格 (J-クレジット入札相当)"
-  },
-  "offset_eligibility": {
-  "value": "J-クレジット / JCM クレジット適格、国際クレジットは限定的 "
-  },
-  "carbomir_quality_view": {
-  "value": "国内クレジット需要を制度的に下支え、第2フェーズで本格化",
-  "note": "日本企業の中期排出戦略の前提"
-  }
-  },
-  "k-ets": {
-  "start_year": {
-  "value": "2015"
-  },
-  "phase": {
-  "value": "Phase 3 (2021-2025) / Phase 4 計画中"
-  },
-  "scope": {
-  "value": "発電 + 産業 + 航空 + 海運"
-  },
-  "emissions_coverage": {
-  "value": "韓国排出量の ~73%"
-  },
-  "price_range": {
-  "value": "5-15 USD/t (運用注視: 直近変動)"
-  },
-  "offset_eligibility": {
-  "value": "国内オフセット (KOC) + 一部国際クレジット"
-  },
-  "carbomir_quality_view": {
-  "value": "アジアで最も成熟した ETS、価格水準は EU の 1/5-1/10"
-  }
-  },
-  "china-national-ets": {
-  "start_year": {
-  "value": "2021 (全国運用)"
-  },
-  "phase": {
-  "value": "現行運用 / 対象セクター拡大計画中"
-  },
-  "scope": {
-  "value": "発電セクター中心 (鉄鋼・化学等の拡大計画あり)"
-  },
-  "emissions_coverage": {
-  "value": "中国排出量の ~40% (発電)"
-  },
-  "price_range": {
-  "value": "10-15 USD/t (2024-2025)"
-  },
-  "offset_eligibility": {
-  "value": "CCER (国内独自オフセット、2024 再開)"
-  },
-  "carbomir_quality_view": {
-  "value": "規模で世界最大の ETS だが原単位ベース割当で cap が緩い、価格シグナル弱め"
-  }
-  },
-  "california-cap-trade": {
-  "start_year": {
-  "value": "2013"
-  },
-  "phase": {
-  "value": "現行運用、2030 目標に向けた更新中"
-  },
-  "scope": {
-  "value": "発電 + 産業 + 輸送燃料 + 天然ガス供給"
-  },
-  "emissions_coverage": {
-  "value": "カリフォルニア州排出量の ~74%"
-  },
-  "price_range": {
-  "value": "30-40 USD/t (2024-2026)"
-  },
-  "offset_eligibility": {
-  "value": "ARB 認証オフセット (CAR / ACR の指定プロトコル)"
-  },
-  "carbomir_quality_view": {
-  "value": "州レベル ETS の先駆、価格は中位水準、品質審査厳格 (ARB Direct Verification)"
-  }
-  }
+    "eu-ets": {
+      "start_year": {
+        "value": "2005",
+        "source_url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en",
+        "source_label": "European Commission EU ETS"
+      },
+      "phase": {
+        "value": "Phase 4 (2021-2030)"
+      },
+      "scope": {
+        "value": "発電 + 産業 + 航空 (EU 内) + 海運 (2024-)"
+      },
+      "emissions_coverage": {
+        "value": "EU 排出量の ~40% (運用注視: 海運統合後)"
+      },
+      "price_range": {
+        "value": "60-90 EUR/t (約 65-100 USD/t)"
+      },
+      "offset_eligibility": {
+        "value": "原則 EU 内、Article 6 ITMOs 一部受入"
+      },
+      "carbomir_quality_view": {
+        "value": "世界最大の cap-and-trade、価格シグナル機能高。CBAM と連動して輸入競合への影響大"
+      }
+    },
+    "gx-ets": {
+      "start_year": {
+        "value": "2024 (第1フェーズ試行)",
+        "source_url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ggs/index.html",
+        "source_label": "経産省 GX-ETS"
+      },
+      "phase": {
+        "value": "第1フェーズ (自主参加・試行) / 第2フェーズ 2026-04 予定 "
+      },
+      "scope": {
+        "value": "GX リーグ参加企業 (試行段階)"
+      },
+      "emissions_coverage": {
+        "value": "試行段階 (運用注視: 第2フェーズで明確化)"
+      },
+      "price_range": {
+        "value": "現状は試行価格 (J-クレジット入札相当)"
+      },
+      "offset_eligibility": {
+        "value": "J-クレジット / JCM クレジット適格、国際クレジットは限定的 "
+      },
+      "carbomir_quality_view": {
+        "value": "国内クレジット需要を制度的に下支え、第2フェーズで本格化",
+        "note": "日本企業の中期排出戦略の前提"
+      }
+    },
+    "k-ets": {
+      "start_year": {
+        "value": "2015",
+        "source_url": "https://icapcarbonaction.com/en/ets/korea-emissions-trading-scheme",
+        "source_label": "K-ETS (ICAP)"
+      },
+      "phase": {
+        "value": "Phase 3 (2021-2025) / Phase 4 計画中"
+      },
+      "scope": {
+        "value": "発電 + 産業 + 航空 + 海運"
+      },
+      "emissions_coverage": {
+        "value": "韓国排出量の ~73%"
+      },
+      "price_range": {
+        "value": "5-15 USD/t (運用注視: 直近変動)"
+      },
+      "offset_eligibility": {
+        "value": "国内オフセット (KOC) + 一部国際クレジット"
+      },
+      "carbomir_quality_view": {
+        "value": "アジアで最も成熟した ETS、価格水準は EU の 1/5-1/10"
+      }
+    },
+    "china-national-ets": {
+      "start_year": {
+        "value": "2021 (全国運用)",
+        "source_url": "https://icapcarbonaction.com/en/ets/china-national-ets",
+        "source_label": "China National ETS (ICAP)"
+      },
+      "phase": {
+        "value": "現行運用 / 対象セクター拡大計画中"
+      },
+      "scope": {
+        "value": "発電セクター中心 (鉄鋼・化学等の拡大計画あり)"
+      },
+      "emissions_coverage": {
+        "value": "中国排出量の ~40% (発電)"
+      },
+      "price_range": {
+        "value": "10-15 USD/t (2024-2025)"
+      },
+      "offset_eligibility": {
+        "value": "CCER (国内独自オフセット、2024 再開)"
+      },
+      "carbomir_quality_view": {
+        "value": "規模で世界最大の ETS だが原単位ベース割当で cap が緩い、価格シグナル弱め"
+      }
+    },
+    "california-cap-trade": {
+      "start_year": {
+        "value": "2013",
+        "source_url": "https://ww2.arb.ca.gov/our-work/programs/cap-and-trade-program",
+        "source_label": "California ARB Cap-and-Trade"
+      },
+      "phase": {
+        "value": "現行運用、2030 目標に向けた更新中"
+      },
+      "scope": {
+        "value": "発電 + 産業 + 輸送燃料 + 天然ガス供給"
+      },
+      "emissions_coverage": {
+        "value": "カリフォルニア州排出量の ~74%"
+      },
+      "price_range": {
+        "value": "30-40 USD/t (2024-2026)"
+      },
+      "offset_eligibility": {
+        "value": "ARB 認証オフセット (CAR / ACR の指定プロトコル)"
+      },
+      "carbomir_quality_view": {
+        "value": "州レベル ETS の先駆、価格は中位水準、品質審査厳格 (ARB Direct Verification)"
+      }
+    }
   }
 }

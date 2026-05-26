@@ -88,7 +88,9 @@
         "value": "3-15 USD/t (Quality Tier で大幅差、ART TREES は高値)"
       },
       "recent_controversy": {
-        "value": "2023 年 The Guardian + ICVCM CCP で Verra VCS REDD+ 大規模ダウングレード"
+        "value": "2023 年 The Guardian + ICVCM CCP で Verra VCS REDD+ 大規模ダウングレード",
+        "source_url": "https://icvcm.org/",
+        "source_label": "ICVCM CCP"
       },
       "carbomir_quality_view": {
         "value": "ART TREES Jurisdictional / ICVCM CCP 承認案件のみ実用、Project-level REDD+ は買い手リスク大",
@@ -97,7 +99,9 @@
     },
     "arr": {
       "permanence": {
-        "value": "30-100 年 (樹種・伐採周期次第)"
+        "value": "30-100 年 (樹種・伐採周期次第)",
+        "source_url": "https://verra.org/methodologies/arr-methodologies/",
+        "source_label": "Verra ARR Methodology"
       },
       "additionality": {
         "value": "中 (荒廃地 / 退耕地が前提条件、商業林との線引きが論点)"
@@ -120,7 +124,9 @@
     },
     "ifm": {
       "permanence": {
-        "value": "30-100 年 (経営計画次第)"
+        "value": "30-100 年 (経営計画次第)",
+        "source_url": "https://americancarbonregistry.org/carbon-accounting/standards-methodologies/improved-forest-management",
+        "source_label": "ACR IFM"
       },
       "additionality": {
         "value": "高難度 (\"管理しなかった場合のベースライン\" 設定が困難)"
@@ -143,7 +149,9 @@
     },
     "blue-carbon": {
       "permanence": {
-        "value": "数百年 (堆積物中の有機炭素)"
+        "value": "数百年 (堆積物中の有機炭素)",
+        "source_url": "https://www.thebluecarboninitiative.org/",
+        "source_label": "Blue Carbon Initiative"
       },
       "additionality": {
         "value": "中 (マングローブ・湿地保全の必要性は明確)"
@@ -181,7 +189,9 @@
         "value": "2-8 USD/t (最低価格帯)"
       },
       "recent_controversy": {
-        "value": "2024 年 UC Berkeley 研究で \"発行量の 90% 過大評価\" 指摘"
+        "value": "2024 年 UC Berkeley 研究で \"発行量の 90% 過大評価\" 指摘",
+        "source_url": "https://www.nature.com/articles/s41467-024-46380-y",
+        "source_label": "UC Berkeley 2024 研究"
       },
       "carbomir_quality_view": {
         "value": "コスト最安だが品質リスク最大。買い手企業のレピュテーションリスクが現状最も高い",

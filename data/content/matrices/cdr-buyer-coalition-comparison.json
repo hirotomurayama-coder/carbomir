@@ -67,7 +67,9 @@
   "cells": {
     "frontier": {
       "structure": {
-        "value": "Stripe 子会社 (Public Benefit LLC) が運営、メンバー企業が出資"
+        "value": "Stripe 子会社 (Public Benefit LLC) が運営、メンバー企業が出資",
+        "source_url": "https://frontierclimate.com/",
+        "source_label": "Frontier Climate"
       },
       "scale": {
         "value": "9 年間 9.25 億 USD (2022 開始)"
@@ -90,7 +92,9 @@
     },
     "nextgen-cdr": {
       "structure": {
-        "value": "South Pole + Mitsubishi Corporation の合弁が運営"
+        "value": "South Pole + Mitsubishi Corporation の合弁が運営",
+        "source_url": "https://www.next-gen-cdr.com/",
+        "source_label": "NextGen CDR Facility"
       },
       "scale": {
         "value": "100 万トン規模の長期 offtake コミット (2030 年達成目標)"
@@ -113,7 +117,9 @@
     },
     "symbiosis-coalition": {
       "structure": {
-        "value": "Google + 共同設立メンバーで運営、Nature-Based に特化"
+        "value": "Google + 共同設立メンバーで運営、Nature-Based に特化",
+        "source_url": "https://www.symbiosis-coalition.org/",
+        "source_label": "Symbiosis Coalition"
       },
       "scale": {
         "value": "2030 年までに 2,000 万トン NBS removal 調達コミット"
