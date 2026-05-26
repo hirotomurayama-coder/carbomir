@@ -2,18 +2,27 @@ import type { Metadata } from "next";
 import { Columns3 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { listPublishedMatrices } from "@/lib/data/queries";
-import { MatricesExplorer } from "@/components/matrices/matrices-explorer";
+import { MatricesGallery } from "@/components/matrices/matrices-gallery";
 
 export const metadata: Metadata = {
   title: "比較行列",
   description:
-    "制度・メソドロジー・プレイヤー・指標を、実務判断に直結する軸で対比する一覧。",
+    "カーボンクレジット領域の比較行列を、シナリオ別 / テーマ別に整理。規制対応・クレジット品質・市場戦略・スタンダードの判断軸別に navigate。",
 };
 
+/**
+ * /matrices 抜本リデザイン.
+ *
+ * 設計判断:
+ *   - 旧版は「テーブル/カード/グリッドの並べ替え」で flat なリストだった.
+ *   - 新版は (1) 質問駆動のシナリオ入り口 → (2) テーマ別カードギャラリー → (3) 詳細
+ *     の階層構造で、ユーザーが目的に応じて navigate できる体験に.
+ *   - 検索/フィルタは sticky だが、シナリオ起点の navigation を補助する位置付け.
+ */
 export default async function MatricesIndexPage() {
   const matrices = await listPublishedMatrices();
 
-  // 集計メトリクス (ヘッダー表示用)
+  // 集計メトリクス
   const totalDimensions = matrices.reduce((s, m) => s + m.dimensions.length, 0);
   const totalEntities = new Set(
     matrices.flatMap((m) => m.entities.map((e) => e.slug))
@@ -29,14 +38,15 @@ export default async function MatricesIndexPage() {
               className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent"
             >
               <Columns3 className="h-2.5 w-2.5 mr-1" />
-              {matrices.length.toString().padStart(2, "0")} Published
+              {matrices.length.toString().padStart(2, "0")} Matrices
             </Badge>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
             比較行列
           </h1>
-          <p className="text-sm text-muted-foreground mt-1.5 max-w-2xl">
-            制度・メソドロジー・プレイヤー・指標を、実務判断に直結する軸で対比する。各セルは事実・出典・編集部の品質観の 3 階層で構造化されている。
+          <p className="text-sm text-muted-foreground mt-1.5 max-w-2xl leading-relaxed">
+            カーボンクレジット領域の判断軸を、シナリオ別・テーマ別に整理した行列群。
+            各セルは <span className="text-foreground/85">事実 / 出典 / 編集部の品質観</span> の 3 階層で構造化されている。
           </p>
         </div>
 
@@ -47,7 +57,7 @@ export default async function MatricesIndexPage() {
         </div>
       </header>
 
-      <MatricesExplorer matrices={matrices} />
+      <MatricesGallery matrices={matrices} />
     </div>
   );
 }
