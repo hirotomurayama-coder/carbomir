@@ -118,7 +118,9 @@ src/
       instruments/      # 価格制度
       mechanisms/       # クレジット機構
       cooperative/      # 二国間協定
-      offsets-db/       # OffsetsDB プロジェクト
+      offsets-db/       # OffsetsDB 集計サマリ
+        projects/       # 11,640 件プロジェクト一覧 (server-side filter)
+          [id]/         # プロジェクト個別ページ (on-demand SSR)
     graph/              # 関係グラフ (ツール)
     editorial/          # 編集ステータス (ツール)
     admin/
@@ -130,7 +132,11 @@ src/
     command-menu.tsx    # Cmd+K グローバル検索
     review-marks.tsx    # 要確認マーク表示 (将来削除予定)
     markdown-content.tsx
-    atlas/              # Atlas 関連コンポーネント
+    atlas/              # 世界マップ関連コンポーネント
+                        #   instruments/mechanisms/cooperative-table & network
+                        #   world-map-leaflet, world-bubble-map, atlas-charts
+                        #   offsets-projects-filters/table/pagination,
+                        #   offsets-db-inline-card, atlas-deep-dive-panel
     case-studies/, faq/, entities/, matrices/, timeline/, players/
   lib/
     types.ts            # 全型定義
@@ -148,7 +154,7 @@ scripts/
 data/
   ai-drafts/            # AI ドラフト JSON (filesystem-backed)
 supabase/
-  migrations/0001-0007  # 7 migrations 累積
+  migrations/0001-0008  # 8 migrations 累積 (0008 = offsets_db_projects)
   seed/                 # SQL seed (TS seed と同期)
 ```
 
@@ -238,6 +244,22 @@ ANTHROPIC_API_KEY=
 - [ ] モバイル ハンバーガーメニュー
 - [ ] レイアウトトークン統一
 
+### Phase 5-A ✅ 世界マップ ブラッシュアップ (Fix-E〜I)
+- [x] /atlas トップの抜本ビジュアル改修 (世界マップ + ネットワーク図 + チャート)
+- [x] Leaflet + OpenStreetMap タイル地図
+- [x] /atlas/instruments, /mechanisms に詳細グラフ追加
+- [x] /atlas/cooperative の JCM 併置・ネットワーク図
+- [x] 4 ページ日本語化 + バグ修正
+
+### Phase 5-B ✅ OffsetsDB プロジェクト個別 + 全件検索 (Fix-J〜K)
+- [x] /atlas/offsets-db/projects/[id] 個別ページ (on-demand SSR)
+- [x] migration 0008: offsets_db_projects テーブル + FTS + RLS public read
+- [x] sync-offsets-db.py に Supabase upsert (REST、env 設定時のみ)
+- [x] queries.ts に listOffsetsDbProjectsFiltered (server-side filter/sort/page)
+- [x] 一覧ページを searchParams 駆動の SSR に rewrite (4.7MB JSON bundle 解消)
+- [x] Filters/Table/Pagination を 3 コンポーネントに分離 (shareable URL)
+- [ ] (保留) 5-B-3: 取引履歴 53 万件を別テーブルで保持
+
 ### Phase 4 (配管系・後回し)
 - [ ] 認証フロー (Supabase Auth + Google OAuth + middleware)
 - [ ] 課金フロー (Stripe Free/Standard/Pro)
@@ -254,9 +276,14 @@ npm run build   # SSG 全ページ生成を確認
 npm run dev     # Turbopack 開発サーバー (localhost:3000/carbomir)
 npm test        # Vitest (mappers.ts 等の unit テスト)
 npm run ai:draft -- --type=entity --topic="..."  # AI ドラフト生成
+python3 scripts/sync-offsets-db.py               # CarbonPlan OffsetsDB 同期 (env 揃えば Supabase upsert)
 ```
 
 ## 既知の注意点
 - `turbopack: { root: path.resolve(__dirname) }` は next.config.ts に必須 (ワークスペースルート誤認防止)
 - shadcn add 時は `--overwrite -y` フラグを付ける
 - `/admin/*` は現状認証なし。Phase 4 で middleware で塞ぐ
+- ブラウザ console に出る `Encountered a script tag while rendering React component` は
+  next-themes@0.4.6 が flash 防止用 inline script を `<script dangerouslySetInnerHTML>` で
+  inject していることに対する React 19 の警告。`suppressHydrationWarning: true` も
+  付いているが React 側がチェックを強化したため出る。実害なし、ライブラリ側対応待ち。
