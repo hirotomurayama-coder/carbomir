@@ -7,6 +7,7 @@ import { CooperativeTable } from "@/components/atlas/cooperative-table";
 import { CooperativeNetwork } from "@/components/atlas/cooperative-network";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 import { countryNameJa } from "@/lib/data/country-geo";
+import { JCM_PARTNERS } from "@/lib/data/atlas/jcm-partners";
 
 export const metadata: Metadata = {
   title: "Cooperative Approaches (Article 6.2)",
@@ -76,6 +77,60 @@ export default async function CooperativePage() {
       </section>
 
       <CooperativeTable agreements={agreements} />
+
+      {/* === JCM パートナー (別データセット、併置表示) === */}
+      <section className="mt-12 pt-8 border-t border-border">
+        <div className="mb-4 flex items-baseline justify-between flex-wrap gap-3">
+          <div>
+            <h2 className="text-xl font-bold tracking-tight text-foreground mb-1">
+              日本 JCM (二国間クレジット制度)
+            </h2>
+            <p className="text-[12.5px] text-muted-foreground leading-relaxed max-w-3xl">
+              日本は 2013 年から JCM (Joint Crediting Mechanism) を独自に運営してきた経緯があり、World Bank の Article 6.2 cooperative_agreements 表とは別に扱われている。{" "}
+              <strong className="text-foreground">{JCM_PARTNERS.length} か国</strong>{" "}
+              のパートナー (Buyer = 日本) と二国間合意を締結済み。詳細は{" "}
+              <a href="/entities/jcm" className="text-accent hover:underline">
+                /entities/jcm
+              </a>{" "}
+              参照。Carbomir 編集データ ([要確認]: 環境省公式の最新版で定期検証).
+            </p>
+          </div>
+          <Badge
+            variant="outline"
+            className="font-mono text-[10px] tracking-wider border-orange-500/40 text-orange-600 dark:text-orange-400"
+          >
+            日本 = 唯一の Buyer
+          </Badge>
+        </div>
+
+        <div className="mb-3 flex items-baseline justify-between gap-3 flex-wrap">
+          <h3 className="label-mono text-foreground">
+            日本 ↔ {JCM_PARTNERS.length} か国 パートナーシップ
+          </h3>
+          <span className="label-mono text-muted-foreground text-[10.5px]">
+            線の濃さ = 進捗段階 (MOC → 実施 → 6.2 条移行)
+          </span>
+        </div>
+        <CooperativeNetwork
+          agreements={JCM_PARTNERS.map((p) => ({
+            buyer: "Japan",
+            seller: p.partner,
+            year_of_agreement: p.year,
+            status: p.status,
+          }))}
+        />
+
+        <Card className="mt-6">
+          <CardContent className="p-5 space-y-2 text-sm text-muted-foreground leading-relaxed">
+            <p>
+              <strong className="text-foreground">JCM の位置付け</strong>: 当初は UNFCCC 体系外の独自スキームとして始まったが、現在は Article 6.2 への変換が進行中。モンゴルでは既に 6.2 条クレジットとしての発行が始まっている。
+            </p>
+            <p>
+              <strong className="text-foreground">ステータスの意味</strong>: MOC 締結 = 二国間協力覚書 / 実施段階 = 実質的なプロジェクト実装が進行 / 6.2 条移行済 = Article 6.2 認可済み.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
 
       <Card className="mt-6">
         <CardContent className="p-5 space-y-2 text-sm text-muted-foreground leading-relaxed">

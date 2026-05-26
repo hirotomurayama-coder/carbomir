@@ -6,8 +6,14 @@ import { listInstruments } from "@/lib/data/queries";
 import { getInstrumentLinkedEntity } from "@/lib/data/atlas";
 import { InstrumentsTable } from "@/components/atlas/instruments-table";
 import { WorldMapLeaflet } from "@/components/atlas/world-map-leaflet";
-import { jurisdictionToIso3 } from "@/lib/data/country-geo";
+import {
+  DonutChart,
+  HistogramChart,
+  HorizontalBarChart,
+} from "@/components/atlas/atlas-charts";
+import { jurisdictionToIso3, countryNameJa } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
+import type { CarbonPricingInstrument } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Carbon Pricing 制度 (世界マップ)",
@@ -94,6 +100,56 @@ export default async function InstrumentsPage() {
         </Card>
       </section>
 
+      {/* === 詳細チャート === */}
+      <section className="mb-8 grid gap-4 lg:grid-cols-2">
+        <Card className="p-5">
+          <p className="label-mono text-foreground mb-1">価格分布 (USD/t CO2e)</p>
+          <p className="label-mono text-muted-foreground text-[10.5px] mb-3">
+            実施中の制度のみ. 100 USD/t 超は高い水準
+          </p>
+          <HistogramChart
+            bins={buildPriceBins(instruments)}
+            barColor="#0ea5e9"
+          />
+          <p className="text-[11px] text-muted-foreground mt-3 leading-relaxed">
+            実施中 {instruments.filter((i) => i.status === "Implemented" && i.price_2026_usd != null).length} 件の価格分布. 中央値は{" "}
+            <strong className="text-foreground">
+              {medianPrice(instruments).toFixed(1)} USD/t
+            </strong>
+            . 制度数は低価格帯 (0-30 USD/t) に集中し、北欧諸国とスイスが 100 USD/t 超の高水準帯にいる.
+          </p>
+        </Card>
+
+        <Card className="p-5">
+          <p className="label-mono text-foreground mb-1">最高価格 Top 15 (USD/t CO2e)</p>
+          <p className="label-mono text-muted-foreground text-[10.5px] mb-3">
+            実施中の制度を価格降順. 北欧諸国と西欧が上位を占める
+          </p>
+          <HorizontalBarChart
+            items={buildTopPrices(instruments)}
+            barColor="#10b981"
+          />
+        </Card>
+
+        <Card className="p-5 lg:col-span-2">
+          <p className="label-mono text-foreground mb-1">オフセット利用可否</p>
+          <p className="label-mono text-muted-foreground text-[10.5px] mb-3">
+            制度内で外部クレジットによるオフセット使用が認められているか
+          </p>
+          <DonutChart
+            segments={buildOffsetEligibility(instruments)}
+            total={instruments.filter((i) => i.status === "Implemented").length}
+            centerLabel={instruments
+              .filter((i) => i.status === "Implemented")
+              .length.toString()}
+            centerSubLabel="実施中"
+          />
+          <p className="text-[11px] text-muted-foreground mt-3 leading-relaxed">
+            実施中制度の <strong className="text-foreground">約 4 割</strong> がオフセット利用を全面禁止. 認める制度の多くは「数量上限付き」(EU-ETS 等は近年認めない方向).
+          </p>
+        </Card>
+      </section>
+
       <InstrumentsTable instruments={instruments} linkageMap={linkageMap} />
 
       <Card className="mt-6">
@@ -110,6 +166,90 @@ export default async function InstrumentsPage() {
       </Card>
     </div>
   );
+}
+
+/* ============================================================
+ * Aggregations
+ * ============================================================ */
+
+function buildPriceBins(instruments: CarbonPricingInstrument[]) {
+  const prices = instruments
+    .filter((i) => i.status === "Implemented" && i.price_2026_usd != null)
+    .map((i) => Number(i.price_2026_usd));
+  const bins = [
+    { label: "0–10", min: 0, max: 10 },
+    { label: "10–30", min: 10, max: 30 },
+    { label: "30–50", min: 30, max: 50 },
+    { label: "50–100", min: 50, max: 100 },
+    { label: "100+", min: 100, max: Infinity },
+  ];
+  return bins.map((b) => ({
+    label: `${b.label} USD/t`,
+    count: prices.filter((p) => p >= b.min && p < b.max).length,
+  }));
+}
+
+function medianPrice(instruments: CarbonPricingInstrument[]): number {
+  const prices = instruments
+    .filter((i) => i.status === "Implemented" && i.price_2026_usd != null)
+    .map((i) => Number(i.price_2026_usd))
+    .sort((a, b) => a - b);
+  if (prices.length === 0) return 0;
+  return prices[Math.floor(prices.length / 2)];
+}
+
+function buildTopPrices(instruments: CarbonPricingInstrument[]) {
+  return instruments
+    .filter((i) => i.status === "Implemented" && i.price_2026_usd != null)
+    .sort((a, b) => Number(b.price_2026_usd) - Number(a.price_2026_usd))
+    .slice(0, 15)
+    .map((i) => {
+      const priceNum = Number(i.price_2026_usd);
+      const jur = i.jurisdiction ? countryNameJa(i.jurisdiction) : "";
+      const typeShort = i.type === "Carbon tax" ? "炭素税" : i.type === "ETS" ? "ETS" : "";
+      return {
+        label: `${jur}${typeShort ? ` (${typeShort})` : ""}`,
+        value: Math.round(priceNum * 10) / 10,
+        sublabel: "USD/t",
+      };
+    });
+}
+
+function buildOffsetEligibility(instruments: CarbonPricingInstrument[]) {
+  const buckets = {
+    yesLimit: 0,
+    yesUnlimited: 0,
+    notPermitted: 0,
+    unspecified: 0,
+  };
+  for (const i of instruments) {
+    if (i.status !== "Implemented") continue;
+    const v = (i.offset_eligibility ?? "").toLowerCase().trim();
+    if (!v || v === "not identified" || v === "not specified" || v === "upstream") {
+      buckets.unspecified++;
+    } else if (v.startsWith("yes")) {
+      if (v.includes("unlimited") && !v.includes("limit")) {
+        buckets.yesUnlimited++;
+      } else {
+        buckets.yesLimit++;
+      }
+    } else if (
+      v.startsWith("not") ||
+      v.startsWith("no") ||
+      v === "none." ||
+      v === "none"
+    ) {
+      buckets.notPermitted++;
+    } else {
+      buckets.yesLimit++; // 詳細記述あり (使用許可と解釈)
+    }
+  }
+  return [
+    { label: "不可", value: buckets.notPermitted, color: "#94a3b8" },
+    { label: "可 (上限付き)", value: buckets.yesLimit, color: "#0ea5e9" },
+    { label: "可 (無制限)", value: buckets.yesUnlimited, color: "#10b981" },
+    { label: "未定義", value: buckets.unspecified, color: "#cbd5e1" },
+  ];
 }
 
 /**

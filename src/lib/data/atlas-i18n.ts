@@ -27,6 +27,10 @@ export const STATUS_JA: Record<string, string> = {
   "Bilteral authorization Completed": "個別認可完了",
   "Bilateral authorization issued": "個別認可完了",
   "Bilateral Authorization Completed": "個別認可完了",
+  // JCM パートナー進捗
+  MOC: "MOC 締結",
+  Implementing: "実施段階",
+  "Article 6.2 converted": "6.2 条移行済",
 };
 
 export const ADMIN_JA: Record<string, string> = {

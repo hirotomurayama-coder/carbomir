@@ -41,15 +41,28 @@ const BUYER_COLORS: Record<string, string> = {
 };
 
 const STATUS_LINE_OPACITY: Record<string, number> = {
+  // WB cooperative agreements
+  "MoU Signed": 0.35,
   "Framework Agreement Signed": 0.35,
   "Implementing Agreement Signed": 0.65,
   "Bilateral authorization issued": 0.95,
+  "Bilteral Authorization Completed": 0.95,
+  "Bilteral authorization Completed": 0.95,
+  "Bilateral Authorization Completed": 0.95,
+  // JCM partner progress
+  MOC: 0.35,
+  Implementing: 0.65,
+  "Article 6.2 converted": 0.95,
 };
 
 const STATUS_LINE_LABEL: Record<string, string> = {
+  "MoU Signed": "MoU 締結",
   "Framework Agreement Signed": "枠組み",
   "Implementing Agreement Signed": "実施協定",
   "Bilateral authorization issued": "個別認可",
+  MOC: "MOC 締結",
+  Implementing: "実施段階",
+  "Article 6.2 converted": "6.2 条移行済",
 };
 
 export function CooperativeNetwork({ agreements }: Props) {
@@ -268,19 +281,25 @@ export function CooperativeNetwork({ agreements }: Props) {
         </svg>
       </div>
 
-      {/* Legend */}
+      {/* Legend (実データに登場する status のみ表示) */}
       <div className="mt-3 flex items-center gap-4 flex-wrap label-mono text-[10.5px]">
-        {Object.entries(STATUS_LINE_OPACITY).map(([status, op]) => (
-          <span key={status} className="inline-flex items-center gap-1.5">
-            <span
-              className="inline-block w-4 h-px bg-foreground"
-              style={{ opacity: op }}
-            />
-            <span className="text-foreground/85">
-              {STATUS_LINE_LABEL[status] ?? status}
+        {Array.from(new Set(agreements.map((a) => a.status ?? "")))
+          .filter((s) => s && s in STATUS_LINE_OPACITY)
+          .sort(
+            (a, b) =>
+              (STATUS_LINE_OPACITY[a] ?? 0) - (STATUS_LINE_OPACITY[b] ?? 0)
+          )
+          .map((status) => (
+            <span key={status} className="inline-flex items-center gap-1.5">
+              <span
+                className="inline-block w-4 h-px bg-foreground"
+                style={{ opacity: STATUS_LINE_OPACITY[status] }}
+              />
+              <span className="text-foreground/85">
+                {STATUS_LINE_LABEL[status] ?? status}
+              </span>
             </span>
-          </span>
-        ))}
+          ))}
         <span className="ml-auto text-muted-foreground">
           Buyer / Seller を hover で関連協定をハイライト
         </span>

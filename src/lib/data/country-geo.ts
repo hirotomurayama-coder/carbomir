@@ -137,6 +137,7 @@ export const COUNTRY_GEO: Record<string, CountryGeo> = {
   FJI: { iso3: "FJI", lat: -16.6, lng: 179.4, name_ja: "フィジー", region: "Oceania" },
   PNG: { iso3: "PNG", lat: -6.3, lng: 143.96, name_ja: "パプアニューギニア", region: "Oceania" },
   VUT: { iso3: "VUT", lat: -15.4, lng: 166.96, name_ja: "バヌアツ", region: "Oceania" },
+  PLW: { iso3: "PLW", lat: 7.5, lng: 134.6, name_ja: "パラオ", region: "Oceania" },
 
   // === Additional sellers / atlas coverage ===
   BTN: { iso3: "BTN", lat: 27.5, lng: 90.4, name_ja: "ブータン", region: "Asia" },
@@ -148,6 +149,13 @@ export const COUNTRY_GEO: Record<string, CountryGeo> = {
   BEN: { iso3: "BEN", lat: 9.3, lng: 2.3, name_ja: "ベナン", region: "Africa" },
   GAB: { iso3: "GAB", lat: -0.8, lng: 11.6, name_ja: "ガボン", region: "Africa" },
   TUN: { iso3: "TUN", lat: 33.9, lng: 9.6, name_ja: "チュニジア", region: "Africa" },
+
+  // === JCM partner countries ===
+  MDV: { iso3: "MDV", lat: 3.2, lng: 73.2, name_ja: "モルディブ", region: "Asia" },
+  MMR: { iso3: "MMR", lat: 21.9, lng: 95.96, name_ja: "ミャンマー", region: "Asia" },
+  AZE: { iso3: "AZE", lat: 40.1, lng: 47.6, name_ja: "アゼルバイジャン", region: "Asia" },
+  KGZ: { iso3: "KGZ", lat: 41.2, lng: 74.8, name_ja: "キルギス", region: "Asia" },
+  MDA: { iso3: "MDA", lat: 47.4, lng: 28.4, name_ja: "モルドバ", region: "Europe" },
 };
 
 /**
@@ -311,6 +319,18 @@ export const JURISDICTION_TO_ISO3: Record<string, string> = {
   Benin: "BEN",
   Gabon: "GAB",
   Tunisia: "TUN",
+
+  // === JCM partner countries ===
+  Maldives: "MDV",
+  Palau: "PLW",
+  Myanmar: "MMR",
+  Azerbaijan: "AZE",
+  "Kyrgyz Republic": "KGZ",
+  Kyrgyzstan: "KGZ",
+  Moldova: "MDA",
+
+  // === Other missing aliases ===
+  Fiji: "FJI",
 };
 
 /** jurisdiction 文字列を ISO3 に変換. 見つからなければ null. */

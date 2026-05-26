@@ -5,8 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { listMechanisms } from "@/lib/data/queries";
 import { MechanismsTable } from "@/components/atlas/mechanisms-table";
 import { WorldMapLeaflet } from "@/components/atlas/world-map-leaflet";
+import {
+  DonutChart,
+  HorizontalBarChart,
+  DualBarChart,
+} from "@/components/atlas/atlas-charts";
 import { COUNTRY_GEO, jurisdictionToIso3 } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
+import type { CreditingMechanism } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Crediting Mechanisms (世界マップ)",
@@ -91,6 +97,54 @@ export default async function MechanismsPage() {
         </Card>
       </section>
 
+      {/* === 詳細チャート === */}
+      <section className="mb-8 grid gap-4 lg:grid-cols-2">
+        <Card className="p-5">
+          <p className="label-mono text-foreground mb-1">運営主体の構成</p>
+          <p className="label-mono text-muted-foreground text-[10.5px] mb-3">
+            全 {mechanisms.length} メカニズムの運営区分
+          </p>
+          <DonutChart
+            segments={buildAdminSegments(mechanisms)}
+            total={mechanisms.length}
+            centerLabel={mechanisms.length.toString()}
+            centerSubLabel="メカニズム"
+          />
+          <p className="text-[11px] text-muted-foreground mt-3 leading-relaxed">
+            クレジット市場は <strong className="text-foreground">政府運営</strong> が圧倒的多数 (中国の地方 ETS / 各国独自レジストリ等). 民間 (Verra/Gold Standard 等) は件数こそ少ないが、累計発行量では主要シェア.
+          </p>
+        </Card>
+
+        <Card className="p-5">
+          <p className="label-mono text-foreground mb-1">範囲 (スコープ) 別</p>
+          <p className="label-mono text-muted-foreground text-[10.5px] mb-3">
+            国際 / 国家 / 地域 / サブナショナル
+          </p>
+          <HorizontalBarChart
+            items={buildScopeBars(mechanisms)}
+            barColor="#a855f7"
+          />
+        </Card>
+
+        <Card className="p-5 lg:col-span-2">
+          <p className="label-mono text-foreground mb-1">累計発行量 Top 10 (Mt CO2e)</p>
+          <p className="label-mono text-muted-foreground text-[10.5px] mb-3">
+            発行量 (青) と償却量 (灰) の比較. 償却率の低いメカニズムは「在庫」が積み上がっている
+          </p>
+          <DualBarChart
+            items={buildTop10Issuance(mechanisms)}
+            primaryLabel="累計発行 (Mt)"
+            secondaryLabel="累計償却 (Mt)"
+            primaryColor="#0ea5e9"
+            secondaryColor="#94a3b8"
+            valueFormatter={(n) => n.toFixed(1)}
+          />
+          <p className="text-[11px] text-muted-foreground mt-3 leading-relaxed">
+            CDM・Verra・京都議定書 Joint Implementation など過去発行量の多いメカニズムは償却率が記録されていない (CDM は元データで償却 0). 一方 California / Australia ACCU などの compliance 系は発行 → 償却フローが追える.
+          </p>
+        </Card>
+      </section>
+
       <MechanismsTable mechanisms={mechanisms} />
 
       <Card className="mt-6">
@@ -101,12 +155,77 @@ export default async function MechanismsPage() {
             の編集解説ページへ。
           </p>
           <p>
-            <strong className="text-foreground">単位</strong>: Issued / Retired / Cancelled は kt CO2e (World Bank 表記)、テーブル上は Mt / k に丸めて表示。
+            <strong className="text-foreground">単位</strong>: 発行 / 償却 / 取消は kt CO2e (World Bank 表記)、テーブル上は Mt / k に丸めて表示。
           </p>
         </CardContent>
       </Card>
     </div>
   );
+}
+
+/* ============================================================
+ * Aggregations
+ * ============================================================ */
+
+function buildAdminSegments(mechanisms: CreditingMechanism[]) {
+  const counts = new Map<string, number>();
+  for (const m of mechanisms) {
+    const k = m.administration ?? "Unknown";
+    counts.set(k, (counts.get(k) ?? 0) + 1);
+  }
+  const palette: Record<string, string> = {
+    Governmental: "#0ea5e9",
+    Independent: "#10b981",
+    International: "#a855f7",
+  };
+  const labelMap: Record<string, string> = {
+    Governmental: "政府運営",
+    Independent: "民間 / 独立",
+    International: "国際機関",
+    Unknown: "未分類",
+  };
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([key, value]) => ({
+      label: labelMap[key] ?? key,
+      value,
+      color: palette[key] ?? "#94a3b8",
+    }));
+}
+
+function buildScopeBars(mechanisms: CreditingMechanism[]) {
+  const counts = new Map<string, number>();
+  for (const m of mechanisms) {
+    const k = m.scope ?? "Unknown";
+    counts.set(k, (counts.get(k) ?? 0) + 1);
+  }
+  const labelMap: Record<string, string> = {
+    Global: "国際",
+    National: "国家",
+    Regional: "地域",
+    Subnational: "サブナショナル",
+    Unknown: "未分類",
+  };
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .map(([key, value]) => ({
+      label: labelMap[key] ?? key,
+      value,
+    }));
+}
+
+function buildTop10Issuance(mechanisms: CreditingMechanism[]) {
+  return [...mechanisms]
+    .filter((m) => (m.cumulative_issued_kt ?? 0) > 0)
+    .sort(
+      (a, b) => (b.cumulative_issued_kt ?? 0) - (a.cumulative_issued_kt ?? 0)
+    )
+    .slice(0, 10)
+    .map((m) => ({
+      label: m.mechanism,
+      primary: (m.cumulative_issued_kt ?? 0) / 1000, // kt → Mt
+      secondary: (m.cumulative_retired_kt ?? 0) / 1000,
+    }));
 }
 
 /**
