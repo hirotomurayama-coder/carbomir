@@ -20,6 +20,7 @@ import {
   type Density,
   type ViewMode,
 } from "@/components/explorer/explorer-toolbar";
+import { STICKY_TH } from "@/components/explorer/use-sticky-toolbar";
 
 type JurisdictionGroup =
   | "日本"
@@ -243,16 +244,16 @@ function ListView({
   const rowPad = density === "compact" ? "py-2" : "py-3";
 
   return (
-    <Card className="overflow-hidden p-0">
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+    <Card className="overflow-clip p-0">
+      <table className="w-full text-sm border-separate border-spacing-0">
           <thead>
-            <tr className="border-b border-border bg-muted/40">
+            <tr className="border-b border-border">
               <SortableHeader
                 sortKey="name"
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="280px"
+                className={STICKY_TH}
               >
                 制度名
               </SortableHeader>
@@ -261,6 +262,7 @@ function ListView({
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="90px"
+                className={STICKY_TH}
               >
                 地域
               </SortableHeader>
@@ -269,6 +271,7 @@ function ListView({
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="100px"
+                className={STICKY_TH}
               >
                 ステータス
               </SortableHeader>
@@ -277,11 +280,11 @@ function ListView({
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="220px"
-                className="hidden md:table-cell"
+                className={`hidden md:table-cell ${STICKY_TH}`}
               >
                 次の節目
               </SortableHeader>
-              <StaticHeader minWidth="120px" className="hidden lg:table-cell">
+              <StaticHeader minWidth="120px" className={`hidden lg:table-cell ${STICKY_TH}`}>
                 運営
               </StaticHeader>
               <SortableHeader
@@ -289,11 +292,11 @@ function ListView({
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="100px"
-                className="hidden lg:table-cell"
+                className={`hidden lg:table-cell ${STICKY_TH}`}
               >
                 Reviewed
               </SortableHeader>
-              <th className="w-10 px-3 py-2"></th>
+              <th className={`w-10 px-3 py-2 ${STICKY_TH}`}></th>
             </tr>
           </thead>
           <tbody>
@@ -361,7 +364,6 @@ function ListView({
             ))}
           </tbody>
         </table>
-      </div>
     </Card>
   );
 }

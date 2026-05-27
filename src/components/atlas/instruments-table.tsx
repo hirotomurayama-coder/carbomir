@@ -23,6 +23,10 @@ import {
   translateInstrumentSector,
 } from "@/lib/data/atlas-i18n";
 import { countryNameJa } from "@/lib/data/country-geo";
+import {
+  useStickyToolbarHeight,
+  STICKY_TH,
+} from "@/components/explorer/use-sticky-toolbar";
 
 type Props = {
   instruments: CarbonPricingInstrument[];
@@ -38,6 +42,7 @@ const STATUS_BADGE_COLOR: Record<string, string> = {
 };
 
 export function InstrumentsTable({ instruments, linkageMap }: Props) {
+  const toolbarRef = useStickyToolbarHeight(true);
   const [query, setQuery] = React.useState("");
   const [typeFilter, setTypeFilter] = React.useState<Set<string>>(new Set());
   const [statusFilter, setStatusFilter] = React.useState<Set<string>>(new Set());
@@ -86,8 +91,11 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
 
   return (
     <div className="space-y-3">
-      {/* Toolbar */}
-      <div className="flex items-center justify-between gap-3 flex-wrap">
+      {/* Toolbar (sticky, opaque) */}
+      <div
+        ref={toolbarRef}
+        className="sticky top-0 z-20 bg-background -mx-2 px-2 py-3 border-b border-border flex items-center justify-between gap-3 flex-wrap"
+      >
         <div className="relative min-w-[280px] flex-1 max-w-md">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
           <Input
@@ -127,17 +135,16 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
       </div>
 
       {/* Table */}
-      <Card className="overflow-hidden p-0">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="bg-muted/40">
+      <Card className="overflow-clip p-0">
+        <table className="w-full text-sm border-separate border-spacing-0">
+            <thead>
               <tr>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[280px]">制度名</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">種別</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">ステータス</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">管轄</th>
-                <th className="text-right label-mono text-muted-foreground font-normal px-4 py-2.5">価格 2026 (USD/t)</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[200px]">対象セクター</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[280px] ${STICKY_TH}`}>制度名</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 ${STICKY_TH}`}>種別</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 ${STICKY_TH}`}>ステータス</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 ${STICKY_TH}`}>管轄</th>
+                <th className={`text-right label-mono text-muted-foreground font-normal px-4 py-2.5 ${STICKY_TH}`}>価格 2026 (USD/t)</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[200px] ${STICKY_TH}`}>対象セクター</th>
               </tr>
             </thead>
             <tbody>
@@ -216,8 +223,7 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
                 ))
               )}
             </tbody>
-          </table>
-        </div>
+        </table>
       </Card>
     </div>
   );

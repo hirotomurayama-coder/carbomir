@@ -19,6 +19,7 @@ import {
   type Density,
   type ViewMode,
 } from "@/components/explorer/explorer-toolbar";
+import { STICKY_TH } from "@/components/explorer/use-sticky-toolbar";
 
 type Props = {
   entities: Entity[];
@@ -208,13 +209,6 @@ function TagChip({
 /* ============================================================
  * List view (DB-style compact table)
  * ============================================================ */
-
-// table header (<th>) を toolbar 直下に貼り付ける共通 sticky class.
-// --explorer-toolbar-h は ExplorerToolbar が自動で公開する.
-// bg-muted/40 (alpha) だと sticky 化したときに下のコンテンツが透けるので
-// solid な bg-muted を使う.
-const STICKY_TH =
-  "sticky top-[var(--explorer-toolbar-h,0px)] z-10 bg-muted";
 
 function ListView({
   entities,

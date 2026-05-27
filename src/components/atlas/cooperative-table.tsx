@@ -18,6 +18,10 @@ import { Button } from "@/components/ui/button";
 import type { CooperativeAgreement } from "@/lib/types";
 import { translateStatus } from "@/lib/data/atlas-i18n";
 import { countryNameJa } from "@/lib/data/country-geo";
+import {
+  useStickyToolbarHeight,
+  STICKY_TH,
+} from "@/components/explorer/use-sticky-toolbar";
 
 type Props = {
   agreements: CooperativeAgreement[];
@@ -33,6 +37,7 @@ const STATUS_COLOR: Record<string, string> = {
 };
 
 export function CooperativeTable({ agreements }: Props) {
+  const toolbarRef = useStickyToolbarHeight(true);
   const [query, setQuery] = React.useState("");
   const [buyerFilter, setBuyerFilter] = React.useState<Set<string>>(new Set());
   const [statusFilter, setStatusFilter] = React.useState<Set<string>>(new Set());
@@ -80,7 +85,10 @@ export function CooperativeTable({ agreements }: Props) {
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center justify-between gap-3 flex-wrap">
+      <div
+        ref={toolbarRef}
+        className="sticky top-0 z-20 bg-background -mx-2 px-2 py-3 border-b border-border flex items-center justify-between gap-3 flex-wrap"
+      >
         <div className="relative min-w-[260px] flex-1 max-w-md">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
           <Input
@@ -119,16 +127,15 @@ export function CooperativeTable({ agreements }: Props) {
         </div>
       </div>
 
-      <Card className="overflow-hidden p-0">
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="bg-muted/40">
+      <Card className="overflow-clip p-0">
+        <table className="w-full text-sm border-separate border-spacing-0">
+            <thead>
               <tr>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px]">Buyer (買い手)</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px]">Seller (売り手)</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">締結年</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[180px]">ステータス</th>
-                <th className="text-left label-mono text-muted-foreground font-normal px-4 py-2.5">備考</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px] ${STICKY_TH}`}>Buyer (買い手)</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[140px] ${STICKY_TH}`}>Seller (売り手)</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 ${STICKY_TH}`}>締結年</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 min-w-[180px] ${STICKY_TH}`}>ステータス</th>
+                <th className={`text-left label-mono text-muted-foreground font-normal px-4 py-2.5 ${STICKY_TH}`}>備考</th>
               </tr>
             </thead>
             <tbody>
@@ -171,8 +178,7 @@ export function CooperativeTable({ agreements }: Props) {
                 ))
               )}
             </tbody>
-          </table>
-        </div>
+        </table>
       </Card>
     </div>
   );

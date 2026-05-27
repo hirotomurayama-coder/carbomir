@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { useStickyToolbarHeight } from "./use-sticky-toolbar";
 
 /**
  * 全 explorer 共通のツールバー (検索ボックス + 表示モード + 密度 + 件数表示).
@@ -67,28 +68,7 @@ export function ExplorerToolbar({
   rightSlot,
   sticky = false,
 }: Props) {
-  const wrapperRef = React.useRef<HTMLDivElement>(null);
-
-  // sticky なときだけ、自分の高さを CSS 変数 --explorer-toolbar-h として
-  // documentElement に公開する. table header 等を toolbar 直下に貼り付ける
-  // 用途で参照される (top-[var(--explorer-toolbar-h,0px)]).
-  React.useEffect(() => {
-    if (!sticky) return;
-    const el = wrapperRef.current;
-    if (!el) return;
-    const root = document.documentElement;
-    const apply = () => {
-      const h = el.getBoundingClientRect().height;
-      root.style.setProperty("--explorer-toolbar-h", `${Math.round(h)}px`);
-    };
-    apply();
-    const ro = new ResizeObserver(apply);
-    ro.observe(el);
-    return () => {
-      ro.disconnect();
-      root.style.removeProperty("--explorer-toolbar-h");
-    };
-  }, [sticky]);
+  const wrapperRef = useStickyToolbarHeight(sticky);
 
   return (
     <div
