@@ -12,7 +12,7 @@ import { useCommandMenu } from "@/components/command-menu";
 export function AppTopBar() {
   const { open } = useCommandMenu();
   return (
-    <header className="sticky top-0 z-30 h-[52px] flex items-center gap-3 px-4 sm:px-6 border-b border-border bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <header className="sticky top-0 z-30 h-[52px] flex items-center gap-3 px-4 sm:px-6 border-b border-border bg-background">
       {/* Mobile sidebar trigger */}
       <Sheet>
         <SheetTrigger asChild>

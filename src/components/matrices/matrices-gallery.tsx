@@ -187,7 +187,7 @@ export function MatricesGallery({ matrices }: Props) {
       </section>
 
       {/* === 2. 検索 (二次的 / 微調整用) === */}
-      <div className="flex items-center gap-2 flex-wrap sticky top-[52px] z-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 -mx-2 px-2 py-2 border-b border-border">
+      <div className="flex items-center gap-2 flex-wrap sticky top-0 z-20 bg-background -mx-2 px-2 py-2 border-b border-border">
         <div className="relative min-w-[280px] flex-1 max-w-sm">
           <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground pointer-events-none" />
           <Input

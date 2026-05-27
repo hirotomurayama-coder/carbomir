@@ -43,9 +43,11 @@ type Props = {
   /** 右端追加 (例: 並べ替えメニュー等) */
   rightSlot?: React.ReactNode;
   /**
-   * true なら toolbar をビューポートの上部 (app topbar 直下) に固定.
+   * true なら toolbar を main の最上部に固定 (AppTopBar の直下).
    * 長いリストをスクロールしても検索・フィルタが常に見える.
-   * AppTopBar の高さは 52px なので top-[52px] で配置.
+   * 注意: スクロールコンテナは main であり main 自体が AppTopBar の
+   * 下に位置しているため、top-0 を指定するだけで AppTopBar 直下に
+   * 貼り付く (top-[52px] にすると 52px の隙間が空く).
    */
   sticky?: boolean;
 };
@@ -69,7 +71,7 @@ export function ExplorerToolbar({
     <div
       className={
         sticky
-          ? "sticky top-[52px] z-20 space-y-2 bg-background -mx-2 px-2 py-3 border-b border-border"
+          ? "sticky top-0 z-20 space-y-2 bg-background -mx-2 px-2 py-3 border-b border-border"
           : "space-y-3"
       }
     >
