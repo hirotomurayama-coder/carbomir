@@ -67,8 +67,32 @@ export function ExplorerToolbar({
   rightSlot,
   sticky = false,
 }: Props) {
+  const wrapperRef = React.useRef<HTMLDivElement>(null);
+
+  // sticky なときだけ、自分の高さを CSS 変数 --explorer-toolbar-h として
+  // documentElement に公開する. table header 等を toolbar 直下に貼り付ける
+  // 用途で参照される (top-[var(--explorer-toolbar-h,0px)]).
+  React.useEffect(() => {
+    if (!sticky) return;
+    const el = wrapperRef.current;
+    if (!el) return;
+    const root = document.documentElement;
+    const apply = () => {
+      const h = el.getBoundingClientRect().height;
+      root.style.setProperty("--explorer-toolbar-h", `${Math.round(h)}px`);
+    };
+    apply();
+    const ro = new ResizeObserver(apply);
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      root.style.removeProperty("--explorer-toolbar-h");
+    };
+  }, [sticky]);
+
   return (
     <div
+      ref={wrapperRef}
       className={
         sticky
           ? "sticky top-0 z-20 space-y-2 bg-background -mx-2 px-2 py-3 border-b border-border"

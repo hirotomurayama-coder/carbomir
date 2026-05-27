@@ -209,6 +209,13 @@ function TagChip({
  * List view (DB-style compact table)
  * ============================================================ */
 
+// table header (<th>) を toolbar 直下に貼り付ける共通 sticky class.
+// --explorer-toolbar-h は ExplorerToolbar が自動で公開する.
+// bg-muted/40 (alpha) だと sticky 化したときに下のコンテンツが透けるので
+// solid な bg-muted を使う.
+const STICKY_TH =
+  "sticky top-[var(--explorer-toolbar-h,0px)] z-10 bg-muted";
+
 function ListView({
   entities,
   activeTag,
@@ -226,16 +233,16 @@ function ListView({
   const tagLimit = density === "compact" ? 2 : 4;
 
   return (
-    <Card className="overflow-hidden p-0">
-      <div className="overflow-x-auto">
-        <table className="w-full text-sm">
+    <Card className="p-0 overflow-clip">
+      <table className="w-full text-sm border-separate border-spacing-0">
           <thead>
-            <tr className="border-b border-border bg-muted/40">
+            <tr className="border-b border-border">
               <SortableHeader
                 sortKey="name"
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="260px"
+                className={STICKY_TH}
               >
                 Name
               </SortableHeader>
@@ -244,28 +251,31 @@ function ListView({
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="100px"
+                className={STICKY_TH}
               >
                 Type
               </SortableHeader>
-              <StaticHeader minWidth="200px">Tags</StaticHeader>
+              <StaticHeader minWidth="200px" className={STICKY_TH}>
+                Tags
+              </StaticHeader>
               <SortableHeader
                 sortKey="reviewed"
                 current={sort}
                 onToggle={onToggleSort}
                 minWidth="100px"
-                className="hidden md:table-cell"
+                className={`hidden md:table-cell ${STICKY_TH}`}
               >
                 Reviewed
               </SortableHeader>
               <th
-                className="w-9 px-2 py-2 text-center"
+                className={`w-9 px-2 py-2 text-center ${STICKY_TH}`}
                 title="carboncredits.jp 用語集との対応"
               >
                 <span className="label-mono text-[9px] text-muted-foreground/70">
                   CC.jp
                 </span>
               </th>
-              <th className="w-10 px-3 py-2"></th>
+              <th className={`w-10 px-3 py-2 ${STICKY_TH}`}></th>
             </tr>
           </thead>
           <tbody>
@@ -346,7 +356,6 @@ function ListView({
             ))}
           </tbody>
         </table>
-      </div>
     </Card>
   );
 }
