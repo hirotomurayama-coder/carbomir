@@ -519,6 +519,13 @@ export type TimelineSource = {
 export type TimelineEvent = {
   slug: string;
   event_date: string; // YYYY-MM-DD
+  /**
+   * 任意の終了日 (YYYY-MM-DD).
+   * 指定すると「期間イベント」として横バーで描画される (例: GX-ETS 第1フェーズ
+   * 試行期間 2024-04-01 → 2026-03-31, EU CBAM 移行期間 等)。
+   * 未指定なら従来通り単発の点イベント。
+   */
+  event_end_date?: string;
   title: string;
   summary: string;
   content_md?: string;

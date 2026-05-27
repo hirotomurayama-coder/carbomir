@@ -1,7 +1,8 @@
 {
   "slug": "2023-10-eu-cbam-transition-start",
   "event_date": "2023-10-01",
-  "title": "EU CBAM 移行期間開始",
+  "event_end_date": "2025-12-31",
+  "title": "EU CBAM 移行期間 (排出量報告義務 / 証書購入なし)",
   "summary": "国境炭素調整メカニズム (CBAM) の移行期間が開始。鉄鋼・アルミ・セメント・肥料・水素・電力の 6 品目を対象に、EU 域内輸入時に **排出量報告義務** が課される。2026 年 1 月の本格運用 (CBAM 証書購入義務) に向けた段階的導入で、グローバルサプライチェーンに広範な影響。",
   "affected_entity_slugs": [
     "cbam",

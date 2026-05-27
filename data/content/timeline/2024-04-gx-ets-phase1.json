@@ -1,7 +1,8 @@
 {
   "slug": "2024-04-gx-ets-phase1",
   "event_date": "2024-04-01",
-  "title": "GX-ETS 第1フェーズ開始 (試行排出量取引)",
+  "event_end_date": "2026-03-31",
+  "title": "GX-ETS 第1フェーズ (試行排出量取引 / 自主参加期間)",
   "summary": "日本の GX (グリーン・トランスフォーメーション) 政策の一環として、GX-ETS 第1フェーズが試行段階で開始。J-クレジットおよび JCM クレジットが遵守クレジットとして位置付けられた。",
   "affected_entity_slugs": [
     "jcredit",
