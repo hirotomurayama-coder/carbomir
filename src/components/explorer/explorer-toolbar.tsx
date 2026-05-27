@@ -69,7 +69,7 @@ export function ExplorerToolbar({
     <div
       className={
         sticky
-          ? "sticky top-[52px] z-20 space-y-2 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 -mx-2 px-2 py-3 border-b border-border"
+          ? "sticky top-[52px] z-20 space-y-2 bg-background -mx-2 px-2 py-3 border-b border-border"
           : "space-y-3"
       }
     >
