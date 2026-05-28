@@ -1,0 +1,32 @@
+{
+  "slug": "ssbj-ifrs-s2-mandatory-timing",
+  "question": "SSBJ / IFRS S2 開示はいつから・どの企業に義務化されますか?",
+  "short_answer": "SSBJ 基準は 2025 年 3 月に確定。金融庁が Prime 市場の大手 (時価総額の大きい企業) から段階的に義務化する方針で、有価証券報告書での開示となる。区分ごとの適用開始時期は制度設計の最終段階にある (運用注視)。",
+  "category": "regulation",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "tags": [
+    "日本",
+    "国際"
+  ],
+  "related_entity_slugs": [
+    "ssbj",
+    "ifrs-s2",
+    "tcfd"
+  ],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "source_urls": [
+    {
+      "label": "サステナビリティ基準委員会 (SSBJ)",
+      "url": "https://www.ssb-j.jp/jp/"
+    },
+    {
+      "label": "金融庁 — サステナビリティ情報の開示",
+      "url": "https://www.fsa.go.jp/"
+    }
+  ],
+  "detailed_md": "## SSBJ 基準とは\n\nSSBJ (サステナビリティ基準委員会) は、ISSB の **IFRS S1 / S2** を日本に取り込む国内基準を策定する組織。2025 年 3 月に **適用基準・一般開示基準・気候開示基準** の 3 基準を確定した。TCFD の 4 本柱 (ガバナンス / 戦略 / リスク管理 / 指標と目標) を引き継いでいる。\n\n## 義務化のスケジュール\n\n金融庁は **Prime 市場の時価総額の大きい企業から段階適用** する方針を示している。開示の場は **有価証券報告書**。\n\n- 時価総額が特に大きい企業群から先行適用し、順次対象を拡大する段階方式\n- 任意の早期適用も認められる\n- 第三者保証 (assurance) の要否・水準は後から段階的に強化される見込み\n\n区分ごとの具体的な適用開始時期は制度設計の最終段階にあり、確定情報は金融庁の公表を都度参照すべき (運用注視)。\n\n## 対象企業の考え方\n\n- **まず大手 Prime 企業**: 時価総額の大きい企業が先行\n- **段階的に拡大**: 中位以下の Prime 企業へ順次\n- TCFD 任意開示の蓄積がある企業は土台があるが、求められる粒度は上がる\n\n## 実務上の留意点\n\n- **Scope 3 の算定**: 有価証券報告書の水準でサプライチェーン排出量を算定・説明できるかが最大の関門\n- **財務情報との connectivity**: サステナビリティ情報と財務情報で同じ前提・見積りを使う整合性が問われる\n- **クレジット依存の開示**: 目標達成における自社削減とクレジット (オフセット) の切り分け、クレジットの質の情報が求められる\n\n## 関連動向\n\n- [SSBJ 最終基準公表](/timeline/2025-03-ssbj-final-standards)\n- [ISSB が IFRS S1 / S2 公表](/timeline/2023-06-issb-ifrs-s1-s2-published)\n- [気候関連開示制度の国際比較](/matrices/climate-disclosure-comparison)\n- [IFRS S2](/entities/ifrs-s2) / [SSBJ](/entities/ssbj)\n"
+}

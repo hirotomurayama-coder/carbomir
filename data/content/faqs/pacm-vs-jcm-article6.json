@@ -1,0 +1,33 @@
+{
+  "slug": "pacm-vs-jcm-article6",
+  "question": "Article 6.4 (PACM) は JCM・6.2 条・ボランタリークレジットとどう違いますか?",
+  "short_answer": "PACM (6.4) は国連が一元管理する中央集権型、JCM・6.2 は政府間の分権型。いずれも相当調整 (Corresponding Adjustment) で二重計上を回避する点が、調整を伴わないことの多いボランタリークレジットと決定的に異なる。",
+  "category": "regulation",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "tags": [
+    "パリ協定 6 条",
+    "二国間",
+    "国際"
+  ],
+  "related_entity_slugs": [
+    "paris-article-6-4",
+    "paris-article-6-2",
+    "jcm"
+  ],
+  "related_matrix_slugs": [
+    "paris-article-6-comparison"
+  ],
+  "source_urls": [
+    {
+      "label": "UNFCCC — Article 6.4 Mechanism (PACM)",
+      "url": "https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism"
+    },
+    {
+      "label": "UNFCCC — Cooperative Implementation (Article 6.2)",
+      "url": "https://unfccc.int/process-and-meetings/the-paris-agreement/cooperative-implementation"
+    }
+  ],
+  "detailed_md": "## 4 系統の整理\n\n国際的に移転されるクレジットは、ガバナンスの型で整理できる:\n\n- **Article 6.2 (協調的アプローチ)**: 分権型。締約国間の二国間・多国間取決めで運用。単位は ITMO\n- **JCM**: 日本主導の二国間制度。6.2 の協調的アプローチに整合する形で運用\n- **Article 6.4 (PACM)**: 中央集権型。UNFCCC の監督機関が一元的にメソドロジー承認・発行を管理。単位は A6.4ER\n- **ボランタリークレジット (Verra VCS / Gold Standard 等)**: 民間レジストリが発行。政府承認・相当調整を伴わない場合が多い\n\n## 相当調整の有無が分岐点\n\n最大の違いは **相当調整 (Corresponding Adjustment)** の有無:\n\n- **6.2 / JCM / 6.4 (承認分)**: ホスト国が自国 NDC からその削減量を差し引き、二重計上を回避する。「政府が品質を担保した」 クレジットと整理できる\n- **ボランタリー**: 多くは相当調整を伴わない。自主的な気候貢献 (BVCM) には使えるが、国際的な NDC 文脈では「Article 6 整合」 とはみなされない\n\n## 日本企業の使い分け\n\n- **遵守・NDC 文脈**: JCM をはじめとする政府承認系が軸。GX-ETS の遵守でも国内・政府系クレジットが優先される\n- **自主的な気候貢献**: ボランタリークレジットを BVCM 用途で活用\n- **PACM の位置付け**: CDM の後継として国連管理の信頼性が高い反面、手続コストは高め。JCM・ボランタリーと並ぶ第 3 の選択肢として、ポートフォリオ設計が複雑化する\n\n海外プロジェクト由来クレジットを調達する際は、**ホスト国の相当調整が実施済みか** を契約条項で確認するのが実務上の要点。\n\n## 関連動向\n\n- [パリ協定 6 条 メカニズム比較](/matrices/paris-article-6-comparison)\n- [初期の Article 6.2 ITMO 移転](/timeline/2024-01-first-article-6-2-itmo-transfer)\n- [COP29 で Article 6.4 メソドロジー基準採択](/timeline/2024-11-cop29-article-6-4-methodologies)\n- [パリ協定 6.4 条 (PACM)](/entities/paris-article-6-4) / [JCM](/entities/jcm)\n"
+}

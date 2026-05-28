@@ -1,0 +1,29 @@
+{
+  "slug": "fossil-fuel-levy-carbon-cost",
+  "question": "化石燃料賦課金で国内の炭素コストはどう上がりますか?",
+  "short_answer": "GX 推進法に基づき 2028 年度に化石燃料賦課金、2033 年度に発電向け有償オークションが導入予定。地球温暖化対策税 (289 円/t-CO2) にとどまっていた国内の明示的炭素価格が、段階的に顕在化していく。",
+  "category": "regulation",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "tags": [
+    "日本",
+    "炭素税",
+    "GX-ETS 関連"
+  ],
+  "related_entity_slugs": [
+    "fossil-fuel-levy",
+    "gx-ets",
+    "global-warming-tax"
+  ],
+  "related_matrix_slugs": [
+    "japan-carbon-pricing-comparison"
+  ],
+  "source_urls": [
+    {
+      "label": "経済産業省 — GX 政策 / カーボンプライシング",
+      "url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ggs/index.html"
+    }
+  ],
+  "detailed_md": "## GX カーボンプライシングの 2 本立て\n\n2023 年成立の **GX 推進法** に基づく「成長志向型カーボンプライシング」 は 2 本立てで導入される:\n\n- **化石燃料賦課金** (2028 年度〜): 化石燃料の輸入事業者等に、CO2 排出量に応じた賦課金を課す\n- **排出量取引の有償オークション** (2033 年度〜): 発電事業者向けに排出枠を有償配分\n\nこれにより、これまで地球温暖化対策税 (289 円/t-CO2) にとどまっていた国内の明示的炭素価格が段階的に上がっていく。\n\n## 既存負担との関係\n\nGX のカーボンプライシングは、**エネルギーに係る負担総額を中長期的に増やさない** ことを前提に、化石燃料使用の減少で生じる既存負担 (FIT 賦課金や温対税等) の減少分の範囲で導入する設計思想を掲げる。料率の具体水準・引き上げ経路は制度設計の最終段階にある (運用注視)。\n\n## CBAM との接続\n\n国内で支払う炭素価格は、EU CBAM の負担から **控除できる原資** になり得る。輸出産業にとっては「国内で払うか、国境で払うか」 の設計問題になると整理できる。\n\n## 企業の備え\n\n- **炭素コスト上昇の織り込み**: 中期の事業計画・設備投資判断に国内炭素価格の上昇を反映する\n- **複線で上がるコスト**: GX-ETS の遵守負担と賦課金が併走し、国内炭素コストは複線で上昇していく\n- **社内炭素価格 (ICP)**: 投資判断に炭素コストを内部化する仕組みの導入・見直し\n\n## 関連動向\n\n- [化石燃料賦課金 導入予定](/timeline/2028-04-fossil-fuel-levy-scheduled)\n- [GX 推進法成立](/timeline/2023-05-gx-promotion-act)\n- [日本のカーボンプライシング制度比較](/matrices/japan-carbon-pricing-comparison)\n- [化石燃料賦課金](/entities/fossil-fuel-levy) / [GX-ETS](/entities/gx-ets) / [地球温暖化対策税](/entities/global-warming-tax)\n"
+}

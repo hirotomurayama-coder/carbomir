@@ -1,0 +1,27 @@
+{
+  "slug": "eu-omnibus-impact",
+  "question": "EU Omnibus 簡素化で CSRD・CBAM の対応はどう変わりますか?",
+  "short_answer": "2025 年 2 月の欧州委員会提案で、CSRD の対象企業が大幅に縮小され、CBAM には少量輸入の適用除外 (de minimis) が導入される方向。ただし立法手続き中で確定前のため、自社が依然として対象かの再確認が要る (運用注視)。",
+  "category": "regulation",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "tags": [
+    "EU",
+    "国境調整"
+  ],
+  "related_entity_slugs": [
+    "csrd",
+    "cbam"
+  ],
+  "related_matrix_slugs": [
+    "climate-disclosure-comparison"
+  ],
+  "source_urls": [
+    {
+      "label": "European Commission — Sustainable Finance / 簡素化",
+      "url": "https://finance.ec.europa.eu/sustainable-finance_en"
+    }
+  ],
+  "detailed_md": "## Omnibus とは\n\n2025 年 2 月、欧州委員会は EU の競争力強化の一環として **サステナビリティ規制の簡素化パッケージ (Omnibus)** を提案した。CSRD・CSDDD・EU Taxonomy・CBAM を横断的に対象とし、報告・遵守の負担を軽減する内容。EU が規制強化から **簡素化へ舵を切った転換点** と整理できる。\n\n## CSRD の変更\n\n- **対象企業の大幅縮小**: 従業員 1,000 人超の大企業に絞り込む方向で、当初対象の相当数が除外される見込み\n- **適用時期の後ろ倒し** (stop the clock) を含む\n\nEU で事業を行う日本企業のうち、CSRD 報告義務を見込んでいた企業の一部が対象外になり得る。\n\n## CBAM の変更\n\n- **少量輸入者の適用除外 (de minimis)**: 年間の輸入量が一定以下の事業者を手続から外す。輸入者の大多数を除外しつつ、対象排出量の大部分は引き続きカバーする設計\n- 鉄鋼・アルミ等を相当量輸出する主要企業の負担構造は基本的に変わらない\n\n## 日本企業の対応\n\n- **対象判定の再確認**: CSRD・CBAM とも「自社が依然として対象か」 を提案内容に照らして再点検する\n- **過度な先読みも無視も危険**: 提案は立法過程で変わり得る。確定情報を都度追う体制が要る\n- **緩む規制と強まる規制の併存**: EU が緩める一方、日本は SSBJ / IFRS S2 が義務化へ。グローバル企業は両にらみで開示戦略を組む必要がある\n\n## 関連動向\n\n- [EU Omnibus 簡素化パッケージ提案](/timeline/2025-02-eu-omnibus-simplification)\n- [EU CSRD 適用開始](/timeline/2023-01-eu-csrd-effective)\n- [CBAM 確定運用開始](/timeline/2026-01-cbam-definitive-phase-start)\n- [EU CBAM](/entities/cbam) / [CSRD](/entities/csrd)\n"
+}
