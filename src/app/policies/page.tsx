@@ -33,13 +33,21 @@ export default async function PoliciesPage() {
         <p className="text-sm text-muted-foreground mt-1.5 max-w-2xl">
           各国/地域の主要なカーボン関連制度のステータスと次マイルストーンを集約。事業会社の中期計画・調達設計の前提条件をすぐ把握できるよう、jurisdiction で大分類する。
         </p>
-        <Link
-          href="/timeline"
-          className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 rounded-md bg-accent/10 text-accent hover:bg-accent/20 transition-colors text-xs font-medium"
-        >
-          <CalendarClock className="h-3.5 w-3.5" />
-          時系列・規制カレンダー (統合) を開く →
-        </Link>
+        <div className="flex items-center gap-2 mt-3 flex-wrap">
+          <Link
+            href="/policies/calendar"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-accent/10 text-accent hover:bg-accent/20 transition-colors text-xs font-medium"
+          >
+            <CalendarClock className="h-3.5 w-3.5" />
+            規制カレンダーを開く →
+          </Link>
+          <Link
+            href="/timeline"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-muted/40 text-foreground/80 hover:bg-muted/60 transition-colors text-xs font-medium"
+          >
+            時系列 (全イベント統合) →
+          </Link>
+        </div>
       </header>
 
       <PoliciesExplorer policies={policies} />

@@ -1,0 +1,21 @@
+{
+  "slug": "2024-03-ssbj-japan-disclosure-draft",
+  "event_date": "2024-03-29",
+  "title": "SSBJ サステナビリティ開示基準 公開草案 公表",
+  "summary": "SSBJ (Sustainability Standards Board of Japan / サステナビリティ基準委員会) が ISSB IFRS S1/S2 をベースにした日本版サステナビリティ開示基準の公開草案を公表。日本のプライム上場企業への 2027-2028 年度適用に向けた最終調整段階に入った。",
+  "affected_entity_slugs": [
+    "ssbj",
+    "ifrs-s2",
+    "tcfd"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "SSBJ — サステナビリティ開示基準 公開草案",
+      "url": "https://www.ssb-j.jp/jp/sustainability_standards_board_of_japan/exposure_drafts/y2024/index.html"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2024 年 3 月 29 日、**SSBJ (Sustainability Standards Board of Japan / サステナビリティ基準委員会)** が、ISSB IFRS S1/S2 をベースにした日本版サステナビリティ開示基準の **公開草案** を公表した。**「適用基準 (S1 相当)・一般基準 (S2 相当)・気候関連開示基準 (S2 相当)」** の 3 本立てで、日本のプライム上場企業への 2027-2028 年度適用に向けた最終調整段階に入った。\n\n## 主要な要素\n\n- **3 つの公開草案**:\n  - **適用基準 (Applicability Standard)**: ISSB IFRS S1 に相当\n  - **一般基準 (General Standard)**: ISSB IFRS S1 の詳細項目\n  - **気候関連開示基準 (Climate Disclosure Standard)**: ISSB IFRS S2 に相当\n- **ISSB 整合性**: 基本的に ISSB IFRS S1/S2 と整合的に設計、日本独自の追加項目は限定的\n- **適用対象**: 当面はプライム市場上場企業を対象に検討 (具体的範囲は金融庁が決定)\n- **適用時期**: 2027-2028 年度から段階適用予定 (運用注視: 金融庁の最終決定)\n- **第三者保証**: 段階的に導入予定\n\n## 日本企業への含意\n\n- **TCFD 開示からの自然な進化**: 既にプライム上場企業は TCFD 提言ベースの開示を行っており、SSBJ 適用は **既存対応の発展形**。準備期間として 2024-2027 年の 3 年間が確保される\n- **業界別 KPI の対応**: SSBJ は SASB ベースの業界別指標を取り込む方針。**業界別の追加 KPI 開示** が必要に\n- **Scope 3 開示の本格化**: SSBJ 気候関連開示基準では **Scope 3 開示が原則必須**。多くの日本企業は Scope 3 算定・開示の体制構築が課題\n- **連結ベース開示**: 連結グループ全体の GHG 排出量算定が必要。海外子会社・サプライヤーまでのデータ収集体制が要求される\n\n## 編集部の論点\n\nSSBJ 公開草案は「**日本の気候開示が任意 TCFD 開示から強制 SSBJ 開示への移行を本格化させる**」転換点である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **「ISSB 整合」を保つ戦略的意義**: SSBJ が ISSB と高度に整合することで、**グローバル企業の二重対応負担を軽減**。日本企業の国際的な情報開示の相互比較可能性が向上\n- **2027-2028 適用までの 3-4 年間が体制構築期**: \n  - **2024-2025**: Scope 3 算定体制の構築、業界別 KPI の整理\n  - **2025-2026**: 第三者保証への対応体制構築、データ管理プラットフォーム導入\n  - **2026-2027**: 試行運用、最終調整\n- **SSBJ vs CSRD の負担対比**: SSBJ はシングルマテリアリティ (財務影響中心) でダブルマテリアリティの CSRD/ESRS より範囲が狭いが、**EU 進出企業は両方対応が必要**\n- **「義務化された TCFD」としての位置付け**: SSBJ は実質的に「義務化された TCFD」+「ISSB 業界別指標」。**任意自主基準時代と異なり、開示内容の正確性・第三者保証** が問われる新フェーズ\n\n運用注視: 適用対象 (プライム市場全社か、時価総額 / 売上閾値で限定するか)、適用時期 (2027 度か 2028 度か)、第三者保証の段階導入スケジュールは、金融庁の最終決定で確定する。\n\n## 関連動向\n\n- [SSBJ](/entities/ssbj) — 制度本体\n- [IFRS S2 (ISSB)](/entities/ifrs-s2) — 親基準\n- [TCFD](/entities/tcfd) — 開示の前駆\n- [2023-06 ISSB IFRS S1/S2 公表](/timeline/2023-06-issb-ifrs-s1-s2-published) — 国際基準確立\n"
+}

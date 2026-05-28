@@ -1,0 +1,21 @@
+{
+  "slug": "2023-06-issb-ifrs-s1-s2-published",
+  "event_date": "2023-06-26",
+  "title": "ISSB IFRS S1/S2 公表 (サステナビリティ開示の世界標準化)",
+  "summary": "IFRS 財団傘下の ISSB が初のサステナビリティ開示基準 IFRS S1 (一般要求事項) と IFRS S2 (気候関連開示) を公表。TCFD 提言を法的拘束力を持つ会計基準として承継し、世界 130 ヶ国以上での導入の起点となった。",
+  "affected_entity_slugs": [
+    "ifrs-s2",
+    "tcfd",
+    "ssbj"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "IFRS Foundation — ISSB Standards (IFRS S1 and IFRS S2)",
+      "url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2023 年 6 月 26 日、**IFRS 財団傘下の ISSB (International Sustainability Standards Board / 国際サステナビリティ基準審議会)** が、初のサステナビリティ開示基準 **IFRS S1 (Sustainability-related Financial Information の一般要求事項) と IFRS S2 (気候関連開示)** を公表した。**TCFD 提言を法的拘束力を持つ会計基準** として承継し、世界 130 ヶ国以上での導入の起点となった。\n\n## 主要な要素\n\n- **IFRS S1**: 全てのサステナビリティ関連リスク・機会の一般開示要求 (TCFD の 4 つの柱を共通基盤として採用)\n- **IFRS S2**: 気候関連リスク・機会の詳細開示 (TCFD 提言を会計基準化)\n- **シングルマテリアリティ**: 企業価値に影響を与える要因のみを開示 (CSRD のダブルマテリアリティとは異なる)\n- **業界別開示**: SASB スタンダードを統合した業界別指標\n- **適用時期**: 2024 年 1 月 1 日開始事業年度から (各国・地域での法的義務化は別途)\n- **TCFD の役割継承**: 2023 年 10 月に TCFD が解散、ISSB がモニタリング機能を承継\n\n## 日本企業への含意\n\n- **SSBJ (日本版 ISSB 適用基準) の前提**: SSBJ (Sustainability Standards Board of Japan) が ISSB S1/S2 を日本基準として整備中。**プライム市場上場企業に 2027-2028 年度から適用** される見込み\n- **既存 TCFD 開示の発展形**: 既に TCFD 開示を行っている日本企業は IFRS S2 への移行コストが相対的に低い。**「TCFD 早期対応企業」の優位** が顕在化\n- **業界別開示の精緻化負担**: SASB ベースの業界別指標が要求されるため、**業界別の KPI 開示** という新たな対応が必要 (例: 鉄鋼業界の GHG intensity per ton)\n- **CSRD/ESRS との並行対応**: グローバル企業は **ISSB (シングルマテリアリティ) と CSRD/ESRS (ダブルマテリアリティ) の二系統対応** が必要なケースが多い\n\n## 編集部の論点\n\nISSB IFRS S1/S2 公表は「**サステナビリティ開示が任意自主基準から国際会計基準レベルに格上げされた歴史的転換点**」である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **「TCFD の進化形」としての受容**: TCFD で慣れた企業は IFRS S2 への移行が比較的スムーズ。**TCFD 対応の蓄積が ISSB 対応の準備期間として機能**\n- **会計基準化の重み**: ISSB は IFRS 財団傘下の会計基準として位置付けられ、**監査対象** となる可能性。CSR 担当者だけでなく **財務部門・監査法人との連携** が必須化\n- **130 ヶ国以上の adoption トレンド**: 英国 (2026)、シンガポール (2025)、香港 (2025-2028)、オーストラリア (2025)、ブラジル (2026) など主要国が段階的に法定化。日本も SSBJ 経由で同様の流れ\n- **業界別 KPI の標準化競争**: SASB 統合により業界別指標が国際標準化されるため、**「自社の業界別 KPI が国際標準と整合的か」** の検証が新たな課題\n\n## 関連動向\n\n- [IFRS S2 (ISSB)](/entities/ifrs-s2) — 制度本体\n- [TCFD](/entities/tcfd) — モニタリング機能を ISSB が承継\n- [SSBJ](/entities/ssbj) — 日本版適用基準\n- [2017-06 TCFD 最終提言](/timeline/2017-06-tcfd-final-recommendations) — 開示制度の前駆\n- [2024-03 SSBJ 公開草案](/timeline/2024-03-ssbj-japan-disclosure-draft) — 日本国内適用\n"
+}

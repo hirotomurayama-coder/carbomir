@@ -84,6 +84,13 @@ export default async function TimelineIndexPage() {
             </span>
             。
           </p>
+          <Link
+            href="/policies/calendar"
+            className="inline-flex items-center gap-1.5 mt-3 px-3 py-1.5 rounded-md bg-muted/40 text-foreground/80 hover:bg-muted/60 transition-colors text-xs font-medium"
+          >
+            <CalendarClock className="h-3.5 w-3.5" />
+            規制マイルストーンだけ見る (規制カレンダー) →
+          </Link>
         </div>
       </header>
 

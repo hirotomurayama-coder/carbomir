@@ -1,0 +1,21 @@
+{
+  "slug": "2024-07-sbti-scope3-official-clarification",
+  "event_date": "2024-07-30",
+  "title": "SBTi 公式声明: Scope 3 EAC 使用は現行基準で依然制限的",
+  "summary": "4 月の取締役会声明から 3 ヶ月の議論を経て、SBTi が公式に「現行 Net-Zero Standard に基づき、Scope 3 における EAC 使用は依然制限的」と方針を再確認。controversy は組織ガバナンス改革の課題として残された。",
+  "affected_entity_slugs": [
+    "sbti",
+    "voluntary-carbon-credits",
+    "scope3"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "SBTi — Discussion paper on the use of environmental attribute certificates (EACs)",
+      "url": "https://sciencebasedtargets.org/resources/files/Scope-3_Discussion-paper.pdf"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2024 年 7 月 30 日、SBTi は **「Scope 3 における環境属性証書 (EAC) の使用に関する Discussion Paper」** および公式声明を発表し、**「現行 Net-Zero Standard に基づき、Scope 3 における EAC 使用は依然制限的」** と方針を再確認した。4 月の取締役会声明から 3 ヶ月の業界議論を経て、SBTi は **既存基準を維持しつつ、V2 (2025 年予定) でより詳細な議論を行う** 方針を明確化。\n\n## 主要な要素\n\n- **現行基準の確認**: Net-Zero Standard (2021-10) の制限的 EAC 使用ルールは継続\n- **Discussion Paper の公開**: 業界・学術界・NGO・企業からの意見を 2024-09 まで募集\n- **V2 への論点持ち越し**: \n  - EAC の品質基準 (ICVCM CCP・VCMI CoP との関係)\n  - Scope 3 サブカテゴリ別の使用可否 (Category 1 購入物品・Category 11 製品使用段階等)\n  - BVCM (Beyond Value Chain Mitigation) との区別\n- **CEO 辞任**: 同時期に Luiz Amaral CEO が辞任 (組織ガバナンス改革のシグナル)\n\n## 日本企業への含意\n\n- **「当面の戦略不確実性」の継続**: 2025 年の V2 公表まで Scope 3 戦略の方向性が定まらず、企業は **保守的に「EAC は使えない前提」で削減計画を立案** する必要\n- **VCM クレジットへの過剰投資のリスク**: 4 月の取締役会声明を受けて VCM クレジットを大量取得した企業は、**SBT カウント不可のままアセット化** する経営リスクに直面\n- **Scope 3 サブカテゴリ別戦略の重要性**: V2 では Category 別に EAC 使用可否が議論される見込み。**自社の Scope 3 排出構造 (Cat 1 中心か Cat 11 中心か) に応じた戦略** の準備が必要\n\n## 編集部の論点\n\n2024-07 公式声明は「**SBTi が民間自主基準としての中立性を取り戻した瞬間**」だが、根本論点は 2025 年 V2 に持ち越された状態である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **「沈黙の 1 年間」の戦略選択**: 2024-07 から 2025-03 V2 ドラフト公表まで約 8 ヶ月、**業界全体の様子見ムード** が発生。この期間に EAC 大量調達 vs サプライチェーン削減投資 の **戦略選択** が問われる\n- **ICVCM CCP / VCMI CoP との関係**: ICVCM (Core Carbon Principles) と VCMI (Claims Code of Practice) は SBT を補完する **VCM クレジット品質と請求方法の標準**。V2 ではこれらとの統合的設計が予想される\n- **「サプライチェーン削減 vs オフセット」二項対立の超克**: 業界は徐々に「両者は補完的」というナラティブに収斂しつつあるが、**EAC 使用の制限的容認** がどこに線を引くかは依然焦点\n- **政治情勢の影響**: 米国大統領選挙 (2024-11) の結果次第で、SBTi を含む民間気候基準への圧力構造が変化する可能性。V2 の最終内容は政治環境からも影響を受ける\n\n## 関連動向\n\n- [SBTi](/entities/sbti) — 制度本体\n- [Scope 3](/entities/scope3) — 議論の対象\n- [自主的炭素クレジット (VCM)](/entities/voluntary-carbon-credits) — EAC の主要対象\n- [2024-04 SBTi 取締役会声明](/timeline/2024-04-sbti-scope3-eac-statement) — 直前の controversy\n- [2025-03 SBTi V2 ドラフト](/timeline/2025-03-sbti-net-zero-v2-draft) — 決着の場\n"
+}

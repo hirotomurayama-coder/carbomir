@@ -1,0 +1,21 @@
+{
+  "slug": "2023-04-sbti-flag-guidance",
+  "event_date": "2023-04-25",
+  "title": "SBTi FLAG (Forest, Land and Agriculture) Guidance 公表",
+  "summary": "森林・土地利用・農業セクターを対象にした SBTi FLAG ガイダンスが公表。GHG 削減目標に加えて、土地利用変化由来排出 (LUC) を明示的に算定・報告することが食品・農業企業に義務化された。",
+  "affected_entity_slugs": [
+    "sbti",
+    "redd-plus",
+    "arr"
+  ],
+  "category": "methodology",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "SBTi — FLAG Guidance",
+      "url": "https://sciencebasedtargets.org/sectors/forest-land-and-agriculture"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2023 年 4 月 25 日、SBTi は **「Forest, Land and Agriculture (FLAG) Science-Based Target Setting Guidance」** を公表した。**森林・土地利用・農業セクター** を対象に、従来の Scope 1+2+3 削減目標に加えて、**土地利用変化由来排出 (LUC: Land Use Change) を明示的に算定・報告** することが食品・農業・林業企業に義務化された。\n\n## 主要な要素\n\n- **対象企業**: FLAG セクターから売上 20% 以上、または FLAG 関連 GHG 排出が 20% 以上の企業 (食品メーカー、林業、農業、紙パ等)\n- **新算定要素**: \n  - 土地利用変化由来排出 (LUC) — 森林破壊・湿地破壊等の排出\n  - 土壌炭素吸収 (Soil carbon sequestration) — 農地での炭素隔離\n  - REDD+ / ARR 等の自社オペレーション内除去\n- **2030 年中間目標**: FLAG 関連排出の **30% 削減** が標準\n- **2050 年長期目標**: FLAG 関連排出の **72% 削減** + 残存中和\n- **No Deforestation コミットメント**: 2025 年までにサプライチェーン上の森林破壊ゼロ化が事実上の前提\n\n## 日本企業への含意\n\n- **食品・商社業界の影響大**: 三井物産・三菱商事・伊藤忠商事・住友商事の食料事業、ニチレイ・キリン・サントリー等の食品メーカー、王子製紙・日本製紙等の紙パが直接対象\n- **パーム油・大豆・牛肉・コーヒー・カカオの調達リスク**: これらの **森林破壊リスク商品** のサプライチェーン透明化 (FPIC, RSPO, RTRS 等) が SBT 認定の前提条件化\n- **新たな REDD+/ARR の役割**: 自社サプライチェーン内での森林保全・再造林プロジェクトは LUC 排出削減として **直接算定可能**。VCM クレジットの「外部購入」とは異なる位置付け\n\n## 編集部の論点\n\nFLAG ガイダンス公表は「**土地利用・農業セクターが従来のエネルギー中心 GHG 算定から取り残されていた問題を是正した**」重要な制度進化である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **食品・農業セクターの「気候開示の遅れ」是正**: GHG 排出量の約 25% が農業・林業由来だが、企業の SBT 認定では従来エネルギー中心。FLAG により **食品メーカー・商社・林業の本格的な気候対応** が進行\n- **「サプライチェーン透明化」の負担急増**: 商品 1 トン単位の **原産地特定・森林破壊リスク評価** が必須化。中小サプライヤーまでデータ提供を求める **デューデリジェンス体制** の構築が新たな投資領域\n- **VCM (Voluntary Carbon Market) との関係**: 自社サプライチェーン内の REDD+/ARR は SBT 算定に直接組込可能だが、**外部購入の VCM クレジットは SBT 削減目標カウント不可** という区分が明確化。VCM 市場の需要構造変化\n- **EU 森林破壊ゼロ規則 (EUDR) との並行**: EU の EUDR (2024 年施行) と FLAG ガイダンスは類似の枠組み。**規制 (EUDR) + 自主基準 (SBTi FLAG) の二重要求** で食品・商社のサプライチェーン整備が加速\n\n## 関連動向\n\n- [SBTi](/entities/sbti) — 制度本体\n- [REDD+](/entities/redd-plus) — FLAG で重要な役割\n- [ARR (Afforestation, Reforestation, Revegetation)](/entities/arr) — 同上\n- [2024-04 SBTi Scope 3 EAC 声明](/timeline/2024-04-sbti-scope3-eac-statement) — 関連議論\n"
+}

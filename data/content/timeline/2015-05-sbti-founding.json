@@ -1,0 +1,20 @@
+{
+  "slug": "2015-05-sbti-founding",
+  "event_date": "2015-05-04",
+  "title": "SBTi (Science Based Targets initiative) 設立",
+  "summary": "CDP、UN Global Compact、WRI、WWF の 4 機関が共同で SBTi を設立。科学的根拠に基づく企業の温室効果ガス削減目標 (Science Based Targets) の認証フレームワークを国際標準化する起点となった。",
+  "affected_entity_slugs": [
+    "sbti",
+    "net-zero"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "SBTi — About Us",
+      "url": "https://sciencebasedtargets.org/about-us"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2015 年 5 月、**SBTi (Science Based Targets initiative)** が **CDP、UN Global Compact、WRI (World Resources Institute)、WWF** の 4 機関による共同イニシアチブとして設立された。**科学的根拠 (パリ協定の 2℃ / 1.5℃目標) に基づく企業の GHG 削減目標の認証** フレームワークを国際標準化し、自主的気候目標の **質的水準を担保する仕組み** として機能を開始した。\n\n## 主要な要素\n\n- **設立 4 機関**: CDP (情報開示)、UN Global Compact (国連企業ネットワーク)、WRI (シンクタンク)、WWF (環境 NGO)\n- **認証フレームワーク**: 企業が設定した削減目標を SBTi が科学的整合性を審査・認証\n- **対象範囲**: Scope 1 + 2 + 3 排出量に対する目標 (Scope 3 は事業特性により対応分が異なる)\n- **目標水準**: 当初は 2℃整合 (Well-below 2°C) と 1.5℃整合の選択肢、後に 1.5℃整合のみに収斂\n- **設立当時の参加企業**: 数十社レベルからスタート (現在は 4,000 社超まで拡大)\n\n## 日本企業への含意\n\n- **「自主目標の質保証」の標準化**: 各社が独自に掲げる削減目標は比較困難だったが、SBTi 認証により **比較可能な国際標準** が確立。投資家・取引先が「SBT 認定済みか」を企業評価指標として使用開始\n- **2020 年代の認定急増の起点**: 日本企業の SBT 認定は 2020 年以降急増し、**世界トップクラスの認定企業数** に到達。設立から 5-10 年遅れて本格普及した\n- **CDP との連動**: SBTi の親組織の一つである CDP の質問書では SBT 設定状況が高得点要素。**CDP A リスト入りの実質条件** として SBT 認定が機能\n\n## 編集部の論点\n\nSBTi 設立は「**民間 NGO が企業気候目標のグローバル標準設定者になる構造を確立した**」という意味で歴史的に重要である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **政府規制を補完する民間標準**: SBT は法的拘束力のない自主認定だが、**機関投資家の Engagement・サプライチェーン要求・取引先選定** を通じて事実上の業界標準化。「ソフトロー」の典型例\n- **科学的根拠 (Science-Based) の強さ**: パリ協定整合性という客観基準を持つため、**「目標が緩い」「カバー範囲が狭い」企業を批判する根拠** として批判 NGO・メディアが活用可能。経営層への説明圧力として強力\n- **設立 4 機関の力学**: CDP + WRI + WWF + UNGC という組み合わせは、データ・科学・アクション・国連権威の **4 つの正当性源泉を統合** した強力なガバナンス構造\n\n## 関連動向\n\n- [SBTi](/entities/sbti) — 制度本体\n- [Net-Zero](/entities/net-zero) — SBTi が定義するネットゼロ基準\n- [2021-10 Net-Zero Standard 公表](/timeline/2021-10-sbti-net-zero-standard) — 大規模アップデート\n"
+}

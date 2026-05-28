@@ -1,0 +1,21 @@
+{
+  "slug": "2024-04-sbti-scope3-eac-statement",
+  "event_date": "2024-04-09",
+  "title": "SBTi 取締役会 Scope 3 EAC 使用容認声明 (controversy 勃発)",
+  "summary": "SBTi 取締役会が「Scope 3 削減目標達成における環境属性証書 (EAC) 使用を容認する」声明を発表。事務局・科学諮問委員会から強い反発が起こり、SBTi の組織ガバナンスと VCM クレジット使用の関係が業界全体の議論となった。",
+  "affected_entity_slugs": [
+    "sbti",
+    "voluntary-carbon-credits",
+    "scope3"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "SBTi — Statement from the SBTi Board of Trustees on the use of environmental attribute certificates",
+      "url": "https://sciencebasedtargets.org/news/statement-from-the-sbti-board-of-trustees-on-the-use-of-environmental-attribute-certificates"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2024 年 4 月 9 日、SBTi 取締役会が **「Scope 3 削減目標の達成における環境属性証書 (EAC: Environmental Attribute Certificates) の使用を容認する」声明** を突如発表した。これにより従来禁止されていた **VCM クレジット (REDD+, ARR, 再エネ等) による Scope 3 削減目標達成** が解禁される方向性が示唆され、業界全体に大きな衝撃を与えた。\n\nしかし、**SBTi 事務局・科学諮問委員会から強い反発** が即座に起こり、「取締役会の声明は組織内コンセンサスを経ていない」と批判。**SBTi 組織内の深刻な分裂** が露呈し、CEO Luiz Amaral の辞任 (2024-07) にまで発展した。\n\n## 主要な要素\n\n- **取締役会声明の内容**: Scope 3 削減目標達成において、**「制限と保護策の下で」EAC 使用を容認** する方向性\n- **背景**: Scope 3 削減の困難性 (サプライチェーンへの影響力限定)、VCM 市場の活性化圧力、米国新政権の動向等\n- **反発**: SBTi 事務局スタッフからの公開書簡、科学諮問委員会の懸念表明\n- **業界の反応**:\n  - VCM クレジット業界 (Verra, Gold Standard, ICVCM, ART) は概ね歓迎\n  - 環境 NGO (NewClimate Institute, Carbon Market Watch) は強く反対\n  - 機関投資家は慎重姿勢\n- **2024-07 公式声明**: SBTi は 7 月に正式声明で「**現行 Net-Zero Standard に基づき、EAC 使用は依然制限的**」と方針を再確認 (取締役会発表からの実質的な後退)\n\n## 日本企業への含意\n\n- **Scope 3 削減戦略の不確実性増大**: 日本企業は **「Scope 3 で VCM クレジットを使えるのか」** という戦略的不確実性に直面。SBT 認定取得のクレジット調達戦略を一時停止せざるを得ない事例が複数発生\n- **VCM クレジット調達タイミングの判断難化**: 「将来使えるかもしれない」「使えないかもしれない」の両論並走で、調達決定の正当化が経営層に対して困難に\n- **既に大量の VCM クレジットを保有する企業の対応**: 三菱商事・住友商事など VCM プロジェクト投資を積極化していた企業は、**保有クレジットの SBT カウント可能性** が経営課題として顕在化\n\n## 編集部の論点\n\nこの controversy は「**民間自主基準 (SBTi) のガバナンス脆弱性と、VCM 市場の構造的圧力が露呈した事件**」として極めて重要である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **「ソフトロー」のガバナンスリスク**: 法的根拠を持たない民間自主基準は、**理事会の一声で方針が変動するガバナンス脆弱性** がある。SBT 認定戦略は「政治情勢で変動するリスク資産」として認識すべき\n- **VCM 業界の構造的圧力の見える化**: VCM クレジット業界 (Verra, Gold Standard 等) は **販売先確保のために SBTi に圧力をかける** 構造が露呈。「クレジットを買えば SBT 達成可」モデルへの政治的働きかけ\n- **「サプライチェーン削減 vs クレジットオフセット」の根本論争**: Scope 3 はサプライチェーン削減 (中長期・困難) と VCM オフセット (短期・容易) の **どちらを主軸とすべきか** の根本論争が継続中。当面、**両建てで進める保守的戦略** が現実解\n- **2025-2026 年の Net-Zero Standard V2 で決着**: SBTi は 2025-03 に V2 ドラフト公表予定。**Scope 3 / EAC / BVCM の整理** が次の焦点。日本企業の SBT 戦略は V2 確定後に再構築が必要\n\n## 関連動向\n\n- [SBTi](/entities/sbti) — 制度本体\n- [Scope 3](/entities/scope3) — 議論の対象範囲\n- [自主的炭素クレジット (VCM)](/entities/voluntary-carbon-credits) — EAC の主要な対象\n- [2024-07 SBTi 公式声明](/timeline/2024-07-sbti-scope3-official-clarification) — 続報\n- [2025-03 SBTi Net-Zero Standard V2 ドラフト](/timeline/2025-03-sbti-net-zero-v2-draft) — 決着の場\n"
+}

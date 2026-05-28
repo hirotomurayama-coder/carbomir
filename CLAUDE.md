@@ -153,6 +153,8 @@ scripts/
   sync-offsets-db.py
 data/
   ai-drafts/            # AI ドラフト JSON (filesystem-backed)
+  content/              # 公開コンテンツ JSON (entities / matrices / timeline / case-studies / faqs)
+                        #   src/lib/data/*.ts は薄いローダーになり、本体は JSON ファイル
 supabase/
   migrations/0001-0008  # 8 migrations 累積 (0008 = offsets_db_projects)
   seed/                 # SQL seed (TS seed と同期)
@@ -210,39 +212,49 @@ ANTHROPIC_API_KEY=
 - 比較行列・概念体系・時系列の UI + Cmd+K
 - Supabase 接続 (seed fallback) + Vitest + mappers tests
 
-### Phase 3 ✅ コンテンツ + 編集ツール (このセッションまで)
-- [x] エンティティ拡充 (40+ 件): methodology / regulation / player / market / technology
-- [x] 比較行列 5 件: VCM スタンダード / Engineered Removal / ETS / Credit Eligibility / J-クレジット
-- [x] 時系列イベント 30+ 件
+### Phase 3 ✅ コンテンツ + 編集ツール
+- [x] エンティティ拡充 **79 件** (うち政策・規制 26 件): methodology / regulation / player / market / technology
+- [x] 比較行列 **8 件**: VCM スタンダード / Engineered Removal / ETS / Credit Eligibility / J-クレジット 他
+- [x] 時系列イベント **52 件** (GX-ETS / CBAM / SBTi / 開示制度 / VCMI を中心に拡充)
 - [x] /atlas — World Bank + CarbonPlan データセット取り込み
 - [x] /graph 関係グラフビュー
 - [x] /editorial 編集ステータスダッシュボード
-- [x] /case-studies (5 件) と /faq (8 件)
+- [x] /case-studies **10 件** と /faq **20 件**
 - [x] tag controlled vocabulary
 - [x] **AI ドラフトパイプライン**: `npm run ai:draft` CLI + `/admin/drafts` レビュー UI
 
-### Phase Α (アライメント永続化 ← 現在)
+### Phase Α ✅ アライメント永続化
 - [x] CLAUDE.md にアライメント結果反映
-- [ ] STYLE_GUIDE.md 作成
-- [ ] ai-draft.ts プロンプトに STYLE_GUIDE 反映
+- [x] STYLE_GUIDE.md 作成 (9 KB)
+- [x] ai-draft.ts プロンプトに STYLE_GUIDE 反映
 
-### Phase Β (タクソノミー実装 — 未着手)
-- [ ] サイドバー: 動詞型ラベル化 (比べる / 調べる / 追う / 学ぶ / 世界マップ)
-- [ ] Cmd+K: 動詞ベース構成
-- [ ] ホームページ: 「追う」を主役にした再構築
+### Phase Β ✅ タクソノミー実装
+- [x] サイドバー: 動詞型ラベル化 (比べる / 調べる / 追う / 学ぶ / 世界マップ) — `src/components/app-sidebar.tsx`
+- [x] Cmd+K: 動詞ベース構成 — `src/components/command-menu.tsx`
+- [x] ホームページ: 「追う」を主役にした再構築 (TrackSection を hero 直下に配置)
 
-### Phase Γ (品質シグナル強化 — 未着手)
-- [ ] FreshnessIndicator コンポーネント (絶対 + 相対 + 警告レベル)
-- [ ] `next_review_at` データモデル追加
-- [ ] 「要確認」マークの整理 (本文から削除、`/editorial` に集約)
-- [ ] バッジ 3 階層整理
+### Phase Γ ✅ 品質シグナル強化
+- [x] FreshnessIndicator コンポーネント — `src/components/freshness-indicator.tsx` (entities / matrices / case-studies 詳細で使用)
+- [x] `next_review_at` データモデル追加 — 140 件中 117 件 (83.6%) 充足
+- [x] 「要確認」マークの整理 — 公開ページから 0 件、`/editorial` ダッシュボードに集約済
+- [x] バッジ 3 階層整理 — デザイン原則に明文化、status バッジは公開から除去
 
-### Phase Δ (仕上げ — 未着手)
-- [ ] 既存 seed コンテンツのトーン統一
-- [ ] /about ページ (法人クレジット、編集体制)
+### Phase 6 ✅ 主要ページ ブラッシュアップ (Theme 1〜6 + Fix-A〜R)
+- [x] Theme 1: 4 explorer ページをデータベース UI 化 (数百件想定)
+- [x] Theme 2: 比較行列詳細ページのビジュアル刷新 + 28 セルに公式出典 URL
+- [x] Theme 3: 概念体系を「用語集」に再定位 + carboncredits.jp 連携 + 不足用語 23 件追加
+- [x] Theme 4: プレイヤーの役割分類見直し (9 件に business_role 付与)
+- [x] Theme 5+6: 時系列バー化 + 「今ホット」+ 規制カレンダー統合
+- [x] Fix-A〜R: timeline stagger 修正 / sticky filter / sticky table header を 5 ページに展開 / 期間イベント横バー表現 など
+
+### Phase Δ (仕上げ — 残タスク)
+- [ ] 既存 seed コンテンツのトーン統一 (一部進行中)
+- [ ] /about ページ充実化 (法人クレジット、編集体制) — ディレクトリ存在、内容要確認
 - [ ] ライトモード完成度向上
 - [ ] モバイル ハンバーガーメニュー
-- [ ] レイアウトトークン統一
+- [ ] レイアウトトークン統一 (Fix-N〜R の sticky 系起因 → 再発防止)
+- [ ] 大型ファイル分解: `edit-form.tsx` (917) / `timeline-bars.tsx` (795) / `app/page.tsx` (743) / `lib/data/queries.ts` (594) / `lib/types.ts` (588)
+- [ ] テストカバレッジ向上 — 現状 3/130 (2.3%)、UI コンポーネントは全て未テスト
 
 ### Phase 5-A ✅ 世界マップ ブラッシュアップ (Fix-E〜I)
 - [x] /atlas トップの抜本ビジュアル改修 (世界マップ + ネットワーク図 + チャート)
@@ -264,6 +276,7 @@ ANTHROPIC_API_KEY=
 - [ ] 認証フロー (Supabase Auth + Google OAuth + middleware)
 - [ ] 課金フロー (Stripe Free/Standard/Pro)
 - [ ] ペイウォール (編集論点を Standard 限定に)
+  - 先行案: データモデルに `paywall_tier: "free" | "standard" | "pro"` を追加、UI には「Standard 会員限定」ラベルだけ先に出す → Phase 4 着手時のリファクタが軽くなる
 - [ ] Vercel デプロイ + carboncredits.jp/carbomir リバースプロキシ
 
 ---

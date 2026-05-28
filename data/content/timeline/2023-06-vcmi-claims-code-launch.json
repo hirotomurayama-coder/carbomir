@@ -1,0 +1,21 @@
+{
+  "slug": "2023-06-vcmi-claims-code-launch",
+  "event_date": "2023-06-28",
+  "title": "VCMI Claims Code of Practice v1 ローンチ",
+  "summary": "VCMI (Voluntary Carbon Markets Integrity Initiative) が「Claims Code of Practice」v1 を公表。VCM クレジットを使用した企業の対外的な気候主張 (carbon neutral / climate contribution claim 等) の品質基準を国際標準化する起点となった。",
+  "affected_entity_slugs": [
+    "voluntary-carbon-credits",
+    "icvcm-ccp",
+    "carbon-neutral"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "VCMI — Claims Code of Practice",
+      "url": "https://vcmintegrity.org/claims-code-of-practice/"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2023 年 6 月 28 日、**VCMI (Voluntary Carbon Markets Integrity Initiative)** が **「Claims Code of Practice」v1** を公表した。**VCM クレジットを使用した企業の対外的な気候主張** (carbon neutral / climate contribution claim 等) の品質基準を国際標準化する起点となり、**ICVCM CCP (クレジット供給側の品質基準) と VCMI CoP (クレジット需要側の主張基準)** という VCM 市場の品質ガバナンスの両輪が確立した。\n\n## 主要な要素\n\n- **3 つの主張階層 (Tier)**:\n  - **Silver**: 短期削減目標 + 20% 以上の VCM 使用\n  - **Gold**: 短期削減目標 + 60% 以上の VCM 使用\n  - **Platinum**: 短期削減目標 + 100% 以上の VCM 使用\n- **基礎要件**: SBTi 認定の Near-term 削減目標を保有していること\n- **VCM クレジット品質**: ICVCM CCP に整合するクレジットの使用が推奨\n- **対外コミュニケーション**: 「VCMI Claim 取得」の Tier を対外的に公表可能\n- **2024-11 MRA 公表**: Monitoring, Reporting and Assurance Framework が追加公表され、第三者保証スキームが整備\n\n## 日本企業への含意\n\n- **「カーボンニュートラル宣言」の品質基準化**: 多くの日本企業が「カーボンニュートラル」を対外宣言しているが、VCMI Claims Code は **品質基準を満たした主張の標準化** を進める。今後は「VCMI Silver/Gold/Platinum」が真の信頼性の指標に\n- **SBTi 整合の前提**: VCMI Claim は SBTi Near-term 認定が前提。**SBT 認定なしの企業は VCMI Claim 取得不可** という構造\n- **「クレジットを買えばカーボンニュートラル」の時代の終焉**: VCMI は **「削減 + 残余の VCM」** のセット要件を課すため、**「削減せずにオフセット中心」モデル** は VCMI Claim では認められない\n\n## 編集部の論点\n\nVCMI Claims Code ローンチは「**VCM 市場の需要側 (バイヤー) にも品質ガバナンスが及び始めた**」転換点である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **「Greenwash」批判への対抗装置**: 環境 NGO・メディアからの「Greenwash」批判の根拠は **「クレジット品質の不透明性」+「企業の主張の過大表示」** の 2 つ。前者を ICVCM CCP、後者を VCMI CoP が **構造的に解決する設計**\n- **SBTi との接続の戦略的意義**: VCMI Claim は SBTi 認定を前提とすることで、**「自主基準の重層構造」** を形成。SBT (削減目標) → VCMI (削減 + クレジット使用主張) → ICVCM (クレジット品質) という標準階層が成立\n- **企業の戦略選択**: \n  - **「VCMI Claim 取得を目指す」**: 品質保証された対外発信が可能、ただし SBT + 高品質クレジット調達コストが発生\n  - **「VCMI Claim を取得しない」**: 自社独自基準で「カーボンニュートラル」を宣言可、ただし NGO/メディア批判リスク継続\n- **日本企業の遅れの懸念**: 欧米企業は VCMI Claim 取得の動きが加速。**日本企業は SBT 認定数こそ多いが、VCMI Claim 取得は限定的**。中長期的な信頼性ギャップが課題化\n\n## 関連動向\n\n- [自主的炭素クレジット (VCM)](/entities/voluntary-carbon-credits) — 制度の対象市場\n- [ICVCM CCP](/entities/icvcm-ccp) — クレジット供給側の品質基準 (相補)\n- [Carbon Neutral](/entities/carbon-neutral) — 主張対象の概念\n- [2023-07 ICVCM CCP ローンチ](/timeline/2023-07-icvcm-ccp-launch) — 並行制度\n- [2024-04 SBTi Scope 3 EAC 声明](/timeline/2024-04-sbti-scope3-eac-statement) — 関連議論\n"
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "2025-03-sbti-net-zero-v2-draft",
+  "event_date": "2025-03-18",
+  "title": "SBTi Corporate Net-Zero Standard V2 ドラフト公表",
+  "summary": "SBTi が Corporate Net-Zero Standard V2 のドラフトを公開し、業界協議を開始。Scope 3 EAC 使用の制限的容認、CDR (Carbon Dioxide Removal) の段階的義務化、Sectoral pathways の精緻化など、2021 年初版からの大幅な制度進化を提示した。",
+  "affected_entity_slugs": [
+    "sbti",
+    "scope3",
+    "cdr-credits",
+    "net-zero"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "SBTi — Corporate Net-Zero Standard Version 2 Consultation Draft",
+      "url": "https://sciencebasedtargets.org/net-zero"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2025 年 3 月、SBTi は **「Corporate Net-Zero Standard Version 2」** のドラフトを公開し、業界協議を開始した。2024 年の Scope 3 EAC controversy を経て、約 1 年半の議論を経て公表された **V2 ドラフトは、2021 年初版からの大幅な制度進化** を提示している。\n\n## 主要な要素 (V2 ドラフトの主な変更点)\n\n- **Scope 3 EAC 使用の制限的容認**: 特定の Scope 3 サブカテゴリ (例: Category 11 製品使用段階) で **品質基準を満たす EAC の限定的使用を容認** する方向性\n- **CDR 段階的義務化**: 2030 年・2040 年・2050 年に向けた CDR 調達義務の **数量目標** を業界別に提示\n- **Sectoral pathways の精緻化**: 鉄鋼、セメント、電力、海運、航空、化学等の **業界別削減経路** の科学的更新\n- **企業規模別アプローチ**: 中小企業向けの簡易認定経路の整備\n- **BVCM (Beyond Value Chain Mitigation) の構造化**: 任意だが推奨される追加気候投資の枠組み整備\n- **VCM クレジット品質基準との接続**: ICVCM CCP / VCMI CoP との整合性を明示\n\n## 日本企業への含意\n\n- **Scope 3 戦略の再構築機会**: V2 で EAC 使用の制限的容認が確定すれば、**Scope 3 削減目標達成に VCM クレジットを部分的に組み込める** 戦略選択肢が復活\n- **CDR 投資の本格化要求**: 2030 年・2040 年・2050 年の CDR 数量目標が明示されれば、**日本企業も DAC・BECCS・バイオ炭等の CDR への先行投資** が必須化\n- **業界別パスウェイの活用**: 鉄鋼 (高炉 → 水素還元)、セメント (CCS 付き)、電力 (再エネ + 蓄電) など、**業界別の削減経路 (Sectoral Decarbonization Approach)** を中期計画に明示的に反映する必要\n- **既存 SBT 認定の再認定要求**: V2 公表後、既存認定企業は **再認定時に V2 基準への移行** が求められる見込み。2025-2027 年に大量の再認定対応が発生\n\n## 編集部の論点\n\nV2 ドラフトは「**SBTi が controversy を経て、より科学的厳格性と現実的実装可能性のバランスを取った試み**」として位置付けられる。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **「制限的容認」の解釈の重要性**: EAC 使用の容認は「無制限」ではなく **「制限的・条件付き」**。具体的にどの Category・どの品質基準で使えるかは V2 最終版の細目で決まる。**早期に細目をフォロー** する体制が必要\n- **CDR への投資シフトの加速**: V2 で CDR 数量目標が明示されれば、**日本企業の CDR 調達競争への参入** が経営判断として急務化。Microsoft・Frontier 連合の先行調達に対して 5-10 年遅れの状況をどう挽回するか\n- **業界団体ベースの SDA 参加**: 業界別パスウェイは業界全体の議論で決定されるため、**業界団体経由での SBTi 議論への参加** が日本企業の戦略的重要事項\n- **ガバナンス改革の成果評価**: 2024 年の controversy 後、SBTi の **取締役会・科学諮問委員会・事務局のガバナンス改革** が V2 プロセスにどう反映されているかが、今後の制度信頼性の試金石\n\n運用注視: V2 最終版の公表時期、ガバナンス構造の具体的な改革内容、再認定スケジュールの詳細は、2025-2026 年にかけて段階的に明らかになる予定。\n\n## 関連動向\n\n- [SBTi](/entities/sbti) — 制度本体\n- [Net-Zero](/entities/net-zero) — V2 で再定義される概念\n- [Scope 3](/entities/scope3) — 主要な議論対象\n- [CDR クレジット](/entities/cdr-credits) — 段階的義務化\n- [2024-07 SBTi 公式声明](/timeline/2024-07-sbti-scope3-official-clarification) — V2 への論点持ち越し\n"
+}

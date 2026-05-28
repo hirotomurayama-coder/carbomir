@@ -1,0 +1,21 @@
+{
+  "slug": "2021-10-sbti-net-zero-standard",
+  "event_date": "2021-10-28",
+  "title": "SBTi Net-Zero Standard ローンチ (COP26 直前)",
+  "summary": "SBTi が世界初の企業向けネットゼロ目標認定基準「Corporate Net-Zero Standard」を公表。長期 90%+ の絶対量削減 + 残存排出量の中和 (neutralization) を組み合わせた、ネットゼロの厳密な定義が国際標準化された。",
+  "affected_entity_slugs": [
+    "sbti",
+    "net-zero",
+    "cdr-credits"
+  ],
+  "category": "regulatory",
+  "importance": 5,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "SBTi — Corporate Net-Zero Standard",
+      "url": "https://sciencebasedtargets.org/net-zero"
+    }
+  ],
+  "content_md": "## 出来事の概要\n\n2021 年 10 月 28 日、SBTi は **「Corporate Net-Zero Standard」** を公表した。COP26 (グラスゴー、2021-11) 直前のタイミングで、**世界初の企業向けネットゼロ目標認定基準** として位置付けられ、各社が独自に乱発していた「ネットゼロ宣言」の質を担保する **国際標準** が確立した。\n\n## 主要な要素\n\n- **2 段階構造**:\n  - **Near-term (短期)**: 5-10 年スパンの 1.5℃整合目標 (Scope 1+2+3)\n  - **Long-term (長期)**: 2050 年までに **90% 以上の絶対量削減** + 残存排出量を **中和 (neutralization)** で相殺\n- **中和 (Neutralization)**: Scope 1 から大気への直接除去・隔離を行うクレジット (CDR) で相殺。**Avoidance クレジット (回避型) は中和には使用不可**\n- **Beyond Value Chain Mitigation (BVCM)**: バリューチェーン外での追加的気候投資を推奨 (任意)\n- **時間軸**: Net-Zero 達成は **2050 年まで** が原則 (一部セクターは前倒し)\n\n## 日本企業への含意\n\n- **「2050 ネットゼロ宣言」の定義厳格化**: 多くの日本企業は「2050 ネットゼロ」を宣言しているが、SBTi 基準では **90%+ 絶対量削減 + CDR 中和** が必須。「**オフセット中心のネットゼロ**」は基準を満たさない構造\n- **CDR (Carbon Dioxide Removal) 調達需要の顕在化**: 90% 削減後の残存排出量の中和には **DAC・BECCS・バイオ炭・強化風化** などの CDR クレジットが必要。**2030 年代以降の CDR 需給逼迫** を前提にした早期調達戦略が重要\n- **Avoidance クレジット (REDD+, ARR 等) の役割再定義**: 従来の REDD+/ARR クレジットは「Near-term の追加目標 (BVCM)」での利用が中心となり、**Long-term Net-Zero の中和には不可** という明確な区分が確立\n\n## 編集部の論点\n\nNet-Zero Standard 公表は「**乱立する『ネットゼロ宣言』にグローバル標準の枠をはめた**」転換点である。CSR / サスティナビリティ担当者にとっての示唆:\n\n- **「ネットゼロ」と「カーボンニュートラル」の概念区別**: SBTi 基準では Net-Zero ≠ Carbon Neutral。**「90% 削減 + CDR 中和」が Net-Zero、「100% オフセット可」が Carbon Neutral** という業界用語の精緻化が進行\n- **CDR への投資シフトの必然性**: Avoidance クレジットだけでは Long-term 認定に不適格となるため、**Microsoft・Stripe・Frontier 連合などの先行企業による CDR 大量調達** が進行中。日本企業も中長期的に CDR 確保競争に参加せざるを得ない構造\n- **BVCM の戦略的意義**: バリューチェーン外への追加気候投資 (BVCM) は任意だが、**「責任ある企業」のシグナリング** として機能。REDD+ / 高品質 VCM クレジットの企業需要を支える主要因\n- **「目標達成のための数十年」**: 2050 までに 90%+ 削減という基準は、**通常の事業更新サイクル内では達成困難**。事業構造そのものの転換が要求される水準\n\n## 関連動向\n\n- [SBTi](/entities/sbti) — 制度本体\n- [Net-Zero](/entities/net-zero) — 概念定義\n- [CDR クレジット](/entities/cdr-credits) — 中和に使用される技術\n- [2024-04 SBTi Scope 3 EAC 声明](/timeline/2024-04-sbti-scope3-eac-statement) — 主要な制度議論\n"
+}

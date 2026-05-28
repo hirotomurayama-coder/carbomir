@@ -55,7 +55,8 @@ const DEFINE_ITEMS: NavItem[] = [
 ];
 
 const TRACK_ITEMS: NavItem[] = [
-  { href: "/timeline", label: "時系列・規制カレンダー", Icon: Clock },
+  { href: "/timeline", label: "時系列", Icon: Clock },
+  { href: "/policies/calendar", label: "規制カレンダー", Icon: CalendarClock },
 ];
 
 const APPLY_ITEMS: NavItem[] = [
