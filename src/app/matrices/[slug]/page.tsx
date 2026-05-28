@@ -17,6 +17,7 @@ import { FreshnessIndicator } from "@/components/freshness-indicator";
 import { ConsultCta } from "@/components/consult-cta";
 import { consultCopyForMatrix } from "@/lib/consult-cta";
 import { selectMatrixInboundTimeline } from "@/lib/durability";
+import { WatchButton } from "@/components/watchlist/watch-button";
 import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
@@ -77,7 +78,11 @@ export default async function MatrixDetailPage({ params }: Props) {
             lastReviewedAt={matrix.last_reviewed_at}
             nextReviewAt={matrix.next_review_at}
           />
-          <EditLink type="matrices" slug={matrix.slug} className="ml-auto" />
+          <WatchButton
+            item={{ kind: "matrix", slug: matrix.slug, label: matrix.title }}
+            className="ml-auto"
+          />
+          <EditLink type="matrices" slug={matrix.slug} />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
           {matrix.title}

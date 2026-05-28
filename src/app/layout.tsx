@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { AppShell } from "@/components/app-shell";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CommandMenuProvider } from "@/components/command-menu";
+import { WatchlistProvider } from "@/components/watchlist/watchlist-provider";
 import {
   listPublishedCaseStudies,
   listPublishedEntities,
@@ -65,15 +66,17 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <TooltipProvider delayDuration={200}>
-            <CommandMenuProvider
-              matrices={matrices}
-              entities={entities}
-              timelineEvents={timelineEvents}
-              caseStudies={caseStudies}
-              faqs={faqs}
-            >
-              <AppShell>{children}</AppShell>
-            </CommandMenuProvider>
+            <WatchlistProvider>
+              <CommandMenuProvider
+                matrices={matrices}
+                entities={entities}
+                timelineEvents={timelineEvents}
+                caseStudies={caseStudies}
+                faqs={faqs}
+              >
+                <AppShell>{children}</AppShell>
+              </CommandMenuProvider>
+            </WatchlistProvider>
           </TooltipProvider>
         </ThemeProvider>
       </body>

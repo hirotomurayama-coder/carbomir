@@ -31,6 +31,7 @@ import { FreshnessIndicator } from "@/components/freshness-indicator";
 import { PaywallBadge } from "@/components/paywall-badge";
 import { ConsultCta } from "@/components/consult-cta";
 import { consultCopyForEntity } from "@/lib/consult-cta";
+import { WatchButton } from "@/components/watchlist/watch-button";
 import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
@@ -127,7 +128,11 @@ export default async function EntityDetailPage({ params }: Props) {
             lastReviewedAt={entity.last_reviewed_at}
             nextReviewAt={entity.next_review_at}
           />
-          <EditLink type="entities" slug={entity.slug} className="ml-auto" />
+          <WatchButton
+            item={{ kind: "entity", slug: entity.slug, label: entity.name_ja }}
+            className="ml-auto"
+          />
+          <EditLink type="entities" slug={entity.slug} />
         </div>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-2">
           {entity.name_ja}

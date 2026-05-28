@@ -44,12 +44,12 @@ export function selectMatrixInboundTimeline(
  * event_date を基準日で「予定 (today 以降, 昇順)」と「直近 (today 未満, 降順)」に分割。
  * today は "YYYY-MM-DD"。event_date も同形式の文字列比較で判定する。
  */
-export function splitTimelineByDate(
-  events: DurabilityTimelineRef[],
+export function splitTimelineByDate<T extends { event_date: string }>(
+  events: T[],
   today: string
-): { upcoming: DurabilityTimelineRef[]; recent: DurabilityTimelineRef[] } {
-  const upcoming: DurabilityTimelineRef[] = [];
-  const recent: DurabilityTimelineRef[] = [];
+): { upcoming: T[]; recent: T[] } {
+  const upcoming: T[] = [];
+  const recent: T[] = [];
   for (const e of events) {
     if (e.event_date >= today) upcoming.push(e);
     else recent.push(e);

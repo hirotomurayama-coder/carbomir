@@ -24,9 +24,11 @@ import {
   Sparkles,
   PenSquare,
   CalendarClock,
+  Star,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useCommandMenu } from "@/components/command-menu";
+import { useWatchlist } from "@/components/watchlist/watchlist-provider";
 
 type NavItem = {
   href: string;
@@ -140,11 +142,14 @@ export function SidebarBody() {
 
       {/* Scrollable middle: all nav sections */}
       <div className="flex-1 min-h-0 overflow-y-auto sidebar-scroll">
-        {/* ホーム (単独) */}
+        {/* ホーム + ウォッチリスト (単独) */}
         <nav className="px-3 pt-3 pb-2">
           <ul className="space-y-0.5">
             <li>
               <NavLink {...HOME_ITEM} />
+            </li>
+            <li>
+              <WatchlistNavLink />
             </li>
           </ul>
         </nav>
@@ -209,6 +214,34 @@ function SidebarSection({
         ))}
       </ul>
     </nav>
+  );
+}
+
+/** ウォッチリスト導線。フォロー件数を live バッジ表示 (client state) */
+function WatchlistNavLink() {
+  const pathname = usePathname();
+  const { items, mounted } = useWatchlist();
+  const isActive = pathname === "/watchlist" || pathname.startsWith("/watchlist/");
+  const count = mounted ? items.length : 0;
+
+  return (
+    <Link
+      href="/watchlist"
+      className={cn(
+        "flex items-center gap-2.5 px-2 h-8 rounded-md text-[13px] transition-colors",
+        isActive
+          ? "bg-sidebar-accent text-sidebar-accent-foreground font-medium"
+          : "text-sidebar-foreground/70 hover:bg-sidebar-accent/40 hover:text-sidebar-foreground"
+      )}
+    >
+      <Star className="h-4 w-4 shrink-0" />
+      <span className="flex-1">ウォッチリスト</span>
+      {count > 0 && (
+        <span className="metric-number text-[10px] px-1.5 py-0.5 rounded bg-sidebar-accent/70 text-sidebar-foreground/80">
+          {count}
+        </span>
+      )}
+    </Link>
   );
 }
 
