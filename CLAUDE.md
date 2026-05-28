@@ -139,7 +139,9 @@ src/
                         #   offsets-db-inline-card, atlas-deep-dive-panel
     case-studies/, faq/, entities/, matrices/, timeline/, players/
   lib/
-    types.ts            # 全型定義
+    types.ts            # ドメイン型の re-export ハブ (実体は types/ 配下に分割)
+    types/              # ドメイン別型: common / entity / comparison /
+                        #   case-study / faq / timeline / atlas / ai-draft
     database.types.ts   # Supabase DB スキーマ
     supabase.ts         # Supabase クライアント
     data/
@@ -253,7 +255,8 @@ ANTHROPIC_API_KEY=
 - [ ] ライトモード完成度向上
 - [ ] モバイル ハンバーガーメニュー
 - [ ] レイアウトトークン統一 (Fix-N〜R の sticky 系起因 → 再発防止)
-- [ ] 大型ファイル分解: `edit-form.tsx` (917) / `timeline-bars.tsx` (795) / `app/page.tsx` (743) / `lib/data/queries.ts` (594) / `lib/types.ts` (588)
+- [ ] 大型ファイル分解 (残): `edit-form.tsx` (917) / `timeline-bars.tsx` (795) / `app/page.tsx` (743) / `lib/data/queries.ts` (594)
+  - [x] `lib/types.ts` (626 → 19): 8 ドメイン別ファイル (common/entity/comparison/case-study/faq/timeline/atlas/ai-draft) に分割、types.ts は re-export ハブ
 - [ ] テストカバレッジ向上 — 現状 3/130 (2.3%)、UI コンポーネントは全て未テスト
 
 ### Phase 5-A ✅ 世界マップ ブラッシュアップ (Fix-E〜I)
@@ -275,8 +278,8 @@ ANTHROPIC_API_KEY=
 ### Phase 4 (配管系・後回し)
 - [ ] 認証フロー (Supabase Auth + Google OAuth + middleware)
 - [ ] 課金フロー (Stripe Free/Standard/Pro)
-- [ ] ペイウォール (編集論点を Standard 限定に)
-  - 先行案: データモデルに `paywall_tier: "free" | "standard" | "pro"` を追加、UI には「Standard 会員限定」ラベルだけ先に出す → Phase 4 着手時のリファクタが軽くなる
+- [ ] ペイウォール (編集論点を Standard 限定に — マスキング・認証ゲート)
+  - [x] **地ならし完了**: `paywall_tier: "free" | "standard" | "pro"` をデータモデルに追加、PaywallBadge で「Standard 会員限定」ラベルだけ先行表示 (entity 79 / case-study 10 / matrix 8 件すべての「編集部の論点」セクションに付与済み)。残るは認証ゲートと本文マスク
 - [ ] Vercel デプロイ + carboncredits.jp/carbomir リバースプロキシ
 
 ---
