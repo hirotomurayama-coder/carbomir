@@ -14,11 +14,19 @@ import {
   rowToEntity,
 } from "@/lib/data/mappers";
 import {
+  type EntityInboundReferences,
+  selectEntityInboundReferences,
+} from "@/lib/data/inbound-refs";
+import {
   findEntityBySlug as seedFindEntityBySlug,
   findEntityRef as seedFindEntityRef,
   listPublishedEntities as seedListPublishedEntities,
   listInboundRelations as seedListInboundRelations,
 } from "@/lib/data/entities";
+import { listPublishedTimelineEvents } from "./timeline";
+import { listPublishedCaseStudies, listPublishedFaqs } from "./case-study-faq";
+
+export type { EntityInboundReferences };
 
 const ENTITY_COLUMNS =
   "id, slug, type, name_ja, name_en, abbreviation, summary, sections, tags, status, last_reviewed_at, related_matrix_slugs, jurisdiction, established_year, operator, geographic_scope, website_url, credit_unit, parent_company, business_role, policy_status, next_milestone";
@@ -122,6 +130,24 @@ export async function listInboundRelations(
     });
   }
   return out;
+}
+
+/**
+ * entity を「参照する側」のクロスタイプ被参照を集める (timeline / case-study / faq)。
+ *
+ * entity↔entity の `Referenced By` ({@link listInboundRelations}) と対をなす、
+ * cross-type の逆リンク導出。published コンテンツを読み込み、純粋ロジック
+ * ({@link selectEntityInboundReferences}) に委譲する。entity 詳細ページの被参照パネルで使う。
+ */
+export async function listEntityInboundReferences(
+  slug: string
+): Promise<EntityInboundReferences> {
+  const [events, studies, faqs] = await Promise.all([
+    listPublishedTimelineEvents(),
+    listPublishedCaseStudies(),
+    listPublishedFaqs(),
+  ]);
+  return selectEntityInboundReferences(slug, events, studies, faqs);
 }
 
 export async function findEntityRef(slug: string): Promise<EntityRef | undefined> {

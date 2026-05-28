@@ -9,6 +9,7 @@ import {
   findEntityRef,
   findMatrixBySlug,
   getOffsetsDbAggregates,
+  listEntityInboundReferences,
   listInboundRelations,
   listPublishedEntities,
 } from "@/lib/data/queries";
@@ -16,8 +17,10 @@ import { findOffsetsRegistryForEntity } from "@/lib/data/atlas";
 import { OffsetsDbInlineCard } from "@/components/atlas/offsets-db-inline-card";
 import {
   ENTITY_TYPE_LABEL,
+  FAQ_CATEGORY_LABEL,
   RELATION_LABEL,
   RELATION_LABEL_REVERSE,
+  TIMELINE_CATEGORY_LABEL,
 } from "@/lib/types";
 import { EntityToc } from "@/components/entities/entity-toc";
 import { MetadataPanel } from "@/components/entities/metadata-panel";
@@ -72,6 +75,10 @@ export default async function EntityDetailPage({ params }: Props) {
   const forwardSlugs = new Set(entity.related.map((r) => r.to_slug));
   const inboundAll = await listInboundRelations(slug);
   const inboundRelations = inboundAll.filter((r) => !forwardSlugs.has(r.from_slug));
+
+  // Cross-type 被参照 (timeline / case-study / faq → この entity)。
+  // forward フィールドを逆引きするだけで自動導出する (entity↔entity の Referenced By と同型)。
+  const inboundRefs = await listEntityInboundReferences(slug);
 
   // OffsetsDB 該当 registry の集計を取得
   const offsetsRegistry = findOffsetsRegistryForEntity(slug);
@@ -273,6 +280,79 @@ export default async function EntityDetailPage({ params }: Props) {
                         </p>
                         <p className="label-mono text-muted-foreground metric-number mt-1">
                           {m.entities.length}×{m.dimensions.length}
+                        </p>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+          {inboundRefs.timeline.length > 0 && (
+            <Card>
+              <CardContent className="p-5">
+                <p className="label-mono text-muted-foreground mb-4">
+                  In Timeline
+                </p>
+                <ul className="space-y-3">
+                  {inboundRefs.timeline.map((t) => (
+                    <li key={t.slug}>
+                      <Link href={`/timeline/${t.slug}`} className="group block">
+                        <span className="label-mono text-accent block mb-0.5 metric-number">
+                          {t.event_date} · {TIMELINE_CATEGORY_LABEL[t.category]}
+                        </span>
+                        <p className="text-sm font-medium text-foreground group-hover:text-accent leading-snug">
+                          {t.title}
+                        </p>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+          {inboundRefs.caseStudies.length > 0 && (
+            <Card>
+              <CardContent className="p-5">
+                <p className="label-mono text-muted-foreground mb-4">
+                  In Case Studies
+                </p>
+                <ul className="space-y-3">
+                  {inboundRefs.caseStudies.map((c) => (
+                    <li key={c.slug}>
+                      <Link
+                        href={`/case-studies/${c.slug}`}
+                        className="group block"
+                      >
+                        <span className="label-mono text-accent block mb-0.5">
+                          {c.company}
+                        </span>
+                        <p className="text-sm font-medium text-foreground group-hover:text-accent leading-snug">
+                          {c.title}
+                        </p>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+          {inboundRefs.faqs.length > 0 && (
+            <Card>
+              <CardContent className="p-5">
+                <p className="label-mono text-muted-foreground mb-4">In FAQ</p>
+                <ul className="space-y-3">
+                  {inboundRefs.faqs.map((f) => (
+                    <li key={f.slug}>
+                      <Link href={`/faq#${f.slug}`} className="group block">
+                        <span className="label-mono text-accent block mb-0.5">
+                          {FAQ_CATEGORY_LABEL[f.category]}
+                        </span>
+                        <p className="text-sm font-medium text-foreground group-hover:text-accent leading-snug">
+                          {f.question}
                         </p>
                       </Link>
                     </li>

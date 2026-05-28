@@ -50,6 +50,58 @@ export function FaqExplorer({ items, entityNameMap }: Props) {
       return next;
     });
 
+  // 他ページ (entity 詳細の「In FAQ」逆リンク等) から /faq#<slug> で来たとき、
+  // 該当 FAQ を絞り込みに関係なく開いてスクロールする。
+  const [pendingScroll, setPendingScroll] = React.useState<string | null>(null);
+
+  const applyHash = React.useCallback(() => {
+    const hash = decodeURIComponent(
+      (typeof window !== "undefined" ? window.location.hash : "").replace(
+        /^#/,
+        ""
+      )
+    );
+    if (!hash || !items.some((f) => f.slug === hash)) return;
+    setFilter("all");
+    setQuery("");
+    setExpanded((prev) => new Set(prev).add(hash));
+    setPendingScroll(hash);
+  }, [items]);
+
+  React.useEffect(() => {
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, [applyHash]);
+
+  React.useEffect(() => {
+    if (!pendingScroll) return;
+    // コールドロードでは展開後にフォント・Markdown が遅れて描画され、一度の
+    // scrollIntoView では着地位置がずれる。位置が 2 連続で安定するまで instant
+    // スクロールを再試行し (最大 ~1.1s)、安定したら停止する。
+    // behavior:"instant" で即時ジャンプ (コンテナの CSS scroll-behavior:smooth を回避。
+    // smooth だと長距離スクロールがコールドロードの再描画で中断され着地しない)。
+    let timer = 0;
+    let tries = 0;
+    let lastTop = Number.NaN;
+    const step = () => {
+      const el = document.getElementById(pendingScroll);
+      if (el) {
+        el.scrollIntoView({ block: "start", behavior: "instant" });
+        const top = Math.round(el.getBoundingClientRect().top);
+        if ((top === lastTop && tries > 1) || tries > 12) {
+          setPendingScroll(null);
+          return;
+        }
+        lastTop = top;
+      }
+      tries += 1;
+      timer = window.setTimeout(step, 90);
+    };
+    timer = window.setTimeout(step, 0);
+    return () => window.clearTimeout(timer);
+  }, [pendingScroll]);
+
   const availableCats = React.useMemo(() => {
     const set = new Set<FaqCategory>();
     for (const f of items) set.add(f.category);
@@ -102,7 +154,7 @@ export function FaqExplorer({ items, entityNameMap }: Props) {
           {filtered.map((f) => {
             const isOpen = expanded.has(f.slug);
             return (
-              <li key={f.slug}>
+              <li key={f.slug} id={f.slug} className="scroll-mt-24">
                 <Card className="overflow-hidden p-0">
                   <button
                     type="button"
