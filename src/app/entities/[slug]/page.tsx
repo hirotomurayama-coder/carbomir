@@ -24,6 +24,7 @@ import { MetadataPanel } from "@/components/entities/metadata-panel";
 import { MarkdownContent } from "@/components/markdown-content";
 import { ReviewMarkedText } from "@/components/review-marks";
 import { FreshnessIndicator } from "@/components/freshness-indicator";
+import { PaywallBadge } from "@/components/paywall-badge";
 import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
@@ -159,13 +160,14 @@ export default async function EntityDetailPage({ params }: Props) {
               id={`section-${i}`}
               className="scroll-mt-20"
             >
-              <div className="flex items-baseline gap-3 mb-3">
+              <div className="flex items-baseline gap-3 mb-3 flex-wrap">
                 <span className="label-mono text-muted-foreground metric-number">
                   {(i + 1).toString().padStart(2, "0")}
                 </span>
                 <h2 className="text-xl font-bold text-foreground tracking-tight">
                   {s.heading}
                 </h2>
+                <PaywallBadge tier={s.paywall_tier} />
               </div>
               <MarkdownContent>{s.body}</MarkdownContent>
               {s.source_urls && s.source_urls.length > 0 && (

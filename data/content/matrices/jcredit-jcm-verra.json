@@ -39,7 +39,8 @@
     {
       "key": "carbomir_quality_view",
       "label_ja": "Carbomir 編集部の品質観",
-      "description": "業界内通念に基づく定性評価"
+      "description": "業界内通念に基づく定性評価",
+      "paywall_tier": "standard"
     }
   ],
   "entities": [

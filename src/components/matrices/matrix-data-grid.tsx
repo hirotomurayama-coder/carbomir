@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { ComparisonCell, ComparisonMatrix } from "@/lib/types";
 import { ReviewMarkedText } from "@/components/review-marks";
+import { PaywallBadge } from "@/components/paywall-badge";
 
 type Props = {
   matrix: ComparisonMatrix;
@@ -352,8 +353,9 @@ export function MatrixDataGrid({ matrix, publishedEntitySlugs }: Props) {
                         style={{ width: `${dimPct}%` }}
                       />
                     </div>
-                    <div className="font-semibold text-foreground text-sm">
+                    <div className="font-semibold text-foreground text-sm flex items-center gap-2 flex-wrap">
                       {d.label_ja}
+                      <PaywallBadge tier={d.paywall_tier} compact />
                     </div>
                     {d.description && (
                       <div className="text-xs text-muted-foreground mt-1.5 leading-relaxed">

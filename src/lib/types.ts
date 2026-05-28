@@ -6,6 +6,24 @@ export type EntityType =
   | "technology"
   | "project";
 
+/**
+ * 課金階層 (paywall tier).
+ *
+ * セクション単位で付与し、UI には「Standard 会員限定」等のラベルだけ先に出す。
+ * 認証・課金フローは Phase 4 で後付け予定。
+ *
+ * - free: 公開コンテンツ (未指定時はこれ扱い)
+ * - standard: 編集論点フルアクセスを含む有料層 (¥3,000-5,000/月想定)
+ * - pro: CSV エクスポート・アラート・API 等のプロ機能層 (¥15,000-30,000/月想定)
+ */
+export type PaywallTier = "free" | "standard" | "pro";
+
+export const PAYWALL_TIER_LABEL: Record<PaywallTier, string> = {
+  free: "無料",
+  standard: "Standard 会員限定",
+  pro: "Pro 会員限定",
+};
+
 export type EntityRef = {
   slug: string;
   name_ja: string;
@@ -29,6 +47,11 @@ export type EntitySection = {
   heading: string;
   body: string;
   source_urls?: { label: string; url: string }[];
+  /**
+   * 課金階層 (任意、未指定時は "free" 扱い)。
+   * Phase 4 着手前の地ならし: UI にはラベルバッジだけ出し、マスクは未実装。
+   */
+  paywall_tier?: PaywallTier;
 };
 
 export type Entity = {
@@ -337,6 +360,11 @@ export const CASE_STUDY_CATEGORY_LABEL: Record<CaseStudyCategory, string> = {
 export type CaseStudySection = {
   heading: string;
   body: string; // Markdown
+  /**
+   * 課金階層 (任意、未指定時は "free" 扱い)。
+   * Phase 4 着手前の地ならし: UI にはラベルバッジだけ出し、マスクは未実装。
+   */
+  paywall_tier?: PaywallTier;
 };
 
 export type CaseStudy = {
@@ -398,6 +426,11 @@ export type ComparisonDimension = {
   key: string;
   label_ja: string;
   description?: string;
+  /**
+   * 課金階層 (任意、未指定時は "free" 扱い)。
+   * 列単位で付けると列ヘッダーにバッジ表示される (e.g. carbomir_view = "standard")。
+   */
+  paywall_tier?: PaywallTier;
 };
 
 export type ComparisonCell = {
@@ -405,6 +438,11 @@ export type ComparisonCell = {
   source_url?: string;
   source_label?: string;
   note?: string;
+  /**
+   * 課金階層 (任意、未指定時は "free" 扱い)。
+   * 比較行列では基本 dimension (列) 単位で揃える運用を想定 (carbomir_view 列を standard など)。
+   */
+  paywall_tier?: PaywallTier;
 };
 
 /**

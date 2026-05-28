@@ -43,7 +43,8 @@
     },
     {
       "key": "carbomir_view",
-      "label_ja": "Carbomir 編集部の見解"
+      "label_ja": "Carbomir 編集部の見解",
+      "paywall_tier": "standard"
     }
   ],
   "entities": [

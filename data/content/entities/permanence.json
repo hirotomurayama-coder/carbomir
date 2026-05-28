@@ -27,7 +27,8 @@
     },
     {
       "heading": "編集部の論点",
-      "body": "永続性は **Engineered Removal を選ぶ最大の論拠**。SBTi Net-Zero Standard では「残余 10% を中和するクレジットは Permanent Removal でなければならない」とされ、森林系の使用に制約がある。\n\nしかし実務的論点:\n\n- **コスト差**: 森林系 3-50 USD/t vs Engineered Removal 100-600 USD/t\n- **規模制約**: Engineered Removal は 2030 年で年間 100 万 t 級、需要の全量カバーには遠い\n- **Buffer Pool**: 森林系は非永続性を Buffer Pool (積み立て) で部分的に補償する設計\n\n結果、現実的には **森林系 + Engineered Removal のハイブリッドポートフォリオ** が標準パターン。"
+      "body": "永続性は **Engineered Removal を選ぶ最大の論拠**。SBTi Net-Zero Standard では「残余 10% を中和するクレジットは Permanent Removal でなければならない」とされ、森林系の使用に制約がある。\n\nしかし実務的論点:\n\n- **コスト差**: 森林系 3-50 USD/t vs Engineered Removal 100-600 USD/t\n- **規模制約**: Engineered Removal は 2030 年で年間 100 万 t 級、需要の全量カバーには遠い\n- **Buffer Pool**: 森林系は非永続性を Buffer Pool (積み立て) で部分的に補償する設計\n\n結果、現実的には **森林系 + Engineered Removal のハイブリッドポートフォリオ** が標準パターン。",
+      "paywall_tier": "standard"
     }
   ]
 }

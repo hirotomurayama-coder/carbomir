@@ -43,7 +43,8 @@
   },
   {
   "key": "carbomir_quality_view",
-  "label_ja": "Carbomir 編集部の品質観"
+  "label_ja": "Carbomir 編集部の品質観",
+  "paywall_tier": "standard"
   }
   ],
   "entities": [
