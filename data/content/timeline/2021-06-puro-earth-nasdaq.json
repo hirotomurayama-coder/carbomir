@@ -1,0 +1,25 @@
+{
+  "slug": "2021-06-puro-earth-nasdaq",
+  "event_date": "2021-06-01",
+  "title": "Nasdaq が Puro.earth を傘下化 (除去専業レジストリの確立)",
+  "summary": "2019 年にフィンランドで設立された永続カーボン除去 (CDR) 専門レジストリ Puro.earth の過半数株式を、2021 年 6 月 1 日に米 Nasdaq が取得。100 年以上の貯留を前提とする除去のみを CO2 除去証書 (CORC) として発行する「除去専業レジストリ」に金融インフラ事業者の裏付けが付き、engineered CDR の市場形成を象徴するイベントとなった。バイオ炭が発行量の約 3 分の 1 を占める。",
+  "affected_entity_slugs": [
+    "puro-earth",
+    "biochar",
+    "cdr-credits"
+  ],
+  "category": "market",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Puro.earth",
+      "url": "https://puro.earth/"
+    },
+    {
+      "label": "Nasdaq / GlobeNewswire — Nasdaq Acquires Emerging Carbon Removal Market Puro.earth (2021-06-01)",
+      "url": "https://www.globenewswire.com/news-release/2021/06/01/2239185/6948/en/Nasdaq-Acquires-Emerging-Carbon-Removal-Market-Puro-earth.html"
+    }
+  ],
+  "content_md": "## 制度の概要\n\n[Puro.earth](/entities/puro-earth) は 2019 年にフィンランド・ヘルシンキで設立された、**永続的なカーボン除去 (CDR) 専門のレジストリ兼スタンダード**。100 年以上の貯留を前提とする除去のみを認証し、**CO2 除去証書 (CO2 Removal Certificate, CORC)** として発行する。2021 年 6 月 1 日、米 **Nasdaq が過半数株式を取得**し、CDR レジストリに金融インフラ事業者の裏付けが付いた象徴的なイベントとなった (旧主要株主の Fortum は少数株主として残留)。\n\n## 主要な要素\n\n- **CORC**: 1 CORC = 1 トンの永続的 CO2 除去。Verra (VCS) や Gold Standard が回避・削減を含む汎用レジストリなのに対し、Puro は **除去 (Removal) 専業**で棲み分ける\n- **バイオ炭が主力**: 発行量の約 3 分の 1 を [バイオ炭](/entities/biochar) が占め、世界最大級のバイオ炭手法レジストリ。ほか BECCS・風化促進・建材炭素貯留など\n- **Nasdaq との統合**: 2022 年 3 月、Nasdaq が世界初の除去クレジット価格指数 (CORC Biochar Price Index 等) を公表。レジストリ + 価格指標で市場形成を後押し\n- **永続性の重視**: 100 年以上の貯留を必須とし、安価な短期自然系クレジットとは別市場を意図的に形成\n\n## 日本企業への含意\n\n- **除去クレジットの調達先**: SBTi の除去要件強化や Net-Zero ロードマップで「永続除去」を必要とする日本企業にとって、CORC は調達チャネルの一つ (→ [VCM レジストリ比較](/matrices/vcm-registry-comparison))\n- **バイオ炭の出口**: 国内のバイオ炭事業者が国際的な [除去クレジット](/entities/cdr-credits) として収益化する経路を示す\n\n## 編集部の論点\n\nPuro.earth の意義は、**「除去専業レジストリ」というカテゴリを確立**し、金融インフラ (Nasdaq) を巻き込んで価格発見の土台を作った点にある。\n\n- **回避と除去の市場分離**: 汎用レジストリ ([Verra VCS](/entities/verra-vcs) 等) が品質論争に晒される中、Puro は除去・高永続に絞ることで品質シグナルを構造的に内包した (確信度 強)\n- **価格指数の意味**: CORC 価格指数は CDR の「相場」を可視化し、[Frontier AMC](/timeline/2022-04-frontier-amc-launch) のような前払い需要と並んで市場の透明性を高めた (確信度 中)\n- **後発との競合**: 科学プロトコル重視の [Isometric](/timeline/2023-07-isometric-launch) など新世代レジストリが台頭し、除去レジストリ間の方法論・厳格性競争が始まっている (運用注視: レジストリ選定基準の収斂は未確定)\n\n## 関連動向\n\n- [Isometric 始動](/timeline/2023-07-isometric-launch) — 科学プラットフォーム型の新世代除去レジストリ\n- [Frontier AMC 発足](/timeline/2022-04-frontier-amc-launch) — CDR 需要創出モデル\n- [Climeworks Mammoth 稼働](/timeline/2024-05-climeworks-mammoth) — DAC の大規模化\n- [VCM レジストリ比較](/matrices/vcm-registry-comparison) / [Engineered Removal 技術比較](/matrices/engineered-removal-comparison)\n"
+}

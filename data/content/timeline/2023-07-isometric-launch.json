@@ -1,0 +1,25 @@
+{
+  "slug": "2023-07-isometric-launch",
+  "event_date": "2023-07-17",
+  "title": "Isometric 始動 (科学プロトコル重視の新世代除去レジストリ)",
+  "summary": "2023 年 7 月 17 日、Isometric が Lowercarbon Capital・Plural 主導で $2,500 万 (当時として気候スタートアップ最大級) のシード資金を調達し、カーボン除去専門のレジストリ兼「サイエンス・プラットフォーム」を立ち上げた (拠点ロンドン / ニューヨーク)。科学的に厳格なプロトコルを公開協議で策定し、検証済みクレジットのみを発行する点を差別化要素に掲げ、除去レジストリの競争軸を「規模」から「厳格性・透明性」へ広げた。",
+  "affected_entity_slugs": [
+    "isometric",
+    "cdr-credits",
+    "dmrv"
+  ],
+  "category": "methodology",
+  "importance": 3,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Isometric",
+      "url": "https://isometric.com/"
+    },
+    {
+      "label": "TechCrunch — Isometric taps $25M to build a registry and science platform focused on carbon removal (2023-07-17)",
+      "url": "https://techcrunch.com/2023/07/17/isometric-taps-25m-to-build-a-registry-and-science-platform-focused-on-carbon-removal/"
+    }
+  ],
+  "content_md": "## 制度の概要\n\n[Isometric](/entities/isometric) は 2023 年 7 月 17 日、**$2,500 万 (約 38 億円) のシード資金**を Lowercarbon Capital と Plural の主導で調達し、**カーボン除去専門のレジストリ兼「サイエンス・プラットフォーム」**を立ち上げた (拠点: ロンドン / ニューヨーク)。当時として気候スタートアップ最大級のシードラウンドの一つで、**科学的に厳格なプロトコルを公開協議で策定する**点を最大の差別化要素に掲げた。\n\n## 主要な要素\n\n- **サイエンス・プラットフォーム**: 供給者・買い手・学術コミュニティが除去量の定量化手法 (プロトコル) を共同開発し、**パブリックコメントを経て確定**してからレジストリに反映する透明な手続き\n- **検証済みのみ発行**: 引き渡し済み・検証済みの永続除去クレジットだけを公開レジストリに掲載 (将来クレジットの先行発行を避ける)\n- **科学者主導の体制**: 調達資金の主用途は科学者・エンジニアの増員。MRV の科学的厳格性をレジストリの中核に据える\n\n## 日本企業への含意\n\n- **品質基準の参照点**: [除去クレジット](/entities/cdr-credits) の調達基準を社内策定する際、Isometric のプロトコル群は「何をもって永続除去とみなすか」の科学的リファレンスになる (→ [Engineered Removal 技術比較](/matrices/engineered-removal-comparison))\n- **dMRV の方向性**: [dMRV](/entities/dmrv) を含む測定・検証の厳格化トレンドを体現\n\n## 編集部の論点\n\nIsometric の核心は、レジストリの価値を **「在庫の多さ」ではなく「プロトコルの科学的厳格性と透明性」**に置き換えようとした点にある。\n\n- **プロトコル公開協議モデル**: 方法論をブラックボックス化せず公開協議で固める手法は、VCM の品質不信 ([ICVCM 初の CCP 承認](/timeline/2024-06-icvcm-first-ccp-approvals)) への構造的応答と読める (確信度 中)\n- **先行除去レジストリとの差別化**: [Puro.earth](/timeline/2021-06-puro-earth-nasdaq) が市場・価格指数で先行する中、Isometric は科学レイヤーで差別化。除去レジストリの競争軸が「規模 vs 厳格性」へ多極化した (確信度 中)\n- **新興ゆえの不確実性**: 設立が新しく、長期の実績・発行量はこれから。デファクト標準になるかは buyer の選好次第 (運用注視: 大口 buyer の採用動向)\n\n## 関連動向\n\n- [Puro.earth と Nasdaq](/timeline/2021-06-puro-earth-nasdaq) — 除去専業レジストリの先行例\n- [Frontier AMC 発足](/timeline/2022-04-frontier-amc-launch) — 厳格な永続除去への前払い需要\n- [ICVCM 初の CCP 承認](/timeline/2024-06-icvcm-first-ccp-approvals) — VCM 品質ラベルの動き\n- [VCM レジストリ比較](/matrices/vcm-registry-comparison) / [Engineered Removal 技術比較](/matrices/engineered-removal-comparison)\n"
+}
