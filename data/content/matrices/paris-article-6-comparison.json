@@ -1,0 +1,142 @@
+{
+  "slug": "paris-article-6-comparison",
+  "title": "パリ協定 6 条 メカニズム比較 (6.2 協調的アプローチ / 6.4 PACM / JCM)",
+  "description": "パリ協定 6 条の市場メカニズム 3 系統を、ガバナンス類型・移転単位・相当調整・運用状況の軸で対比。国際クレジット移転の制度地図と日本企業の参入経路を俯瞰する。",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "category": "scheme",
+  "tags": [
+    "パリ協定 6 条",
+    "国際",
+    "二国間",
+    "遵守市場"
+  ],
+  "dimensions": [
+    {
+      "key": "governance_type",
+      "label_ja": "ガバナンス類型"
+    },
+    {
+      "key": "unit",
+      "label_ja": "移転単位"
+    },
+    {
+      "key": "authorizing_body",
+      "label_ja": "承認・発行主体"
+    },
+    {
+      "key": "corresponding_adjustment",
+      "label_ja": "相当調整 (二重計上回避)"
+    },
+    {
+      "key": "operational_status",
+      "label_ja": "運用状況 (2026 年時点)"
+    },
+    {
+      "key": "japan_relevance",
+      "label_ja": "日本企業との接点"
+    },
+    {
+      "key": "carbomir_view",
+      "label_ja": "Carbomir 編集部の論点",
+      "paywall_tier": "standard"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "paris-article-6-2",
+      "name_ja": "6.2 協調的アプローチ",
+      "name_en": "Article 6.2 Cooperative Approaches"
+    },
+    {
+      "slug": "paris-article-6-4",
+      "name_ja": "6.4 PACM",
+      "name_en": "Article 6.4 (Paris Agreement Crediting Mechanism)"
+    },
+    {
+      "slug": "jcm",
+      "name_ja": "JCM",
+      "name_en": "Joint Crediting Mechanism"
+    }
+  ],
+  "cells": {
+    "paris-article-6-2": {
+      "governance_type": {
+        "value": "分権型。締約国間の二国間・多国間取決めで各国が独自に設計・運用する",
+        "source_url": "https://unfccc.int/process-and-meetings/the-paris-agreement/cooperative-implementation",
+        "source_label": "UNFCCC Article 6.2"
+      },
+      "unit": {
+        "value": "ITMO (国際的に移転される緩和成果)",
+        "note": "Internationally Transferred Mitigation Outcome"
+      },
+      "authorizing_body": {
+        "value": "移転元・移転先の各国政府が個別に承認 (UNFCCC は登録簿・報告様式を規定)"
+      },
+      "corresponding_adjustment": {
+        "value": "必須。移転元国は自国 NDC 達成分から相当調整を行い二重計上を防ぐ"
+      },
+      "operational_status": {
+        "value": "運用開始済。スイス・日本・シンガポール等が二国間協定を締結し、最初の ITMO 移転は 2023-2024 に実現"
+      },
+      "japan_relevance": {
+        "value": "JCM が 6.2 協調的アプローチとして位置付けられる。日本の主要参入経路"
+      },
+      "carbomir_view": {
+        "value": "分権ゆえ柔軟だが、相当調整の透明性・環境十全性が国ごとにばらつく。買い手は移転元国の調整実施状況を見極める必要があると考えられる"
+      }
+    },
+    "paris-article-6-4": {
+      "governance_type": {
+        "value": "中央集権型。UNFCCC の監督機関 (Supervisory Body) が一元運営する国連メカニズム",
+        "source_url": "https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism",
+        "source_label": "UNFCCC Article 6.4 Mechanism"
+      },
+      "unit": {
+        "value": "A6.4ER (Article 6.4 Emission Reduction)"
+      },
+      "authorizing_body": {
+        "value": "6.4 条監督機関がメソドロジー承認・クレジット発行を一元管理"
+      },
+      "corresponding_adjustment": {
+        "value": "ホスト国が承認 (authorize) した分は相当調整必須。未承認の mitigation contribution 単位は調整不要だが NDC・国際遵守用途が限定される"
+      },
+      "operational_status": {
+        "value": "COP29 (2024-11、バクー) でメソドロジー・除去の基準が採択され運用条件が整った。最初の A6.4ER 発行は 2025-2026 を見込む (運用注視: 発行ペースは未確定)"
+      },
+      "japan_relevance": {
+        "value": "CDM からの移行案件・新規案件の受け皿。日本企業は PACM 案件への投資・クレジット調達で関与し得る"
+      },
+      "carbomir_view": {
+        "value": "国連の一元管理で品質シグナルは強い。ただし監督機関のメソドロジー承認ペースが供給量の律速になり得る"
+      }
+    },
+    "jcm": {
+      "governance_type": {
+        "value": "二国間政府制度。日本と各パートナー国の合同委員会が運営 (6.2 協調的アプローチに整合)",
+        "source_url": "https://www.jcm.go.jp/",
+        "source_label": "JCM 公式 (日本政府)"
+      },
+      "unit": {
+        "value": "JCM クレジット"
+      },
+      "authorizing_body": {
+        "value": "日本政府 (経産省・環境省・外務省) と相手国政府の合同委員会"
+      },
+      "corresponding_adjustment": {
+        "value": "両国政府で削減量を按分し、二重計上回避を制度設計に内包。6.2 整合の相当調整を適用"
+      },
+      "operational_status": {
+        "value": "2013 年運用開始。パートナー国は 29 か国前後に拡大 (運用注視: 国数は随時追加)"
+      },
+      "japan_relevance": {
+        "value": "日本の NDC 達成手段。GX-ETS の遵守クレジット供給源としても接続が進む"
+      },
+      "carbomir_view": {
+        "value": "政府間で二重計上回避が制度に内包される点が強み。GX-ETS との接続で国内クレジット需要の受け皿となる可能性",
+        "note": "三菱商事等の商社が案件組成の中核"
+      }
+    }
+  }
+}

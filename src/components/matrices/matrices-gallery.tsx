@@ -63,23 +63,29 @@ const SCENARIOS: Scenario[] = [
     key: "quality",
     label: "クレジット品質を見極める",
     description:
-      "NBS / Engineered Removal の永続性・MRV・コスト比較で品質階層化",
+      "NBS / Engineered Removal の品質比較、ICVCM・VCMI 等の品質ガバナンス枠組み",
     icon: <Sparkles className="h-4 w-4" />,
     accent:
       "border-emerald-500/40 hover:border-emerald-500/70 bg-emerald-500/5",
     matrixSlugs: [
       "engineered-removal-comparison",
       "nbs-quality-comparison",
+      "vcm-integrity-governance-comparison",
     ],
   },
   {
     key: "market",
     label: "市場・調達戦略",
-    description: "CDR 需要集約モデル比較、J-クレジット / JCM / Verra 制度対比",
+    description:
+      "CDR 需要集約モデル、J-クレジット / JCM / Verra 制度対比、パリ協定 6 条メカニズム",
     icon: <TrendingUp className="h-4 w-4" />,
     accent:
       "border-violet-500/40 hover:border-violet-500/70 bg-violet-500/5",
-    matrixSlugs: ["cdr-buyer-coalition-comparison", "jcredit-jcm-verra"],
+    matrixSlugs: [
+      "cdr-buyer-coalition-comparison",
+      "jcredit-jcm-verra",
+      "paris-article-6-comparison",
+    ],
   },
   {
     key: "standard",

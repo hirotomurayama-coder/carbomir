@@ -21,7 +21,9 @@
   "policy_status": "pilot",
   "next_milestone": "2025-: 初の PACM クレジット発行開始予定 (運用注視: 最新進捗)",
   "related": [],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "paris-article-6-comparison"
+  ],
   "sections": [
     {
       "heading": "枠組みの概要",

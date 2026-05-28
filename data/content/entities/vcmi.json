@@ -1,0 +1,60 @@
+{
+  "slug": "vcmi",
+  "type": "player",
+  "name_ja": "VCMI (組織)",
+  "name_en": "Voluntary Carbon Markets Integrity Initiative",
+  "abbreviation": "VCMI",
+  "summary": "ボランタリー市場の需要側ガバナンス機関。企業がカーボンクレジットをどう使い、対外的にどう主張 (Claim) してよいかを定める Claims Code of Practice を策定・運営する。供給側品質を担う ICVCM と対をなす。2021 年設立。",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "tags": [
+    "国際",
+    "ボランタリー市場",
+    "品質基準 (CCP)",
+    "需要家"
+  ],
+  "jurisdiction": "国際 (英国本部)",
+  "established_year": 2021,
+  "operator": "VCMI (非営利。英国政府等が立ち上げを支援)",
+  "geographic_scope": "グローバル (VCM 全体)",
+  "website_url": "https://vcmintegrity.org/",
+  "business_role": "国際ガバナンス (需要側)",
+  "credit_unit": "(発行主体ではない。クレジット利用の主張を格付け)",
+  "related": [
+    {
+      "to_slug": "icvcm-ccp",
+      "relation": "depends_on",
+      "note": "高品質クレジットの判定は ICVCM CCP 等の供給側基準と整合させる設計"
+    },
+    {
+      "to_slug": "sbti",
+      "relation": "depends_on",
+      "note": "Claims Code は科学に基づく排出削減目標 (SBTi 等) の設定・達成を前提条件とする"
+    }
+  ],
+  "related_matrix_slugs": [
+    "vcm-integrity-governance-comparison"
+  ],
+  "sections": [
+    {
+      "heading": "組織の概要",
+      "body": "VCMI (Voluntary Carbon Markets Integrity Initiative) は、ボランタリー市場の **需要側 (クレジットを買って主張する企業側)** のガバナンスを担う国際非営利。ICVCM がクレジットそのものの品質 (供給側) を規律するのに対し、VCMI は **「企業がクレジットを使って何を主張してよいか」** を規律する。\n\n両者はともに 2021 年に設立され、Mark Carney が主導した TSVCM (Taskforce on Scaling Voluntary Carbon Markets) を起源とする供給側 (ICVCM) / 需要側 (VCMI) の役割分担として整理できる。",
+      "source_urls": [
+        {
+          "label": "VCMI 公式",
+          "url": "https://vcmintegrity.org/"
+        }
+      ]
+    },
+    {
+      "heading": "Claims Code of Practice の構造",
+      "body": "VCMI の中核ツールが **Claims Code of Practice** (2023 年公表)。企業がボランタリークレジットを使った主張を行う際の信頼性を 3 段階で格付けする:\n\n- **Carbon Integrity Silver / Gold / Platinum**: 科学に基づく削減目標達成後の **残余排出に対するクレジット充当割合** に応じて格付けが上がる\n\nいずれの格付けも、前提となる **基礎要件 (Foundational Criteria)** を満たすことが条件:\n\n- 科学に基づく排出削減目標 (1.5°C 整合) を設定・公表していること\n- GHG インベントリを開示していること\n- 削減経路上で進捗していること\n\nつまり VCMI は **「まず自社削減、クレジットは残余への上乗せ」** という順序を制度的に固定する設計と整理できる。Scope 3 を含む主張のガイダンスは順次拡充されている (運用注視: Scope 3 関連ガイダンスの確定段階)。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "VCMI は **greenwashing 批判に対する企業側の防御線** として機能する。「カーボンニュートラル」等の主張が外部から疑問視される局面で、Claims Code の格付けは **第三者基準に裏打ちされた主張** であることを示すラベルになり得る。\n\n日本企業にとっての含意:\n\n- **SBTi 目標が前提**: VCMI の土俵に乗るには科学に基づく削減目標が不可欠。目標未設定の企業はそもそも格付けを取得できない\n- **ICVCM との二段構え**: 「CCP 適格クレジット (供給) を、VCMI 格付け (需要) の枠組みで使う」 のが信頼性の最高位パターンになると考えられる\n- **規制ではない速度の利点**: 政府制度ではないため基準策定が速い一方、法的強制力はない。開示規制 (IFRS S2 / SSBJ) が主張の裏付けを求める文脈で、VCMI 準拠が事実上の参照点になる可能性がある",
+      "paywall_tier": "standard"
+    }
+  ]
+}

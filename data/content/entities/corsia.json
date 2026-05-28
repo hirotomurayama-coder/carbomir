@@ -28,7 +28,9 @@
       "note": "ICAO が運営"
     }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "vcm-integrity-governance-comparison"
+  ],
   "sections": [
     {
       "heading": "制度の概要",

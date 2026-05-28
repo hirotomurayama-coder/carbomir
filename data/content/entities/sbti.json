@@ -19,7 +19,9 @@
   "geographic_scope": "全世界",
   "website_url": "https://sciencebasedtargets.org/",
   "related": [],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "vcm-integrity-governance-comparison"
+  ],
   "sections": [
     {
       "heading": "組織の概要",

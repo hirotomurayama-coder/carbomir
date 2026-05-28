@@ -28,7 +28,9 @@
       "note": "JCM は Article 6.2 の代表的実装"
     }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "paris-article-6-comparison"
+  ],
   "sections": [
     {
       "heading": "枠組みの概要",

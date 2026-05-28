@@ -1,0 +1,170 @@
+{
+  "slug": "vcm-integrity-governance-comparison",
+  "title": "VCM 品質ガバナンス・イニシアチブ比較 (ICVCM CCP / VCMI / SBTi / CORSIA)",
+  "description": "ボランタリー市場の品質・健全性を規律する 4 つの枠組みを、ガバナンス対象 (供給/需要/目標/遵守) の軸で整理。どれが何を保証するのかを区別し、企業の調達・開示判断の参照地図にする。",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "category": "standard",
+  "tags": [
+    "品質基準 (CCP)",
+    "ボランタリー市場",
+    "国際",
+    "需要家"
+  ],
+  "dimensions": [
+    {
+      "key": "layer",
+      "label_ja": "ガバナンス対象"
+    },
+    {
+      "key": "governs",
+      "label_ja": "何を規律するか"
+    },
+    {
+      "key": "operator",
+      "label_ja": "運営主体"
+    },
+    {
+      "key": "key_instrument",
+      "label_ja": "主要ツール・ラベル"
+    },
+    {
+      "key": "status_2026",
+      "label_ja": "2026 年時点の状況"
+    },
+    {
+      "key": "corporate_relevance",
+      "label_ja": "企業 (CSR) の使いどころ"
+    },
+    {
+      "key": "carbomir_view",
+      "label_ja": "Carbomir 編集部の論点",
+      "paywall_tier": "standard"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "icvcm-ccp",
+      "name_ja": "ICVCM CCP",
+      "name_en": "Core Carbon Principles"
+    },
+    {
+      "slug": "vcmi",
+      "name_ja": "VCMI",
+      "name_en": "Claims Code of Practice"
+    },
+    {
+      "slug": "sbti",
+      "name_ja": "SBTi",
+      "name_en": "Science Based Targets initiative"
+    },
+    {
+      "slug": "corsia",
+      "name_ja": "CORSIA",
+      "name_en": "Carbon Offsetting and Reduction Scheme for International Aviation"
+    }
+  ],
+  "cells": {
+    "icvcm-ccp": {
+      "layer": {
+        "value": "供給側 (クレジット品質)"
+      },
+      "governs": {
+        "value": "クレジットそのものの品質。どのメソドロジー由来のクレジットが高品質かを適格判定で示す"
+      },
+      "operator": {
+        "value": "ICVCM (Integrity Council for the Voluntary Carbon Market)",
+        "source_url": "https://icvcm.org/core-carbon-principles/",
+        "source_label": "ICVCM Core Carbon Principles"
+      },
+      "key_instrument": {
+        "value": "Core Carbon Principles (CCP) と CCP-Approved ラベル"
+      },
+      "status_2026": {
+        "value": "2023 年 CCP 公表後、メソドロジー単位で適格性評価が進行。複数カテゴリで適格・除外の判定が出ている (運用注視: 評価対象は拡大中)"
+      },
+      "corporate_relevance": {
+        "value": "調達クレジットの足切り基準。CCP 適格を最低ラインに置く調達方針が増加"
+      },
+      "carbomir_view": {
+        "value": "供給側の事実上の品質スタンダード化が進む。CCP 適格 + Article 6 整合の二重シグナルが最高位品質になる可能性"
+      }
+    },
+    "vcmi": {
+      "layer": {
+        "value": "需要側 (企業の主張 / Claim)"
+      },
+      "governs": {
+        "value": "企業がクレジットを使ってどう対外主張してよいか。主張の信頼性を格付けする"
+      },
+      "operator": {
+        "value": "VCMI (Voluntary Carbon Markets Integrity Initiative)",
+        "source_url": "https://vcmintegrity.org/",
+        "source_label": "VCMI 公式"
+      },
+      "key_instrument": {
+        "value": "Claims Code of Practice (Carbon Integrity Silver / Gold / Platinum)"
+      },
+      "status_2026": {
+        "value": "Claims Code は 2023 年公表、運用ガイダンスを順次拡充 (運用注視: Scope 3 関連ガイダンスの確定段階)"
+      },
+      "corporate_relevance": {
+        "value": "カーボンニュートラル等の主張の信頼性担保。SBTi 目標達成を前提に上乗せ主張の格付けを得る"
+      },
+      "carbomir_view": {
+        "value": "Claim の格付けは greenwashing 批判への防御線。SBTi との整合が前提で、削減目標未設定の企業はそもそも土俵に乗れない"
+      }
+    },
+    "sbti": {
+      "layer": {
+        "value": "目標設定 (削減経路)"
+      },
+      "governs": {
+        "value": "企業の排出削減目標が科学的水準 (1.5°C) に整合するか。目標と残余排出の扱いを規定"
+      },
+      "operator": {
+        "value": "SBTi (Science Based Targets initiative)",
+        "source_url": "https://sciencebasedtargets.org/",
+        "source_label": "SBTi 公式"
+      },
+      "key_instrument": {
+        "value": "Corporate Net-Zero Standard / 目標認定"
+      },
+      "status_2026": {
+        "value": "Net-Zero Standard の改訂 (Scope 3・クレジットの位置付け) を審議中 (運用注視: 改訂版の確定時期)"
+      },
+      "corporate_relevance": {
+        "value": "削減目標の正書法。クレジットは原則「削減後の残余」に限定する立場"
+      },
+      "carbomir_view": {
+        "value": "「クレジットは自社削減の代替にならない」 という規範の総本山。改訂の方向次第で VCM 需要全体に大きく影響する可能性"
+      }
+    },
+    "corsia": {
+      "layer": {
+        "value": "遵守 (航空・準規制)"
+      },
+      "governs": {
+        "value": "国際航空のオフセット義務で使えるクレジットの適格性。ICAO が適格ユニットを指定"
+      },
+      "operator": {
+        "value": "ICAO (国際民間航空機関)",
+        "source_url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx",
+        "source_label": "ICAO CORSIA"
+      },
+      "key_instrument": {
+        "value": "CORSIA-Eligible Emissions Units (適格ユニットリスト)"
+      },
+      "status_2026": {
+        "value": "2024-2026 が第一段階、2027 年から全面義務化。適格ユニットは TAB (技術諮問機関) が個別判定"
+      },
+      "corporate_relevance": {
+        "value": "航空会社の遵守調達の絶対基準。他業種にとっては「準規制の適格性」の参照点"
+      },
+      "carbomir_view": {
+        "value": "唯一の本格的な義務的需要源。他のガバナンスが任意の品質を競う中で、CORSIA は適格性が市場価格を直接動かす"
+      }
+    }
+  }
+}
