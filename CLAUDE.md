@@ -258,12 +258,13 @@ ANTHROPIC_API_KEY=
 - [ ] ライトモード完成度向上
 - [ ] モバイル ハンバーガーメニュー
 - [ ] レイアウトトークン統一 (Fix-N〜R の sticky 系起因 → 再発防止)
-- [ ] 大型ファイル分解 (残): `timeline-bars.tsx` (795)
+- [x] **大型ファイル分解 完走 (5/5)** — 各元ファイルは re-export ハブ / 骨組みに縮小、import パス互換維持
   - [x] `lib/types.ts` (626 → 19): 8 ドメイン別ファイル (common/entity/comparison/case-study/faq/timeline/atlas/ai-draft) に分割、types.ts は re-export ハブ
   - [x] `lib/data/queries.ts` (594 → 18): 5 ファイル (entities/comparisons/timeline/atlas/case-study-faq) に分割、queries.ts は re-export ハブ
   - [x] `app/page.tsx` (743 → 137): 8 ファイル (section-header/mini-asset-card/track/define/compare/apply/survey/recent-updates) を `src/components/home/` に抽出、ヘルパー (pickFeaturedMatrix / getUpcomingMilestones / getRecentUpdates) も同居
   - [x] `components/admin/edit-form.tsx` (917 → 31): 9 ファイル (field-label/text-fields/markdown-textarea/sections/urls/relations/dimensions/entity-refs/json) を `src/components/admin/form-fields/` に抽出、edit-form.tsx は re-export ハブ
-- [ ] テストカバレッジ向上 — 現状 3/130 (2.3%)、UI コンポーネントは全て未テスト
+  - [x] `components/timeline/timeline-bars.tsx` (795 → 301): 5 ファイル (constants/layout/hover-cards/period-bars/point-events) を `src/components/timeline/timeline-bars/` に抽出、メインは toolbar+canvas骨組み+legend。レイアウト計算 (tier 配置) は layout.ts に純粋関数化
+- [ ] テストカバレッジ向上 — 現状 35/162 (UI コンポーネントは未テスト、policies-calendar ICS は 12 ケース追加済)
 
 ### Phase 5-A ✅ 世界マップ ブラッシュアップ (Fix-E〜I)
 - [x] /atlas トップの抜本ビジュアル改修 (世界マップ + ネットワーク図 + チャート)
