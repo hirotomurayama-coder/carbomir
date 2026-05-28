@@ -28,7 +28,9 @@
   "note": "VCS でもメソドロジー (VMR0006 等) として運用"
   }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "nbs-quality-comparison"
+  ],
   "sections": [
   {
   "heading": "アプローチ",

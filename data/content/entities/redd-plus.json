@@ -44,7 +44,9 @@
       "note": "同じ森林由来クレジットの代替アプローチ (劣化抑制 vs 植林)"
     }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "nbs-quality-comparison"
+  ],
   "sections": [
     {
       "heading": "概念の概要",

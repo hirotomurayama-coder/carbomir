@@ -33,7 +33,9 @@
       "note": "Plan Vivo のコミュニティ・アグロフォレストリーの中核"
     }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "nbs-quality-comparison"
+  ],
   "sections": [
     {
       "heading": "3 つの類型",

@@ -28,7 +28,9 @@
   "note": "同じ森林由来クレジット創出戦略の代替・補完"
   }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "nbs-quality-comparison"
+  ],
   "sections": [
   {
   "heading": "アプローチの種類",
