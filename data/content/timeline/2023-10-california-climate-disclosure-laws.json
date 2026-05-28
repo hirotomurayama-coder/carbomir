@@ -1,0 +1,22 @@
+{
+  "slug": "2023-10-california-climate-disclosure-laws",
+  "event_date": "2023-10-07",
+  "title": "カリフォルニア気候開示法 (SB 253 / SB 261) 成立",
+  "summary": "カリフォルニア州知事が SB 253 (気候企業データ説明責任法) と SB 261 (気候関連財務リスク法) に署名。州で事業を行う一定規模以上の企業に Scope 1/2/3 排出量と気候リスクの開示を義務付ける。米連邦規則が頓挫する中、米国で最も実効性のある開示義務として注目される。",
+  "affected_entity_slugs": [
+    "ifrs-s2",
+    "tcfd",
+    "scope3",
+    "sec-climate-rule"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "California Air Resources Board — Climate Disclosure",
+      "url": "https://ww2.arb.ca.gov/our-work/programs/climate-disclosure"
+    }
+  ],
+  "content_md": "## 制度の概要\n\n2023 年 10 月 7 日、カリフォルニア州知事が **SB 253 (Climate Corporate Data Accountability Act)** と **SB 261 (Climate-Related Financial Risk Act)** に署名した。州で事業を行う一定規模以上の企業 (上場・非上場を問わない) に、温室効果ガス排出量と気候関連財務リスクの開示を義務付ける。\n\n連邦の SEC 規則が訴訟で頓挫する中、**米国で最も実効性のある気候開示義務** として位置付けられ、州レベルが連邦の空白を埋める構図を象徴する。\n\n## 主要な要素\n\n- **SB 253**: 年間売上 10 億ドル超の企業に **Scope 1 / 2 (2026 年から) + Scope 3 (2027 年から)** の開示を義務化 (運用注視: 適用開始時期は実施規則で調整)\n- **SB 261**: 年間売上 5 億ドル超の企業に、TCFD に整合した **気候関連財務リスク** の隔年開示を義務化\n- **域外適用**: 「カリフォルニアで事業を行う」 企業が対象のため、本社が州外・国外でも該当し得る\n- **その後**: 実施を担う CARB (California Air Resources Board) が細則を整備中。一部の期限調整や訴訟も継続 (運用注視)\n\n## 日本企業への含意\n\n- **米国事業の規模が鍵**: カリフォルニアで一定規模の事業を行う日本企業は、本社所在地に関わらず開示義務の対象になり得る。売上閾値に照らした該当判定が要る\n- **Scope 3 の義務化**: SB 253 は Scope 3 を明示的に求める。連邦 SEC 規則が Scope 3 を見送った中で、州法の方が踏み込んでいる点は重要\n- **連邦不在でも備えは必要**: 「連邦規則が頓挫したから米国の開示義務はない」 という理解は誤り。州法ベースで実務対応が要る\n\n## 編集部の論点\n\nカリフォルニア気候開示法は、**「米国の気候開示は連邦ではなく州から来る」** という構造を確立したイベントと整理できる。\n\n- **州が標準を作る**: カリフォルニアは経済規模が大きく、同州の基準が事実上の米国標準になりやすい (自動車排ガス規制での先例と同じ構図)\n- **Scope 3 をめぐる連邦との落差**: 連邦 SEC が断念した Scope 3 を州が義務化したことで、企業はより厳しい方の基準に合わせざるを得ない\n- **グローバル基準との収れん**: TCFD 整合 (SB 261) という設計は、IFRS S2 / SSBJ・CSRD と土台を共有する。複数法域の開示を **一つの算定基盤** で賄う体制構築が現実的な対応と考えられる\n\n未確定論点:\n- 適用開始時期と報告様式の細目 (運用注視: CARB 実施規則)\n- 訴訟による適用範囲の変動可能性 (確信度弱)\n\n## 関連動向\n\n- [米 SEC 気候開示規則の最終化 (後に撤回)](/timeline/2024-03-sec-climate-rule-finalized) — 州法が補完する連邦規則\n- [SSBJ 最終基準公表](/timeline/2025-03-ssbj-final-standards) — 日本の対応する開示義務\n- [TCFD 最終提言](/timeline/2017-06-tcfd-final-recommendations) — SB 261 が依拠する枠組\n- [IFRS S2](/entities/ifrs-s2) / [Scope 3](/entities/scope3)\n"
+}
