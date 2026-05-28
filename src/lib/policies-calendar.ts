@@ -119,10 +119,16 @@ export function parseMilestone(entity: Entity): CalendarEntry | null {
   const content = raw.slice(colon.index + 1).trim();
   const mm = String(d.month).padStart(2, "0");
   const dd = String(d.day).padStart(2, "0");
-  const dateIso = `${d.year}-${mm}-${dd}`;
+  // 年のみ精度の "2026" は「その年中 (通年・進行中)」を意味する.
+  // ソート・upcoming 判定が年初基準だと当年内のイベントが即「過去」になるため、
+  // 年末 (12-31) を基準日に採る. 表示ラベルは年のまま ("2026").
+  const dateIso =
+    d.precision === "year"
+      ? `${d.year}-12-31`
+      : `${d.year}-${mm}-${dd}`;
   const dateLabel =
     d.precision === "day"
-      ? dateIso
+      ? `${d.year}-${mm}-${dd}`
       : d.precision === "month"
         ? `${d.year}-${mm}`
         : `${d.year}`;

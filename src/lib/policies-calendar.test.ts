@@ -52,11 +52,13 @@ describe("parseMilestone", () => {
     expect(e?.date_label).toBe("2026-04-15");
   });
 
-  it("parses bare year and trailing-dash year", () => {
+  it("parses bare year and trailing-dash year (year-only resolves to year-end)", () => {
+    // 年のみ精度はソート基準日を 12-31 に採るが、表示ラベルは年のまま.
     expect(parseMilestone(entity("2026: x"))?.date_label).toBe("2026");
-    expect(parseMilestone(entity("2026: x"))?.date_iso).toBe("2026-01-01");
+    expect(parseMilestone(entity("2026: x"))?.date_iso).toBe("2026-12-31");
+    expect(parseMilestone(entity("2026: x"))?.date_year).toBe(2026);
     expect(parseMilestone(entity("2026-: x"))?.date_label).toBe("2026");
-    expect(parseMilestone(entity("2026-: x"))?.date_iso).toBe("2026-01-01");
+    expect(parseMilestone(entity("2026-: x"))?.date_iso).toBe("2026-12-31");
   });
 
   it("parses Japanese 年 / 年度 as year precision", () => {
