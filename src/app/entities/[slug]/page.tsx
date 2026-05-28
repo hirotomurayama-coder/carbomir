@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Network } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   findEntityBySlug,
   findEntityRef,
@@ -29,6 +29,8 @@ import { EditorialThesis } from "@/components/editorial-thesis";
 import { ReviewMarkedText } from "@/components/review-marks";
 import { FreshnessIndicator } from "@/components/freshness-indicator";
 import { PaywallBadge } from "@/components/paywall-badge";
+import { ConsultCta } from "@/components/consult-cta";
+import { consultCopyForEntity } from "@/lib/consult-cta";
 import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
@@ -370,29 +372,7 @@ export default async function EntityDetailPage({ params }: Props) {
             </Card>
           )}
 
-          <Card className="bg-gradient-to-br from-card to-muted/30">
-            <CardContent className="p-5">
-              <Badge
-                variant="outline"
-                className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent mb-3"
-              >
-                Advisory
-              </Badge>
-              <CardTitle className="text-sm font-semibold mb-2">
-                個別案件のご相談
-              </CardTitle>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                株式会社クレイドルトゥーが対応する。
-              </p>
-              <a
-                href="https://carboncredits.jp/contact"
-                className="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
-              >
-                相談する
-                <span className="font-mono opacity-70">→</span>
-              </a>
-            </CardContent>
-          </Card>
+          <ConsultCta copy={consultCopyForEntity(entity.type, entity.name_ja)} />
         </aside>
       </div>
     </div>

@@ -3,7 +3,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Columns3 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
   findMatrixBySlug,
   listPublishedEntitySlugs,
@@ -13,6 +12,8 @@ import { findAtlasLinksForEntity } from "@/lib/data/atlas";
 import { MatrixDataGrid } from "@/components/matrices/matrix-data-grid";
 import { AtlasDeepDivePanel } from "@/components/atlas/atlas-deep-dive-panel";
 import { FreshnessIndicator } from "@/components/freshness-indicator";
+import { ConsultCta } from "@/components/consult-cta";
+import { consultCopyForMatrix } from "@/lib/consult-cta";
 import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
@@ -92,32 +93,10 @@ export default async function MatrixDetailPage({ params }: Props) {
         />
       </div>
 
-      {/* CTA */}
-      <Card className="mt-8 bg-gradient-to-br from-card to-muted/40">
-        <CardContent className="p-6">
-          <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div className="max-w-2xl">
-              <Badge variant="outline" className="font-mono text-[10px] tracking-wider uppercase mb-2 border-accent/40 text-accent">
-                Advisory
-              </Badge>
-              <CardTitle className="text-lg font-bold mb-2">
-                個別案件のご相談
-              </CardTitle>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                上記の比較を踏まえた個別の調達判断・創出判断は、株式会社クレイドルトゥー
-                CDR 調達アドバイザリーまたは Recroma 本格コンサルにて対応する。
-              </p>
-            </div>
-            <a
-              href="https://carboncredits.jp/contact"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors shrink-0"
-            >
-              相談する
-              <span className="font-mono text-xs opacity-70">→</span>
-            </a>
-          </div>
-        </CardContent>
-      </Card>
+      {/* CTA — 文脈化した相談ハンドオフ (STRATEGY §4-5) */}
+      <div className="mt-8">
+        <ConsultCta copy={consultCopyForMatrix()} variant="panel" />
+      </div>
     </div>
   );
 }
