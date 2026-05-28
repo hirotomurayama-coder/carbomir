@@ -20,10 +20,10 @@ import {
   FAQ_CATEGORY_LABEL,
   RELATION_LABEL,
   RELATION_LABEL_REVERSE,
-  TIMELINE_CATEGORY_LABEL,
 } from "@/lib/types";
 import { EntityToc } from "@/components/entities/entity-toc";
 import { MetadataPanel } from "@/components/entities/metadata-panel";
+import { DurabilityPanel } from "@/components/entities/durability-panel";
 import { MarkdownContent } from "@/components/markdown-content";
 import { EditorialThesis } from "@/components/editorial-thesis";
 import { ReviewMarkedText } from "@/components/review-marks";
@@ -95,6 +95,8 @@ export default async function EntityDetailPage({ params }: Props) {
     id: `section-${i}`,
     label: s.heading,
   }));
+
+  const today = new Date().toISOString().slice(0, 10);
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
@@ -211,6 +213,14 @@ export default async function EntityDetailPage({ params }: Props) {
         {/* Right: Related */}
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
           <MetadataPanel entity={entity} />
+          <DurabilityPanel
+            entityType={entity.type}
+            policyStatus={entity.policy_status}
+            nextMilestone={entity.next_milestone}
+            nextReviewAt={entity.next_review_at}
+            timeline={inboundRefs.timeline}
+            today={today}
+          />
           {offsetsRegistry && offsetsStat && (
             <OffsetsDbInlineCard
               registry={offsetsRegistry}
@@ -290,30 +300,6 @@ export default async function EntityDetailPage({ params }: Props) {
                         </p>
                         <p className="label-mono text-muted-foreground metric-number mt-1">
                           {m.entities.length}×{m.dimensions.length}
-                        </p>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          )}
-
-          {inboundRefs.timeline.length > 0 && (
-            <Card>
-              <CardContent className="p-5">
-                <p className="label-mono text-muted-foreground mb-4">
-                  In Timeline
-                </p>
-                <ul className="space-y-3">
-                  {inboundRefs.timeline.map((t) => (
-                    <li key={t.slug}>
-                      <Link href={`/timeline/${t.slug}`} className="group block">
-                        <span className="label-mono text-accent block mb-0.5 metric-number">
-                          {t.event_date} · {TIMELINE_CATEGORY_LABEL[t.category]}
-                        </span>
-                        <p className="text-sm font-medium text-foreground group-hover:text-accent leading-snug">
-                          {t.title}
                         </p>
                       </Link>
                     </li>

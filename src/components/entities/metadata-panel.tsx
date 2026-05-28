@@ -56,9 +56,7 @@ export function MetadataPanel({ entity }: { entity: Entity }) {
   if (entity.credit_unit) {
     rows.push({ label: "クレジット単位", value: entity.credit_unit });
   }
-  if (entity.next_milestone) {
-    rows.push({ label: "次の節目", value: entity.next_milestone });
-  }
+  // next_milestone は監視ポイント (DurabilityPanel) へ移管 (前向き信号として扱う)
   if (entity.website_url) {
     rows.push({
       label: "公式サイト",

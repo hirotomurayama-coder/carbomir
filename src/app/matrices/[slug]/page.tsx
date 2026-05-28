@@ -7,13 +7,16 @@ import {
   findMatrixBySlug,
   listPublishedEntitySlugs,
   listPublishedMatrices,
+  listPublishedTimelineEvents,
 } from "@/lib/data/queries";
 import { findAtlasLinksForEntity } from "@/lib/data/atlas";
 import { MatrixDataGrid } from "@/components/matrices/matrix-data-grid";
+import { MatrixWatchPanel } from "@/components/matrices/matrix-watch-panel";
 import { AtlasDeepDivePanel } from "@/components/atlas/atlas-deep-dive-panel";
 import { FreshnessIndicator } from "@/components/freshness-indicator";
 import { ConsultCta } from "@/components/consult-cta";
 import { consultCopyForMatrix } from "@/lib/consult-cta";
+import { selectMatrixInboundTimeline } from "@/lib/durability";
 import { EditLink } from "@/components/admin/edit-link";
 
 type Props = {
@@ -37,11 +40,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function MatrixDetailPage({ params }: Props) {
   const { slug } = await params;
-  const [matrix, publishedEntitySlugs] = await Promise.all([
+  const [matrix, publishedEntitySlugs, timelineEvents] = await Promise.all([
     findMatrixBySlug(slug),
     listPublishedEntitySlugs(),
+    listPublishedTimelineEvents(),
   ]);
   if (!matrix || matrix.status !== "published") notFound();
+
+  const watchTimeline = selectMatrixInboundTimeline(
+    matrix.entities.map((e) => e.slug),
+    timelineEvents
+  );
+  const today = new Date().toISOString().slice(0, 10);
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
@@ -92,6 +102,13 @@ export default async function MatrixDetailPage({ params }: Props) {
           }))}
         />
       </div>
+
+      {/* 監視中の動き — 比較の前提が動きうる (STRATEGY §3③§5) */}
+      {watchTimeline.length > 0 && (
+        <div className="mt-8">
+          <MatrixWatchPanel timeline={watchTimeline} today={today} />
+        </div>
+      )}
 
       {/* CTA — 文脈化した相談ハンドオフ (STRATEGY §4-5) */}
       <div className="mt-8">
