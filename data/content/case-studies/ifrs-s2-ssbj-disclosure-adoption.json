@@ -1,0 +1,64 @@
+{
+  "slug": "ifrs-s2-ssbj-disclosure-adoption",
+  "title": "SSBJ / IFRS S2 開示初年度に向けた Prime 上場企業の対応",
+  "company": "日本の Prime 上場企業 (大手製造業を想定)",
+  "year": 2026,
+  "region": "日本",
+  "category": "reporting",
+  "credit_type": "(開示対象: 移行計画におけるオフセット・除去クレジットの利用方針)",
+  "scale_note": "SSBJ 最終基準 2025-03 公表 / 大手から段階適用 (運用注視)",
+  "summary": "ISSB の IFRS S2 を日本に取り込む SSBJ 基準が 2025 年 3 月に確定。Prime 上場企業は TCFD ベースの任意開示から、有価証券報告書での義務開示へ移行する。Scope 3 算定とシナリオ分析に加え、移行計画におけるカーボンクレジット依存の開示が新たな論点になる。",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "tags": [
+    "規制対応",
+    "日本",
+    "国際"
+  ],
+  "related_entity_slugs": [
+    "ifrs-s2",
+    "ssbj",
+    "tcfd",
+    "scope3",
+    "scope123",
+    "ghg-protocol"
+  ],
+  "related_faq_slugs": [
+    "tcfd-ifrs-s2-credit-disclosure",
+    "scope3-offset-eligible-credits"
+  ],
+  "source_urls": [
+    {
+      "label": "IFRS — IFRS S2 Climate-related Disclosures",
+      "url": "https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s2-climate-related-disclosures/"
+    },
+    {
+      "label": "サステナビリティ基準委員会 (SSBJ)",
+      "url": "https://www.ssb-j.jp/jp/"
+    },
+    {
+      "label": "金融庁 — サステナビリティ情報の開示",
+      "url": "https://www.fsa.go.jp/"
+    }
+  ],
+  "sections": [
+    {
+      "heading": "取り組みの概要",
+      "body": "ISSB (国際サステナビリティ基準審議会) は 2023 年 6 月に **IFRS S2 気候関連開示基準** を公表した ([IFRS Foundation](https://www.ifrs.org/issued-standards/ifrs-sustainability-standards-navigator/ifrs-s2-climate-related-disclosures/))。日本では **SSBJ (サステナビリティ基準委員会)** がこれを国内基準として取り込み、適用・一般・気候の 3 基準を **2025 年 3 月に確定** した ([SSBJ](https://www.ssb-j.jp/jp/))。\n\n企業にとっての変化は、開示の「位置」 と「強制力」 にある:\n\n- **これまで**: TCFD 提言に沿った任意開示 (統合報告書・サステナビリティレポート等)\n- **これから**: 有価証券報告書での義務開示。金融庁は Prime 市場の大手から段階適用する方針 (運用注視: 時価総額区分ごとの適用開始時期は制度設計の最終段階)\n\nTCFD の 4 本柱 (ガバナンス / 戦略 / リスク管理 / 指標と目標) は IFRS S2 に引き継がれており、TCFD 対応の蓄積は土台になると整理できる。"
+    },
+    {
+      "heading": "開示初年度の実務論点",
+      "body": "任意開示から義務開示への移行で、実務のハードルは大きく上がる。初年度対応の中心課題:\n\n- **Scope 3 の算定範囲**: IFRS S2 は Scope 1・2 に加え Scope 3 の開示を求める。サプライチェーン全体の排出量を、有価証券報告書の水準で算定・説明できるかが最大の関門\n- **シナリオ分析の定量化**: 「リスクを認識している」 だけでなく、気候関連リスク・機会の財務的影響をどう見積もるかが問われる\n- **財務諸表との connectivity**: サステナビリティ情報と財務情報の整合 (同じ前提・見積りを使っているか) が論点になる\n- **保証 (assurance)**: 開示情報への第三者保証の要否・水準も段階的に強化される見込み (運用注視)"
+    },
+    {
+      "heading": "カーボンクレジット・オフセットの開示論点",
+      "body": "IFRS S2 は、企業が排出目標の達成にあたり **カーボンクレジット (オフセット) にどの程度依存するか** の開示を求める。Carbomir の関心領域と直接交わる部分:\n\n- **依存度の透明化**: 目標達成のうち自社削減で賄う分と、クレジットで賄う分の切り分けを示す必要がある\n- **クレジットの種別**: 除去 (removal) か排出回避 (reduction) か、Nature-Based か技術ベースか、第三者検証の有無といった**質の情報**が問われる\n- **主張との整合**: 「カーボンニュートラル」 等の対外主張と、有価証券報告書の開示が食い違うと信頼性リスクになる。SBTi 目標や VCMI Claims Code 等の外部枠組みとの整合が、開示の裏付けとして参照されると考えられる\n\nつまり開示規制は、クレジットを 「買って終わり」 ではなく **「説明責任を伴う資産」** に変える。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "SSBJ / IFRS S2 の義務化は、気候情報を **IR・財務報告の本流に組み込む転換点** と整理できる。CSR 部門の自主開示から、有価証券報告書 = 経営の公式文書へと格が上がる。\n\n日本企業にとっての含意:\n\n- **TCFD 対応の「資産化」**: これまでの任意開示の蓄積を、義務開示の品質に引き上げられるかが分かれ目。ゼロからではないが、求められる粒度は上がる\n- **クレジット戦略の説明責任**: オフセットを使うなら、その質と依存度を有価証券報告書で説明できることが前提になる。質の低いクレジットへの依存は、開示時点で経営リスクとして顕在化し得る\n- **段階適用の戦略余地**: 大手から順次という適用順は、先行企業がベンチマークを作り、後続が追随する構図を生む。早期適用は負担だが、開示水準の主導権を取る機会にもなり得る\n- **未確定点**: 適用区分・開始時期・保証水準は制度設計の最終段階にある (運用注視)。確定情報は金融庁の公表を都度参照すべき領域",
+      "paywall_tier": "standard"
+    }
+  ]
+}
