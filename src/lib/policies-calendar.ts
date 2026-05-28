@@ -1,4 +1,5 @@
-import type { Entity, PolicyStatus } from "@/lib/types";
+import type { Entity, PolicyStatus, TimelineEvent } from "@/lib/types";
+import { TIMELINE_CATEGORY_LABEL } from "@/lib/types";
 
 /**
  * 規制カレンダーで使う型 + マイルストーンのパース.
@@ -81,4 +82,152 @@ export function parseMilestone(entity: Entity): CalendarEntry | null {
     content: m[4].trim(),
     days_from_today: daysFromToday,
   };
+}
+
+/* ============================================================
+ * ICS export (RFC 5545)
+ *
+ * 規制カレンダー + 未来 timeline イベントを統合した .ics を生成する.
+ * Pro 機能として課金階層 standard/pro のロジックは Phase 4 で追加.
+ * ============================================================ */
+
+/** TimelineEvent を CalendarEntry 形式に変換 (未来日付の場合のみ).  */
+export function parseTimelineForCalendar(
+  event: TimelineEvent,
+  now: Date = new Date()
+): CalendarEntry | null {
+  const dateIso = event.event_date;
+  const target = new Date(`${dateIso}T00:00:00Z`);
+  if (Number.isNaN(target.getTime())) return null;
+  const daysFromToday = Math.floor(
+    (target.getTime() - now.getTime()) / (1000 * 60 * 60 * 24)
+  );
+  // 未来日付のみカレンダー対象 (過去は /timeline で見れば良い)
+  if (daysFromToday < 0) return null;
+
+  return {
+    slug: event.slug,
+    name_ja: event.title,
+    jurisdiction: "",
+    jurisdiction_group: "その他",
+    policy_status: undefined,
+    date_label: dateIso,
+    date_sort_key: dateIso,
+    date_year: Number(dateIso.slice(0, 4)),
+    date_iso: dateIso,
+    content:
+      event.summary +
+      ` [${TIMELINE_CATEGORY_LABEL[event.category]}]`,
+    days_from_today: daysFromToday,
+  };
+}
+
+/**
+ * ICS テキスト値のエスケープ (RFC 5545 §3.3.11).
+ * バックスラッシュ・セミコロン・カンマを `\` でエスケープし、
+ * 改行を `\n` リテラルに変換する.
+ */
+export function escapeIcs(s: string): string {
+  return s
+    .replace(/\\/g, "\\\\")
+    .replace(/;/g, "\\;")
+    .replace(/,/g, "\\,")
+    .replace(/\r\n|\r|\n/g, "\\n");
+}
+
+/** UID 重複を避けるために kind を prefix 化. */
+type IcsSource = "policy" | "timeline";
+
+export type IcsEntry = CalendarEntry & {
+  ics_source: IcsSource;
+  /** 詳細ページの相対パス (例: "/entities/cbam" / "/timeline/2027-01-uk-cbam") */
+  detail_path: string;
+};
+
+export type IcsGenerateOptions = {
+  /** UID ホストドメイン (デフォルト: carbomir.carboncredits.jp). */
+  host?: string;
+  /** 詳細ページへの絶対 URL を組み立てるためのオリジン (URL フィールド用). */
+  origin?: string;
+  /** DTSTAMP に使う UTC 時刻 (テスト決定性のため). 既定: now. */
+  now?: Date;
+};
+
+const DEFAULT_HOST = "carbomir.carboncredits.jp";
+const DEFAULT_ORIGIN = "https://carboncredits.jp/carbomir";
+
+function formatIcsDate(iso: string): string {
+  // "YYYY-MM-DD" → "YYYYMMDD"
+  return iso.replace(/-/g, "");
+}
+
+function formatIcsTimestamp(d: Date): string {
+  // 例: 2026-05-28T03:14:15.123Z → 20260528T031415Z
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return (
+    `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}` +
+    `T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}${pad(d.getUTCSeconds())}Z`
+  );
+}
+
+/**
+ * IcsEntry[] を ICS テキスト (RFC 5545) に変換する.
+ * すべて終日イベント (VALUE=DATE) として扱う.
+ *
+ * 行末は CRLF。行折り返し (75 octet line folding) は未実装 —
+ * Google Calendar / Outlook / Apple Calendar はすべて折り返さなくても受け入れる
+ * (RFC 5545 §3.1 では SHOULD であり MUST ではない)。
+ */
+export function generateIcs(
+  entries: IcsEntry[],
+  options: IcsGenerateOptions = {}
+): string {
+  const host = options.host ?? DEFAULT_HOST;
+  const origin = options.origin ?? DEFAULT_ORIGIN;
+  const dtstamp = formatIcsTimestamp(options.now ?? new Date());
+
+  const lines: string[] = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Carbomir//Regulation Calendar 1.0//JA",
+    "CALSCALE:GREGORIAN",
+    "METHOD:PUBLISH",
+    "X-WR-CALNAME:Carbomir 規制カレンダー",
+    "X-WR-CALDESC:カーボンクレジット領域の規制マイルストーンと未来イベント",
+    "X-WR-TIMEZONE:Asia/Tokyo",
+  ];
+
+  for (const e of entries) {
+    const dtstart = formatIcsDate(e.date_iso);
+    const url = `${origin}${e.detail_path}`;
+    const summary = escapeIcs(
+      e.ics_source === "policy"
+        ? `[${e.name_ja}] ${e.content}`
+        : e.name_ja
+    );
+    const descriptionLines = [e.content];
+    if (e.jurisdiction) descriptionLines.push(`管轄: ${e.jurisdiction}`);
+    descriptionLines.push(`Carbomir: ${url}`);
+    const description = escapeIcs(descriptionLines.join("\n"));
+
+    lines.push(
+      "BEGIN:VEVENT",
+      `UID:${e.ics_source}-${e.slug}@${host}`,
+      `DTSTAMP:${dtstamp}`,
+      `DTSTART;VALUE=DATE:${dtstart}`,
+      `SUMMARY:${summary}`,
+      `DESCRIPTION:${description}`,
+      `URL:${url}`,
+    );
+    if (e.jurisdiction) {
+      lines.push(`LOCATION:${escapeIcs(e.jurisdiction)}`);
+    }
+    lines.push(
+      `CATEGORIES:Carbomir,${e.ics_source === "policy" ? "Regulation" : "Timeline"}`,
+      "END:VEVENT",
+    );
+  }
+
+  lines.push("END:VCALENDAR");
+  return lines.join("\r\n") + "\r\n";
 }

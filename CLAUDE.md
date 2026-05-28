@@ -285,6 +285,7 @@ ANTHROPIC_API_KEY=
 - [ ] 課金フロー (Stripe Free/Standard/Pro)
 - [ ] ペイウォール (編集論点を Standard 限定に — マスキング・認証ゲート)
   - [x] **地ならし完了**: `paywall_tier: "free" | "standard" | "pro"` をデータモデルに追加、PaywallBadge で「Standard 会員限定」ラベルだけ先行表示 (entity 79 / case-study 10 / matrix 8 件すべての「編集部の論点」セクションに付与済み)。残るは認証ゲートと本文マスク
+  - [x] **Pro 機能 先行第 1 弾**: `/policies/calendar/feed.ics` で規制カレンダー + 未来 timeline (合算 23 件) を ICS エクスポート (RFC 5545 終日イベント)。`/policies/calendar` ヘッダーに DL ボタン + `PaywallBadge tier="pro"`。認証ゲートは Phase 4 で middleware に追加 (現状は誰でも DL 可能)
 - [ ] Vercel デプロイ + carboncredits.jp/carbomir リバースプロキシ
 
 ---

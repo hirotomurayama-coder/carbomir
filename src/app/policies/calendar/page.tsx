@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CalendarClock, Clock, Scale } from "lucide-react";
+import { CalendarClock, Clock, Scale, Download } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { listPublishedEntities } from "@/lib/data/queries";
 import { parseMilestone, type CalendarEntry } from "@/lib/policies-calendar";
 import { CalendarExplorer } from "@/components/policies/calendar-explorer";
+import { PaywallBadge } from "@/components/paywall-badge";
 
 export const metadata: Metadata = {
   title: "規制カレンダー",
@@ -83,6 +84,18 @@ export default async function PoliciesCalendarPage() {
             <Clock className="h-3.5 w-3.5" />
             時系列 (全イベント統合) へ
           </Link>
+          <span className="inline-flex items-center gap-1.5">
+            <a
+              href="/carbomir/policies/calendar/feed.ics"
+              download="carbomir-regulation-calendar.ics"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-accent/40 bg-accent/10 text-accent hover:bg-accent/15 transition-colors text-xs font-medium"
+              title="Google Calendar / Outlook / Apple Calendar に取り込める ICS 形式"
+            >
+              <Download className="h-3.5 w-3.5" />
+              .ics をダウンロード
+            </a>
+            <PaywallBadge tier="pro" />
+          </span>
         </div>
       </header>
 
