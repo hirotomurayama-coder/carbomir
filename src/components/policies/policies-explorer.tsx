@@ -64,6 +64,8 @@ const STATUS_BADGE_CLASS: Record<PolicyStatus, string> = {
   draft: "border-muted-foreground/40 bg-muted/40 text-muted-foreground",
   discontinued:
     "border-red-500/40 bg-red-500/10 text-red-700 dark:text-red-300",
+  stayed:
+    "border-orange-500/40 bg-orange-500/10 text-orange-700 dark:text-orange-300",
 };
 
 type RegionFilter = "all" | JurisdictionGroup;

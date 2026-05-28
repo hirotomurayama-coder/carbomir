@@ -71,5 +71,6 @@
   "paywall_tier": "standard"
   }
   ],
+  "policy_status": "active",
   "next_milestone": "2026: ACR 標準 v4.0 移行に向けたメソドロジー再評価"
 }

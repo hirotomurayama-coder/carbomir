@@ -20,7 +20,7 @@ export const metadata: Metadata = {
  *   - 時系列ページ (/timeline) は「過去〜未来の俯瞰」=時間軸視点。
  *   - 規制カレンダーは「次に何が動くか」=アクション軸視点。
  *   - キラーシナリオ「規制変更キャッチアップ」では後者が直接的な入口。
- *   - データソース: 政策・規制 entity の next_milestone (現在 26 件中 28 件分パース可能)。
+ *   - データソース: 政策・規制 entity の next_milestone (パース可能なマイルストーンを集約)。
  */
 export default async function PoliciesCalendarPage() {
   const all = await listPublishedEntities();

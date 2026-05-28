@@ -19,7 +19,7 @@
   "geographic_scope": "EU + EU 売上のある非 EU 企業",
   "website_url": "https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/corporate-sustainability-reporting_en",
   "policy_status": "active",
-  "next_milestone": "2024 年度 (大企業) → 2025 年度 (上場 SME) → 2028 年度 (非 EU 企業) で段階適用",
+  "next_milestone": "2028 年度: 非 EU 企業 (グローバル親会社) へ適用拡大予定。大企業 2024 / 上場 SME 2025 から段階適用だが EU Omnibus で wave 2/3 の適用時期見直し中 (運用注視: Omnibus 審議)",
   "related": [],
   "related_matrix_slugs": [
     "climate-disclosure-comparison"

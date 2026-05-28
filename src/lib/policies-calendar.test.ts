@@ -2,12 +2,102 @@ import { describe, expect, it } from "vitest";
 import {
   escapeIcs,
   generateIcs,
+  parseMilestone,
   parseTimelineForCalendar,
   type IcsEntry,
 } from "./policies-calendar";
-import type { TimelineEvent } from "@/lib/types";
+import type { Entity, TimelineEvent } from "@/lib/types";
 
 const FIXED_NOW = new Date("2026-05-28T00:00:00Z");
+
+describe("parseMilestone", () => {
+  const entity = (next_milestone: string, over: Partial<Entity> = {}): Entity => ({
+    slug: "demo",
+    type: "regulation",
+    name_ja: "デモ規制",
+    summary: "",
+    sections: [],
+    related: [],
+    related_matrix_slugs: [],
+    tags: [],
+    last_reviewed_at: "2026-05-28",
+    status: "published",
+    next_milestone,
+    ...over,
+  });
+
+  it("returns null when next_milestone is missing", () => {
+    expect(parseMilestone(entity("", { next_milestone: undefined }))).toBeNull();
+  });
+
+  it("returns null without a colon delimiter", () => {
+    expect(parseMilestone(entity("GX 推進法に基づく賦課金 (2028)"))).toBeNull();
+  });
+
+  it("returns null when no leading date is present", () => {
+    expect(parseMilestone(entity("(運用注視) 訴訟判決の動向"))).toBeNull();
+  });
+
+  it("parses ISO year-month", () => {
+    const e = parseMilestone(entity("2026-04: 第2フェーズ開始"));
+    expect(e?.date_iso).toBe("2026-04-01");
+    expect(e?.date_label).toBe("2026-04");
+    expect(e?.date_year).toBe(2026);
+    expect(e?.content).toBe("第2フェーズ開始");
+  });
+
+  it("parses ISO full date", () => {
+    const e = parseMilestone(entity("2026-04-15: x"));
+    expect(e?.date_iso).toBe("2026-04-15");
+    expect(e?.date_label).toBe("2026-04-15");
+  });
+
+  it("parses bare year and trailing-dash year", () => {
+    expect(parseMilestone(entity("2026: x"))?.date_label).toBe("2026");
+    expect(parseMilestone(entity("2026: x"))?.date_iso).toBe("2026-01-01");
+    expect(parseMilestone(entity("2026-: x"))?.date_label).toBe("2026");
+    expect(parseMilestone(entity("2026-: x"))?.date_iso).toBe("2026-01-01");
+  });
+
+  it("parses Japanese 年 / 年度 as year precision", () => {
+    expect(parseMilestone(entity("2027 年: x"))?.date_label).toBe("2027");
+    expect(parseMilestone(entity("2028 年度: x"))?.date_label).toBe("2028");
+    expect(parseMilestone(entity("2028 年度: x"))?.date_year).toBe(2028);
+  });
+
+  it("parses Japanese 年 月期 as month precision", () => {
+    const e = parseMilestone(entity("2027 年 3 月期: 任意適用開始"));
+    expect(e?.date_iso).toBe("2027-03-01");
+    expect(e?.date_label).toBe("2027-03");
+    expect(e?.content).toBe("任意適用開始");
+  });
+
+  it("parses Japanese 年 月 日 as day precision", () => {
+    const e = parseMilestone(entity("2027 年 3 月 15 日: x"));
+    expect(e?.date_iso).toBe("2027-03-15");
+    expect(e?.date_label).toBe("2027-03-15");
+  });
+
+  it("takes the start year of a year range (no month misread)", () => {
+    expect(parseMilestone(entity("2027-2030: 段階適用"))?.date_year).toBe(2027);
+    expect(parseMilestone(entity("2027-2030: 段階適用"))?.date_label).toBe("2027");
+    expect(parseMilestone(entity("2024-2025: 移行"))?.date_label).toBe("2024");
+  });
+
+  it("splits on the first colon, keeping later colons in content", () => {
+    const e = parseMilestone(entity("2026-04: 開始: 有償割当"));
+    expect(e?.content).toBe("開始: 有償割当");
+  });
+
+  it("accepts a fullwidth colon", () => {
+    expect(parseMilestone(entity("2026：本格運用"))?.content).toBe("本格運用");
+  });
+
+  it("classifies jurisdiction group from the entity", () => {
+    const e = parseMilestone(entity("2026: x", { jurisdiction: "EU" }));
+    expect(e?.jurisdiction_group).toBe("EU");
+  });
+});
 
 describe("escapeIcs", () => {
   it("escapes backslash, semicolon, comma", () => {

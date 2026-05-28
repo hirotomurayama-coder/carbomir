@@ -46,24 +46,86 @@ export function classifyJurisdiction(
   return "その他";
 }
 
+type MilestonePrecision = "year" | "month" | "day";
+
+type ParsedMilestoneDate = {
+  year: number;
+  month: number;
+  day: number;
+  precision: MilestonePrecision;
+};
+
+/**
+ * next_milestone 先頭の「日付式」を解釈する.
+ *
+ * 受理する形式 (編集部が実際に書くゆらぎを吸収):
+ *   - ISO:    "2026" / "2026-04" / "2026-04-01" / "2026-" (末尾ダッシュ)
+ *   - 年レンジ: "2024-2025" / "2027〜2030" (開始年を採用、月日は補完)
+ *   - 和文:    "2027 年" / "2028 年度" / "2027 年 3 月" / "2027 年 3 月期" /
+ *              "2027 年 3 月 15 日"
+ *
+ * 月・日が無ければ 1 で補完し、precision で表示粒度を返す.
+ * 先頭が年で始まらなければ null.
+ */
+function parseMilestoneDate(expr: string): ParsedMilestoneDate | null {
+  const s = expr.trim();
+  // 年レンジ ("2024-2025") は ISO 年月 ("2024-05") より先に判定して誤読を防ぐ.
+  let m = s.match(/^(\d{4})\s*[-–〜~]\s*\d{4}/);
+  if (m) return { year: Number(m[1]), month: 1, day: 1, precision: "year" };
+  // ISO 完全日付
+  m = s.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (m)
+    return {
+      year: Number(m[1]),
+      month: Number(m[2]),
+      day: Number(m[3]),
+      precision: "day",
+    };
+  // ISO 年月 (直後にさらに数字が続く場合はレンジなので除外済み)
+  m = s.match(/^(\d{4})-(\d{2})(?!\d)/);
+  if (m)
+    return {
+      year: Number(m[1]),
+      month: Number(m[2]),
+      day: 1,
+      precision: "month",
+    };
+  // 和文 ("2027 年" / "2028 年度" / "2027 年 3 月期" / "2027 年 3 月 15 日")
+  m = s.match(/^(\d{4})\s*年\s*度?\s*(?:(\d{1,2})\s*月\s*(?:(\d{1,2})\s*日)?\s*期?)?/);
+  if (m)
+    return {
+      year: Number(m[1]),
+      month: m[2] ? Number(m[2]) : 1,
+      day: m[3] ? Number(m[3]) : 1,
+      precision: m[3] ? "day" : m[2] ? "month" : "year",
+    };
+  // 裸の年 ("2032" / "2026-")
+  m = s.match(/^(\d{4})/);
+  if (m) return { year: Number(m[1]), month: 1, day: 1, precision: "year" };
+  return null;
+}
+
 /**
  * "2026-04: 第2フェーズ開始" のような文字列をパース.
- * 日付プレフィックスが取れなければ null.
+ * 最初のコロン (半角/全角) で日付式と本文を分割し、日付が取れなければ null.
  */
 export function parseMilestone(entity: Entity): CalendarEntry | null {
   const raw = entity.next_milestone?.trim();
   if (!raw) return null;
-  const m = raw.match(/^(\d{4})(-\d{2})?(-\d{2})?-?\s*[::]\s*([\s\S]+)$/);
-  if (!m) return null;
-  const year = Number(m[1]);
-  const month = m[2] ? Number(m[2].slice(1)) : 1;
-  const day = m[3] ? Number(m[3].slice(1)) : 1;
-  const dateIso = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
-  const dateLabel = m[2]
-    ? m[3]
-      ? `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
-      : `${year}-${String(month).padStart(2, "0")}`
-    : `${year}`;
+  const colon = raw.match(/[:：]/);
+  if (!colon || colon.index === undefined) return null;
+  const d = parseMilestoneDate(raw.slice(0, colon.index));
+  if (!d) return null;
+  const content = raw.slice(colon.index + 1).trim();
+  const mm = String(d.month).padStart(2, "0");
+  const dd = String(d.day).padStart(2, "0");
+  const dateIso = `${d.year}-${mm}-${dd}`;
+  const dateLabel =
+    d.precision === "day"
+      ? dateIso
+      : d.precision === "month"
+        ? `${d.year}-${mm}`
+        : `${d.year}`;
   const today = new Date();
   const target = new Date(dateIso);
   const daysFromToday = Math.floor(
@@ -77,9 +139,9 @@ export function parseMilestone(entity: Entity): CalendarEntry | null {
     policy_status: entity.policy_status,
     date_label: dateLabel,
     date_sort_key: dateIso,
-    date_year: year,
+    date_year: d.year,
     date_iso: dateIso,
-    content: m[4].trim(),
+    content,
     days_from_today: daysFromToday,
   };
 }

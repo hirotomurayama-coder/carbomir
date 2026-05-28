@@ -18,8 +18,8 @@
   "operator": "Financial Stability Board (FSB) / 2023 年 IFRS Foundation へ移管",
   "geographic_scope": "国際 (任意ベース、各国規制の \"基準\" として参照)",
   "website_url": "https://www.fsb-tcfd.org/",
-  "policy_status": "transitioning",
-  "next_milestone": "2024-2025: IFRS S2 / SSBJ への完全移行 (フレームは継続参照される)",
+  "policy_status": "transition",
+  "next_milestone": "2027-2030: 日本では SSBJ (IFRS S2 ベース) への段階適用が進行、TCFD 提言は IFRS S2 へ統合済みのため継続参照される",
   "related": [],
   "related_matrix_slugs": [
     "climate-disclosure-comparison"

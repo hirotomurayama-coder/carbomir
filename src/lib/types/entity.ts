@@ -98,7 +98,8 @@ export type PolicyStatus =
   | "transition"
   | "pilot"
   | "draft"
-  | "discontinued";
+  | "discontinued"
+  | "stayed";
 
 export const POLICY_STATUS_LABEL: Record<PolicyStatus, string> = {
   active: "運用中",
@@ -106,6 +107,7 @@ export const POLICY_STATUS_LABEL: Record<PolicyStatus, string> = {
   pilot: "試行段階",
   draft: "草案・計画中",
   discontinued: "廃止",
+  stayed: "効力停止",
 };
 
 /* Entity type の UI ラベル (社内記号ではなく一般語) */
