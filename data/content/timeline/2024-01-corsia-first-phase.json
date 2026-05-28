@@ -1,0 +1,29 @@
+{
+  "slug": "2024-01-corsia-first-phase",
+  "event_date": "2024-01-01",
+  "title": "CORSIA 第1フェーズ開始 (国際航空オフセットの本格需要)",
+  "summary": "国際民間航空のカーボンオフセット制度 CORSIA が、試行期間 (2021-2023) を経て第1フェーズ (2024-2026) に移行。130 ヶ国超が任意参加し適格排出枠の需要が本格化したが、相当調整 (二重計上防止) の要件で「真に適格な」クレジットは構造的に希少という課題が顕在化した。",
+  "affected_entity_slugs": [
+    "corsia",
+    "art-trees",
+    "icvcm-ccp"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "ICAO — CORSIA",
+      "url": "https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx"
+    },
+    {
+      "label": "IATA — Offsetting CO2 Emissions with CORSIA",
+      "url": "https://www.iata.org/en/programs/sustainability/corsia/"
+    },
+    {
+      "label": "Verra — VCS under CORSIA",
+      "url": "https://verra.org/programs/verified-carbon-standard/vcs-under-corsia/"
+    }
+  ],
+  "content_md": "## 制度の概要\n\nCORSIA (国際航空のためのカーボン・オフセットおよび削減スキーム) は ICAO が運営する、国際線航空の CO2 排出を相殺する制度。試行期間 (2021-2023) を経て、2024 年から **第1フェーズ (2024-2026)** に入った。第1フェーズの参加は任意だが、2027 年からの **第2フェーズ (2027-2035) では大多数の国で義務化** される。航空会社は基準排出量を超えた分について、CORSIA 適格排出枠 (CEEU: CORSIA Eligible Emissions Units) を取得・無効化する義務を負う。\n\n## 主要な要素\n\n- **参加国**: 第1フェーズには 130 ヶ国超が任意参加 (確信度中)。IATA は第1フェーズ全体で最大 2 億 3,600 万単位の需要を見込む\n- **適格ユニットの認定**: ICAO の技術諮問機関 (TAB) が適格プログラム・ビンテージを承認。Verra (VCS)・ART TREES・ACR・Gold Standard 等の特定ビンテージが対象\n- **相当調整 (corresponding adjustment)**: 2021 年 1 月以降の削減分は、ホスト国による認可書 (Letter of Authorization) と相当調整 (二重計上防止) が必須\n- **無効化期限**: 第1フェーズ分は 2028 年 1 月までに無効化が求められる\n\n## 日本企業への含意\n\n- **航空会社の調達**: JAL・ANA 等は CORSIA 適格クレジットの確保が必要。SAF (持続可能航空燃料) の使用は CORSIA 義務を直接減らせるため、SAF とクレジットの併用設計が要点 (→ [JAL / ANA の SAF 戦略](/case-studies/jal-ana-saf-credit-strategy))\n- **適格クレジットの希少性**: ホスト国の相当調整は義務でなく任意のため、認可の遅れで「真に適格な」クレジットが不足しやすい。早期の調達体制が要る\n\n## 編集部の論点\n\nCORSIA は、価格低迷が続く VCM に **コンプライアンス由来の固い需要** を持ち込む点で重要。任意需要中心の VCM とは別に、適格性で絞り込まれた「CORSIA 市場」が分離して立ち上がっている。\n\n- **適格性のボトルネックが価格を決める**: クレジットの総発行は増えても、相当調整付きの適格クレジットは構造的に希少。需給は「発行量」でなく「ホスト国の認可スピード」が律速 (運用注視)\n- **品質基準の二層化**: CORSIA 適格性と [ICVCM の CCP](/timeline/2024-06-icvcm-first-ccp-approvals) は別の品質ゲート。買い手は用途 (航空コンプライアンス vs 任意オフセット) で見るべき基準が変わる\n- **SAF が本命、クレジットは橋渡し**: 航空脱炭素の本筋は SAF・機材効率化。CORSIA クレジットは移行期の穴埋めであり、長期の価値は SAF 供給の立ち上がり次第と整理できる\n\n未確定論点:\n\n- 第2フェーズ義務化 (2027-) 時の需要規模と適格ユニット供給のひっ迫度 (運用注視)\n- 主要ホスト国の相当調整方針 (運用注視)\n\n## 関連動向\n\n- [CORSIA](/entities/corsia) — 制度の詳細\n- [ICVCM 初の CCP-Approved 判定](/timeline/2024-06-icvcm-first-ccp-approvals) — もう一つの品質ゲート\n- [ART TREES](/entities/art-trees) — CORSIA 適格の森林由来プログラム\n- [パリ協定 6 条 メカニズム比較](/matrices/paris-article-6-comparison) — 相当調整の文脈\n"
+}

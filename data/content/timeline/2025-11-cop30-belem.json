@@ -1,0 +1,29 @@
+{
+  "slug": "2025-11-cop30-belem",
+  "event_date": "2025-11-21",
+  "title": "COP30 ベレン開催 (交渉から実装へ、森林と適応資金が主役)",
+  "summary": "ブラジル・ベレン (アマゾン) で COP30 開催 (2025 年 11 月 10-21 日)。パリ協定採択 10 年、Article 6 のルールが COP29 で確定したことを受け議題は「実装」へ。195 ヶ国が「ベレン・パッケージ」(29 決定) を採択し、途上国向け適応資金の3倍化や熱帯林永久基金 (TFFF) が焦点となった。",
+  "affected_entity_slugs": [
+    "paris-article-6-2",
+    "paris-article-6-4",
+    "jcm"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "UNFCCC — COP30 (Belém, 2025-11)",
+      "url": "https://unfccc.int/cop30"
+    },
+    {
+      "label": "UN — COP30 closes with agreement",
+      "url": "https://www.un.org/en/climatechange/cop30"
+    },
+    {
+      "label": "Carbon Brief — COP30 key outcomes (forests, land, nature)",
+      "url": "https://www.carbonbrief.org/cop30-key-outcomes-for-food-forests-land-and-nature-at-the-un-climate-talks-in-belem/"
+    }
+  ],
+  "content_md": "## 制度の概要\n\nCOP30 は 2025 年 11 月 10-21 日、ブラジル・ベレン (アマゾン河口) で開催された国連気候変動枠組条約の締約国会議。パリ協定採択 (2015) から 10 年の節目で、Article 6 のルールブックが [COP29 (2024)](/timeline/2024-11-cop29-article-6-4-methodologies) で出そろったことを受け、議題の軸は **交渉から「実装」へ** 移った。195 ヶ国が **ベレン・パッケージ** (29 の決定) を採択した。\n\n## 主要な要素\n\n- **適応資金の3倍化**: 途上国の適応支援資金を 2035 年までに大幅増 (3 倍) とする方向で合意\n- **熱帯林保全 (TFFF)**: 成果連動型の熱帯林永久基金 (Tropical Forests Forever Facility) が前進。クレジット型でなく基金型の森林保全資金 (確信度中)\n- **Article 6 は定常運用へ**: ルール確定済みのため相対的に小さな議題に。6.2 は技術専門家レビューの統合報告、6.4 は監督機関による PACM 実施の年次報告が中心\n- **NDC 3.0**: 各国の 2035 年目標 (NDC 3.0) の提出状況と野心度ギャップが論点\n\n## 日本企業への含意\n\n- **JCM の運用継続**: 日本は JCM を Article 6.2 の協調的アプローチとして運用。パートナー国拡大と相当調整の実務が引き続き焦点 (→ [JCM](/entities/jcm))\n- **森林クレジットの環境変化**: TFFF のような基金型資金が拡大すると、VCM の森林クレジット (REDD+ 等) と補完・競合の両面が生じる\n- **適応資金の拠出**: 先進国としての資金拠出の議論は、企業の気候ファイナンス文脈にも波及し得る\n\n## 編集部の論点\n\nCOP30 は **「ルールは完成した、次は質と量」** という局面を象徴する会議。カーボンクレジット領域では、交渉の焦点が「制度設計」から「運用とファイナンス」へ移ったと整理できる。\n\n- **森林ファイナンスの多様化**: TFFF (基金型) と VCM クレジット (取引型) が並走。資金の出し手にとっては「成果連動の基金」か「検証済みクレジット」かの選択肢が増える。両者の役割分担が今後の論点 (確信度中)\n- **Article 6 の「ニュース価値の低下」は成熟の証**: 大きな決定が COP29 で済んだため COP30 では Article 6 が前面に出なかった。これは停滞でなく定常運用入りと読める\n- **野心ギャップは残る**: NDC 3.0 の積み上げが 1.5℃ 経路に届くかは不透明 (確信度弱)。規制・需要の中期見通しは引き続き各国の実施意思に依存する\n\n未確定論点:\n\n- TFFF の最終規模・拠出国構成 (運用注視)\n- PACM の初回クレジット発行時期 (運用注視)\n\n## 関連動向\n\n- [COP29 — Article 6.4 メソドロジー](/timeline/2024-11-cop29-article-6-4-methodologies) — ルールブック確定\n- [COP26 — Article 6 ルールブック合意](/timeline/2021-11-cop26-article6-rulebook)\n- [パリ協定 6.2 条](/entities/paris-article-6-2) / [6.4 条 (PACM)](/entities/paris-article-6-4)\n- [パリ協定 6 条 メカニズム比較](/matrices/paris-article-6-comparison)\n"
+}

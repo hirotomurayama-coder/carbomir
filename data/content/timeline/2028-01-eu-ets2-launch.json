@@ -1,0 +1,23 @@
+{
+  "slug": "2028-01-eu-ets2-launch",
+  "event_date": "2028-01-01",
+  "title": "EU ETS2 開始予定 (建物・道路輸送の炭素価格、2027→2028 へ延期)",
+  "summary": "EU が Fit for 55 で創設した第2の排出量取引制度 ETS2 が開始予定。建物暖房・道路輸送・小規模産業の燃料供給者を対象とする上流型 ETS で、炭素価格が家計の燃料費に転嫁される。当初 2027 開始だったが 2025 年 11 月に 1 年延期され 2028 開始へ。社会的影響を緩和する社会気候基金 (SCF) を併設。",
+  "affected_entity_slugs": [
+    "eu-ets"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "European Commission — ETS2 (buildings, road transport)",
+      "url": "https://climate.ec.europa.eu/eu-action/carbon-markets/ets2-buildings-road-transport-and-additional-sectors_en"
+    },
+    {
+      "label": "ICAP — EU ETS2 factsheet",
+      "url": "https://icapcarbonaction.com/en/ets/eu-emissions-trading-system-buildings-and-road-transport-eu-ets-2"
+    }
+  ],
+  "content_md": "## 制度の概要\n\nETS2 は、既存の EU ETS (発電・産業・域内航空) とは **別建ての第2の排出量取引制度**。建物暖房・道路輸送、および既存 ETS の対象外の小規模産業で使われる **燃料の供給者** に排出枠の提出義務を課す「上流型」の仕組み。当初 2027 年開始の予定だったが、エネルギー価格や社会的影響への懸念から **2025 年 11 月に 1 年延期され、2028 年開始 (初回の排出枠提出は 2028 年)** となった。\n\n## 主要な要素\n\n- **対象**: 建物・道路輸送・小規模産業の燃料。義務者は最終消費者でなく燃料供給者\n- **キャップ**: 2030 年に 2005 年比 -42% の排出削減を目指す水準\n- **価格安定メカニズム**: 急騰を抑える「ソフト上限」を 45 ユーロ/t 目安に設定し、初年度は排出枠を 30% 増発。価格閾値の超過時に追加放出する条項もある\n- **社会気候基金 (SCF)**: 低所得世帯・零細企業の負担を緩和。ETS2 オークション収入等を原資に 2026-2032 年で計 867 億ユーロ規模を見込む\n\n## 日本企業への含意\n\n- **直接の規制対象ではない**: ただし EU 域内の燃料・物流コストに炭素価格が乗るため、EU で事業・販売する企業のコスト構造に間接的に波及する\n- **CBAM とのセット**: 産業の炭素コスト ([CBAM](/timeline/2026-01-cbam-definitive-phase-start)) に加え、民生・運輸にも炭素価格が広がり、EU 市場全体の脱炭素コストが可視化される\n- **GX-ETS への示唆**: 日本が民生・運輸部門をどう炭素価格に組み込むかを考える上で、ETS2 の設計 (上流型・社会基金併設) と延期の経緯は参照材料になる (→ [GX-ETS](/entities/gx-ets))\n\n## 編集部の論点\n\nETS2 の本質は **「炭素価格の消費者化」**。これまで発電・産業に限られていた炭素価格が、暖房やガソリンを通じて家計に直接届く。1 年の延期は、その政治的難しさを示す象徴的な出来事と整理できる。\n\n- **延期は「規制の揺り戻し」の一例**: [EU Omnibus](/timeline/2025-02-eu-omnibus-simplification) と同様、EU が負担と政治的反発を意識して減速した動き。規制は単調に強まり続けるわけではない\n- **社会的受容性が成否を分ける**: フランスの「黄色いベスト」運動の教訓から、SCF による負担緩和が制度の持続性の鍵。価格と再分配の設計が論点\n- **日本への波及は中期的**: 日本が運輸・民生の炭素価格化で EU を参照する可能性はあるが、当面は GX-ETS (産業中心) の定着が先と考えられる (確信度中)\n\n未確定論点:\n\n- 2028 開始が維持されるか、再延期・設計変更の可能性 (運用注視)\n- ソフト価格上限 (45 ユーロ目安) の実効性 (運用注視)\n\n## 関連動向\n\n- [Fit for 55 / CBAM 提案](/timeline/2021-07-fit-for-55-cbam-proposal) — ETS2 を含むパッケージ\n- [EU CBAM 確定運用開始](/timeline/2026-01-cbam-definitive-phase-start) — 産業の炭素コスト\n- [EU Omnibus 簡素化](/timeline/2025-02-eu-omnibus-simplification) — 規制減速の文脈\n- [EU ETS](/entities/eu-ets) / [GX-ETS](/entities/gx-ets)\n"
+}

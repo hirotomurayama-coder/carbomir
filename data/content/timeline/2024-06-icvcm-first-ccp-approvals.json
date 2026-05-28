@@ -1,0 +1,29 @@
+{
+  "slug": "2024-06-icvcm-first-ccp-approvals",
+  "event_date": "2024-06-06",
+  "title": "ICVCM が初の CCP-Approved 判定を公表 (VCM 品質の選別開始)",
+  "summary": "VCM の品質基準 Core Carbon Principles (CCP) を策定した ICVCM が、メソドロジー単位の評価を開始し、2024 年 6 月に最初の CCP-Approved 判定 (7 手法) を公表。Verra レジストリで 1,000 万単位超に CCP ラベルが付与され、「CCP 付き」と非対応クレジットの市場分岐が始まった。",
+  "affected_entity_slugs": [
+    "icvcm-ccp",
+    "verra-vcs",
+    "gold-standard"
+  ],
+  "category": "market",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "ICVCM — 初の CCP-labelled クレジット公表 (2024-06)",
+      "url": "https://icvcm.org/integrity-council-announces-first-high-integrity-ccp-labelled-carbon-credits-as-assessments-continue/"
+    },
+    {
+      "label": "ICVCM — Assessment Status",
+      "url": "https://icvcm.org/assessment-status/"
+    },
+    {
+      "label": "Verra — First ICVCM CCP Labels on the Verra Registry",
+      "url": "https://verra.org/first-icvcm-ccp-labels-now-active-on-the-verra-registry/"
+    }
+  ],
+  "content_md": "## 制度の概要\n\nICVCM (Integrity Council for the Voluntary Carbon Market) は 2023 年に **Core Carbon Principles (CCP)** と評価枠組み (Assessment Framework) を公表した、VCM の品質基準を定める独立組織。2024 年 6 月 6 日、最初の **CCP-Approved メソドロジー (7 手法)** を公表し、メソドロジー単位の品質審査が本格的に始動した。同日、Verra レジストリでは 1,000 万単位超の VCU に CCP ラベルが付与された。\n\n## 主要な要素\n\n- **二段階の審査**: まずプログラム単位 (Verra・Gold Standard 等が CCP-Eligible)、次にメソドロジー単位 (個別手法が CCP-Approved)\n- **最初の承認分野**: 埋立地メタン回収、オゾン層破壊物質 (ODS) の破壊など、計測が比較的容易な 7 手法 (確信度強)\n- **CCP ラベル**: 承認手法から発行されるクレジットにラベルが付与され、レジストリ上で識別可能になる\n- **継続審査**: 森林系 (REDD+ 等) を含む他手法は順次審査。一部の旧手法は不承認となった\n\n## 日本企業への含意\n\n- **調達基準への組み込み**: 「CCP 付き」を品質シグナルとして社内の調達ガイドラインに使える。説明責任 (なぜこのクレジットか) の根拠になる\n- **国内制度との関係**: J-クレジット・JCM は ICVCM の審査対象外。CCP は主に国際 VCM 向けの基準で、国内クレジットの品質は別途判断が必要\n\n## 編集部の論点\n\nICVCM の CCP は、VCM における **事実上の「格付け」インフラ** になりつつある。ラベルの有無で価格・流動性が二極化する見込みで、買い手の選別コストを下げる一方、新たな依存も生む。\n\n- **市場の二極化**: CCP 付きクレジットにプレミアムが付き、非対応クレジットは流動性が細る方向。質の低いクレジットが滞留する「逆選択」の是正が期待される\n- **CCP は最低基準であって万能ではない**: CCP は「足切り」であり、これだけで個別案件の質を保証しない。買い手は CCP を出発点に追加デューデリを要する (運用注視: 不承認手法・既発行分の扱い)\n- **ガバナンスの重層化**: ICVCM (供給側の質) と [VCMI](/entities/vcmi) (需要側の主張の質) が車の両輪。買い手は両方を見る必要がある\n\n未確定論点:\n\n- 森林系メソドロジーの承認範囲 (運用注視)\n- 既発行クレジットの遡及的評価とラベル付与の扱い (運用注視)\n\n## 関連動向\n\n- [ICVCM CCP 始動](/timeline/2023-07-icvcm-ccp-launch) — CCP・評価枠組みの公表\n- [ICVCM CCP](/entities/icvcm-ccp) — 組織と基準の詳細\n- [VCM 品質ガバナンス・イニシアチブ比較](/matrices/vcm-integrity-governance-comparison) — ICVCM / VCMI / SBTi / CORSIA の役割整理\n- [VCM レジストリ網羅比較](/matrices/vcm-registry-comparison) — CCP 対応状況の文脈\n"
+}
