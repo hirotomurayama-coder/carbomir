@@ -145,6 +145,9 @@ src/
     database.types.ts   # Supabase DB スキーマ
     supabase.ts         # Supabase クライアント
     data/
+      queries.ts        # Server Component 用データアクセス re-export ハブ
+      queries/          # ドメイン別 query 実装 (entities/comparisons/timeline/
+                        #   atlas/case-study-faq)
       entities.ts, comparisons.ts, timeline.ts
       case-studies.ts, faqs.ts
       ai-drafts.ts      # AI ドラフトストア (filesystem-backed)
@@ -255,8 +258,9 @@ ANTHROPIC_API_KEY=
 - [ ] ライトモード完成度向上
 - [ ] モバイル ハンバーガーメニュー
 - [ ] レイアウトトークン統一 (Fix-N〜R の sticky 系起因 → 再発防止)
-- [ ] 大型ファイル分解 (残): `edit-form.tsx` (917) / `timeline-bars.tsx` (795) / `app/page.tsx` (743) / `lib/data/queries.ts` (594)
+- [ ] 大型ファイル分解 (残): `edit-form.tsx` (917) / `timeline-bars.tsx` (795) / `app/page.tsx` (743)
   - [x] `lib/types.ts` (626 → 19): 8 ドメイン別ファイル (common/entity/comparison/case-study/faq/timeline/atlas/ai-draft) に分割、types.ts は re-export ハブ
+  - [x] `lib/data/queries.ts` (594 → 18): 5 ファイル (entities/comparisons/timeline/atlas/case-study-faq) に分割、queries.ts は re-export ハブ
 - [ ] テストカバレッジ向上 — 現状 3/130 (2.3%)、UI コンポーネントは全て未テスト
 
 ### Phase 5-A ✅ 世界マップ ブラッシュアップ (Fix-E〜I)
