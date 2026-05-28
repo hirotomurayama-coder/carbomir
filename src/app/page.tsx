@@ -24,6 +24,7 @@ import {
   RecentUpdatesCard,
   getRecentUpdates,
 } from "@/components/home/recent-updates-card";
+import { OutcomeStrip } from "@/components/home/outcome-strip";
 
 /**
  * カーボンクレジット領域のナレッジベースのホーム.
@@ -76,7 +77,7 @@ export default async function DashboardHome() {
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
-      {/* Hero — シナリオ 3 (規制キャッチアップ) を主訴求 */}
+      {/* Hero — アウトカム主語 (STRATEGY §1): 情報でなく「追う時間」と「見落とすリスク」の肩代わり */}
       <header className="mb-8">
         <div className="flex items-center gap-2 mb-3 flex-wrap">
           <Badge
@@ -84,21 +85,24 @@ export default async function DashboardHome() {
             className="font-mono text-[10px] tracking-wider uppercase border-accent/40 text-accent"
           >
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent mr-1.5 animate-pulse" />
-            Structured Intelligence
+            Decision-ready Intelligence
           </Badge>
           <span className="label-mono text-muted-foreground metric-number">
             Last update {lastUpdate}
           </span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3 leading-tight">
-          カーボンクレジット領域の<br className="sm:hidden" />
-          規制動向を、構造化して追う。
+          規制変更のキャッチアップから、<br className="sm:hidden" />
+          判断が腐らない状態まで。
         </h1>
         <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
-          GX-ETS / CBAM / SBT 等の規制変更を時系列で押さえ、関連する制度・スタンダード・プレイヤー・事例へ即座に深掘り。
-          事業会社の CSR / サスティナビリティ担当者の説明資料作成と意思決定を支援する構造化ナレッジベース。
+          GX-ETS / CBAM / SBT を一次情報まで追う時間と、買った後に「使えない・ジャンク認定」を見落とすリスク——その両方を Carbomir が肩代わりする。
+          論点・比較・適格性が出揃った状態を作り、前提が動けば見出しになる前に知らせる。CSR・サステナビリティ担当の報告・稟議・調達判断のために。
         </p>
       </header>
+
+      {/* 3 アウトカム (STRATEGY §3): 判断の手前 / 稟議の弾薬 / 腐らせない監視 */}
+      <OutcomeStrip />
 
       {/* 追う セクション (主役) */}
       <TrackSection
