@@ -5,7 +5,7 @@
  * Entity 詳細ページのレンダリング・関連グラフ・metadata パネルで使われる。
  */
 
-import type { PaywallTier } from "./common";
+import type { PaywallTier, PriceLevel } from "./common";
 
 export type EntityType =
   | "methodology"
@@ -91,6 +91,12 @@ export type Entity = {
   policy_status?: PolicyStatus;
   /** 次のマイルストーン (regulation 型向け)。例: "2026-04: 第2フェーズ開始" */
   next_milestone?: string;
+  /**
+   * 価格水準 (相場観) — 出典・時点つきの editorial 属性 (STRATEGY §8)。
+   * live feed ではない。market / methodology / technology / regulation(ETS) 等、
+   * 価格が判断材料になる entity に任意付与する。
+   */
+  price_level?: PriceLevel;
 };
 
 export type PolicyStatus =

@@ -24,6 +24,45 @@ export const PAYWALL_TIER_LABEL: Record<PaywallTier, string> = {
 };
 
 /* ============================================================
+ * 価格水準 (相場観) — editorial 属性 (STRATEGY §8)
+ * ============================================================ */
+
+export type PriceTrend = "rising" | "falling" | "stable" | "volatile";
+
+export const PRICE_TREND_LABEL: Record<PriceTrend, string> = {
+  rising: "上昇",
+  falling: "低下",
+  stable: "横ばい",
+  volatile: "変動大",
+};
+
+/**
+ * 価格水準 (相場観).
+ *
+ * 「正確な実勢価格 (live feed)」ではなく、出典・時点つきのレンジ・方向感・代表指標。
+ * 公開ソース (World Bank State and Trends, EUA オークション, Nasdaq/Puro CORC 指数,
+ * METI / J-クレジット平均, 報道スポットレンジ 等) で成立する editorial データ。
+ * 正確な執行価格が要る瞬間 (調達実行) はブローカー/市場/CradleTo へハンドオフする
+ * (price precision / liquidity は意識的に取りに行かないトレードオフ)。
+ */
+export type PriceLevel = {
+  /** 代表レンジ・水準 (例: "60–90", "400–1,000")。単位は unit 側 */
+  range: string;
+  /** 通貨・単位 (例: "EUR/t-CO2", "USD/t-CO2", "JPY/t-CO2") */
+  unit: string;
+  /** 方向感 (任意) */
+  trend?: PriceTrend;
+  /** 時点 (YYYY-MM or YYYY-MM-DD)。鮮度シグナルと同じ規律で扱う */
+  as_of: string;
+  /** 出典ラベル */
+  source_label: string;
+  /** 出典 URL (任意) */
+  source_url?: string;
+  /** 補足 (任意, 例: "除去系 CORC 指数 / 回避系はより低位") */
+  note?: string;
+};
+
+/* ============================================================
  * Tag taxonomy (controlled vocabulary)
  *
  * Entity の tags フィールドはこの語彙のいずれかを使う。

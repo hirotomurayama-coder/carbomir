@@ -20,6 +20,15 @@
   "credit_unit": "J-クレジット",
   "policy_status": "active",
   "next_milestone": "2026-04: GX-ETS 第2フェーズの遵守需要拡大で J-クレジット需要が急増する見込み",
+  "price_level": {
+    "range": "1,500–4,000",
+    "unit": "JPY/t-CO2",
+    "trend": "rising",
+    "as_of": "2025",
+    "source_label": "J-クレジット制度 入札販売結果 (経産省・NEDO)",
+    "source_url": "https://japancredit.go.jp/",
+    "note": "種別差大。森林由来は高位、再エネ・省エネ由来は低位。GX-ETS 需要で上昇圧。"
+  },
   "related": [
     {
       "to_slug": "jcm",

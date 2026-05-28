@@ -22,6 +22,14 @@
   "credit_unit": "(運用レジストリのクレジット単位による)",
   "policy_status": "active",
   "next_milestone": "Verra 統合メソドロジー (VM0048) への移行と CCP 評価結果反映",
+  "price_level": {
+    "range": "3–15",
+    "unit": "USD/t-CO2",
+    "trend": "falling",
+    "as_of": "2025",
+    "source_label": "VCM 各種指数・報道スポットレンジ",
+    "note": "回避系 NBS。品質懸念で低位・下落圧。vintage・プロジェクト・地域で大差。高品質 vintage は例外的に高位。"
+  },
   "related": [
     {
       "to_slug": "verra-vcs",

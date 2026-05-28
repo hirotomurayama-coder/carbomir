@@ -22,6 +22,15 @@
   "credit_unit": "EUA (EU Allowance)",
   "policy_status": "active",
   "next_milestone": "2026: 航空セクター無償割当の段階的廃止、海運の本格統合 ",
+  "price_level": {
+    "range": "60–90",
+    "unit": "EUR/t-CO2",
+    "trend": "volatile",
+    "as_of": "2025",
+    "source_label": "World Bank Carbon Pricing Dashboard / EEX",
+    "source_url": "https://carbonpricingdashboard.worldbank.org/",
+    "note": "EU 域内 ETS の遵守価格 (EUA)。政策・景気・燃料価格で変動する。"
+  },
   "related": [],
   "related_matrix_slugs": [
   "ets-international-comparison"

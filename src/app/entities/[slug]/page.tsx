@@ -24,6 +24,7 @@ import {
 import { EntityToc } from "@/components/entities/entity-toc";
 import { MetadataPanel } from "@/components/entities/metadata-panel";
 import { DurabilityPanel } from "@/components/entities/durability-panel";
+import { PriceLevelPanel } from "@/components/entities/price-level-panel";
 import { MarkdownContent } from "@/components/markdown-content";
 import { EditorialThesis } from "@/components/editorial-thesis";
 import { ReviewMarkedText } from "@/components/review-marks";
@@ -218,6 +219,7 @@ export default async function EntityDetailPage({ params }: Props) {
         {/* Right: Related */}
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
           <MetadataPanel entity={entity} />
+          {entity.price_level && <PriceLevelPanel price={entity.price_level} />}
           <DurabilityPanel
             entityType={entity.type}
             policyStatus={entity.policy_status}
