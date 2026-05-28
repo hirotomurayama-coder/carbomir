@@ -258,9 +258,10 @@ ANTHROPIC_API_KEY=
 - [ ] ライトモード完成度向上
 - [ ] モバイル ハンバーガーメニュー
 - [ ] レイアウトトークン統一 (Fix-N〜R の sticky 系起因 → 再発防止)
-- [ ] 大型ファイル分解 (残): `edit-form.tsx` (917) / `timeline-bars.tsx` (795) / `app/page.tsx` (743)
+- [ ] 大型ファイル分解 (残): `edit-form.tsx` (917) / `timeline-bars.tsx` (795)
   - [x] `lib/types.ts` (626 → 19): 8 ドメイン別ファイル (common/entity/comparison/case-study/faq/timeline/atlas/ai-draft) に分割、types.ts は re-export ハブ
   - [x] `lib/data/queries.ts` (594 → 18): 5 ファイル (entities/comparisons/timeline/atlas/case-study-faq) に分割、queries.ts は re-export ハブ
+  - [x] `app/page.tsx` (743 → 137): 8 ファイル (section-header/mini-asset-card/track/define/compare/apply/survey/recent-updates) を `src/components/home/` に抽出、ヘルパー (pickFeaturedMatrix / getUpcomingMilestones / getRecentUpdates) も同居
 - [ ] テストカバレッジ向上 — 現状 3/130 (2.3%)、UI コンポーネントは全て未テスト
 
 ### Phase 5-A ✅ 世界マップ ブラッシュアップ (Fix-E〜I)
