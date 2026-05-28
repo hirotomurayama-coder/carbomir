@@ -1,0 +1,24 @@
+{
+  "slug": "2022-04-frontier-amc-launch",
+  "event_date": "2022-04-12",
+  "title": "Frontier AMC 発足 (CDR の前払い需要創出モデル)",
+  "summary": "Stripe・Alphabet・Shopify・Meta・McKinsey が、永久的なカーボン除去 (CDR) を 2022-2030 年に総額 9.25 億ドル以上買い取る前払い市場保証 (AMC)「Frontier」を発足。供給が未成熟な除去技術に確実な将来需要を示し、開発を加速させる需要創出モデルの原点となった。",
+  "affected_entity_slugs": [
+    "dac",
+    "voluntary-carbon-credits"
+  ],
+  "category": "market",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "Frontier Climate",
+      "url": "https://frontierclimate.com/"
+    },
+    {
+      "label": "CNBC — Stripe, Alphabet, Meta, Shopify, McKinsey commit $925M",
+      "url": "https://www.cnbc.com/2022/04/12/stripe-alphabet-meta-shopify-mckinsey-spur-carbon-capture-market.html"
+    }
+  ],
+  "content_md": "## 制度の概要\n\nFrontier は 2022 年 4 月 12 日、**Stripe・Alphabet (Google)・Shopify・Meta・McKinsey Sustainability** が共同で発足させた、永久的なカーボン除去 (CDR) の **前払い市場保証 (Advance Market Commitment, AMC)**。2022-2030 年に **総額 9.25 億ドル以上** (目標 10 億ドル超) の CDR を買い取ると表明し、供給が未成熟な除去技術に「確実な将来需要」を示した。\n\n## 主要な要素\n\n- **AMC という仕組み**: 製品がまだ十分に存在しない段階で「できたら買う」と確約し、開発・投資を呼び込む手法 (ワクチンの AMC が原型)\n- **2 つの調達トラック**: (1) 初期段階の供給者に前払いする prepurchase、(2) 将来の引き渡しを条件に大量購入する offtake\n- **運営**: Stripe の子会社が技術・商務の専門チームとして購入を仲介\n- **拡大**: 2023 年 4 月に Autodesk・H&M・JPMorgan・Workday が参加し、コミット総額は 10 億ドル超へ\n\n## 日本企業への含意\n\n- **需要創出の参照モデル**: 自社単独でなく **コーリション (購買連合)** で需要を束ねて初期市場を立ち上げる手法は、日本企業の CDR 調達戦略の参考になる (→ [CDR 需要集約モデル比較](/matrices/cdr-buyer-coalition-comparison))\n- **除去シフトの先行例**: 回避・削減から **除去 (Removal)** へ重心を移す買い手の動きを象徴。SBTi の除去要件強化の流れとも整合する\n\n## 編集部の論点\n\nFrontier は、VCM が抱える **「需要の不確実性が供給投資を阻む」鶏卵問題** に、買い手側からの確約で応えた点が画期的。CDR 市場の「火付け役」と整理できる。\n\n- **需要保証が供給を生む**: 価格でなく「確約された需要」が初期市場の律速。Frontier 型 AMC は研究者・起業家に明確な投資シグナルを送った\n- **大手テックに偏る初期需要**: 初期の買い手は資金力のあるテック企業中心。需要の裾野が一般企業へ広がるかが市場拡大の鍵 (確信度中)\n- **「永久性」へのこだわり**: Frontier は数百-千年級の永続除去を重視し、安価な自然系クレジットとは別の市場を意図的に作った。この姿勢は後の品質議論 ([ICVCM CCP](/timeline/2024-06-icvcm-first-ccp-approvals)) とも通じる\n\n## 関連動向\n\n- [Stripe Frontier コーリションの CDR 需要創出モデル](/case-studies/stripe-frontier-cdr-coalition) — 詳細ケース\n- [CDR 需要集約モデル比較](/matrices/cdr-buyer-coalition-comparison) — Frontier / NextGen / Symbiosis 等\n- [Microsoft カーボンネガティブ宣言](/timeline/2020-01-microsoft-carbon-negative) — 大手テックの除去需要\n- [Engineered Removal 技術比較](/matrices/engineered-removal-comparison) — DAC / BECCS / Biochar 等\n"
+}
