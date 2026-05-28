@@ -1,0 +1,165 @@
+{
+  "slug": "japan-carbon-pricing-comparison",
+  "title": "日本のカーボンプライシング制度比較 (GX-ETS / J-クレジット / 地球温暖化対策税 / 化石燃料賦課金)",
+  "description": "日本の炭素価格づけ手段 4 種を、類型・仕組み・導入時期・価格水準の軸で対比。排出量取引・クレジット・課税・賦課金が重層する国内規制マップを俯瞰する。",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "category": "scheme",
+  "tags": [
+    "日本",
+    "ETS / 排出量取引",
+    "炭素税",
+    "GX-ETS 関連"
+  ],
+  "dimensions": [
+    {
+      "key": "type",
+      "label_ja": "類型"
+    },
+    {
+      "key": "mechanism",
+      "label_ja": "価格づけの仕組み"
+    },
+    {
+      "key": "start",
+      "label_ja": "導入・本格化時期"
+    },
+    {
+      "key": "coverage",
+      "label_ja": "対象"
+    },
+    {
+      "key": "price_level",
+      "label_ja": "価格水準 (2026 年時点)"
+    },
+    {
+      "key": "compliance_use",
+      "label_ja": "遵守・クレジット利用"
+    },
+    {
+      "key": "carbomir_view",
+      "label_ja": "Carbomir 編集部の論点",
+      "paywall_tier": "standard"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "gx-ets",
+      "name_ja": "GX-ETS"
+    },
+    {
+      "slug": "jcredit",
+      "name_ja": "J-クレジット制度"
+    },
+    {
+      "slug": "global-warming-tax",
+      "name_ja": "地球温暖化対策税"
+    },
+    {
+      "slug": "fossil-fuel-levy",
+      "name_ja": "化石燃料賦課金"
+    }
+  ],
+  "cells": {
+    "gx-ets": {
+      "type": {
+        "value": "排出量取引 (キャップ&トレード型へ移行中)"
+      },
+      "mechanism": {
+        "value": "排出枠の配分と取引で価格形成。第2フェーズで特定企業群に有償割当",
+        "source_url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ggs/index.html",
+        "source_label": "経産省 GX 政策"
+      },
+      "start": {
+        "value": "2023 試行 (GX リーグ自主参加) / 2026-04 第2フェーズ / 2033 年度 発電向け有償オークション"
+      },
+      "coverage": {
+        "value": "GX リーグ参加企業 → 段階的に拡大"
+      },
+      "price_level": {
+        "value": "試行段階。本格的な価格シグナルは第2フェーズ以降 (運用注視)"
+      },
+      "compliance_use": {
+        "value": "遵守に J-クレジット・JCM クレジットを活用可能"
+      },
+      "carbomir_view": {
+        "value": "国内炭素価格を制度的に下支え。第2フェーズで本格化し、企業の中期排出戦略の前提になると考えられる"
+      }
+    },
+    "jcredit": {
+      "type": {
+        "value": "ベースライン&クレジット (国内オフセット)"
+      },
+      "mechanism": {
+        "value": "認証された削減・吸収量をクレジット化し、相対・入札で取引",
+        "source_url": "https://japancredit.go.jp/",
+        "source_label": "J-クレジット制度 公式"
+      },
+      "start": {
+        "value": "2013 運用開始"
+      },
+      "coverage": {
+        "value": "省エネ・再エネ・森林・農業等の国内プロジェクト"
+      },
+      "price_level": {
+        "value": "入札・相対で変動。森林吸収系は高め (運用注視: 直近の入札価格)"
+      },
+      "compliance_use": {
+        "value": "GX-ETS の遵守クレジット。カーボンニュートラル主張のオフセットにも利用"
+      },
+      "carbomir_view": {
+        "value": "GX-ETS 第2フェーズの遵守需要拡大で需要急増が見込まれる。国内クレジット供給の中核"
+      }
+    },
+    "global-warming-tax": {
+      "type": {
+        "value": "炭素税 (化石燃料課税)"
+      },
+      "mechanism": {
+        "value": "化石燃料の CO2 排出量に応じ、石油石炭税に上乗せ課税"
+      },
+      "start": {
+        "value": "2012 導入 / 2016 満額化"
+      },
+      "coverage": {
+        "value": "全化石燃料 (輸入・採取段階)"
+      },
+      "price_level": {
+        "value": "289 円/t-CO2 (固定)"
+      },
+      "compliance_use": {
+        "value": "課税 (クレジット相殺の対象外)"
+      },
+      "carbomir_view": {
+        "value": "国際水準から見て低い税率。日本の炭素価格が低いと評される根拠の一つ"
+      }
+    },
+    "fossil-fuel-levy": {
+      "type": {
+        "value": "炭素賦課金 (化石燃料輸入課金)"
+      },
+      "mechanism": {
+        "value": "化石燃料の輸入事業者等に CO2 排出量に応じた賦課金。GX 推進法に基づく",
+        "source_url": "https://www.meti.go.jp/policy/energy_environment/global_warming/ggs/index.html",
+        "source_label": "経産省 GX 政策"
+      },
+      "start": {
+        "value": "2028 年度 導入予定 (発電向け有償オークションは 2033 年度〜)"
+      },
+      "coverage": {
+        "value": "化石燃料の輸入事業者等"
+      },
+      "price_level": {
+        "value": "料率未定 (運用注視: 制度設計の最終段階)"
+      },
+      "compliance_use": {
+        "value": "賦課金 (クレジット相殺の対象外)"
+      },
+      "carbomir_view": {
+        "value": "日本が明示的炭素価格を本格導入する転換点。CBAM 控除の原資にもなり得る",
+        "note": "輸出産業は「国内で払うか国境で払うか」 の設計問題に直面"
+      }
+    }
+  }
+}

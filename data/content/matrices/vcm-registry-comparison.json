@@ -1,0 +1,221 @@
+{
+  "slug": "vcm-registry-comparison",
+  "title": "VCM レジストリ網羅比較 (Verra / Gold Standard / ACR / CAR / Puro.earth / Isometric / Cercarbono)",
+  "description": "ボランタリー市場の主要レジストリ 7 社を、クレジット単位・設立・重点領域・コンプライアンス接続の軸で対比。老舗の汎用標準から除去専門・地域特化の新興まで、発行体の地図を俯瞰する。",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "category": "standard",
+  "tags": [
+    "ボランタリー市場",
+    "国際",
+    "品質基準 (CCP)",
+    "Engineered Removal"
+  ],
+  "dimensions": [
+    {
+      "key": "unit",
+      "label_ja": "クレジット単位"
+    },
+    {
+      "key": "founded",
+      "label_ja": "設立"
+    },
+    {
+      "key": "base",
+      "label_ja": "拠点・地域"
+    },
+    {
+      "key": "focus",
+      "label_ja": "重点領域"
+    },
+    {
+      "key": "compliance_link",
+      "label_ja": "遵守市場との接続"
+    },
+    {
+      "key": "carbomir_view",
+      "label_ja": "Carbomir 編集部の論点",
+      "paywall_tier": "standard"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "verra-vcs",
+      "name_ja": "Verra (VCS)",
+      "name_en": "Verified Carbon Standard"
+    },
+    {
+      "slug": "gold-standard",
+      "name_ja": "Gold Standard"
+    },
+    {
+      "slug": "acr",
+      "name_ja": "ACR",
+      "name_en": "American Carbon Registry"
+    },
+    {
+      "slug": "car",
+      "name_ja": "CAR",
+      "name_en": "Climate Action Reserve"
+    },
+    {
+      "slug": "puro-earth",
+      "name_ja": "Puro.earth"
+    },
+    {
+      "slug": "isometric",
+      "name_ja": "Isometric"
+    },
+    {
+      "slug": "cercarbono",
+      "name_ja": "Cercarbono"
+    }
+  ],
+  "cells": {
+    "verra-vcs": {
+      "unit": {
+        "value": "VCU (Verified Carbon Unit)"
+      },
+      "founded": {
+        "value": "2005"
+      },
+      "base": {
+        "value": "米国 (グローバル)"
+      },
+      "focus": {
+        "value": "メソドロジー多様性が最大。REDD+ から Removal まで広範",
+        "source_url": "https://verra.org/programs/verified-carbon-standard/",
+        "source_label": "Verra VCS"
+      },
+      "compliance_link": {
+        "value": "CORSIA 一部適格、Article 6 対応強化中"
+      },
+      "carbomir_view": {
+        "value": "世界最大級で標準的地位。REDD+ 品質論争の影響を最も受け、VM0048 等への移行で立て直し中"
+      }
+    },
+    "gold-standard": {
+      "unit": {
+        "value": "VER (Verified Emissions Reduction)"
+      },
+      "founded": {
+        "value": "2003"
+      },
+      "base": {
+        "value": "スイス (グローバル)"
+      },
+      "focus": {
+        "value": "SDGs 連動の付加価値、開発便益重視",
+        "source_url": "https://www.goldstandard.org/",
+        "source_label": "Gold Standard"
+      },
+      "compliance_link": {
+        "value": "CORSIA 一部適格、Article 6.2 対応強化"
+      },
+      "carbomir_view": {
+        "value": "Verra と並ぶ二大民間スタンダード。SDGs 訴求で差別化し、品質ガバナンスへの追随も早い"
+      }
+    },
+    "acr": {
+      "unit": {
+        "value": "ERT (Emission Reduction Ton)"
+      },
+      "founded": {
+        "value": "1996 (世界最古)"
+      },
+      "base": {
+        "value": "米国"
+      },
+      "focus": {
+        "value": "森林・農業・冷媒、コンプライアンス対応"
+      },
+      "compliance_link": {
+        "value": "California Cap-and-Trade の ARB 認証プロトコル提供者"
+      },
+      "carbomir_view": {
+        "value": "民間ながらコンプライアンス需要に対応する希少な存在。ボランタリーと遵守の橋渡し"
+      }
+    },
+    "car": {
+      "unit": {
+        "value": "CRT (Climate Reserve Ton)"
+      },
+      "founded": {
+        "value": "2008"
+      },
+      "base": {
+        "value": "米国 (California)"
+      },
+      "focus": {
+        "value": "森林・農業・冷媒で強い実績"
+      },
+      "compliance_link": {
+        "value": "California Cap-and-Trade の主要 ARB 認証プロトコル提供者"
+      },
+      "carbomir_view": {
+        "value": "ACR と同様コンプライアンス接続が強み。北米のプロトコル標準化に影響力"
+      }
+    },
+    "puro-earth": {
+      "unit": {
+        "value": "CORC (CO2 Removal Certificate)"
+      },
+      "founded": {
+        "value": "2019"
+      },
+      "base": {
+        "value": "フィンランド (Nasdaq 傘下)"
+      },
+      "focus": {
+        "value": "Engineered Removal 専門 (Biochar / Bio-oil / Mineralization / DAC)"
+      },
+      "compliance_link": {
+        "value": "ボランタリー中心 (除去特化)"
+      },
+      "carbomir_view": {
+        "value": "除去専門レジストリの先駆。永続性重視で Removal 需要の受け皿"
+      }
+    },
+    "isometric": {
+      "unit": {
+        "value": "Isometric Credit"
+      },
+      "founded": {
+        "value": "2022"
+      },
+      "base": {
+        "value": "英国"
+      },
+      "focus": {
+        "value": "Engineered Removal 特化、科学的厳格性を訴求"
+      },
+      "compliance_link": {
+        "value": "ボランタリー中心 (除去特化)"
+      },
+      "carbomir_view": {
+        "value": "新興だが Microsoft 等の支持で急成長。CDR に絞った品質基準で差別化"
+      }
+    },
+    "cercarbono": {
+      "unit": {
+        "value": "VCC (Voluntary Carbon Credit)"
+      },
+      "founded": {
+        "value": "2016"
+      },
+      "base": {
+        "value": "コロンビア (ラテンアメリカ)"
+      },
+      "focus": {
+        "value": "森林・農業、ラテンアメリカ域内"
+      },
+      "compliance_link": {
+        "value": "コロンビア炭素税のオフセット適格レジストリ"
+      },
+      "carbomir_view": {
+        "value": "南米拠点で急成長。地域コンプライアンス (コロンビア炭素税) 接続が成長の起点"
+      }
+    }
+  }
+}

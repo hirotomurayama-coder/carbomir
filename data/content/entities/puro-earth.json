@@ -22,7 +22,9 @@
   "credit_unit": "CO2 Removal Certificate (CORC)",
   "policy_status": "active",
   "related": [],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "vcm-registry-comparison"
+  ],
   "sections": [
     {
       "heading": "レジストリの概要",

@@ -1,0 +1,134 @@
+{
+  "slug": "credit-type-comparison",
+  "title": "クレジット種別比較 (回避 / 削減 / 除去)",
+  "description": "カーボンクレジットの 3 大類型 (Avoidance / Reduction / Removal) を、永続性・SBTi での扱い・用途の軸で対比。品質階層と Net-Zero 戦略上の役割の違いを整理する。",
+  "last_reviewed_at": "2026-05-28",
+  "next_review_at": "2026-08-26",
+  "status": "published",
+  "category": "methodology",
+  "tags": [
+    "品質基準 (CCP)",
+    "ボランタリー市場",
+    "Engineered Removal",
+    "森林吸収"
+  ],
+  "dimensions": [
+    {
+      "key": "definition",
+      "label_ja": "定義"
+    },
+    {
+      "key": "examples",
+      "label_ja": "代表例"
+    },
+    {
+      "key": "permanence",
+      "label_ja": "永続性"
+    },
+    {
+      "key": "sbti_treatment",
+      "label_ja": "SBTi Net-Zero での扱い"
+    },
+    {
+      "key": "price_quality",
+      "label_ja": "価格・品質傾向"
+    },
+    {
+      "key": "use_case",
+      "label_ja": "主な用途"
+    },
+    {
+      "key": "carbomir_view",
+      "label_ja": "Carbomir 編集部の論点",
+      "paywall_tier": "standard"
+    }
+  ],
+  "entities": [
+    {
+      "slug": "avoidance-credits",
+      "name_ja": "回避型",
+      "name_en": "Avoidance"
+    },
+    {
+      "slug": "reduction-credits",
+      "name_ja": "削減型",
+      "name_en": "Reduction"
+    },
+    {
+      "slug": "cdr-credits",
+      "name_ja": "除去型",
+      "name_en": "Removal (CDR)"
+    }
+  ],
+  "cells": {
+    "avoidance-credits": {
+      "definition": {
+        "value": "排出を「防ぐ」ことで生じるクレジット (排出が起きなかった分)"
+      },
+      "examples": {
+        "value": "REDD+ (森林減少回避)、クックストーブ、メタン回収"
+      },
+      "permanence": {
+        "value": "森林系は逆転リスク (火災・伐採) があり永続性に懸念"
+      },
+      "sbti_treatment": {
+        "value": "Net-Zero 目標の残余中和には使用不可"
+      },
+      "price_quality": {
+        "value": "低価格帯が多いが、ベースライン設定・追加性への批判が集まりやすい"
+      },
+      "use_case": {
+        "value": "BVCM (バリューチェーン外の気候貢献)、自主的オフセット"
+      },
+      "carbomir_view": {
+        "value": "「起きなかったこと」 の証明が難しく品質論争の中心。ICVCM CCP 適格判定でも厳しく見られる"
+      }
+    },
+    "reduction-credits": {
+      "definition": {
+        "value": "排出を「実際に減らす」プロジェクトから生じるクレジット"
+      },
+      "examples": {
+        "value": "再エネ転換、省エネ、燃料転換"
+      },
+      "permanence": {
+        "value": "削減そのものは逆転しないが、追加性の立証が論点"
+      },
+      "sbti_treatment": {
+        "value": "Net-Zero 目標の残余中和には使用不可 (BVCM 等で活用)"
+      },
+      "price_quality": {
+        "value": "中価格帯。追加性 (補助金なしで成立するか) が品質の鍵"
+      },
+      "use_case": {
+        "value": "BVCM、移行期の自主オフセット"
+      },
+      "carbomir_view": {
+        "value": "回避と除去の中間。再エネ系は系統脱炭素が進むと追加性が薄れるため、vintage と地域の確認が要る"
+      }
+    },
+    "cdr-credits": {
+      "definition": {
+        "value": "大気中の CO2 を物理的に除去するプロジェクトから生じるクレジット"
+      },
+      "examples": {
+        "value": "DAC、BECCS、Biochar、風化促進 (ERW)、植林 (ARR)"
+      },
+      "permanence": {
+        "value": "技術系は数百〜千年級、NBS 系は数十年級と幅がある"
+      },
+      "sbti_treatment": {
+        "value": "残余排出の中和に使える唯一の種別 (永続性閾値を満たすもの)"
+      },
+      "price_quality": {
+        "value": "高価格帯 (特に Engineered)。品質シグナルは永続性と MRV"
+      },
+      "use_case": {
+        "value": "Net-Zero 目標の残余中和、Carbon Negative 戦略"
+      },
+      "carbomir_view": {
+        "value": "Net-Zero の「最後の数 %」 を埋める戦略資産。需要は構造的に増加するが供給とコストが律速"
+      }
+    }
+  }
+}

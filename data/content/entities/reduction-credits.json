@@ -15,7 +15,9 @@
   ],
   "jurisdiction": "国際",
   "related": [],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "credit-type-comparison"
+  ],
   "sections": [
     {
       "heading": "Avoidance との違い",

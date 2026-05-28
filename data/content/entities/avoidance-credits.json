@@ -16,7 +16,8 @@
   "jurisdiction": "国際",
   "related": [],
   "related_matrix_slugs": [
-    "nbs-quality-comparison"
+    "nbs-quality-comparison",
+    "credit-type-comparison"
   ],
   "sections": [
     {

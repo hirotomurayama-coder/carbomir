@@ -30,7 +30,9 @@
       "note": "REDD+ メソドロジー運用"
     }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "vcm-registry-comparison"
+  ],
   "sections": [
     {
       "heading": "制度の概要",

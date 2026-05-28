@@ -45,7 +45,9 @@
       "note": "Microsoft 等のテック大手が主要バックアップ"
     }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+    "vcm-registry-comparison"
+  ],
   "sections": [
     {
       "heading": "制度の概要",

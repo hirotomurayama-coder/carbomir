@@ -18,7 +18,8 @@
   "related": [],
   "related_matrix_slugs": [
     "engineered-removal-comparison",
-    "nbs-quality-comparison"
+    "nbs-quality-comparison",
+    "credit-type-comparison"
   ],
   "sections": [
     {

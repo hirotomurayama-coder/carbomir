@@ -47,7 +47,9 @@
   "note": "ACR メソドロジーも CCP で個別評価"
   }
   ],
-  "related_matrix_slugs": [],
+  "related_matrix_slugs": [
+  "vcm-registry-comparison"
+  ],
   "sections": [
   {
   "heading": "制度の概要",

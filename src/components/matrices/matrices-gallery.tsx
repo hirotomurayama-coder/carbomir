@@ -49,13 +49,14 @@ const SCENARIOS: Scenario[] = [
     key: "regulation",
     label: "規制対応 / 開示準備",
     description:
-      "TCFD → IFRS S2 / SSBJ 移行戦略、ETS 制度比較、クレジット適格性",
+      "TCFD → IFRS S2 / SSBJ 移行、ETS 制度比較、国内カーボンプライシング、クレジット適格性",
     icon: <Shield className="h-4 w-4" />,
     accent:
       "border-sky-500/40 hover:border-sky-500/70 bg-sky-500/5",
     matrixSlugs: [
       "climate-disclosure-comparison",
       "ets-international-comparison",
+      "japan-carbon-pricing-comparison",
       "credit-eligibility",
     ],
   },
@@ -63,11 +64,12 @@ const SCENARIOS: Scenario[] = [
     key: "quality",
     label: "クレジット品質を見極める",
     description:
-      "NBS / Engineered Removal の品質比較、ICVCM・VCMI 等の品質ガバナンス枠組み",
+      "回避 / 削減 / 除去の種別比較、NBS・Engineered Removal の品質、ICVCM・VCMI の品質ガバナンス",
     icon: <Sparkles className="h-4 w-4" />,
     accent:
       "border-emerald-500/40 hover:border-emerald-500/70 bg-emerald-500/5",
     matrixSlugs: [
+      "credit-type-comparison",
       "engineered-removal-comparison",
       "nbs-quality-comparison",
       "vcm-integrity-governance-comparison",
@@ -90,11 +92,12 @@ const SCENARIOS: Scenario[] = [
   {
     key: "standard",
     label: "スタンダード比較",
-    description: "Verra / Gold Standard / Plan Vivo 等の民間スタンダード対比",
+    description:
+      "Verra / Gold Standard 等の民間スタンダード対比、VCM レジストリ網羅比較",
     icon: <Award className="h-4 w-4" />,
     accent:
       "border-amber-500/40 hover:border-amber-500/70 bg-amber-500/5",
-    matrixSlugs: ["vcm-standards"],
+    matrixSlugs: ["vcm-standards", "vcm-registry-comparison"],
   },
 ];
 
