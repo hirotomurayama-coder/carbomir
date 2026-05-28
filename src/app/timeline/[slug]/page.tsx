@@ -11,6 +11,8 @@ import {
 } from "@/lib/data/queries";
 import { TIMELINE_CATEGORY_LABEL } from "@/lib/types";
 import { MarkdownContent } from "@/components/markdown-content";
+import { EditorialThesis } from "@/components/editorial-thesis";
+import { splitEditorialThesis } from "@/lib/editorial-thesis";
 import { findAtlasLinksForEntity } from "@/lib/data/atlas";
 import { AtlasDeepDivePanel } from "@/components/atlas/atlas-deep-dive-panel";
 import { ReviewMarkedText } from "@/components/review-marks";
@@ -45,6 +47,9 @@ export default async function TimelineEventDetailPage({ params }: Props) {
 
   const entityNameMap: Record<string, string> = {};
   for (const e of entities) entityNameMap[e.slug] = e.name_ja;
+
+  // content_md から「編集部の論点」を分離し、専用 call-out で描き分ける (STRATEGY §2)
+  const { before, thesis, after } = splitEditorialThesis(event.content_md);
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
@@ -85,9 +90,15 @@ export default async function TimelineEventDetailPage({ params }: Props) {
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
         {/* Center: Body */}
         <article className="min-w-0 space-y-8">
-          {event.content_md && (
+          {before && (
             <section>
-              <MarkdownContent>{event.content_md}</MarkdownContent>
+              <MarkdownContent>{before}</MarkdownContent>
+            </section>
+          )}
+          {thesis && <EditorialThesis>{thesis}</EditorialThesis>}
+          {after && (
+            <section>
+              <MarkdownContent>{after}</MarkdownContent>
             </section>
           )}
 

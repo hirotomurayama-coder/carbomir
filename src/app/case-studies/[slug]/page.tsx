@@ -11,6 +11,7 @@ import {
 } from "@/lib/data/queries";
 import { findAtlasLinksForEntity } from "@/lib/data/atlas";
 import { MarkdownContent } from "@/components/markdown-content";
+import { EditorialThesis } from "@/components/editorial-thesis";
 import { ReviewMarkedText } from "@/components/review-marks";
 import { FreshnessIndicator } from "@/components/freshness-indicator";
 import { PaywallBadge } from "@/components/paywall-badge";
@@ -103,20 +104,26 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px]">
         <article className="min-w-0 space-y-8">
-          {study.sections.map((s, i) => (
-            <section key={i}>
-              <div className="flex items-baseline gap-3 mb-3 flex-wrap">
-                <span className="label-mono text-muted-foreground metric-number">
-                  {(i + 1).toString().padStart(2, "0")}
-                </span>
-                <h2 className="text-xl font-bold text-foreground tracking-tight">
-                  {s.heading}
-                </h2>
-                <PaywallBadge tier={s.paywall_tier} />
-              </div>
-              <MarkdownContent>{s.body}</MarkdownContent>
-            </section>
-          ))}
+          {study.sections.map((s, i) =>
+            s.heading === "編集部の論点" ? (
+              <EditorialThesis key={i} paywallTier={s.paywall_tier}>
+                {s.body}
+              </EditorialThesis>
+            ) : (
+              <section key={i}>
+                <div className="flex items-baseline gap-3 mb-3 flex-wrap">
+                  <span className="label-mono text-muted-foreground metric-number">
+                    {(i + 1).toString().padStart(2, "0")}
+                  </span>
+                  <h2 className="text-xl font-bold text-foreground tracking-tight">
+                    {s.heading}
+                  </h2>
+                  <PaywallBadge tier={s.paywall_tier} />
+                </div>
+                <MarkdownContent>{s.body}</MarkdownContent>
+              </section>
+            )
+          )}
 
           {study.source_urls.length > 0 && (
             <section>

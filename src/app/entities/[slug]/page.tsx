@@ -25,6 +25,7 @@ import {
 import { EntityToc } from "@/components/entities/entity-toc";
 import { MetadataPanel } from "@/components/entities/metadata-panel";
 import { MarkdownContent } from "@/components/markdown-content";
+import { EditorialThesis } from "@/components/editorial-thesis";
 import { ReviewMarkedText } from "@/components/review-marks";
 import { FreshnessIndicator } from "@/components/freshness-indicator";
 import { PaywallBadge } from "@/components/paywall-badge";
@@ -161,41 +162,48 @@ export default async function EntityDetailPage({ params }: Props) {
 
         {/* Center: Body */}
         <article className="min-w-0 space-y-10">
-          {entity.sections.map((s, i) => (
-            <section
-              key={i}
-              id={`section-${i}`}
-              className="scroll-mt-20"
-            >
-              <div className="flex items-baseline gap-3 mb-3 flex-wrap">
-                <span className="label-mono text-muted-foreground metric-number">
-                  {(i + 1).toString().padStart(2, "0")}
-                </span>
-                <h2 className="text-xl font-bold text-foreground tracking-tight">
-                  {s.heading}
-                </h2>
-                <PaywallBadge tier={s.paywall_tier} />
-              </div>
-              <MarkdownContent>{s.body}</MarkdownContent>
-              {s.source_urls && s.source_urls.length > 0 && (
-                <ul className="mt-4 space-y-1.5">
-                  {s.source_urls.map((src, si) => (
-                    <li key={si}>
-                      <a
-                        href={src.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 label-mono text-accent hover:underline"
-                      >
-                        <span className="font-mono">↗</span>
-                        {src.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))}
+          {entity.sections.map((s, i) =>
+            s.heading === "編集部の論点" ? (
+              <EditorialThesis
+                key={i}
+                id={`section-${i}`}
+                paywallTier={s.paywall_tier}
+                sourceUrls={s.source_urls}
+              >
+                {s.body}
+              </EditorialThesis>
+            ) : (
+              <section key={i} id={`section-${i}`} className="scroll-mt-20">
+                <div className="flex items-baseline gap-3 mb-3 flex-wrap">
+                  <span className="label-mono text-muted-foreground metric-number">
+                    {(i + 1).toString().padStart(2, "0")}
+                  </span>
+                  <h2 className="text-xl font-bold text-foreground tracking-tight">
+                    {s.heading}
+                  </h2>
+                  <PaywallBadge tier={s.paywall_tier} />
+                </div>
+                <MarkdownContent>{s.body}</MarkdownContent>
+                {s.source_urls && s.source_urls.length > 0 && (
+                  <ul className="mt-4 space-y-1.5">
+                    {s.source_urls.map((src, si) => (
+                      <li key={si}>
+                        <a
+                          href={src.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 label-mono text-accent hover:underline"
+                        >
+                          <span className="font-mono">↗</span>
+                          {src.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            )
+          )}
         </article>
 
         {/* Right: Related */}

@@ -13,11 +13,13 @@ import * as React from "react";
  * /admin/review の一覧に集約する想定。
  */
 
-// 括弧内のどこに「要確認」or「運用注視」が出現してもマッチする。
+// 括弧内のどこに「要確認」「運用注視」「確信度 強/中/弱」が出現してもマッチする。
 // 「要確認」(琥珀色): 公開コンテンツに残ってはならない内部 TODO。/editorial の集計対象
 // 「運用注視」(青色): 本質的に不確実な領域の透明性表示。公開時にも残す
-// 例: `(要確認)`, `(運用注視: 第2フェーズ移行時の細目)`, `(180 USD/t、要確認: 制度詳細)`
-const REVIEW_PATTERN = /\([^()]*(?:要確認|運用注視)[^()]*\)/g;
+// 「確信度 強/中/弱」(緑/琥珀/灰): 編集部見解の確信度。括弧を外したピル表示にする
+//   (STRATEGY §2「編集部の論点」= 判断可能性で戦う。確信度は判断の核なので視認性を上げる)
+// 例: `(要確認)`, `(運用注視: 第2フェーズ移行時の細目)`, `(180 USD/t、要確認: 制度詳細)`, `(確信度 強)`
+const REVIEW_PATTERN = /\([^()]*(?:要確認|運用注視|確信度\s*[強中弱])[^()]*\)/g;
 
 // 「要確認」のみを数える (公開コンテンツに残るべきでない TODO の集計用)
 // 「運用注視」は意図的に残しているのでカウントしない
@@ -95,8 +97,32 @@ export function ReviewCountBadge({ count }: { count: number }) {
   );
 }
 
-/** インラインの 1 個分バッジ (要確認 = 琥珀、運用注視 = 青で区別) */
+// 確信度レベルごとの色 (強=緑 / 中=琥珀 / 弱=灰)
+const CONFIDENCE_RE = /確信度\s*([強中弱])/;
+const CONFIDENCE_CLASS: Record<string, string> = {
+  強: "border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
+  中: "border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300",
+  弱: "border-muted-foreground/30 bg-muted/60 text-muted-foreground",
+};
+
+/** インラインの 1 個分バッジ (要確認 = 琥珀、運用注視 = 青、確信度 = レベル別ピル) */
 function ReviewMarkBadge({ text }: { text: string }) {
+  // 確信度 強/中/弱 は括弧を外したピル表示にする (判断の核を読み手に明示)
+  const conf = text.match(CONFIDENCE_RE);
+  if (conf) {
+    const level = conf[1];
+    return (
+      <span
+        className={`inline-flex items-baseline gap-1 rounded-sm border px-1.5 py-0 text-[0.78em] mx-0.5 font-normal align-baseline ${CONFIDENCE_CLASS[level]}`}
+        data-confidence={level}
+        title={`編集部の確信度: ${level}`}
+      >
+        <span className="opacity-60 tracking-wide">確信度</span>
+        <span className="font-semibold">{level}</span>
+      </span>
+    );
+  }
+
   const isWatching = text.includes("運用注視");
   const className = isWatching
     ? "inline rounded-sm border border-sky-500/35 bg-sky-500/8 text-sky-700 dark:text-sky-300 px-1 py-0 text-[0.85em] mx-0.5 font-normal"
