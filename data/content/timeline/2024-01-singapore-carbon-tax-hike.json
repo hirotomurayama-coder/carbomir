@@ -1,0 +1,25 @@
+{
+  "slug": "2024-01-singapore-carbon-tax-hike",
+  "event_date": "2024-01-01",
+  "title": "シンガポール炭素税 S$5→S$25/t へ引き上げ (国際クレジット 5% 充当解禁)",
+  "summary": "シンガポールは 2024 年 1 月 1 日、炭素税を S$5/t-CO2e から S$25/t-CO2e へ 5 倍に引き上げ、本格課税フェーズへ移行した。2026-2027 年に S$45、2030 年までに S$50-80 への段階引き上げを予告。同時に、課税対象排出量の最大 5% を Article 6 準拠の高品質な国際カーボンクレジット (ICC) で相殺できる仕組みを解禁し、コンプライアンス炭素価格が Article 6 クレジットの実需を生む先行モデルとなった。",
+  "affected_entity_slugs": [
+    "compliance-carbon-market",
+    "paris-article-6-2",
+    "corsia"
+  ],
+  "category": "regulatory",
+  "importance": 3,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "NCCS — Carbon Tax (Singapore National Climate Change Secretariat)",
+      "url": "https://www.nccs.gov.sg/singapores-climate-action/mitigation-efforts/carbontax/"
+    },
+    {
+      "label": "Carbon Credits — Singapore Sets Higher Standards for International Carbon Credits",
+      "url": "https://carboncredits.com/singapore-sets-higher-standards-for-international-carbon-credits/"
+    }
+  ],
+  "content_md": "## 制度の概要\n\nシンガポールは 2024 年 1 月 1 日、**炭素税を S$5/t-CO2e から S$25/t-CO2e へ 5 倍に引き上げた**。2019-2023 年の導入初期 (S$5) を経て本格課税フェーズに移行したもので、**2026-2027 年に S$45、2030 年までに S$50-80** への段階引き上げが予告されている。アジアで最初に炭素税を導入した国として、価格水準を実効性のあるレンジへ引き上げた点が注目される。\n\n## 主要な要素\n\n- **税率の段階引き上げ**: S$5 (2019-2023) → **S$25 (2024-2025)** → S$45 (2026-2027) → S$50-80 (2030 目標)\n- **国際クレジット 5% 充当**: 2024 年から、課税対象排出量の **最大 5%** を高品質な国際カーボンクレジット (ICC) で相殺可能。国内削減を優先させつつ hard-to-abate セクターに追加的経路を提供\n- **Article 6 準拠が条件**: 充当できる ICC は [パリ協定 6 条 2 項](/entities/paris-article-6-2) のルールに整合し、7 原則の環境十全性を満たすものに限定。相当調整 (corresponding adjustment) を要する\n- **二国間協定**: シンガポールは ICC 供給国 (ガーナ・パプアニューギニア等) と Article 6.2 実施協定を締結し、適格クレジットの供給網を構築\n\n## 日本企業への含意\n\n- **Article 6 需要の先行例**: コンプライアンス炭素税が Article 6 クレジットの実需を生む構造は、日本の [GX-ETS 有償化](/timeline/2026-04-gx-ets-paid-phase) や将来の炭素賦課金を考える上での先行事例\n- **シンガポール拠点の負担**: 当地に製造・データセンター等を持つ日本企業は課税強化の直接影響を受ける ([コンプライアンス市場](/entities/compliance-carbon-market))\n\n## 編集部の論点\n\nシンガポールの設計は、**炭素税 × 国際クレジット 5% 上限 × Article 6 厳格化**を組み合わせた「コンプライアンス需要で高品質クレジット市場を立ち上げる」モデルとして読める。\n\n- **5% 上限の含意**: 上限を低く抑えることで国内削減インセンティブを維持しつつ、Article 6 クレジットに公的な「出口」を与えた。VCM ではなくコンプライアンス側からの品質規律 (確信度 強)\n- **相当調整の実装圧力**: 税控除に使えるのは相当調整済みクレジットに限るため、[初の Article 6.2 ITMO 移転](/timeline/2024-01-first-article-6-2-itmo-transfer) で焦点化した二重計上回避が実務に直結 (確信度 中)\n- **日本への示唆**: 炭素賦課金や GX-ETS が国際クレジットをどこまで認めるかは未確定。シンガポール型の「5% 上限 + Article 6 限定」は一つの設計テンプレート (運用注視: 日本の制度設計動向)\n\n## 関連動向\n\n- [初の Article 6.2 ITMO 移転](/timeline/2024-01-first-article-6-2-itmo-transfer) — 相当調整の実装\n- [GX-ETS 有償化フェーズ](/timeline/2026-04-gx-ets-paid-phase) — 日本のコンプライアンス炭素価格\n- [ETS 国際比較](/matrices/ets-international-comparison) / [パリ協定 6 条比較](/matrices/paris-article-6-comparison)\n- [日本の炭素価格比較](/matrices/japan-carbon-pricing-comparison)\n"
+}

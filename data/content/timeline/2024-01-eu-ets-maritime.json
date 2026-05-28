@@ -1,0 +1,25 @@
+{
+  "slug": "2024-01-eu-ets-maritime",
+  "event_date": "2024-01-01",
+  "title": "EU ETS 海運セクター包含 (国際海運への炭素価格拡大)",
+  "summary": "2024 年 1 月 1 日、EU 域内排出量取引制度 (EU ETS) が海運セクターを初めて対象に組み込んだ。総トン数 5,000 GT 以上の大型船が対象で、EU 域内航海・停泊は 100%、域外との往復航海は 50% の CO2 排出をカバー。償却義務は 2024 年排出分 40%、2025 年 70%、2026 年以降 100% と段階導入され、2026 年からは CH4・N2O も対象に追加。世界最大のカーボン市場が陸上・航空に続き国際海運へ価格付けを広げた制度史上の節目。",
+  "affected_entity_slugs": [
+    "eu-ets",
+    "compliance-carbon-market",
+    "corsia"
+  ],
+  "category": "regulatory",
+  "importance": 4,
+  "status": "published",
+  "source_urls": [
+    {
+      "label": "European Commission — Reducing emissions from the shipping sector",
+      "url": "https://climate.ec.europa.eu/eu-action/transport-decarbonisation/reducing-emissions-shipping-sector_en"
+    },
+    {
+      "label": "European Commission — FAQ: Maritime transport in EU ETS",
+      "url": "https://climate.ec.europa.eu/eu-action/transport-decarbonisation/reducing-emissions-shipping-sector/faq-maritime-transport-eu-emissions-trading-system-ets_en"
+    }
+  ],
+  "content_md": "## 制度の概要\n\n2024 年 1 月 1 日、**[EU 域内排出量取引制度 (EU ETS)](/entities/eu-ets) が海運セクターを初めて対象に組み込んだ**。2023 年 6 月に発効した EU ETS 改革の一環で、世界最大のカーボン市場が陸上・航空に続き **国際海運の CO2 排出**へ価格付けを拡大した、制度史上の大きな節目。\n\n## 主要な要素\n\n- **対象**: 総トン数 **5,000 GT 以上**の大型船。旗国を問わず EU 港に入港する船が対象\n- **地理的カバレッジ**: EU 域内航海と停泊中は **100%**、EU 域外との往復航海は **50%** の排出をカバー\n- **段階的フェーズイン**: 2024 年排出分は **40%**、2025 年は **70%**、**2026 年以降は 100%** の排出枠 (EUA) を償却\n- **対象ガスの拡大**: 当初 (2024-2025) は CO2 のみ。**2026 年から CH4・N2O** も対象に追加\n\n## 日本企業への含意\n\n- **邦船社の直接コスト**: EU 港に寄港する日本の海運会社 (日本郵船・商船三井・川崎汽船等) は EUA の購入義務を負う (→ [日本郵船の J-クレジット脱炭素](/case-studies/nyk-jcredit-decarbonization))\n- **航路・燃料戦略**: 炭素コストが運賃・配船・代替燃料 (LNG・アンモニア・メタノール) の投資判断に組み込まれる\n\n## 編集部の論点\n\n海運の EU ETS 編入は、**「国際輸送セクターへの炭素価格適用」の本格化**を意味し、航空の [CORSIA 第1フェーズ](/timeline/2024-01-corsia-first-phase) と対をなす動き。\n\n- **域外 50% という越境設計**: EU 域外航海の半分を課す設計は CBAM 同様の「域外への規制波及」であり、非 EU 船社にも EUA 購入を強いる (確信度 強)\n- **CORSIA との制度比較**: 航空はオフセット中心の [CORSIA](/entities/corsia)、海運は排出枠購入の EU ETS と、同じ国際輸送でも価格付け手法が分岐。グローバル整合は IMO の今後の措置次第 (確信度 中)\n- **段階導入の猶予**: 40→70→100% のフェーズインは船社の適応期間だが、2026 年の全量化と CH4・N2O 追加でコストは段階的に重くなる (運用注視: IMO 中期措置との整合)\n\n## 関連動向\n\n- [CORSIA 第1フェーズ開始](/timeline/2024-01-corsia-first-phase) — 航空の国際オフセット\n- [EU ETS 始動](/timeline/2005-01-eu-ets-launch) — 制度の原点\n- [CBAM 本格運用開始](/timeline/2026-01-cbam-definitive-phase-start) — 域外波及の対構造\n- [ETS 国際比較](/matrices/ets-international-comparison)\n- [日本郵船の J-クレジット脱炭素](/case-studies/nyk-jcredit-decarbonization) — 邦船社の脱炭素対応\n"
+}
