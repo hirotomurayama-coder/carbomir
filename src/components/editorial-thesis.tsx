@@ -2,6 +2,7 @@ import { MessageSquareQuote } from "lucide-react";
 import type { PaywallTier } from "@/lib/types";
 import { MarkdownContent } from "@/components/markdown-content";
 import { PaywallBadge } from "@/components/paywall-badge";
+import { buildThesisTagline } from "@/lib/editorial-thesis";
 
 /**
  * 「編集部の論点」専用 call-out (EditorialThesis).
@@ -35,6 +36,7 @@ export function EditorialThesis({
   id,
   className,
 }: Props) {
+  const tagline = buildThesisTagline(children, sourceUrls?.length ?? 0);
   return (
     <section
       id={id}
@@ -49,9 +51,7 @@ export function EditorialThesis({
         </h2>
         <PaywallBadge tier={paywallTier} className="ml-1" />
       </div>
-      <p className="label-mono text-muted-foreground mb-4 pl-8">
-        Carbomir 編集部による解釈 — 出典と確信度つき
-      </p>
+      <p className="label-mono text-muted-foreground mb-4 pl-8">{tagline}</p>
       <div className="pl-8 border-l border-accent/15 -ml-px">
         <MarkdownContent>{children}</MarkdownContent>
         {sourceUrls && sourceUrls.length > 0 && (

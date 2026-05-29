@@ -46,3 +46,34 @@ export function splitEditorialThesis(md: string | undefined | null): ThesisSplit
   }
   return { before, thesis: rest.trim(), after: "" };
 }
+
+// 論点本文に確信度マーカー (確信度 強/中/弱) が含まれるか
+const CONFIDENCE_MARK_RE = /確信度\s*[強中弱]/;
+
+/**
+ * 「編集部の論点」call-out のタグラインを実態に合わせて組み立てる純粋関数.
+ *
+ * STRATEGY §2: 論点は判断可能性で戦う核。だが論点ごとに確信度・出典の充実度が
+ * 異なるため、固定タグライン「出典と確信度つき」は中身が伴わないと看板倒れになる。
+ * 本文の確信度ピル有無と出典数から、謳い文句を実態に合わせて出し分ける。
+ *
+ * - 出典あり + 確信度あり → 「Carbomir 編集部による解釈 — 出典と確信度つき」
+ * - 確信度のみ           → 「Carbomir 編集部による解釈 — 確信度つき」
+ * - 出典のみ             → 「Carbomir 編集部による解釈 — 出典つき」
+ * - どちらも無し         → 「Carbomir 編集部による解釈」
+ */
+export function buildThesisTagline(
+  body: string | undefined | null,
+  sourceCount: number
+): string {
+  const base = "Carbomir 編集部による解釈";
+  const hasConfidence = !!body && CONFIDENCE_MARK_RE.test(body);
+  const hasSources = sourceCount > 0;
+
+  const parts: string[] = [];
+  if (hasSources) parts.push("出典");
+  if (hasConfidence) parts.push("確信度");
+
+  if (parts.length === 0) return base;
+  return `${base} — ${parts.join("と")}つき`;
+}

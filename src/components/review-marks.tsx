@@ -104,6 +104,13 @@ const CONFIDENCE_CLASS: Record<string, string> = {
   中: "border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300",
   弱: "border-muted-foreground/30 bg-muted/60 text-muted-foreground",
 };
+// 確信度レベルの意味 (tooltip)。「何に対する確度か」を読み手に明示する。
+// STRATEGY §2: 確信度は判断の核。色だけでは意味が伝わらないため説明を添える。
+const CONFIDENCE_DESC: Record<string, string> = {
+  強: "一次情報・制度条文で裏付けられた見解",
+  中: "妥当だが状況・運用の前提に依存する見解",
+  弱: "仮説・予測の段階にある見解",
+};
 
 /** インラインの 1 個分バッジ (要確認 = 琥珀、運用注視 = 青、確信度 = レベル別ピル) */
 function ReviewMarkBadge({ text }: { text: string }) {
@@ -115,7 +122,7 @@ function ReviewMarkBadge({ text }: { text: string }) {
       <span
         className={`inline-flex items-baseline gap-1 rounded-sm border px-1.5 py-0 text-[0.78em] mx-0.5 font-normal align-baseline ${CONFIDENCE_CLASS[level]}`}
         data-confidence={level}
-        title={`編集部の確信度: ${level}`}
+        title={`編集部の確信度「${level}」: ${CONFIDENCE_DESC[level] ?? ""}`}
       >
         <span className="opacity-60 tracking-wide">確信度</span>
         <span className="font-semibold">{level}</span>
