@@ -19,7 +19,7 @@
     "range": "120–200",
     "unit": "USD/t-CO2",
     "trend": "stable",
-    "as_of": "2025",
+    "as_of": "2025-12",
     "source_label": "Nasdaq / Puro.earth CORC 指数 等",
     "source_url": "https://puro.earth/",
     "note": "除去系 CORC の代表水準。原料・施設・プロジェクト品質で振れる。"

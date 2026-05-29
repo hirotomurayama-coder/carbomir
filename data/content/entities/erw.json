@@ -16,8 +16,9 @@
     "range": "100–250",
     "unit": "USD/t-CO2",
     "trend": "falling",
-    "as_of": "2025",
+    "as_of": "2025-12",
     "source_label": "編集部推計 (CDR.fyi 等の公表値参照)",
+    "source_url": "https://www.cdr.fyi/",
     "note": "強化風化。除去系 (engineered 寄り) で高価格帯。規模化と MRV 成熟で中長期は低下見込み。"
   },
   "jurisdiction": "国際",

@@ -26,7 +26,7 @@
     "range": "60–90",
     "unit": "EUR/t-CO2",
     "trend": "volatile",
-    "as_of": "2025",
+    "as_of": "2025-12",
     "source_label": "World Bank Carbon Pricing Dashboard / EEX",
     "source_url": "https://carbonpricingdashboard.worldbank.org/",
     "note": "EU 域内 ETS の遵守価格 (EUA)。政策・景気・燃料価格で変動する。"

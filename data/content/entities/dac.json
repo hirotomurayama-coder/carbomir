@@ -21,8 +21,9 @@
     "range": "400–1,000",
     "unit": "USD/t-CO2",
     "trend": "falling",
-    "as_of": "2025",
+    "as_of": "2025-12",
     "source_label": "IEA・各社公表 (除去コスト推計)",
+    "source_url": "https://www.iea.org/energy-system/carbon-capture-utilisation-and-storage/direct-air-capture",
     "note": "高純度の engineered removal。大規模化で低下傾向だが依然高位。先行購入契約で数百 USD 台の例も。"
   },
   "related": [
