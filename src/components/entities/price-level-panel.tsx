@@ -1,6 +1,7 @@
 import { Coins, TrendingUp, TrendingDown, Minus, Activity } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { PRICE_TREND_LABEL, type PriceLevel, type PriceTrend } from "@/lib/types";
+import { priceFreshness } from "@/lib/price-level";
 
 /**
  * 価格水準 (相場観) パネル (STRATEGY §8).
@@ -8,6 +9,10 @@ import { PRICE_TREND_LABEL, type PriceLevel, type PriceTrend } from "@/lib/types
  * live feed ではなく、出典・時点つきのレンジ・方向感を editorial 属性として出す。
  * 「正確な実勢・執行価格ではない」ことを明示し、執行価格が要る瞬間は相談 (CradleTo)
  * へハンドオフする (price precision は意識的に取りに行かない)。
+ *
+ * 方向色: 上昇=赤/低下=緑 は「低下=良い」と価値含意を持たせてしまうため使わない。
+ * 方向はアイコンで示し、上昇・低下・横ばいは中立色、変動大のみ注意喚起の琥珀。
+ * 鮮度: as_of からの経過を相対表示し、しきい値超で「要更新目安」を琥珀で促す。
  */
 
 const TREND_META: Record<
@@ -16,11 +21,11 @@ const TREND_META: Record<
 > = {
   rising: {
     Icon: TrendingUp,
-    cls: "border-red-500/35 bg-red-500/10 text-red-700 dark:text-red-300",
+    cls: "border-muted-foreground/30 bg-muted/50 text-muted-foreground",
   },
   falling: {
     Icon: TrendingDown,
-    cls: "border-emerald-500/35 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
+    cls: "border-muted-foreground/30 bg-muted/50 text-muted-foreground",
   },
   stable: {
     Icon: Minus,
@@ -32,8 +37,15 @@ const TREND_META: Record<
   },
 };
 
-export function PriceLevelPanel({ price }: { price: PriceLevel }) {
+export function PriceLevelPanel({
+  price,
+  today,
+}: {
+  price: PriceLevel;
+  today: string;
+}) {
   const trend = price.trend ? TREND_META[price.trend] : null;
+  const fresh = priceFreshness(price.as_of, today);
 
   return (
     <Card>
@@ -67,7 +79,24 @@ export function PriceLevelPanel({ price }: { price: PriceLevel }) {
         <div className="mt-3 pt-3 border-t border-border/60 space-y-1.5">
           <p className="label-mono text-muted-foreground metric-number">
             時点 {price.as_of}
+            {fresh.relative && (
+              <span
+                className={
+                  fresh.stale
+                    ? "text-amber-600 dark:text-amber-400"
+                    : "text-muted-foreground/80"
+                }
+              >
+                {" "}
+                ({fresh.relative})
+              </span>
+            )}
           </p>
+          {fresh.stale && (
+            <p className="inline-flex items-center gap-1 rounded-sm border border-amber-500/40 bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-mono tracking-wider text-amber-700 dark:text-amber-300">
+              要更新目安 — 相場観の見直し時期
+            </p>
+          )}
           {price.source_url ? (
             <a
               href={price.source_url}

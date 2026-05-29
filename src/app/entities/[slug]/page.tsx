@@ -219,7 +219,9 @@ export default async function EntityDetailPage({ params }: Props) {
         {/* Right: Related */}
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
           <MetadataPanel entity={entity} />
-          {entity.price_level && <PriceLevelPanel price={entity.price_level} />}
+          {entity.price_level && (
+            <PriceLevelPanel price={entity.price_level} today={today} />
+          )}
           <DurabilityPanel
             entityType={entity.type}
             policyStatus={entity.policy_status}
