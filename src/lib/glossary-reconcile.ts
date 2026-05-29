@@ -60,6 +60,11 @@ export function reconcile(
     const sitemapLastmod = sm.get(entry.wp_slug);
 
     if (sitemapLastmod === undefined) {
+      if (entry.sitemap_excluded) {
+        // 記事は /glossary_article/ で存在するが canonical sitemap 非掲載。dangling 扱いしない。
+        updatedEntries[slug] = { ...entry, synced_at: now, review_state: "fresh" };
+        continue;
+      }
       // 媒体側に記事が無い → dangling。media_lastmod は据え置き。
       dangling.push({ carbomir_slug: slug, wp_slug: entry.wp_slug });
       updatedEntries[slug] = {

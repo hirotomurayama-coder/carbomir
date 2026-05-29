@@ -92,6 +92,15 @@ describe("reconcile", () => {
     expect(e.media_lastmod).toBe("2025-10-01T00:00:00+09:00");
   });
 
+  it("sitemap_excluded のエントリは sitemap 非掲載でも dangling にしない", () => {
+    const map = mapOf({
+      "gx-ets": entry({ wp_slug: "gx-ets", sitemap_excluded: true }),
+    });
+    const r = reconcile(map, [{ wp_slug: "verra", lastmod: "2025-12-08T00:00:00+09:00" }], NOW);
+    expect(r.dangling).toHaveLength(0);
+    expect(r.updatedEntries["gx-ets"].review_state).toBe("fresh");
+  });
+
   it("sitemap にあり entries にも unmapped にも無い slug は orphan", () => {
     const map = mapOf(
       { "verra-vcs": entry({ wp_slug: "verra" }) },

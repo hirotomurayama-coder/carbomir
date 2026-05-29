@@ -29,6 +29,11 @@ export type GlossaryEntry = {
   /** 最終照合時刻 (ISO)。未同期は null */
   synced_at: string | null;
   review_state: GlossaryReviewState;
+  /**
+   * 記事は存在するが canonical sitemap (/glossary/) には載らず /glossary_article/ でのみ
+   * 解決するケース (例 gx-ets/co2e)。true のとき sitemap 非掲載でも dangling 扱いしない。
+   */
+  sitemap_excluded?: boolean;
 };
 
 export type GlossaryMap = {

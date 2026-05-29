@@ -155,11 +155,12 @@
     },
     "gx-ets": {
       "wp_slug": "gx-ets",
-      "canonical_url": "https://carboncredits.jp/glossary/gx-ets/",
+      "canonical_url": "https://carboncredits.jp/glossary_article/gx-ets/",
       "excerpt": null,
       "media_lastmod": null,
       "synced_at": null,
-      "review_state": "unsynced"
+      "review_state": "unsynced",
+      "sitemap_excluded": true
     },
     "california-cap-trade": {
       "wp_slug": "california-cap-and-trade-program",
@@ -218,8 +219,8 @@
       "review_state": "unsynced"
     },
     "additionality": {
-      "wp_slug": "additionality",
-      "canonical_url": "https://carboncredits.jp/glossary/additionality/",
+      "wp_slug": "%e8%bf%bd%e5%8a%a0%e6%80%a7",
+      "canonical_url": "https://carboncredits.jp/glossary/%e8%bf%bd%e5%8a%a0%e6%80%a7/",
       "excerpt": null,
       "media_lastmod": null,
       "synced_at": null,
@@ -274,8 +275,8 @@
       "review_state": "unsynced"
     },
     "carbon-offsetting": {
-      "wp_slug": "carbon-offsetting",
-      "canonical_url": "https://carboncredits.jp/glossary/carbon-offsetting/",
+      "wp_slug": "carbon-offset",
+      "canonical_url": "https://carboncredits.jp/glossary/carbon-offset/",
       "excerpt": null,
       "media_lastmod": null,
       "synced_at": null,
@@ -299,11 +300,12 @@
     },
     "co2e": {
       "wp_slug": "co2e",
-      "canonical_url": "https://carboncredits.jp/glossary/co2e/",
+      "canonical_url": "https://carboncredits.jp/glossary_article/co2e/",
       "excerpt": null,
       "media_lastmod": null,
       "synced_at": null,
-      "review_state": "unsynced"
+      "review_state": "unsynced",
+      "sitemap_excluded": true
     },
     "scope1": {
       "wp_slug": "scope1",
@@ -425,7 +427,7 @@
     "rmu",
     "iet",
     "ji",
-    "clean-development-mechanism",
+    "cdm",
     "green-investment-scheme",
     "ipcc",
     "wmo",
