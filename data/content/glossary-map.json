@@ -1,407 +1,407 @@
 {
-  "last_synced_at": null,
+  "last_synced_at": "2026-05-29T08:45:55.183Z",
   "entries": {
     "arr": {
       "wp_slug": "arr",
       "canonical_url": "https://carboncredits.jp/glossary/arr/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T09:31:02+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "beccs": {
       "wp_slug": "beccs",
       "canonical_url": "https://carboncredits.jp/glossary/beccs/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T00:21:09+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "biochar": {
       "wp_slug": "biochar",
       "canonical_url": "https://carboncredits.jp/glossary/biochar/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T18:27:48+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "dac": {
       "wp_slug": "dac",
       "canonical_url": "https://carboncredits.jp/glossary/dac/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T18:50:34+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "erw": {
       "wp_slug": "erw",
       "canonical_url": "https://carboncredits.jp/glossary/erw/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T19:16:41+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "redd-plus": {
       "wp_slug": "redd-plus",
       "canonical_url": "https://carboncredits.jp/glossary/redd-plus/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T14:49:19+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "verra": {
       "wp_slug": "verra",
       "canonical_url": "https://carboncredits.jp/glossary/verra/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T13:58:52+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "verra-org": {
       "wp_slug": "verra",
       "canonical_url": "https://carboncredits.jp/glossary/verra/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T13:58:52+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "verra-vcs": {
       "wp_slug": "verra",
       "canonical_url": "https://carboncredits.jp/glossary/verra/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T13:58:52+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "gold-standard": {
       "wp_slug": "gold-standard",
       "canonical_url": "https://carboncredits.jp/glossary/gold-standard/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T22:08:32+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "gold-standard-foundation": {
       "wp_slug": "gold-standard",
       "canonical_url": "https://carboncredits.jp/glossary/gold-standard/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T22:08:32+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "acr": {
       "wp_slug": "acr",
       "canonical_url": "https://carboncredits.jp/glossary/acr/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T00:10:29+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "car": {
       "wp_slug": "car",
       "canonical_url": "https://carboncredits.jp/glossary/car/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T00:46:09+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "isometric": {
       "wp_slug": "isometric",
       "canonical_url": "https://carboncredits.jp/glossary/isometric/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T12:20:52+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "puro-earth": {
       "wp_slug": "puro-earth",
       "canonical_url": "https://carboncredits.jp/glossary/puro-earth/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T14:53:10+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "icvcm": {
       "wp_slug": "icvcm",
       "canonical_url": "https://carboncredits.jp/glossary/icvcm/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T22:26:36+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "icvcm-org": {
       "wp_slug": "icvcm",
       "canonical_url": "https://carboncredits.jp/glossary/icvcm/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T22:26:36+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "icvcm-ccp": {
       "wp_slug": "ccps",
       "canonical_url": "https://carboncredits.jp/glossary/ccps/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T01:04:11+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "eu-ets": {
       "wp_slug": "eu-ets",
       "canonical_url": "https://carboncredits.jp/glossary/eu-ets/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T21:02:15+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "gx-ets": {
       "wp_slug": "gx-ets",
       "canonical_url": "https://carboncredits.jp/glossary_article/gx-ets/",
       "excerpt": null,
       "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh",
       "sitemap_excluded": true
     },
     "california-cap-trade": {
       "wp_slug": "california-cap-and-trade-program",
       "canonical_url": "https://carboncredits.jp/glossary/california-cap-and-trade-program/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T17:45:46+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "corsia": {
       "wp_slug": "corsia",
       "canonical_url": "https://carboncredits.jp/glossary/corsia/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T08:55:36+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "jcm": {
       "wp_slug": "jcm",
       "canonical_url": "https://carboncredits.jp/glossary/jcm/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T13:00:36+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "j-credit": {
       "wp_slug": "j-credits",
       "canonical_url": "https://carboncredits.jp/glossary/j-credits/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T13:28:42+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "jcredit": {
       "wp_slug": "j-credits",
       "canonical_url": "https://carboncredits.jp/glossary/j-credits/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T13:28:42+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "paris-article-6-2": {
       "wp_slug": "article-6-of-the-paris-agreement",
       "canonical_url": "https://carboncredits.jp/glossary/article-6-of-the-paris-agreement/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T18:33:15+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "paris-article-6-4": {
       "wp_slug": "article-6-of-the-paris-agreement",
       "canonical_url": "https://carboncredits.jp/glossary/article-6-of-the-paris-agreement/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T18:33:15+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "additionality": {
       "wp_slug": "%e8%bf%bd%e5%8a%a0%e6%80%a7",
       "canonical_url": "https://carboncredits.jp/glossary/%e8%bf%bd%e5%8a%a0%e6%80%a7/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T20:05:58+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "permanence": {
       "wp_slug": "permanence",
       "canonical_url": "https://carboncredits.jp/glossary/permanence/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-09T11:18:12+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "mrv": {
       "wp_slug": "mrv",
       "canonical_url": "https://carboncredits.jp/glossary/mrv/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T14:56:48+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "dmrv": {
       "wp_slug": "dmrv",
       "canonical_url": "https://carboncredits.jp/glossary/dmrv/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T19:02:53+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "net-zero": {
       "wp_slug": "net-zero",
       "canonical_url": "https://carboncredits.jp/glossary/net-zero/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T18:18:39+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "carbon-neutral": {
       "wp_slug": "carbon-neutral",
       "canonical_url": "https://carboncredits.jp/glossary/carbon-neutral/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T15:51:36+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "carbon-negative": {
       "wp_slug": "carbon-negative",
       "canonical_url": "https://carboncredits.jp/glossary/carbon-negative/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T17:28:31+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "carbon-offsetting": {
       "wp_slug": "carbon-offset",
       "canonical_url": "https://carboncredits.jp/glossary/carbon-offset/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T15:34:33+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "ghg-protocol": {
       "wp_slug": "ghg-protocol",
       "canonical_url": "https://carboncredits.jp/glossary/ghg-protocol/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T21:15:47+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "ghg": {
       "wp_slug": "ghg",
       "canonical_url": "https://carboncredits.jp/glossary/ghg/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-07T21:07:51+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "co2e": {
       "wp_slug": "co2e",
       "canonical_url": "https://carboncredits.jp/glossary_article/co2e/",
       "excerpt": null,
       "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh",
       "sitemap_excluded": true
     },
     "scope1": {
       "wp_slug": "scope1",
       "canonical_url": "https://carboncredits.jp/glossary/scope1/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T14:40:41+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "scope2": {
       "wp_slug": "scope2",
       "canonical_url": "https://carboncredits.jp/glossary/scope2/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T14:34:23+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "scope3": {
       "wp_slug": "scope3",
       "canonical_url": "https://carboncredits.jp/glossary/scope3/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T14:29:32+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "scope123": {
       "wp_slug": "scope123",
       "canonical_url": "https://carboncredits.jp/glossary/scope123/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T14:25:38+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "voluntary-carbon-credits": {
       "wp_slug": "voluntary-carbon-credits",
       "canonical_url": "https://carboncredits.jp/glossary/voluntary-carbon-credits/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T19:16:46+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "compliance-carbon-market": {
       "wp_slug": "compliance-carbon-market",
       "canonical_url": "https://carboncredits.jp/glossary/compliance-carbon-market/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T18:04:40+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "avoidance-credits": {
       "wp_slug": "avoidance-credits",
       "canonical_url": "https://carboncredits.jp/glossary/avoidance-credits/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T19:30:20+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "reduction-credits": {
       "wp_slug": "reduction-credits",
       "canonical_url": "https://carboncredits.jp/glossary/reduction-credits/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-09T11:09:52+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "cdr-credits": {
       "wp_slug": "cdr-credits",
       "canonical_url": "https://carboncredits.jp/glossary/cdr-credits/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T08:43:21+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "nature-based-carbon-credits": {
       "wp_slug": "nature-based-carbon-credits",
       "canonical_url": "https://carboncredits.jp/glossary/nature-based-carbon-credits/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-12-08T19:43:02+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "ccs": {
       "wp_slug": "ccs",
       "canonical_url": "https://carboncredits.jp/glossary/ccs/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T01:06:27+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     },
     "ccus": {
       "wp_slug": "ccus",
       "canonical_url": "https://carboncredits.jp/glossary/ccus/",
       "excerpt": null,
-      "media_lastmod": null,
-      "synced_at": null,
-      "review_state": "unsynced"
+      "media_lastmod": "2025-11-23T01:23:10+09:00",
+      "synced_at": "2026-05-29T08:45:55.183Z",
+      "review_state": "fresh"
     }
   },
   "unmapped": [
@@ -446,5 +446,47 @@
     "sd-vista",
     "bridge",
     "negative-emissions"
+  ],
+  "last_orphans": [
+    {
+      "wp_slug": "carbon-credits-tokenisation",
+      "lastmod": "2025-12-08T18:13:59+09:00"
+    },
+    {
+      "wp_slug": "voluntary-carbon-market",
+      "lastmod": "2025-11-02T14:28:06+09:00"
+    },
+    {
+      "wp_slug": "gis",
+      "lastmod": "2025-12-07T22:01:53+09:00"
+    },
+    {
+      "wp_slug": "ccu",
+      "lastmod": "2025-11-23T01:17:03+09:00"
+    },
+    {
+      "wp_slug": "doc",
+      "lastmod": "2025-12-07T19:09:26+09:00"
+    },
+    {
+      "wp_slug": "daccs",
+      "lastmod": "2025-12-07T18:52:48+09:00"
+    },
+    {
+      "wp_slug": "cdr",
+      "lastmod": "2025-11-23T01:36:54+09:00"
+    },
+    {
+      "wp_slug": "gwp",
+      "lastmod": "2025-12-07T22:17:37+09:00"
+    },
+    {
+      "wp_slug": "carbon-credits",
+      "lastmod": "2025-12-08T15:37:33+09:00"
+    },
+    {
+      "wp_slug": "retirement",
+      "lastmod": "2025-12-08T19:21:44+09:00"
+    }
   ]
 }
