@@ -27,7 +27,7 @@ export type ConsultCopy = {
 const ENTITY_COPY: Record<EntityType, (name: string) => ConsultCopy> = {
   regulation: (name) => ({
     title: "貴社への影響評価・対応方針",
-    body: `上記は ${name} の制度構造と論点の整理まで。開示・調達・コストへの効き方と対応の優先順位づけは貴社固有の判断になる。株式会社クレイドルトゥーが伴走する。`,
+    body: `上記は ${name} の制度構造と論点の整理まで。開示・調達・コストへの効き方と対応の優先順位づけは貴社固有の判断になる。クレイドルトゥーが対応する。`,
   }),
   methodology: (name) => ({
     title: "調達・創出計画への落とし込み",
@@ -58,7 +58,7 @@ export function consultCopyForEntity(type: EntityType, name: string): ConsultCop
 export function consultCopyForMatrix(): ConsultCopy {
   return {
     title: "貴社要件への翻訳・個別判断",
-    body: "上記の比較は判断材料の整理まで。どれを選ぶかは予算・リスク許容度・目的という貴社固有の要件への翻訳が要る。株式会社クレイドルトゥー CDR 調達アドバイザリー / Recroma 本格コンサルが対応する。",
+    body: "上記の比較は判断材料の整理まで。どれを選ぶかは予算・リスク許容度・目的という貴社固有の要件への翻訳が要る。クレイドルトゥーが対応する。",
   };
 }
 
