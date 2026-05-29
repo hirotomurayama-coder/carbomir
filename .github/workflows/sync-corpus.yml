@@ -1,0 +1,67 @@
+# carboncredits.jp 媒体 corpus の日次自動同期 (PROVENANCE 媒体連携・自動化A)
+#
+# 毎日 sync:media + sync:glossary を実行し、差分があれば JSON を commit→push。
+# Vercel が Git 連携で再デプロイ (連携が無い場合は VERCEL_DEPLOY_HOOK_URL を叩く)。
+#
+# 必要な GitHub Secrets (Settings → Secrets and variables → Actions):
+#   - GLOSSARY_SYNC_UA       … WAF で許可する User-Agent 文字列 (sync スクリプトが送る)。
+#                               carboncredits.jp 側でこの UA を bot ブロック除外に登録する。
+#   - VERCEL_DEPLOY_HOOK_URL … (任意) Vercel の Deploy Hook URL。Git 連携が有効なら不要。
+#
+# WAF 未設定 / 未許可の間は sync が 403 を graceful skip するため、本 workflow は
+# 失敗せず「変更なし」で終わる (no-op)。WAF 許可後に自動で効き始める。
+
+name: Sync carboncredits.jp corpus
+
+on:
+  schedule:
+    - cron: "0 21 * * *" # 06:00 JST 毎日
+  workflow_dispatch: {} # 手動トリガ (動作確認用)
+
+concurrency:
+  group: sync-corpus
+  cancel-in-progress: false
+
+permissions:
+  contents: write # commit + push
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync media + glossary corpus
+        env:
+          GLOSSARY_SYNC_UA: ${{ secrets.GLOSSARY_SYNC_UA }}
+        run: |
+          npm run sync:media
+          npm run sync:glossary
+
+      - name: Commit & deploy if changed
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          FILES="data/content/media-articles.json data/content/glossary-map.json"
+          if git diff --quiet -- $FILES; then
+            echo "corpus に変更なし。skip。"
+          else
+            git add $FILES
+            git commit -m "chore: carboncredits.jp corpus 自動同期 ($(date -u +%Y-%m-%d))"
+            git push
+            echo "corpus を更新・push。"
+            if [ -n "${VERCEL_DEPLOY_HOOK_URL:-}" ]; then
+              curl -fsSL -X POST "$VERCEL_DEPLOY_HOOK_URL" >/dev/null && echo "Vercel deploy hook を実行。"
+            else
+              echo "deploy hook secret なし。Vercel Git 連携での自動デプロイに委譲。"
+            fi
+          fi
