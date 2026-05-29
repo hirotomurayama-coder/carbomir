@@ -47,6 +47,10 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const entityNameMap: Record<string, string> = {};
   for (const e of entities) entityNameMap[e.slug] = e.name_ja;
 
+  // STRATEGY §2: 出典は「編集部の論点」call-out に集約する (entity と同じパターン)。
+  // 論点が無い (旧構成) 場合のみ末尾の独立 Sources セクションにフォールバック。
+  const hasThesis = study.sections.some((s) => s.heading === "編集部の論点");
+
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
       <nav className="mb-6">
@@ -106,7 +110,11 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         <article className="min-w-0 space-y-8">
           {study.sections.map((s, i) =>
             s.heading === "編集部の論点" ? (
-              <EditorialThesis key={i} paywallTier={s.paywall_tier}>
+              <EditorialThesis
+                key={i}
+                paywallTier={s.paywall_tier}
+                sourceUrls={study.source_urls}
+              >
                 {s.body}
               </EditorialThesis>
             ) : (
@@ -125,7 +133,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
             )
           )}
 
-          {study.source_urls.length > 0 && (
+          {!hasThesis && study.source_urls.length > 0 && (
             <section>
               <p className="label-mono text-muted-foreground mb-3">Sources</p>
               <ul className="space-y-1.5">
