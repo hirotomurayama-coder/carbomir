@@ -24,13 +24,29 @@ const UA =
 const OUT = path.join(process.cwd(), "data", "content", "media-articles.json");
 const PER_PAGE = 100;
 
-type RawPost = { id: number; link: string; modified: string; title: { rendered: string } };
-type MediaArticle = { id: number; title: string; link: string; modified: string };
+type RawPost = {
+  id: number;
+  link: string;
+  modified: string;
+  title: { rendered: string };
+  excerpt?: { rendered: string };
+};
+type MediaArticle = {
+  id: number;
+  title: string;
+  link: string;
+  modified: string;
+  /** link のパス先頭セグメント (column / global / japan 等) を簡易カテゴリとして */
+  section?: string;
+  /** 抜粋 (タグ除去・短縮)。媒体本文は取り込まない方針なので要約だけ */
+  excerpt?: string;
+};
 
 function decodeEntities(s: string): string {
   return s
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
     .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCharCode(parseInt(n, 16)))
+    .replace(/&hellip;/g, "…")
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, '"')
     .replace(/&#0?39;|&apos;/g, "'")
@@ -39,8 +55,25 @@ function decodeEntities(s: string): string {
     .replace(/&nbsp;/g, " ");
 }
 
+/** link のパス先頭セグメントを section として返す (例 /global/... → "global") */
+function sectionFromLink(link: string): string | undefined {
+  try {
+    return new URL(link).pathname.split("/").filter(Boolean)[0];
+  } catch {
+    return undefined;
+  }
+}
+
+/** excerpt.rendered (HTML) を素のテキストに整形して 140 字に短縮 */
+function cleanExcerpt(html: string | undefined): string | undefined {
+  if (!html) return undefined;
+  const text = decodeEntities(html.replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
+  if (!text) return undefined;
+  return text.length > 140 ? `${text.slice(0, 140)}…` : text;
+}
+
 async function fetchPage(page: number): Promise<{ posts: RawPost[]; totalPages: number }> {
-  const url = `${API}?per_page=${PER_PAGE}&page=${page}&_fields=id,link,modified,title`;
+  const url = `${API}?per_page=${PER_PAGE}&page=${page}&_fields=id,link,modified,title,excerpt`;
   const res = await fetch(url, { headers: { "User-Agent": UA } });
   if (!res.ok) {
     if (res.status === 400) return { posts: [], totalPages: page - 1 }; // page 超過
@@ -59,11 +92,16 @@ async function main(): Promise<void> {
       const { posts, totalPages: tp } = await fetchPage(page);
       if (page === 1) totalPages = tp;
       for (const p of posts) {
+        const section = sectionFromLink(p.link);
+        // glossary_article は用語定義 (glossary レーンが正準) なのでニュース corpus から除外
+        if (section === "glossary_article") continue;
         articles.push({
           id: p.id,
           title: decodeEntities(p.title.rendered).trim(),
           link: p.link,
           modified: p.modified,
+          section,
+          excerpt: cleanExcerpt(p.excerpt?.rendered),
         });
       }
       console.log(`[sync-media] page ${page}/${totalPages} (+${posts.length}, 計 ${articles.length})`);

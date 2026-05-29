@@ -19,6 +19,7 @@ import { EditLink } from "@/components/admin/edit-link";
 import { AtlasDeepDivePanel } from "@/components/atlas/atlas-deep-dive-panel";
 import { RelatedNewsCard } from "@/components/media/related-news-card";
 import { relatedMediaArticles } from "@/lib/data/media-articles";
+import { mediaMatchTerms } from "@/lib/media-match";
 import { CASE_STUDY_CATEGORY_LABEL } from "@/lib/types";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -49,10 +50,16 @@ export default async function CaseStudyDetailPage({ params }: Props) {
   const entityNameMap: Record<string, string> = {};
   for (const e of entities) entityNameMap[e.slug] = e.name_ja;
 
-  // carboncredits.jp 関連ニュース (企業名で照合)
+  // carboncredits.jp 関連ニュース (企業名 + 関連プレイヤー entity の別名を継承して照合)。
+  // player 型に限定して継承し、methodology/regulation でニュースが広がりすぎるのを防ぐ。
+  const relatedPlayerTerms = study.related_entity_slugs
+    .map((s) => entities.find((e) => e.slug === s))
+    .filter((e): e is NonNullable<typeof e> => !!e && e.type === "player")
+    .flatMap((e) => mediaMatchTerms(e));
   const relatedMedia = relatedMediaArticles(
     { slug: study.slug, company: study.company },
     6,
+    relatedPlayerTerms,
   );
 
   // STRATEGY §2: 出典は「編集部の論点」call-out に集約する (entity と同じパターン)。

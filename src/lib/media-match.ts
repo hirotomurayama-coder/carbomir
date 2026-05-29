@@ -12,6 +12,10 @@ export type MediaArticle = {
   title: string;
   link: string;
   modified: string;
+  /** link パス先頭セグメント (column / global / japan 等) */
+  section?: string;
+  /** 抜粋 (タグ除去済み・短縮) */
+  excerpt?: string;
 };
 
 /**

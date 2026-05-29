@@ -30,8 +30,15 @@ export function RelatedNewsCard({ articles }: { articles: MediaArticle[] }) {
                   {a.title}
                   <ExternalLink className="inline-block h-2.5 w-2.5 ml-1 align-baseline text-muted-foreground/60" />
                 </span>
-                <span className="metric-number text-[10.5px] text-muted-foreground/70">
-                  {a.modified.slice(0, 10)}
+                <span className="flex items-center gap-1.5">
+                  <span className="metric-number text-[10.5px] text-muted-foreground/70">
+                    {a.modified.slice(0, 10)}
+                  </span>
+                  {a.section && (
+                    <span className="label-mono text-[9px] uppercase tracking-wider text-muted-foreground/60 border border-border rounded px-1 py-px">
+                      {a.section}
+                    </span>
+                  )}
                 </span>
               </a>
             </li>

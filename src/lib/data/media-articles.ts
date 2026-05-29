@@ -38,7 +38,16 @@ type NameLike = {
   title?: string;
 };
 
-/** entity / case-study に関連する carboncredits.jp 記事を modified 降順で返す */
-export function relatedMediaArticles(e: NameLike, limit = 6): MediaArticle[] {
-  return matchArticles(mediaMatchTerms(e), load().articles, limit);
+/**
+ * entity / case-study に関連する carboncredits.jp 記事を modified 降順で返す。
+ * extraTerms で追加の照合語を渡せる (例: case-study が関連プレイヤー entity の
+ * 別名 (マイクロソフト 等) を継承して拾うため)。
+ */
+export function relatedMediaArticles(
+  e: NameLike,
+  limit = 6,
+  extraTerms: string[] = [],
+): MediaArticle[] {
+  const terms = [...mediaMatchTerms(e), ...extraTerms];
+  return matchArticles(terms, load().articles, limit);
 }
