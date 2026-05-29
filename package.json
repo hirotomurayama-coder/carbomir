@@ -12,7 +12,8 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "ai:draft": "tsx scripts/ai-draft.ts"
+    "ai:draft": "tsx scripts/ai-draft.ts",
+    "sync:glossary": "tsx scripts/sync-glossary.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",

@@ -36,8 +36,13 @@ export type GlossaryMap = {
   last_synced_at: string | null;
   /** Carbomir entity slug → エントリ */
   entries: Record<string, GlossaryEntry>;
-  /** 媒体に存在するが Carbomir 未収録の wp_slug 一覧 (補完計画の入力) */
+  /** 媒体に存在するが Carbomir 未収録の wp_slug 一覧 (補完計画の入力, 手保守) */
   unmapped: string[];
+  /**
+   * 直近 sync で検出した orphan (sitemap にあるが entries/unmapped どちらにも無い
+   * 新規記事候補)。sync が書き戻す。drift/dangling は entries の review_state から導出。
+   */
+  last_orphans?: { wp_slug: string; lastmod: string }[];
 };
 
 const GLOSSARY_MAP = glossaryMapData as unknown as GlossaryMap;
