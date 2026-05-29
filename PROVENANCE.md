@@ -2,7 +2,7 @@
 
 > **位置づけ**: コンテンツの「出どころ（出自）」を定義する根本設計レイヤー。`CLAUDE.md`（プロダクト方針）・`STRATEGY.md`（価値・課金・進化の上位仮説）の下で、**どのコンテンツがどこを正準（source of record）とし、どう流れ、どう腐りを検知するか** を規定する。
 >
-> **ステータス**: 2026-05-29 設計合意済み・**未実装**（コードはまだ書いていない）。これは実装の指針であり、検証で更新する作業仮説。
+> **ステータス**: 2026-05-29 設計合意 → **実装・本番稼働済み**。glossary backbone（§6-8）と 記事（ニュース）連携（§12）を実装し Vercel にデプロイ。本書は実装済みアーキテクチャの規定であり、検証で更新する。
 >
 > **背景**: 現状、世界マップは Excel + 外部 API、それ以外の文章コンテンツは主に AI 調査起点で、公開後は AI 出自の痕跡が消えていた。一方で同社は編集メディア `carboncredits.jp` を運営している。STRATEGY §2（堀＝編集アカウンタビリティ。AI の推測は引用できない）に照らすと、**心臓部の文章が AI 起点なのは堀の弱点**。本設計は出自を媒体起点に寄せ、堀を本当にする。
 
@@ -151,8 +151,9 @@ entity: gx-ets ページ
 
 ## 10. 既知の不一致と運用注意
 
-- **glossary パス**：`/glossary_article/{slug}/` と `/glossary/{slug}/` は**両方 200**（既存 83 リンクは壊れていない）。ただし**正準は `/glossary/`**（サイトマップ採用形）。backbone は `/glossary/` に正規化する。現行 `glossary-links.ts` は `/glossary_article` を使用 → 升格時に揃える。
-- **WAF 許可（UA vs IP）**：自宅回線の curl は通るが、WebFetch（DC IP + ClaudeBot UA）は全 403。**DC IP ブロックなら Vercel cron からの同期に WAF 許可（egress IP 許可 or 共有シークレットヘッダ）が必要**。デプロイ時の設定で、本設計の本筋は不変。
+- **glossary パス**：canonical は `/glossary/{slug}/`（サイトマップ採用形）に正規化済み。例外として `gx-ets` / `co2e` は `/glossary/` が 404・`/glossary_article/` のみ 200 のため後者を採用し、`sitemap_excluded: true` で誤 dangling を抑制。
+- **Cloudflare bot 保護**：carboncredits.jp は Cloudflare 配下。**静的サイトマップは通るが、動的 REST（`/wp-json/`）は Bot Fight Mode がデータセンター IP を 403 で弾く**。無料プランでは WAF カスタムルールで回避不可（Skip は Pro 以上）。
+  - → **glossary 同期（sitemap）= GitHub Actions 日次自動**（`.github/workflows/sync-corpus.yml`、commit→Vercel 自動デプロイ）。**media 同期（REST）= 手動**（非ブロック環境から `npm run sync:media`）。詳細は §12。
 
 ---
 
@@ -165,5 +166,42 @@ entity: gx-ets ページ
 
 ---
 
+## 12. 記事（ニュース）連携 — 第二の媒体チャネル（2026-05 実装）
+
+§6-8 の glossary（用語定義）連携に加え、carboncredits.jp の **記事（column / global 等の WP post）＝ニュース**も媒体レーンとして連携する。§1-3 の原則（媒体が散文の正準・参照＋抜粋・本文非取り込み）はそのままに、**結合方法だけが異なる**。
+
+### glossary（用語）との違い
+| | glossary（§6-8） | 記事ニュース（本節） |
+|---|---|---|
+| 中身 | 用語定義（evergreen） | ニュース（時間軸） |
+| 対応 | entity と slug で **1:1** | entity / case-study / timeline と **1:N** |
+| 結合 | slug マップ（`glossary-map.json`） | **タイトル照合**（名称 → 記事タイトル部分一致） |
+| 取得元 | wp-sitemap（静的） | WP REST `/wp-json/wp/v2/posts`（動的） |
+| 同期 | 日次自動（GitHub Actions） | 手動（§10 の Cloudflare 制約） |
+
+### materialization（参照＋抜粋を踏襲）
+- corpus ＝ `data/content/media-articles.json`：`{id, title, link, modified, section, excerpt}` のみ（**本文は取り込まない**）。`section` は link パス先頭（column/global/japan 等）、`excerpt` はタグ除去・140 字。
+- 用語定義（`glossary_article` セクション）は glossary レーンが正準なので **news corpus から除外**。
+- 媒体が記事の正準なので UI は**外部リンク**で委譲。
+
+### 照合（`src/lib/media-match.ts`・純粋関数）
+- entity / case-study / timeline の名称（`name_ja` / `name_en` / 略号 / 別名）を記事タイトルに照合。
+- **英字語＝単語境界・日本語＝部分一致**（"UK-ETS"→"K-ETS"、"shops"→"SHOP" の誤検出を排除）。
+- case-study は関連 **player** entity の別名を継承（例: Microsoft 事例が「マイクロソフト」を捕捉）。timeline は **affected_entity** 名で照合（規制ニュースに直結）。
+
+### 露出面（connection を能動化）
+- **entity / case-study / timeline 詳細**の aside に「関連ニュース」（modified 降順・section バッジ）。
+- **ウォッチリスト「ウォッチ中のニュース」**：フォロー横断で新着を集約し、前回チェック以降は **NEW** バッジ ＝ STRATEGY §2/§3/§5「見出しになる前に知る」。
+- **/editorial**：記事 corpus 件数・最終同期日。
+
+### 同期と運用
+- `npm run sync:media`（REST）/ `npm run sync:glossary`（sitemap）。両者とも**実質変化があるときだけ書き込む**（日次 no-op コミット防止）。
+- glossary は GitHub Actions 日次 → commit → Vercel 自動デプロイ。media は手動（§10 の Cloudflare 制約）。
+- 実装: `scripts/sync-media.ts` / `src/lib/media-match.ts` / `src/lib/data/media-articles.ts` / `src/components/media/related-news-card.tsx`。
+
+---
+
 ## 改訂履歴
-- **2026-05-29**: 初版作成（出自アーキテクチャ設計セッション結果）。レーン分担 / 参照＋抜粋 / 取り込み経路 A を確定。実装は未着手。
+- **2026-05-29 (1)**: 初版（設計）。レーン分担 / 参照＋抜粋 / 取り込み経路 A を確定。
+- **2026-05-29 (2)**: glossary backbone（§5-8）を実装し本番デプロイ。section 単位 provenance 型・glossary-map 升格・reconcile・/editorial 照合・残 dangling 解消。
+- **2026-05-29 (3)**: 記事（ニュース）連携（§12）を実装。entity / case-study / timeline / watchlist に関連ニュース、日次自動同期ワークフロー追加、media は手動運用に決定。
