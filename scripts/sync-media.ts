@@ -14,7 +14,7 @@
  * 使い方:  npm run sync:media
  * 環境変数: GLOSSARY_SYNC_UA  許可済み User-Agent (任意, glossary と共用)
  */
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 
 const API = "https://carboncredits.jp/wp-json/wp/v2/posts";
@@ -117,6 +117,19 @@ async function main(): Promise<void> {
   }
 
   articles.sort((a, b) => (a.modified < b.modified ? 1 : -1));
+
+  // 記事集合が前回と同一なら書き込まない (last_synced_at だけの no-op コミットを防ぐ)。
+  let prev: MediaArticle[] = [];
+  try {
+    prev = (JSON.parse(readFileSync(OUT, "utf8")) as { articles?: MediaArticle[] }).articles ?? [];
+  } catch {
+    prev = [];
+  }
+  if (JSON.stringify(prev) === JSON.stringify(articles)) {
+    console.log(`[sync-media] 実質的な変化なし (${articles.length} 件)。書き込みスキップ。`);
+    return;
+  }
+
   const now = new Date().toISOString();
   writeFileSync(OUT, `${JSON.stringify({ last_synced_at: now, articles }, null, 2)}\n`);
   console.log(`[sync-media] ${articles.length} 件 → ${OUT}`);

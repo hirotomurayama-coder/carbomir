@@ -26,6 +26,16 @@ const UA =
   "carbomir-glossary-sync (+https://carboncredits.jp/carbomir)";
 const MAP_FILE = path.join(process.cwd(), "data", "content", "glossary-map.json");
 
+/** synced_at / last_synced_at を除いた実質内容のシリアライズ (変化検出用) */
+function stableGlossary(m: GlossaryMap): string {
+  const entries: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(m.entries)) {
+    const { synced_at: _omit, ...rest } = v;
+    entries[k] = rest;
+  }
+  return JSON.stringify({ entries, unmapped: m.unmapped, last_orphans: m.last_orphans ?? [] });
+}
+
 async function main(): Promise<void> {
   let xml: string;
   try {
@@ -59,6 +69,13 @@ async function main(): Promise<void> {
     entries: { ...map.entries, ...r.updatedEntries },
     last_orphans: r.orphan,
   };
+
+  // タイムスタンプ (synced_at / last_synced_at) を除いた実質内容で比較し、
+  // 変化が無ければ書き込まない (日次の no-op コミットを防ぐ)。
+  if (stableGlossary(next) === stableGlossary(map)) {
+    console.log("[sync-glossary] 実質的な変化なし。書き込みスキップ。");
+    return;
+  }
   writeFileSync(MAP_FILE, `${JSON.stringify(next, null, 2)}\n`);
 
   console.log(
