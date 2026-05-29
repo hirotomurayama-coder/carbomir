@@ -2,7 +2,7 @@
  * Case study (個別企業のクレジット取り組み事例) の型定義.
  */
 
-import type { PaywallTier } from "./common";
+import type { Origin, PaywallTier } from "./common";
 
 export type CaseStudyCategory =
   | "procurement" // 調達 (buyer 側の事例)
@@ -25,6 +25,8 @@ export type CaseStudySection = {
    * Phase 4 着手前の地ならし: UI にはラベルバッジだけ出し、マスクは未実装。
    */
   paywall_tier?: PaywallTier;
+  /** 出自レーン (任意、未指定時は "tool" 扱い)。PROVENANCE.md §1。 */
+  origin?: Origin;
 };
 
 export type CaseStudy = {

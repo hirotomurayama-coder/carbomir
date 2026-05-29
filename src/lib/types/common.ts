@@ -24,6 +24,40 @@ export const PAYWALL_TIER_LABEL: Record<PaywallTier, string> = {
 };
 
 /* ============================================================
+ * 出自 (provenance) — PROVENANCE.md のレーン分担を section 単位で表現
+ * ============================================================ */
+
+/**
+ * コンテンツ section の出自レーン (PROVENANCE.md §1/§2)。
+ *
+ * - media: carboncredits.jp が正準の散文 (用語解説等)。media_ref を伴う。
+ * - tool:  Carbomir 編集部が正準の判断資産 (編集論点 / 構造化属性)。出典・確信度つき。
+ * - ai_assisted: AI 下書き起点でまだゲート (媒体 or /admin/drafts) を通していないもの。
+ *
+ * 未指定時は "tool" 扱い (既存の自社編集コンテンツはツールレーン)。
+ */
+export type Origin = "media" | "tool" | "ai_assisted";
+
+export const ORIGIN_LABEL: Record<Origin, string> = {
+  media: "carboncredits.jp 編集部",
+  tool: "Carbomir 編集部",
+  ai_assisted: "AI 下書き (未確定)",
+};
+
+/**
+ * 媒体 (carboncredits.jp) 記事への参照 (PROVENANCE.md §3/§5)。
+ * 本文はツールに取り込まず、canonical_url で媒体に委ねる (参照＋抜粋)。
+ */
+export type MediaRef = {
+  /** 媒体記事の正準 URL (例 https://carboncredits.jp/glossary/verra/) */
+  canonical_url: string;
+  /** WP 側 slug (同期キー) */
+  source_ref: string;
+  /** 最終照合時刻 (ISO)。sync ジョブが更新する */
+  synced_at?: string;
+};
+
+/* ============================================================
  * 価格水準 (相場観) — editorial 属性 (STRATEGY §8)
  * ============================================================ */
 

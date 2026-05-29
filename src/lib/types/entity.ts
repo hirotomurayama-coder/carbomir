@@ -5,7 +5,7 @@
  * Entity 詳細ページのレンダリング・関連グラフ・metadata パネルで使われる。
  */
 
-import type { PaywallTier, PriceLevel } from "./common";
+import type { MediaRef, Origin, PaywallTier, PriceLevel } from "./common";
 
 export type EntityType =
   | "methodology"
@@ -43,6 +43,13 @@ export type EntitySection = {
    * Phase 4 着手前の地ならし: UI にはラベルバッジだけ出し、マスクは未実装。
    */
   paywall_tier?: PaywallTier;
+  /**
+   * 出自レーン (任意、未指定時は "tool" 扱い)。PROVENANCE.md §1。
+   * "media" の section は本文を媒体に委ね、media_ref を伴う (参照＋抜粋)。
+   */
+  origin?: Origin;
+  /** 媒体記事への参照 (origin === "media" のとき)。PROVENANCE.md §3。 */
+  media_ref?: MediaRef;
 };
 
 export type Entity = {

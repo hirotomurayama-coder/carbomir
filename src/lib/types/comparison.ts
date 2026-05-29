@@ -4,7 +4,7 @@
  * 列 (dimension) × 行 (entity) のテーブル構造で、編集部見解列を含む。
  */
 
-import type { PaywallTier } from "./common";
+import type { Origin, PaywallTier } from "./common";
 import type { EntityRef } from "./entity";
 
 export type ComparisonDimension = {
@@ -16,6 +16,8 @@ export type ComparisonDimension = {
    * 列単位で付けると列ヘッダーにバッジ表示される (e.g. carbomir_view = "standard")。
    */
   paywall_tier?: PaywallTier;
+  /** 出自レーン (任意、未指定時は "tool" 扱い)。PROVENANCE.md §1。 */
+  origin?: Origin;
 };
 
 export type ComparisonCell = {
