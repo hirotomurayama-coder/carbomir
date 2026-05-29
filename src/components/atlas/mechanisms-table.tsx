@@ -22,7 +22,7 @@ import {
   translateAdmin,
   translateScope,
 } from "@/lib/data/atlas-i18n";
-import { countryNameJa } from "@/lib/data/country-geo";
+import { jurisdictionLabelJa } from "@/lib/data/country-geo";
 import {
   useStickyToolbarHeight,
   STICKY_TH,
@@ -185,7 +185,7 @@ export function MechanismsTable({ mechanisms }: Props) {
                       </div>
                       {m.administering_jurisdiction && (
                         <p className="text-[11px] text-muted-foreground mt-0.5 line-clamp-1">
-                          {countryNameJa(m.administering_jurisdiction)}
+                          {jurisdictionLabelJa(m.administering_jurisdiction)}
                         </p>
                       )}
                     </td>

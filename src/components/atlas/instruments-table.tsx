@@ -22,7 +22,7 @@ import {
   translateInstrumentType,
   translateInstrumentSector,
 } from "@/lib/data/atlas-i18n";
-import { countryNameJa } from "@/lib/data/country-geo";
+import { jurisdictionLabelJa } from "@/lib/data/country-geo";
 import {
   useStickyToolbarHeight,
   STICKY_TH,
@@ -187,7 +187,7 @@ export function InstrumentsTable({ instruments, linkageMap }: Props) {
                       </Badge>
                     </td>
                     <td className="px-4 py-2.5 align-top text-foreground/85 text-[13px]">
-                      {ins.jurisdiction ? countryNameJa(ins.jurisdiction) : "—"}
+                      {ins.jurisdiction ? jurisdictionLabelJa(ins.jurisdiction) : "—"}
                     </td>
                     <td className="px-4 py-2.5 align-top text-right metric-number text-[13px] text-foreground">
                       {ins.price_2026_usd != null

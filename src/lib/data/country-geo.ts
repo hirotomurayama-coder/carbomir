@@ -367,3 +367,50 @@ export function countryNameJa(label: string | null | undefined): string {
   if (iso3 && COUNTRY_GEO[iso3]) return COUNTRY_GEO[iso3].name_ja;
   return label;
 }
+
+/**
+ * 州・省・準国家管轄の日本語名 (「国・地域」プレフィックス付き).
+ *
+ * countryNameJa は集計用に subnational を国へ畳む (Alberta → カナダ)。一方、価格制度の
+ * 詳細テーブルや「最高価格 Top N」のような instrument 単位ビューでは、カナダ連邦 + 各州が
+ * 同じ「カナダ」に潰れて重複表示になり判読不能になる。詳細ビューはこちらの granular 名を使う。
+ */
+const SUBNATIONAL_NAME_JA: Record<string, string> = {
+  // カナダ
+  Alberta: "カナダ・アルバータ州",
+  "British Columbia": "カナダ・BC州",
+  Quebec: "カナダ・ケベック州",
+  Ontario: "カナダ・オンタリオ州",
+  Saskatchewan: "カナダ・サスカチュワン州",
+  "New Brunswick": "カナダ・ニューブランズウィック州",
+  "Nova Scotia": "カナダ・ノバスコシア州",
+  "Northwest Territories": "カナダ・ノースウェスト準州",
+  // 中国
+  Beijing: "中国・北京市",
+  Shanghai: "中国・上海市",
+  Tianjin: "中国・天津市",
+  Chongqing: "中国・重慶市",
+  Hubei: "中国・湖北省",
+  Fujian: "中国・福建省",
+  Shenzhen: "中国・深圳市",
+  // 米国
+  California: "米国・カリフォルニア州",
+  Massachusetts: "米国・マサチューセッツ州",
+  Oregon: "米国・オレゴン州",
+  Washington: "米国・ワシントン州",
+  RGGI: "米国・RGGI (北東部 ETS)",
+  // 日本
+  Tokyo: "日本・東京都",
+  Saitama: "日本・埼玉県",
+};
+
+/**
+ * 管轄ラベルを詳細ビュー用に日本語化. subnational は州・省名 (granular) を返し、
+ * それ以外は countryNameJa (国・地域名) にフォールバック.
+ */
+export function jurisdictionLabelJa(label: string | null | undefined): string {
+  if (!label) return "—";
+  const sub = SUBNATIONAL_NAME_JA[label.trim()];
+  if (sub) return sub;
+  return countryNameJa(label);
+}

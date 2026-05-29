@@ -11,7 +11,7 @@ import {
   HistogramChart,
   HorizontalBarChart,
 } from "@/components/atlas/atlas-charts";
-import { jurisdictionToIso3, countryNameJa } from "@/lib/data/country-geo";
+import { jurisdictionToIso3, jurisdictionLabelJa } from "@/lib/data/country-geo";
 import { ATLAS_SOURCE_LABEL, ATLAS_SOURCE_URL } from "@/lib/types";
 import type { CarbonPricingInstrument } from "@/lib/types";
 
@@ -205,7 +205,7 @@ function buildTopPrices(instruments: CarbonPricingInstrument[]) {
     .slice(0, 15)
     .map((i) => {
       const priceNum = Number(i.price_2026_usd);
-      const jur = i.jurisdiction ? countryNameJa(i.jurisdiction) : "";
+      const jur = i.jurisdiction ? jurisdictionLabelJa(i.jurisdiction) : "";
       const typeShort = i.type === "Carbon tax" ? "炭素税" : i.type === "ETS" ? "ETS" : "";
       return {
         label: `${jur}${typeShort ? ` (${typeShort})` : ""}`,
