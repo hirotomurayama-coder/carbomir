@@ -9,6 +9,7 @@
     "carbon-neutral"
   ],
   "category": "regulatory",
+  "durability_risk": "claim",
   "importance": 4,
   "status": "published",
   "source_urls": [

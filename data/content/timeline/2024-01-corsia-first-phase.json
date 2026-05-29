@@ -9,6 +9,7 @@
     "icvcm-ccp"
   ],
   "category": "regulatory",
+  "durability_risk": "acceptance",
   "importance": 4,
   "status": "published",
   "source_urls": [

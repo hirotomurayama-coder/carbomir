@@ -9,6 +9,7 @@
     "corsia"
   ],
   "category": "regulatory",
+  "durability_risk": "acceptance",
   "importance": 3,
   "status": "published",
   "source_urls": [

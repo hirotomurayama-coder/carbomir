@@ -9,6 +9,7 @@
     "cdr-credits"
   ],
   "category": "regulatory",
+  "durability_risk": "claim",
   "importance": 5,
   "status": "published",
   "source_urls": [

@@ -9,13 +9,20 @@
  * (将来 Manage 層 = 保有クレジットの監視も同じロジックを「保有」レンズで再利用)。
  */
 
-import type { TimelineCategory, TimelineEvent } from "./types";
+import type {
+  DurabilityRisk,
+  TimelineCategory,
+  TimelineEvent,
+} from "./types";
+import { DURABILITY_RISK_ORDER } from "./types";
 
 export type DurabilityTimelineRef = {
   slug: string;
   title: string;
   event_date: string;
   category: TimelineCategory;
+  /** §5 判断劣化リスク類型 (任意) */
+  durability_risk?: DurabilityRisk;
 };
 
 /**
@@ -37,7 +44,21 @@ export function selectMatrixInboundTimeline(
       title: e.title,
       event_date: e.event_date,
       category: e.category,
+      durability_risk: e.durability_risk,
     }));
+}
+
+/**
+ * 監視対象イベント群に現れる §5 判断劣化リスク類型を、正準順序で重複なく返す。
+ * 監視ポイントパネルの「監視中の観点」サマリ行を駆動する純粋関数。
+ * 該当タグ付きイベントが無ければ空配列 (パネルはサマリ行を出さない)。
+ */
+export function distinctDurabilityRisks(
+  refs: { durability_risk?: DurabilityRisk }[]
+): DurabilityRisk[] {
+  const present = new Set<DurabilityRisk>();
+  for (const r of refs) if (r.durability_risk) present.add(r.durability_risk);
+  return DURABILITY_RISK_ORDER.filter((risk) => present.has(risk));
 }
 
 /**

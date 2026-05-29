@@ -9,6 +9,7 @@
     "paris-article-6-4"
   ],
   "category": "regulatory",
+  "durability_risk": "acceptance",
   "importance": 4,
   "status": "published",
   "source_urls": [

@@ -9,6 +9,7 @@
     "gold-standard"
   ],
   "category": "market",
+  "durability_risk": "quality_label",
   "importance": 4,
   "status": "published",
   "source_urls": [

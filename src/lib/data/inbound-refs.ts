@@ -9,6 +9,7 @@
 
 import type {
   CaseStudy,
+  DurabilityRisk,
   FaqCategory,
   FAQItem,
   TimelineCategory,
@@ -21,6 +22,7 @@ export type EntityInboundReferences = {
     title: string;
     event_date: string;
     category: TimelineCategory;
+    durability_risk?: DurabilityRisk;
   }[];
   caseStudies: { slug: string; title: string; company: string }[];
   faqs: { slug: string; question: string; category: FaqCategory }[];
@@ -46,6 +48,7 @@ export function selectEntityInboundReferences(
         title: e.title,
         event_date: e.event_date,
         category: e.category,
+        durability_risk: e.durability_risk,
       })),
     caseStudies: studies
       .filter((c) => c.related_entity_slugs.includes(slug))

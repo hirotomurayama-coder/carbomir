@@ -2,16 +2,28 @@ import Link from "next/link";
 import { Radar, CalendarClock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
+  DURABILITY_RISK_LABEL,
   POLICY_STATUS_LABEL,
   TIMELINE_CATEGORY_LABEL,
   type EntityType,
   type PolicyStatus,
 } from "@/lib/types";
 import {
+  distinctDurabilityRisks,
   parseMilestone,
   splitTimelineByDate,
   type DurabilityTimelineRef,
 } from "@/lib/durability";
+
+/** §5 判断劣化リスク類型の小チップ */
+function RiskChip({ event }: { event: DurabilityTimelineRef }) {
+  if (!event.durability_risk) return null;
+  return (
+    <span className="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 px-1 py-0 text-[9.5px] label-mono">
+      {DURABILITY_RISK_LABEL[event.durability_risk]}
+    </span>
+  );
+}
 
 /**
  * 監視ポイント (Durability) パネル — STRATEGY §3③ / §5.
@@ -76,6 +88,7 @@ export function DurabilityPanel({
 
   const recentShown = recent.slice(0, 6);
   const recentRest = recent.length - recentShown.length;
+  const risks = distinctDurabilityRisks(timeline);
 
   return (
     <Card className="border-accent/25 bg-accent/[0.03]">
@@ -84,9 +97,25 @@ export function DurabilityPanel({
           <Radar className="h-3.5 w-3.5 text-accent" aria-hidden />
           <p className="label-mono text-accent">監視ポイント</p>
         </div>
-        <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+        <p className="text-xs text-muted-foreground leading-relaxed mb-3">
           {tagline}
         </p>
+
+        {risks.length > 0 && (
+          <div className="flex items-center gap-1.5 flex-wrap mb-4">
+            <span className="label-mono text-muted-foreground text-[10px]">
+              監視中の観点
+            </span>
+            {risks.map((r) => (
+              <span
+                key={r}
+                className="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 px-1.5 py-0 text-[10px] label-mono"
+              >
+                {DURABILITY_RISK_LABEL[r]}
+              </span>
+            ))}
+          </div>
+        )}
 
         <div className="space-y-4">
           {milestone && (
@@ -114,8 +143,11 @@ export function DurabilityPanel({
                 {upcoming.map((e) => (
                   <li key={e.slug}>
                     <Link href={`/timeline/${e.slug}`} className="group block">
-                      <span className="metric-number text-[10.5px] text-accent block mb-0.5">
-                        {e.event_date} · {TIMELINE_CATEGORY_LABEL[e.category]}
+                      <span className="flex items-center gap-1.5 mb-0.5">
+                        <span className="metric-number text-[10.5px] text-accent">
+                          {e.event_date} · {TIMELINE_CATEGORY_LABEL[e.category]}
+                        </span>
+                        <RiskChip event={e} />
                       </span>
                       <span className="text-xs font-medium text-foreground group-hover:text-accent block leading-snug">
                         {e.title}
@@ -134,8 +166,11 @@ export function DurabilityPanel({
                 {recentShown.map((e) => (
                   <li key={e.slug}>
                     <Link href={`/timeline/${e.slug}`} className="group block">
-                      <span className="metric-number text-[10.5px] text-muted-foreground block mb-0.5">
-                        {e.event_date} · {TIMELINE_CATEGORY_LABEL[e.category]}
+                      <span className="flex items-center gap-1.5 mb-0.5">
+                        <span className="metric-number text-[10.5px] text-muted-foreground">
+                          {e.event_date} · {TIMELINE_CATEGORY_LABEL[e.category]}
+                        </span>
+                        <RiskChip event={e} />
                       </span>
                       <span className="text-xs font-medium text-foreground group-hover:text-accent block leading-snug">
                         {e.title}

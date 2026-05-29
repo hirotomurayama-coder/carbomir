@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  distinctDurabilityRisks,
   parseMilestone,
   selectMatrixInboundTimeline,
   splitTimelineByDate,
@@ -98,5 +99,34 @@ describe("selectMatrixInboundTimeline", () => {
   it("returns empty when no row entity is touched", () => {
     const events = [tlEvent("a", "2026-01-01", ["x"])];
     expect(selectMatrixInboundTimeline(["y"], events)).toEqual([]);
+  });
+
+  it("propagates durability_risk onto the ref", () => {
+    const e = tlEvent("a", "2026-01-01", ["verra-vcs"]);
+    e.durability_risk = "quality_label";
+    const [ref] = selectMatrixInboundTimeline(["verra-vcs"], [e]);
+    expect(ref.durability_risk).toBe("quality_label");
+  });
+});
+
+describe("distinctDurabilityRisks", () => {
+  it("returns risks present, deduped, in canonical §5 order", () => {
+    const refs = [
+      { durability_risk: "claim" as const },
+      { durability_risk: "quality_label" as const },
+      { durability_risk: "claim" as const },
+      { durability_risk: "methodology" as const },
+      {}, // no risk
+    ];
+    // canonical order: methodology, quality_label, reputation, acceptance, claim, ...
+    expect(distinctDurabilityRisks(refs)).toEqual([
+      "methodology",
+      "quality_label",
+      "claim",
+    ]);
+  });
+
+  it("returns empty array when no ref carries a risk", () => {
+    expect(distinctDurabilityRisks([{}, {}])).toEqual([]);
   });
 });

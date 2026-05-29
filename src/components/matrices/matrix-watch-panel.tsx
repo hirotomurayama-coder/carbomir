@@ -1,8 +1,12 @@
 import Link from "next/link";
 import { Radar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { TIMELINE_CATEGORY_LABEL } from "@/lib/types";
-import { splitTimelineByDate, type DurabilityTimelineRef } from "@/lib/durability";
+import { DURABILITY_RISK_LABEL, TIMELINE_CATEGORY_LABEL } from "@/lib/types";
+import {
+  distinctDurabilityRisks,
+  splitTimelineByDate,
+  type DurabilityTimelineRef,
+} from "@/lib/durability";
 
 /**
  * 比較行列の「監視中の動き」パネル (STRATEGY §3③ / §5).
@@ -22,10 +26,17 @@ type Props = {
 function EventRow({ e, dim }: { e: DurabilityTimelineRef; dim?: boolean }) {
   return (
     <Link href={`/timeline/${e.slug}`} className="group block">
-      <span
-        className={`metric-number text-[10.5px] block mb-0.5 ${dim ? "text-muted-foreground" : "text-accent"}`}
-      >
-        {e.event_date} · {TIMELINE_CATEGORY_LABEL[e.category]}
+      <span className="flex items-center gap-1.5 mb-0.5">
+        <span
+          className={`metric-number text-[10.5px] ${dim ? "text-muted-foreground" : "text-accent"}`}
+        >
+          {e.event_date} · {TIMELINE_CATEGORY_LABEL[e.category]}
+        </span>
+        {e.durability_risk && (
+          <span className="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 px-1 py-0 text-[9.5px] label-mono">
+            {DURABILITY_RISK_LABEL[e.durability_risk]}
+          </span>
+        )}
       </span>
       <span className="text-xs font-medium text-foreground group-hover:text-accent block leading-snug">
         {e.title}
@@ -39,6 +50,7 @@ export function MatrixWatchPanel({ timeline, today }: Props) {
   const { upcoming, recent } = splitTimelineByDate(timeline, today);
   const recentShown = recent.slice(0, 6);
   const recentRest = recent.length - recentShown.length;
+  const risks = distinctDurabilityRisks(timeline);
 
   return (
     <Card className="border-accent/25 bg-accent/[0.03]">
@@ -47,9 +59,25 @@ export function MatrixWatchPanel({ timeline, today }: Props) {
           <Radar className="h-3.5 w-3.5 text-accent" aria-hidden />
           <p className="label-mono text-accent">監視ポイント</p>
         </div>
-        <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+        <p className="text-xs text-muted-foreground leading-relaxed mb-3">
           下記の動向で比較の前提 (手法・適格性・規制) が変わりうる。編集部が追う。
         </p>
+
+        {risks.length > 0 && (
+          <div className="flex items-center gap-1.5 flex-wrap mb-4">
+            <span className="label-mono text-muted-foreground text-[10px]">
+              監視中の観点
+            </span>
+            {risks.map((r) => (
+              <span
+                key={r}
+                className="inline-flex items-center rounded border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 px-1.5 py-0 text-[10px] label-mono"
+              >
+                {DURABILITY_RISK_LABEL[r]}
+              </span>
+            ))}
+          </div>
+        )}
 
         <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
           {upcoming.length > 0 && (
