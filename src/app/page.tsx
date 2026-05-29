@@ -96,8 +96,7 @@ export default async function DashboardHome() {
           判断が腐らない状態まで。
         </h1>
         <p className="text-base text-muted-foreground max-w-2xl leading-relaxed">
-          GX-ETS / CBAM / SBT を一次情報まで追う時間と、買った後に「使えない・ジャンク認定」を見落とすリスク——その両方を Carbomir が肩代わりする。
-          論点・比較・適格性が出揃った状態を作り、前提が動けば見出しになる前に知らせる。CSR・サステナビリティ担当の報告・稟議・調達判断のために。
+          GX-ETS / CBAM / SBT を一次情報まで追う時間と、買った後に「使えない・ジャンク認定」を見落とすリスク——その両方を Carbomir が肩代わりする。CSR・サステナビリティ担当の報告・稟議・調達判断のために。
         </p>
       </header>
 
