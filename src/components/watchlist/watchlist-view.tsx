@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Star, Radar, CalendarClock, X } from "lucide-react";
+import { Star, Radar, CalendarClock, X, Newspaper, ExternalLink } from "lucide-react";
+import type { MediaArticle } from "@/lib/media-match";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -40,7 +41,11 @@ export type EntityWatchEntry = {
   nextMilestone?: string;
   policyStatus?: PolicyStatus;
   timeline: DurabilityTimelineRef[];
+  /** この entity に効く carboncredits.jp 関連ニュース (媒体連携③) */
+  news?: MediaArticle[];
 };
+
+type NewsFeedItem = MediaArticle & { sources: string[] };
 
 export type MatrixWatchEntry = {
   label: string;
@@ -130,6 +135,36 @@ function FeedRow({
   );
 }
 
+function NewsRow({ item, isNew }: { item: NewsFeedItem; isNew?: boolean }) {
+  return (
+    <li>
+      <a
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-4 px-4 py-3 transition-colors ${isNew ? "bg-emerald-500/[0.04] hover:bg-emerald-500/[0.08]" : "hover:bg-muted/30"}`}
+      >
+        <span className="metric-number text-[11px] shrink-0 sm:min-w-[150px] text-muted-foreground flex items-center gap-1.5">
+          {item.modified.slice(0, 10)}
+          {item.section && (
+            <span className="label-mono text-[9px] uppercase tracking-wider text-muted-foreground/60 border border-border rounded px-1 py-px">
+              {item.section}
+            </span>
+          )}
+        </span>
+        <span className="flex-1 min-w-0">
+          <span className="text-sm font-medium text-foreground group-hover:text-accent leading-snug mb-1 flex items-center gap-1.5 flex-wrap">
+            {isNew && <NewBadge />}
+            {item.title}
+            <ExternalLink className="h-2.5 w-2.5 text-muted-foreground/60 shrink-0" />
+          </span>
+          <SourceChips sources={item.sources} />
+        </span>
+      </a>
+    </li>
+  );
+}
+
 export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
   const { items, mounted, remove } = useWatchlist();
 
@@ -165,9 +200,33 @@ export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
   const recentShown = recent.slice(0, 12);
 
   // 前回チェック以降に起きたイベント (NEW)
-  const newCount = recent.filter((e) =>
+  const timelineNewCount = recent.filter((e) =>
     isNewSinceVisit(e.event_date, lastVisit, today)
   ).length;
+
+  // ウォッチ中の関連ニュース (媒体連携③「見逃さない」)。entity 横断で記事を dedup。
+  const newsById = new Map<number, NewsFeedItem>();
+  for (const r of resolved) {
+    if (r.item.kind !== "entity") continue;
+    const news = (r.entry as EntityWatchEntry | undefined)?.news ?? [];
+    for (const a of news) {
+      const ex = newsById.get(a.id);
+      if (ex) {
+        if (!ex.sources.includes(r.item.label)) ex.sources.push(r.item.label);
+      } else {
+        newsById.set(a.id, { ...a, sources: [r.item.label] });
+      }
+    }
+  }
+  const newsFeed = [...newsById.values()].sort((a, b) =>
+    a.modified < b.modified ? 1 : a.modified > b.modified ? -1 : 0
+  );
+  const newsShown = newsFeed.slice(0, 12);
+  const newsNewCount = newsFeed.filter((a) =>
+    isNewSinceVisit(a.modified.slice(0, 10), lastVisit, today)
+  ).length;
+
+  const newCount = timelineNewCount + newsNewCount;
 
   const milestones = resolved
     .filter((r) => r.item.kind === "entity" && (r.entry as EntityWatchEntry)?.nextMilestone)
@@ -332,6 +391,29 @@ export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
               </Card>
             )}
           </section>
+
+          {/* ウォッチ中のニュース (carboncredits.jp 媒体連携③) */}
+          {newsShown.length > 0 && (
+            <section>
+              <p className="label-mono text-muted-foreground mb-3 flex items-center gap-1.5">
+                <Newspaper className="h-3.5 w-3.5 text-accent" aria-hidden /> ウォッチ中のニュース
+                <span className="label-mono text-muted-foreground/60 normal-case">carboncredits.jp</span>
+              </p>
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <ul className="divide-y divide-border">
+                    {newsShown.map((item) => (
+                      <NewsRow
+                        key={item.id}
+                        item={item}
+                        isNew={isNewSinceVisit(item.modified.slice(0, 10), lastVisit, today)}
+                      />
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </section>
+          )}
 
           {/* ウォッチ中の項目 */}
           <section>

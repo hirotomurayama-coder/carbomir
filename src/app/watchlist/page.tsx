@@ -5,6 +5,7 @@ import {
   listPublishedTimelineEvents,
 } from "@/lib/data/queries";
 import { selectMatrixInboundTimeline, type DurabilityTimelineRef } from "@/lib/durability";
+import { relatedMediaArticles } from "@/lib/data/media-articles";
 import {
   WatchlistView,
   type EntityWatchEntry,
@@ -55,6 +56,7 @@ export default async function WatchlistPage() {
       nextMilestone: e.next_milestone,
       policyStatus: e.policy_status,
       timeline: entityTimeline[e.slug] ?? [],
+      news: relatedMediaArticles(e, 5),
     };
   }
 
