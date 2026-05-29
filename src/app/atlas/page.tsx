@@ -64,8 +64,11 @@ export default async function AtlasIndexPage() {
   const typeCounts = countBy(instruments, (i) => i.type ?? "Undefined");
   // Instruments by status
   const statusCounts = countBy(instruments, (i) => i.status ?? "Unknown");
-  // Top jurisdictions by instrument count (uniq countries)
-  const jurCounts = countBy(instruments, (i) => i.jurisdiction ?? "Unknown");
+  // Top jurisdictions by instrument count.
+  // countryNameJa で国・地域名に正規化してから集計する。WB データはカナダ連邦 +
+  // 州 (Alberta / British Columbia 等) を別管轄で持つため、生 jurisdiction で
+  // 集計すると表示時に同じ「カナダ」へ畳まれ重複バーになる (集計を表示名に揃える)。
+  const jurCounts = countBy(instruments, (i) => countryNameJa(i.jurisdiction));
   const topJurisdictions = [...jurCounts.entries()]
     .sort((a, b) => b[1] - a[1])
     .slice(0, 10);
@@ -219,11 +222,11 @@ export default async function AtlasIndexPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <Card className="p-5">
             <p className="label-mono text-muted-foreground mb-3">
-              管轄別 Top 10 (制度件数)
+              国・地域別 Top 10 (制度件数)
             </p>
             <HorizontalBarChart
               items={topJurisdictions.map(([label, value]) => ({
-                label: countryNameJa(label),
+                label,
                 value,
               }))}
               barColor="#0ea5e9"

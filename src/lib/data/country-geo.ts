@@ -346,11 +346,23 @@ export function jurisdictionToIso3(jur: string | null | undefined): string | nul
 }
 
 /**
+ * 表示名オーバーライド: 地図配置用 iso3 では国名に潰れてしまう広域・超国家管轄の
+ * 表示名を補正する。例: "EU27+" は地図上は DEU 座標に置くが、名称としては
+ * 「ドイツ」ではなく「EU」が正しい。座標解決 (jurisdictionToIso3) には影響しない。
+ */
+const JURISDICTION_NAME_JA_OVERRIDE: Record<string, string> = {
+  "EU27+": "EU",
+  EU27: "EU",
+};
+
+/**
  * 国名 (jurisdiction / WB country / OffsetsDB country) を日本語に変換.
  * 解決できないものは元のラベルをそのまま返す.
  */
 export function countryNameJa(label: string | null | undefined): string {
   if (!label) return "—";
+  const override = JURISDICTION_NAME_JA_OVERRIDE[label.trim()];
+  if (override) return override;
   const iso3 = jurisdictionToIso3(label);
   if (iso3 && COUNTRY_GEO[iso3]) return COUNTRY_GEO[iso3].name_ja;
   return label;
