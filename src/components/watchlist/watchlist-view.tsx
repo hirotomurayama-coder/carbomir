@@ -5,13 +5,34 @@ import Link from "next/link";
 import { Star, Radar, CalendarClock, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TIMELINE_CATEGORY_LABEL, type EntityType, type PolicyStatus } from "@/lib/types";
+import {
+  TIMELINE_CATEGORY_LABEL,
+  POLICY_STATUS_LABEL,
+  type EntityType,
+  type PolicyStatus,
+} from "@/lib/types";
 import {
   parseMilestone,
   splitTimelineByDate,
   type DurabilityTimelineRef,
 } from "@/lib/durability";
+import {
+  isNewSinceVisit,
+  isImminent,
+  WATCHLIST_LASTVISIT_KEY,
+} from "@/lib/watchlist";
 import { useWatchlist } from "@/components/watchlist/watchlist-provider";
+
+// 不安定 / 変化ありの制度ステータス (監視で警告を出す対象)
+const UNSTABLE_STATUS: PolicyStatus[] = ["transition", "pilot", "draft"];
+const CHANGED_STATUS: PolicyStatus[] = ["discontinued", "stayed"];
+
+function statusKind(s?: PolicyStatus): "unstable" | "changed" | null {
+  if (!s) return null;
+  if (UNSTABLE_STATUS.includes(s)) return "unstable";
+  if (CHANGED_STATUS.includes(s)) return "changed";
+  return null;
+}
 
 export type EntityWatchEntry = {
   label: string;
@@ -69,20 +90,37 @@ function SourceChips({ sources }: { sources: string[] }) {
   );
 }
 
-function FeedRow({ item, dim }: { item: FeedItem; dim?: boolean }) {
+function NewBadge() {
+  return (
+    <span className="inline-flex items-center rounded-sm border border-emerald-500/40 bg-emerald-500/10 px-1.5 py-0 text-[9px] font-mono tracking-wider uppercase text-emerald-700 dark:text-emerald-300 align-middle">
+      New
+    </span>
+  );
+}
+
+function FeedRow({
+  item,
+  dim,
+  isNew,
+}: {
+  item: FeedItem;
+  dim?: boolean;
+  isNew?: boolean;
+}) {
   return (
     <li>
       <Link
         href={`/timeline/${item.slug}`}
-        className="group flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-4 px-4 py-3 hover:bg-muted/30 transition-colors"
+        className={`group flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-4 px-4 py-3 transition-colors ${isNew ? "bg-emerald-500/[0.04] hover:bg-emerald-500/[0.08]" : "hover:bg-muted/30"}`}
       >
         <span
-          className={`metric-number text-[11px] shrink-0 sm:min-w-[150px] ${dim ? "text-muted-foreground" : "text-accent"}`}
+          className={`metric-number text-[11px] shrink-0 sm:min-w-[150px] ${dim && !isNew ? "text-muted-foreground" : "text-accent"}`}
         >
           {item.event_date} · {TIMELINE_CATEGORY_LABEL[item.category]}
         </span>
         <span className="flex-1 min-w-0">
-          <span className="text-sm font-medium text-foreground group-hover:text-accent block leading-snug mb-1">
+          <span className="text-sm font-medium text-foreground group-hover:text-accent leading-snug mb-1 flex items-center gap-1.5 flex-wrap">
+            {isNew && <NewBadge />}
             {item.title}
           </span>
           <SourceChips sources={item.sources} />
@@ -94,6 +132,14 @@ function FeedRow({ item, dim }: { item: FeedItem; dim?: boolean }) {
 
 export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
   const { items, mounted, remove } = useWatchlist();
+
+  // 前回ウォッチリストを開いた日。マウント時に読み出し、その場で today に更新する。
+  // (グローバル provider ではなくこのページ単位で記録 = 「前回ここを見た時」の意味を保つ)
+  const [lastVisit, setLastVisit] = React.useState<string | null>(null);
+  React.useEffect(() => {
+    setLastVisit(localStorage.getItem(WATCHLIST_LASTVISIT_KEY));
+    localStorage.setItem(WATCHLIST_LASTVISIT_KEY, today);
+  }, [today]);
 
   if (!mounted) {
     return (
@@ -118,13 +164,33 @@ export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
   const { upcoming, recent } = splitTimelineByDate(feed, today);
   const recentShown = recent.slice(0, 12);
 
+  // 前回チェック以降に起きたイベント (NEW)
+  const newCount = recent.filter((e) =>
+    isNewSinceVisit(e.event_date, lastVisit, today)
+  ).length;
+
   const milestones = resolved
     .filter((r) => r.item.kind === "entity" && (r.entry as EntityWatchEntry)?.nextMilestone)
+    .map((r) => {
+      const m = parseMilestone((r.entry as EntityWatchEntry).nextMilestone!);
+      return {
+        slug: r.item.slug,
+        label: r.item.label,
+        milestone: m,
+        imminent: m.dateLabel ? isImminent(m.dateLabel, today) : false,
+      };
+    });
+
+  // 不安定な制度ステータスを持つウォッチ中 entity (要注視)
+  const statusAlerts = resolved
+    .filter((r) => r.item.kind === "entity")
     .map((r) => ({
       slug: r.item.slug,
       label: r.item.label,
-      milestone: parseMilestone((r.entry as EntityWatchEntry).nextMilestone!),
-    }));
+      status: (r.entry as EntityWatchEntry)?.policyStatus,
+      kind: statusKind((r.entry as EntityWatchEntry)?.policyStatus),
+    }))
+    .filter((x) => x.kind);
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1100px] mx-auto">
@@ -137,6 +203,11 @@ export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
           {items.length > 0 && (
             <Badge variant="secondary" className="font-mono text-[10px] tracking-wider">
               {items.length}
+            </Badge>
+          )}
+          {newCount > 0 && (
+            <Badge className="font-mono text-[10px] tracking-wider border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300">
+              前回チェック以降 {newCount} 件
             </Badge>
           )}
         </div>
@@ -160,20 +231,56 @@ export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
                   <li key={m.slug}>
                     <Link
                       href={`/entities/${m.slug}`}
-                      className="group flex items-baseline gap-3 rounded-md border border-border px-4 py-2.5 hover:border-accent/40 transition-colors"
+                      className={`group flex items-baseline gap-3 rounded-md border px-4 py-2.5 transition-colors ${m.imminent ? "border-amber-500/40 bg-amber-500/[0.06] hover:border-amber-500/60" : "border-border hover:border-accent/40"}`}
                     >
                       {m.milestone.dateLabel && (
-                        <span className="metric-number text-[11px] text-accent shrink-0 min-w-[90px]">
+                        <span
+                          className={`metric-number text-[11px] shrink-0 min-w-[90px] ${m.imminent ? "text-amber-600 dark:text-amber-400" : "text-accent"}`}
+                        >
                           {m.milestone.dateLabel}
                         </span>
                       )}
                       <span className="flex-1 min-w-0">
                         <span className="text-sm text-foreground/90 leading-snug block">
+                          {m.imminent && (
+                            <span className="inline-flex items-center rounded-sm border border-amber-500/40 bg-amber-500/10 px-1.5 py-0 text-[9px] font-mono tracking-wider uppercase text-amber-700 dark:text-amber-300 mr-1.5 align-middle">
+                              まもなく
+                            </span>
+                          )}
                           {m.milestone.content}
                         </span>
                         <span className="label-mono text-muted-foreground group-hover:text-accent">
                           {m.label}
                         </span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* 制度ステータス警告 (不安定/変化あり) */}
+          {statusAlerts.length > 0 && (
+            <section>
+              <p className="label-mono text-muted-foreground mb-3">要注視のステータス</p>
+              <ul className="space-y-2">
+                {statusAlerts.map((a) => (
+                  <li key={a.slug}>
+                    <Link
+                      href={`/entities/${a.slug}`}
+                      className={`group flex items-center gap-3 rounded-md border px-4 py-2.5 transition-colors ${a.kind === "changed" ? "border-red-500/35 bg-red-500/[0.05] hover:border-red-500/55" : "border-amber-500/35 bg-amber-500/[0.05] hover:border-amber-500/55"}`}
+                    >
+                      <span
+                        className={`inline-flex items-center rounded-sm border px-1.5 py-0.5 text-[10px] font-mono tracking-wider shrink-0 ${a.kind === "changed" ? "border-red-500/40 bg-red-500/10 text-red-700 dark:text-red-300" : "border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300"}`}
+                      >
+                        {POLICY_STATUS_LABEL[a.status!]}
+                      </span>
+                      <span className="flex-1 min-w-0 text-sm text-foreground/90 group-hover:text-accent truncate">
+                        {a.label}
+                      </span>
+                      <span className="label-mono text-muted-foreground shrink-0">
+                        {a.kind === "changed" ? "効力に変化" : "細目が動く可能性"}
                       </span>
                     </Link>
                   </li>
@@ -211,7 +318,12 @@ export function WatchlistView({ entityIndex, matrixIndex, today }: Props) {
                       </p>
                       <ul className="divide-y divide-border">
                         {recentShown.map((item) => (
-                          <FeedRow key={item.slug} item={item} dim />
+                          <FeedRow
+                            key={item.slug}
+                            item={item}
+                            dim
+                            isNew={isNewSinceVisit(item.event_date, lastVisit, today)}
+                          />
                         ))}
                       </ul>
                     </div>

@@ -48,3 +48,62 @@ export function isSameWatchItem(
 ): boolean {
   return a.kind === b.kind && a.slug === b.slug;
 }
+
+// ─────────────────────────────────────────────────────────────
+// 変化シグナル (STRATEGY §10): 集約に「何が動いたか」を載せる純粋ロジック。
+// 「ここに来れば変化に気づける」を成立させるため、(1) 前回チェック以降に起きた
+// イベント、(2) まもなく来るマイルストーン、(3) 不安定な制度ステータスを判定する。
+// last-visit は /watchlist ページ単位で記録する (グローバル provider では更新しない)。
+// ─────────────────────────────────────────────────────────────
+
+/** 最後にウォッチリストを開いた日 (YYYY-MM-DD) を保持する localStorage キー */
+export const WATCHLIST_LASTVISIT_KEY = "carbomir.watchlist.lastvisit.v1";
+
+/**
+ * イベントが「前回チェック以降に起きた」か。
+ * lastVisit < event_date <= today のとき true (= 前回見たあとに発生した過去イベント)。
+ * 初回訪問 (lastVisit=null) では false にして誤検知を出さない。
+ */
+export function isNewSinceVisit(
+  eventDate: string,
+  lastVisit: string | null,
+  today: string
+): boolean {
+  if (!lastVisit) return false;
+  return eventDate > lastVisit && eventDate <= today;
+}
+
+/**
+ * 部分日付ラベル (YYYY / YYYY-MM / YYYY-MM-DD) を YYYY-MM-DD の最早日に正規化。
+ * パースできなければ null。
+ */
+export function normalizeDateLabel(label: string): string | null {
+  const m = label.match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?$/);
+  if (!m) return null;
+  return `${m[1]}-${m[2] ?? "01"}-${m[3] ?? "01"}`;
+}
+
+/**
+ * dateLabel (部分日付可) が today から何日後かを返す。過去なら負。パース不能で null。
+ */
+export function daysUntil(dateLabel: string, today: string): number | null {
+  const norm = normalizeDateLabel(dateLabel);
+  if (!norm) return null;
+  const target = Date.parse(`${norm}T00:00:00Z`);
+  const base = Date.parse(`${today}T00:00:00Z`);
+  if (Number.isNaN(target) || Number.isNaN(base)) return null;
+  return Math.round((target - base) / 86_400_000);
+}
+
+/**
+ * dateLabel が today から withinDays 日以内の未来 (0..withinDays) なら true。
+ * 過去・範囲外・パース不能は false。
+ */
+export function isImminent(
+  dateLabel: string,
+  today: string,
+  withinDays = 90
+): boolean {
+  const d = daysUntil(dateLabel, today);
+  return d !== null && d >= 0 && d <= withinDays;
+}
