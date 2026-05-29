@@ -27,9 +27,15 @@ type Props = {
   agreements: CooperativeAgreement[];
 };
 
+// 出典の表記揺れ (タイポ "Bilteral" / casing 差) を全変種カバーする。
+// 1 変種しか登録しないと、translateStatus が同一ラベルに畳む裏で一部行だけ色が欠ける。
+const COMPLETED_COLOR =
+  "text-emerald-600 dark:text-emerald-400 border-emerald-600/40 dark:border-emerald-400/40";
 const STATUS_COLOR: Record<string, string> = {
-  "Bilteral authorization Completed":
-    "text-emerald-600 dark:text-emerald-400 border-emerald-600/40 dark:border-emerald-400/40",
+  "Bilteral authorization Completed": COMPLETED_COLOR,
+  "Bilteral Authorization Completed": COMPLETED_COLOR,
+  "Bilateral Authorization Completed": COMPLETED_COLOR,
+  "Bilateral authorization issued": COMPLETED_COLOR,
   "Implementing Agreement Signed":
     "text-sky-600 dark:text-sky-400 border-sky-600/40 dark:border-sky-400/40",
   "Framework Agreement Signed":

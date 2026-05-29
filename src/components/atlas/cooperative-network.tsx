@@ -60,6 +60,11 @@ const STATUS_LINE_LABEL: Record<string, string> = {
   "Framework Agreement Signed": "枠組み",
   "Implementing Agreement Signed": "実施協定",
   "Bilateral authorization issued": "個別認可",
+  // 出典の表記揺れ (タイポ "Bilteral" / casing 差) を同一ラベルへ吸収。
+  // 凡例はラベル単位で dedup するため、これらは 1 エントリ「個別認可完了」に集約される。
+  "Bilteral Authorization Completed": "個別認可完了",
+  "Bilteral authorization Completed": "個別認可完了",
+  "Bilateral Authorization Completed": "個別認可完了",
   MOC: "MOC 締結",
   Implementing: "実施段階",
   "Article 6.2 converted": "6.2 条移行済",
@@ -283,23 +288,30 @@ export function CooperativeNetwork({ agreements }: Props) {
 
       {/* Legend (実データに登場する status のみ表示) */}
       <div className="mt-3 flex items-center gap-4 flex-wrap label-mono text-[10.5px]">
-        {Array.from(new Set(agreements.map((a) => a.status ?? "")))
-          .filter((s) => s && s in STATUS_LINE_OPACITY)
-          .sort(
-            (a, b) =>
-              (STATUS_LINE_OPACITY[a] ?? 0) - (STATUS_LINE_OPACITY[b] ?? 0)
-          )
-          .map((status) => (
-            <span key={status} className="inline-flex items-center gap-1.5">
-              <span
-                className="inline-block w-4 h-px bg-foreground"
-                style={{ opacity: STATUS_LINE_OPACITY[status] }}
-              />
-              <span className="text-foreground/85">
-                {STATUS_LINE_LABEL[status] ?? status}
+        {(() => {
+          // 表示ラベル単位で dedup する。出典の表記揺れ (タイポ "Bilteral" /
+          // casing 差) で同義の status が複数あっても、凡例は 1 エントリに集約する。
+          const byLabel = new Map<string, { label: string; opacity: number }>();
+          for (const a of agreements) {
+            const status = a.status ?? "";
+            if (!(status in STATUS_LINE_OPACITY)) continue;
+            const label = STATUS_LINE_LABEL[status] ?? status;
+            if (!byLabel.has(label)) {
+              byLabel.set(label, { label, opacity: STATUS_LINE_OPACITY[status] });
+            }
+          }
+          return Array.from(byLabel.values())
+            .sort((a, b) => a.opacity - b.opacity)
+            .map(({ label, opacity }) => (
+              <span key={label} className="inline-flex items-center gap-1.5">
+                <span
+                  className="inline-block w-4 h-px bg-foreground"
+                  style={{ opacity }}
+                />
+                <span className="text-foreground/85">{label}</span>
               </span>
-            </span>
-          ))}
+            ));
+        })()}
         <span className="ml-auto text-muted-foreground">
           Buyer / Seller を hover で関連協定をハイライト
         </span>
