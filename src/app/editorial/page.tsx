@@ -10,6 +10,7 @@ import {
 } from "@/lib/data/queries";
 import { countReviewMarks } from "@/components/review-marks";
 import { getGlossaryMap } from "@/lib/data/glossary-map";
+import { getMediaCorpus } from "@/lib/data/media-articles";
 import { TAG_VOCABULARY, TAG_CATEGORIES } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -137,6 +138,10 @@ export default async function EditorialPage() {
   const glossaryOrphans = glossary.last_orphans ?? [];
   const glossarySyncedLabel = glossary.last_synced_at
     ? glossary.last_synced_at.slice(0, 10)
+    : "未同期";
+  const mediaCorpus = getMediaCorpus();
+  const mediaSyncedLabel = mediaCorpus.last_synced_at
+    ? mediaCorpus.last_synced_at.slice(0, 10)
     : "未同期";
 
   return (
@@ -370,7 +375,13 @@ export default async function EditorialPage() {
             variant="outline"
             className="font-mono text-[10px] tracking-wider text-muted-foreground border-border"
           >
-            最終同期: {glossarySyncedLabel}
+            glossary 同期: {glossarySyncedLabel}
+          </Badge>
+          <Badge
+            variant="outline"
+            className="font-mono text-[10px] tracking-wider text-muted-foreground border-border"
+          >
+            記事 corpus: {mediaCorpus.articles.length.toLocaleString()} 件 ({mediaSyncedLabel})
           </Badge>
         </div>
         <p className="text-[12.5px] text-muted-foreground max-w-2xl leading-relaxed mb-3">

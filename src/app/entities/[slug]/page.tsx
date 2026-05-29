@@ -34,6 +34,8 @@ import { ConsultCta } from "@/components/consult-cta";
 import { consultCopyForEntity } from "@/lib/consult-cta";
 import { WatchButton } from "@/components/watchlist/watch-button";
 import { EditLink } from "@/components/admin/edit-link";
+import { RelatedNewsCard } from "@/components/media/related-news-card";
+import { relatedMediaArticles } from "@/lib/data/media-articles";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -75,6 +77,9 @@ export default async function EntityDetailPage({ params }: Props) {
     (m): m is NonNullable<typeof m> =>
       m !== undefined && m.status === "published"
   );
+
+  // carboncredits.jp 関連ニュース (タイトル照合, PROVENANCE 媒体連携)
+  const relatedMedia = relatedMediaArticles(entity, 6);
 
   // Referenced By (inbound) — entity.related の forward 側で既出のものは dedup する
   const forwardSlugs = new Set(entity.related.map((r) => r.to_slug));
@@ -236,6 +241,7 @@ export default async function EntityDetailPage({ params }: Props) {
               stat={offsetsStat}
             />
           )}
+          <RelatedNewsCard articles={relatedMedia} />
           {relatedEntities.length > 0 && (
             <Card>
               <CardContent className="p-5">

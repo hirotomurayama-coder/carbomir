@@ -17,6 +17,8 @@ import { FreshnessIndicator } from "@/components/freshness-indicator";
 import { PaywallBadge } from "@/components/paywall-badge";
 import { EditLink } from "@/components/admin/edit-link";
 import { AtlasDeepDivePanel } from "@/components/atlas/atlas-deep-dive-panel";
+import { RelatedNewsCard } from "@/components/media/related-news-card";
+import { relatedMediaArticles } from "@/lib/data/media-articles";
 import { CASE_STUDY_CATEGORY_LABEL } from "@/lib/types";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -46,6 +48,12 @@ export default async function CaseStudyDetailPage({ params }: Props) {
 
   const entityNameMap: Record<string, string> = {};
   for (const e of entities) entityNameMap[e.slug] = e.name_ja;
+
+  // carboncredits.jp 関連ニュース (企業名で照合)
+  const relatedMedia = relatedMediaArticles(
+    { slug: study.slug, company: study.company },
+    6,
+  );
 
   // STRATEGY §2: 出典は「編集部の論点」call-out に集約する (entity と同じパターン)。
   // 論点が無い (旧構成) 場合のみ末尾の独立 Sources セクションにフォールバック。
@@ -156,6 +164,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         </article>
 
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start">
+          <RelatedNewsCard articles={relatedMedia} />
           {study.related_entity_slugs.length > 0 && (
             <Card>
               <CardContent className="p-5">
