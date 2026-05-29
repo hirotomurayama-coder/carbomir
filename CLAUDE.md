@@ -17,6 +17,8 @@
 > **重要**: 以下は実装判断の最上位レイヤー。設計・コンテンツ判断で迷ったらここを見る。
 >
 > 価値・課金・進化の **上位戦略仮説** は [STRATEGY.md](./STRATEGY.md) を参照 (アウトカム軸 / ツール↔コンサル分界線 / Understand-Decide-Manage 段階モデル / データは買わず判断・適格性で戦う)。
+>
+> コンテンツの **出自・正準・取り込み** の根本設計は [PROVENANCE.md](./PROVENANCE.md) を参照 (レーン分担 / section 単位 provenance / 参照＋抜粋 / wp-sitemap 取り込み)。
 
 ### 主ペルソナ: Persona A — CSR / サスティナビリティ担当
 - 所属: CSR 部 / サステナビリティ推進部 / IR 部
