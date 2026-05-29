@@ -104,6 +104,14 @@ export default async function DashboardHome() {
       {/* 3 アウトカム (STRATEGY §3): 判断の手前 / 稟議の弾薬 / 腐らせない監視 */}
       <OutcomeStrip />
 
+      {/* レイヤー境界: ここから下は「種別軸」(動詞タクソノミー)。上の成果軸と区別する */}
+      <div className="mb-6 flex items-center gap-3">
+        <span className="label-mono text-muted-foreground whitespace-nowrap">
+          種別で探す
+        </span>
+        <span className="h-px flex-1 bg-border/60" aria-hidden />
+      </div>
+
       {/* 追う セクション (主役) */}
       <TrackSection
         recentEvents={recentEvents}
