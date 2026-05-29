@@ -307,7 +307,7 @@ function ListView({
                 key={p.slug}
                 className="border-b border-border last:border-0 group hover:bg-muted/30 transition-colors"
               >
-                <td className={`px-3 ${rowPad} align-top`}>
+                <td className={`px-3 ${rowPad} align-middle`}>
                   <Link href={`/entities/${p.slug}`} className="block">
                     <p className="font-medium text-foreground group-hover:text-accent leading-tight">
                       {p.name_ja}
@@ -322,10 +322,10 @@ function ListView({
                     )}
                   </Link>
                 </td>
-                <td className={`px-3 ${rowPad} align-top text-[12.5px] text-foreground/85`}>
+                <td className={`px-3 ${rowPad} align-middle text-[12.5px] text-foreground/85`}>
                   {classifyJurisdiction(p.jurisdiction)}
                 </td>
-                <td className={`px-3 ${rowPad} align-top`}>
+                <td className={`px-3 ${rowPad} align-middle`}>
                   {p.policy_status ? (
                     <span
                       className={`inline-flex items-center rounded border px-1.5 py-0 text-[10px] leading-[16px] font-mono ${STATUS_BADGE_CLASS[p.policy_status]}`}
@@ -337,23 +337,27 @@ function ListView({
                   )}
                 </td>
                 <td
-                  className={`px-3 ${rowPad} align-top hidden md:table-cell text-[12px] text-foreground/85 leading-snug max-w-[360px]`}
+                  className={`px-3 ${rowPad} align-middle hidden md:table-cell text-[12px] text-foreground/85 leading-snug max-w-[360px]`}
                 >
-                  {p.next_milestone ?? <span className="text-muted-foreground">—</span>}
+                  {p.next_milestone ? (
+                    <span className="line-clamp-2">{p.next_milestone}</span>
+                  ) : (
+                    <span className="text-muted-foreground">—</span>
+                  )}
                 </td>
                 <td
-                  className={`px-3 ${rowPad} align-top hidden lg:table-cell text-[12px] text-muted-foreground`}
+                  className={`px-3 ${rowPad} align-middle hidden lg:table-cell text-[12px] text-muted-foreground`}
                 >
                   <span className="truncate block max-w-[180px]">
                     {p.operator ?? "—"}
                   </span>
                 </td>
                 <td
-                  className={`px-3 ${rowPad} align-top hidden lg:table-cell metric-number text-[11px] text-muted-foreground`}
+                  className={`px-3 ${rowPad} align-middle hidden lg:table-cell metric-number text-[11px] text-muted-foreground`}
                 >
                   {p.last_reviewed_at}
                 </td>
-                <td className={`px-3 ${rowPad} align-top text-right`}>
+                <td className={`px-3 ${rowPad} align-middle text-right`}>
                   <Link
                     href={`/entities/${p.slug}`}
                     className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-accent transition-colors"
