@@ -45,7 +45,7 @@ export function MatrixWatchPanel({ timeline, today }: Props) {
       <CardContent className="p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-1">
           <Radar className="h-3.5 w-3.5 text-accent" aria-hidden />
-          <p className="label-mono text-accent">監視中 — この比較に効く動き</p>
+          <p className="label-mono text-accent">監視ポイント</p>
         </div>
         <p className="text-xs text-muted-foreground leading-relaxed mb-4">
           下記の動向で比較の前提 (手法・適格性・規制) が変わりうる。編集部が追う。
