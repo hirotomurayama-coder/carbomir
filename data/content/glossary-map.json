@@ -26,16 +26,16 @@
       "review_state": "unsynced"
     },
     "dac": {
-      "wp_slug": "direct-air-capture",
-      "canonical_url": "https://carboncredits.jp/glossary/direct-air-capture/",
+      "wp_slug": "dac",
+      "canonical_url": "https://carboncredits.jp/glossary/dac/",
       "excerpt": null,
       "media_lastmod": null,
       "synced_at": null,
       "review_state": "unsynced"
     },
     "erw": {
-      "wp_slug": "enhanced-rock-weathering",
-      "canonical_url": "https://carboncredits.jp/glossary/enhanced-rock-weathering/",
+      "wp_slug": "erw",
+      "canonical_url": "https://carboncredits.jp/glossary/erw/",
       "excerpt": null,
       "media_lastmod": null,
       "synced_at": null,
@@ -98,8 +98,8 @@
       "review_state": "unsynced"
     },
     "car": {
-      "wp_slug": "climate-action-reserve",
-      "canonical_url": "https://carboncredits.jp/glossary/climate-action-reserve/",
+      "wp_slug": "car",
+      "canonical_url": "https://carboncredits.jp/glossary/car/",
       "excerpt": null,
       "media_lastmod": null,
       "synced_at": null,
