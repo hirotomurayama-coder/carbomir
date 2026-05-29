@@ -13,7 +13,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "ai:draft": "tsx scripts/ai-draft.ts",
-    "sync:glossary": "tsx scripts/sync-glossary.ts"
+    "sync:glossary": "tsx scripts/sync-glossary.ts",
+    "sync:media": "tsx scripts/sync-media.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
