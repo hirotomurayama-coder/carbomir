@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ClipboardList, Tag, AlertTriangle, RefreshCw } from "lucide-react";
+import { ClipboardList, Tag, AlertTriangle, RefreshCw, Link2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -9,6 +9,7 @@ import {
   listPublishedTimelineEvents,
 } from "@/lib/data/queries";
 import { countReviewMarks } from "@/components/review-marks";
+import { getGlossaryMap } from "@/lib/data/glossary-map";
 import { TAG_VOCABULARY, TAG_CATEGORIES } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -124,6 +125,19 @@ export default async function EditorialPage() {
   const thinEntities = entities
     .filter((e) => e.sections.length <= 2)
     .map((e) => ({ slug: e.slug, name: e.name_ja, sections: e.sections.length, href: `/entities/${e.slug}` }));
+
+  // === 媒体連携 (carboncredits.jp 照合) — PROVENANCE.md §7 ===
+  const glossary = getGlossaryMap();
+  const glossaryDrift = Object.entries(glossary.entries)
+    .filter(([, e]) => e.review_state === "drifted")
+    .map(([slug, e]) => ({ slug, wp_slug: e.wp_slug, lastmod: e.media_lastmod, href: `/entities/${slug}` }));
+  const glossaryDangling = Object.entries(glossary.entries)
+    .filter(([, e]) => e.review_state === "dangling")
+    .map(([slug, e]) => ({ slug, wp_slug: e.wp_slug, href: `/entities/${slug}` }));
+  const glossaryOrphans = glossary.last_orphans ?? [];
+  const glossarySyncedLabel = glossary.last_synced_at
+    ? glossary.last_synced_at.slice(0, 10)
+    : "未同期";
 
   return (
     <div className="px-6 sm:px-8 py-8 max-w-[1400px] mx-auto">
@@ -345,6 +359,63 @@ export default async function EditorialPage() {
         </Card>
       </section>
 
+      {/* 媒体連携 (carboncredits.jp 照合) — PROVENANCE.md §7 */}
+      <section className="mt-8">
+        <div className="mb-3 flex items-center gap-3 flex-wrap">
+          <h2 className="label-mono text-foreground flex items-center gap-1.5">
+            <Link2 className="h-3.5 w-3.5 text-accent" />
+            媒体連携 (carboncredits.jp 照合)
+          </h2>
+          <Badge
+            variant="outline"
+            className="font-mono text-[10px] tracking-wider text-muted-foreground border-border"
+          >
+            最終同期: {glossarySyncedLabel}
+          </Badge>
+        </div>
+        <p className="text-[12.5px] text-muted-foreground max-w-2xl leading-relaxed mb-3">
+          <code className="font-mono text-[11.5px]">npm run sync:glossary</code> が wp-sitemap と照合する。
+          <strong className="text-foreground">drift</strong>=媒体記事が更新され要再レビュー /{" "}
+          <strong className="text-foreground">dangling</strong>=対応 wp_slug が媒体に無い (改名/削除の疑い) /{" "}
+          <strong className="text-foreground">orphan</strong>=媒体にあるが未マップの新規記事候補。
+        </p>
+        <div className="grid gap-4 lg:grid-cols-3">
+          <GlossaryReconcileCard
+            title="drift (要再レビュー)"
+            accent="amber"
+            empty="ドリフトなし"
+            rows={glossaryDrift.map((d) => ({
+              key: d.slug,
+              href: d.href,
+              label: d.slug,
+              sub: d.lastmod?.slice(0, 10) ?? "",
+            }))}
+          />
+          <GlossaryReconcileCard
+            title="dangling (媒体側に記事なし)"
+            accent="amber"
+            empty="該当なし"
+            rows={glossaryDangling.map((d) => ({
+              key: d.slug,
+              href: d.href,
+              label: d.slug,
+              sub: `→ ${d.wp_slug}`,
+            }))}
+          />
+          <GlossaryReconcileCard
+            title="orphan (未マップ媒体記事)"
+            empty="該当なし"
+            rows={glossaryOrphans.map((o) => ({
+              key: o.wp_slug,
+              href: `https://carboncredits.jp/glossary/${o.wp_slug}/`,
+              external: true,
+              label: o.wp_slug,
+              sub: o.lastmod.slice(0, 10),
+            }))}
+          />
+        </div>
+      </section>
+
       <Card className="mt-6">
         <CardContent className="p-5 text-sm text-muted-foreground leading-relaxed flex items-start gap-3 flex-wrap">
           <span className="flex-1 min-w-[280px]">
@@ -363,6 +434,62 @@ export default async function EditorialPage() {
         </CardContent>
       </Card>
     </div>
+  );
+}
+
+function GlossaryReconcileCard({
+  title,
+  rows,
+  empty,
+  accent,
+}: {
+  title: string;
+  rows: { key: string; href: string; label: string; sub?: string; external?: boolean }[];
+  empty: string;
+  accent?: "amber";
+}) {
+  return (
+    <Card className="overflow-hidden p-0">
+      <div className="px-4 py-2.5 border-b border-border bg-muted/40 flex items-center justify-between">
+        <h3 className="label-mono text-foreground">{title}</h3>
+        <span
+          className={`metric-number text-[12px] ${
+            rows.length > 0 && accent === "amber"
+              ? "text-amber-600 dark:text-amber-400"
+              : "text-muted-foreground"
+          }`}
+        >
+          {rows.length}
+        </span>
+      </div>
+      {rows.length === 0 ? (
+        <p className="px-4 py-8 text-center label-mono text-muted-foreground">{empty}</p>
+      ) : (
+        <ul className="divide-y divide-border">
+          {rows.slice(0, 20).map((r) => (
+            <li key={r.key} className="px-4 py-2 flex items-center justify-between gap-2 hover:bg-muted/30">
+              {r.external ? (
+                <a
+                  href={r.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground hover:text-accent text-[12.5px] truncate"
+                >
+                  {r.label}
+                </a>
+              ) : (
+                <Link href={r.href} className="text-foreground hover:text-accent text-[12.5px] truncate">
+                  {r.label}
+                </Link>
+              )}
+              {r.sub && (
+                <span className="metric-number text-[11px] text-muted-foreground shrink-0">{r.sub}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </Card>
   );
 }
 
