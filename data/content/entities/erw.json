@@ -9,45 +9,53 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-  "Engineered Removal",
-  "国際"
+    "Engineered Removal",
+    "国際"
   ],
+  "price_level": {
+    "range": "100–250",
+    "unit": "USD/t-CO2",
+    "trend": "falling",
+    "as_of": "2025",
+    "source_label": "編集部推計 (CDR.fyi 等の公表値参照)",
+    "note": "強化風化。除去系 (engineered 寄り) で高価格帯。規模化と MRV 成熟で中長期は低下見込み。"
+  },
   "jurisdiction": "国際",
   "established_year": 2018,
   "geographic_scope": "グローバル (大規模火成岩産地 + 農地)",
   "related": [
-  {
-  "to_slug": "verra-vcs",
-  "relation": "depends_on",
-  "note": "VCS で Engineered Removal メソドロジー整備中"
-  },
-  {
-  "to_slug": "dac",
-  "relation": "competes_with",
-  "note": "Engineered Removal の別アプローチ。価格帯はやや低め"
-  },
-  {
-  "to_slug": "biochar",
-  "relation": "competes_with",
-  "note": "農地施用型 Engineered Removal の代替手段"
-  }
+    {
+      "to_slug": "verra-vcs",
+      "relation": "depends_on",
+      "note": "VCS で Engineered Removal メソドロジー整備中"
+    },
+    {
+      "to_slug": "dac",
+      "relation": "competes_with",
+      "note": "Engineered Removal の別アプローチ。価格帯はやや低め"
+    },
+    {
+      "to_slug": "biochar",
+      "relation": "competes_with",
+      "note": "農地施用型 Engineered Removal の代替手段"
+    }
   ],
   "related_matrix_slugs": [
-  "engineered-removal-comparison"
+    "engineered-removal-comparison"
   ],
   "sections": [
-  {
-  "heading": "技術の概要",
-  "body": "玄武岩・カンラン岩等のケイ酸塩鉱物の粉末を農地等に散布し、雨水・CO2 との反応で炭酸イオン化させる過程を加速する。\n\n反応の主要ステップ:\n\n1. 鉱物の粉砕 (粒径 < 100 μm)\n2. 農地等への散布\n3. 雨水で溶解 → 重炭酸イオン形成\n4. 河川経由で海洋に流入、最終的に炭酸塩として固定"
-  },
-  {
-  "heading": "市場動向",
-  "body": "Lithos Carbon、Eion、UNDO Carbon、Mati Carbon 等が商業化を進める。価格帯は 100-400 USD/t-CO2 程度 (DAC より低め)。Microsoft、Frontier (テック大手連合) が大口 offtake。"
-  },
-  {
-  "heading": "編集部の論点",
-  "body": "永続性は化学反応の不可逆性により高い (>10,000 年)。一方、**MRV (測定・報告・検証)** が課題: 鉱物溶解率、地下水・河川流出の追跡、海洋到達 CO2 量の推定に大きな不確実性。MRV ステンダードが確立してから本格スケール期待。",
-  "paywall_tier": "standard"
-  }
+    {
+      "heading": "技術の概要",
+      "body": "玄武岩・カンラン岩等のケイ酸塩鉱物の粉末を農地等に散布し、雨水・CO2 との反応で炭酸イオン化させる過程を加速する。\n\n反応の主要ステップ:\n\n1. 鉱物の粉砕 (粒径 < 100 μm)\n2. 農地等への散布\n3. 雨水で溶解 → 重炭酸イオン形成\n4. 河川経由で海洋に流入、最終的に炭酸塩として固定"
+    },
+    {
+      "heading": "市場動向",
+      "body": "Lithos Carbon、Eion、UNDO Carbon、Mati Carbon 等が商業化を進める。価格帯は 100-400 USD/t-CO2 程度 (DAC より低め)。Microsoft、Frontier (テック大手連合) が大口 offtake。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "永続性は化学反応の不可逆性により高い (>10,000 年)。一方、**MRV (測定・報告・検証)** が課題: 鉱物溶解率、地下水・河川流出の追跡、海洋到達 CO2 量の推定に大きな不確実性。MRV ステンダードが確立してから本格スケール期待。",
+      "paywall_tier": "standard"
+    }
   ]
 }

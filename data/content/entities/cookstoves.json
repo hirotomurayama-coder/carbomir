@@ -8,42 +8,50 @@
   "next_review_at": "2026-09-22",
   "status": "published",
   "tags": [
-  "途上国",
-  "ボランタリー市場",
-  "SDGs 連動",
-  "コミュニティベース"
+    "途上国",
+    "ボランタリー市場",
+    "SDGs 連動",
+    "コミュニティベース"
   ],
+  "price_level": {
+    "range": "4–15",
+    "unit": "USD/t-CO2",
+    "trend": "falling",
+    "as_of": "2025",
+    "source_label": "編集部推計 (各取引所・報道レンジ参照)",
+    "note": "回避系。実削減量の過大評価論争で需要が冷え込み下落。新方法論適用の有無で二極化。"
+  },
   "jurisdiction": "国際",
   "established_year": 2008,
   "geographic_scope": "途上国全域 (アフリカ・南アジア中心)",
   "related": [
-  {
-  "to_slug": "gold-standard",
-  "relation": "depends_on",
-  "note": "Gold Standard で主要メソドロジー (GS TPDDTEC 等)"
-  },
-  {
-  "to_slug": "verra-vcs",
-  "relation": "depends_on",
-  "note": "VCS でもメソドロジー (VMR0006 等) として運用"
-  }
+    {
+      "to_slug": "gold-standard",
+      "relation": "depends_on",
+      "note": "Gold Standard で主要メソドロジー (GS TPDDTEC 等)"
+    },
+    {
+      "to_slug": "verra-vcs",
+      "relation": "depends_on",
+      "note": "VCS でもメソドロジー (VMR0006 等) として運用"
+    }
   ],
   "related_matrix_slugs": [
     "nbs-quality-comparison"
   ],
   "sections": [
-  {
-  "heading": "アプローチ",
-  "body": "従来の薪・木炭による調理を、高効率ストーブまたは電気/LPG/エタノール調理器具で代替。\n\n- **排出削減源**: 不完全燃焼の CH4/N2O 削減、非再生バイオマス (fNRB) の削減\n- **追加価値**: 室内大気汚染削減 (女性・子どもの呼吸器疾患減)、薪集めの労働時間削減 (ジェンダー)、調理時間短縮"
-  },
-  {
-  "heading": "品質議論",
-  "body": "クリーンクッキング系クレジットは ICVCM の品質精査の対象。特に **fNRB (非再生バイオマス率)** のベースライン推定、**ストーブ利用率 (utilization rate)** の継続モニタリングが論点。2024 年に複数のメソドロジー version が CCP 適格性評価を受けた (運用注視: 結果)。"
-  },
-  {
-  "heading": "編集部の論点",
-  "body": "SDGs 訴求力は VCM 内最強クラスで、CSR 訴求型の買い手企業の選好が強い。ただし品質シグナル動向で評価が変動するセグメント。価格は 10-30 USD/t 程度の幅 (運用注視: 直近実勢、Gold Standard 系で高め)。",
-  "paywall_tier": "standard"
-  }
+    {
+      "heading": "アプローチ",
+      "body": "従来の薪・木炭による調理を、高効率ストーブまたは電気/LPG/エタノール調理器具で代替。\n\n- **排出削減源**: 不完全燃焼の CH4/N2O 削減、非再生バイオマス (fNRB) の削減\n- **追加価値**: 室内大気汚染削減 (女性・子どもの呼吸器疾患減)、薪集めの労働時間削減 (ジェンダー)、調理時間短縮"
+    },
+    {
+      "heading": "品質議論",
+      "body": "クリーンクッキング系クレジットは ICVCM の品質精査の対象。特に **fNRB (非再生バイオマス率)** のベースライン推定、**ストーブ利用率 (utilization rate)** の継続モニタリングが論点。2024 年に複数のメソドロジー version が CCP 適格性評価を受けた (運用注視: 結果)。"
+    },
+    {
+      "heading": "編集部の論点",
+      "body": "SDGs 訴求力は VCM 内最強クラスで、CSR 訴求型の買い手企業の選好が強い。ただし品質シグナル動向で評価が変動するセグメント。価格は 10-30 USD/t 程度の幅 (運用注視: 直近実勢、Gold Standard 系で高め)。",
+      "paywall_tier": "standard"
+    }
   ]
 }
