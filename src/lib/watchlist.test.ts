@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { isSameWatchItem, parseWatchlist } from "./watchlist";
+import {
+  isSameWatchItem,
+  parseWatchlist,
+  isNewSinceVisit,
+  normalizeDateLabel,
+  daysUntil,
+  isImminent,
+} from "./watchlist";
 
 describe("parseWatchlist", () => {
   it("returns [] for null / empty", () => {
