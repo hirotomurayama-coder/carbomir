@@ -19,6 +19,9 @@ import { findAtlasLinksForEntity } from "@/lib/data/atlas";
 import { AtlasDeepDivePanel } from "@/components/atlas/atlas-deep-dive-panel";
 import { ReviewMarkedText } from "@/components/review-marks";
 import { EditLink } from "@/components/admin/edit-link";
+import { RelatedNewsCard } from "@/components/media/related-news-card";
+import { relatedMediaArticles } from "@/lib/data/media-articles";
+import { mediaMatchTerms } from "@/lib/media-match";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -49,6 +52,13 @@ export default async function TimelineEventDetailPage({ params }: Props) {
 
   const entityNameMap: Record<string, string> = {};
   for (const e of entities) entityNameMap[e.slug] = e.name_ja;
+
+  // carboncredits.jp 関連ニュース: 影響 entity (規制含む) の名称で照合 (STRATEGY §3「追う」)
+  const affectedTerms = event.affected_entity_slugs
+    .map((s) => entities.find((e) => e.slug === s))
+    .filter((e): e is NonNullable<typeof e> => !!e)
+    .flatMap((e) => mediaMatchTerms(e));
+  const relatedMedia = relatedMediaArticles({ slug: event.slug }, 6, affectedTerms);
 
   // content_md から「編集部の論点」を分離し、専用 call-out で描き分ける (STRATEGY §2)
   const { before, thesis, after } = splitEditorialThesis(event.content_md);
@@ -128,6 +138,7 @@ export default async function TimelineEventDetailPage({ params }: Props) {
 
         {/* Right: Affected entities */}
         <aside className="space-y-6 lg:sticky lg:top-20 lg:self-start">
+          <RelatedNewsCard articles={relatedMedia} />
           {event.affected_entity_slugs.length > 0 && (
             <Card>
               <CardContent className="p-5">
